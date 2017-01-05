@@ -1,26 +1,26 @@
 # Dependencies
-markdown:         redcarpet
-highlighter:      pygments
+markdown            : kramdown
+redcarpet:
+  extensions        : ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
+highlighter         : rouge
+gems                : ["jekyll-paginate", "jekyll-gist"]
 
 # Permalinks
-permalink:        pretty
-relative_permalinks: true
+permalink           : pretty
 
 # Setup
-title:            Hyde
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
-baseurl:          /
+title               : 乾太 (Kantai235)
+tagline             : '這裡記錄著我的大小事。'
+description         : '傳說中的邊緣人。'
+baseurl             : /
 
-author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+author              : 乾太
+name                : '乾太'
+url                 : https://Kantai235.github.io/
 
-paginate:         5
+paginate            : 5
 
 # Custom vars
-version:          2.1.0
-
-github:
-  repo:           https://github.com/poole/hyde
+version             : 0.1.0
+twitter_username    : Kantai235
+github_username     : Kantai235
