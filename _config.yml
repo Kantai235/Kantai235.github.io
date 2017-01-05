@@ -1,5 +1,5 @@
 # Dependencies
-markdown            : kramdown
+markdown            : redcarpet
 redcarpet:
   extensions        : ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
 highlighter         : rouge
@@ -9,9 +9,9 @@ gems                : ["jekyll-paginate", "jekyll-gist"]
 permalink           : pretty
 
 # Setup
-title               : 乾太 (Kantai235)
+title               : 乾太 Kantai
 tagline             : '這裡記錄著我的大小事。'
-description         : '傳說中的邊緣人。'
+description         : '傳說中的邊緣工程師。'
 baseurl             : /
 
 author              : 乾太

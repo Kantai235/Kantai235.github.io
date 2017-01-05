@@ -1,0 +1,12 @@
+---
+layout     : post
+title      : "乾太跟你問好。"
+subtitle   : "我就只是想問候你而已。"
+date       : 2017-01-04 22:40:00
+author     : "乾太"
+tags       : 乾太
+comments   : true
+signature  : true
+---
+
+嗨，肥宅。
