@@ -2,7 +2,7 @@
 layout     : post
 title      : "如何在 GitHub 中建造一個屬於自己的部落格。"
 subtitle   : "單純第一篇文章而已。"
-date       : 2017-01-05 01:00:00
+date       : 2017-01-07 01:30:00
 author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
 tags       : GitHub Blog Jekyll Hyde Disqus Rhadow.github.io
 comments   : true
