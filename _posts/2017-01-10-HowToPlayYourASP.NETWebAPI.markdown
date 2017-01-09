@@ -2,7 +2,7 @@
 layout     : post
 title      : "ASP.NET Web API 2 基本建置與教學"
 subtitle   : "ASP.NET 當中 Web API v2 的一些基本教學。"
-date       : 2017-01-10 12:00:00
+date       : 2017-01-09 12:00:00
 author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
 tags       : ASP.NET Web API APIv2 教學
 comments   : true
@@ -13,16 +13,25 @@ signature  : true
 
 [ASP.NET](https://www.asp.net/) 提供了一個很好的架構，就是 [ASP.NET Web API 2](https://msdn.microsoft.com/zh-tw/library/dn448365(v=vs.118).aspx)，他可以輕鬆地幫你建置出 HTTP 服務下 API 應用，而本教學文章將帶大家了解這東西的基礎教學！
 
+
+
 (1.) 首先我們要先在 [Visual Studio](https://www.visualstudio.com/zh-hant/) 當中建立一個 Web Application 專案：
 ![建立 Web Application 專案](http://i.imgur.com/IOMxq1e.png)
+
+
 
 (2.) 為了方便介紹，我們用空白專案(Empty)即可，不過這個地方需要注意一下！你必須勾選 `Web API` 這項核心參考：
 ![參考 Web API 核心](http://i.imgur.com/AvzqqCt.png)
 
+
+
 (3.) 創建完專案後，Run 一下會發現整個網站空空如也，給你各種 404 找不到網頁，所以我們必須先來建立一個 `index.html` 的入口網頁：
 ![創建一個空網頁](http://i.imgur.com/zLGzgej.png)
 
+
+
 (4.) 再來我們希望 Web API 回傳的資料直接 show 在網頁上，所以我們要先定義一個地方，準備用來 show 資料：
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -40,10 +49,15 @@ signature  : true
 </html>
 ```
 
+
+
 (5.) 定義完之後，我們要開始思考，我們想拿到甚麼資料？資料的格式長甚麼樣子？我們就用之前寫過的 [Java 或 Android 上的 Json 基本教學](https://kantai235.github.io/2017/01/09/BasicUsingJsonOnJavaOrAndroid/) 當中的格式作為範例，我們必須先在 Models 新增我們的 Model：
 ![新增 Model 用來定義資料格式](http://i.imgur.com/lIVKCYX.png)
 
+
+
 (6.) 接下來我們要定義 model 的格式：
+
 ```cs
 using System;
 using System.Collections.Generic;
@@ -85,10 +99,13 @@ namespace ASP.NET_Web_API_v2_Demo.Models
 }
 ```
 
+
+
 (7.) 資料的格式定義完之後，我們接下來要再建立一個控制器(Controller)做來建立資料、拋出資料的動作，這一切都是遵循 [MVC模式(Model–View–Controller)](https://zh.wikipedia.org/wiki/MVC) 的開發模式：
 ![新增 Controller 用來建立資料、拋出資料](http://i.imgur.com/bCyYOBJ.png)
 
 (8.) 接下來撰寫控制器，去定義資料、拋出資料的方式、找尋資料的方式，不過我們這邊先把資料寫死 [Hard Code](https://zh.wikipedia.org/zh-tw/%E5%AF%AB%E6%AD%BB)：
+
 ```cs
 using ASP.NET_Web_API_v2_Demo.Models;
 using System;
@@ -146,7 +163,10 @@ namespace ASP.NET_Web_API_v2_Demo.Controllers
 }
 ```
 
+
+
 (9.) 資料格式的模型(Model)寫完了，控制器(Controller)也寫完了，接下來我們回到 `index.html` 去撰寫網頁端的程式吧！我們透過 ajax 來抓資料：
+
 ```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -187,10 +207,15 @@ namespace ASP.NET_Web_API_v2_Demo.Controllers
 </html>
 ```
 
+
+
 (10.) 完成後，我們來看看成果吧！
 ![Web API v2 成果](http://i.imgur.com/aFMJEJD.png)
 
+
+
 (11.) 不過目前只是抓出所有資料，對應的是在控制器當中的 GetAllClass 這個方法，我們希望善用到 GetProduct 這方法，去搜尋個別的教室，所以我們要在 `index.html` 當中多添加個輸入框及按鈕，並且透過 GetProduct 去撈取相對應的資料：
+
 ```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -248,8 +273,12 @@ namespace ASP.NET_Web_API_v2_Demo.Controllers
 </html>
 ```
 
+
+
 (12.) 完成後我們來看看成果吧！
 ![Search 資料](http://i.imgur.com/8GdkAeg.png)
+
+
 
 整個 ASP.NET Web API v2 的基本教學大致上是這樣 m(_ _)m
 

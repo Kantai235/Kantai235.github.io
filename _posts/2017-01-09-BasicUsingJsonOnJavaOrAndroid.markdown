@@ -17,8 +17,8 @@ Json 格式以 Object、Array 作為兩大形式，用法如下：
 
 ```json
 {
-    "Key": "Value",
-    "Key": "Value" ...
+    "Key1": "Value1",
+    "Key2": "Value2"
 }
 ```
 
@@ -26,12 +26,13 @@ Json 格式以 Object、Array 作為兩大形式，用法如下：
 
 ```json
 [
-    "Value",
-    "Value" ...
+    "Value1",
+    "Value2"
 ]
 ```
 
 再來介紹 Json 支援的型態，總共有 String、Number、Boolean，用法如下：
+
 ```json
 // String 型態
 {
@@ -74,20 +75,20 @@ Json 格式以 Object、Array 作為兩大形式，用法如下：
 
 假設有三間教室，編號分別為 Class01、Class02、Class03
 
-電腦教室 (Class01) 的學生：
-    Student0101 小明1號
-    Student0102 小明2號
-    Student0103 小明3號
-    Student0104 小明4號
+>電腦教室 (Class01) 的學生：<br />
+>*   Student0101 小明1號<br />
+>*   Student0102 小明2號<br />
+>*   Student0103 小明3號<br />
+>*   Student0104 小明4號
 
-音樂教室 (Class02) 的學生：
-    Student0201 小智1號
-    Student0202 小智2號
+>音樂教室 (Class02) 的學生：<br />
+>*   Student0201 小智1號<br />
+>*   Student0202 小智2號
 
-童軍教室 (Class03) 的學生：
-    Student0301 小春1號
-    Student0302 小春2號
-    Student0303 小春3號
+>童軍教室 (Class03) 的學生：<br />
+>*   Student0301 小春1號<br />
+>*   Student0302 小春2號<br />
+>*   Student0303 小春3號
 
 ```json
 [
