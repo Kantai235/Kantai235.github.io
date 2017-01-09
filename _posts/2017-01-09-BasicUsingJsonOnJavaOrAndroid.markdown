@@ -2,7 +2,7 @@
 layout     : post
 title      : "Java 或 Android 上的 Json 基本教學"
 subtitle   : "在 Java 或 Android 當中，使用 Json 作為資料的讀取、解析。"
-date       : 2017-01-09 12:00:00
+date       : 2017-01-09 10:00:00
 author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
 tags       : Java Android Json 教學
 comments   : true
@@ -13,15 +13,18 @@ signature  : true
 
 Json 格式以 Object、Array 作為兩大形式，用法如下：
 
+一、物件形式 {}
+
 ```json
-// {} = 物件形式
-// Example :
 {
     "Key": "Value",
     "Key": "Value" ...
 }
+```
 
-// [] = 陣列形式
+二、陣列刑式 []
+
+```json
 [
     "Value",
     "Value" ...
@@ -55,7 +58,7 @@ Json 格式以 Object、Array 作為兩大形式，用法如下：
     {
         "教室資訊 (Class Detail)" : {
             "教室編號 (Class Number)" : "",
-            "教室名稱 (Class Name)" : "",
+            "教室名稱 (Class Name)" : ""
         },
         "學生資訊 (Student Detail)" : [
             {
@@ -224,4 +227,4 @@ JSONObject.keys();
 
 如果你真的對 org.json 很有興趣，那也當然歡迎多看看 [org.json](https://developer.android.com/reference/org/json/package-summary.html) 的相關資料 ...
 
-[JSON Editor Online](http://www.jsoneditoronline.org)
+另外 乾太先生 很喜歡用一套線上 JSON 編輯器，也一起分享給大家：[JSON Editor Online](http://www.jsoneditoronline.org)
