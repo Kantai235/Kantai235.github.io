@@ -1,7 +1,7 @@
 ---
 layout     : post
 title      : "Java 或 Android 上的 Json 基本教學"
-subtitle   : "在 Java 或 Android 當中，使用 Json 作為資料的讀取、解析。"
+subtitle   : "很多應用程式開發時，傳遞都會使用 Json 作為規範格式，像是 Plurk API、Facebook API ..."
 date       : 2017-01-09 10:00:00
 author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
 tags       : Java Android Json 教學
@@ -33,18 +33,25 @@ Json 格式以 Object、Array 作為兩大形式，用法如下：
 
 再來介紹 Json 支援的型態，總共有 String、Number、Boolean，用法如下：
 
+一、String 字串 型態
+
 ```json
-// String 型態
 {
     "Key": "Value"
 }
+```
 
-// Number 型態
+二、Number 整數 型態
+
+```json
 {
     "Key": 0
 }
+```
 
-// Boolean 型態
+三、Boolean 布林 型態
+
+```json
 {
     "Key": true
 }

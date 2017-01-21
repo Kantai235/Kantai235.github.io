@@ -1,8 +1,8 @@
 ---
 layout     : post
 title      : "ASP.NET Web API 2 基本建置與教學"
-subtitle   : "ASP.NET 當中 Web API v2 的一些基本教學。"
-date       : 2017-01-09 12:00:00
+subtitle   : "在開發網頁應用程式，有時候會遇到一種情境，我們為了這個網頁做了很大量的開發 ..."
+date       : 2017-01-10 12:00:00
 author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
 tags       : ASP.NET Web API APIv2 教學
 comments   : true
