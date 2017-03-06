@@ -16,16 +16,19 @@ signature  : true
 
 
 (1.) 首先我們要先在 [Visual Studio](https://www.visualstudio.com/zh-hant/) 當中建立一個 Web Application 專案：
+
 ![建立 Web Application 專案](http://i.imgur.com/IOMxq1e.png)
 
 
 
 (2.) 為了方便介紹，我們用空白專案(Empty)即可，不過這個地方需要注意一下！你必須勾選 `Web API` 這項核心參考：
+
 ![參考 Web API 核心](http://i.imgur.com/AvzqqCt.png)
 
 
 
 (3.) 創建完專案後，Run 一下會發現整個網站空空如也，給你各種 404 找不到網頁，所以我們必須先來建立一個 `index.html` 的入口網頁：
+
 ![創建一個空網頁](http://i.imgur.com/zLGzgej.png)
 
 
@@ -52,6 +55,7 @@ signature  : true
 
 
 (5.) 定義完之後，我們要開始思考，我們想拿到甚麼資料？資料的格式長甚麼樣子？我們就用之前寫過的 [Java 或 Android 上的 Json 基本教學](https://kantai235.github.io/2017/01/09/BasicUsingJsonOnJavaOrAndroid/) 當中的格式作為範例，我們必須先在 Models 新增我們的 Model：
+
 ![新增 Model 用來定義資料格式](http://i.imgur.com/lIVKCYX.png)
 
 
@@ -102,6 +106,7 @@ namespace ASP.NET_Web_API_v2_Demo.Models
 
 
 (7.) 資料的格式定義完之後，我們接下來要再建立一個控制器(Controller)做來建立資料、拋出資料的動作，這一切都是遵循 [MVC模式(Model–View–Controller)](https://zh.wikipedia.org/wiki/MVC) 的開發模式：
+
 ![新增 Controller 用來建立資料、拋出資料](http://i.imgur.com/bCyYOBJ.png)
 
 (8.) 接下來撰寫控制器，去定義資料、拋出資料的方式、找尋資料的方式，不過我們這邊先把資料寫死 [Hard Code](https://zh.wikipedia.org/zh-tw/%E5%AF%AB%E6%AD%BB)：
@@ -210,6 +215,7 @@ namespace ASP.NET_Web_API_v2_Demo.Controllers
 
 
 (10.) 完成後，我們來看看成果吧！
+
 ![Web API v2 成果](http://i.imgur.com/aFMJEJD.png)
 
 
@@ -276,6 +282,7 @@ namespace ASP.NET_Web_API_v2_Demo.Controllers
 
 
 (12.) 完成後我們來看看成果吧！
+
 ![Search 資料](http://i.imgur.com/8GdkAeg.png)
 
 
