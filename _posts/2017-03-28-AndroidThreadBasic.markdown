@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 }
 ```
 
-不過這樣會面臨一個問題，當這個 Activity 結束時，在執行緒的地方上會發生錯誤，原因是因為 __Study 這項工作並沒有結束，我們必須搭配 interrupt，告訴我們的 __Study 該休息了：
+不過這樣會面臨一個問題，當這個 Activity 結束時，在執行緒的地方上會發生錯誤，原因是因為 Study 這項工作並沒有結束，我們必須搭配 interrupt，告訴我們的 Study 該休息了：
 
 ```java
 @Override

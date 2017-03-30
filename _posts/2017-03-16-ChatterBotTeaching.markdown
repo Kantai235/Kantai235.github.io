@@ -91,13 +91,13 @@ chatbot.train("chatterbot.corpus.chinese.conversations")
 
 當然我們能夠載入一些庫，是不是代表說，在 [ChatterBot](https://github.com/gunthercox/ChatterBot) 當中，有某個地方存放著這些庫呢？我們打開 ChatterBot 專案底下的 Corpus -> data 資料夾，我們會發現有幾些檔案夾很熟悉呢！其中有一個檔案夾叫做 chinese，我們打開他後會發現：
 
-- # 基本對話的庫
+- 基本對話的庫
 - conversations.corpus.json
 
-- # 問候語句的庫
+- 問候語句的庫
 - greetings.corpus.json
 
-- # 詳細問題的庫
+- 詳細問題的庫
 - trivia.corpus.json
 
 

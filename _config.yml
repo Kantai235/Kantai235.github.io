@@ -18,10 +18,10 @@ author              : 乾太
 name                : '乾太'
 url                 : https://Kantai235.github.io/
 
-paginate            : 5
+paginate            : 10
 
 # Custom vars
 version             : 0.1.0
-facebook_username   : Zneg.Ya.Fen
+facebook_username   : kantai.zeng
 twitter_username    : banana_huevo
 github_username     : Kantai235
