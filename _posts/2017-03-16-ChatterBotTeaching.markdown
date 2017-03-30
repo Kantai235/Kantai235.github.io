@@ -15,16 +15,16 @@ signature  : true
 
 在官方的 GitHub 當中有一段範例：
 
-> user: Good morning! How are you doing?
-> bot: I am doing very well, thank you for asking.
-> user: You're welcome.
-> bot: Do you like hats?
+- user: Good morning! How are you doing?
+- bot: I am doing very well, thank you for asking.
+- user: You're welcome.
+- bot: Do you like hats?
 
 
 
 又或者說，曾經我有將 [ChatterBot](https://github.com/gunthercox/ChatterBot) 結合到 LineMessageAPI 的範例當中：
 
-![範例](http://imgur.com/ZAllFkw)
+![範例](http://i.imgur.com/ZAllFkw.png)
 
 
 
@@ -91,14 +91,14 @@ chatbot.train("chatterbot.corpus.chinese.conversations")
 
 當然我們能夠載入一些庫，是不是代表說，在 [ChatterBot](https://github.com/gunthercox/ChatterBot) 當中，有某個地方存放著這些庫呢？我們打開 ChatterBot 專案底下的 Corpus -> data 資料夾，我們會發現有幾些檔案夾很熟悉呢！其中有一個檔案夾叫做 chinese，我們打開他後會發現：
 
-> # 基本對話的庫
-> conversations.corpus.json
+- # 基本對話的庫
+- conversations.corpus.json
 
-> # 問候語句的庫
-> greetings.corpus.json
+- # 問候語句的庫
+- greetings.corpus.json
 
-> # 詳細問題的庫
-> trivia.corpus.json
+- # 詳細問題的庫
+- trivia.corpus.json
 
 
 
