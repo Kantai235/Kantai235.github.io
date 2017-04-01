@@ -5,7 +5,13 @@ title: 關於我
 
 <p class="message">
   Howdy ! are you there? It’s me, you best friend.<br />
-  乾太(Kantai)！
+  <br />
+  這裡寫著乾太的一些經歷，或者你也可以把這當成履歷表...<br />
+  <br />
+  台湾人だけど日本語ちょいっとできます！<br />
+  ケモノ大好きなのろのろ絵描き、<br />
+  腐向けな呟き多め、<br />
+  よろしくお願い ₍₍ ◝(･◡･)◟ ⁾⁾ 
 </p>
 
 <div class="container">
@@ -116,116 +122,256 @@ title: 關於我
   </table>
 </div>
 
-
-<div class="container">
-  <h2>拿過的證照</h2>
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>日期</th>
-        <th>證照名稱</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2015.06.10</td>
-        <td>MCSD 70-480 Programming in HTML5 with JavaScript and CSS3</td>
-      </tr>
-      <tr>
-        <td>2015.06.10</td>
-        <td>Microsoft Certified Professional (MCP)</td>
-      </tr>
-      <tr>
-        <td>2015.05.13</td>
-        <td>HP ATA-Connected Devices</td>
-      </tr>
-      <tr>
-        <td>2013.12.03</td>
-        <td>CIW Network Management</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="bs-callout bs-callout-success fade in">
+  <h1>參加過的比賽</h1>
+  <br />
+  <div id="rstab-content" class="tab-content">
+    <div class="tab-pane fade active in" id="activity">
+      <ul class="timeline timeline-icons timeline-sm">
+        <li>
+            <p>
+                第 52 次 ITSA 線上程式設計競賽
+                <p>
+                    > 單人 績優
+                </p>
+                <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
+                <span class="timeline-date">2016-12-14</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                第 51 次 ITSA 線上程式設計競賽
+                <p>
+                    > 單人 績優
+                </p>
+                <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
+                <span class="timeline-date">2016-11-12</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                第 50 次 ITSA 線上程式設計競賽
+                <p>
+                    > 單人 績優
+                </p>
+                <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
+                <span class="timeline-date">2016-10-26</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                全國大專電腦軟體設計競賽
+                <p>
+                    > 程式設計組 初賽
+                </p>
+                <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
+                <span class="timeline-date">2016-10-01</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                資安系列競賽 資安技能金盾獎
+                <p>
+                    > 初賽就被刷掉了
+                </p>
+                <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
+                <span class="timeline-date">2016-10-15</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                崑山科技大學 104 學年度 電腦軟體競賽
+                <p>
+                    > 程式設計組 第一名
+                </p>
+                <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
+                <span class="timeline-date">2016-06-01</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                崑山科技大學 103 學年度 電腦軟體競賽
+                <p>
+                    > 程式設計組 第二名
+                </p>
+                <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
+                <span class="timeline-date">2015-06-02</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                崑山科技大學 103 學年度 資訊管理系 程式設計競賽
+                <p>
+                    > 第三名
+                </p>
+                <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
+                <span class="timeline-date">2015-05-21</span>
+            </p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div class="container">
-  <h2>參加過的研習活動</h2>
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>日期</th>
-        <th>活動名稱</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2015.04.10</td>
-        <td>志工特殊教育訓練</td>
-      </tr>
-      <tr>
-        <td>2015.03.07</td>
-        <td>Dream Power 研習</td>
-      </tr>
-      <tr>
-        <td>2014.11.21</td>
-        <td>志工基礎教育訓練</td>
-      </tr>
-      <tr>
-        <td>2014.11.04</td>
-        <td>3D 列印實務與建模軟體 研習</td>
-      </tr>
-      <tr>
-        <td>2013.11.06</td>
-        <td>深入專案管理與實作 研習</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="bs-callout bs-callout-info fade in">
+  <h1>參加過的研習活動</h1>
+  <br />
+  <div id="rstab-content" class="tab-content">
+    <div class="tab-pane fade active in" id="activity">
+      <ul class="timeline timeline-icons timeline-sm">
+        <li>
+            <p>
+                崑山科技大學 舉辦
+                <p>
+                    志工特殊教育訓練
+                </p>
+                <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                <span class="timeline-date">2015-04-10</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                國立屏東科技大學 舉辦
+                <p>
+                    Dream Power 研習
+                </p>
+                <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                <span class="timeline-date">2015-03-07</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                崑山科技大學 舉辦
+                <p>
+                    志工基礎教育訓練
+                </p>
+                <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                <span class="timeline-date">2014-11-21</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                崑山科技大學 資訊工程系 舉辦
+                <p>
+                    3D 列印實務與建模軟體 研習
+                </p>
+                <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                <span class="timeline-date">2014-11-04</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                崑山科技大學 圖書資訊館 舉辦
+                <p>
+                    深入專案管理與實作 研習
+                </p>
+                <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                <span class="timeline-date">2013-11-06</span>
+            </p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-
-<div class="container">
-  <h2>參加過的比賽</h2>
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>日期</th>
-        <th>比賽名稱</th>
-        <th>名次</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2016.10.26</td>
-        <td>第50次ITSA線上程式設計競賽</td>
-        <td>績優</td>
-      </tr>
-      <tr>
-        <td>2016.10.15</td>
-        <td>資安系列競賽 資安技能金盾獎 </td>
-        <td>初賽就被刷掉了</td>
-      </tr>
-      <tr>
-        <td>2016.06.01</td>
-        <td>崑山科技大學 104 學年度 電腦軟體競賽</td>
-        <td>第一名</td>
-      </tr>
-      <tr>
-        <td>2015.06.02</td>
-        <td>崑山科技大學 103 學年度 電腦軟體競賽</td>
-        <td>第二名</td>
-      </tr>
-      <tr>
-        <td>2015.05.21</td>
-        <td>崑山科技大學 103 學年度 資訊管理系 程式設計競賽</td>
-        <td>第三名</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="bs-callout bs-callout-warning fade in">
+  <h1>拿過的證照</h1>
+  <br />
+  <div id="rstab-content" class="tab-content">
+    <div class="tab-pane fade active in" id="activity">
+      <ul class="timeline timeline-icons timeline-sm">
+        <li>
+            <p>
+                Microsoft Bing Ads
+                <span class="timeline-icon"><i class="fa fa-file-text-o"></i></span>
+                <span class="timeline-date">2016-11-10</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                MCSD 70-480 Programming in HTML5 with JavaScript and CSS3
+                <span class="timeline-icon"><i class="fa fa-file-text-o"></i></span>
+                <span class="timeline-date">2015-06-10</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                Microsoft Certified Professional (MCP)
+                <span class="timeline-icon"><i class="fa fa-file-text-o"></i></span>
+                <span class="timeline-date">2015-06-10</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                HP ATA-Connected Devices
+                <span class="timeline-icon"><i class="fa fa-file-text-o"></i></span>
+                <span class="timeline-date">2015-05-13</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                CIW Network Management
+                <span class="timeline-icon"><i class="fa fa-file-text-o"></i></span>
+                <span class="timeline-date">2013-12-03</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                行政院勞工委員會 電腦軟體應用 乙級
+                <span class="timeline-icon"><i class="fa fa-file-text-o"></i></span>
+                <span class="timeline-date">2013-03-14</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                行政院勞工委員會 會計事務 - 人工記帳 丙級
+                <span class="timeline-icon"><i class="fa fa-file-text-o"></i></span>
+                <span class="timeline-date">2011-12-07</span>
+            </p>
+        </li>
+        <li>
+            <p>
+                行政院勞工委員會 電腦軟體應用 丙級
+                <span class="timeline-icon"><i class="fa fa-file-text-o"></i></span>
+                <span class="timeline-date">2011-07-12</span>
+            </p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-順便補個工作(接案)經驗
-2016.02.01 - 2016.12.31 中央研究院 資訊科技創新研究中心 物聯網智慧家庭兼任行政(協助開發)
-2016.01.01 - 2016.12.31 崑山科技大學 校務研究中心 105教卓 品質保證績效責任(協助開發)
-2016.05.01 - 2016.05.31 崑山科技大學 校務研究中心 105教卓 型塑品德全人教育(產學轉化教材)
-本來以為年底就結束了，但沒想到主任希望：
-2017.01.01 - 2018.12.31 崑山科技大學 提升校園行動應用服務研發及內容設計人才培育計畫 - 兼任行政助理(加上開發)
-我：「讓我吃得飽睡得好，什麼都ＯＫ 」
+<div class="col-lg-12 col-md-12">
+  <div class="panel panel-default plain toggle panelMove panelClose panelRefresh">
+  <div class="panel-heading">
+    <h1 class="panel-title"><i class="fa fa-comments"></i>最後是一些經歷，有點懶得美編了 ...</h1>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group recent-comments">
+      <li class="list-group-item clearfix comment-success">
+        <p class="text-ellipsis"><span class="name strong">崑山科技大學 大數據鑒校務研究中心 提提升校務專業管理能力(協助開發)</span></p>
+        <span class="date text-muted small pull-left">2017.03.01 - ?</span>
+      </li>
+      <li class="list-group-item clearfix comment-success">
+        <p class="text-ellipsis"><span class="name strong">崑山科技大學 校務研究中心 105教卓 品質保證專業管理(大數據分析)</span></p>
+        <span class="date text-muted small pull-left">2017.01.01 - ?</span>
+      </li>
+      <li class="list-group-item clearfix comment-warning">
+        <p class="text-ellipsis"><span class="name strong">崑山科技大學 校務研究中心 105教卓 推動與落實教學卓越計畫業務(協助開發)</span></p>
+        <span class="date text-muted small pull-left">2016.11.01 - 2017.01.31</span>
+      </li>
+      <li class="list-group-item clearfix comment-warning">
+        <p class="text-ellipsis"><span class="name strong">中央研究院 資訊科技創新研究中心 物聯網智慧家庭兼任行政(協助開發)</span></p>
+        <span class="date text-muted small pull-left">2016.02.01 - 2016.12.31</span>
+      </li>
+      <li class="list-group-item clearfix comment-warning">
+        <p class="text-ellipsis"><span class="name strong">崑山科技大學 校務研究中心 105教卓 品質保證績效責任(協助開發)</span></p>
+        <span class="date text-muted small pull-left">2016.01.01 - 2016.12.31</span>
+      </li>
+      <li class="list-group-item clearfix comment-warning">
+        <p class="text-ellipsis"><span class="name strong">崑山科技大學 校務研究中心 105教卓 型塑品德全人教育(產學轉化教材)</span></p>
+        <span class="date text-muted small pull-left">2016.05.01 - 2016.05.31</span>
+      </li>
+    </ul>
+  </div>
+</div>
