@@ -50,36 +50,36 @@ title: 關於我
       <tr>
         <td rowspan="2">資料庫</td>
         <td>SQL Server</td>
-        <td>因為學校的資料庫是使用 MSSQL，所以就順便學了一下。</td>
+        <td>目前資料庫的基礎教材，在學校亦有學習過部分操作方式與實務，但是自己開發的系統大多使用 MySQL，而非使用 SQL Server。</td>
       </tr>
       <tr>
         <td>MySQL</td>
-        <td>自己私底下開發東西愛用的資料庫，因為是免費的，所以選擇他。</td>
+        <td>因為其開源優勢，自己在實務使用上經常使用 MySQL 作為系統資料庫。</td>
       </tr>
       <tr>
         <td rowspan="9">程式語言</td>
         <td>C/C++</td>
-        <td>學起來只是用於追求效率或快速的事情，例如：程式設計競賽</td>
+        <td>作為各大程式語言的基礎，自己有花時間進行進修，且於程式設計競賽時作為主要撰寫語言。</td>
       </tr>
       <tr>
         <td>Python</td>
-        <td>單純只是想對網站爬蟲。</td>
+        <td>為了練習網站爬蟲等技巧，在課外時間學習 Python，並做網站爬蟲的功能練習。</td>
       </tr>
       <tr>
         <td>Android - 原生 Java 開發</td>
-        <td>在大學 1 ~ 2 年級時，因為手上拿的是 Android 手機，所以就想把自己的手機變成自己的形狀。</td>
+        <td>在大學一至二年級時，因為私人手機使用的是 Android 系統，且想研究 Android 的高自由度，因此自行學習了 Android 應用程式的開發方式，歷經了從 Android SDK 9 至 Android SDK 25、從 Eclipse 跳到 Android Studio ... 等等過程。</td>
       </tr>
       <tr>
         <td>iOS - 原生 Swift 開發</td>
-        <td>在大學 3 ~ 4 年級時，因為手上拿的是 iPhone 及 iPad，所以我還是想把自己的手機變成自己的形狀。</td>
+        <td>在大學三至四年級時，因為私人手機使用的是 iPad 及 iPhone，且碰巧筆記型電腦是使用 Macbook，因此順而學習如何在 iOS 作業系統上開發其應用程式，歷經了從 Swift 2.3 至 Swift 3 的過程。</td>
       </tr>
       <tr>
         <td>iOS - 原生 Objective-C 開發</td>
-        <td>雖然不是很喜歡，但 CocoaPods 找不到 Swift 想要的套件時，就會改用 Objective-C 來開發 App。</td>
+        <td>利用 Swift 開發 iOS 應用程式時，如果在 CocoaPods 找不到自己需要的套件時，就會改用 Objective-C 來開發 App。</td>
       </tr>
       <tr>
-        <td>React Navigation</td>
-        <td>被辦公室裡的好同事推坑。</td>
+        <td>React Native</td>
+        <td>自己時常為了同步開發行動平台雙系統，而耗費雙倍的精神投入開發，所以辦公室的好同事推薦去學習 React Native，儘管沒有真正成為行動平台主要開發工具，但還蠻欣賞其大幅節省開發成本的特點。</td>
       </tr>
       <tr>
         <td>ASP.NET MVC Framework</td>
@@ -112,7 +112,7 @@ title: 關於我
       </tr>
       <tr>
         <td>Apache</td>
-        <td>寫 PHP 的應用程式，總是要學學使用它來架站。</td>
+        <td>寫 PHP 的網頁應用程式，總是要學學使用它來架站。</td>
       </tr>
       <tr>
         <td>Nginx</td>
@@ -166,16 +166,6 @@ title: 關於我
                 </p>
                 <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
                 <span class="timeline-date">2016-10-01</span>
-            </p>
-        </li>
-        <li>
-            <p>
-                資安系列競賽 資安技能金盾獎
-                <p>
-                    > 初賽就被刷掉了
-                </p>
-                <span class="timeline-icon"><i class="fa fa-trophy"></i></span>
-                <span class="timeline-date">2016-10-15</span>
             </p>
         </li>
         <li>
@@ -344,7 +334,7 @@ title: 關於我
 <div class="col-lg-12 col-md-12">
   <div class="panel panel-default plain toggle panelMove panelClose panelRefresh">
   <div class="panel-heading">
-    <h1 class="panel-title"><i class="fa fa-comments"></i>最後是一些經歷，有點懶得美編了 ...</h1>
+    <h1 class="panel-title"><i class="fa fa-comments"></i>一些經歷</h1>
   </div>
   <div class="panel-body">
     <ul class="list-group recent-comments">
