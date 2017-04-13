@@ -54,7 +54,6 @@
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/plugins.css">
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/main.css">
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/bootstrap.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}public/css/zoom.css">
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}public/apple-touch-icon-144-precomposed.png">
@@ -64,6 +63,13 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
   <script src="{{ site.baseurl }}public/js/zoom.js" />
+  <script>
+    document.querySelector( '.page-body' ).addEventListener( 'click', function( event ) {
+      event.preventDefault();
+      zoom.to({ element: event.target });
+    } );
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" />
   <!-- Google 廣告 (Kantai GitHub Banner) -->
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <ins class="adsbygoogle"
