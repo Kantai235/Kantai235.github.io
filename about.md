@@ -40,7 +40,7 @@ title: 關於我
                             自己異想天開，覺得用人工的方式在噗浪洗讚、洗分享、收回讚、收回分享、騷擾朋友太麻煩了，於是開發一款給自己用的小幫手來騷擾朋友。
                         </strong>
                     </div>
-                    <img class="center" src="{{ site.baseurl }}public/about_image/plurk_plus_app_demo_image.png" width="100%" alt="作品圖片" />
+                    <img class="center" src="{{ site.baseurl }}public/about_image/plurk_plus_app_demo_image.png" width="100%" alt="作品圖片" data-action="zoom" />
                 </li>
                 <br />
 
@@ -52,7 +52,7 @@ title: 關於我
                             因應行動裝置使用人口逐年上升，行動應用的需求性越來越大，學校也將校務系統從網頁應用同步開發在行動平台上，自己負責的是整個 App 端撰寫、流程定義至 Web API 撰寫。
                         </strong>
                     </div>
-                    <img class="center" src="{{ site.baseurl }}public/about_image/ksu_ir_app_demo_image.png" width="100%" alt="作品圖片" />
+                    <img class="center" src="{{ site.baseurl }}public/about_image/ksu_ir_app_demo_image.png" width="100%" alt="作品圖片" data-action="zoom" />
                 </li>
                 <br />
 
@@ -64,7 +64,7 @@ title: 關於我
                             因應行動支付的興起，學校開發微型支付相關應用(例如:成績單列印費用)，自己負責與一卡通相關金流界接及處理相關開發事宜，但由於系統包含測試資料，因此圖片有關資料的部分，使用高斯模糊進行隱藏。
                         </strong>
                     </div>
-                    <img class="center" src="{{ site.baseurl }}public/about_image/ipass_cps_demo_image.jpg" width="100%" alt="作品圖片" />
+                    <img class="center" src="{{ site.baseurl }}public/about_image/ipass_cps_demo_image.jpg" width="100%" alt="作品圖片" data-action="zoom" />
                 </li>
                 <br />
 
@@ -77,7 +77,7 @@ title: 關於我
                             <a href="https://kantai235.github.io/RocktreeWeb/">=> Github Page 網站連結</a>
                         </strong>
                     </div>
-                    <img class="center" src="{{ site.baseurl }}public/about_image/rocktree_web_demo_image.png" width="100%" alt="作品圖片" />
+                    <img class="center" src="{{ site.baseurl }}public/about_image/rocktree_web_demo_image.png" width="100%" alt="作品圖片" data-action="zoom" />
                 </li>
                 <br />
 
@@ -90,7 +90,7 @@ title: 關於我
                             <a href="https://play.google.com/store/apps/details?id=com.baham.furrypock&hl=zh_TW">=> Google Play 應用程式連結</a>
                         </strong>
                     </div>
-                    <img class="center" src="{{ site.baseurl }}public/about_image/more_furry_demo_image.png" width="100%" alt="作品圖片" />
+                    <img class="center" src="{{ site.baseurl }}public/about_image/more_furry_demo_image.png" width="100%" alt="作品圖片" data-action="zoom" />
                 </li>
                 <br />
 
@@ -102,7 +102,7 @@ title: 關於我
                             大學生專題製作的作品，是一款目標市場以中小企業為主，解決市面上缺乏微型倉儲系統的問題，倉儲模型以 Blender 繪製，利用 Unity3D 製作倉儲系統控制模擬器，使用者及管理者端以 PHP - Zend Framework 作為網頁平台，提供良好的人機介面、擁有跨平台的優勢，並以 MySQL 作為主要資料庫，以 C# 撰寫應用程式負責控制 Unity3D 模擬控制。 <br />
                         </strong>
                     </div>
-                    <img class="center" src="{{ site.baseurl }}public/about_image/as-rs_system_demo_image.png" width="100%" alt="作品圖片" />
+                    <img class="center" src="{{ site.baseurl }}public/about_image/as-rs_system_demo_image.png" width="100%" alt="作品圖片" data-action="zoom" />
                 </li>
                 <br />
 
