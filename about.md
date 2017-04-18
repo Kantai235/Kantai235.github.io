@@ -20,8 +20,8 @@ title: 關於我
                 3. 一些經歷 <br />
                 4. 參加過的研習活動 <br />
                 5. 參加過的比賽 <br />
-                6. 學歷 <br />
-                7. 拿過的證照
+                6. 拿過的證照 <br />
+                7. 學歷
             </p>
         </div>
     </div>
@@ -402,36 +402,6 @@ title: 關於我
     <div class="row">
         <div class="panel panel-default plain toggle panelMove panelClose panelRefresh">
             <div class="panel-heading">
-                <h1 class="panel-title"><i class="fa fa-comments"></i>學歷</h1>
-            </div>
-            <div class="panel-body">
-                <div class="container">
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>起訖日期</th>
-                                <th>學校名稱</th>
-                                <th>科系名稱</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>最高學歷</td>
-                                <td>2014/09 ~ 2017/06</td>
-                                <td>崑山科技大學<br />Kun Shan University</td>
-                                <td>資訊管理系<br />Department of Information Management</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="panel panel-default plain toggle panelMove panelClose panelRefresh">
-            <div class="panel-heading">
                 <h1 class="panel-title"><i class="fa fa-comments"></i>拿過的證照</h1>
             </div>
             <div class="panel-body">
@@ -503,4 +473,46 @@ title: 關於我
         </div>
     </div>
 
+    <div class="row">
+        <div class="panel panel-default plain toggle panelMove panelClose panelRefresh">
+            <div class="panel-heading">
+                <h1 class="panel-title"><i class="fa fa-comments"></i>學歷</h1>
+            </div>
+            <div class="panel-body">
+                <div class="container">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>起訖日期</th>
+                                <th>學校名稱</th>
+                                <th>科系名稱</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>最高學歷</td>
+                                <td>2014/09 ~ 2017/06</td>
+                                <td>崑山科技大學<br />Kun Shan University</td>
+                                <td>資訊管理系<br />Department of Information Management</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<script src="{{ site.baseurl }}public/js/zoom.js"></script>
+<script>
+$(document).ready(function() {
+    document.querySelector('.content').addEventListener('click', function(event) {
+        event.preventDefault();
+        zoom.to({
+            element: event.target
+        });
+    });
+});
+</script>
