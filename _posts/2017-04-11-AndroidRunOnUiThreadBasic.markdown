@@ -1,8 +1,8 @@
 ---
 layout     : post
 title      : "Android 執行緒使用經驗談 - runOnUiThread"
-subtitle   : "單執行緒應用程式，就像單向車道般的常常塞車，但多執行緒的應用程式，就會像高速公路般的順暢流利 ..."
-date       : 2017-04-18 17:30:00
+subtitle   : "在 Android 執行緒的世界當中，我們可以指派工作給員工去執行，例如今天我指派了很多事情給員工 ..."
+date       : 2017-04-11 17:30:00
 author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
 tags       : Android Handler Thread runOnUiThread Basic 執行緒 多執行緒 經驗 教學
 comments   : true
