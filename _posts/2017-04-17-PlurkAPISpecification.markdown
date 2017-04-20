@@ -2,7 +2,7 @@
 layout     : post
 title      : "Plurk API 官方說明文件(不專業翻譯) - 目錄及規範"
 subtitle   : "Plurk 資料被編譯成 JSON 格式，所使用的日期是 UTC，您也可以將 UTC 發佈到 Plurk 伺服器 ..."
-date       : 2017-04-14 12:30:00
+date       : 2017-04-17 12:30:00
 author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
 tags       : Plurk API PlurkAPI OAuth 官方 說明 文件 官方說明文件 翻譯 註解
 comments   : true

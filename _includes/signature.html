@@ -7,12 +7,33 @@
 
 <script src="{{ site.baseurl }}public/js/zoom.js"></script>
 <script>
-  $(document).ready(function() {
-    document.querySelector('.content').addEventListener('click', function(event) {
-        event.preventDefault();
-        zoom.to({
-            element: event.target
-        });
-    });
-  });
+  // 內容當中，所有物件皆可開啟 zoom.js 功能
+  // $(document).ready(function() {
+  //   document.querySelector('.content').addEventListener('click', function(event) {
+  //       event.preventDefault();
+  //       zoom.to({
+  //           element: event.target
+  //       });
+  //   });
+  // });
+
+  // 內容當中，凡是圖片，皆開啟 zoom.js 功能
+  $('.content img').click(
+    function(event) {
+      event.preventDefault();
+      zoom.to({
+        element: event.target
+      });
+    }
+  );
+
+  // 內容當中，凡是程式碼演示，皆開啟 zoom.js 功能
+  $('.content pre').click(
+    function(event) {
+      event.preventDefault();
+      zoom.to({
+        element: event.target
+      });
+    }
+  );
 </script>
