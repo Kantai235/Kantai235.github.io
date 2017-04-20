@@ -18,30 +18,32 @@ signature  : true
 
 # Plurk API 2.0
 
-[Plurk API 2.0](https://www.plurk.com/API#toc) 遵循 [OAuth 1.0a](https://oauth.net/core/1.0a/) 開放標準來保護使用者的隱私，它提供了在 [Plurk](https://www.plurk.com) 平台之上訪問和使用應用程式的標準方式，應用程式可以訪問使用者的河道、代替使用者發表噗文，而不用保留使用者的密碼，鼓勵所有希望訪問使用者資訊的應用程式盡快遷移到 [Plurk API 2.0](https://www.plurk.com/API#toc) [OAuth](https://zh.wikipedia.org/wiki/OAuth)。
+[Plurk API 2.0](https://www.plurk.com/API#toc) 是遵循 [OAuth 1.0a](https://oauth.net/core/1.0a/) 開放標準來保護使用者的隱私安全，它提供應用程式在 [Plurk](https://www.plurk.com) 平台上訪問和簽證等等的標準方式，應用程式可以讀取使用者的河道、發表噗文，並且基於使用者的利益，不會保留使用者的密碼，所以鼓勵所有希望訪問使用者資訊的應用程式盡快轉移到 [Plurk API 2.0](https://www.plurk.com/API#toc) [OAuth](https://zh.wikipedia.org/wiki/OAuth)。
+
+> 附註說明：[OAuth（開放授權）是一個開放標準，允許用戶讓第三方應用存取該用戶在某一網站上儲存的私密的資源（如相片，影片，聯絡人列表），而無需將使用者名稱和密碼提供給第三方應用。](https://zh.wikipedia.org/wiki/OAuth)
 
 [立即註冊](https://www.plurk.com/PlurkApp/register)自己的 Plurk 應用程式！或者在[這裡](https://www.plurk.com/PlurkApp/)管理您創建的 Plurk 應用程式。
 
 [Plurk API 2.0](https://www.plurk.com/API#toc) 與我們原先基於 [session-based](http://fred-zone.blogspot.tw/2014/01/web-session.html) [Plurk API 1.0](https://www.plurk.com/API/1.0/) 之間的差異：
 
-1. [Plurk API 2.0](https://www.plurk.com/API#toc) 是無狀態的(不需要登錄使用者帳號)，而原先 [Plurk API 1.0](https://www.plurk.com/API/1.0/) 是基於 [session-based](http://fred-zone.blogspot.tw/2014/01/web-session.html) 的。
+1. [Plurk API 2.0](https://www.plurk.com/API#toc) 是無狀態的(不需要登入使用者帳號)，而原先 [Plurk API 1.0](https://www.plurk.com/API/1.0/) 是基於 [session-based](http://fred-zone.blogspot.tw/2014/01/web-session.html) 的。
 2. [Plurk API 2.0](https://www.plurk.com/API#toc) URL 前綴，帶有 https://www.plurk.com/APP/ ，而不是原先的 https://www.plurk.com/API/ 。
-3. [Plurk API 2.0](https://www.plurk.com/API#toc) 的請求必須遵循 [OAuth Core 1.0a](https://oauth.net/core/1.0a/) 標準規範進行簽章。
-4. 輸出與輸出的參數與原先 [Plurk API 1.0](https://www.plurk.com/API/1.0/) 相同，但 [Plurk API 2.0](https://www.plurk.com/API#toc) 不需要 api_key。
+3. [Plurk API 2.0](https://www.plurk.com/API#toc) 的請求必須遵循 [OAuth Core 1.0a](https://oauth.net/core/1.0a/) 標準規範來進行簽章。
+4. 輸出與輸出的參數與原先 [Plurk API 1.0](https://www.plurk.com/API/1.0/) 相同，但 [Plurk API 2.0](https://www.plurk.com/API#toc) 不需要「api_key」。
 
-在使用 API 之前，[Plurk API 2.0](https://www.plurk.com/API#toc) 應用程式必須遵循 [OAuth](https://zh.wikipedia.org/wiki/OAuth) 開放標準來獲得使用者的 Token。大多數的 API 使用 Three-Legged OAuth，它需要透過使用者金鑰/密鑰和 Token 金鑰/密鑰來簽證請求。然而有一些 API 還支持 Two-Legged OAuth，該請求可以使用應用程式金鑰/密鑰進行簽證。
+在使用 API 之前，[Plurk API 2.0](https://www.plurk.com/API#toc) 應用程式必須遵循 [OAuth](https://zh.wikipedia.org/wiki/OAuth) 的開放標準來獲得使用者的 Token。大多數的 API 使用 Three-Legged OAuth，它需要透過使用者金鑰/密鑰和 Token 金鑰/密鑰來簽證請求。然而有一些 API 還支持 Two-Legged OAuth，該請求可以使用應用程式金鑰/密鑰進行簽證。
 
-***＊附註說明：Three-Legged OAuth，意指用戶授權過程當中涉及三種角色，分別為 應用程式(Application)、服務提供者(Service Provider)、使用者(User)＊***
-![Three-Legged OAuth](http://puu.sh/2pJ4y.png)
+> 附註說明：Three-Legged OAuth，意指用戶授權過程當中涉及三種角色，分別為 應用程式(Application)、服務提供者(Service Provider)、使用者(User)
+> ![Three-Legged OAuth](http://puu.sh/2pJ4y.png)
 
-***＊附註說明：Two-Legged OAuth，則是授權過程只涉及兩種角色，分別為 應用程式(Application)、服務提供者(Service Provider)＊***
-![Two-Legged OAuth](http://puu.sh/2peUI.png)
+> 附註說明：Two-Legged OAuth，則是授權過程只涉及兩種角色，分別為 應用程式(Application)、服務提供者(Service Provider)
+> ![Two-Legged OAuth](http://puu.sh/2peUI.png)
 
-如果您是機器人開發人員或單獨只是給自己玩的使用者，則可以使用我們的[測試控制台](https://www.plurk.com/OAuth/test)獲取您自己的永久 Token，您不需要撰寫程式碼來獲取請求。
+如果您是機器人的開發人員或單獨只是給自己玩的使用者，則可以使用我們的 [測試控制台](https://www.plurk.com/OAuth/test) 獲取您自己的永久 Token，您不需要撰寫程式碼來獲取 Token。
 
-[Plurk API 2.0](https://www.plurk.com/API#toc) 的資料返回是 [JSON](http://www.json.org) 文字格式。所以您應該使用 [JSON](http://www.json.org) 套件來解碼返回的資料。
+[Plurk API 2.0](https://www.plurk.com/API#toc) 的資料返回是 [JSON](http://www.json.org) 文字格式，所以您應該使用 [JSON](http://www.json.org) 套件來解碼返回的資料。
 
-# Useful resources 相關資源
+# 相關資源
 
 ### 工具：
 
@@ -100,14 +102,14 @@ https://www.plurk.com/OAuth/authorize?oauth_token=ReqKMrVIjOLI&deviceid=efa9183a
 
 "deviceid" 的最大長度為 32 個字符，默認值為空("")，您應該使用唯一的 ID (例如 UUID)來識別使用者的裝置，例如："ab21862c272bbd703ef9d5b35458b78d"，該 model 名稱或 "deviceid" 將顯示在使用者的 [我授權的 Plurk 應用服務](https://www.plurk.com/APP) 頁面中，使用有意義的裝置名稱可以幫助使用者輕鬆識別他的授權裝置。
 
-***＊附註說明：[通用唯一識別碼（英語：Universally Unique Identifier，簡稱 UUID](https://zh.wikipedia.org/wiki/通用唯一识别码)＊***
+> 附註說明：[通用唯一識別碼(英語：Universally Unique Identifier，簡稱 UUID)](https://zh.wikipedia.org/wiki/通用唯一识别码)
 
 ![我授權的 Plurk 應用服務 Demo](https://images.plurk.com/4c31662a172aad703ef9d5535458b77f.jpg)
 
 # Plurk OAuth 規範
 
 + 簽證方法是遵循 HMAC-SHA1。([?](https://oauth.net/core/1.0a/#anchor15))
-+ 應在 HTTP 授權標頭當中傳遞 OAuth 參數。([?](https://oauth.net/core/1.0a/#anchor15))
++ 請在 HTTP 授權標頭當中傳遞 OAuth 參數。([?](https://oauth.net/core/1.0a/#anchor15))
 + 對於每個 [ 時間戳記 + 隨機值 ] 的請求，都應該是唯一的，而時間戳記應該是非常接近當前時間。([?](https://oauth.net/core/1.0a/#anchor15))
 + 在請求臨時 Token 之後，使用者必須在 30 分鐘內授權請求，Plurk App 必須在 60 分鐘以內獲得永久 Token。
 + 可以傳遞 [Plurk API 2.0](https://www.plurk.com/API#toc) 參數：GET (類似於 [Plurk API 1.0](https://www.plurk.com/API/1.0/)) 或 POST (推薦)。
