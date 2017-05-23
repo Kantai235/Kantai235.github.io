@@ -9,6 +9,10 @@ comments   : true
 signature  : true
 ---
 
+# 序言
+
+這是一份採用 [Jekyll](http://jekyllrb.com) 為基底，使用 [Hyde](https://github.com/poole/hyde) 作為樣板的部落格，詳細可以去參考來源地，而以下內容是我在維護這份部落格時，所撰寫給自己的常用筆記。
+
 最近利用 [GitHub](https://github.com) 架設了一個靜態 Blog，感覺還挺酷炫的！你只需要有一個 [GitHub](https://github.com) 的帳號就可以了，其優點是免營運成本、無流量限制、無廣告，而且你可以客製自己的版型及功能，所以就把整個過程給記錄下來，分享給大家。
 
 不過在這之前，你的電腦必須已經擁有 [Ruby](https://www.ruby-lang.org/zh_tw/) 這項軟體，以及 [RubyGems](https://rubygems.org) 這項 [Ruby](https://www.ruby-lang.org/zh_tw/) 套件管理的工具，如果沒有的話，就到他們的官方網站安裝一下吧！
@@ -42,3 +46,16 @@ signature  : true
 當你整個部落格都撰寫完畢後，只需要把你的部落格 Push 到 GitHub 上就可以囉！
 
 -- 這大概是一個東抄抄西抄抄沒營養的廢文吧 Orz --
+
+### 基本語法
+
+```sh
+# 在 Command Line 透過 Jekyll 建置部落格
+$ jekyll build
+
+# 在 Command Line 透過 Jekyll 來架 Local server
+$ jekyll serve
+
+# 存在 ~/_posts/ 的文章 (*.md) 命名格式
+# 年-月-日-文章標題.md
+```

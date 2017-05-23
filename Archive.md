@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 檔案總管
+title: 發文歷程
 ---
 <ul class="archive">
   {% for post in site.posts %}
@@ -19,5 +19,6 @@ title: 檔案總管
         <div class="month">{{ post.date | date:"%b" }}</div>
         <div class="archive-post-title"><a href="{{ post.url }}">{{ post.title }}</a></div>
     </li>
+
   {% endfor %}
 </ul>
