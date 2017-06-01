@@ -2,38 +2,36 @@
 layout: default
 ---
 
+<!-- foobar banner -->
+<ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-client="ca-pub-3028179090690423" data-ad-slot="9116650392"></ins>
 <div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
-  {{ content }}
-  <div class="post-tag">
-    <span class="fa-stack fa-sm">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <span class="post-date">{{ page.date | date_to_string }}</span> {{ content }}
+    <div class="post-tag">
+        <span class="fa-stack fa-sm">
       <i class="fa fa-tags fa-stack-1x"></i>
-    </span>
-    : {% for tag in page.tags %} <a class="tag-wrapper" href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="tags">{{ tag }}</span></a>  {% if forloop.last != true %} {% endif %} {% endfor %}
-  </div>
-  <div class="fb-like social-plugins" data-layout="button" data-action="like" data-share="true"></div>
+    </span> : {% for tag in page.tags %} <a class="tag-wrapper" href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="tags">{{ tag }}</span></a> {% if forloop.last != true %} {% endif %} {% endfor %}
+    </div>
+    <div class="fb-like social-plugins" data-layout="button" data-action="like" data-share="true"></div>
 </div>
 
-{% if page.signature %}
-{% include signature.html %}
-{% endif %}
+{% if page.signature %} {% include signature.html %} {% endif %}
 
-<!-- Google AdSense 廣告-->
 {% include adsense.html %}
+{% include facebookAds.html %}
 
 <div class="related">
-  <h2>相關文章</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
+    <h2>相關文章</h2>
+    <ul class="related-posts">
+        {% for post in site.related_posts limit:3 %}
+        <li>
+            <h3>
+                <a href="{{ post.url }}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
+            </h3>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
