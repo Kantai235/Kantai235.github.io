@@ -16,7 +16,7 @@ signature  : true
 
 上網找了一下手機顯示帳單的範例圖後，找到下面這張圖，所以決定以這為版型，來做一個吧！
 
-![手機帳單版型](http://i.imgur.com/oiBTcbc.png)
+![手機帳單版型](https://i.imgur.com/oiBTcbc.png)
 
 # 步驟一、不需要 ActionBar
 
@@ -72,7 +72,7 @@ compile 'com.beardedhen:androidbootstrap:2.3.1'
 
 整個規劃完了以後，畫面大概會像是這樣：
 
-![手機畫面](http://i.imgur.com/YK6VBM4.png)
+![手機畫面](https://i.imgur.com/YK6VBM4.png)
 
 # 步驟四、產生繳費條碼
 
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
 
 成果畫面如下：
 
-![成果畫面](http://i.imgur.com/WQqRkhU.png)
+![成果畫面](https://i.imgur.com/WQqRkhU.png)
 
 # 步驟五、動態調整亮度
 

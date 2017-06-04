@@ -246,7 +246,7 @@ end
 
 執行完了以後，我們稍微設計一下畫面，在畫面中我們只需要一個 Button：
 
-![storybora](http://i.imgur.com/yWwwcrE.png)
+![storybora](https://i.imgur.com/yWwwcrE.png)
 
 
 

@@ -29,31 +29,31 @@ signature  : true
 
 嗯，看得好像有點懂，但事實上卻霧煞煞，沒關係，我們直接實際操作吧！我們先假設大家已經有 Line 帳號了，接下來我們要來申請 Line Business 帳號，流程非常簡單，[點我](https://business.line.me/zh-hant/companies/1345353/services/bot)，然後選擇「開始使用 Messaging API」。
 
-![圖](http://i.imgur.com/jdWTgYF.png)
+![圖](https://i.imgur.com/jdWTgYF.png)
 
 
 
 然後填完一些機器人的基本資料，你可以給他黑人滿臉問號的大頭貼，或者把他名字取名為黑人滿臉問號，都可以。
 
-![圖](http://i.imgur.com/z4sfSJz.png)
+![圖](https://i.imgur.com/z4sfSJz.png)
 
 
 
 老樣子，我一樣會把我的 BOT 叫做「加摩爾」，確認完資料後就按申請吧。
 
-![圖](http://i.imgur.com/xTU6siX.png)
+![圖](https://i.imgur.com/xTU6siX.png)
 
 
 
 完成後，如果我們接下來要進入「前往 LINE@MANAGER」。
 
-![圖](http://i.imgur.com/RDAhZ7h.png)
+![圖](https://i.imgur.com/RDAhZ7h.png)
 
 
 
 接下來我們要啟用 BOT API。
 
-![圖](http://i.imgur.com/6ciFVZd.png)
+![圖](https://i.imgur.com/6ciFVZd.png)
 
 
 
@@ -61,7 +61,7 @@ signature  : true
 
 啟用完之後，在「Bot設定 -> 狀態」有個「LINE Developers」，點進去，我們要設定我們的伺服器。
 
-![圖](http://i.imgur.com/oEekIdU.png)
+![圖](https://i.imgur.com/oEekIdU.png)
 
 
 
@@ -73,7 +73,7 @@ signature  : true
 
 首先，「[Google App Engine](https://cloud.google.com/appengine/)」<- 開啟它吧！
 
-![圖](http://i.imgur.com/sftGPjr.png)
+![圖](https://i.imgur.com/sftGPjr.png)
 
 
 
@@ -219,9 +219,9 @@ gcloud app deploy app.yaml --project '你的專案名稱'
 
 成果：
 
-![圖](http://i.imgur.com/1oDqmC8.png)
+![圖](https://i.imgur.com/1oDqmC8.png)
 
-![圖](http://i.imgur.com/59H17V8.png)
+![圖](https://i.imgur.com/59H17V8.png)
 
 
 
