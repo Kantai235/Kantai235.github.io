@@ -117,33 +117,7 @@ context.arc(x, y, r, sAngle, eAngle, counterclockwise);
 <br />
 <button onclick="canvasGameStart_canvas_2()">開始遊戲</button>
 <script>
-function canvasGameStart_canvas_2() {
-    var canvas = document.getElementById("canvas_2");
-    var ctx = canvas.getContext("2d");
-
-    var ballPositionX = canvas.width  / 2;
-    var ballPositionY = canvas.height / 2;
-    
-    var ballMoveX = 2;
-    var ballMoveY = 2;
-
-    function drawBall() {
-        ctx.beginPath();
-        ctx.arc(ballPositionX, ballPositionY, 10, 0, Math.PI * 2);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawBall();
-        ballPositionX += ballMoveX; 
-        ballPositionY += ballMoveY;
-    }
-
-    setInterval(draw, 10);
-}
+function canvasGameStart_canvas_2(){var b=document.getElementById("canvas_2"),a=b.getContext("2d"),c=b.width/2,d=b.height/2;setInterval(function(){a.clearRect(0,0,b.width,b.height);a.beginPath();a.arc(c,d,10,0,2*Math.PI);a.fillStyle="#0095DD";a.fill();a.closePath();c+=2;d+=2},10)};
 </script>
 
 然後那顆球就這麼的直直掉下去了，這並不是我們想要的！我們希望他碰到牆壁的時候，能夠反彈，如果更白話一點來講的話，如果球體碰到畫框的邊界，就讓球體以反方向彈回去，那麼我們會修改到 JavaScript 的一些 function：
@@ -183,43 +157,7 @@ function canvasGameStart_canvas_2() {
 <br />
 <button onclick="canvasGameStart_canvas_3()">開始遊戲</button>
 <script>
-function canvasGameStart_canvas_3() {
-    var canvas = document.getElementById("canvas_3");
-    var ctx = canvas.getContext("2d");
-
-    var ballPositionX = canvas.width  / 2;
-    var ballPositionY = canvas.height / 2;
-    
-    var ballRadius = 10;
-    var ballMoveX = 2;
-    var ballMoveY = 2;
-
-    function drawBall() {
-        ctx.beginPath();
-        ctx.arc(ballPositionX, ballPositionY, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawBall();
-
-        var ballNextPositionX = ballPositionX + ballMoveX;
-        if(ballNextPositionX > canvas.width-ballRadius || ballNextPositionX < ballRadius)
-            ballMoveX *= -1;
-
-        var ballNextPositionY = ballPositionY + ballMoveY;
-        if(ballNextPositionY > canvas.height-ballRadius || ballNextPositionY < ballRadius)
-            ballMoveY *= -1;
-
-        ballPositionX += ballMoveX; 
-        ballPositionY += ballMoveY;
-    }
-
-    setInterval(draw, 10);
-}
+function canvasGameStart_canvas_3(){var a=document.getElementById("canvas_3"),b=a.getContext("2d"),d=a.width/2,e=a.height/2,f=2,g=2;setInterval(function(){b.clearRect(0,0,a.width,a.height);b.beginPath();b.arc(d,e,10,0,2*Math.PI);b.fillStyle="#0095DD";b.fill();b.closePath();var c=d+f;if(c>a.width-10||10>c)f*=-1;c=e+g;if(c>a.height-10||10>c)g*=-1;d+=f;e+=g},10)};
 </script>
 
 接下來我們要來繪製出給使用者操縱的板子，並且放置於底部：
@@ -311,89 +249,8 @@ function canvasGameStart_canvas_3() {
 <br />
 <button onclick="canvasGameStart_canvas_4()">開始遊戲</button>
 <script>
-function canvasGameStart_canvas_4() {
-    var canvas = document.getElementById("canvas_4");
-    var ctx = canvas.getContext("2d");
-
-    var ballPositionX = canvas.width  / 2;
-    var ballPositionY = canvas.height / 2;
-    
-    var ballRadius = 10;
-    var ballMoveX = 2;
-    var ballMoveY = 2;
-    var paddleHeight = 10;
-    var paddleWidth = 75;
-    var paddleX = (canvas.width-paddleWidth)/2;
-    var rightPressed = false;
-    var leftPressed = false;
-
-    document.addEventListener("keydown", keyDownHandler, false);
-    document.addEventListener("keyup", keyUpHandler, false);
-
-    function keyDownHandler(e) {
-        switch(e.keyCode) {
-            case 39:
-                rightPressed = true;
-                break;
-            case 37:
-                leftPressed = true;
-                break;
-        }
-    }
-
-    function keyUpHandler(e) {
-        switch(e.keyCode) {
-            case 39:
-                rightPressed = false;
-                break;
-            case 37:
-                leftPressed = false;
-                break;
-        }
-    }
-
-    function drawBall() {
-        ctx.beginPath();
-        ctx.arc(ballPositionX, ballPositionY, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    function drawPaddle() {
-        ctx.beginPath();
-        ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        drawBall();
-        drawPaddle();
-
-        if(rightPressed && paddleX < canvas.width-paddleWidth)
-            paddleX += 7;
-
-        if(leftPressed && paddleX > 0)   
-            paddleX -= 7;
-        
-        var ballNextPositionX = ballPositionX + ballMoveX;
-        if(ballNextPositionX > canvas.width-ballRadius || ballNextPositionX < ballRadius)
-            ballMoveX *= -1;
-
-        var ballNextPositionY = ballPositionY + ballMoveY;
-        if(ballNextPositionY > canvas.height-ballRadius || ballNextPositionY < ballRadius)
-            ballMoveY *= -1;
-
-        ballPositionX += ballMoveX; 
-        ballPositionY += ballMoveY;
-    }
-
-    setInterval(draw, 10);
-}
+function canvasGameStart_canvas_4(){var b=document.getElementById("canvas_4"),a=b.getContext("2d"),e=b.width/2,f=b.height/2,g=2,h=2,c=(b.width-75)/2,k=!1,l=!1;document.addEventListener("keydown",function(a){switch(a.keyCode){case 39:k=!0;break;case 37:l=!0}},!1);document.addEventListener("keyup",function(a){switch(a.keyCode){case 39:k=!1;break;case 37:l=!1}},!1);setInterval(function(){a.clearRect(0,0,b.width,b.height);a.beginPath();a.arc(e,f,10,0,2*Math.PI);a.fillStyle="#0095DD";a.fill();a.closePath();
+a.beginPath();a.rect(c,b.height-10,75,10);a.fillStyle="#0095DD";a.fill();a.closePath();k&&c<b.width-75&&(c+=7);l&&0<c&&(c-=7);var d=e+g;if(d>b.width-10||10>d)g*=-1;d=f+h;if(d>b.height-10||10>d)h*=-1;e+=g;f+=h},10)};
 </script>
 
 到目前為止都還蠻正常的，但還是有些許小缺點，我們接下來希望球體碰到底下時，代表我們的板子並沒有接到球體，遊戲必須重新開始，而球體碰到我們的板子時，才執行反彈球體的動作，所以我們必須修改 `draw()` 的一些寫法：
@@ -441,92 +298,8 @@ function canvasGameStart_canvas_4() {
 <br />
 <button onclick="canvasGameStart_canvas_5()">開始遊戲</button>
 <script>
-function canvasGameStart_canvas_5() {
-    var canvas = document.getElementById("canvas_5");
-    var ctx = canvas.getContext("2d");
-
-    var ballPositionX = canvas.width  / 2;
-    var ballPositionY = canvas.height / 2;
-    
-    var ballRadius = 10;
-    var ballMoveX = 2;
-    var ballMoveY = 2;
-    var paddleHeight = 10;
-    var paddleWidth = 75;
-    var paddleX = (canvas.width-paddleWidth)/2;
-    var rightPressed = false;
-    var leftPressed = false;
-
-    document.addEventListener("keydown", keyDownHandler, false);
-    document.addEventListener("keyup", keyUpHandler, false);
-
-    function keyDownHandler(e) {
-        switch(e.keyCode) {
-            case 39:
-                rightPressed = true;
-                break;
-            case 37:
-                leftPressed = true;
-                break;
-        }
-    }
-
-    function keyUpHandler(e) {
-        switch(e.keyCode) {
-            case 39:
-                rightPressed = false;
-                break;
-            case 37:
-                leftPressed = false;
-                break;
-        }
-    }
-
-    function drawBall() {
-        ctx.beginPath();
-        ctx.arc(ballPositionX, ballPositionY, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    function drawPaddle() {
-        ctx.beginPath();
-        ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        drawBall();
-        drawPaddle();
-
-        if(rightPressed && paddleX < canvas.width-paddleWidth)
-            paddleX += 7;
-
-        if(leftPressed && paddleX > 0)   
-            paddleX -= 7;
-        
-        var ballNextPositionX = ballPositionX + ballMoveX;
-        if(ballNextPositionX > canvas.width-ballRadius || ballNextPositionX < ballRadius)
-            ballMoveX *= -1;
-
-        var ballNextPositionY = ballPositionY + ballMoveY;
-        if(ballNextPositionY < ballRadius)
-            ballMoveY *= -1;
-        if(ballNextPositionY > canvas.height-ballRadius)
-            if(ballPositionX > paddleX && ballPositionX < paddleX + paddleWidth)
-                ballMoveY *= -1; 
-
-        ballPositionX += ballMoveX; 
-        ballPositionY += ballMoveY;
-    }
-
-    setInterval(draw, 10);
-}
+function canvasGameStart_canvas_5(){var b=document.getElementById("canvas_5"),a=b.getContext("2d"),d=b.width/2,g=b.height/2,h=2,f=2,c=(b.width-75)/2,k=!1,l=!1;document.addEventListener("keydown",function(a){switch(a.keyCode){case 39:k=!0;break;case 37:l=!0}},!1);document.addEventListener("keyup",function(a){switch(a.keyCode){case 39:k=!1;break;case 37:l=!1}},!1);setInterval(function(){a.clearRect(0,0,b.width,b.height);a.beginPath();a.arc(d,g,10,0,2*Math.PI);a.fillStyle="#0095DD";a.fill();a.closePath();
+a.beginPath();a.rect(c,b.height-10,75,10);a.fillStyle="#0095DD";a.fill();a.closePath();k&&c<b.width-75&&(c+=7);l&&0<c&&(c-=7);var e=d+h;if(e>b.width-10||10>e)h*=-1;e=g+f;10>e&&(f*=-1);e>b.height-10&&d>c&&d<c+75&&(f*=-1);d+=h;g+=f},10)};
 </script>
 
 是的！球體如果沒有碰到我們的板子，那球體將會直直的掉下去了，球體如果碰到我們的板子，那球體將會反彈，基本物件都做好了，那我們接下來必須開始做我們的磚塊了！
@@ -642,46 +415,35 @@ function canvasGameStart_canvas_6() {
             }
     }
 
-
-    // 板子的高度及寬度
     var paddleHeight = 10;
     var paddleWidth = 75;
     
-    // 將板子放置在底部中間
     var paddleX = (canvas.width-paddleWidth)/2;
     
-    // 紀錄左右鍵是否被按下了
     var rightPressed = false;
     var leftPressed = false;
 
-    // 如果
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
 
-    // 某一鍵被按下了
     function keyDownHandler(e) {
         switch(e.keyCode) {
-            // 右鍵碼
             case 39:
                 rightPressed = true;
                 break;
             
-            // 左鍵碼
             case 37:
                 leftPressed = true;
                 break;
         }
     }
 
-    // 某一鍵放掉了
     function keyUpHandler(e) {
         switch(e.keyCode) {
-            // 右鍵碼
             case 39:
                 rightPressed = false;
                 break;
             
-            // 左鍵碼
             case 37:
                 leftPressed = false;
                 break;
@@ -696,17 +458,11 @@ function canvasGameStart_canvas_6() {
         ctx.closePath();
     }
 
-    // 繪製板子
     function drawPaddle() {
-        // 開始繪製
         ctx.beginPath();
-        // 繪製矩形 rect(左上方X座標, 左上方Y座標, 矩形寬度, 矩形高度)
         ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-        // 繪製顏色、漸變或模式
         ctx.fillStyle = "#0095DD";
-        // 填充當前的圖案
         ctx.fill();
-        // 結束繪製
         ctx.closePath();
     }
 
@@ -717,26 +473,20 @@ function canvasGameStart_canvas_6() {
         drawPaddle();
         drawBricks();
 
-        if(rightPressed && paddleX < canvas.width-paddleWidth) // 向右且沒超出右界
-            paddleX += 7; // 球拍偏移量
-        else if(leftPressed && paddleX > 0)   // 向左且沒超出右界
+        if(rightPressed && paddleX < canvas.width-paddleWidth)
+            paddleX += 7;
+        else if(leftPressed && paddleX > 0)
             paddleX -= 7;
         
         var ballNextPositionX = ballPositionX + ballMoveX;
         if(ballNextPositionX > canvas.width-ballRadius || ballNextPositionX < ballRadius)
             ballMoveX *= -1;
 
-        // 球體下一次 Y 軸的位置
         var ballNextPositionY = ballPositionY + ballMoveY;
-        // 檢查球體 Y 軸位置有沒有碰到頂端
         if(ballNextPositionY < ballRadius)
-            // 反轉移動方向
             ballMoveY *= -1;
-        // 檢查球體 Y 軸有沒有碰到底端
         if(ballNextPositionY > canvas.height-ballRadius)
-            // 再次檢查球體 Y 軸有沒有碰到球拍
             if(ballPositionX > paddleX && ballPositionX < paddleX + paddleWidth)
-                // 反轉移動方向
                 ballMoveY *= -1; 
 
         ballPositionX += ballMoveX; 
@@ -751,7 +501,7 @@ function canvasGameStart_canvas_6() {
 
 
 
-參考資料
-[網頁2D遊戲開發-以打磚塊遊戲為例](http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=3745)
-[W3school 在線教程](http://www.w3school.com.cn/index.html)
-[Mozilla Developer Network](https://developer.mozilla.org/zh-TW/)
+# 參考資料
++ [網頁2D遊戲開發-以打磚塊遊戲為例](http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=3745)
++ [W3school 在線教程](http://www.w3school.com.cn/index.html)
++ [Mozilla Developer Network](https://developer.mozilla.org/zh-TW/)
