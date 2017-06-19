@@ -16,7 +16,7 @@ signature  : true
 
 面白い(有趣)！我們就來玩玩看吧，於是找到了 reCAPTCHA 的官方文件：
 
-[SafetyNet reCAPTCHA API | Android Developers](https://developer.android.com/training/safetynet/recaptcha.html#tos)
+[SafetyNet reCAPTCHA API Android Developers](https://developer.android.com/training/safetynet/recaptcha.html#tos)
 
 【！注意！】在開始以前，這邊有個小地方需要注意，為了能夠正常使用這個 API，你的應用程式必須在 `AndroidManifest.xml` 文件中將 `minSdkVersion` 設置為 `14` 或 `更高`。
 
