@@ -558,128 +558,106 @@ function canvasGameStart_canvas_5() {
 <button onclick="canvasGameStart_canvas_6()">開始遊戲</button>
 <script>
 function canvasGameStart_canvas_6() {
-    var canvas = document.getElementById("canvas_6");
-    var ctx = canvas.getContext("2d");
-
-    var ballPositionX = canvas.width  / 2;
-    var ballPositionY = canvas.height / 2;
-    
-    var ballRadius = 10;
-    var ballMoveX = 2;
-    var ballMoveY = 2;
-
-    var brickRowCount = 3;
-    var brickColumnCount = 5;
-    var brickWidth = 75;
-    var brickHeight = 20;
-    var brickPadding = 10;
-    var brickOffsetTop = 30;
-    var brickOffsetLeft = 30;
-
-    var bricks = [];
-
-    for(column = 0; column < brickColumnCount; column++) {
-        bricks[column] = [];
-        for(row = 0; row < brickRowCount; row++)
-            bricks[column][row] = { x: 0, y: 0};
+    var canvas_6 = document.getElementById("canvas_6");
+    var ctx_6 = canvas_6.getContext("2d");
+    var ballPositionX_6 = canvas_6.width  / 2;
+    var ballPositionY_6 = canvas_6.height / 2;
+    var ballRadius_6 = 10;
+    var ballMoveX_6 = 2;
+    var ballMoveY_6 = 2;
+    var brickRowCount_6 = 3;
+    var brickColumnCount_6 = 5;
+    var brickWidth_6 = 75;
+    var brickHeight_6 = 20;
+    var brickPadding_6 = 10;
+    var brickOffsetTop_6 = 30;
+    var brickOffsetLeft_6 = 30;
+    var bricks_6 = [];
+    for(column_6 = 0; column_6 < brickColumnCount_6; column_6++) {
+        bricks_6[column_6] = [];
+        for(row_6 = 0; row_6 < brickRowCount_6; row_6++)
+            bricks_6[column_6][row_6] = { x_6: 0, y_6: 0};
     }
-
-    function drawBricks() {
-        for(column = 0; column < brickColumnCount; column++)
-            for(row = 0; row < brickRowCount; row++) {
-                var brickX = (column * (brickWidth + brickPadding)) + brickOffsetLeft;
-                var brickY = (row * (brickHeight + brickPadding)) + brickOffsetTop;
-                bricks[column][row].x = brickX;
-                bricks[column][row].y = brickY;
-                ctx.beginPath();
-                ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                ctx.fillStyle = "#0095DD";
-                ctx.fill();
-                ctx.closePath();
+    function drawBricks_6() {
+        for(column_6 = 0; column_6 < brickColumnCount_6; column_6++)
+            for(row_6 = 0; row_6 < brickRowCount_6; row_6++) {
+                var brickX_6 = (column_6 * (brickWidth_6 + brickPadding_6)) + brickOffsetLeft_6;
+                var brickY_6 = (row_6 * (brickHeight_6 + brickPadding_6)) + brickOffsetTop_6;
+                bricks_6[column_6][row_6].x_6 = brickX_6;
+                bricks_6[column_6][row_6].y_6 = brickY_6;
+                ctx_6.beginPath();
+                ctx_6.rect(brickX, brickY, brickWidth, brickHeight);
+                ctx_6.fillStyle = "#0095DD";
+                ctx_6.fill();
+                ctx_6.closePath();
             }
     }
-
-    var paddleHeight = 10;
-    var paddleWidth = 75;
-    
-    var paddleX = (canvas.width-paddleWidth)/2;
-    
-    var rightPressed = false;
-    var leftPressed = false;
-
-    document.addEventListener("keydown", keyDownHandler, false);
-    document.addEventListener("keyup", keyUpHandler, false);
-
-    function keyDownHandler(e) {
-        switch(e.keyCode) {
+    var paddleHeight_6 = 10;
+    var paddleWidth_6 = 75;
+    var paddleX_6 = (canvas_6.width - paddleWidth_6) / 2;
+    var rightPressed_6 = false;
+    var leftPressed_6 = false;
+    document.addEventListener("keydown", keyDownHandler_6, false);
+    document.addEventListener("keyup", keyUpHandler_6, false);
+    function keyDownHandler_6(e_6) {
+        switch(e_6.keyCode) {
             case 39:
-                rightPressed = true;
+                rightPressed_6 = true;
                 break;
-            
             case 37:
-                leftPressed = true;
+                leftPressed_6 = true;
                 break;
         }
     }
-
-    function keyUpHandler(e) {
-        switch(e.keyCode) {
+    function keyUpHandler_6(e_6) {
+        switch(e_6.keyCode) {
             case 39:
-                rightPressed = false;
+                rightPressed_6 = false;
                 break;
-            
             case 37:
-                leftPressed = false;
+                leftPressed_6 = false;
                 break;
         }
     }
-
-    function drawBall() {
-        ctx.beginPath();
-        ctx.arc(ballPositionX, ballPositionY, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
+    function drawBall_6() {
+        ctx_6.beginPath();
+        ctx_6.arc(ballPositionX_6, ballPositionY_6, ballRadius_6, 0, Math.PI * 2);
+        ctx_6.fillStyle = "#0095DD";
+        ctx_6.fill();
+        ctx_6.closePath();
     }
-
-    function drawPaddle() {
-        ctx.beginPath();
-        ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
+    function drawPaddle_6() {
+        ctx_6.beginPath();
+        ctx_6.rect(paddleX_6, canvas_6.height - paddleHeight_6, paddleWidth_6, paddleHeight_6);
+        ctx_6.fillStyle = "#0095DD";
+        ctx_6.fill();
+        ctx_6.closePath();
     }
-
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        drawBall();
-        drawPaddle();
-        drawBricks();
-
-        if(rightPressed && paddleX < canvas.width-paddleWidth)
-            paddleX += 7;
-        else if(leftPressed && paddleX > 0)
-            paddleX -= 7;
-        
-        var ballNextPositionX = ballPositionX + ballMoveX;
-        if(ballNextPositionX > canvas.width-ballRadius || ballNextPositionX < ballRadius)
-            ballMoveX *= -1;
-
-        var ballNextPositionY = ballPositionY + ballMoveY;
-        if(ballNextPositionY < ballRadius)
-            ballMoveY *= -1;
-        if(ballNextPositionY > canvas.height-ballRadius)
-            if(ballPositionX > paddleX && ballPositionX < paddleX + paddleWidth)
-                ballMoveY *= -1; 
-
-        ballPositionX += ballMoveX; 
-        ballPositionY += ballMoveY;
+    function draw_6() {
+        ctx_6.clearRect(0, 0, canvas_6.width, canvas_6.height);
+        drawBall_6();
+        drawPaddle_6();
+        drawBricks_6();
+        if(rightPressed_6 && paddleX_6 < canvas.width - paddleWidth_6)
+            paddleX_6 += 7;
+        else if(leftPressed_6 && paddleX_6 > 0)
+            paddleX_6 -= 7;
+        var ballNextPositionX_6 = ballPositionX_6 + ballMoveX_6;
+        if(ballNextPositionX_6 > canvas_6.width - ballRadius_6 || ballNextPositionX_6 < ballRadius_6)
+            ballMoveX_6 *= -1;
+        var ballNextPositionY_6 = ballPositionY_6 + ballMoveY_6;
+        if(ballNextPositionY_6 < ballRadius_6)
+            ballMoveY_6 *= -1;
+        if(ballNextPositionY_6 > canvas_6.height - ballRadius_6)
+            if(ballPositionX_6 > paddleX_6 && ballPositionX_6 < paddleX_6 + paddleWidth_6)
+                ballMoveY_6 *= -1; 
+        ballPositionX_6 += ballMoveX_6; 
+        ballPositionY_6 += ballMoveY_6;
     }
-
-    setInterval(draw, 10);
+    setInterval(draw_6, 10);
 }
 </script>
+
 
 
 
