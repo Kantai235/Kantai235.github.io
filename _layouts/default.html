@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-TW" lang="zh-TW">
-
-{% include head.html %}
-
-<body class="theme-base-chocolate">
-    {% include sidebar.html %} {% include sidebar.html %}
-    <div class="content container">
-        {{ content }} {% include comments.html %}
-    </div>
-    {% include comment_count.html %} {% include google_analytics.html %} {% include script.html %}
-</body>
-
+    {% include head.html %}
+    <body class="theme-base-chocolate">
+        {% include header.html %}
+        {% include sidebar.html %}    
+        <div class="content container">
+            {{ content }} {% include comments.html %}
+        </div>
+        {% include comment_count.html %}
+        {% include google_analytics.html %}
+        {% include script.html %}
+    </body>
 </html>
