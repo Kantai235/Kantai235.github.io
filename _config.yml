@@ -12,11 +12,11 @@ permalink           : pretty
 title               : 乾太 Kantai
 tagline             : '這裡記錄著我的大小事。'
 description         : '傳說中的邊緣工程師。'
-baseurl             : /
+baseurl             : '/'
 
 author              : 乾太
 name                : '乾太'
-url                 : https://Kantai235.github.io/
+url                 : 'https://Kantai235.github.io/'
 
 paginate            : 10
 
