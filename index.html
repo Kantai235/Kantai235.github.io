@@ -6,13 +6,13 @@ title: Home
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
-    {% if post.image %}
-      <img src="{{ post.image }}" alt="{{ post.image }}">
-    {% else %}
-      <p>(」・ω・)」うー！(／・ω・)／にゃー！</p>
-    {% endif %}
     <h1 class="post-title">
       <a href="{{ post.url }}">
+        {% if post.image %}
+          <img src="{{ post.image }}" alt="{{ post.image }}">
+        {% else %}
+          <p>(」・ω・)」うー！(／・ω・)／にゃー！</p>
+        {% endif %}    
         {{ post.title }}
         {% if post.subtitle %}
         <p class="post-subtitle">
