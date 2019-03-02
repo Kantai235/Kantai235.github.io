@@ -5,7 +5,7 @@ title      : "P1. 純靠北工程師怎麼做的？就只是個簡單的後端�
 subtitle   : "既然是工程師，那網站當然要自幹啊！在開始介紹如何寫功能以前，要先通過兩項前置任務（如果已經有點軟體架構概念、資料庫基本知識，則可以直接跳過） ..."
 date       : 2019-02-14 12:00:00
 author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : Laravel 後端 架構 Repostory Service Presenter Middleware Request Validation 監聽器 監聽器事件 觀察者 觀察者模式 Helpers RESTful 資料標準化 Transformer Formatter Hypermedia
+tags       : 純靠北工程師 Laravel 後端 架構 Repostory Service Presenter Middleware Request Validation 監聽器 監聽器事件 觀察者 觀察者模式 Helpers RESTful 資料標準化 Transformer Formatter Hypermedia
 comments   : true
 signature  : true
 ---
