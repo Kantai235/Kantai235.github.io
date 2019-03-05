@@ -49,15 +49,15 @@ title: Home
 
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">找找更舊的文章</a>
+    <a class="pagination-item older" href="{{ site.url }}/page{{ paginator.next_page }}">找找更舊的文章</a>
   {% else %}
     <span class="pagination-item older">沒有更舊的文章囉</span>
   {% endif %}
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">找找更新的文章</a>
+      <a class="pagination-item newer" href="{{ site.url }}/">找找更新的文章</a>
     {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">找找更新的文章</a>
+      <a class="pagination-item newer" href="{{ site.url }}/page{{ paginator.previous_page }}">找找更新的文章</a>
     {% endif %}
   {% else %}
     <span class="pagination-item newer">沒有更新的文章囉</span>
