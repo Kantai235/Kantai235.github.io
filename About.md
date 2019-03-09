@@ -3,19 +3,17 @@ layout: page
 title: 關於我
 ---
 
+# 技術部落格
 
+[![【GitHub Page】乾太 Kantai．這裡記錄著我的大小事。](https://i.imgur.com/c7TyZN3.png)](https://kantai235.github.io)
 
----
+[![【PressPlay】純靠北工程師．看著版主開發，我慢慢的好像也變成工程師了！](https://i.imgur.com/BphZjj1.png)](https://pressplay.cc/kaobei.engineer)
 
-## 目前經營的技術部落格：
-
-- [【Medium】乾太 Kantai．我在人間當工程師。](https://medium.com/@kantai_developer)
-- [【GitHub Page】乾太 Kantai．這裡記錄著我的大小事。](https://kantai235.github.io)
-- [【PressPlay】純靠北工程師．看著版主開發，我慢慢的好像也變成工程師了！](https://pressplay.cc/kaobei.engineer)
+[![【Medium】乾太 Kantai．我在人間當工程師。](https://i.imgur.com/op94EBV.png)](https://medium.com/@kantai_developer)
 
 ---
 
-## 純靠北工程師 安麗區
+# 純靠北工程師 安麗區
 
 [![官方網站 Banner](https://i.imgur.com/Zl6Mrfs.png)](https://kaobei.engineer)
 
@@ -30,3 +28,13 @@ title: 關於我
 [![哎居 Instagram Banner](https://i.imgur.com/6FgkF3R.png)](https://www.instagram.com/kaobei.engineer)
 
 [![湯不熱 Tumblr Banner](https://i.imgur.com/dffwOx9.png)](https://kaobei-engineer.tumblr.com)
+
+---
+
+# 聯絡方式
+
+[![Facebook](https://i.imgur.com/PggwmxS.png)](https://www.facebook.com/kantai.zeng)
+
+[![Plurk](https://i.imgur.com/mtELyps.png)](https://www.plurk.com/huevo235)
+
+[![Line](https://i.imgur.com/wLcjIXP.png)](https://line.me/ti/p/hSxpdkHxPp)
