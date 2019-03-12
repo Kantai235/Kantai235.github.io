@@ -29,6 +29,8 @@ title: 關於我
 
 [![湯不熱 Tumblr Banner](https://i.imgur.com/dffwOx9.png)](https://kaobei-engineer.tumblr.com)
 
+[![Discord](https://i.imgur.com/tknHq2i.png)](https://discord.gg/tPhnrs2)
+
 ---
 
 # 聯絡方式
