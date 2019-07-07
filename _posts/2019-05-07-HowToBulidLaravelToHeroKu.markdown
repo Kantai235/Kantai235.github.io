@@ -1,16 +1,20 @@
 ---
-layout     : post
-image      : "https://i.imgur.com/1XvupoJ.png"
-title      : "如何將你的 Laravel boilerplate 專案成功部署到 HeroKu"
-subtitle   : "事情是這樣的，最近在研究 HeroKu 這家雲端平台，想要嘗試將一些服務部署到 HeroKu 上頭，但卻遇到一些問題，因此將一系列的問題解決過程記錄下來 ..."
-date       : 2019-05-07 12:00:00
-author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : 純靠北工程師 Laravel Boilerplate HeroKu ide-helper composer
-comments   : true
-signature  : true
+layout       : post
+image        : https://i.imgur.com/1XvupoJ.png
+title        : 如何將你的 Laravel boilerplate 專案成功部署到 HeroKu
+description  : 事情是這樣的，最近在研究 HeroKu 這家雲端平台，想要嘗試將一些服務部署到 HeroKu 上頭，但卻遇到一些問題，因此將一系列的問題解決過程記錄下來 ...
+date         : 2019-05-07 12:00:00
+author       : 乾太 kantai
+mintags      :
+- Laravel
+- HeroKu
+tags         : 純靠北工程師 Laravel Boilerplate HeroKu ide-helper composer
+comments     : true
+signature    : true
+category     : tutorial
+twitter_text : 如何將你的 Laravel boilerplate 專案成功部署到 HeroKu
+introduction : 事情是這樣的，最近在研究 HeroKu 這家雲端平台，想要嘗試將一些服務部署到 HeroKu 上頭，但卻遇到一些問題，因此將一系列的問題解決過程記錄下來 ...
 ---
-
-![https://i.imgur.com/1XvupoJ.png](https://i.imgur.com/1XvupoJ.png)
 
 ## 研究背景
 
@@ -75,11 +79,11 @@ There are no commands defined in the “ide-helper” namespace.
 ![https://i.imgur.com/0xTKKg0.png](https://i.imgur.com/0xTKKg0.png)
 composer.json
 
-Ide-helper 是一種會自動產生 IDE 文件的套件，簡單來說如果 composer 運行這些指令的話，ide-helper 會自動產生出一些魔術方法的文件給 IDE 讀取，讓你在開發的時候更為方便，語法提示跳得更多、提供更多的自動補完功能，但對於伺服器而言，這些文件是不必要的，因此你在部屬專案的時候，可以::將 ide-helper 給拿掉（但沒辦法註解，因為 json 沒有註解)，你就可以正常將專案部署到 HeroKu 當中了::。
+Ide-helper 是一種會自動產生 IDE 文件的套件，簡單來說如果 composer 運行這些指令的話，ide-helper 會自動產生出一些魔術方法的文件給 IDE 讀取，讓你在開發的時候更為方便，語法提示跳得更多、提供更多的自動補完功能，但對於伺服器而言，這些文件是不必要的，因此你在部屬專案的時候，可以**將 ide-helper 給拿掉（但沒辦法註解，因為 json 沒有註解)，你就可以正常將專案部署到 HeroKu 當中了**。
 
-- @php artisan ide-helper:generate
+- `@php artisan ide-helper:generate`
 	- 會產生 `_ide_helper.php` 這份文件
-- @php artisan ide-helper:meta
+- `@php artisan ide-helper:meta`
 	- 會產生 `.phpstorm.meta.php` 這份文件
 
 > [GitHub - barryvdh/laravel-ide-helper: Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper)
@@ -88,8 +92,8 @@ Ide-helper 是一種會自動產生 IDE 文件的套件，簡單來說如果 com
 
 ## 參考文獻
 
-Wikipedia contributors. (2019, April 13). Heroku. In *Wikipedia, The Free Encyclopedia*. Retrieved 01:30, May 7, 2019, from [https://en.wikipedia.org/w/index.php?title=Heroku&oldid=892252710](https://en.wikipedia.org/w/index.php?title=Heroku&oldid=892252710) 
+> Wikipedia contributors. (2019, April 13). Heroku. In *Wikipedia, The Free Encyclopedia*. Retrieved 01:30, May 7, 2019, from [https://en.wikipedia.org/w/index.php?title=Heroku&oldid=892252710](https://en.wikipedia.org/w/index.php?title=Heroku&oldid=892252710) 
 
-Composer contributors. (2019, April 13). Composer. In *指令碼- Composer | 正體中文文件*. Retrieved 01:30, May 7, 2019, from [https://getcomposer.ycnets.com/doc/articles/scripts.md](https://getcomposer.ycnets.com/doc/articles/scripts.md)
+> Composer contributors. (2019, April 13). Composer. In *指令碼- Composer 正體中文文件*. Retrieved 01:30, May 7, 2019, from [https://getcomposer.ycnets.com/doc/articles/scripts.md](https://getcomposer.ycnets.com/doc/articles/scripts.md)
 
-barryvdh contributors. (2019, April 13). barryvdh. In * [barryvdh](https://github.com/barryvdh) / [laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper) *. Retrieved 01:30, May 7, 2019, from [GitHub - barryvdh/laravel-ide-helper: Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper)
+> barryvdh contributors. (2019, April 13). barryvdh. In * [barryvdh](https://github.com/barryvdh) / [laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper) *. Retrieved 01:30, May 7, 2019, from [GitHub - barryvdh/laravel-ide-helper: Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper)

@@ -1,12 +1,18 @@
 ---
-layout     : post
-title      : "如何利用 JavaScript 在 HTML5 的 Canvas 標籤中繪圖 - 基礎教學"
-subtitle   : "HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。画布是一个矩形区域，您可以控制其每一像素。canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法 ..."
-date       : 2017-06-14 09:00:00
-author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : HTML5 JavaScript JS Canvas Basic 教學 標籤 網頁 基礎教學
-comments   : true
-signature  : true
+layout       : post
+image        : 
+title        : 如何利用 JavaScript 在 HTML5 的 Canvas 標籤中繪圖 - 基礎教學
+description  : HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。画布是一个矩形区域，您可以控制其每一像素。canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法 ...
+date         : 2017-06-14 09:00:00
+author       : 乾太 kantai
+mintags      :
+- Canvas
+tags         : HTML5 JavaScript JS Canvas Basic 教學 標籤 網頁 基礎教學
+comments     : true
+signature    : true
+category     : tutorial
+twitter_text : 如何利用 JavaScript 在 HTML5 的 Canvas 標籤中繪圖 - 基礎教學
+introduction : 是的，這次要帶給大家的是 Canvas 標籤的基礎教學，它就像一塊畫布，能讓你在 HTML 標籤當中繪圖、動畫、遊戲，那我們就來個簡單的範例吧，就是做出一款經典的打磚塊遊戲 ...
 ---
 
 <style>
@@ -33,8 +39,7 @@ signature  : true
 ```
 
 # 實例
-<canvas id="canvas_1" width="480" height="320"></canvas>
-<br />
+<p><canvas class="" id="canvas_1" width="480" height="320"></canvas></p>
 <button>開始遊戲</button>
 
 既然是經典的打磚塊遊戲，那麼應該要會有顆球在畫布當中跑來跑去嘛！所以我們要在 button 標籤當中加入 onclikc 事件，去啟動 JavaScript 的方法：
@@ -46,7 +51,6 @@ signature  : true
     <!-- 倘若使用者的瀏覽器並不支援 canvas，將會顯示該段內容。 -->
     您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。
 </canvas>
-<br />
 <button onclick="canvasGameStart_canvas_2()">開始遊戲</button>
 ```
 
@@ -111,10 +115,7 @@ context.arc(x, y, r, sAngle, eAngle, counterclockwise);
 ```
 
 # 實例
-<canvas id="canvas_2" width="480" height="320">
-    您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。
-</canvas>
-<br />
+<p><canvas id="canvas_2" width="480" height="320">您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。</canvas></p>
 <button onclick="canvasGameStart_canvas_2()">開始遊戲</button>
 <script>
 function canvasGameStart_canvas_2() {
@@ -172,10 +173,7 @@ function canvasGameStart_canvas_2() {
 ```
 
 # 實例
-<canvas id="canvas_3" width="480" height="320">
-    您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。
-</canvas>
-<br />
+<p><canvas id="canvas_3" width="480" height="320">您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。</canvas></p>
 <button onclick="canvasGameStart_canvas_3()">開始遊戲</button>
 <script>
 function canvasGameStart_canvas_3() {
@@ -292,10 +290,7 @@ function canvasGameStart_canvas_3() {
 ```
 
 # 實例
-<canvas id="canvas_4" width="480" height="320">
-    您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。
-</canvas>
-<br />
+<p><canvas id="canvas_4" width="480" height="320">您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。</canvas></p>
 <button onclick="canvasGameStart_canvas_4()">開始遊戲</button>
 <script>
 function canvasGameStart_canvas_4() {
@@ -407,10 +402,7 @@ function canvasGameStart_canvas_4() {
 ```
 
 # 實例
-<canvas id="canvas_5" width="480" height="320">
-    您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。
-</canvas>
-<br />
+<p><canvas id="canvas_5" width="480" height="320">您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。</canvas></p>
 <button onclick="canvasGameStart_canvas_5()">開始遊戲</button>
 <script>
 function canvasGameStart_canvas_5() {
@@ -551,10 +543,7 @@ function canvasGameStart_canvas_5() {
 ```
 
 # 實例
-<canvas id="canvas_6" width="480" height="320">
-    您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。
-</canvas>
-<br />
+<p><canvas id="canvas_6" width="480" height="320">您的瀏覽器必須支援 HTML5 標籤語法，才能遊玩該遊戲。</canvas></p>
 <button onclick="canvasGameStart_canvas_6()">開始遊戲</button>
 <script>
 function canvasGameStart_canvas_6() {
@@ -657,11 +646,6 @@ function canvasGameStart_canvas_6() {
     setInterval(draw_6, 10);
 }
 </script>
-
-
-
-
-
 
 # 參考資料
 + [網頁2D遊戲開發-以打磚塊遊戲為例](http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=3745)

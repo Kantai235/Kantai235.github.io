@@ -1,67 +1,46 @@
----
-layout: default
----
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-3028179090690423"
-     data-ad-slot="2749357978"></ins>
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/BlogPosting">
+    {% include head.html %}
+    <body class="has-push-menu">
+        {% include minutes-to-read.html %}
+        {% include svg-icons.html %}
+        {% include header.html %}
+        <section class="post">
 
-<ins class="scupioadslot"
-     style="display:inline-block;width:728px;height:90px;"
-     data-sca-pub="lQANGBc/THIQEQ=="
-     data-sca-web="4548"
-     data-sca-category="16"
-     data-sca-cid="14950"
-     data-sca-width="728px"
-     data-sca-height="90px"
-     data-sca-background-color="#fbd5b5"
-     data-sca-title-color="#0000ff"
-     data-sca-title-font-family="Microsoft JhengHei"
-     data-sca-title-font-size="16px"
-     data-sca-description-color="#333333"
-     data-sca-description-font-family="Microsoft JhengHei"
-     data-sca-description-font-size="12px"
-     data-sca-mobile-font-size="28px"
-     data-sca-border-color="#d8d8d8"></ins>
-     
-<div class="post">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <span class="post-date">{{ page.date | date_to_string }}</span> {{ content }}
-    <div class="post-tag">
-        <span class="fa-stack fa-sm">
-      <i class="fa fa-tags fa-stack-1x"></i>
-    </span> : {% for tag in page.tags %} <a class="tag-wrapper" href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="tags">{{ tag }}</span></a> {% if forloop.last != true %} {% endif %} {% endfor %}
-    </div>
-    <div class="fb-like social-plugins" data-layout="button" data-action="like" data-share="true"></div>
-</div>
+            <article role="article" id="post" class="post-content" itemprop="articleBody">
+                <p itemprop="post-info" class="post-info">
+                    {% if page.date %}
+                        <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}" class="date">
+                            {% include date.html date=page.date %}
+                        </time>
+                    {% endif %}
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>{{ minutesText }}</span>
+                </p>
+                <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
+                <p itemprop="description" class="subtitle">{{ page.description }}</p>
 
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-3028179090690423"
-     data-ad-slot="9370606647"></ins>
-     
-{% if page.signature %} {% include signature.html %} {% endif %}
+                {% if page.image %}
+                    <img src="{{ page.image }}" alt="Imagem de capa" class="post-cover">
+                {% endif %}
 
-<script type="text/javascript" src="//js1.bloggerads.net/ShowBanner.aspx?blogid=20170602000001" async></script>
+                {{ content }}
+            </article>
 
-{% include adsense.html %}
+            <div class="progress-bar" data-minutes="{{ totalMinutes }}">
+                <span class="time-completed"></span>
+                <span class="time-remaining"></span>
+                <div class="bar">
+                    <span class="completed" style="width:0%;"></span>
+                    <span class="remaining" style="width:100%;"></span>
+                </div>
+            </div>
 
-<div class="related">
-    <h2>相關文章</h2>
-    <ul class="related-posts">
-        {% for post in site.related_posts limit:5 %}
-        <li>
-            <h3>
-                <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-            </h3>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+            {% include share.html %}
+            {% include author.html %}
+            {% include comments.html %}
+            {% include footer.html %}
+        </section>
+    </body>
+</html>

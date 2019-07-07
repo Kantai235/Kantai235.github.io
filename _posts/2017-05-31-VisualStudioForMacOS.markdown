@@ -1,12 +1,18 @@
 ---
-layout     : post
-title      : "Visual Studio for Mac ! 微軟重大里程碑，你終於可以在 macOS 上使用 VS 了！"
-subtitle   : "我們很高興宣告發行 Visual Studio 2017 for Mac。 Visual Studio for Mac 是 Visual Studio 系列的新成員，可讓 macOS 上的開發人員使用 Xamarin 和 .NET Core 來建置行動裝置、Web 和雲端的應用程式，以及使用 Unity 來建置遊戲..."
-date       : 2017-05-31 12:30:00
-author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : Visual Studio for Mac VisualStudio VS Mac macOS asp net asp.net ASP.NET Web Xamarin .NET Core Unity
-comments   : true
-signature  : true
+layout       : post
+image        : 
+title        : Visual Studio for Mac ! 微軟重大里程碑，你終於可以在 macOS 上使用 VS 了！
+description  : 我們很高興宣告發行 Visual Studio 2017 for Mac。 Visual Studio for Mac 是 Visual Studio 系列的新成員，可讓 macOS 上的開發人員使用 Xamarin 和 .NET Core 來建置行動裝置、Web 和雲端的應用程式，以及使用 Unity 來建置遊戲 ...
+date         : 2017-05-31 12:30:00
+author       : 乾太 kantai
+mintags      :
+- Visual Studio for Mac
+tags         : Visual Studio for Mac VisualStudio VS Mac macOS asp net asp.net ASP.NET Web Xamarin .NET Core Unity
+comments     : true
+signature    : true
+category     : tutorial
+twitter_text : Visual Studio for Mac ! 微軟重大里程碑，你終於可以在 macOS 上使用 VS 了！
+introduction : 我們很高興宣告發行 Visual Studio 2017 for Mac。 Visual Studio for Mac 是 Visual Studio 系列的新成員，可讓 macOS 上的開發人員使用 Xamarin 和 .NET Core 來建置行動裝置、Web 和雲端的應用程式，以及使用 Unity 來建置遊戲 ...
 ---
 
 ```
@@ -24,7 +30,7 @@ signature  : true
 
 嘖嘖，微軟你這樣子很不敬業哦～ Visual Studio Code 的部分沒寫好，不過沒關係！我們重點在於 Visual Studio for Mac：
 
-[點我前往官方下載 Visual Studio for Mac | Visual Studio](https://www.visualstudio.com/zh-hant/vs/visual-studio-mac/)
+[點我前往官方下載 Visual Studio for Mac - Visual Studio](https://www.visualstudio.com/zh-hant/vs/visual-studio-mac/)
 
 
 

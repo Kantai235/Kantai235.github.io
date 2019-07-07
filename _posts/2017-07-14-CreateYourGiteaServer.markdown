@@ -1,12 +1,18 @@
 ---
-layout     : post
-title      : "如何建立一個自己的 Git - Gitea 架設教學"
-subtitle   : "如果有在撰寫程式語言的人，或許就會知道 GitHub 這很好用的版本控制平台，另一方面很多企業徵求資訊人員的時候，通常也會要求應徵者提供自己的 ..."
-date       : 2017-07-14 09:00:00
-author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : Git GitServer Server Gitea GitHub 架設 教學 架設教學
-comments   : true
-signature  : true
+layout       : post
+image        : 
+title        : 如何建立一個自己的 Git - Gitea 架設教學
+description  : 如果有在撰寫程式語言的人，或許就會知道 GitHub 這很好用的版本控制平台，另一方面很多企業徵求資訊人員的時候，通常也會要求應徵者提供自己的 ...
+date         : 2017-07-14 09:00:00
+author       : 乾太 kantai
+mintags      :
+- Gitea
+tags         : Git GitServer Server Gitea GitHub 架設 教學 架設教學
+comments     : true
+signature    : true
+category     : tutorial
+twitter_text : 如何建立一個自己的 Git - Gitea 架設教學
+introduction : 如果有在撰寫程式語言的人，或許就會知道 GitHub 這很好用的版本控制平台，另一方面很多企業徵求資訊人員的時候，通常也會要求應徵者提供自己的 ...
 ---
 
 如果有在撰寫程式語言的人，或許就會知道 [GitHub](https://github.com) 這很好用的版本控制平台，另一方面很多企業徵求資訊人員的時候，通常也會要求應徵者提供自己的 [GitHub](https://github.com) 來讓公司知道該應徵者的 Code 能力位於哪個階段，或者該名人才有開發過哪些專案。

@@ -1,12 +1,18 @@
 ---
-layout     : post
-title      : "iOS Swift 第三方套件 - OAuthSwift"
-subtitle   : "在 iOS 開發介接第三方 API 相關的應用程式時，我們時常會需要遵循 OAuth 開放標準規範 ..."
-date       : 2017-04-05 12:00:00
-author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : iOS Swift OAuthSwift 第三方套件 原生 分享 教學
-comments   : true
-signature  : true
+layout       : post
+image        : 
+title        : iOS Swift 第三方套件 - OAuthSwift
+description  : 在 iOS 開發介接第三方 API 相關的應用程式時，我們時常會需要遵循 OAuth 開放標準規範 ...
+date         : 2017-04-05 12:00:00
+author       : 乾太 kantai
+mintags      :
+- Swift
+tags         : iOS Swift OAuthSwift 第三方套件 原生 分享 教學
+comments     : true
+signature    : true
+category     : tutorial
+twitter_text : iOS Swift 第三方套件 - OAuthSwift
+introduction : 在 iOS 開發介接第三方 API 相關的應用程式時，我們時常會需要遵循 OAuth 開放標準規範 ...
 ---
 
 在 iOS 開發介接第三方 API 相關的應用程式時，我們時常會需要遵循 [OAuth 開放標準規範](https://zh.wikipedia.org/wiki/OAuth)，這過程十分繁雜，不過幸虧有大神寫出輕便使用的套件了，而且相容 OAuth 1.0、OAuth 2.0，那便是 [OAuthSwift](https://github.com/OAuthSwift/OAuthSwift)，注意哦！這邊是使用「Swift」語言，如果您是使用「Objective-C」開發 iOS 應用程式的話，你可能要採用另一位大神寫的 [OAuth2Client](https://github.com/nxtbgthng/OAuth2Client) 了。

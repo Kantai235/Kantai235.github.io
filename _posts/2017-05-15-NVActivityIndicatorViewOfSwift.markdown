@@ -1,12 +1,18 @@
 ---
-layout     : post
-title      : "iOS Swift 第三方套件介紹 - NVActivityIndicatorView"
-subtitle   : "NVActivityIndicatorView 是一系列令人驚艷的 Loading 動畫，它採用了向量繪圖的方式來呈現動畫 ..."
-date       : 2017-05-15 12:30:00
-author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : iOS Swift NVActivityIndicatorView 第三方 第三方套件 動畫 Loading
-comments   : true
-signature  : true
+layout       : post
+image        : 
+title        : iOS Swift 第三方套件介紹 - NVActivityIndicatorView
+description  : NVActivityIndicatorView 是一系列令人驚艷的 Loading 動畫，它採用了向量繪圖的方式來呈現動畫 ...
+date         : 2017-05-15 12:30:00
+author       : 乾太 kantai
+mintags      :
+- Swift
+tags         : iOS Swift NVActivityIndicatorView 第三方 第三方套件 動畫 Loading
+comments     : true
+signature    : true
+category     : tutorial
+twitter_text : iOS Swift 第三方套件介紹 - NVActivityIndicatorView
+introduction : NVActivityIndicatorView 是一系列令人驚艷的 Loading 動畫，它採用了向量繪圖的方式來呈現動畫 ...
 ---
 
 ## 簡介
@@ -55,25 +61,25 @@ import NVActivityIndicatorView
 1. 透過 storyboard 來將 UIView 變更為 NVActivityIndicatorView
 2. 利用寫程式的方式來建立。
 
-    ```swift
-    NVActivityIndicatorView(frame: frame, type: type, color: color, padding: padding)
-    ```
+```swift
+NVActivityIndicatorView(frame: frame, type: type, color: color, padding: padding)
+```
 
 ## 如何控制它呢？
 
-#### 啟動動畫
+### 啟動動畫
 
 ```swift
 activityIndicatorView.startAnimating()
 ```
 
-#### 暫停動畫
+### 暫停動畫
 
 ```swift
 activityIndicatorView.stopAnimating()
 ```
 
-#### 確認動畫是否正在運轉中
+### 確認動畫是否正在運轉中
 
 ```swift
 animating = activityIndicatorView.animating
@@ -91,19 +97,19 @@ class ViewController: UIViewController, NVActivityIndicatorViewable {
 
 然後你就可以在你的程式碼當中，隨意新建 Loading 畫面、關閉畫面了，就像：
 
-#### 開啟動畫
+### 開啟動畫
 
 ```swift
 startAnimating(size, message)
 ```
 
-#### 關閉動畫
+### 關閉動畫
 
 ```swift
 stopAnimation()
 ```
 
-#### 讓我們來看看官方的 `startAnimating` 原始碼怎麼寫的吧！
+### 讓我們來看看官方的 `startAnimating` 原始碼怎麼寫的吧！
 
 ```swift
 public final func startAnimating(
@@ -139,11 +145,10 @@ public final func startAnimating(
                                     backgroundColor: backgroundColor,
                                     textColor: textColor)
     NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
-
 }
 ```
 
-#### 再來讓我們來看看官方的 `stopAnimation` 原始碼怎麼寫的吧！
+### 再來讓我們來看看官方的 `stopAnimation` 原始碼怎麼寫的吧！
 
 ```swift
 public final func stopAnimating() {
@@ -154,70 +159,70 @@ public final func stopAnimating() {
 
 ## 關於預設 ... 它都設定了些什麼？
 
-#### 預設的動畫
+### 預設的動畫
 
 ```swift
 // 第 23 號的經典動畫
 NVActivityIndicatorView.DEFAULT_TYPE = .ballSpinFadeLoader
 ```
 
-#### 預設的顏色
+### 預設的顏色
 
 ```swift
 // 白色 RGB(255,255,255)
 NVActivityIndicatorView.DEFAULT_COLOR = UIColor.white
 ```
 
-#### 預設的訊息內容顏色
+### 預設的訊息內容顏色
 
 ```swift
 // 白色 RGB(255,255,255)
 NVActivityIndicatorView.DEFAULT_TEXT_COLOR = UIColor.white
 ```
 
-#### 預設的間距
+### 預設的間距
 
 ```swift
 // 沒有間距
 NVActivityIndicatorView.DEFAULT_PADDING = CGFloat(0)
 ```
 
-#### 預設的 CG 大小
+### 預設的 CG 大小
 
 ```swift
 // 60 * 60
 NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE = CGSizeMake(60, 60)
 ```
 
-#### 預設的背景顏色
+### 預設的背景顏色
 
 ```swift
 // 黑色 RGB(0,0,0) 透明度 50%
 NVActivityIndicatorView.DEFAULT_BLOCKER_BACKGROUND_COLOR = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
 ```
 
-#### 預設的延遲時間
+### 預設的延遲時間
 
 ```swift
 // 沒有延遲
 NVActivityIndicatorView.DEFAULT_BLOCKER_DISPLAY_TIME_THRESHOLD = 0 // 以毫秒計算
 ```
 
-#### 預設的最小延遲時間
+### 預設的最小延遲時間
 
 ```swift
 // 沒有延遲
 NVActivityIndicatorView.DEFAULT_BLOCKER_MINIMUM_DISPLAY_TIME = 0 // 以毫秒計算
 ```
 
-#### 預設的訊息內容
+### 預設的訊息內容
 
 ```swift
 // 還是沒有任何內容
 NVActivityIndicatorView.DEFAULT_BLOCKER_MESSAGE: String? = nil
 ```
 
-#### 預設的訊息內容字型
+### 預設的訊息內容字型
 
 ```swift
 // 粗體、系統字型、大小 20
@@ -233,11 +238,11 @@ NVActivityIndicatorView.DEFAULT_BLOCKER_MESSAGE_FONT = UIFont.boldSystemFont(ofS
 # platform :ios, '9.0'
 
 target 'NVActivityIndicatorView' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+# Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+use_frameworks!
 
-  # Pods for NVActivityIndicatorView
-  pod 'NVActivityIndicatorView'
+# Pods for NVActivityIndicatorView
+pod 'NVActivityIndicatorView'
 
 end
 ```
@@ -247,8 +252,6 @@ end
 執行完了以後，我們稍微設計一下畫面，在畫面中我們只需要一個 Button：
 
 ![storybora](https://i.imgur.com/yWwwcrE.png)
-
-
 
 再來，我們希望說，按下這顆按鈕後，我們就顯示 Loading 的圖示，長達三秒，這時候我們就可以參考官方的範例：
 

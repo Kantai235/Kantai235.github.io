@@ -1,12 +1,19 @@
 ---
-layout     : post
-title      : "如何建立 NoCaptcha(我不是機器人) 的 Key、Secret？"
-subtitle   : "無論在手機應用程式或者網頁應用程式，你時常會看到「我不是機器人」或「請點選下面有包含汽車的圖」的功能，這功能其實來自於 Google 提供的 ..."
-date       : 2018-09-09 00:00:00
-author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : Google NoCaptcha key secret 我不是機器人
-comments   : true
-signature  : true
+layout       : post
+image        : 
+title        : 如何建立 NoCaptcha(我不是機器人) 的 Key、Secret？
+description  : 無論在手機應用程式或者網頁應用程式，你時常會看到「我不是機器人」或「請點選下面有包含汽車的圖」的功能，這功能其實來自於 Google 提供的 ...
+date         : 2018-09-09 00:00:00
+author       : 乾太 kantai
+mintags      :
+- Android
+- NoCaptcha
+tags         : Google NoCaptcha key secret 我不是機器人
+comments     : true
+signature    : true
+category     : tutorial
+twitter_text : 如何建立 NoCaptcha(我不是機器人) 的 Key、Secret？
+introduction : 無論在手機應用程式或者網頁應用程式，你時常會看到「我不是機器人」或「請點選下面有包含汽車的圖」的功能，這功能其實來自於 Google 提供的 ...
 ---
 
 無論在手機應用程式或者網頁應用程式，你時常會看到「我不是機器人」或「請點選下面有包含汽車的圖」的功能，這功能其實來自於 Google 提供的 [reCAPTCHA](https://www.google.com/recaptcha/intro/v3beta.html) 服務。

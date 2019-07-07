@@ -1,12 +1,19 @@
 ---
-layout     : post
-title      : "在 Laravel 當中，如何移除特定 Router 的 CSRF？"
-subtitle   : "`Laravel` 在默認的情況之下，所有的路由(Route)它會自動啟用 `CSRF` 保護，這在開發的過程當中，是一個非常方便的功能 ..."
-date       : 2018-09-26 12:00:00
-author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : Laravel Route CSRF Middleware VerifyCsrfToken
-comments   : true
-signature  : true
+layout       : post
+image        : 
+title        : 在 Laravel 當中，如何移除特定 Router 的 CSRF？
+description  : Laravel 在默認的情況之下，所有的路由(Route)它會自動啟用 CSRF 保護，這在開發的過程當中，是一個非常方便的功能 ...
+date         : 2018-09-26 12:00:00
+author       : 乾太 kantai
+mintags      :
+- Laravel
+- CSRF
+tags         : Laravel Route CSRF Middleware VerifyCsrfToken
+comments     : true
+signature    : true
+category     : tutorial
+twitter_text : 在 Laravel 當中，如何移除特定 Router 的 CSRF？
+introduction : Laravel 在默認的情況之下，所有的路由(Route)它會自動啟用 CSRF 保護，這在開發的過程當中，是一個非常方便的功能 ...
 ---
 
 `Laravel` 在默認的情況之下，所有的路由(Route)它會自動啟用 `CSRF` 保護，這在開發的過程當中，是一個非常方便的功能。

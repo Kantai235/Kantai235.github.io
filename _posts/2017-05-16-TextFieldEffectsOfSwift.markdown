@@ -1,55 +1,61 @@
 ---
-layout     : post
-title      : "iOS Swift 第三方套件介紹 - TextFieldEffects"
-subtitle   : "超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ..."
-date       : 2017-05-16 12:30:00
-author     : "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-tags       : iOS Swift TextFieldEffects 第三方 第三方套件 Field 文字輸入框 輸入框
-comments   : true
-signature  : true
+layout       : post
+image        : 
+title        : iOS Swift 第三方套件介紹 - TextFieldEffects
+description  : 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...
+date         : 2017-05-16 12:30:00
+author       : 乾太 kantai
+mintags      :
+- Swift
+tags         : iOS Swift TextFieldEffects 第三方 第三方套件 Field 文字輸入框 輸入框
+comments     : true
+signature    : true
+category     : tutorial
+twitter_text : iOS Swift 第三方套件介紹 - TextFieldEffects
+introduction : 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...
 ---
 
 有時候，在應用程式當中的小小細節，也能深得使用者的喜好，程式不只要好用才行，還必須搭配美觀的介面，才能深得人心，然而在 iOS 專案當中，原生的 Field 輸入框太過於古板，不是那麼的好看，所以有人寫了 [TextFieldEffects](https://github.com/raulriera/TextFieldEffects) 這款好用的第三方套件，來使 Field 更加的美觀。
 
 目前他具備了以下幾種效果：
 
-- 1. Kaede
-- 2. Hoshi
-- 3. Jiro
-- 4. Isao
-- 5. Minoru
-- 6. Yoko
-- 7. Madoka
-- 8. Akira
-- 9. Yoshiko
+- Kaede
+- Hoshi
+- Jiro
+- Isao
+- Minoru
+- Yoko
+- Madoka
+- Akira
+- Yoshiko
 
 ## 實際效果
 
-#### Kaede
+### Kaede
 ![Kaede Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Kaede.gif)
 
-#### Hoshi
+### Hoshi
 ![Hoshi Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Hoshi.gif)
 
-#### Jiro
+### Jiro
 ![Jiro Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Jiro.gif)
 
-#### Isao
+### Isao
 ![Isao Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Isao.gif)
 
-#### Minoru
+### Minoru
 ![Minoru Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Minoru.gif)
 
-#### Yoko
+### Yoko
 ![Yoko Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Yoko.gif)
 
-#### Madoka
+### Madoka
 ![Madoka Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Madoka.gif)
 
-#### Akira
+### Akira
 ![Akira Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Akira.gif)
 
-#### Yoshiko
+### Yoshiko
 ![Yoshiko Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Yoshiko.gif)
 
 ## 開始使用
