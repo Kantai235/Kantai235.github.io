@@ -2,6 +2,8 @@
 title: 乾太 | 我在人間當工程師
 email: kantai.developer@gmail.com
 description: 我在人間當工程師
+type: website
+fb_app_id: 3239038076112764
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kantai235.github.io" # the base hostname & protocol for your site
 google_analytics: "UA-89952948-1"
