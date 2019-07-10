@@ -40,6 +40,12 @@ plugins:
 links:
   - title: 首頁 Home
     url: /
+  - title: 線上工具 Tools
+    url: /tools/
+  - title: 產生器 Generator
+    url: /generator/
+  - title: 快速查表 Article
+    url: /article/
   - title: 關於我 About
     url: /about/
   - title: 聯絡我 Contact
