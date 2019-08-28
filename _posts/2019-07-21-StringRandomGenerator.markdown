@@ -123,6 +123,25 @@ introduction : 一款簡單的 String 字串線上產生器，可用來產生自
         border: 6px solid #032629 !important;
         border-width: 2px 4px 4px 2px !important;
     }
+
+    .generate_number {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: none;
+        display: block;
+        color: #333;
+        width: 100%;
+        padding: 7px;
+        border: none;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: medium;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+        font-family: inherit;
+        font-size: 1.125rem;
+        height: 2.813rem;
+    }
 </style>
 
 <!-- Rectangular switch -->
@@ -156,9 +175,9 @@ introduction : 一款簡單的 String 字串線上產生器，可用來產生自
 <div class="container">
     <div id="form" class="contact-form">
         亂數產生長度
-        <input type="text" class="generate_number" id="generate_number_1" name="generate_number_1" value="64">
+        <input type="number" class="generate_number" id="generate_number_1" name="generate_number_1" value="64">
         亂數產生數量
-        <input type="text" class="generate_number" id="generate_number_2" name="generate_number_2" value="1">
+        <input type="number" class="generate_number" id="generate_number_2" name="generate_number_2" value="1">
         <button type="button" class="generate" id="generate" onclick="generate()">產生亂數</button>
         <textarea type="text" class="generate_textarea" id="generate_value" name="generate_value" placeholder="這裡會生出亂數。"></textarea>
     </div>
@@ -213,7 +232,7 @@ introduction : 一款簡單的 String 字串線上產生器，可用來產生自
         var result = '';
         for (var i = 1; i <= $('#generate_number_2').val(); i++) {
 
-            if ($('#number_checked').prop('checked')) {
+            if ($('#number_index').prop('checked')) {
                 result += i + '. ' + randomString() + '\n';
             } else {
                 result += randomString() + '\n';
