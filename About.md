@@ -9,3 +9,4 @@ permalink: /about/
 
 ## 關於我 About
 
+整片空白，跟你的人生一樣。
