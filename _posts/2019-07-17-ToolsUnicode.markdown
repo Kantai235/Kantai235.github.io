@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Tools
 - Unicode
-tags         : Tools Unicode
+tags         : 線上編碼、解碼器 for Unicode, Tools, Unicode
 comments     : true
 signature    : true
 category     : tools

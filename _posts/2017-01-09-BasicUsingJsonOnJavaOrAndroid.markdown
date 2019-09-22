@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Android
 - JSON
-tags         : Java Android Json 教學
+tags         : Java 或 Android 上的 Json 基本教學, Java, Android, Json, 教學
 comments     : true
 signature    : true
 category     : tutorial

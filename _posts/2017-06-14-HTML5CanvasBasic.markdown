@@ -7,7 +7,7 @@ date         : 2017-06-14 09:00:00
 author       : 乾太 kantai
 mintags      :
 - Canvas
-tags         : HTML5 JavaScript JS Canvas Basic 教學 標籤 網頁 基礎教學
+tags         : 如何利用 JavaScript 在 HTML5 的 Canvas 標籤中繪圖 - 基礎教學, HTML5, JavaScript, JS, Canvas, Basic, 教學, 標籤, 網頁, 基礎教學
 comments     : true
 signature    : true
 category     : tutorial

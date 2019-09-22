@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Laravel
 - Vue
-tags         : Laravel Vue Frontend Backend Team 前端 後端 合作
+tags         : Vue 前端工程師與 Laravel 後端工程師的權責分配問題, Laravel, Vue, Frontend, Backend, Team, 前端, 後端, 合作
 comments     : true
 signature    : true
 category     : tutorial

@@ -7,7 +7,7 @@ date         : 2019-02-14 12:00:00
 author       : 乾太 kantai
 mintags      :
 - Laravel
-tags         : 純靠北工程師 Laravel 後端 架構 Repostory Service Presenter Middleware Request Validation 監聽器 監聽器事件 觀察者 觀察者模式 Helpers RESTful 資料標準化 Transformer Formatter Hypermedia
+tags         : P1. 純靠北工程師怎麼做的？就只是個簡單的後端架構而已。, 純靠北工程師, Laravel, 後端, 架構, Repostory, Service, Presenter, Middleware, Request, Validation, 監聽器, 監聽器事件, 觀察者, 觀察者模式, Helpers, RESTful, 資料標準化, Transformer Formatter, Hypermedia
 comments     : true
 signature    : true
 category     : tutorial

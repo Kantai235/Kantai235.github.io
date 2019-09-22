@@ -7,7 +7,7 @@ date         : 2018-10-14 21:00:00
 author       : 乾太 kantai
 mintags      :
 - 臺灣鐵路GO
-tags         : 臺灣鐵路GO TrainGo 隱私權條款 隱私權 條款
+tags         : 【臺灣鐵路GO】隱私權條款, 臺灣鐵路GO, TrainGo, 隱私權條款, 隱私權, 條款
 comments     : true
 signature    : true
 category     : policy

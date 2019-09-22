@@ -9,7 +9,7 @@ mintags      :
 - String
 - Random
 - Generator
-tags         : String Random Generator 線上 字串 亂數 產生器
+tags         : 線上 String 字串亂數產生器,String, Random, Generator, 線上, 字串, 亂數, 產生器
 comments     : true
 signature    : true
 category     : generator

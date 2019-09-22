@@ -7,7 +7,7 @@ date         : 2019-08-26 12:00:00
 author       : 乾太 kantai
 mintags      :
 - Swift
-tags         : Swift String Format 格式 補零 補0
+tags         : 如何在 Swift 當中透過 String Format 格式來簡單處理數值內容？ Swift, String, Format, 格式, 補零, 補0
 comments     : true
 signature    : true
 category     : tutorial

@@ -7,7 +7,7 @@ date         : 2017-02-25 19:30:00
 author       : 乾太 kantai
 mintags      :
 - Chatfuel
-tags         : Facebook Messenger Chatfuel BOT 聊天 機器人 教學
+tags         : Facebook Messenger 第三方聊天機器人 - Chatfuel, Facebook, Messenger, Chatfuel, BOT, 聊天, 機器人, 教學
 comments     : true
 signature    : true
 category     : tutorial

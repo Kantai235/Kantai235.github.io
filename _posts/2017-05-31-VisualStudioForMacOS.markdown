@@ -7,7 +7,7 @@ date         : 2017-05-31 12:30:00
 author       : 乾太 kantai
 mintags      :
 - Visual Studio for Mac
-tags         : Visual Studio for Mac VisualStudio VS Mac macOS asp net asp.net ASP.NET Web Xamarin .NET Core Unity
+tags         : Visual Studio for Mac ! 微軟重大里程碑，你終於可以在 macOS 上使用 VS 了！, Visual, Studio, for, Mac, VisualStudio, VS, Mac, macOS, asp, net, asp.net, ASP.NET, Web, Xamarin, .NET, Core, Unity
 comments     : true
 signature    : true
 category     : tutorial

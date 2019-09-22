@@ -7,7 +7,7 @@ date         : 2018-10-06 21:00:00
 author       : 乾太 kantai
 mintags      :
 - VirtualHost
-tags         : XAMPP Linux macOS multiple websites
+tags         : 如何在 Linux/macOS 當中，利用 XAMPP 一次運行多個網站, XAMPP, Linux, macOS, multiple, websites
 comments     : true
 signature    : true
 category     : tutorial

@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Python
 - ChatterBot
-tags         : Python ChatterBot 機器人 使用 教學
+tags         : 擁有自動學習的 Python 機器人 - ChatterBot, Python, ChatterBot, 機器人, 使用, 教學
 comments     : true
 signature    : true
 category     : tutorial

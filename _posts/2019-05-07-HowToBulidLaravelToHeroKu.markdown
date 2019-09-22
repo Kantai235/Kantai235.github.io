@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Laravel
 - HeroKu
-tags         : 純靠北工程師 Laravel Boilerplate HeroKu ide-helper composer
+tags         : 如何將你的 Laravel boilerplate 專案成功部署到 HeroKu, 純靠北工程師, Laravel, Boilerplate, HeroKu, ide-helper, composer
 comments     : true
 signature    : true
 category     : tutorial

@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Jekyll
 - Hyde
-tags         : GitHub Blog Jekyll Hyde Disqus Rhadow.github.io
+tags         : 如何在 GitHub 中建造一個屬於自己的部落格, GitHub, Blog, Jekyll, Hyde, Disqus, Rhadow.github.io
 comments     : true
 signature    : true
 category     : tutorial

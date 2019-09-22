@@ -7,7 +7,7 @@ date         : 2019-03-24 12:00:00
 author       : 乾太 kantai
 mintags      :
 - Facebook API
-tags         : 純靠北工程師 Facebook for Developers API 申請 測試 審核 圖形API測試工具 圖形 API 測試工具 存取權杖偵錯工具 publish_pages manage_pages
+tags         : EP1. 我要怎麼申請 Facebook API？好像很難又好像很簡單欸！, 純靠北工程師, Facebook, for, Developers, API, 申請 測試, 審核, 圖形API測試工具, 圖形, API, 測試工具, 存取權杖偵錯工具, publish_pages, manage_pages
 comments     : true
 signature    : true
 category     : tutorial

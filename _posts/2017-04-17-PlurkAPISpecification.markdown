@@ -7,7 +7,7 @@ date         : 2017-04-17 12:30:00
 author       : 乾太 kantai
 mintags      :
 - Plurk API
-tags         : Plurk API PlurkAPI OAuth 官方 說明 文件 官方說明文件 翻譯 註解
+tags         : Plurk API 官方說明文件(不專業翻譯) - 目錄及規範, Plurk, API, PlurkAPI, OAuth, 官方, 說明, 文件, 官方說明文件, 翻譯, 註解
 comments     : true
 signature    : true
 category     : tutorial

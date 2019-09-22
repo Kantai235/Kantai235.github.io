@@ -7,7 +7,7 @@ date         : 2017-01-10 12:00:00
 author       : 乾太 kantai
 mintags      :
 - ASP.NET Web APIv2
-tags         : ASP.NET Web API APIv2 教學
+tags         : ASP.NET Web API 2 基本建置與教學, ASP.NET, Web, API, APIv2, 教學
 comments     : true
 signature    : true
 category     : tutorial

@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Android
 - Code39
-tags         : Android Code39 zxing 教學 實作 超商 繳費 帳單
+tags         : Android 實作 Code39 條碼產生 - 超商繳費帳單, Android, Code39, zxing, 教學, 實作, 超商, 繳費, 帳單
 comments     : true
 signature    : true
 category     : tutorial

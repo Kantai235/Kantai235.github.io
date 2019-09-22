@@ -7,7 +7,7 @@ date         : 2017-05-16 12:30:00
 author       : 乾太 kantai
 mintags      :
 - Swift
-tags         : iOS Swift TextFieldEffects 第三方 第三方套件 Field 文字輸入框 輸入框
+tags         : iOS Swift 第三方套件介紹 - TextFieldEffects, iOS, Swift, TextFieldEffects, 第三方, 第三方套件, Field, 文字輸入框, 輸入框
 comments     : true
 signature    : true
 category     : tutorial

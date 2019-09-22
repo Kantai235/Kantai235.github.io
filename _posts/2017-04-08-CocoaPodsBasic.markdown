@@ -7,7 +7,7 @@ date         : 2017-04-08 12:00:00
 author       : 乾太 kantai
 mintags      :
 - CocoaPods
-tags         : iOS Swift Objective-C CocoaPods 第三方套件管理 教學
+tags         : CocoaPods iOS 第三方套件管理工具, iOS, Swift, Objective-C, CocoaPods, 第三方套件管理, 教學
 comments     : true
 signature    : true
 category     : tutorial

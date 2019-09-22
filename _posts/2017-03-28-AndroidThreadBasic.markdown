@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Android
 - HandlerThread
-tags         : Android Handler Thread Basic 執行緒 多執行緒 經驗 教學
+tags         : Android 執行緒使用經驗談 - HandlerThread, Android, Handler, Thread, Basic, 執行緒, 多執行緒, 經驗, 教學
 comments     : true
 signature    : true
 category     : tutorial

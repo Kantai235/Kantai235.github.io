@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Android
 - NoCaptcha
-tags         : Google NoCaptcha key secret 我不是機器人
+tags         : 如何建立 NoCaptcha(我不是機器人) 的 Key、Secret？, Google, NoCaptcha, key, secret, 我不是機器人
 comments     : true
 signature    : true
 category     : tutorial

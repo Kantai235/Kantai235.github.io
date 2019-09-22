@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Laravel
 - Page Expired
-tags         : Laravel HeroKu 419 Database page expired pageexpired 
+tags         : 在 HeroKu 上的 Laravel 專案突然爆掉 419 page expired 的解決方案, Laravel, HeroKu, 419, Database, page, expired, pageexpired 
 comments     : true
 signature    : true
 category     : tutorial

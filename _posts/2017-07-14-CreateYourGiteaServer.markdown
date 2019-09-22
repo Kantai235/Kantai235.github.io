@@ -7,7 +7,7 @@ date         : 2017-07-14 09:00:00
 author       : 乾太 kantai
 mintags      :
 - Gitea
-tags         : Git GitServer Server Gitea GitHub 架設 教學 架設教學
+tags         : 如何建立一個自己的 Git - Gitea 架設教學, Git, GitServer, Server, Gitea, GitHub, 架設, 教學, 架設教學
 comments     : true
 signature    : true
 category     : tutorial

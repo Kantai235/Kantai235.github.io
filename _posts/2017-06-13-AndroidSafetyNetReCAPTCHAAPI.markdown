@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Android
 - reCAPTCHA
-tags         : Android SafetyNet reCAPTCHA API
+tags         : 如何在 Android 當中引用 reCAPTCHA 來做防堵機器人的驗證。, Android, SafetyNet, reCAPTCHA, API
 comments     : true
 signature    : true
 category     : tutorial

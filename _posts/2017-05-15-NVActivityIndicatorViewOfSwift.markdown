@@ -7,7 +7,7 @@ date         : 2017-05-15 12:30:00
 author       : 乾太 kantai
 mintags      :
 - Swift
-tags         : iOS Swift NVActivityIndicatorView 第三方 第三方套件 動畫 Loading
+tags         : iOS Swift 第三方套件介紹 - NVActivityIndicatorView, iOS, Swift, NVActivityIndicatorView, 第三方, 第三方套件, 動畫, Loading
 comments     : true
 signature    : true
 category     : tutorial

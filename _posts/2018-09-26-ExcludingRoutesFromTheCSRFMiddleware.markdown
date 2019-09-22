@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Laravel
 - CSRF
-tags         : Laravel Route CSRF Middleware VerifyCsrfToken
+tags         : 在 Laravel 當中，如何移除特定 Router 的 CSRF？, Laravel, Route, CSRF, Middleware, VerifyCsrfToken
 comments     : true
 signature    : true
 category     : tutorial

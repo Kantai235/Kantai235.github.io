@@ -7,7 +7,7 @@ date         : 2019-02-24 12:00:00
 author       : 乾太 kantai
 mintags      :
 - Laravel
-tags         : 純靠北工程師 Laravel 資料庫 模型 ER-Model 第一正規化 第二正規化 第三正規化 BC正規化 1NF 2NF 3NF BCNF RBAC 以角色為基礎的存取控制
+tags         : P2. 純靠北工程師怎麼做的？就只是個簡單的資料庫模型而已。, 純靠北工程師, Laravel, 資料庫, 模型, ER-Model, 第一正規化, 第二正規化, 第三正規化, BC正規化, 1NF, 2NF, 3NF, BCNF, RBAC, 以角色為基礎的存取控制
 comments     : true
 signature    : true
 category     : tutorial

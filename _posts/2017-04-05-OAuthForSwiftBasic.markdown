@@ -7,7 +7,7 @@ date         : 2017-04-05 12:00:00
 author       : 乾太 kantai
 mintags      :
 - Swift
-tags         : iOS Swift OAuthSwift 第三方套件 原生 分享 教學
+tags         : iOS Swift 第三方套件 - OAuthSwift, iOS, Swift, OAuthSwift, 第三方套件, 原生, 分享, 教學
 comments     : true
 signature    : true
 category     : tutorial

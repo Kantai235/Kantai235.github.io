@@ -7,7 +7,7 @@ date         : 2018-09-08 09:00:00
 author       : 乾太 kantai
 mintags      :
 - GitHub Pages
-tags         : Git GitServer Server Gitea GitHub Page build warning Blog email mail
+tags         : 我的 GitHub 部落格收到了 warning 信件，這是怎麼回事？, Git, GitServer, Server, Gitea, GitHub, Page, build, warning, Blog, email, mail
 comments     : true
 signature    : true
 category     : tutorial

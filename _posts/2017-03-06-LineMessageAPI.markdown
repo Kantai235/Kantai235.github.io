@@ -7,7 +7,7 @@ date         : 2017-03-06 11:00:00
 author       : 乾太 kantai
 mintags      :
 - Line Message API
-tags         : Line Message API BOT PHP 聊天 機器人 教學
+tags         : Line Message API 初戰！, Line, Message, API, BOT, PHP, 聊天, 機器人, 教學
 comments     : true
 signature    : true
 category     : tutorial

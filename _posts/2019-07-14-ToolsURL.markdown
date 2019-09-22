@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Tools
 - URL
-tags         : Tools URL
+tags         : 線上編碼、解碼器 for URL, Tools, URL
 comments     : true
 signature    : true
 category     : tools

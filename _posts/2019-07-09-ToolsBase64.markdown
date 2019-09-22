@@ -8,7 +8,7 @@ author       : 乾太 kantai
 mintags      :
 - Tools
 - Base64
-tags         : Tools Base64
+tags         : 線上編碼、解碼器 for Base64, Tools, Base64
 comments     : true
 signature    : true
 category     : tools
