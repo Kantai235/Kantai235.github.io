@@ -1,7 +1,7 @@
 ---
 layout       : post
 image        : https://i.imgur.com/7y6udoC.png
-title        : PHP 閉包
+title        : 淺入淺出 PHP 閉包 Closure
 description  : 匿名函數(在 PHP 5.3 中被引入)會產生這個類型的對象。在過去，這個類別被認為是一個實現細節，但現在可以依賴它做一些事情。自 PHP 5.4 起，這個類別帶有一些方法，允許在匿名函數建立後對其進行更多的控制 ...
 date         : 2020-02-25 18:00:00
 author       : 乾太 kantai
@@ -11,7 +11,7 @@ tags         : PHP Closure Function 閉包 匿名函數
 comments     : true
 signature    : true
 category     : tutorial
-twitter_text : PHP 閉包
+twitter_text : 淺入淺出 PHP 閉包 Closure
 introduction : 匿名函數(在 PHP 5.3 中被引入)會產生這個類型的對象。在過去，這個類別被認為是一個實現細節，但現在可以依賴它做一些事情。自 PHP 5.4 起，這個類別帶有一些方法，允許在匿名函數建立後對其進行更多的控制 ...
 ---
 
