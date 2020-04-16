@@ -10,9 +10,13 @@ layout: compress
         {% include header.html %}
         <section class="post">
 
+            {% include adsense-ins.html %}
+
             <article id="post" class="post-content" role="main" itemprop="mainContentOfPage">
                 {{ content }}
             </article>
+            
+            {% include adsense-ins.html %}
 
             {% include footer.html %}
         </section>

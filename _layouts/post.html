@@ -6,7 +6,6 @@
         {% include svg-icons.html %}
         {% include header.html %}
         <section class="post">
-
             <article role="article" id="post" class="post-content" itemprop="articleBody">
                 <p itemprop="post-info" class="post-info">
                     {% if page.date %}
@@ -25,6 +24,8 @@
                     <img src="{{ page.image }}" alt="Imagem de capa" class="post-cover">
                 {% endif %}
 
+                {% include adsense-ins.html %}
+
                 {{ content }}
             </article>
 
@@ -37,6 +38,7 @@
                 </div>
             </div>
 
+            {% include adsense-ins.html %}
             {% include share.html %}
             {% include author.html %}
             {% include comments.html %}
