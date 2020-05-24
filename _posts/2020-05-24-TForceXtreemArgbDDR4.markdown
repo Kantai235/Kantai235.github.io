@@ -3,7 +3,7 @@ layout       : post
 image        : https://i.imgur.com/1a8oV4L.png
 title        : 【業配開箱】十銓 T-Force Xtreem ARGB DDR4
 description  : 十銓 T-Force Xtreem ARGB DDR4 電競記憶體，全鏡面、光線透、ＲＧＢ，總之一句話，就是潮！
-date         : 2020-04-30 12:00:00
+date         : 2020-05-24 12:00:00
 author       : 乾太 kantai
 mintags      :
 - 業配開箱
