@@ -1,19 +1,19 @@
 ---
 layout       : post
 image        : /assets/img/posts/Banner_2.png
-title        : 簡單工廠 Simple Factory
+title        : 【PHP、設計模式、大頭菜】簡單工廠 Simple Factory
 description  : 簡單工廠，這是一種我們真的要買大頭菜的模式，你需要建立一個工廠，這個工廠負責生產特定物件，你只需要把材料丟給工廠，工廠就會把商品生產出來給你，你不需要理會工廠都在做些什麼，就有點像是你跟曹賣買大頭菜，你只需要付鈴錢就好，你不需要去理解曹賣到底是怎麼種大頭菜的。
-date         : 2020-09-16 12:00:00
+date         : 2020-09-15 12:00:00
 author       : 乾太 kantai
 mintags      :
 - 設計模式
 - 建立型
 - 簡單工廠
-tags         : PHP DesignPattern Simple Factory Design Pattern 設計模式 簡單工廠 設計 模式
+tags         : PHP DesignPattern Simple Factory Design Pattern 設計模式 簡單工廠 設計 模式 大頭菜
 comments     : true
 signature    : true
 category     : tutorial
-twitter_text : 簡單工廠 Simple Factory
+twitter_text : 【PHP、設計模式、大頭菜】簡單工廠 Simple Factory
 introduction : 簡單工廠，這是一種我們真的要買大頭菜的模式，你需要建立一個工廠，這個工廠負責生產特定物件，你只需要把材料丟給工廠，工廠就會把商品生產出來給你，你不需要理會工廠都在做些什麼，就有點像是你跟曹賣買大頭菜，你只需要付鈴錢就好，你不需要去理解曹賣到底是怎麼種大頭菜的。
 ---
 
