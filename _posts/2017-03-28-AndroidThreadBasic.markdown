@@ -4,13 +4,11 @@ image        :
 title        : Android 執行緒使用經驗談 - HandlerThread
 description  : 單執行緒應用程式，就像單向車道般的常常塞車，但多執行緒的應用程式，就會像高速公路般的順暢流利 ...
 date         : 2017-03-28 17:30:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Android
 - HandlerThread
-tags         : Android 執行緒使用經驗談 - HandlerThread, Android, Handler, Thread, Basic, 執行緒, 多執行緒, 經驗, 教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : Android 執行緒使用經驗談 - HandlerThread
 introduction : 單執行緒應用程式，就像單向車道般的常常塞車，但多執行緒的應用程式，就會像高速公路般的順暢流利 ...

@@ -4,13 +4,11 @@ image        :
 title        : Android 執行緒使用經驗談 - runOnUiThread
 description  : 在 Android 執行緒的世界當中，我們可以指派工作給員工去執行，例如今天我指派了很多事情給員工 ...
 date         : 2017-04-11 17:30:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Android
 - runOnUiThread
-tags         : Android 執行緒使用經驗談 - runOnUiThread, Android, Handler, Thread, runOnUiThread, Basic, 執行緒, 多執行緒, 經驗, 教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : Android 執行緒使用經驗談 - runOnUiThread
 introduction : 在 Android 執行緒的世界當中，我們可以指派工作給員工去執行，例如今天我指派了很多事情給員工 ...

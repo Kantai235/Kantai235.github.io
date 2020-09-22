@@ -4,13 +4,11 @@ image        :
 title        : Android 實作 Code39 條碼產生 - 超商繳費帳單
 description  : 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...
 date         : 2017-04-18 12:30:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Android
 - Code39
-tags         : Android 實作 Code39 條碼產生 - 超商繳費帳單, Android, Code39, zxing, 教學, 實作, 超商, 繳費, 帳單
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : Android 實作 Code39 條碼產生 - 超商繳費帳單
 introduction : 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...

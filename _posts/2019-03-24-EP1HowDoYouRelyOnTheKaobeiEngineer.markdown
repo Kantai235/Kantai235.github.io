@@ -4,12 +4,10 @@ image        : https://imgur.com/yRuDHCb.png
 title        : EP1. 我要怎麼申請 Facebook API？好像很難又好像很簡單欸！
 description  : 在先前我們討論了如何透過 API 來將文章發表到社群平台當中、如何透過 API 來將社群平台的文章刪除，但我們中間略過了申請 API 的部分，所以接下來我們將要介紹如何申請相關社群的 API、申請經驗談、常用工具 ...
 date         : 2019-03-24 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Facebook API
-tags         : EP1. 我要怎麼申請 Facebook API？好像很難又好像很簡單欸！, 純靠北工程師, Facebook, for, Developers, API, 申請 測試, 審核, 圖形API測試工具, 圖形, API, 測試工具, 存取權杖偵錯工具, publish_pages, manage_pages
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : EP1. 我要怎麼申請 Facebook API？好像很難又好像很簡單欸！
 introduction : 在先前我們討論了如何透過 API 來將文章發表到社群平台當中、如何透過 API 來將社群平台的文章刪除，但我們中間略過了申請 API 的部分，所以接下來我們將要介紹如何申請相關社群的 API、申請經驗談、常用工具 ...

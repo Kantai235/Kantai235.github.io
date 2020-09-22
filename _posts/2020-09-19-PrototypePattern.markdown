@@ -4,14 +4,12 @@ image        : /assets/img/posts/Banner_6.png
 title        : 【PHP、設計模式、大頭菜】原型模式 Prototype Pattern
 description  : 原型模式，你有些物件可能會需要建立很多一樣的物件，只是某些資料不太一樣而已，就有點像是每顆大頭菜都是一模一樣的物件，但可能因為來自不同的島，所以每顆大頭菜的差別只在於那起始購買的鈴錢不同。
 date         : 2020-09-19 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - 設計模式
 - 建立型
 - 原型模式
-tags         : PHP DesignPattern Prototype Design Pattern 設計模式 原型模式 設計 模式 大頭菜
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 【PHP、設計模式、大頭菜】原型模式 Prototype Pattern
 introduction : 原型模式，你有些物件可能會需要建立很多一樣的物件，只是某些資料不太一樣而已，就有點像是每顆大頭菜都是一模一樣的物件，但可能因為來自不同的島，所以每顆大頭菜的差別只在於那起始購買的鈴錢不同。

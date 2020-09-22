@@ -4,14 +4,12 @@ image        : /assets/img/posts/Banner_4.png
 title        : 【PHP、設計模式、大頭菜】靜態工廠 Abstract Factory
 description  : 抽象工廠，跟靜態工廠有點像，只是它沒那麼靜態，你需要先把工廠建立出來，才能開始生產大頭菜，就有點像是星期日的早上時，你打開 Switch 需要先看西施惠晨報，這時候島上正在把曹賣叫過來，你聽完晨報時，曹賣也到島上了。
 date         : 2020-09-17 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - 設計模式
 - 建立型
 - 抽象工廠
-tags         : PHP DesignPattern Abstract Factory Design Pattern 設計模式 抽象工廠 設計 模式 大頭菜
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 【PHP、設計模式、大頭菜】靜態工廠 Abstract Factory
 introduction : 抽象工廠，跟靜態工廠有點像，只是它沒那麼靜態，你需要先把工廠建立出來，才能開始生產大頭菜，就有點像是星期日的早上時，你打開 Switch 需要先看西施惠晨報，這時候島上正在把曹賣叫過來，你聽完晨報時，曹賣也到島上了。

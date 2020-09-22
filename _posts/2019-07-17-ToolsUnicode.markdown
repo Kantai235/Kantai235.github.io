@@ -4,13 +4,11 @@ image        : https://i.imgur.com/htdyD9Z.png
 title        : 線上編碼、解碼器 for Unicode
 description  : 一款簡單的線上編碼、解碼器，Unicode 是一種電腦科學領域裡的一項業界標準。它對世界上大部分的文字系統進行了整理、編碼，使得電腦可以用更為簡單的方式來呈現和處理文字。
 date         : 2019-07-17 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Tools
 - Unicode
-tags         : 線上編碼、解碼器 for Unicode, Tools, Unicode
-comments     : true
-signature    : true
+paginate     : true
 category     : tools
 twitter_text : 線上編碼、解碼器 for Unicode
 introduction : 一款簡單的線上編碼、解碼器，Unicode 是一種電腦科學領域裡的一項業界標準。它對世界上大部分的文字系統進行了整理、編碼，使得電腦可以用更為簡單的方式來呈現和處理文字。

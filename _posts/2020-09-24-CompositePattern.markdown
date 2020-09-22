@@ -2,19 +2,17 @@
 layout       : post
 image        : /assets/img/posts/Banner_11.png
 title        : 【PHP、設計模式、大頭菜】組合模式 Composite Pattern
-description  : 組合模式，一種將物件一個一個處理，並且最後組合起來的模式，可以想像剛買到大頭菜時的夢想，經過每次漲跌所帶來的希望與絕望，究竟是充滿絕望的遞減型呢？還是致富關鍵的三期型呢？每次的價格異動，都代表著價格物件，最終賣出的鈴錢價格，是經過許多鈴錢價格物件所算出來的。
+description  : 組合模式，一種將物件一個一個處理，並且最後組合起來的模式，可以想像剛買到大頭菜時的夢想，經過每次漲跌所帶來的希望與絕望，究竟是充滿絕望的遞減型呢？還是致富關鍵的三期型呢？每次的價格異動，都代表著價格物件，最終賣出的鈴錢價格，是經過許多鈴錢價格物件所算出來的。
 date         : 2020-09-24 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - 設計模式
 - 結構型
 - 組合模式
-tags         : PHP DesignPattern Composite Design Pattern 設計模式 組合模式 設計 模式 大頭菜
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 【PHP、設計模式、大頭菜】組合模式 Composite Pattern
-introduction : 組合模式，一種將物件一個一個處理，並且最後組合起來的模式，可以想像剛買到大頭菜時的夢想，經過每次漲跌所帶來的希望與絕望，究竟是充滿絕望的遞減型呢？還是致富關鍵的三期型呢？每次的價格異動，都代表著價格物件，最終賣出的鈴錢價格，是經過許多鈴錢價格物件所算出來的。
+introduction : 組合模式，一種將物件一個一個處理，並且最後組合起來的模式，可以想像剛買到大頭菜時的夢想，經過每次漲跌所帶來的希望與絕望，究竟是充滿絕望的遞減型呢？還是致富關鍵的三期型呢？每次的價格異動，都代表著價格物件，最終賣出的鈴錢價格，是經過許多鈴錢價格物件所算出來的。
 ---
 
 # 組合模式 Composite Pattern

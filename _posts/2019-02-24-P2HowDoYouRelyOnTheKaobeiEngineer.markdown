@@ -4,12 +4,10 @@ image        : https://i.imgur.com/lUfXC3X.png
 title        : P2. 純靠北工程師怎麼做的？就只是個簡單的資料庫模型而已。
 description  : 既然是工程師，那網站當然要自幹啊！在開始介紹如何寫功能以前，要先通過兩項前置任務（如果已經有點軟體架構概念、資料庫基本知識，則可以直接跳過） ...
 date         : 2019-02-24 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Laravel
-tags         : P2. 純靠北工程師怎麼做的？就只是個簡單的資料庫模型而已。, 純靠北工程師, Laravel, 資料庫, 模型, ER-Model, 第一正規化, 第二正規化, 第三正規化, BC正規化, 1NF, 2NF, 3NF, BCNF, RBAC, 以角色為基礎的存取控制
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : P2. 純靠北工程師怎麼做的？就只是個簡單的資料庫模型而已。
 introduction : 既然是工程師，那網站當然要自幹啊！在開始介紹如何寫功能以前，要先通過兩項前置任務（如果已經有點軟體架構概念、資料庫基本知識，則可以直接跳過） ...

@@ -3,17 +3,26 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html lang="zh-TW" itemscope itemtype="http://schema.org/WebPage">
+<html lang="{{ site.language }}" class="no-js">
     {% include head.html %}
     <body class="main-page has-push-menu">
         {% include svg-icons.html %}
         {% include header.html %}
-        {% include adsense-ins.html %}
             <section class="content">
                 {{ content }}
             </section>
-        {% include adsense-ins.html %}
         {% include footer.html %}
+        <script>
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", function(user) {
+                    if (!user) {
+                        window.netlifyIdentity.on("login", function() {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
 

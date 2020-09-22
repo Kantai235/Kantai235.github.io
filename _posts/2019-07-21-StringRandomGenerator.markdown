@@ -4,14 +4,12 @@ image        : https://i.imgur.com/tLzYHX5.png
 title        : 線上 String 字串亂數產生器
 description  : 一款簡單的 String 字串線上產生器，可用來產生自定義的長度、大寫小寫英文、數字、字元符號 ... 通通自定義。
 date         : 2019-07-21 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - String
 - Random
 - Generator
-tags         : 線上 String 字串亂數產生器,String, Random, Generator, 線上, 字串, 亂數, 產生器
-comments     : true
-signature    : true
+paginate     : true
 category     : generator
 twitter_text : 線上 String 字串亂數產生器
 introduction : 一款簡單的 String 字串線上產生器，可用來產生自定義的長度、大寫小寫英文、數字、字元符號 ... 通通自定義。

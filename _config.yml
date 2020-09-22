@@ -1,59 +1,143 @@
 # Site Settings
-title: 乾太 | 我在人間當工程師
+name: 乾太 Kantai
+title: 乾太 Kantai | 這裡紀錄著我的大小事。
+description: 是在哈囉，這裡是乾太，我覺得我不會寫程式。
+tags:
+  - 乾太
+  - 工程師
+  - 大頭菜
 email: kantai.developer@gmail.com
-description: 我在人間當工程師
-og_type: website
-fb_app_id: 3239038076112764
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://kantai235.github.io" # the base hostname & protocol for your site
-google_analytics: "UA-89952948-1"
-
-# User Settings
-username: Kantai
-user_description: 我在人間當工程師
 disqus_username: kantai235
+show_hero: true
+menu:
+  - title: 首頁
+    url: /
+  - title: 關於我
+    url: /about
+  - title: 聯絡我
+    url: /contact
+  - title: 訂閱
+    url: /feed.xml
 
-# Social Media
+
+# Social Media Settings
 # Remove the item if you don't need it
-github_username: Kantai235
+github_username: kantai235
 facebook_username: kantai.zeng
 # twitter_username: twitter_username
 # instagram_username: instagram_username
 # linkedin_username: linkedin_username
-medium_username: kantai_developer
+# medium_username: medium_username
+
+
+# Posts Settings
+show_time_bar: true
+show_modal_on_exit: false
+show_modal_on_finish_post: true
+two_columns_layout: true
+
+
+# Advanced Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+google_analytics: "UA-89952948-1"
+language: "zh-TW"
+categories_folder: category
+sent_message_url: "/contact/message-sent/"
+
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
 permalink: /:title/
-paginate: 12
+collections:
+  authors:
+    output: true
 paginate_path: "/page/:num/"
-svg_color: "#ff0a16"
+show_get_theme_btn: false
+use_logo: false
+
+# Content paginator
+paginate_content:
+  enabled: true
+  debug: false
+  collections:
+    - posts
+  auto: false
+  separator: "--page-break--"
+  permalink: "/:num/"
+  seo_canonical: true
+  properties:
+    part:
+      is_generated: true
+    last:
+      is_generated: true
+    single:
+      is_generated: true
+
+# SASS
+sass:
+  style: compressed
 
 # Plugins
 plugins:
-  - jemoji
   - jekyll-paginate
-
-# Links to include in menu navigation
-# For external links add external: true
-links:
-  - title: 首頁 Home
-    url: /
-  - title: 技術文章 Tutorial
-    url: /tutorial/
-  - title: 開箱文 Unboxing
-    url: /unboxing/
-  - title: 線上工具 Tools
-    url: /tools/
-  - title: 產生器 Generator
-    url: /generator/
-  - title: 快速查表 Article
-    url: /article/
-  - title: 關於我 About
-    url: /about/
-  - title: 聯絡我 Contact
-    url: /contact/
+  - jekyll-paginate-content
 
 # Exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+exclude: [
+  'package.json',
+  'package-lock.json',
+  'src',
+  'node_modules',
+  'initpost.sh',
+  'Gemfile',
+  'Gemfile.lock',
+  'gulpfile.js',
+  'README.md'
+]
+
+# Theme
+version: v3.1.0
+
+translations:
+  text:
+    new_post: "最新文章"
+    see_also: "也可以看看 ..."
+    search: "搜尋"
+    author: "作者"
+    share: "分享"
+    comments: "留言討論"
+  button:
+    read_now: "讀讀我！看看我！"
+    share_on_twitter: "分享到 Twitter"
+    share_on_facebook: "分享到 Facebook"
+  pagination:
+    page: "Page"
+    of: "of"
+    next_page: "下一頁"
+    next_post: "上一頁"
+  recommendation:
+    text: "接下來要不要看看其它文章？"
+    back_btn: "讓我回到頂端"
+  error_404:
+    title: "找不到頁面 :("
+    message: "我找不到頁面，你應該跟我道歉。"
+    image_alt: "404 - 找不到頁面。"
+  contact:
+    title: "跟我說說話"
+    subject: "New contact!"
+    submit_btn: "送出"
+    placeholders:
+      name: "名稱"
+      email: "Email"
+      message: "訊息內容"
+    errors:
+      locale: "zh-TW"
+      empty_name: "您的名稱必須填寫。"
+      empty_email: "您的 Email 必須填寫。"
+      invalid_email: "您輸入的　Email 無效。"
+      empty_message: "您的訊息內容必須填寫。"
+    after_send:
+      title: "訊息送出成功！"
+      message: "謝謝您傳送訊息給我，但是我不一定會給您回覆。"

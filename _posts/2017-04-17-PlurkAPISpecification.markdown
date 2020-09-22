@@ -4,12 +4,10 @@ image        :
 title        : Plurk API 官方說明文件(不專業翻譯) - 目錄及規範
 description  : Plurk 資料被編譯成 JSON 格式，所使用的日期是 UTC，您也可以將 UTC 發佈到 Plurk 伺服器 ...
 date         : 2017-04-17 12:30:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Plurk API
-tags         : Plurk API 官方說明文件(不專業翻譯) - 目錄及規範, Plurk, API, PlurkAPI, OAuth, 官方, 說明, 文件, 官方說明文件, 翻譯, 註解
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : Plurk API 官方說明文件(不專業翻譯) - 目錄及規範
 introduction : Plurk 資料被編譯成 JSON 格式，所使用的日期是 UTC，您也可以將 UTC 發佈到 Plurk 伺服器 ...

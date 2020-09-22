@@ -4,12 +4,10 @@ image        :
 title        : iOS Swift 第三方套件介紹 - TextFieldEffects
 description  : 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...
 date         : 2017-05-16 12:30:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Swift
-tags         : iOS Swift 第三方套件介紹 - TextFieldEffects, iOS, Swift, TextFieldEffects, 第三方, 第三方套件, Field, 文字輸入框, 輸入框
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : iOS Swift 第三方套件介紹 - TextFieldEffects
 introduction : 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...

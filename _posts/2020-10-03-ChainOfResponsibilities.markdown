@@ -4,14 +4,12 @@ image        : /assets/img/posts/Banner_20.png
 title        : 【PHP、設計模式、大頭菜】註冊模式 Registry Pattern
 description  : 責任鏈模式，有一系列的命令物件及處理物件，常見於需要被連續處理的地方上，舉例來說，假設今天收購箱、商店收購大頭菜時，多了一些條件，你必須先把大頭菜拿去收購箱收購，並且收購箱子會有鈴錢價格打
 date         : 2020-10-03 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - 設計模式
 - 行為型
 - 責任鏈模式
-tags         : PHP DesignPattern Chain of Responsibilities Design Pattern 設計模式 責任鏈模式 設計 模式 大頭菜
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 【PHP、設計模式、大頭菜】責任鏈模式 Chain of Responsibilities
 introduction : 責任鏈模式，有一系列的命令物件及處理物件，常見於需要被連續處理的地方上，舉例來說，假設今天收購箱、商店收購大頭菜時，多了一些條件，你必須先把大頭菜拿去收購箱收購，並且收購箱子會有鈴錢價格打

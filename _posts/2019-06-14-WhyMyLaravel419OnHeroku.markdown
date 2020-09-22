@@ -4,13 +4,11 @@ image        : https://i.imgur.com/HDYoWFy.png
 title        : 在 HeroKu 上的 Laravel 專案突然爆掉 419 page expired 的解決方案
 description  : 大大救命啊啊啊啊啊啊！我的網站剛剛明明是好的，現在卻壞了，但我都沒有做任何事情，他就突然壞了！我把 Session 清掉，把 Cache 也清掉，把所有暫存都清掉，他終究告訴我 419 Page Expired ...
 date         : 2019-06-14 18:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Laravel
 - Page Expired
-tags         : 在 HeroKu 上的 Laravel 專案突然爆掉 419 page expired 的解決方案, Laravel, HeroKu, 419, Database, page, expired, pageexpired 
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 在 HeroKu 上的 Laravel 專案突然爆掉 419 page expired 的解決方案
 introduction : 大大救命啊啊啊啊啊啊！我的網站剛剛明明是好的，現在卻壞了，但我都沒有做任何事情，他就突然壞了！我把 Session 清掉，把 Cache 也清掉，把所有暫存都清掉，他終究告訴我 419 Page Expired ...

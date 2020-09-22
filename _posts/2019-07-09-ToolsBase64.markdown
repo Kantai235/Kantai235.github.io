@@ -4,13 +4,11 @@ image        : https://i.imgur.com/C2XQYXL.png
 title        : 線上編碼、解碼器 for Base64
 description  : 一款簡單的線上編碼、解碼器，Base64 是一種基於 64 個可列印字元來表示二進位資料的表示方法。
 date         : 2019-07-09 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Tools
 - Base64
-tags         : 線上編碼、解碼器 for Base64, Tools, Base64
-comments     : true
-signature    : true
+paginate     : true
 category     : tools
 twitter_text : 線上編碼、解碼器 for Base64
 introduction : 一款簡單的線上編碼、解碼器，Base64 是一種基於 64 個可列印字元來表示二進位資料的表示方法。

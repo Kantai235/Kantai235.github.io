@@ -4,12 +4,10 @@ image        :
 title        : Plurk API 官方說明文件(不專業翻譯) - 簡介
 description  : Plurk API 2.0 遵循 OAuth 1.0a 開放標準來保護使用者的隱私 ...
 date         : 2017-04-14 12:30:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Plurk API
-tags         : Plurk API 官方說明文件(不專業翻譯) - 簡介, Plurk, API, PlurkAPI, OAuth, 官方, 說明, 文件, 官方說明文件, 翻譯, 註解
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : Plurk API 官方說明文件(不專業翻譯) - 簡介
 introduction : Plurk API 2.0 遵循 OAuth 1.0a 開放標準來保護使用者的隱私 ...

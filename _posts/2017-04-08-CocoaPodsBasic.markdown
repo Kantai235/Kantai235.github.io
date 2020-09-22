@@ -4,12 +4,10 @@ image        :
 title        : CocoaPods iOS 第三方套件管理工具
 description  : 當我們在開發 iOS 應用程式的時候，時常會為了完成某些功能，而開始尋找有沒有人已經寫了相關套件來解決問題 ...
 date         : 2017-04-08 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - CocoaPods
-tags         : CocoaPods iOS 第三方套件管理工具, iOS, Swift, Objective-C, CocoaPods, 第三方套件管理, 教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : CocoaPods iOS 第三方套件管理工具
 introduction : 當我們在開發 iOS 應用程式的時候，時常會為了完成某些功能，而開始尋找有沒有人已經寫了相關套件來解決問題 ...

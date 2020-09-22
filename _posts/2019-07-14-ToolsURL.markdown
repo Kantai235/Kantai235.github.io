@@ -4,13 +4,11 @@ image        : https://i.imgur.com/YwVQEVn.png
 title        : 線上編碼、解碼器 for URL
 description  : 一款簡單的線上編碼、解碼器，URL 是一種網際網路上標準的資源的位址（Address），如同在網路上的門牌。
 date         : 2019-07-14 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Tools
 - URL
-tags         : 線上編碼、解碼器 for URL, Tools, URL
-comments     : true
-signature    : true
+paginate     : true
 category     : tools
 twitter_text : 線上編碼、解碼器 for URL
 introduction : 一款簡單的線上編碼、解碼器，URL 是一種網際網路上標準的資源的位址（Address），如同在網路上的門牌。

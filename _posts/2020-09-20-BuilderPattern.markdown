@@ -4,14 +4,12 @@ image        : /assets/img/posts/Banner_7.png
 title        : 【PHP、設計模式、大頭菜】建造者模式 Builder Pattern
 description  : 建造者模式，主要用來建立複雜的物件，就有點像是大頭菜的功能組成，從鈴錢價格、組合數量、現場實價 ... 等等，為了簡化把每個功能都去不斷地建立物件、塞入物件的動作，因此可以指派一個建造者，並且賦予建造模式，然後透過指定的方法來建造物件，你不需要歷經繁瑣的過程，就能獲得擁有複雜功能的物件。
 date         : 2020-09-20 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - 設計模式
 - 建立型
 - 建造者模式
-tags         : PHP DesignPattern Builder Design Pattern 設計模式 建造者模式 設計 模式 大頭菜
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 【PHP、設計模式、大頭菜】建造者模式 Builder Pattern
 introduction : 建造者模式，主要用來建立複雜的物件，就有點像是大頭菜的功能組成，從鈴錢價格、組合數量、現場實價 ... 等等，為了簡化把每個功能都去不斷地建立物件、塞入物件的動作，因此可以指派一個建造者，並且賦予建造模式，然後透過指定的方法來建造物件，你不需要歷經繁瑣的過程，就能獲得擁有複雜功能的物件。

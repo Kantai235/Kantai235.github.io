@@ -4,13 +4,11 @@ image        :
 title        : Java 或 Android 上的 Json 基本教學
 description  : 很多應用程式開發時，傳遞都會使用 Json 作為規範格式，像是 Plurk API、Facebook API ...
 date         : 2017-01-09 10:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Android
 - JSON
-tags         : Java 或 Android 上的 Json 基本教學, Java, Android, Json, 教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : Java 或 Android 上的 Json 基本教學
 introduction : 很多應用程式開發時，傳遞都會使用 Json 作為規範格式，像是 Plurk API、Facebook API ...

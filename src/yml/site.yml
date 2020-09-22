@@ -1,0 +1,19 @@
+name: 乾太 Kantai
+title: 乾太 Kantai | 這裡紀錄著我的大小事。
+description: 是在哈囉，這裡是乾太，我覺得我不會寫程式。
+tags:
+  - 乾太
+  - 工程師
+  - 大頭菜
+show_hero: true
+menu:
+  - title: 首頁
+    url: /
+  - title: 關於我
+    url: /about
+  - title: 聯絡我
+    url: /contact
+  - title: 訂閱
+    url: /feed.xml
+email: kantai.developer@gmail.com
+disqus_username: kantai235

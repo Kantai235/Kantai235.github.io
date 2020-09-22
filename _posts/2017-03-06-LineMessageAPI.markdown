@@ -4,12 +4,10 @@ image        :
 title        : Line Message API 初戰！
 description  : 本篇教學教你如何基本使用 Line Message API，在台灣或日本當中，Line 一直是這些國家民眾愛用的通訊軟體之一，隨著資訊的發展，越來越多開發者重視各種機器人的開發 ...
 date         : 2017-03-06 11:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Line Message API
-tags         : Line Message API 初戰！, Line, Message, API, BOT, PHP, 聊天, 機器人, 教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : Line Message API 初戰！
 introduction : 本篇教學教你如何基本使用 Line Message API，在台灣或日本當中，Line 一直是這些國家民眾愛用的通訊軟體之一，隨著資訊的發展，越來越多開發者重視各種機器人的開發 ...

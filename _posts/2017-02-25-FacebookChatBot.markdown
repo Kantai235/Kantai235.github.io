@@ -4,12 +4,10 @@ image        :
 title        : Facebook Messenger 第三方聊天機器人 - Chatfuel
 description  : 在粉絲團或個人 Facebook 當中，如何建立一個自動聊天的機器人 ...
 date         : 2017-02-25 19:30:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Chatfuel
-tags         : Facebook Messenger 第三方聊天機器人 - Chatfuel, Facebook, Messenger, Chatfuel, BOT, 聊天, 機器人, 教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : Facebook Messenger 第三方聊天機器人 - Chatfuel
 introduction : 在粉絲團或個人 Facebook 當中，如何建立一個自動聊天的機器人 ...

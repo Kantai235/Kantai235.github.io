@@ -4,12 +4,10 @@ image        :
 title        : iOS Swift 第三方套件 - OAuthSwift
 description  : 在 iOS 開發介接第三方 API 相關的應用程式時，我們時常會需要遵循 OAuth 開放標準規範 ...
 date         : 2017-04-05 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Swift
-tags         : iOS Swift 第三方套件 - OAuthSwift, iOS, Swift, OAuthSwift, 第三方套件, 原生, 分享, 教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : iOS Swift 第三方套件 - OAuthSwift
 introduction : 在 iOS 開發介接第三方 API 相關的應用程式時，我們時常會需要遵循 OAuth 開放標準規範 ...

@@ -3,14 +3,12 @@ layout       : post
 image        : 
 title        : 如何在 GitHub 中建造一個屬於自己的部落格。
 description  : 最近利用 [GitHub](https://github.com) 架設了一個靜態 Blog ...
-date         : 2017-01-07 01:30:00
-author       : 乾太 kantai
-mintags      :
+date         : 2017-01-07T01:30:00.000Z
+author       : kantai235
+tags         :
 - Jekyll
 - Hyde
-tags         : 如何在 GitHub 中建造一個屬於自己的部落格, GitHub, Blog, Jekyll, Hyde, Disqus, Rhadow.github.io
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 如何在 GitHub 中建造一個屬於自己的部落格。
 introduction : 最近利用 [GitHub](https://github.com) 架設了一個靜態 Blog ...

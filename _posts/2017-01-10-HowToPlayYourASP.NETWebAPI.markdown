@@ -4,12 +4,10 @@ image        :
 title        : ASP.NET Web API 2 基本建置與教學
 description  : 在開發網頁應用程式，有時候會遇到一種情境，我們為了這個網頁做了很大量的開發 ...
 date         : 2017-01-10 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - ASP.NET Web APIv2
-tags         : ASP.NET Web API 2 基本建置與教學, ASP.NET, Web, API, APIv2, 教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : ASP.NET Web API 2 基本建置與教學
 introduction : 在開發網頁應用程式，有時候會遇到一種情境，我們為了這個網頁做了很大量的開發 ...

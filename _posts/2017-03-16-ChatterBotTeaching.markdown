@@ -4,13 +4,11 @@ image        :
 title        : 擁有自動學習的 Python 機器人 - ChatterBot
 description  : 「聊天機器人」一直是許多企業、學界在專研的東西，它可以用於許多用途上，例如淘寶會有機器人客服人員，會透過機器人來幫助你解決問題，又或者是很多聊天室都會有聊天機器人這種東西 ...
 date         : 2017-03-16 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Python
 - ChatterBot
-tags         : 擁有自動學習的 Python 機器人 - ChatterBot, Python, ChatterBot, 機器人, 使用, 教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 擁有自動學習的 Python 機器人 - ChatterBot
 introduction : 「聊天機器人」一直是許多企業、學界在專研的東西，它可以用於許多用途上，例如淘寶會有機器人客服人員，會透過機器人來幫助你解決問題，又或者是很多聊天室都會有聊天機器人這種東西 ...

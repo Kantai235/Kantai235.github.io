@@ -4,12 +4,10 @@ image        :
 title        : 【臺灣鐵路GO】隱私權條款
 description  : 非常歡迎您光臨「臺灣鐵路GO」（以下簡稱本應用程式），為了讓您能夠安心的使用本應用程式的各項服務與資訊，特此向您說明本應用程式的隱私權保護政策，以保障您的權益，請您詳閱下列內容 ...
 date         : 2018-10-14 21:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - 臺灣鐵路GO
-tags         : 【臺灣鐵路GO】隱私權條款, 臺灣鐵路GO, TrainGo, 隱私權條款, 隱私權, 條款
-comments     : true
-signature    : true
+paginate     : true
 category     : policy
 twitter_text : 【臺灣鐵路GO】隱私權條款
 introduction : 非常歡迎您光臨「臺灣鐵路GO」（以下簡稱本應用程式），為了讓您能夠安心的使用本應用程式的各項服務與資訊，特此向您說明本應用程式的隱私權保護政策，以保障您的權益，請您詳閱下列內容 ...

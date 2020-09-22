@@ -4,12 +4,10 @@ image        :
 title        : 如何建立一個自己的 Git - Gitea 架設教學
 description  : 如果有在撰寫程式語言的人，或許就會知道 GitHub 這很好用的版本控制平台，另一方面很多企業徵求資訊人員的時候，通常也會要求應徵者提供自己的 ...
 date         : 2017-07-14 09:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - Gitea
-tags         : 如何建立一個自己的 Git - Gitea 架設教學, Git, GitServer, Server, Gitea, GitHub, 架設, 教學, 架設教學
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 如何建立一個自己的 Git - Gitea 架設教學
 introduction : 如果有在撰寫程式語言的人，或許就會知道 GitHub 這很好用的版本控制平台，另一方面很多企業徵求資訊人員的時候，通常也會要求應徵者提供自己的 ...

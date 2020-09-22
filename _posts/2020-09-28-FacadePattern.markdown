@@ -4,14 +4,12 @@ image        : /assets/img/posts/Banner_15.png
 title        : 【PHP、設計模式、大頭菜】外觀模式 Facade Pattern
 description  : 外觀模式，或者稱作門面模式，一種把複雜邏輯給包裝起來的一種模式，舉個例子來說，今天已經不單只是計算大頭菜了，而是你有個背包(Bag)要先放入鈴錢(Bells)，然後拿出鈴錢從曹賣(DaisyMae)手中購買大頭菜，並且把大頭菜賣給 Nook 商店(Store)，牽涉到許多的細節，透過外觀模式來將複雜的操作集中成幾個簡單的動作。
 date         : 2020-09-28 12:00:00
-author       : 乾太 kantai
-mintags      :
+author       : kantai235
+tags         :
 - 設計模式
 - 結構型
 - 外觀模式
-tags         : PHP DesignPattern Facade Design Pattern 設計模式 外觀模式 設計 模式 大頭菜
-comments     : true
-signature    : true
+paginate     : true
 category     : tutorial
 twitter_text : 【PHP、設計模式、大頭菜】外觀模式 Facade Pattern
 introduction : 外觀模式，或者稱作門面模式，一種把複雜邏輯給包裝起來的一種模式，舉個例子來說，今天已經不單只是計算大頭菜了，而是你有個背包(Bag)要先放入鈴錢(Bells)，然後拿出鈴錢從曹賣(DaisyMae)手中購買大頭菜，並且把大頭菜賣給 Nook 商店(Store)，牽涉到許多的細節，透過外觀模式來將複雜的操作集中成幾個簡單的動作。
