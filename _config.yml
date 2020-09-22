@@ -10,8 +10,18 @@ email: kantai.developer@gmail.com
 disqus_username: kantai235
 show_hero: true
 menu:
-  - title: 首頁
+  - title: 首頁 Home
     url: /
+  - title: 技術文章 Tutorial
+    url: /tutorial
+  - title: 開箱文 Unboxing
+    url: /unboxing
+  - title: 線上工具 Tools
+    url: /tools
+  - title: 產生器 Generator
+    url: /generator
+  - title: 快速查表 Article
+    url: /article
   - title: 關於我
     url: /about
   - title: 聯絡我
