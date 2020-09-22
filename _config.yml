@@ -12,21 +12,11 @@ show_hero: true
 menu:
   - title: 首頁 Home
     url: /
-  - title: 技術文章 Tutorial
-    url: /tutorial
-  - title: 開箱文 Unboxing
-    url: /unboxing
-  - title: 線上工具 Tools
-    url: /tools
-  - title: 產生器 Generator
-    url: /generator
-  - title: 快速查表 Article
-    url: /article
-  - title: 關於我
+  - title: 關於我 About
     url: /about
-  - title: 聯絡我
+  - title: 聯絡我 Contact
     url: /contact
-  - title: 訂閱
+  - title: 訂閱 Feed
     url: /feed.xml
 
 
