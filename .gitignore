@@ -4,7 +4,9 @@ Gemfile.lock
 package-json.lock
 _site
 _drafts
+.bundle
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 node_modules
+vendor
