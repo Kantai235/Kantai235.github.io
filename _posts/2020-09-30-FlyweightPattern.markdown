@@ -11,8 +11,6 @@ tags         :
 - 享元模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】享元模式 Flyweight Pattern
-introduction : 享元模式，在定義上來說是共享物件，將相似的物件集中整理，減少記憶體上的使用，舉例來說每座島的大頭菜鈴錢價格都不同，有些朋友會送你大頭菜，但因為朋友太多了，所以需要有個地方集中放這些大頭菜，並且記錄起來，每個朋友都送你一組大頭彩，但你不能重複紀錄，不然你只收到一組大頭菜，帳上卻紀錄兩組，這樣就不好了。
 ---
 
 # 享元模式 Flyweight Pattern
@@ -230,8 +228,8 @@ OK (44 tests, 107 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 享元模式](https://kantai235.github.io/FlyweightPattern)
-- [享元模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/FlyweightPattern)
-- [享元模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/FlyweightPatternTest.php)
+- [享元模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/FlyweightPattern)
+- [享元模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/FlyweightPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

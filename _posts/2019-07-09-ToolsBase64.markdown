@@ -10,8 +10,6 @@ tags         :
 - Base64
 paginate     : true
 category     : tools
-twitter_text : 線上編碼、解碼器 for Base64
-introduction : 一款簡單的線上編碼、解碼器，Base64 是一種基於 64 個可列印字元來表示二進位資料的表示方法。
 ---
 
 <style type="text/css" media="screen">

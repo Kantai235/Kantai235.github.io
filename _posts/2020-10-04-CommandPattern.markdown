@@ -11,8 +11,6 @@ tags         :
 - 命令模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】命令模式 Command Pattern
-introduction : 命令模式，是一種將行為封裝起來裹上美好糖衣的一種模式，並將接收與執行分離出來，就有點像是把大頭菜買賣這件事，如果把買大頭菜、賣大頭菜這兩個動作封裝起來，變成一個命令，分開去執行。
 ---
 
 # 命令模式 Command Pattern
@@ -361,8 +359,8 @@ OK (55 tests, 122 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 命令模式](https://kantai235.github.io/CommandPattern)
-- [命令模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/CommandPattern)
-- [命令模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Behavioral/CommandPatternTest.php)
+- [命令模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/CommandPattern)
+- [命令模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/CommandPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

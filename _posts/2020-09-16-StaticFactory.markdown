@@ -11,8 +11,6 @@ tags         :
 - 靜態工廠
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】靜態工廠 Static Factory
-introduction : 靜態工廠，顧名思義就是希望這整個工廠都是屬於靜態屬性的，無論到哪裡都以靜態方法來使用這個工廠，就像是在星期日的早上時，會有個曹賣在你的島上走來走去，但無論曹賣走到哪裡，你都可以跟曹賣買大頭菜。
 ---
 
 # 靜態工廠 Static Factory
@@ -253,8 +251,8 @@ OK (24 tests, 68 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 靜態工廠](https://kantai235.github.io/StaticFactory)
-- [靜態工廠 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/StaticFactory)
-- [靜態工廠 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Creational/StaticFactoryTest.php)
+- [靜態工廠 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Creational/StaticFactory)
+- [靜態工廠 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Creational/StaticFactoryTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

@@ -9,8 +9,6 @@ tags         :
 - Line Message API
 paginate     : true
 category     : tutorial
-twitter_text : Line Message API 初戰！
-introduction : 本篇教學教你如何基本使用 Line Message API，在台灣或日本當中，Line 一直是這些國家民眾愛用的通訊軟體之一，隨著資訊的發展，越來越多開發者重視各種機器人的開發 ...
 ---
 
 在台灣或日本當中，Line 一直是這些國家民眾愛用的通訊軟體之一，隨著資訊的發展，越來越多開發者重視各種機器人的開發，從上次的 [Facebook Chat Bot 教學](https://kantai235.github.io/2017/02/25/FacebookChatBot/)，我們教大家使用 [Chatfuel](https://chatfuel.com/) 來開發 Facebook 的聊天機器人，而這次乾太將要帶給大家 Line 的聊天機器人。

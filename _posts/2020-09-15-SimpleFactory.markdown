@@ -11,8 +11,6 @@ tags         :
 - 簡單工廠
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】簡單工廠 Simple Factory
-introduction : 簡單工廠，這是一種我們真的要買大頭菜的模式，你需要建立一個工廠，這個工廠負責生產特定物件，你只需要把材料丟給工廠，工廠就會把商品生產出來給你，你不需要理會工廠都在做些什麼，就有點像是你跟曹賣買大頭菜，你只需要付鈴錢就好，你不需要去理解曹賣到底是怎麼種大頭菜的。
 ---
 
 # 簡單工廠 Simple Factory
@@ -181,8 +179,8 @@ OK (24 tests, 68 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 簡單工廠](https://kantai235.github.io/SimpleFactory)
-- [簡單工廠 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/SimpleFactory)
-- [簡單工廠 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Creational/SimpleFactoryTest.php)
+- [簡單工廠 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Creational/SimpleFactory)
+- [簡單工廠 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Creational/SimpleFactoryTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

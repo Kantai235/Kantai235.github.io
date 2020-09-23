@@ -11,8 +11,6 @@ tags         :
 - 資料對應
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】資料對應 Data Mapper
-introduction : 資料對應，這是一種常用於處理物件導向與資料庫資料的模式，與 `Repository` 不同，`Data Mapper` 主要處理的事單個物件本身，而 `Repository` 處理的是物件的集合。這次實作舉個例子，你在買大頭菜之前，需要有一個草圖去評估你要前往哪些島上買大頭菜，決定好之後再開始行動。
 ---
 
 # 資料對應 Data Mapper
@@ -283,8 +281,8 @@ OK (36 tests, 83 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 資料對應](https://kantai235.github.io/DataMapper)
-- [資料對應 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/DataMapper)
-- [資料對應 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/DataMapperTest.php)
+- [資料對應 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/DataMapper)
+- [資料對應 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/DataMapperTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

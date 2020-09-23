@@ -9,8 +9,6 @@ tags         :
 - VirtualHost
 paginate     : true
 category     : tutorial
-twitter_text : 如何在 Linux/macOS 當中，利用 XAMPP 一次運行多個網站
-introduction : 身為一位自由工作者，時常會接到不同廠商的網站案子，但同一時間下可能不會只有開發一個網站，但同一個通訊埠(Port)又只能連結一個網站，這時候就需要 VirtualHost ...
 ---
 
 身為一位自由工作者，時常會接到不同廠商的網站案子，但同一時間下可能不會只有開發一個網站，但同一個通訊埠(Port)又只能連結一個網站，這時候就需要 `VirtualHost` 這種東西來解決這樣的問題了，它可以達成讓你根據 URL 的不同而觸發不同的網站來源。

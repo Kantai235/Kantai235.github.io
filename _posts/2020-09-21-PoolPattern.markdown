@@ -11,8 +11,6 @@ tags         :
 - 物件池模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】物件池模式 Pool Pattern
-introduction : 物件池模式，每次的買賣都是致富的關鍵，致富不能只靠 40 顆大頭菜，靠的是放滿整座島的大頭菜，因此你需要有個島專門放大頭菜，放得滿滿的，到了關鍵時刻再把大頭菜拿出來賣。
 ---
 
 # 物件池模式 Pool Pattern
@@ -242,8 +240,8 @@ OK (24 tests, 68 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 物件池模式](https://kantai235.github.io/PoolPattern)
-- [物件池模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/PoolPattern)
-- [物件池模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Creational/PoolPatternTest.php)
+- [物件池模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Creational/PoolPattern)
+- [物件池模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Creational/PoolPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

@@ -10,8 +10,6 @@ tags         :
 - reCAPTCHA
 paginate     : true
 category     : tutorial
-twitter_text : 如何在 Android 當中引用 reCAPTCHA 來做防堵機器人的驗證。
-introduction : Google上周五（6/9）釋出了支援Android平台的reCAPTCHA API，此一API採用的是Google甫於今年3月發表的隱形reCAPTCHA技術，可於背景辨識用戶是真人或機器人，去除用戶使用行動程式的障礙...
 ---
 
 我終於畢業啦(撒花)，不過玩咖的路上是沒有停歇的，偶然在公司工程師群組看到一則的新聞：

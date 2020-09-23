@@ -11,8 +11,6 @@ tags         :
 - 責任鏈模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】責任鏈模式 Chain of Responsibilities
-introduction : 責任鏈模式，有一系列的命令物件及處理物件，常見於需要被連續處理的地方上，舉例來說，假設今天收購箱、商店收購大頭菜時，多了一些條件，你必須先把大頭菜拿去收購箱收購，並且收購箱子會有鈴錢價格打
 ---
 
 # 責任鏈模式 Chain of Responsibilities
@@ -344,8 +342,8 @@ OK (54 tests, 120 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 責任鏈模式](https://kantai235.github.io/ChainOfResponsibilities)
-- [責任鏈模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/ChainOfResponsibilities)
-- [責任鏈模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Behavioral/ChainOfResponsibilitiesTest.php)
+- [責任鏈模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/ChainOfResponsibilities)
+- [責任鏈模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/ChainOfResponsibilitiesTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

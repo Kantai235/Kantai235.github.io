@@ -10,8 +10,6 @@ tags         :
 - runOnUiThread
 paginate     : true
 category     : tutorial
-twitter_text : Android 執行緒使用經驗談 - runOnUiThread
-introduction : 在 Android 執行緒的世界當中，我們可以指派工作給員工去執行，例如今天我指派了很多事情給員工 ...
 ---
 
 在 Android 執行緒的世界當中，我們可以指派工作給員工去執行，例如今天我指派了很多事情給員工，並且交代員工每完成一件事情，就請回報你的進度給我(顯示東西到畫面上)，那就會遇到「Only the original thread that created a view hierarchy can touch its views.」這樣的錯誤訊息，從 Google 翻譯上得到的解釋是「只有創建視圖層次結構的原始線程才能觸及其視圖」。

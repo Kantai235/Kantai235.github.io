@@ -9,8 +9,6 @@ tags         :
 - ASP.NET Web APIv2
 paginate     : true
 category     : tutorial
-twitter_text : ASP.NET Web API 2 基本建置與教學
-introduction : 在開發網頁應用程式，有時候會遇到一種情境，我們為了這個網頁做了很大量的開發 ...
 ---
 
 在開發網頁應用程式，有時候會遇到一種情境，我們為了這個網頁做了很大量的開發，累積了很多使用者，但當我們想開發一些 API 應用給第三方開發者使用時，我們該怎麼辦呢？

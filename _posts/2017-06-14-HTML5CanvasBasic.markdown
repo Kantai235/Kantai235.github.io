@@ -9,8 +9,6 @@ tags         :
 - Canvas
 paginate     : true
 category     : tutorial
-twitter_text : 如何利用 JavaScript 在 HTML5 的 Canvas 標籤中繪圖 - 基礎教學
-introduction : 是的，這次要帶給大家的是 Canvas 標籤的基礎教學，它就像一塊畫布，能讓你在 HTML 標籤當中繪圖、動畫、遊戲，那我們就來個簡單的範例吧，就是做出一款經典的打磚塊遊戲 ...
 ---
 
 <style>

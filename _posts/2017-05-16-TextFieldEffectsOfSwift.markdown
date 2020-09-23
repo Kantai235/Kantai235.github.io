@@ -9,8 +9,6 @@ tags         :
 - Swift
 paginate     : true
 category     : tutorial
-twitter_text : iOS Swift 第三方套件介紹 - TextFieldEffects
-introduction : 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...
 ---
 
 有時候，在應用程式當中的小小細節，也能深得使用者的喜好，程式不只要好用才行，還必須搭配美觀的介面，才能深得人心，然而在 iOS 專案當中，原生的 Field 輸入框太過於古板，不是那麼的好看，所以有人寫了 [TextFieldEffects](https://github.com/raulriera/TextFieldEffects) 這款好用的第三方套件，來使 Field 更加的美觀。

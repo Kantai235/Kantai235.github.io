@@ -11,8 +11,6 @@ tags         :
 - 註冊模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】註冊模式 Registry Pattern
-introduction : 註冊模式，如果應用程式內有非常多同樣的物件需要高度重複讀寫，就會去建立一個儲存器來負責管理這些同樣的物件，就有點像是你的大頭菜，會來自不同的島，每座的島菜價不同，這會導致你很難算出所賺到的鈴錢，所以如果每個大頭菜都需要登記註冊，然後有個集中管理的名冊，在管理大頭菜這件事上就能比較輕鬆。
 ---
 
 # 註冊模式 Registry Pattern
@@ -330,8 +328,8 @@ OK (51 tests, 116 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 註冊模式](https://kantai235.github.io/RegistryPattern)
-- [註冊模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/RegistryPattern)
-- [註冊模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/RegistryPatternTest.php)
+- [註冊模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/RegistryPattern)
+- [註冊模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/RegistryPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

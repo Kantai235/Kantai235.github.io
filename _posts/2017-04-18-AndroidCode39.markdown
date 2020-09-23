@@ -10,8 +10,6 @@ tags         :
 - Code39
 paginate     : true
 category     : tutorial
-twitter_text : Android 實作 Code39 條碼產生 - 超商繳費帳單
-introduction : 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...
 ---
 
 > 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費，不只如此，超商還化身成旅遊服務中心，讓遊客除了休息還能詢問各景點資訊，刺激來客量。

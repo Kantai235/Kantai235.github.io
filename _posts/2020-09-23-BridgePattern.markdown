@@ -11,8 +11,6 @@ tags         :
 - 橋接模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】橋接模式 Bridge Pattern
-introduction : 橋接模式，將實作體系與抽象體系分離開來，讓兩者能各自更動各自演進，就有點像是大頭菜有分健康的大頭菜及壞掉的大頭菜，你的島上有這兩種大頭菜，但是健康的大頭菜過了一個禮拜都沒賣掉的話，他就會變成壞掉的大頭菜了。
 ---
 
 # 橋接模式 Bridge Pattern
@@ -252,8 +250,8 @@ OK (31 tests, 76 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 橋接模式](https://kantai235.github.io/BridgePattern)
-- [橋接模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/BridgePattern)
-- [橋接模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/BridgePatternTest.php)
+- [橋接模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/BridgePattern)
+- [橋接模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/BridgePatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

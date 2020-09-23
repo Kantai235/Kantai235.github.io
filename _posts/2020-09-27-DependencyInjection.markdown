@@ -11,8 +11,6 @@ tags         :
 - 依賴注入
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】依賴注入 Dependency Injection
-introduction : 依賴注入模式，是控制反轉（Inversion of Control，縮寫為IoC）的一種實作方式，主要是將依賴物件丟給接收物件中，就像是你想要用大頭菜發財致富，但大頭菜有那麼多顆，你不可能每顆都記住鈴錢單價、數量，所以你寫了一張便條紙，紀錄著大頭菜的類別、鈴錢單價、數量，然後貼在大頭菜上。
 ---
 
 # 依賴注入 Dependency Injection
@@ -218,8 +216,8 @@ OK (41 tests, 88 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 依賴注入](https://kantai235.github.io/DependencyInjection)
-- [依賴注入 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/DependencyInjection)
-- [依賴注入 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/DependencyInjectionTest.php)
+- [依賴注入 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/DependencyInjection)
+- [依賴注入 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/DependencyInjectionTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

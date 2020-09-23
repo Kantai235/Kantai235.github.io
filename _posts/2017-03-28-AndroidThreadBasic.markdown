@@ -10,8 +10,6 @@ tags         :
 - HandlerThread
 paginate     : true
 category     : tutorial
-twitter_text : Android 執行緒使用經驗談 - HandlerThread
-introduction : 單執行緒應用程式，就像單向車道般的常常塞車，但多執行緒的應用程式，就會像高速公路般的順暢流利 ...
 ---
 
 單執行緒的應用程式，就像一條單向車道般，有時候剛好碰到對向車道可能會塞車，可是雙執行緒的應用程式，他就像高速公路般，可以使得你的應用程式非常順暢。

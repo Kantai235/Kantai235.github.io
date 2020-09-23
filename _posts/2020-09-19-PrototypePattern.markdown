@@ -11,8 +11,6 @@ tags         :
 - 原型模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】原型模式 Prototype Pattern
-introduction : 原型模式，你有些物件可能會需要建立很多一樣的物件，只是某些資料不太一樣而已，就有點像是每顆大頭菜都是一模一樣的物件，但可能因為來自不同的島，所以每顆大頭菜的差別只在於那起始購買的鈴錢不同。
 ---
 
 # 原型模式 Prototype Pattern
@@ -213,8 +211,8 @@ OK (24 tests, 68 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 原型模式](https://kantai235.github.io/PrototypePattern)
-- [原型模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/PrototypePattern)
-- [原型模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Creational/PrototypePatternTest.php)
+- [原型模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Creational/PrototypePattern)
+- [原型模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Creational/PrototypePatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

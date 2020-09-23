@@ -11,8 +11,6 @@ tags         :
 - Generator
 paginate     : true
 category     : generator
-twitter_text : 線上 String 字串亂數產生器
-introduction : 一款簡單的 String 字串線上產生器，可用來產生自定義的長度、大寫小寫英文、數字、字元符號 ... 通通自定義。
 ---
 
 <style>

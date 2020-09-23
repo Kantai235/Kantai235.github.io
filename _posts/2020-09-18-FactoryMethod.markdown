@@ -11,8 +11,6 @@ tags         :
 - 工廠方法
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】工廠方法 Factory Method
-introduction : 工廠方法，跟抽象工廠有點像，可是又沒那麼像，抽象工廠的工廠會有個抽象類別，並且把工廠要做且會重工的事情寫在抽象類別當中，而工廠方法則是需要定義一個工廠介面，並且讓工廠去實作，如果看到工廠介面不小心定義成抽象工廠，就拿網子打他，有點像是曹賣的奶奶會賣大頭菜，曹賣也會賣大頭菜，所以他們都有一個介面定義他們會賣大頭菜。
 ---
 
 # 工廠方法 Factory Method
@@ -277,8 +275,8 @@ OK (24 tests, 68 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 工廠方法](https://kantai235.github.io/FactoryMethod)
-- [工廠方法 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/FactoryMethod)
-- [工廠方法 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Creational/FactoryMethodTest.php)
+- [工廠方法 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Creational/FactoryMethod)
+- [工廠方法 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Creational/FactoryMethodTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

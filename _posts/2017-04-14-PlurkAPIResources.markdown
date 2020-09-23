@@ -9,8 +9,6 @@ tags         :
 - Plurk API
 paginate     : true
 category     : tutorial
-twitter_text : Plurk API 官方說明文件(不專業翻譯) - 簡介
-introduction : Plurk API 2.0 遵循 OAuth 1.0a 開放標準來保護使用者的隱私 ...
 ---
 
 #### ***＊ 本文章為個人翻譯，故正式內容以 Plurk 官方為主 ＊***

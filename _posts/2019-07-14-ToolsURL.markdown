@@ -10,8 +10,6 @@ tags         :
 - URL
 paginate     : true
 category     : tools
-twitter_text : 線上編碼、解碼器 for URL
-introduction : 一款簡單的線上編碼、解碼器，URL 是一種網際網路上標準的資源的位址（Address），如同在網路上的門牌。
 ---
 
 <style type="text/css" media="screen">

@@ -9,8 +9,6 @@ tags         :
 - CocoaPods
 paginate     : true
 category     : tutorial
-twitter_text : CocoaPods iOS 第三方套件管理工具
-introduction : 當我們在開發 iOS 應用程式的時候，時常會為了完成某些功能，而開始尋找有沒有人已經寫了相關套件來解決問題 ...
 ---
 
 當我們在開發 iOS 應用程式的時候，時常會為了完成某些功能，而開始尋找有沒有人已經寫了相關套件來解決問題，但是如果引用了太多第三方套件，又會變得難以管理整個專案，因此就有了 [CocoaPods](https://cocoapods.org) 這相依性套件管理工具。

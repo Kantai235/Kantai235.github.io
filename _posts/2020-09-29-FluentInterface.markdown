@@ -11,8 +11,6 @@ tags         :
 - 流暢介面
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】流暢介面 Fluent Interface
-introduction : 流暢介面，常用於撰寫如同文章般容易閱讀的程式碼，如果以大頭菜來講，那麼在建立大頭菜的同時，希望可以順便賦予其鈴錢價格、數量，並且最終獲得的依舊是大頭菜物件。
 ---
 
 # 流暢介面 Fluent Interface
@@ -133,8 +131,8 @@ OK (43 tests, 94 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 流暢介面](https://kantai235.github.io/FluentInterface)
-- [流暢介面 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/FluentInterface)
-- [流暢介面 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/FluentInterfaceTest.php)
+- [流暢介面 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/FluentInterface)
+- [流暢介面 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/FluentInterfaceTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

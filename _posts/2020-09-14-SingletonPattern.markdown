@@ -11,8 +11,6 @@ tags         :
 - 單例模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】單例模式 Singleton Pattern
-introduction : 單例模式，整個應用程式只會有一個實體，這個實體不會重複建立，就有點像是整座島上只有一個曹賣，這個曹賣在你這座島的時間，你可以盡量找他買大頭菜，無論你做什麼事情，大頭菜在這段時間內都不會任意更動，你的曹賣是你的曹賣，不會因為你進去博物館逛一圈再出來而改變。
 ---
 
 # 單例模式 Singleton Pattern
@@ -142,8 +140,8 @@ OK (24 tests, 68 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 單例模式](https://kantai235.github.io/SingletonPattern)
-- [單例模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/SingletonPattern)
-- [單例模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Creational/SingletonPatternTest.php)
+- [單例模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Creational/SingletonPattern)
+- [單例模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Creational/SingletonPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

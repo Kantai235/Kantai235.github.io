@@ -11,8 +11,6 @@ tags         :
 - 轉接器模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】轉接器模式 Adapter Pattern
-introduction : 轉接器模式，顧名思義會在兩個同功能但不同的規格的東西中，當作中間溝通的橋樑，就有點像是健康的大頭菜因為放超過一個禮拜，直接變成壞掉的大頭菜，兩個東西都是大頭菜，但規格上可能不太一樣，這時候我們就需要一個大頭菜轉接器，直接把健康的大頭菜給轉到壞掉。
 ---
 
 # 轉接器模式 Adapter Pattern
@@ -447,8 +445,8 @@ OK (28 tests, 72 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 轉接器模式](https://kantai235.github.io/AdapterPattern)
-- [轉接器模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/AdapterPattern)
-- [轉接器模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/AdapterPatternTest.php)
+- [轉接器模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/AdapterPattern)
+- [轉接器模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/AdapterPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

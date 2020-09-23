@@ -10,8 +10,6 @@ tags         :
 - Vue
 paginate     : true
 category     : tutorial
-twitter_text : Vue 前端工程師與 Laravel 後端工程師的權責分配問題
-introduction : 事實上 Laravel 本身也有定義好前端與後端這部分的權責界線，基本上來說，你到 Laravel 的官方文件當中，會有一個 MENU 是 Frontend 的說明文件 ...
 ---
 
 今天收到一則有趣的問題，問題大概是這樣子的：

@@ -11,8 +11,6 @@ tags         :
 - 疊代器模式
 paginate     : true
 category     : tutorial
-twitter_text : 【PHP、設計模式、大頭菜】疊代器模式 Iterator Pattern
-introduction : 疊代器模式，提供一種方法來簡單控制一個集合物件，這段過程並不會暴露該物件的來源或修改它，就有點像是你的背包(Bag)一樣，疊代器(Iterator)可以簡單控制你背包中的大頭菜(Turnips)以及鈴錢(Bells)。
 ---
 
 # 疊代器模式 Iterator Pattern
@@ -366,8 +364,8 @@ OK (59 tests, 126 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 疊代器模式](https://kantai235.github.io/IteratorPattern)
-- [疊代器模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/IteratorPattern)
-- [疊代器模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Behavioral/IteratorPatternTest.php)
+- [疊代器模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/IteratorPattern)
+- [疊代器模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/IteratorPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

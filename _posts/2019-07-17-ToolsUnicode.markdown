@@ -10,8 +10,6 @@ tags         :
 - Unicode
 paginate     : true
 category     : tools
-twitter_text : 線上編碼、解碼器 for Unicode
-introduction : 一款簡單的線上編碼、解碼器，Unicode 是一種電腦科學領域裡的一項業界標準。它對世界上大部分的文字系統進行了整理、編碼，使得電腦可以用更為簡單的方式來呈現和處理文字。
 ---
 
 <style type="text/css" media="screen">

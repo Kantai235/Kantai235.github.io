@@ -9,8 +9,6 @@ tags         :
 - Gitea
 paginate     : true
 category     : tutorial
-twitter_text : 如何建立一個自己的 Git - Gitea 架設教學
-introduction : 如果有在撰寫程式語言的人，或許就會知道 GitHub 這很好用的版本控制平台，另一方面很多企業徵求資訊人員的時候，通常也會要求應徵者提供自己的 ...
 ---
 
 如果有在撰寫程式語言的人，或許就會知道 [GitHub](https://github.com) 這很好用的版本控制平台，另一方面很多企業徵求資訊人員的時候，通常也會要求應徵者提供自己的 [GitHub](https://github.com) 來讓公司知道該應徵者的 Code 能力位於哪個階段，或者該名人才有開發過哪些專案。

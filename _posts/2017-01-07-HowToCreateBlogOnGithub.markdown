@@ -10,8 +10,6 @@ tags         :
 - Hyde
 paginate     : true
 category     : tutorial
-twitter_text : 如何在 GitHub 中建造一個屬於自己的部落格。
-introduction : 最近利用 [GitHub](https://github.com) 架設了一個靜態 Blog ...
 ---
 
 # 序言

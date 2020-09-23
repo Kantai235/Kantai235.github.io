@@ -9,8 +9,6 @@ tags         :
 - Plurk API
 paginate     : true
 category     : tutorial
-twitter_text : Plurk API 官方說明文件(不專業翻譯) - 目錄及規範
-introduction : Plurk 資料被編譯成 JSON 格式，所使用的日期是 UTC，您也可以將 UTC 發佈到 Plurk 伺服器 ...
 ---
 
 #### ***＊ 本文章為個人翻譯，故正式內容以 Plurk 官方為主 ＊***
