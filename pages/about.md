@@ -5,7 +5,8 @@ description: 關於我
 permalink: /about/
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/kantai235.png" alt="kantai235" width="200">
+<!-- <img class="img-rounded" src="/assets/img/uploads/kantai235.png" alt="kantai235" width="200"> -->
+<img src="/assets/img/uploads/kantai235.png" alt="kantai235" width="200">
 
 # 關於我
 
