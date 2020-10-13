@@ -1,283 +1,263 @@
 ---
 layout       : post
-image        : /assets/img/posts/Banner_25.png
-title        : 【PHP、設計模式、大頭菜】空物件模式 Null Object Pattern
-description  : 空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為 Null，而是讓原本應該做些事情的物件，因為空白物件而不做任何事，或是去執行預設的動作，打個比喻來說，遊戲裡面購買、販賣大頭菜是要找不同 NPC 的，如果要購買大頭菜，那就必須找曹賣(Daisy Mae)來購買，如果要販賣大頭菜則是找豆狸粒狸(Mamekichi and Tsubukichi)來販賣。
-date         : 2020-10-08 12:00:00
+image        : /assets/img/posts/Banner_26.png
+title        : 【PHP、設計模式、大頭菜】觀察者模式 Observer Pattern
+description  : 觀察者模式，一種現在全中國都知道你來了的模式，就有點像是收音機，打開收音機就開始自動接收廣播，關掉收音機就停止接收，就有點像是動森的連線模式，你跟朋友在同一座島遊玩時，如果有其他朋友來玩，那你們通通都會收到這個通知，然後開始看渡渡鳥航空飛起來的動畫。
+date         : 2020-10-09 12:00:00
 author       : kantai235
 tags         :
 - 設計模式
 - 行為型
-- 空物件模式
+- 觀察者模式
 paginate     : true
 category     : tutorial
 ---
 
-# 空物件模式 Null Object Pattern
-空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為 Null，而是讓原本應該做些事情的物件，因為空白物件而不做任何事，或是去執行預設的動作，打個比喻來說，遊戲裡面購買、販賣大頭菜是要找不同 NPC 的，如果要購買大頭菜，那就必須找曹賣(Daisy Mae)來購買，如果要販賣大頭菜則是找豆狸粒狸(Mamekichi and Tsubukichi)來販賣。
+# 觀察者模式 Observer Pattern
+觀察者模式，一種現在全中國都知道你來了的模式，就有點像是收音機，打開收音機就開始自動接收廣播，關掉收音機就停止接收，就有點像是動森的連線模式，你跟朋友在同一座島遊玩時，如果有其他朋友來玩，那你們通通都會收到這個通知，然後開始看渡渡鳥航空飛起來的動畫。
+
+![現在全中國都知道你來了](https://memes.tw/user-template/7a3ef7817e20b4329ca542fb154db593.png)
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/NullObjectPattern/UML.png)
+![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/ObserverPattern/UML.png)
 
 ## 實作
-玩家要購買、販賣大頭菜會跟 NPC 進行這些動作，所以我們要先定義 NPC 所能提供的功能有哪些，因此會有購買大頭菜、販賣大頭菜這兩個方法被定義出來，如果繼承了 NPC 這個介面就要去實作這兩個方法。
+這次我們要實作有一座島嶼(Island)讓玩家(Player)加入，當有玩家加入島嶼時，島嶼上其他的玩家會收到系統通知，所以會需要讓島嶼(Island)去繼承 `SplSubject` 這個類別，讓島嶼可以把玩家加入島嶼當中、讓玩家離開島嶼，實作這些時也順便通知其他玩家事件的產生，最後提供一個 `sendMessages` 的方法來通知當前所有加入觀察者名單的玩家。
 
-NPC.php
+Island.php
 ```php
 /**
- * Interface NPC.
+ * Class Island.
  */
-interface NPC
+class Island implements SplSubject
 {
     /**
-     * @param int $price
-     * @param int $count
-     */
-    public function buyTurnips(int $price, int $count);
-
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function sellTurnips(int $price, int $count);
-}
-```
-
-接下來實作曹賣(Daisy Mae)，但曹賣本身就只能購買大頭菜，因此在購買大頭菜的方法上實作這件事，但在販賣大頭菜的部分則是可以撰寫些對應的處理流程，這邊舉例為曹賣的貼心告知。
-
-DaisyMae.php
-```php
-/**
- * Class DaisyMae.
- */
-class DaisyMae implements NPC
-{
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function buyTurnips(int $price, int $count)
-    {
-        echo "[曹賣] 今天的價格是 1 棵 $price 鈴錢，要現在買嗎？";
-    }
-
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function sellTurnips(int $price, int $count)
-    {
-        echo "[曹賣] 我是曹賣，你不能把大頭菜賣給我。";
-    }
-}
-```
-
-曹賣(DaisyMae)是負責提供玩家可以購買大頭菜的重要 NPC，因此接下來要撰寫豆狸(Mamekichi)以及粒狸(Tsubukichi)兩位負責提供玩家販賣大頭菜的重要 NPC。
-
-Mamekichi.php
-```php
-/**
- * Class Mamekichi.
- */
-class Mamekichi implements NPC
-{
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function buyTurnips(int $price, int $count)
-    {
-        echo "[豆狸] 我是豆狸，我沒有在賣大頭菜狸。";
-        echo "[粒狸] 沒有在賣。";
-    }
-
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function sellTurnips(int $price, int $count)
-    {
-        $total = $price * $count;
-        echo "[豆狸] 現在的大頭菜價格是 1 棵 $price 鈴錢！";
-        echo "[粒狸] 鈴錢！";
-        echo "[豆狸] 好了！那麼，一共是 $total 鈴錢，確定要賣掉嗎？";
-        echo "[粒狸] 賣掉嗎？";
-    }
-}
-```
-
-Tsubukichi.php
-```php
-/**
- * Class Tsubukichi.
- */
-class Tsubukichi implements NPC
-{
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function buyTurnips(int $price, int $count)
-    {
-        echo "[粒狸] 我是粒狸，我沒有在賣大頭菜狸。";
-        echo "[豆狸] 沒有在賣。";
-    }
-
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function sellTurnips(int $price, int $count)
-    {
-        $total = $price * $count;
-        echo "[粒狸] 現在的大頭菜價格是 1 棵 $price 鈴錢！";
-        echo "[豆狸] 鈴錢！";
-        echo "[粒狸] 好了！那麼，一共是 $total 鈴錢，確定要賣掉嗎？";
-        echo "[豆狸] 賣掉嗎？";
-    }
-}
-```
-
-最後我們要模擬玩家(Player)出來，並且帶入當前目標 NPC 物件，假想為玩家目前正在對話的目標，並且有兩個行為，分別是購買大頭菜、販賣大頭菜的動作。
-
-Player.php
-```php
-/**
- * Class Player
- */
-class Player
-{
-    /**
-     * @var NPC
-     */
-    protected NPC $npc;
-
-    /**
+     * 用來存放觀察者名單。
      * 
-     * @param NPC $npc
+     * @var SplObjectStorage
      */
-    public function __construct(NPC $npc)
+    protected SplObjectStorage $observers;
+
+    /**
+     * Island constructor.
+     */
+    public function __construct()
     {
-        $this->setNPC($npc);
+        $this->observers = new SplObjectStorage();
     }
 
     /**
-     * @param NPC $npc
+     * 賦予觀察者物件。
+     * 
+     * @param SplObserver $observer
      */
-    public function setNPC(NPC $npc)
+    public function attach(SplObserver $observer)
     {
-        $this->npc = $npc;
+        $this->sendMessages("有玩家加入了！");
+        $this->observers->attach($observer);
     }
 
     /**
-     * @param int $price
-     * @param int $count
+     * 抽離觀察者物件。
+     * 
+     * @param SplObserver $observer
      */
-    public function buy(int $price, int $count)
+    public function detach(SplObserver $observer)
     {
-        $this->npc->buyTurnips($price, $count);
+        $this->observers->detach($observer);
+        $this->sendMessages("有玩家離開了！");
     }
 
     /**
-     * @param int $price
-     * @param int $count
+     * 通知觀察者。
      */
-    public function sell(int $price, int $count)
+    public function notify()
     {
-        $this->npc->sellTurnips($price, $count);
+        foreach ($this->observers as $observer) {
+            $observer->update();
+        }
+    }
+
+    /**
+     * 發佈訊息給所有的觀察者。
+     * 
+     * @param string $message
+     */
+    public function sendMessages(string $message)
+    {
+        foreach ($this->observers as $observer) {
+            $observer->sendMessage($message);
+        }
     }
 }
 ```
+
+實作完島嶼以後，接下來要把玩家(Player)建立出來，讓玩家去繼承 `SplObserver` 這個類別，這些類別是 `php` 內建提供觀察者模式的類別，詳細資訊列在 #額外補充 當中，另外需要額外提供一個 `sendMessage` 方法，代表玩家收到島嶼發出來的通知了，所以把訊息輸出出來，並補上玩家名稱的標示。
+
+```php
+/**
+ * Class PlayerObserver.
+ */
+class PlayerObserver implements SplObserver
+{
+    /**
+     * @var string
+     */
+    protected string $user;
+
+    /**
+     * @var SplSubject[]
+     */
+    protected array $observers = [];
+    
+    /**
+     * PlayerObserver constructor.
+     * 
+     * @param string $user
+     */
+    public function __construct(string $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @param SplSubject $subject
+     */
+    public function update(SplSubject $subject)
+    {
+        // TODO: Implement update() method.
+    }
+
+    /**
+     * @param string $message
+     */
+    public function sendMessage(string $message)
+    {
+        echo "[$this->user 收到通知] $message";
+    }
+}
+```
+
+## 額外補充
+### SplSubject
+繼承 `SplSubject` 這個類別會需要實作 `attach`、`detach` 及 `notify` 這三個方法，`attach` 會需要賦予 `SplObserver` 觀察者物件，也就是把觀察者加入集合當中，而 `detach` 則是抽離指定的 `SplObserver` 物件，也就是把觀察者拔除，最後 `notify` 則是通知仍然存在於集合中的觀察者們。
+```php
+SplSubject {
+    /* Methods */
+    abstract public attach ( SplObserver $observer ) : void
+    abstract public detach ( SplObserver $observer ) : void
+    abstract public notify ( void ) : void
+}
+```
+- 官方文件：[PHP: SplSubject - Manual](https://www.php.net/manual/en/class.splsubject.php)
+
+### SplObserver
+繼承 `SplObserver` 這個類別會需要實作 `update` 這個方法。
+```php
+SplObserver {
+    /* Methods */
+    abstract public update ( SplSubject $subject ) : void
+}
+```
+- 官方文件：[PHP: SplObserver - Manual](https://www.php.net/manual/en/class.splobserver.php)
+
+### SplObjectStorage
+`SplObjectStorage` 這個類別則是提供一系列的方法供使用。
+```php
+SplObjectStorage implements Countable , Iterator , Serializable , ArrayAccess {
+    /* Methods */
+    public addAll ( SplObjectStorage $storage ) : void
+    public attach ( object $object [, mixed $data = NULL ] ) : void
+    public contains ( object $object ) : bool
+    public count ( void ) : int
+    public current ( void ) : object
+    public detach ( object $object ) : void
+    public getHash ( object $object ) : string
+    public getInfo ( void ) : mixed
+    public key ( void ) : int
+    public next ( void ) : void
+    public offsetExists ( object $object ) : bool
+    public offsetGet ( object $object ) : mixed
+    public offsetSet ( object $object [, mixed $data = NULL ] ) : void
+    public offsetUnset ( object $object ) : void
+    public removeAll ( SplObjectStorage $storage ) : void
+    public removeAllExcept ( SplObjectStorage $storage ) : void
+    public rewind ( void ) : void
+    public serialize ( void ) : string
+    public setInfo ( mixed $data ) : void
+    public unserialize ( string $serialized ) : void
+    public valid ( void ) : bool
+}
+```
+- 官方文件：[PHP: SplObjectStorage - Manual](https://www.php.net/manual/en/class.splobjectstorage.php)
 
 ## 測試
-最後我們要測試空物件模式的幾個需要做的事情，首先是測試在無法提供特定功能下，其物件是否會執行預設給予的行為動作，像是曹賣僅提供購買大頭菜的功能，但不提供販賣大頭菜的功能，如果玩家對曹賣執行販賣大頭菜的功能，那麼曹賣會告訴玩家這項動作無法執行。
-1. 測試曹賣執行購買、販賣大頭菜的動作。
-2. 測試豆狸執行購買、販賣大頭菜的動作。
-3. 測試粒狸執行購買、販賣大頭菜的動作。
-4. 測試對曹賣購買大頭菜，並切換 NPC 目標，向豆狸、粒狸販賣大頭菜。
+這次的測試會假設有一座島嶼建立起來，並且陸續有玩家加入、離開，模擬這段過程所會產生的訊息是否正確，所以會預設幾些動作、動作所產生的訊息：
+1. 建立島嶼(Island)
+2. 建立玩家(Player A)，加入前島嶼上還沒有玩家，所以沒有人收到通知。
+3. 建立玩家(Player B)，加入前島嶼上已經有玩家 A 了，所以會產生以下通知：
+    1. [Player A 收到通知] 有玩家加入了！
+4. 建立玩家(Player C)，加入前島嶼上已經有玩家 A、B 了，所以會產生以下通知：
+    1. [Player A 收到通知] 有玩家加入了！
+    2. [Player B 收到通知] 有玩家加入了！
+5. 玩家(Player B)離開了島嶼，離開後島嶼上剩下 A、C 玩家，所以會產生以下通知：
+    1. [Player A 收到通知] 有玩家離開了！
+    2. [Player C 收到通知] 有玩家離開了！
 
-NullObjectPatternTest.php
 ```php
 /**
- * Class NullObjectPatternTest.
+ * Class ObserverPatternTest.
  */
-class NullObjectPatternTest extends TestCase
+class ObserverPatternTest extends TestCase
 {
     /**
      * @test
      */
-    public function test_daisy_mas()
+    public function test_observer()
     {
         $this->expectOutputString(implode(array(
-            "[曹賣] 今天的價格是 1 棵 100 鈴錢，要現在買嗎？",
-            "[曹賣] 我是曹賣，你不能把大頭菜賣給我。",
+            "[Player A 收到通知] 有玩家加入了！",
+            "[Player A 收到通知] 有玩家加入了！",
+            "[Player B 收到通知] 有玩家加入了！",
+            "[Player A 收到通知] 有玩家離開了！",
+            "[Player C 收到通知] 有玩家離開了！",
         )));
         
-        $player = new Player(new DaisyMae());
-        $player->buy(100, 40);
-        $player->sell(200, 40);
-    }
+        /**
+         * 建立一個島嶼
+         */
+        $island = new Island();
 
-    /**
-     * @test
-     */
-    public function test_mamekichi()
-    {
-        $this->expectOutputString(implode(array(
-            "[豆狸] 我是豆狸，我沒有在賣大頭菜狸。",
-            "[粒狸] 沒有在賣。",
-            "[豆狸] 現在的大頭菜價格是 1 棵 200 鈴錢！",
-            "[粒狸] 鈴錢！",
-            "[豆狸] 好了！那麼，一共是 8000 鈴錢，確定要賣掉嗎？[粒狸] 賣掉嗎？",
-        )));
+        /**
+         * Player A 加入了這座島嶼
+         * 加入前島上沒有玩家
+         * 所以沒有叮咚通知
+         */
+        $playerA = new PlayerObserver('Player A');
+        $island->attach($playerA);
 
-        $player = new Player(new Mamekichi());
-        $player->buy(100, 40);
-        $player->sell(200, 40);
-    }
+        /**
+         * Player B 加入了這座島嶼
+         * 加入前島上有 1 位玩家
+         * 扣除自己後，會有 A 收到叮咚通知
+         */
+        $playerB = new PlayerObserver('Player B');
+        $island->attach($playerB);
 
-    /**
-     * @test
-     */
-    public function test_tsubukichi()
-    {
-        $this->expectOutputString(implode(array(
-            "[粒狸] 我是粒狸，我沒有在賣大頭菜狸。",
-            "[豆狸] 沒有在賣。",
-            "[粒狸] 現在的大頭菜價格是 1 棵 200 鈴錢！",
-            "[豆狸] 鈴錢！",
-            "[粒狸] 好了！那麼，一共是 8000 鈴錢，確定要賣掉嗎？",
-            "[豆狸] 賣掉嗎？",
-        )));
+        /**
+         * Player C 加入了這座島嶼
+         * 加入前島上有 2 位玩家
+         * 扣除自己後，會有 A、B 收到叮咚通知
+         */
+        $playerC = new PlayerObserver('Player C');
+        $island->attach($playerC);
 
-        $player = new Player(new Tsubukichi());
-        $player->buy(100, 40);
-        $player->sell(200, 40);
-    }
-
-    /**
-     * @test
-     */
-    public function test_daisy_mas_buy_and_mamekichi_and_tsubukichi()
-    {
-        $this->expectOutputString(implode(array(
-            "[曹賣] 今天的價格是 1 棵 100 鈴錢，要現在買嗎？",
-            "[豆狸] 現在的大頭菜價格是 1 棵 200 鈴錢！",
-            "[粒狸] 鈴錢！",
-            "[豆狸] 好了！那麼，一共是 4000 鈴錢，確定要賣掉嗎？",
-            "[粒狸] 賣掉嗎？",
-            "[粒狸] 現在的大頭菜價格是 1 棵 300 鈴錢！",
-            "[豆狸] 鈴錢！",
-            "[粒狸] 好了！那麼，一共是 6000 鈴錢，確定要賣掉嗎？",
-            "[豆狸] 賣掉嗎？",
-        )));
-
-        $player = new Player(new DaisyMae());
-        $player->buy(100, 40);
-        $player->setNPC(new Mamekichi());
-        $player->sell(200, 20);
-        $player->setNPC(new Tsubukichi());
-        $player->sell(300, 20);
+        /**
+         * Island_B 離開了這座島嶼
+         * 離開前島上有 3 位玩家
+         * 扣除自己後，會有 A、C 收到叮咚通知
+         */
+        $island->detach($playerB);
     }
 }
 ```
@@ -297,6 +277,7 @@ PHPUnit 9.2.6 by Sebastian Bergmann and contributors.
  ==> MediatorPatternTest        ✔  ✔  ✔  
  ==> MementoPatternTest         ✔  
  ==> NullObjectPatternTest      ✔  ✔  ✔  ✔  
+ ==> ObserverPatternTest        ✔  
  ==> AbstractFactoryTest        ✔  ✔  ✔  ✔  
  ==> BuilderPatternTest         ✔  ✔  ✔  ✔  
  ==> FactoryMethodTest          ✔  ✔  ✔  ✔  
@@ -317,16 +298,16 @@ PHPUnit 9.2.6 by Sebastian Bergmann and contributors.
  ==> ProxyPatternTest           ✔  ✔  
  ==> RegistryPatternTest        ✔  ✔  ✔  ✔  ✔  
 
-Time: 00:00.042, Memory: 8.00 MB
+Time: 00:00.097, Memory: 8.00 MB
 
-OK (67 tests, 136 assertions)
+OK (68 tests, 137 assertions)
 ```
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 空物件模式](https://kantai235.github.io/NullObjectPattern)
-- [空物件模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/NullObjectPattern)
-- [空物件模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/NullObjectPatternTest.php)
+- [技術部落格文章 - 觀察者模式](https://kantai235.github.io/ObserverPattern)
+- [觀察者模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/ObserverPattern)
+- [觀察者模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/ObserverPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

@@ -1,283 +1,211 @@
 ---
 layout       : post
-image        : /assets/img/posts/Banner_25.png
-title        : 【PHP、設計模式、大頭菜】空物件模式 Null Object Pattern
-description  : 空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為 Null，而是讓原本應該做些事情的物件，因為空白物件而不做任何事，或是去執行預設的動作，打個比喻來說，遊戲裡面購買、販賣大頭菜是要找不同 NPC 的，如果要購買大頭菜，那就必須找曹賣(Daisy Mae)來購買，如果要販賣大頭菜則是找豆狸粒狸(Mamekichi and Tsubukichi)來販賣。
-date         : 2020-10-08 12:00:00
+image        : /assets/img/posts/Banner_28.png
+title        : 【PHP、設計模式、大頭菜】狀態模式 State Pattern
+description  : 狀態模式，讓物件的狀態改變時，一同改變物件的行為模式，就像是大頭菜(Turnips)這個物件，有沒有壞掉只是一個狀態(State)來辨別，但如果壞掉了，那麼會因為狀態改變的關係，而讓大頭菜計算鈴錢價格的方式也跟著改變。
+date         : 2020-10-11 12:00:00
 author       : kantai235
 tags         :
 - 設計模式
 - 行為型
-- 空物件模式
+- 狀態模式
 paginate     : true
 category     : tutorial
 ---
 
-# 空物件模式 Null Object Pattern
-空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為 Null，而是讓原本應該做些事情的物件，因為空白物件而不做任何事，或是去執行預設的動作，打個比喻來說，遊戲裡面購買、販賣大頭菜是要找不同 NPC 的，如果要購買大頭菜，那就必須找曹賣(Daisy Mae)來購買，如果要販賣大頭菜則是找豆狸粒狸(Mamekichi and Tsubukichi)來販賣。
+# 狀態模式 State Pattern
+狀態模式，讓物件的狀態改變時，一同改變物件的行為模式，就像是大頭菜(Turnips)這個物件，有沒有壞掉只是一個狀態(State)來辨別，但如果壞掉了，那麼會因為狀態改變的關係，而讓大頭菜計算鈴錢價格的方式也跟著改變。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/NullObjectPattern/UML.png)
+![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/StatePattern/UML.png)
 
 ## 實作
-玩家要購買、販賣大頭菜會跟 NPC 進行這些動作，所以我們要先定義 NPC 所能提供的功能有哪些，因此會有購買大頭菜、販賣大頭菜這兩個方法被定義出來，如果繼承了 NPC 這個介面就要去實作這兩個方法。
+因為要讓大頭菜(Turnips)掛載狀態物件，所以我們要先來定義狀態，會需要提供進入到下個狀態的方法，以及 `toString` 來查看當前的狀態是什麼。
 
-NPC.php
+State.php
 ```php
 /**
- * Interface NPC.
+ * Interface State.
  */
-interface NPC
+interface State
 {
     /**
-     * @param int $price
-     * @param int $count
+     * @param Turnips $turnips
      */
-    public function buyTurnips(int $price, int $count);
+    public function proceedToNext(Turnips $turnips);
 
     /**
-     * @param int $price
-     * @param int $count
+     * @return string
      */
-    public function sellTurnips(int $price, int $count);
+    public function toString(): string;
 }
 ```
 
-接下來實作曹賣(Daisy Mae)，但曹賣本身就只能購買大頭菜，因此在購買大頭菜的方法上實作這件事，但在販賣大頭菜的部分則是可以撰寫些對應的處理流程，這邊舉例為曹賣的貼心告知。
+首先是大頭菜剛建立出來的狀態，而大頭菜下個狀態是壞掉的狀態，所以在 `proceedToNext` 方法我們要將大頭菜(Turnips)來去賦予下個階段的狀態。
 
-DaisyMae.php
+StateCreated.php
 ```php
 /**
- * Class DaisyMae.
+ * Class StateCreated.
  */
-class DaisyMae implements NPC
+class StateCreated implements State
 {
     /**
-     * @param int $price
-     * @param int $count
+     * @param Turnips $turnips
      */
-    public function buyTurnips(int $price, int $count)
+    public function proceedToNext(Turnips $turnips)
     {
-        echo "[曹賣] 今天的價格是 1 棵 $price 鈴錢，要現在買嗎？";
+        $turnips->setState(new StateSpoiled());
     }
 
     /**
-     * @param int $price
-     * @param int $count
+     * @return string
      */
-    public function sellTurnips(int $price, int $count)
+    public function toString(): string
     {
-        echo "[曹賣] 我是曹賣，你不能把大頭菜賣給我。";
+        return 'created';
     }
 }
 ```
 
-曹賣(DaisyMae)是負責提供玩家可以購買大頭菜的重要 NPC，因此接下來要撰寫豆狸(Mamekichi)以及粒狸(Tsubukichi)兩位負責提供玩家販賣大頭菜的重要 NPC。
+再來是壞掉的大頭菜狀態，這個階段已經是最終階段了，所以在 `proceedToNext` 的部分則是不實作任何事。
 
-Mamekichi.php
+StateSpoiled.php
 ```php
 /**
- * Class Mamekichi.
+ * Class StateSpoiled.
  */
-class Mamekichi implements NPC
+class StateSpoiled implements State
 {
     /**
-     * @param int $price
-     * @param int $count
+     * @param Turnips $turnips
      */
-    public function buyTurnips(int $price, int $count)
+    public function proceedToNext(Turnips $turnips)
     {
-        echo "[豆狸] 我是豆狸，我沒有在賣大頭菜狸。";
-        echo "[粒狸] 沒有在賣。";
+        // there is nothing more to do
     }
 
     /**
-     * @param int $price
-     * @param int $count
+     * @return string
      */
-    public function sellTurnips(int $price, int $count)
+    public function toString(): string
     {
-        $total = $price * $count;
-        echo "[豆狸] 現在的大頭菜價格是 1 棵 $price 鈴錢！";
-        echo "[粒狸] 鈴錢！";
-        echo "[豆狸] 好了！那麼，一共是 $total 鈴錢，確定要賣掉嗎？";
-        echo "[粒狸] 賣掉嗎？";
+        return 'spoiled';
     }
 }
 ```
 
-Tsubukichi.php
+最後我們要實作大頭菜(Turnips)，除了要儲存鈴錢價格(Price)、數量(Count)以外，還要儲存當前的狀態(State)，這個狀態會在一開始被建立時就擁有，並且會在執行 `proceedToNext` 時被變更，最後提供計算鈴錢總價格的 `calculatePrice` 方法，並且根據當前的狀態(State)來切換計算模式。
+
+Turnips.php
 ```php
 /**
- * Class Tsubukichi.
+ * Class Turnips.
  */
-class Tsubukichi implements NPC
+class Turnips
 {
     /**
-     * @param int $price
-     * @param int $count
+     * @var State
      */
-    public function buyTurnips(int $price, int $count)
-    {
-        echo "[粒狸] 我是粒狸，我沒有在賣大頭菜狸。";
-        echo "[豆狸] 沒有在賣。";
-    }
+    protected State $state;
 
     /**
-     * @param int $price
-     * @param int $count
+     * @var int
      */
-    public function sellTurnips(int $price, int $count)
-    {
-        $total = $price * $count;
-        echo "[粒狸] 現在的大頭菜價格是 1 棵 $price 鈴錢！";
-        echo "[豆狸] 鈴錢！";
-        echo "[粒狸] 好了！那麼，一共是 $total 鈴錢，確定要賣掉嗎？";
-        echo "[豆狸] 賣掉嗎？";
-    }
-}
-```
-
-最後我們要模擬玩家(Player)出來，並且帶入當前目標 NPC 物件，假想為玩家目前正在對話的目標，並且有兩個行為，分別是購買大頭菜、販賣大頭菜的動作。
-
-Player.php
-```php
-/**
- * Class Player
- */
-class Player
-{
-    /**
-     * @var NPC
-     */
-    protected NPC $npc;
+    protected int $price;
 
     /**
+     * @var int
+     */
+    protected int $count;
+
+    /**
+     * Turnips constructor.
      * 
-     * @param NPC $npc
-     */
-    public function __construct(NPC $npc)
-    {
-        $this->setNPC($npc);
-    }
-
-    /**
-     * @param NPC $npc
-     */
-    public function setNPC(NPC $npc)
-    {
-        $this->npc = $npc;
-    }
-
-    /**
      * @param int $price
      * @param int $count
      */
-    public function buy(int $price, int $count)
+    public function __construct(int $price, int $count)
     {
-        $this->npc->buyTurnips($price, $count);
+        $this->price = $price;
+        $this->count = $count;
     }
 
     /**
-     * @param int $price
-     * @param int $count
+     * @return Turnips
      */
-    public function sell(int $price, int $count)
+    public static function create(int $price, int $count): Turnips
     {
-        $this->npc->sellTurnips($price, $count);
+        $turnips = new self($price, $count);
+        $turnips->state = new StateCreated();
+
+        return $turnips;
+    }
+
+    /**
+     * @param State $state
+     */
+    public function setState(State $state)
+    {
+        $this->state = $state;
+    }
+
+    /**
+     * @return void
+     */
+    public function proceedToNext()
+    {
+        $this->state->proceedToNext($this);
+    }
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        return $this->state->toString();
+    }
+
+    /**
+     * @return int
+     */
+    public function calculatePrice(): int
+    {
+        switch ($this->toString()) {
+            case 'created':
+                return $this->price * $this->count;
+
+            case 'spoiled':
+                return 0;
+        }
     }
 }
 ```
 
 ## 測試
-最後我們要測試空物件模式的幾個需要做的事情，首先是測試在無法提供特定功能下，其物件是否會執行預設給予的行為動作，像是曹賣僅提供購買大頭菜的功能，但不提供販賣大頭菜的功能，如果玩家對曹賣執行販賣大頭菜的功能，那麼曹賣會告訴玩家這項動作無法執行。
-1. 測試曹賣執行購買、販賣大頭菜的動作。
-2. 測試豆狸執行購買、販賣大頭菜的動作。
-3. 測試粒狸執行購買、販賣大頭菜的動作。
-4. 測試對曹賣購買大頭菜，並切換 NPC 目標，向豆狸、粒狸販賣大頭菜。
+最後我們要對狀態模式做測試，測試的項目很簡單，就是建立一個大頭菜物件，這時候是健康的大頭菜，所以應該要可以得知大頭菜現在的狀態是剛建立的 `created` 以及正常計算鈴錢價格，再來把大頭菜切換為下個狀態，也就是壞掉的大頭菜，這時候應該要獲得壞掉的狀態 `spoiled` 以及計算出 0 鈴錢。
 
-NullObjectPatternTest.php
+StatePatternTest.php
 ```php
 /**
- * Class NullObjectPatternTest.
+ * Class StatePatternTest.
  */
-class NullObjectPatternTest extends TestCase
+class StatePatternTest extends TestCase
 {
     /**
      * @test
      */
-    public function test_daisy_mas()
+    public function test_state_spoiled()
     {
-        $this->expectOutputString(implode(array(
-            "[曹賣] 今天的價格是 1 棵 100 鈴錢，要現在買嗎？",
-            "[曹賣] 我是曹賣，你不能把大頭菜賣給我。",
-        )));
-        
-        $player = new Player(new DaisyMae());
-        $player->buy(100, 40);
-        $player->sell(200, 40);
-    }
+        $turnips = Turnips::create(100, 40);
 
-    /**
-     * @test
-     */
-    public function test_mamekichi()
-    {
-        $this->expectOutputString(implode(array(
-            "[豆狸] 我是豆狸，我沒有在賣大頭菜狸。",
-            "[粒狸] 沒有在賣。",
-            "[豆狸] 現在的大頭菜價格是 1 棵 200 鈴錢！",
-            "[粒狸] 鈴錢！",
-            "[豆狸] 好了！那麼，一共是 8000 鈴錢，確定要賣掉嗎？[粒狸] 賣掉嗎？",
-        )));
+        $this->assertSame('created', $turnips->toString());
+        $this->assertEquals(4000, $turnips->calculatePrice());
 
-        $player = new Player(new Mamekichi());
-        $player->buy(100, 40);
-        $player->sell(200, 40);
-    }
+        $turnips->proceedToNext();
 
-    /**
-     * @test
-     */
-    public function test_tsubukichi()
-    {
-        $this->expectOutputString(implode(array(
-            "[粒狸] 我是粒狸，我沒有在賣大頭菜狸。",
-            "[豆狸] 沒有在賣。",
-            "[粒狸] 現在的大頭菜價格是 1 棵 200 鈴錢！",
-            "[豆狸] 鈴錢！",
-            "[粒狸] 好了！那麼，一共是 8000 鈴錢，確定要賣掉嗎？",
-            "[豆狸] 賣掉嗎？",
-        )));
-
-        $player = new Player(new Tsubukichi());
-        $player->buy(100, 40);
-        $player->sell(200, 40);
-    }
-
-    /**
-     * @test
-     */
-    public function test_daisy_mas_buy_and_mamekichi_and_tsubukichi()
-    {
-        $this->expectOutputString(implode(array(
-            "[曹賣] 今天的價格是 1 棵 100 鈴錢，要現在買嗎？",
-            "[豆狸] 現在的大頭菜價格是 1 棵 200 鈴錢！",
-            "[粒狸] 鈴錢！",
-            "[豆狸] 好了！那麼，一共是 4000 鈴錢，確定要賣掉嗎？",
-            "[粒狸] 賣掉嗎？",
-            "[粒狸] 現在的大頭菜價格是 1 棵 300 鈴錢！",
-            "[豆狸] 鈴錢！",
-            "[粒狸] 好了！那麼，一共是 6000 鈴錢，確定要賣掉嗎？",
-            "[豆狸] 賣掉嗎？",
-        )));
-
-        $player = new Player(new DaisyMae());
-        $player->buy(100, 40);
-        $player->setNPC(new Mamekichi());
-        $player->sell(200, 20);
-        $player->setNPC(new Tsubukichi());
-        $player->sell(300, 20);
+        $this->assertSame('spoiled', $turnips->toString());
+        $this->assertEquals(0, $turnips->calculatePrice());
     }
 }
 ```
@@ -297,6 +225,9 @@ PHPUnit 9.2.6 by Sebastian Bergmann and contributors.
  ==> MediatorPatternTest        ✔  ✔  ✔  
  ==> MementoPatternTest         ✔  
  ==> NullObjectPatternTest      ✔  ✔  ✔  ✔  
+ ==> ObserverPatternTest        ✔  
+ ==> SpecificationPatternTest   ✔  ✔  ✔  ✔  
+ ==> StatePatternTest           ✔  
  ==> AbstractFactoryTest        ✔  ✔  ✔  ✔  
  ==> BuilderPatternTest         ✔  ✔  ✔  ✔  
  ==> FactoryMethodTest          ✔  ✔  ✔  ✔  
@@ -317,16 +248,16 @@ PHPUnit 9.2.6 by Sebastian Bergmann and contributors.
  ==> ProxyPatternTest           ✔  ✔  
  ==> RegistryPatternTest        ✔  ✔  ✔  ✔  ✔  
 
-Time: 00:00.042, Memory: 8.00 MB
+Time: 00:00.100, Memory: 8.00 MB
 
-OK (67 tests, 136 assertions)
+OK (73 tests, 145 assertions)
 ```
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 空物件模式](https://kantai235.github.io/NullObjectPattern)
-- [空物件模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/NullObjectPattern)
-- [空物件模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/NullObjectPatternTest.php)
+- [技術部落格文章 - 狀態模式](https://kantai235.github.io/StatePattern)
+- [狀態模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/StatePattern)
+- [狀態模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/StatePatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

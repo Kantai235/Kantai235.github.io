@@ -1,283 +1,224 @@
 ---
 layout       : post
-image        : /assets/img/posts/Banner_25.png
-title        : 【PHP、設計模式、大頭菜】空物件模式 Null Object Pattern
-description  : 空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為 Null，而是讓原本應該做些事情的物件，因為空白物件而不做任何事，或是去執行預設的動作，打個比喻來說，遊戲裡面購買、販賣大頭菜是要找不同 NPC 的，如果要購買大頭菜，那就必須找曹賣(Daisy Mae)來購買，如果要販賣大頭菜則是找豆狸粒狸(Mamekichi and Tsubukichi)來販賣。
-date         : 2020-10-08 12:00:00
+image        : /assets/img/posts/Banner_27.png
+title        : 【PHP、設計模式、大頭菜】規格模式 Specification Pattern
+description  : 規格模式，將邏輯條件給抽離出來，獨立成一個模組，而不是在物件內透過邏輯判斷來撰寫複雜的程式碼，簡化物件所需要實踐的邏輯，物件可以套用一個規則，也可以套用多種規則，就像大頭菜本身的價格運算是一種規格，過期後的價格運算又是另一種規格，可以把這個價格運算的邏輯抽離出來獨立成模組。
+date         : 2020-10-10 12:00:00
 author       : kantai235
 tags         :
 - 設計模式
 - 行為型
-- 空物件模式
+- 規格模式
 paginate     : true
 category     : tutorial
 ---
 
-# 空物件模式 Null Object Pattern
-空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為 Null，而是讓原本應該做些事情的物件，因為空白物件而不做任何事，或是去執行預設的動作，打個比喻來說，遊戲裡面購買、販賣大頭菜是要找不同 NPC 的，如果要購買大頭菜，那就必須找曹賣(Daisy Mae)來購買，如果要販賣大頭菜則是找豆狸粒狸(Mamekichi and Tsubukichi)來販賣。
+# 規格模式 Specification Pattern
+規格模式，將邏輯條件給抽離出來，獨立成一個模組，而不是在物件內透過邏輯判斷來撰寫複雜的程式碼，簡化物件所需要實踐的邏輯，物件可以套用一個規則，也可以套用多種規則，就像大頭菜本身的價格運算是一種規格，過期後的價格運算又是另一種規格，可以把這個價格運算的邏輯抽離出來獨立成模組。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/NullObjectPattern/UML.png)
+![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/SpecificationPattern/UML.png)
 
 ## 實作
-玩家要購買、販賣大頭菜會跟 NPC 進行這些動作，所以我們要先定義 NPC 所能提供的功能有哪些，因此會有購買大頭菜、販賣大頭菜這兩個方法被定義出來，如果繼承了 NPC 這個介面就要去實作這兩個方法。
+首當其中我們需要把大頭菜物件給建立出來，具有價格(price)以及數量(count)的記錄、讀取功能，原本會提供計算鈴錢總計(calculatePrice)的功能，但這部分是運算邏輯，所以我們需要把這個功能抽離出來放到規格模組(Specification)當中。
 
-NPC.php
+Turnips.php
 ```php
 /**
- * Interface NPC.
+ * Class Turnips.
  */
-interface NPC
+class Turnips
 {
     /**
-     * @param int $price
-     * @param int $count
+     * @var int
      */
-    public function buyTurnips(int $price, int $count);
+    protected int $price = 0;
 
     /**
-     * @param int $price
-     * @param int $count
+     * @var int
      */
-    public function sellTurnips(int $price, int $count);
-}
-```
-
-接下來實作曹賣(Daisy Mae)，但曹賣本身就只能購買大頭菜，因此在購買大頭菜的方法上實作這件事，但在販賣大頭菜的部分則是可以撰寫些對應的處理流程，這邊舉例為曹賣的貼心告知。
-
-DaisyMae.php
-```php
-/**
- * Class DaisyMae.
- */
-class DaisyMae implements NPC
-{
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function buyTurnips(int $price, int $count)
-    {
-        echo "[曹賣] 今天的價格是 1 棵 $price 鈴錢，要現在買嗎？";
-    }
+    protected int $count = 0;
 
     /**
-     * @param int $price
-     * @param int $count
-     */
-    public function sellTurnips(int $price, int $count)
-    {
-        echo "[曹賣] 我是曹賣，你不能把大頭菜賣給我。";
-    }
-}
-```
-
-曹賣(DaisyMae)是負責提供玩家可以購買大頭菜的重要 NPC，因此接下來要撰寫豆狸(Mamekichi)以及粒狸(Tsubukichi)兩位負責提供玩家販賣大頭菜的重要 NPC。
-
-Mamekichi.php
-```php
-/**
- * Class Mamekichi.
- */
-class Mamekichi implements NPC
-{
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function buyTurnips(int $price, int $count)
-    {
-        echo "[豆狸] 我是豆狸，我沒有在賣大頭菜狸。";
-        echo "[粒狸] 沒有在賣。";
-    }
-
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function sellTurnips(int $price, int $count)
-    {
-        $total = $price * $count;
-        echo "[豆狸] 現在的大頭菜價格是 1 棵 $price 鈴錢！";
-        echo "[粒狸] 鈴錢！";
-        echo "[豆狸] 好了！那麼，一共是 $total 鈴錢，確定要賣掉嗎？";
-        echo "[粒狸] 賣掉嗎？";
-    }
-}
-```
-
-Tsubukichi.php
-```php
-/**
- * Class Tsubukichi.
- */
-class Tsubukichi implements NPC
-{
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function buyTurnips(int $price, int $count)
-    {
-        echo "[粒狸] 我是粒狸，我沒有在賣大頭菜狸。";
-        echo "[豆狸] 沒有在賣。";
-    }
-
-    /**
-     * @param int $price
-     * @param int $count
-     */
-    public function sellTurnips(int $price, int $count)
-    {
-        $total = $price * $count;
-        echo "[粒狸] 現在的大頭菜價格是 1 棵 $price 鈴錢！";
-        echo "[豆狸] 鈴錢！";
-        echo "[粒狸] 好了！那麼，一共是 $total 鈴錢，確定要賣掉嗎？";
-        echo "[豆狸] 賣掉嗎？";
-    }
-}
-```
-
-最後我們要模擬玩家(Player)出來，並且帶入當前目標 NPC 物件，假想為玩家目前正在對話的目標，並且有兩個行為，分別是購買大頭菜、販賣大頭菜的動作。
-
-Player.php
-```php
-/**
- * Class Player
- */
-class Player
-{
-    /**
-     * @var NPC
-     */
-    protected NPC $npc;
-
-    /**
+     * Turnips constructor.
      * 
-     * @param NPC $npc
-     */
-    public function __construct(NPC $npc)
-    {
-        $this->setNPC($npc);
-    }
-
-    /**
-     * @param NPC $npc
-     */
-    public function setNPC(NPC $npc)
-    {
-        $this->npc = $npc;
-    }
-
-    /**
      * @param int $price
      * @param int $count
      */
-    public function buy(int $price, int $count)
+    public function __construct(int $price, int $count)
     {
-        $this->npc->buyTurnips($price, $count);
+        $this->price = $price;
+        $this->count = $count;
     }
 
     /**
-     * @param int $price
-     * @param int $count
+     * @return int
      */
-    public function sell(int $price, int $count)
+    public function getPrice(): int
     {
-        $this->npc->sellTurnips($price, $count);
+        return $this->price;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCount(): int
+    {
+        return $this->count;
+    }
+}
+```
+
+再來定義規格模組(Specification)的介面，這個介面會需要實作大頭菜尚未補足的邏輯，也就是計算鈴錢價格(calculatePrice)的這項功能。
+
+Specification.php
+```php
+/**
+ * Interface Specification.
+ */
+interface Specification
+{
+    /**
+     * @return int
+     */
+    public function calculatePrice(): int;
+}
+```
+
+最後我們有兩種規格模式，分別是正常的大頭菜、壞掉的大頭菜，我們先來實作正常的情況下，大頭菜的總計鈴錢計算規格，這裡提供了可以丟大頭菜集合的方式，無論你有多少顆大頭菜，你通通都丟過來，我會全部加總一起算，就算是一顆也沒問題。
+
+TurnipsSpecification.php
+```php
+/**
+ * Class TurnipsSpecification.
+ */
+class TurnipsSpecification implements Specification
+{
+    /**
+     * @var Turnips[]
+     */
+    protected array $turnips;
+
+    /**
+     * Turnips constructor.
+     * 
+     * @param Turnips[] $turnips
+     */
+    public function __construct(Turnips ...$turnips)
+    {
+        $this->turnips = $turnips;
+    }
+
+    /**
+     * @return int
+     */
+    public function calculatePrice(): int
+    {
+        $total = 0;
+        foreach ($this->turnips as $turnip) {
+            $total += $turnip->getPrice() * $turnip->getCount();
+        }
+
+        return $total;
+    }
+}
+```
+
+最後是實作壞掉的大頭菜計算模式，這裡也是一樣提供一顆或多顆大頭菜計算，不一樣的點在於因為是壞掉的大頭菜，無法賣出鈴錢，所以無論你丟過來幾顆，我都會回傳給你 0 鈴錢。
+
+```php
+/**
+ * Class SpoiledSpecification.
+ */
+class SpoiledSpecification implements Specification
+{
+    /**
+     * @var Specification[]
+     */
+    protected array $turnips;
+
+    /**
+     * SpoiledSpecification constructor.
+     * 
+     * @param Specification[] $turnips
+     */
+    public function __construct(Specification ...$turnips)
+    {
+        $this->turnips = $turnips;
+    }
+
+    /**
+     * @return int
+     */
+    public function calculatePrice(): int
+    {
+        return 0;
     }
 }
 ```
 
 ## 測試
-最後我們要測試空物件模式的幾個需要做的事情，首先是測試在無法提供特定功能下，其物件是否會執行預設給予的行為動作，像是曹賣僅提供購買大頭菜的功能，但不提供販賣大頭菜的功能，如果玩家對曹賣執行販賣大頭菜的功能，那麼曹賣會告訴玩家這項動作無法執行。
-1. 測試曹賣執行購買、販賣大頭菜的動作。
-2. 測試豆狸執行購買、販賣大頭菜的動作。
-3. 測試粒狸執行購買、販賣大頭菜的動作。
-4. 測試對曹賣購買大頭菜，並切換 NPC 目標，向豆狸、粒狸販賣大頭菜。
+最後我們要寫個測試，來測試規格模式是不是正確的，主要分別為單顆大頭菜與多顆大頭菜的狀況下，以及正常、壞掉的兩種規格模式的測試。
+1. 單顆大頭菜使用正常規格模組，是否能正常計算出鈴錢價格。
+2. 多顆大頭菜使用正常規格模組，是否能正常計算出鈴錢價格。
+3. 單顆大頭菜使用正常規格模組，再套用壞掉的規格，是否能正常計算出壞掉的鈴錢價格。
+4. 多顆大頭菜使用正常規格模組，再套用壞掉的規格，是否能正常計算出壞掉的鈴錢價格。
 
-NullObjectPatternTest.php
+SpecificationPatternTest.php
 ```php
 /**
- * Class NullObjectPatternTest.
+ * Class SpecificationPatternTest.
  */
-class NullObjectPatternTest extends TestCase
+class SpecificationPatternTest extends TestCase
 {
     /**
      * @test
      */
-    public function test_daisy_mas()
+    public function test_single_turnips()
     {
-        $this->expectOutputString(implode(array(
-            "[曹賣] 今天的價格是 1 棵 100 鈴錢，要現在買嗎？",
-            "[曹賣] 我是曹賣，你不能把大頭菜賣給我。",
-        )));
-        
-        $player = new Player(new DaisyMae());
-        $player->buy(100, 40);
-        $player->sell(200, 40);
+        $turnips = new Turnips(100, 40);
+        $specification = new TurnipsSpecification($turnips);
+
+        $this->assertEquals(4000, $specification->calculatePrice());
     }
 
     /**
      * @test
      */
-    public function test_mamekichi()
+    public function test_multi_turnips()
     {
-        $this->expectOutputString(implode(array(
-            "[豆狸] 我是豆狸，我沒有在賣大頭菜狸。",
-            "[粒狸] 沒有在賣。",
-            "[豆狸] 現在的大頭菜價格是 1 棵 200 鈴錢！",
-            "[粒狸] 鈴錢！",
-            "[豆狸] 好了！那麼，一共是 8000 鈴錢，確定要賣掉嗎？[粒狸] 賣掉嗎？",
-        )));
+        $turnips_A = new Turnips(100, 40);
+        $turnips_B = new Turnips(90, 20);
+        $turnips_C = new Turnips(110, 20);
+        $specification = new TurnipsSpecification($turnips_A, $turnips_B, $turnips_C);
 
-        $player = new Player(new Mamekichi());
-        $player->buy(100, 40);
-        $player->sell(200, 40);
+        $this->assertEquals(8000, $specification->calculatePrice());
     }
 
     /**
      * @test
      */
-    public function test_tsubukichi()
+    public function test_single_spoiled()
     {
-        $this->expectOutputString(implode(array(
-            "[粒狸] 我是粒狸，我沒有在賣大頭菜狸。",
-            "[豆狸] 沒有在賣。",
-            "[粒狸] 現在的大頭菜價格是 1 棵 200 鈴錢！",
-            "[豆狸] 鈴錢！",
-            "[粒狸] 好了！那麼，一共是 8000 鈴錢，確定要賣掉嗎？",
-            "[豆狸] 賣掉嗎？",
-        )));
+        $turnips = new Turnips(100, 40);
+        $specification = new TurnipsSpecification($turnips);
+        $spoiled = new SpoiledSpecification($specification);
 
-        $player = new Player(new Tsubukichi());
-        $player->buy(100, 40);
-        $player->sell(200, 40);
+        $this->assertEquals(0, $spoiled->calculatePrice());
     }
 
     /**
      * @test
      */
-    public function test_daisy_mas_buy_and_mamekichi_and_tsubukichi()
+    public function test_multi_spoiled()
     {
-        $this->expectOutputString(implode(array(
-            "[曹賣] 今天的價格是 1 棵 100 鈴錢，要現在買嗎？",
-            "[豆狸] 現在的大頭菜價格是 1 棵 200 鈴錢！",
-            "[粒狸] 鈴錢！",
-            "[豆狸] 好了！那麼，一共是 4000 鈴錢，確定要賣掉嗎？",
-            "[粒狸] 賣掉嗎？",
-            "[粒狸] 現在的大頭菜價格是 1 棵 300 鈴錢！",
-            "[豆狸] 鈴錢！",
-            "[粒狸] 好了！那麼，一共是 6000 鈴錢，確定要賣掉嗎？",
-            "[豆狸] 賣掉嗎？",
-        )));
+        $turnips_A = new Turnips(100, 40);
+        $turnips_B = new Turnips(90, 20);
+        $turnips_C = new Turnips(110, 20);
+        $specification = new TurnipsSpecification($turnips_A, $turnips_B, $turnips_C);
+        $spoiled = new SpoiledSpecification($specification);
 
-        $player = new Player(new DaisyMae());
-        $player->buy(100, 40);
-        $player->setNPC(new Mamekichi());
-        $player->sell(200, 20);
-        $player->setNPC(new Tsubukichi());
-        $player->sell(300, 20);
+        $this->assertEquals(0, $spoiled->calculatePrice());
     }
 }
 ```
@@ -297,6 +238,8 @@ PHPUnit 9.2.6 by Sebastian Bergmann and contributors.
  ==> MediatorPatternTest        ✔  ✔  ✔  
  ==> MementoPatternTest         ✔  
  ==> NullObjectPatternTest      ✔  ✔  ✔  ✔  
+ ==> ObserverPatternTest        ✔  
+ ==> SpecificationPatternTest   ✔  ✔  ✔  ✔  
  ==> AbstractFactoryTest        ✔  ✔  ✔  ✔  
  ==> BuilderPatternTest         ✔  ✔  ✔  ✔  
  ==> FactoryMethodTest          ✔  ✔  ✔  ✔  
@@ -317,16 +260,16 @@ PHPUnit 9.2.6 by Sebastian Bergmann and contributors.
  ==> ProxyPatternTest           ✔  ✔  
  ==> RegistryPatternTest        ✔  ✔  ✔  ✔  ✔  
 
-Time: 00:00.042, Memory: 8.00 MB
+Time: 00:00.036, Memory: 8.00 MB
 
-OK (67 tests, 136 assertions)
+OK (72 tests, 141 assertions)
 ```
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 空物件模式](https://kantai235.github.io/NullObjectPattern)
-- [空物件模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/NullObjectPattern)
-- [空物件模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/NullObjectPatternTest.php)
+- [技術部落格文章 - 規格模式](https://kantai235.github.io/SpecificationPattern)
+- [規格模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/SpecificationPattern)
+- [規格模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/SpecificationPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)
