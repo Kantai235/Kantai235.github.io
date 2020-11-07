@@ -14,3 +14,5 @@ permalink: /about/
 
 目前主要開發《純靠北工程師》系列，時常會開發一些有趣的新玩具，例如大頭菜計算機、實況棒讀機。<br />
 口頭禪是「我不會寫程式」。
+
+<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('請乾太喝杯咖啡', '#944800', 'I2I52MD38');kofiwidget2.draw();</script>
