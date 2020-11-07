@@ -27,7 +27,7 @@ category     : development
 - 次版本號：軟體發佈新功能，但是並不會大幅影響到整個軟體的時候遞增。
 - 修訂版本號：通常是在軟體有 bug，發布 bug 的修正版時遞增。
 
-> 詳細教學可以閱讀 [SLMT's Blog | 版本編號的命名規則](https://www.slmt.tw/blog/2015/07/19/version-number-naming-convention/) 這篇文章，額外補充的內容都取自於這篇文章，裡面解說得非常詳盡。
+> 詳細教學可以閱讀 [SLMT's Blog - 版本編號的命名規則](https://www.slmt.tw/blog/2015/07/19/version-number-naming-convention) 這篇文章，額外補充的內容都取自於這篇文章，裡面解說得非常詳盡。
 
 ---
 ## 砍掉重練的風險與防範
@@ -73,7 +73,7 @@ https://kantai235.github.io/{文章檔名}
 ## 最後，喝杯咖啡？
 這是 `v4.0` 準備動工時，所想到的一些想法、經驗回顧，之後開發上可能會遇到些有趣的東西，或者開發上的思維，也會透過開發日誌的方式來記錄下來，如果你覺得這很有趣想支持的話，`歡迎請乾太喝杯咖啡哦 O_<`
 
-如果你有甚麼想問、想了解、想探討的議題，也歡迎透過 (純靠北工程師 Facebook 正式機 粉絲團)[https://www.facebook.com/init.kobeengineer] 來發問。
+如果你有甚麼想問、想了解、想探討的議題，也歡迎透過[《純靠北工程師 Facebook 正式機 粉絲團》](https://www.facebook.com/init.kobeengineer)來發問。
 
 <div style="padding: 2rem;">
     <style>
