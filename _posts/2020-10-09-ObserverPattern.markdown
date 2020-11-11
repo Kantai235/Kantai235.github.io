@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : /assets/img/posts/Banner_26.png
+image        : /assets/img/banner/ObserverPattern.png
 title        : 【PHP、設計模式、大頭菜】觀察者模式 Observer Pattern
 description  : 觀察者模式，一種現在全中國都知道你來了的模式，就有點像是收音機，打開收音機就開始自動接收廣播，關掉收音機就停止接收，就有點像是動森的連線模式，你跟朋友在同一座島遊玩時，如果有其他朋友來玩，那你們通通都會收到這個通知，然後開始看渡渡鳥航空飛起來的動畫。
 date         : 2020-10-09 12:00:00

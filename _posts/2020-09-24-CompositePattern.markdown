@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : /assets/img/posts/Banner_11.png
+image        : /assets/img/banner/CompositePattern.png
 title        : 【PHP、設計模式、大頭菜】組合模式 Composite Pattern
 description  : 組合模式，一種將物件一個一個處理，並且最後組合起來的模式，可以想像剛買到大頭菜時的夢想，經過每次漲跌所帶來的希望與絕望，究竟是充滿絕望的遞減型呢？還是致富關鍵的三期型呢？每次的價格異動，都代表著價格物件，最終賣出的鈴錢價格，是經過許多鈴錢價格物件所算出來的。
 date         : 2020-09-24 12:00:00

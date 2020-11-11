@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : https://i.imgur.com/WAENCqV.png
+image        : /assets/img/banner/FrontendWorkWithBackend.png
 title        : Vue 前端工程師與 Laravel 後端工程師的權責分配問題
 description  : 事實上 Laravel 本身也有定義好前端與後端這部分的權責界線，基本上來說，你到 Laravel 的官方文件當中，會有一個 MENU 是 Frontend 的說明文件 ...
 date         : 2019-07-04 18:00:00

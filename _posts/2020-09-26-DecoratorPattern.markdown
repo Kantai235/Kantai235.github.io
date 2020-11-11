@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : /assets/img/posts/Banner_13.png
+image        : /assets/img/banner/DecoratorPattern.png
 title        : 【PHP、設計模式、大頭菜】修飾模式 Decorator Pattern
 description  : 修飾模式，或者稱裝飾者模式，為物件動態增加新的方法，就想像你最初的大頭菜沒有想過他會壞掉，某天突然覺得讓大頭菜壞掉好像很好玩，但你不能把整個大頭菜砍掉重練，所以你希望可以不改變既有的大頭菜，在大頭菜額外再套上新的功能，那就是壞掉。
 date         : 2020-09-26 12:00:00

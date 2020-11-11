@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : /assets/img/posts/Banner_5.png
+image        : /assets/img/banner/FactoryMethod.png
 title        : 【PHP、設計模式、大頭菜】工廠方法 Factory Method
 description  : 工廠方法，跟抽象工廠有點像，可是又沒那麼像，抽象工廠的工廠會有個抽象類別，並且把工廠要做且會重工的事情寫在抽象類別當中，而工廠方法則是需要定義一個工廠介面，並且讓工廠去實作，如果看到工廠介面不小心定義成抽象工廠，就拿網子打他，有點像是曹賣的奶奶會賣大頭菜，曹賣也會賣大頭菜，所以他們都有一個介面定義他們會賣大頭菜。
 date         : 2020-09-18 12:00:00

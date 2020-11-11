@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : https://i.imgur.com/e8Xc1xo.png
+image        : /assets/img/banner/P1HowDoYouRelyOnTheKaobeiEngineer.png
 title        : P1. 純靠北工程師怎麼做的？就只是個簡單的後端架構而已。
 description  : 既然是工程師，那網站當然要自幹啊！在開始介紹如何寫功能以前，要先通過兩項前置任務（如果已經有點軟體架構概念、資料庫基本知識，則可以直接跳過） ...
 date         : 2019-02-14 12:00:00
@@ -96,7 +96,7 @@ class PostsController extends Controller {
 
 綜合以上的壞例子，接下來我們要做的就是逐一改善，推演成現在純靠北工程師網站的架構，下圖是壞例子的架構圖：
 
-![https://i.imgur.com/WxH4X7M.png](https://i.imgur.com/WxH4X7M.png)
+![/assets/img/posts/WxH4X7M.png](/assets/img/posts/WxH4X7M.png)
 如果以壞例子為基礎，那麼其架構會是這樣
 
 ---
@@ -109,7 +109,7 @@ class PostsController extends Controller {
 - `Service` 處理商業邏輯，例如在社群平台發表文章。
 - `Presenter` 處理顯示邏輯，例如社群平台的文章連結。
 
-![https://i.imgur.com/YZQPO5o.png](https://i.imgur.com/YZQPO5o.png)
+![/assets/img/posts/YZQPO5o.png](ht/assets/img/posts/YZQPO5o.png)
 把商業邏輯、資料庫邏輯與顯示邏輯抽離出來後的架構
 
 ---
@@ -124,7 +124,7 @@ class PostsController extends Controller {
 
 > [!] MVVM 科普一下 -> [MVVM - 維基百科，自由的百科全書](https://zh.wikipedia.org/wiki/MVVM)
 
-![https://i.imgur.com/o0GgaFi.png](https://i.imgur.com/o0GgaFi.png)
+![/assets/img/posts/o0GgaFi.png](/assets/img/posts/o0GgaFi.png)
 再加入些 Middleware、Request
 
 ---
@@ -135,7 +135,7 @@ class PostsController extends Controller {
 
 > [!] 事件與監聽器 科普一下 -> [事件 - Laravel - 為網頁藝術家創造的 PHP 框架](https://laravel.tw/docs/5.2/events)
 
-![https://i.imgur.com/OAwrC4d.png](https://i.imgur.com/OAwrC4d.png)
+![/assets/img/posts/OAwrC4d.png](/assets/img/posts/OAwrC4d.png)
 加入事件與監聽器後
 
 ---
@@ -145,7 +145,7 @@ class PostsController extends Controller {
 
 > [!] 觀察者 科普一下 -> [Eloquent: Getting Started - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/5.7/eloquent#observers)
 
-![https://i.imgur.com/veoUKFi.png](https://i.imgur.com/veoUKFi.png)
+![/assets/img/posts/veoUKFi.png](/assets/img/posts/veoUKFi.png)
 再加入觀察者模式
 
 ---
@@ -156,7 +156,7 @@ Presenter 主要目的是在於處理一些顯示邏輯，而不是把顯示邏�
 
 但有些顯示邏輯是到處都會用到的，甚至每個 Presenter 都會有的，就會寫到 `Helpers ` 當中，例如時間 format、Form 表單的送出與取消按鈕。
 
-![https://i.imgur.com/IW5Nf3R.png](https://i.imgur.com/IW5Nf3R.png)
+![/assets/img/posts/IW5Nf3R.png](/assets/img/posts/IW5Nf3R.png)
 放上 Helpers
 
 ---
@@ -165,7 +165,7 @@ Presenter 主要目的是在於處理一些顯示邏輯，而不是把顯示邏�
 
 接下來要考慮到之後如果要做前後端分離或 APP 化，會需要開發 API 時候的需求，因此除了 View 視圖以外，我們還會多出一個 Response，這部分就不會有 Presenter 與 Helpers 的使用了，因為沒有畫面，只有資料上的傳遞。
 
-![https://i.imgur.com/gUPnMQ9.png](https://i.imgur.com/gUPnMQ9.png)
+![/assets/img/posts/gUPnMQ9.png](/assets/img/posts/gUPnMQ9.png)
 除了 View 視圖，我們還要考慮到 RESTful 的開發
 
 ---
@@ -181,7 +181,7 @@ Presenter 主要目的是在於處理一些顯示邏輯，而不是把顯示邏�
 
 > [!] Hypermedia 科普一下 [ASP.NET - Building Hypermedia Web APIs with ASP.NET Web API](https://msdn.microsoft.com/en-us/magazine/jj883957.aspx)
 
-![https://i.imgur.com/6IMh2hW.png](https://i.imgur.com/6IMh2hW.png)
+![/assets/img/posts/6IMh2hW.png](/assets/img/posts/6IMh2hW.png)
 為 RESTful 加上 Transformer 與 Formatter
 
 ---

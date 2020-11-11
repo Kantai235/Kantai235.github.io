@@ -18,7 +18,7 @@ category     : tutorial
 >
 > - 取自於 WIKI
 
-![reCAPTCHA 官方](https://i.imgur.com/QBUvYAP.png)
+![reCAPTCHA 官方](/assets/img/posts/QBUvYAP.jpg)
 
 <br />
 <hr />
@@ -26,7 +26,7 @@ category     : tutorial
 
 申請的方式很簡單，你只要進入官方後，點擊右上角的「My reCAPTCHA」按鈕，或者點擊[這裡](https://www.google.com/recaptcha/admin)直接進入，你就可以看到詳細的列表、申請表單了。
 
-![reCAPTCHA 列表、申請表單](https://i.imgur.com/Wbj8YBc.png)
+![reCAPTCHA 列表、申請表單](/assets/img/posts/Wbj8YBc.png)
 
 <br />
 <hr />

@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : /assets/img/posts/PhpIntvalWTF.png
+image        : /assets/img/banner/PhpIntvalWTF.png
 title        : PHP Intval 的 8、7 運算 8、7 問題
 description  : 欸欸、乾太，你 php 小數計算會使用套件嗎？還是使用原生的方法進行運算？因為我遇到一個問題，我有 $a = 0.1 與 $b = 0.7 這兩個變數，把他們相加乘以 10 之後，應該得出的答案是 8 沒錯吧？但我 intval 之後他給我 7 欸。
 date         : 2020-10-16 12:00:00

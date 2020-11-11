@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : /assets/img/posts/Banner_18.png
+image        : /assets/img/banner/ProxyPattern.png
 title        : 【PHP、設計模式、大頭菜】代理模式 Proxy Pattern
 description  : 代理模式，它可以作為需要被保護的物件的介面，若以檔案權限來比喻的話，就是對主要物件套上一層代理，你可以在代理上實作控制權限，像是其代理僅有讀取、執行的權限，並沒有刪除、修改的權限，並防止直接接觸實際物件，換作大頭菜來講的話，大頭菜的本質就是大頭菜，大頭菜就頂多提供數量堆積的功能，鈴錢的計算要在代理介面上實作。
 date         : 2020-10-01 12:00:00

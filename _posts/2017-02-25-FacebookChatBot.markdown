@@ -27,31 +27,31 @@ category     : tutorial
 
 步驟一、請先到 [建立粉絲專頁](https://www.facebook.com/pages/create/) 當中去建立一個粉絲專頁。(如果已經有了，那你可以略過這步驟。)
 
-![步驟一](https://i.imgur.com/F27je6A.png)
+![步驟一](/assets/img/posts/F27je6A.png)
 
 
 
 步驟二、接下來我們要把這個粉絲專頁綁訂到 [Chatfuel](https://chatfuel.com/) 這平台當中，沒錯，請打開它。
 
-![步驟二](https://i.imgur.com/h1iPtSv.png)
+![步驟二](/assets/img/posts/h1iPtSv.png)
 
 
 
 步驟三、不管你要點「LOG IN」還是「GET STARTED FOR FREE」都可以，你都必須將你 Faecbook 帳號的權限授權給 Chatfuel，因為這樣平台才能透過你的帳號，來建立自動回覆機器人，完成之後會進入主控台。
 
-![步驟三](https://i.imgur.com/QZP1hxq.png)
+![步驟三](/assets/img/posts/QZP1hxq.png)
 
 
 
 步驟四、接下來我們選擇你要建立機器人的粉絲團，這邊當然我們就選擇我剛剛所建立的「[加摩爾會保護大家的！](https://www.facebook.com/%E5%8A%A0%E6%91%A9%E7%88%BE%E6%9C%83%E4%BF%9D%E8%AD%B7%E5%A4%A7%E5%AE%B6%E7%9A%84-407616019582120/)」囉～完成之後，會進入該粉絲團機器人的控制台。
 
-![步驟四](https://i.imgur.com/HVB3Luy.png)
+![步驟四](/assets/img/posts/HVB3Luy.png)
 
 
 
 步驟五、到這邊為止，我們甚麼都不做，就對這個粉絲團發 Messenger 訊息看看，看起來非常成功。
 
-![步驟五](https://i.imgur.com/NDcEwe6.png)
+![步驟五](/assets/img/posts/NDcEwe6.png)
 
 
 
@@ -66,19 +66,19 @@ category     : tutorial
 
 步驟一、我們到 Chatfuel 機器人的控制台 => Build 的功能選項裡頭，新建一個事件方塊：
 
-![步驟一](https://i.imgur.com/EalrMcl.png)
+![步驟一](/assets/img/posts/EalrMcl.png)
 
 
 
 步驟二、再來我們到 Set up AI 的功能選項，去新增一個判斷，如果留言內容有「一日千死」，或者可能留言有錯字，打成了「一日千屎」，那機器人要回應一日千死的這個事件方塊：
 
-![步驟二](https://i.imgur.com/SEdPE4v.png)
+![步驟二](/assets/img/posts/SEdPE4v.png)
 
 
 
 好的！接下來我們來看看機器人的成果：
 
-![成果](https://i.imgur.com/SlCKXiU.png)
+![成果](/assets/img/posts/SlCKXiU.png)
 
 
 

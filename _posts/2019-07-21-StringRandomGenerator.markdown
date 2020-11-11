@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : https://i.imgur.com/tLzYHX5.png
+image        : /assets/img/banner/StringRandomGenerator.png
 title        : 線上 String 字串亂數產生器
 description  : 一款簡單的 String 字串線上產生器，可用來產生自定義的長度、大寫小寫英文、數字、字元符號 ... 通通自定義。
 date         : 2019-07-21 12:00:00

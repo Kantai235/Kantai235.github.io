@@ -61,13 +61,13 @@ category     : tutorial
     + Label: 指鑰匙的唯一標籤，通常是您使用公司或組織的名稱。
     + Package Names: 應用程式的 Package 名稱，為了讓應用程式使用 API，您輸入的 Package 名稱必須與該應用的 Package 名稱完全匹配。
 
-![註冊應用程式](http://i.imgur.com/YkNVZi1.png)
+![註冊應用程式](/assets/img/posts/YkNVZi1.png)
 
 
 
 * 2. 註冊完畢後，您會獲得 `Site key` 與 `Secret key`，請把他們記下來，待會會使用到。
 
-![獲取key](http://i.imgur.com/BQE7kD2.png)
+![獲取key](/assets/img/posts/BQE7kD2.png)
 
 
 

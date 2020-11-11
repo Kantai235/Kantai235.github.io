@@ -61,7 +61,7 @@ category     : tutorial
 
 接下來你可以試著去獲取 Plurk API 相關的應用，我們先以「/APP/Users/me」為例子，直接按下「Invoke API」按鈕，就可以獲得自己的資料(JSON格式)。
 
-![範例圖](https://i.imgur.com/5R2bxgk.png)
+![範例圖](/assets/img/posts/5R2bxgk.png)
 
 既然現在我們已經了解 OAuth 的運作概念了，那我們差不多該進入主題囉！該如何使用 OAuthSwift 呢？首先我們要思考到，我們會先請求使用者到 Plruk 網頁去認證，當使用者認證完畢後，網頁可能會做些什麼動作之類的，然後跳回我們的應用程式，那我們要開始思考，如何讓網頁能夠「呼叫應用程式」呢？
 <br />

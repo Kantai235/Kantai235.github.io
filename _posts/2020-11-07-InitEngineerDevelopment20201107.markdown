@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : /assets/img/posts/InitEngineerDevelopment20201107.png
+image        : /assets/img/banner/InitEngineerDevelopment20201107.png
 title        : 《純靠北開發日誌》將專案砍掉重練有甚麼意義？
 description  : 
 date         : 2020-11-07 12:00:00

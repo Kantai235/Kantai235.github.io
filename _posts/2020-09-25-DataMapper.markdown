@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : /assets/img/posts/Banner_12.png
+image        : /assets/img/banner/DataMapper.png
 title        : 【PHP、設計模式、大頭菜】資料對應 Data Mapper
 description  : 資料對應，這是一種常用於處理物件導向與資料庫資料的模式，與 `Repository` 不同，`Data Mapper` 主要處理的事單個物件本身，而 `Repository` 處理的是物件的集合。這次實作舉個例子，你在買大頭菜之前，需要有一個草圖去評估你要前往哪些島上買大頭菜，決定好之後再開始行動。
 date         : 2020-09-25 12:00:00

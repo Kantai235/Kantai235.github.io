@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : https://imgur.com/yRuDHCb.png
+image        : /assets/img/banner/EP1HowDoYouRelyOnTheKaobeiEngineer.png
 title        : EP1. 我要怎麼申請 Facebook API？好像很難又好像很簡單欸！
 description  : 在先前我們討論了如何透過 API 來將文章發表到社群平台當中、如何透過 API 來將社群平台的文章刪除，但我們中間略過了申請 API 的部分，所以接下來我們將要介紹如何申請相關社群的 API、申請經驗談、常用工具 ...
 date         : 2019-03-24 12:00:00

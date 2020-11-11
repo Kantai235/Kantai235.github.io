@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : https://i.imgur.com/1a8oV4L.png
+image        : /assets/img/banner/TForceXtreemArgbDDR4.png
 title        : 【業配開箱】十銓 T-Force Xtreem ARGB DDR4
 description  : 十銓 T-Force Xtreem ARGB DDR4 電競記憶體，全鏡面、冷透光、ＲＧＢ，總之一句話，就是潮！
 date         : 2020-05-24 12:00:00
@@ -24,7 +24,7 @@ category     : unboxing
                     </div>
                     <div class="outgoing_msg">
                         <div class="sent_msg">
-                            <p><img src="https://i.imgur.com/v68b7ym.png" /></p>
+                            <p><img src="/assets/img/posts/v68b7ym.jpg" /></p>
                             <span class="time_date"> 乾太₍₍ ◝(･◡･)◟ ⁾⁾</span>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ category     : unboxing
                     </div>
                     <div class="outgoing_msg">
                         <div class="sent_msg">
-                            <p><img src="https://i.imgur.com/DQuvfIh.png" /></p>
+                            <p><img src="/assets/img/posts/DQuvfIh.jpg" /></p>
                             <span class="time_date"> 乾太₍₍ ◝(･◡･)◟ ⁾⁾</span>
                         </div>
                     </div>
@@ -282,31 +282,31 @@ img {
 ## 外觀介紹
 
 ▼ 十銓 T-Force Xtreem ARGB DDR4 外盒包裝
-![外盒](https://i.imgur.com/HwHLzq0.png)
+![外盒](/assets/img/posts/HwHLzq0.jpg)
 
 ▼ 從旁邊推出內盒，內盒有點高質感
-![拆開外盒](https://i.imgur.com/tFUcSrS.png)
+![拆開外盒](/assets/img/posts/tFUcSrS.jpg)
 
 ▼ 打開內盒後，就看到記憶體本體了
-![開箱](https://i.imgur.com/TSdM7GO.png)
+![開箱](/assets/img/posts/TSdM7GO.jpg)
 
 ▼ 記憶體底下放著一條眼鏡布，用來擦記憶體很適合
-![眼鏡布](https://i.imgur.com/eEWfAIj.png)
+![眼鏡布](/assets/img/posts/eEWfAIj.png)
 
 ▼ 記憶體外面包著一層膠膜，撕下的那個聲音有夠悅耳
-![記憶體 獨立攝影](https://i.imgur.com/7leOALt.png)
+![記憶體 獨立攝影](/assets/img/posts/7leOALt.jpg)
 
 ▼ 把它交叉立起來
-![記憶體 站立](https://i.imgur.com/6LKBtOx.png)
+![記憶體 站立](/assets/img/posts/6LKBtOx.jpg)
 
 ▼ 插上主機板
-![記憶體 未點燈](https://i.imgur.com/v68b7ym.png)
+![記憶體 未點燈](/assets/img/posts/v68b7ym.jpg)
 
 ▼ 實際開機後的效果
-![記憶體 點燈](https://i.imgur.com/DQuvfIh.png)
+![記憶體 點燈](/assets/img/posts/DQuvfIh.jpg)
 
 ▼ 從另一個角度來看記憶體，這大概就是純靠北工程師需求幹話當中所謂黑色的光吧
-![記憶體 點燈](https://i.imgur.com/CRQHEpw.png)
+![記憶體 點燈](/assets/img/posts/CRQHEpw.jpg)
 
 ▼ 實際點燈的效果
 <iframe width="800" height="600" src="https://www.youtube.com/embed/Kb-GfCd_Bes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -324,20 +324,20 @@ OS  作業系統  ： Windows 10 Pro (1909) 64Bit
 ```
 
 ▼ 在預設 DDR4-2400MHz 下，使用 AIDA64 跑記憶體測試得到以下結果
-![2400](https://i.imgur.com/Nodf7KB.png)
+![2400](/assets/img/posts/Nodf7KB.png)
 
 ▼ 開啟 D.O.C.P. 調整頻率到 3600MHz 後，使用 AIDA64 跑記憶體測試得到以下結果，讀寫明顯上升了 1.4 快要 1.5 倍。
-![3600](https://i.imgur.com/QRZB1sx.png)
+![3600](/assets/img/posts/QRZB1sx.png)
 
 ▼ 在記憶體顆粒的部分，使用 Thaiphoon Burner 可以看到 Xtreem 所採用的是 Hynix 的 C-Die 顆粒
-![Thaiphoon Burner](https://i.imgur.com/3dRT4IX.png)
+![Thaiphoon Burner](/assets/img/posts/3dRT4IX.png)
 
 ---
 ## 使用心得
 
 因為我本身是使用 ASUS 的 X570 主機板，所以這裡就安裝 `ARMOURY CRATE`，使用裡面的 `AURA SYNC` 來控制 DRAM 的 ARGB 燈光效果，安裝完畢就可以直接使用了，相當方便。
 
-![AURA SYNC](https://i.imgur.com/ufYv5j6.png)
+![AURA SYNC](/assets/img/posts/ufYv5j6.png)
 
 不過廠商的[產品說明頁面](https://www.teamgroupinc.com/tw/product/xtreem-argb-ddr4)也有特別標示它們這記憶體能支援多家燈效控制軟體，其中包含了 ASUS Aura Sync / GIGABYTE RGB Fusion 2.0 / MSI Mystic Light Sync / ASROCK-Polychrome Sync。
 

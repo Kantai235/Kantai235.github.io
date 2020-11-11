@@ -1,6 +1,6 @@
 ---
 layout       : post
-image        : https://i.imgur.com/lUfXC3X.png
+image        : /assets/img/banner/P2HowDoYouRelyOnTheKaobeiEngineer.png
 title        : P2. 純靠北工程師怎麼做的？就只是個簡單的資料庫模型而已。
 description  : 既然是工程師，那網站當然要自幹啊！在開始介紹如何寫功能以前，要先通過兩項前置任務（如果已經有點軟體架構概念、資料庫基本知識，則可以直接跳過） ...
 date         : 2019-02-24 12:00:00
@@ -39,22 +39,22 @@ category     : tutorial
 
 首先我們一定會有一張表，那張表可能紀錄著文章相關資訊，每篇文章一定會對應一個發文者，所以還需要紀錄發文者相關資訊，再來每篇文章可能會有零獲多筆留言的內容，所以我們需要把每筆留言都記錄下來，最好順便告訴我總共有幾筆留言，整張表最後看起來大概會像下面這張表：
 
-![https://i.imgur.com/KPqBdNT.png](https://i.imgur.com/KPqBdNT.png)
+![/assets/img/posts/KPqBdNT.png](/assets/img/posts/KPqBdNT.png)
 Table - Sample 1
 
 設計完之後，這樣的資料表顯然不是很好，你在取用資料的時候，可能會拿到太多你可能不需要的資料，造成 Network I/O 上不必要的浪費，甚至紀錄了許多重複的資料，像是使用者資料，如果使用者發了 10 篇文章，那這個使用者的資料就被重複寫入 10 遍，種種不理想的原因，所以我們要開始來做正規化這件事，首先我們要做第一正規化，將去除重複性，但意思不是把重複的資料刪光光！像是上面那張表的留言、留言內容 ... 那個欄位有可能有零或多筆留言，因此我們需要把他的資料切開，效果如下：
 
-![https://i.imgur.com/uZunocZ.png](https://i.imgur.com/uZunocZ.png)
+![/assets/img/posts/uZunocZ.png](/assets/img/posts/uZunocZ.png)
 Table - Sample 2
 
 乍看之下好像寫入的資料量變多了欸！但接下來的才是重點，通常我會把第二正規化與第三正規化一起做，去除部分相依、去除間接相依，今天一張資料表是負責儲存使用者資料，就應該只儲存使用者資料，而不是把其他有點關係但不相干的資料也儲存進來，按照這樣的邏輯，我們會切成三張表，分別是文章資料表、使用者資料表、留言資料表，資料表樣本如下：
 
-![https://i.imgur.com/VX2BG5r.png](https://i.imgur.com/VX2BG5r.png)
+![/assets/img/posts/VX2BG5r.jpg](/assets/img/posts/VX2BG5r.jpg)
 Table - Sample 3
 
 在這時候還有一個概念，就是如果這個欄位的內容可以透過其他欄位或其他表格的欄位算出來，那麼這個欄位就不應該被儲存，就像是留言資料表的留言數量，留言數量可以透過 `GROUP BY` 文章編號來 `COUNT` 出來，那麼留言數量這個欄位就是多餘的，可以被刪除。
 
-![https://i.imgur.com/MPN3IfH.png](https://i.imgur.com/MPN3IfH.png)
+![/assets/img/posts/MPN3IfH.jpg](/assets/img/posts/MPN3IfH.jpg)
 Table - Sample 4
 
 接下來要講的 BC 正規化是複合主鍵需皆為外來鍵，我們可以擴增一個功能來當作範例，目前是一篇文章會固定搭配一張圖片，但我們讓功能更完善些，一篇文章可以搭配零或多張圖片，首要步驟是將圖片資訊切出來作為獨立的資料表，並且在文章資料表與圖片資料表當中有個連接這兩張資料表的關聯表，關聯表會以這兩張資料表的主鍵作為外來鍵參考，形成複合主鍵，同時也符合 BC 正規化的要求。
@@ -65,7 +65,7 @@ Table - Sample 4
 > - 關聯表是兩張資料表的中間，在建立一張資料表作為兩張表之中的關聯，如果你不想改變原本表格的結構，那麼關聯表可以在不改變原表格之下，獨立儲存額外的資料，舉例來說，你的資料庫當中有產品資料表、訂單資料表，你的產品資料表記錄著產品名稱、定價 ... 等等相關資訊，而訂單資料表記錄著客戶資訊、出貨日期、訂單日期 ... 等等資訊，然而每個產品可能都有不同折扣，且每筆訂單都有多個產品，這時候你就可以在產品與訂單資料表當中，建立一個訂單詳細資料的關聯表，用來記錄產品的單價、折扣，資料表圖片可參考下列連結中的[連結三個資料表以建立多對多關聯性]。
 > - [影片：建立多對多關聯性 - Access](https://support.office.com/zh-hk/article/%E5%BD%B1%E7%89%87%EF%BC%9A%E5%BB%BA%E7%AB%8B%E5%A4%9A%E5%B0%8D%E5%A4%9A%E9%97%9C%E8%81%AF%E6%80%A7-e65bcc53-8e1c-444a-b4fb-1c0b8c1f5653)
 
-![https://i.imgur.com/QurR22A.png](https://i.imgur.com/QurR22A.png)
+![/assets/img/posts/QurR22A.png](/assets/img/posts/QurR22A.png)
 Table - Sample 5
 
 ---
@@ -78,12 +78,12 @@ Table - Sample 5
 
 > [GitHub - rappasoft/laravel-5-boilerplate: A Laravel 5 Boilerplate Project - http://laravel-boilerplate.com](https://github.com/rappasoft/laravel-5-boilerplate)
 
-![https://i.imgur.com/0ge8979.png](https://i.imgur.com/0ge8979.png)
+![/assets/img/posts/0ge8979.png](/assets/img/posts/0ge8979.png)
 Laravel 5 Boilerplate 的 ER-Model
 
 這樣的做法可以讓你在人員上的管理更為直覺、輕鬆，舉例來說今天如果純靠北工程師希望多些管理員來一同維護，我只要賦予使用者 Social Cards Administrator(管理文章的角色)，這名使用者就擁有相關的權限了，如果今天有使用者發了不適當的文章，除了直接把使用者 BAN 掉以外，也可以選擇直接把使用者的發文權限給拿掉。
 
-![https://i.imgur.com/aOH7prd.png](https://i.imgur.com/aOH7prd.png)
+![/assets/img/posts/aOH7prd.png](/assets/img/posts/aOH7prd.png)
 純靠北工程師的 Role Management
 
 ---
@@ -94,7 +94,7 @@ Laravel 5 Boilerplate 的 ER-Model
 
 > 軟刪除 科普一下 [Eloquent: Getting Started - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/5.7/eloquent#soft-deleting)
 
-![https://i.imgur.com/8qmNiut.png](https://i.imgur.com/8qmNiut.png)
+![/assets/img/posts/8qmNiut.png](/assets/img/posts/8qmNiut.png)
 加上 social_cards
 
 ---
@@ -138,7 +138,7 @@ Laravel 5 Boilerplate 的 ER-Model
 
 > [!] Eloquent - Attribute 科普一下 -> [Eloquent: Mutators - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/5.7/eloquent-mutators#defining-an-accessor)
 
-![https://i.imgur.com/JsqlucM.png](https://i.imgur.com/JsqlucM.png)
+![/assets/img/posts/JsqlucM.png](/assets/img/posts/JsqlucM.png)
 加上 cards_image
 
 ---
@@ -147,7 +147,7 @@ Laravel 5 Boilerplate 的 ER-Model
 
 接下來為了能夠記錄每個社群平台的貼文留言，我們需要再新增一個負責記錄留言的 Tabel，分別記錄是哪篇貼文、來自哪個社群平台、留言者的社群 id、留言內容，比較需要注意的是 Facebook 這個社群平台有「留言中的留言」，所以會需要多一個 reply_by 的欄位，負責記錄這是回覆哪比留言的。
 
-![https://i.imgur.com/MvbeEzw.png](https://i.imgur.com/MvbeEzw.png)
+![/assets/img/posts/MvbeEzw.png](/assets/img/posts/MvbeEzw.png)
 加上 social_comments
 
 ---
@@ -160,7 +160,7 @@ Laravel 5 Boilerplate 的 ER-Model
 
 到這邊為止就差不多可以依據這樣的資料庫設計，開發出純靠北工程師了，相關的功能都有所需的資料表了。
 
-![https://i.imgur.com/CmWiD6T.png](https://i.imgur.com/CmWiD6T.png)
+![/assets/img/posts/CmWiD6T.png](/assets/img/posts/CmWiD6T.png)
 加上 issues 需要的 table，分別為 issues、issues_has_labels、labels
 
 ---
@@ -169,7 +169,7 @@ Laravel 5 Boilerplate 的 ER-Model
 
 這時候有個問題，每篇文章都固定會有一張圖片，但可不可以支援純文字發表或多圖片發表？這時候就需要在 social_cards 與 cards_image 之間多放個關聯表 card_has_images，一篇文章可以有零個或多個的圖片，而圖片只會對應到唯一的貼文。
 
-![https://i.imgur.com/mMcmHSH.png](https://i.imgur.com/mMcmHSH.png)
+![/assets/img/posts/mMcmHSH.png](/assets/img/posts/mMcmHSH.png)
 讓文章格式並不僅限於一張附圖
 
 ---

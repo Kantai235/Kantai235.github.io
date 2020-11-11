@@ -27,7 +27,7 @@ category     : tutorial
 
 又或者說，曾經我有將 [ChatterBot](https://github.com/gunthercox/ChatterBot) 結合到 LineMessageAPI 的範例當中：
 
-![範例](https://i.imgur.com/ZAllFkw.png)
+![範例](/assets/img/posts/ZAllFkw.png)
 
 
 
