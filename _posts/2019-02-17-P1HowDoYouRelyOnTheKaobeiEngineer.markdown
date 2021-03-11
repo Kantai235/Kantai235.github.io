@@ -109,7 +109,7 @@ class PostsController extends Controller {
 - `Service` 處理商業邏輯，例如在社群平台發表文章。
 - `Presenter` 處理顯示邏輯，例如社群平台的文章連結。
 
-![/assets/img/posts/YZQPO5o.png](ht/assets/img/posts/YZQPO5o.png)
+![/assets/img/posts/YZQPO5o.png](/assets/img/posts/YZQPO5o.png)
 把商業邏輯、資料庫邏輯與顯示邏輯抽離出來後的架構
 
 ---
