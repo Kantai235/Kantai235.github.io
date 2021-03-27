@@ -5,8 +5,8 @@ description: 關於我
 permalink: /about/
 ---
 
-<!-- <img class="img-rounded" src="/assets/img/uploads/kantai235.png" alt="kantai235" width="200"> -->
-<img src="/assets/img/uploads/kantai235.png" alt="kantai235" width="200">
+<!-- <img class="img-rounded" src="/assets/img/uploads/kantai235.jpg" alt="kantai235" width="200"> -->
+<img src="/assets/img/uploads/kantai235.jpg" alt="kantai235" width="200">
 
 # 關於我
 
@@ -14,6 +14,8 @@ permalink: /about/
 
 目前主要開發《純靠北工程師》系列，時常會開發一些有趣的新玩具，例如大頭菜計算機、實況棒讀機。<br />
 口頭禪是「我不會寫程式」。
+
+聯絡方式 kantai.developer@gmail.com
 
 <div style="padding: 2rem;">
     <style>
