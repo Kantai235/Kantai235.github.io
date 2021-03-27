@@ -21,7 +21,9 @@ category     : development
 # 第 1 名 讓我們跟 Internet Explorer 說掰掰
 文章連結: [#純靠北工程師3wa](https://init.engineer/cards/show/5050)
 Internet Explorer 也就是俗稱的 IE 瀏覽器，在 1995 年的時候發布，隨著網頁瀏覽器這塊大餅逐漸重要，微軟索性直接把 IE 瀏覽器預載在作業系統當中，使得當初整個市場都是使用 IE 瀏覽器，但隨著科技的進步，微軟推出了更好的 Edge 瀏覽器後，在現代似乎是個笑柄的 IE 瀏覽器好像就沒有存在的必要性了，最終微軟宣布停止支援 IE 正式宣告其壽終正寢，但在安息之前也不忘秀一波 IE 獨有的特色？
-[維基百科: Internet Explorer](https://zh.wikipedia.org/zh-tw/Internet_Explorer)
+
+- [維基百科: Internet Explorer](https://zh.wikipedia.org/zh-tw/Internet_Explorer)
+
 ![https://init.engineer/storage/cards/custom/bRMH7J3S1P6YhEWePFDORmO4j6JNRbF7lHNX5tuHtssnRgoVw9wGQbKsA1Xv8kLgVh52jy2MQVMBzfGWiQaVvAhouY9s9xb7YkHHjgI9ytLGaw3uFf4mWay122OxaTBz.jpg](https://init.engineer/storage/cards/custom/bRMH7J3S1P6YhEWePFDORmO4j6JNRbF7lHNX5tuHtssnRgoVw9wGQbKsA1Xv8kLgVh52jy2MQVMBzfGWiQaVvAhouY9s9xb7YkHHjgI9ytLGaw3uFf4mWay122OxaTBz.jpg)
 
 # 第 2 名 下地獄之後，還要再當一次工程師
@@ -33,14 +35,18 @@ Internet Explorer 也就是俗稱的 IE 瀏覽器，在 1995 年的時候發布�
 # 第 3 名 這案子已經完成了 90%，接下來就交給你收尾了
 文章連結: [#純靠北工程師412](https://init.engineer/cards/show/5222)
 吉卜力工作室在 2020 年 09 月 18 日的時候，免費釋出 8 部動畫、400 張高解析度的場景畫面，讓大家免費下載使用，提供大家隨意在常識範圍內使用它，因此就有不少網友開始發揮創意。
-[今月から、スタジオジブリ作品の場面写真の提供を開始します](https://www.ghibli.jp/info/013344)
+
+- [今月から、スタジオジブリ作品の場面写真の提供を開始します](https://www.ghibli.jp/info/013344)
+
 ![https://init.engineer/storage/cards/custom/8uppO7bybMfrhKxoPFLhrCNbdXCAhFeWTAnv9tx5D6BpLjv1Jr2uaXLU7iuDNhsaqNnptiFQ0jROXpXCOVweoCbncD2kVld20LxKzTjkhFSYBV0WufWXa1LXA1uQ93ws.jpg](https://init.engineer/storage/cards/custom/8uppO7bybMfrhKxoPFLhrCNbdXCAhFeWTAnv9tx5D6BpLjv1Jr2uaXLU7iuDNhsaqNnptiFQ0jROXpXCOVweoCbncD2kVld20LxKzTjkhFSYBV0WufWXa1LXA1uQ93ws.jpg)
 
 ## 第 4 名 下地獄之後，除了當工程師，指定瀏覽器居然還是 Internet Explorer！
 文章連結: [#純靠北工程師3xd](https://init.engineer/cards/show/5089)
 再把「下地獄之後，還要再當一次工程師」話題延伸下去，如果工程師下地獄後要開發後台管理系統，那可以選擇的瀏覽器是不是就只有 Internet Explorer 瀏覽器可以選擇？對於工程師來說，最痛恨的便是 IE 瀏覽器了，尤其是以往政府標案可能會因公務人員的電腦過於老舊，因此網頁開發上必須支援 Internet Explorer 6 或者是 Internet Explorer 8，所幸現在政府規範了「政府網站服務應優先採用新版 HTML 標準(如 HTML5)，並具備跨瀏覽器相容性」，終於不用忍受那語法不支援的痛苦開發了。
-[作者: DOG COM](https://www.facebook.com/itdogcom)
-[政府網站服務應優先採用新版 HTML 標準(如 HTML5)，並具備跨瀏覽器相容性](https://www.webguide.nat.gov.tw/News_Content.aspx?n=6&sms=8456&s=3046)
+
+- [作者: DOG COM](https://www.facebook.com/itdogcom)
+- [政府網站服務應優先採用新版 HTML 標準(如 HTML5)，並具備跨瀏覽器相容性](https://www.webguide.nat.gov.tw/News_Content.aspx?n=6&sms=8456&s=3046)
+
 ![https://init.engineer/storage/cards/custom/xkelj5XxyjVuZYkAIRu85bjRsPDHS1iBOvnzor32KklIGPeFs2xeJeWUyXZsU5sHhzOnoX55JslEbhiNzewsEz1r76tcw5YFQXFY8v5vNDD7xmJyrUM8ZGZororSamh0.jpeg](https://init.engineer/storage/cards/custom/xkelj5XxyjVuZYkAIRu85bjRsPDHS1iBOvnzor32KklIGPeFs2xeJeWUyXZsU5sHhzOnoX55JslEbhiNzewsEz1r76tcw5YFQXFY8v5vNDD7xmJyrUM8ZGZororSamh0.jpeg)
 
 ## 第 5 名 下班後的 Side Project
@@ -50,8 +56,10 @@ Internet Explorer 也就是俗稱的 IE 瀏覽器，在 1995 年的時候發布�
 ## 第 6 名 唐鳳小時候的故事
 文章連結: [#純靠北工程師2yg](https://init.engineer/cards/show/3832)
 一般邏輯上而言，手最多可以數到 10 根手指頭，但如果跳脫這個數手指的邏輯，而是把手指頭當作 0 與 1 二進位表示方式的話，那麼你就可以靠 10 根手指頭屬到 1,023 這樣的數字了。
-[維基百科: 唐鳳](https://zh.wikipedia.org/zh-tw/%E5%94%90%E9%B3%B3)
-[維基百科: 二進位](https://zh.wikipedia.org/wiki/%E4%BA%8C%E8%BF%9B%E5%88%B6)
+
+- [維基百科: 唐鳳](https://zh.wikipedia.org/zh-tw/%E5%94%90%E9%B3%B3)
+- [維基百科: 二進位](https://zh.wikipedia.org/wiki/%E4%BA%8C%E8%BF%9B%E5%88%B6)
+
 ![https://init.engineer/storage/cards/images/Ffv8uEs0ztsmV4rZR1R3WXBTc6c2Vh1VLcaBgDeK4JIXcV5NiyTuSjH4AAb4h7KZr2pyXhzV8STECTMlxlzk7CO7FrKIcNiCxQkefT22cKTCccfnJcYfAeC5hvSdT9g7.jpeg](https://init.engineer/storage/cards/images/Ffv8uEs0ztsmV4rZR1R3WXBTc6c2Vh1VLcaBgDeK4JIXcV5NiyTuSjH4AAb4h7KZr2pyXhzV8STECTMlxlzk7CO7FrKIcNiCxQkefT22cKTCccfnJcYfAeC5hvSdT9g7.jpeg)
 
 ## 第 7 名 Side Project 之道，老婆為你撐腰
@@ -62,7 +70,9 @@ Internet Explorer 也就是俗稱的 IE 瀏覽器，在 1995 年的時候發布�
 ## 第 8 名 流言終結者工程師 格蘭·今原 享受 49 歲
 文章連結: [#純靠北工程師3qx](https://init.engineer/cards/show/4857)
 格蘭·今原（英語：Grant Masaru Imahara，1970 年 10 月 23 日－2020 年 7 月 13 日），日本名今原真申（日語：今原 真申／いまはら まさる Imahara Masaru），是一位美籍日裔電子工程師、機器人專家和電視主持人，因參與探索頻道著名的科普電視節目《流言終結者》而出名，美國時間 2020 年 7 月 13 日，格蘭因腦動脈瘤突發而逝世，享年 49 歲。
-[維基百科: 格蘭·今原](https://zh.wikipedia.org/wiki/%E6%A0%BC%E8%98%AD%C2%B7%E4%BB%8A%E5%8E%9F)
+
+- [維基百科: 格蘭·今原](https://zh.wikipedia.org/wiki/%E6%A0%BC%E8%98%AD%C2%B7%E4%BB%8A%E5%8E%9F)
+
 ![https://init.engineer/storage/cards/custom/OQiDzNUJSOLmV3EwJatYsQO7SXxPHtk373V6iRVsjsElpAx7MDZWEfRpcilywAzU391Bg2UIn0ZzYRpOomo3C1n5FZWhlceNvitYSbCRsIkT6Yw3b5i7Mt8JsvCGbwO5.png](https://init.engineer/storage/cards/custom/OQiDzNUJSOLmV3EwJatYsQO7SXxPHtk373V6iRVsjsElpAx7MDZWEfRpcilywAzU391Bg2UIn0ZzYRpOomo3C1n5FZWhlceNvitYSbCRsIkT6Yw3b5i7Mt8JsvCGbwO5.png)
 
 ## 第 9 名 當你寫出來的程式一團糟但他還可以運作
