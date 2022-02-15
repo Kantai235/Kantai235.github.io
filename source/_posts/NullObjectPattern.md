@@ -1,15 +1,19 @@
 ---
-cover : /img/banners/NullObjectPattern.png
-title : 【PHP、設計模式、大頭菜】空物件模式 Null Object Pattern
-description : 空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為 Null，而是讓原本應該做些事情的物件，因為空白物件而不做任何事，或是去執行預設的動作，打個比喻來說，遊戲裡面購買、販賣大頭菜是要找不同 NPC 的，如果要購買大頭菜，那就必須找曹賣(Daisy Mae)來購買，如果要販賣大頭菜則是找豆狸粒狸(Mamekichi and Tsubukichi)來販賣。
-date : 2020-10-08
-tags :
+cover: /img/banners/NullObjectPattern.png
+title: 【PHP、設計模式、大頭菜】空物件模式 Null Object Pattern
+description: >-
+  空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為
+  Null，而是讓原本應該做些事情的物件，因為空白物件而不做任何事，或是去執行預設的動作，打個比喻來說，遊戲裡面購買、販賣大頭菜是要找不同 NPC
+  的，如果要購買大頭菜，那就必須找曹賣(Daisy Mae)來購買，如果要販賣大頭菜則是找豆狸粒狸(Mamekichi and Tsubukichi)來販賣。
+tags:
   - 設計模式
   - 行為型
   - 空物件模式
-category :
+category:
   - 技術文件
   - PHP 設計模式
+abbrlink: e14f71cc
+date: 2020-10-08 00:00:00
 ---
 
 # 空物件模式 Null Object Pattern

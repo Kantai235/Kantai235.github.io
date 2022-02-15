@@ -1,12 +1,13 @@
 ---
-cover : /img/banners/TForceXtreemArgbDDR4.png
-title : 【業配開箱】十銓 T-Force Xtreem ARGB DDR4
-description : 十銓 T-Force Xtreem ARGB DDR4 電競記憶體，全鏡面、冷透光、ＲＧＢ，總之一句話，就是潮！
-date : 2020-05-24
-tags :
+cover: /img/banners/TForceXtreemArgbDDR4.png
+title: 【業配開箱】十銓 T-Force Xtreem ARGB DDR4
+description: 十銓 T-Force Xtreem ARGB DDR4 電競記憶體，全鏡面、冷透光、ＲＧＢ，總之一句話，就是潮！
+tags:
   - 業配開箱
-category :
+category:
   - 開箱紀錄
+abbrlink: 3bd945e8
+date: 2020-05-24 00:00:00
 ---
 
 <div class="container">
@@ -22,13 +23,13 @@ category :
                     </div>
                     <div class="outgoing_msg">
                         <div class="sent_msg">
-                            <p><img src="/assets/img/posts/v68b7ym.jpg" /></p>
+                            <p><img src="/img/posts/v68b7ym.jpg" /></p>
                             <span class="time_date"> 乾太₍₍ ◝(･◡･)◟ ⁾⁾</span>
                         </div>
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="https://image.flaticon.com/icons/svg/2945/2945360.svg" alt="sunil">
+                            <img src="/img/icons/largetile.png" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">
@@ -45,13 +46,13 @@ category :
                     </div>
                     <div class="outgoing_msg">
                         <div class="sent_msg">
-                            <p><img src="/assets/img/posts/DQuvfIh.jpg" /></p>
+                            <p><img src="/img/posts/DQuvfIh.jpg" /></p>
                             <span class="time_date"> 乾太₍₍ ◝(･◡･)◟ ⁾⁾</span>
                         </div>
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="https://image.flaticon.com/icons/svg/2945/2945360.svg" alt="sunil">
+                            <img src="/img/icons/largetile.png" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">
@@ -62,7 +63,7 @@ category :
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="https://image.flaticon.com/icons/svg/2945/2945398.svg" alt="sunil">
+                            <img src="/img/icons/largetile.png" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">
@@ -79,7 +80,7 @@ category :
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="https://image.flaticon.com/icons/svg/2945/2945360.svg" alt="sunil">
+                            <img src="/img/icons/largetile.png" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">
@@ -90,7 +91,7 @@ category :
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="https://image.flaticon.com/icons/svg/2945/2945398.svg" alt="sunil">
+                            <img src="/img/icons/largetile.png" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">

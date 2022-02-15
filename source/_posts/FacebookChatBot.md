@@ -1,12 +1,13 @@
 ---
-cover :
-title : Facebook Messenger 第三方聊天機器人 - Chatfuel
-description : 在粉絲團或個人 Facebook 當中，如何建立一個自動聊天的機器人 ...
-date : 2017-02-25
-tags :
+title: Facebook Messenger 第三方聊天機器人 - Chatfuel
+description: 在粉絲團或個人 Facebook 當中，如何建立一個自動聊天的機器人 ...
+tags:
   - Chatfuel
-category :
+category:
   - 技術文件
+abbrlink: fae46c69
+date: 2017-02-25 00:00:00
+cover:
 ---
 
 在很久以前，因為自己很邊緣人，生活寂寞又孤單，所以乾太有一個夢想，就是自己打造一個機器人老婆，每天陪自己聊天，來緩解自己空虛寂寞覺得冷的窘境，大概頂多參考了這篇 [自己動手設計交談機器人 (Eliza 中文版) - 使用 Java](http://ccckmit.wikidot.com/code:eliza) 做個小小的機器人，但如果要設計一套屬於自己的機器人，或者有點智慧的機器人，那會需要很多技術，像是機器學習或自然語言分析之類的，對於沒有程式基礎的人來說，需要投入相當多的時間去研究。

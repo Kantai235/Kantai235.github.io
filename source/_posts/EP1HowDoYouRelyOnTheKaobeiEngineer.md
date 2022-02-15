@@ -1,15 +1,18 @@
 ---
-cover : /img/banners/EP1HowDoYouRelyOnTheKaobeiEngineer.png
-title : EP1. 我要怎麼申請 Facebook API？好像很難又好像很簡單欸！
-description : 在先前我們討論了如何透過 API 來將文章發表到社群平台當中、如何透過 API 來將社群平台的文章刪除，但我們中間略過了申請 API 的部分，所以接下來我們將要介紹如何申請相關社群的 API、申請經驗談、常用工具 ...
-date : 2019-03-24
-tags :
+cover: /img/banners/EP1HowDoYouRelyOnTheKaobeiEngineer.png
+title: EP1. 我要怎麼申請 Facebook API？好像很難又好像很簡單欸！
+description: >-
+  在先前我們討論了如何透過 API 來將文章發表到社群平台當中、如何透過 API 來將社群平台的文章刪除，但我們中間略過了申請 API
+  的部分，所以接下來我們將要介紹如何申請相關社群的 API、申請經驗談、常用工具 ...
+tags:
   - 開發日誌
   - 純靠北工程師
   - Facebook API
-category :
+category:
   - 開發日誌
   - 純靠北工程師
+abbrlink: e8c0d8e3
+date: 2019-03-24 00:00:00
 ---
 
 在先前我們討論了如何透過 API 來將文章發表到社群平台當中、如何透過 API 來將社群平台的文章刪除，但我們中間略過了申請 API 的部分，所以接下來我們將要介紹如何申請相關社群的 API、申請經驗談、常用工具。

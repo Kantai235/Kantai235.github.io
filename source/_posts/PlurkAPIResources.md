@@ -1,13 +1,14 @@
 ---
-cover :
-title : Plurk API 官方說明文件 - 簡介
-description : Plurk API 2.0 遵循 OAuth 1.0a 開放標準來保護使用者的隱私 ...
-date : 2017-04-14
-tags :
+title: Plurk API 官方說明文件 - 簡介
+description: Plurk API 2.0 遵循 OAuth 1.0a 開放標準來保護使用者的隱私 ...
+tags:
   - Plurk API
-category :
+category:
   - 文件翻譯
   - Plurk API Docs
+abbrlink: ad97da81
+date: 2017-04-14 00:00:00
+cover:
 ---
 
 #### ***＊ 本文章為個人翻譯，故正式內容以 Plurk 官方為主 ＊***

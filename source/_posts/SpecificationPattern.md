@@ -1,15 +1,17 @@
 ---
-cover : /img/banners/SpecificationPattern.png
-title : 【PHP、設計模式、大頭菜】規格模式 Specification Pattern
-description : 規格模式，將邏輯條件給抽離出來，獨立成一個模組，而不是在物件內透過邏輯判斷來撰寫複雜的程式碼，簡化物件所需要實踐的邏輯，物件可以套用一個規則，也可以套用多種規則，就像大頭菜本身的價格運算是一種規格，過期後的價格運算又是另一種規格，可以把這個價格運算的邏輯抽離出來獨立成模組。
-date : 2020-10-10
-tags :
+cover: /img/banners/SpecificationPattern.png
+title: 【PHP、設計模式、大頭菜】規格模式 Specification Pattern
+description: >-
+  規格模式，將邏輯條件給抽離出來，獨立成一個模組，而不是在物件內透過邏輯判斷來撰寫複雜的程式碼，簡化物件所需要實踐的邏輯，物件可以套用一個規則，也可以套用多種規則，就像大頭菜本身的價格運算是一種規格，過期後的價格運算又是另一種規格，可以把這個價格運算的邏輯抽離出來獨立成模組。
+tags:
   - 設計模式
   - 行為型
   - 規格模式
-category :
+category:
   - 技術文件
   - PHP 設計模式
+abbrlink: 21dd75e4
+date: 2020-10-10 00:00:00
 ---
 
 # 規格模式 Specification Pattern

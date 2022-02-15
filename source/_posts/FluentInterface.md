@@ -1,15 +1,16 @@
 ---
-cover : /img/banners/FluentInterface.png
-title : 【PHP、設計模式、大頭菜】流暢介面 Fluent Interface
-description : 流暢介面，常用於撰寫如同文章般容易閱讀的程式碼，如果以大頭菜來講，那麼在建立大頭菜的同時，希望可以順便賦予其鈴錢價格、數量，並且最終獲得的依舊是大頭菜物件。
-date : 2020-09-29
-tags :
+cover: /img/banners/FluentInterface.png
+title: 【PHP、設計模式、大頭菜】流暢介面 Fluent Interface
+description: 流暢介面，常用於撰寫如同文章般容易閱讀的程式碼，如果以大頭菜來講，那麼在建立大頭菜的同時，希望可以順便賦予其鈴錢價格、數量，並且最終獲得的依舊是大頭菜物件。
+tags:
   - 設計模式
   - 結構型
   - 流暢介面
-category :
+category:
   - 技術文件
   - PHP 設計模式
+abbrlink: 97aa2282
+date: 2020-09-29 00:00:00
 ---
 
 # 流暢介面 Fluent Interface

@@ -1,15 +1,17 @@
 ---
-cover : /img/banners/ObserverPattern.png
-title : 【PHP、設計模式、大頭菜】觀察者模式 Observer Pattern
-description : 觀察者模式，一種現在全中國都知道你來了的模式，就有點像是收音機，打開收音機就開始自動接收廣播，關掉收音機就停止接收，就有點像是動森的連線模式，你跟朋友在同一座島遊玩時，如果有其他朋友來玩，那你們通通都會收到這個通知，然後開始看渡渡鳥航空飛起來的動畫。
-date : 2020-10-09
-tags :
+cover: /img/banners/ObserverPattern.png
+title: 【PHP、設計模式、大頭菜】觀察者模式 Observer Pattern
+description: >-
+  觀察者模式，一種現在全中國都知道你來了的模式，就有點像是收音機，打開收音機就開始自動接收廣播，關掉收音機就停止接收，就有點像是動森的連線模式，你跟朋友在同一座島遊玩時，如果有其他朋友來玩，那你們通通都會收到這個通知，然後開始看渡渡鳥航空飛起來的動畫。
+tags:
   - 設計模式
   - 行為型
   - 觀察者模式
-category :
+category:
   - 技術文件
   - PHP 設計模式
+abbrlink: '38774066'
+date: 2020-10-09 00:00:00
 ---
 
 # 觀察者模式 Observer Pattern

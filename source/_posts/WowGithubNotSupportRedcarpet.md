@@ -1,12 +1,15 @@
 ---
-cover :
-title : 我的 GitHub 部落格收到了 warning 信件，這是怎麼回事？
-description : 今天在整理 Blog 的時候收到一封信，內容大致上是這樣：[Kantai235/Kantai235.github.io] Page build warning ...
-date : 2018-09-08
-tags :
+title: 我的 GitHub 部落格收到了 warning 信件，這是怎麼回事？
+description: >-
+  今天在整理 Blog 的時候收到一封信，內容大致上是這樣：[Kantai235/Kantai235.github.io] Page build
+  warning ...
+tags:
   - GitHub Pages
-category :
+category:
   - 經驗分享
+abbrlink: 4f4004c2
+date: 2018-09-08 00:00:00
+cover:
 ---
 
 今天在整理 Blog 的時候收到一封信，內容大致上是這樣：

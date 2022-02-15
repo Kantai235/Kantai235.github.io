@@ -1,13 +1,14 @@
 ---
-cover :
-title : ASP.NET Web API 2 基本建置與教學
-description : 在開發網頁應用程式，有時候會遇到一種情境，我們為了這個網頁做了很大量的開發 ...
-date : 2017-01-10
-tags :
+title: ASP.NET Web API 2 基本建置與教學
+description: 在開發網頁應用程式，有時候會遇到一種情境，我們為了這個網頁做了很大量的開發 ...
+tags:
   - ASP.NET Web APIv2
-category :
+category:
   - 技術文件
   - ASP.NET 實務
+abbrlink: c86e07d4
+date: 2017-01-10 00:00:00
+cover:
 ---
 
 在開發網頁應用程式，有時候會遇到一種情境，我們為了這個網頁做了很大量的開發，累積了很多使用者，但當我們想開發一些 API 應用給第三方開發者使用時，我們該怎麼辦呢？

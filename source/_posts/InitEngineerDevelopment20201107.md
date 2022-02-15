@@ -1,14 +1,15 @@
 ---
-cover : /img/banners/InitEngineerDevelopment20201107.png
-title : 《純靠北開發日誌》將專案砍掉重練有甚麼意義？
-description : 
-date : 2020-11-07
-tags :
+cover: /img/banners/InitEngineerDevelopment20201107.png
+title: 《純靠北開發日誌》將專案砍掉重練有甚麼意義？
+tags:
   - 開發日誌
   - 純靠北工程師
-category :
+category:
   - 開發日誌
   - 純靠北工程師
+abbrlink: 426c17f9
+date: 2020-11-07 00:00:00
+description:
 ---
 
 接下來會有一大段時間完全投入在純靠北工程師上，所以稍微紀錄一下 `v4.0` 的一些方向與構思，之後每當值得討論的議題到一定的量，就會將議題稍加整理並撰寫成文章發表。

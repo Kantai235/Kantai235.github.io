@@ -1,14 +1,15 @@
 ---
-cover : /img/banners/InitEngineerDevelopment20201111.png
-title : 《純靠北開發日誌》改善文章內容的彙整
-description : 
-date : 2020-11-11
-tags :
+cover: /img/banners/InitEngineerDevelopment20201111.png
+title: 《純靠北開發日誌》改善文章內容的彙整
+tags:
   - 開發日誌
   - 純靠北工程師
-category :
+category:
   - 開發日誌
   - 純靠北工程師
+abbrlink: 4c1301f5
+date: 2020-11-11 00:00:00
+description:
 ---
 
 今天正在開發 `v4.0` 發現舊版本一個很有趣的地方，版友們會到[純靠北工程師](https://kaobei.engineer)平台上發表文章，發表文章之後會透過審核系統審核，最後發表到各大社群平台當中，但每個社群平台所能容忍的文字數量各自不同，像是 Facebook 就沒甚麼文字限制，而 Twitter 就有英文 280 字或是中文 140 字的限制，而 Plurk 則是 360 字，這個在之前發表文章的方法中就有註記這個訊息。

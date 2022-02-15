@@ -1,15 +1,17 @@
 ---
-cover : /img/banners/SingletonPattern.png
-title : 【PHP、設計模式、大頭菜】單例模式 Singleton Pattern
-description : 單例模式，整個應用程式只會有一個實體，這個實體不會重複建立，就有點像是整座島上只有一個曹賣，這個曹賣在你這座島的時間，你可以盡量找他買大頭菜，無論你做什麼事情，大頭菜在這段時間內都不會任意更動，你的曹賣是你的曹賣，不會因為你進去博物館逛一圈再出來而改變。
-date : 2020-09-14
-tags :
+cover: /img/banners/SingletonPattern.png
+title: 【PHP、設計模式、大頭菜】單例模式 Singleton Pattern
+description: >-
+  單例模式，整個應用程式只會有一個實體，這個實體不會重複建立，就有點像是整座島上只有一個曹賣，這個曹賣在你這座島的時間，你可以盡量找他買大頭菜，無論你做什麼事情，大頭菜在這段時間內都不會任意更動，你的曹賣是你的曹賣，不會因為你進去博物館逛一圈再出來而改變。
+tags:
   - 設計模式
   - 建立型
   - 單例模式
-category :
+category:
   - 技術文件
   - PHP 設計模式
+abbrlink: 9796d243
+date: 2020-09-14 00:00:00
 ---
 
 # 單例模式 Singleton Pattern

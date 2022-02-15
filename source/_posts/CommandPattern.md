@@ -1,15 +1,17 @@
 ---
-cover : /img/banners/CommandPattern.png
-title : 【PHP、設計模式、大頭菜】命令模式 Command Pattern
-description : 命令模式，是一種將行為封裝起來裹上美好糖衣的一種模式，並將接收與執行分離出來，就有點像是把大頭菜買賣這件事，如果把買大頭菜、賣大頭菜這兩個動作封裝起來，變成一個命令，分開去執行。
-date : 2020-10-04
-tags :
+cover: /img/banners/CommandPattern.png
+title: 【PHP、設計模式、大頭菜】命令模式 Command Pattern
+description: >-
+  命令模式，是一種將行為封裝起來裹上美好糖衣的一種模式，並將接收與執行分離出來，就有點像是把大頭菜買賣這件事，如果把買大頭菜、賣大頭菜這兩個動作封裝起來，變成一個命令，分開去執行。
+tags:
   - 設計模式
   - 行為型
   - 命令模式
-category :
+category:
   - 技術文件
   - PHP 設計模式
+abbrlink: 4bf5426f
+date: 2020-10-04 00:00:00
 ---
 
 # 命令模式 Command Pattern

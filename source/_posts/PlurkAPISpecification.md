@@ -1,13 +1,14 @@
 ---
-cover :
-title : Plurk API 官方說明文件 - 目錄及規範
-description : Plurk 資料被編譯成 JSON 格式，所使用的日期是 UTC，您也可以將 UTC 發佈到 Plurk 伺服器 ...
-date : 2017-04-17
-tags :
+title: Plurk API 官方說明文件 - 目錄及規範
+description: Plurk 資料被編譯成 JSON 格式，所使用的日期是 UTC，您也可以將 UTC 發佈到 Plurk 伺服器 ...
+tags:
   - Plurk API
-category :
+category:
   - 文件翻譯
   - Plurk API Docs
+abbrlink: 4dbf20e8
+date: 2017-04-17 00:00:00
+cover:
 ---
 
 #### ***＊ 本文章為個人翻譯，故正式內容以 Plurk 官方為主 ＊***

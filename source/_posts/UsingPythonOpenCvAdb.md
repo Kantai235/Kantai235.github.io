@@ -1,17 +1,20 @@
 ---
-cover : /img/banners/UsingPythonOpenCvAdb.png
-title : 利用 Python + OpenCV + ADB 實現 Android 模擬器控制，以彈射世界 World Flipper 為例，操作篇
-description : 最近在研究如何透過 OpenCV 來偵測畫面物件，並透過 ADB 來對 Android 模擬器做控制的動作，不過在此之前需要先做一個聲明，以下研究皆以學習、研究為目的 ...
-date : 2021-11-28
-tags :
+cover: /img/banners/UsingPythonOpenCvAdb.png
+title: 利用 Python + OpenCV + ADB 實現 Android 模擬器控制，以彈射世界 World Flipper 為例，操作篇
+description: >-
+  最近在研究如何透過 OpenCV 來偵測畫面物件，並透過 ADB 來對 Android
+  模擬器做控制的動作，不過在此之前需要先做一個聲明，以下研究皆以學習、研究為目的 ...
+tags:
   - python
   - opencv
   - adb
   - android
   - using
-category :
+category:
   - 技術文件
   - Python 實務
+abbrlink: b8e2a20c
+date: 2021-11-28 00:00:00
 ---
 
 # 系列文章

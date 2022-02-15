@@ -1,15 +1,17 @@
 ---
-cover : /img/banners/BridgePattern.png
-title : 【PHP、設計模式、大頭菜】橋接模式 Bridge Pattern
-description : 橋接模式，將實作體系與抽象體系分離開來，讓兩者能各自更動各自演進，就有點像是大頭菜有分健康的大頭菜及壞掉的大頭菜，你的島上有這兩種大頭菜，但是健康的大頭菜過了一個禮拜都沒賣掉的話，他就會變成壞掉的大頭菜了。
-date : 2020-09-23
-tags :
+cover: /img/banners/BridgePattern.png
+title: 【PHP、設計模式、大頭菜】橋接模式 Bridge Pattern
+description: >-
+  橋接模式，將實作體系與抽象體系分離開來，讓兩者能各自更動各自演進，就有點像是大頭菜有分健康的大頭菜及壞掉的大頭菜，你的島上有這兩種大頭菜，但是健康的大頭菜過了一個禮拜都沒賣掉的話，他就會變成壞掉的大頭菜了。
+tags:
   - 設計模式
   - 結構型
   - 橋接模式
-category :
+category:
   - 技術文件
   - PHP 設計模式
+abbrlink: 5b54d279
+date: 2020-09-23 00:00:00
 ---
 
 # 橋接模式 Bridge Pattern

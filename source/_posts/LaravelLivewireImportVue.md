@@ -1,15 +1,16 @@
 ---
-cover : /img/banners/LaravelLivewireImportVue.png
-title : 如何在 Laravel 上的 Livewire 當中使用 VueJS
-description : 在 Laravel 當中有個讓前後端無痛溝通的技術叫做 Livewire，它可以讓你輕鬆建立起單頁應用程式，但它也有個小問題 ...
-date : 2021-09-03
-tags :
+cover: /img/banners/LaravelLivewireImportVue.png
+title: 如何在 Laravel 上的 Livewire 當中使用 VueJS
+description: 在 Laravel 當中有個讓前後端無痛溝通的技術叫做 Livewire，它可以讓你輕鬆建立起單頁應用程式，但它也有個小問題 ...
+tags:
   - laravel
   - livewire
   - vue
-category :
+category:
   - 技術文件
   - Laravel 實務
+abbrlink: 5b70fd26
+date: 2021-09-03 00:00:00
 ---
 
 在 Laravel 當中有個讓前後端無痛溝通的技術叫做 [Livewire](https://laravel-livewire.com)，它可以讓你輕鬆建立起單頁應用程式(Single Page Application, SPA)，但它也有個小問題，就是如果你在 Livewire 當中使用 Vue Component 元件的話，那在 Livewire 第一次渲染時，Livewire 可以正常渲染你的 Vue 元件，但在你執行 Livewire 的搜尋、排序或分頁 Pagination 功能後，Vue 元件將會失效。

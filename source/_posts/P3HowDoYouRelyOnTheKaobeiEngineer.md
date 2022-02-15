@@ -1,15 +1,16 @@
 ---
-cover : /img/banners/P3HowDoYouRelyOnTheKaobeiEngineer.png
-title : P3. 純靠北工程師怎麼做的？一顆按鈕就把你的文章發到世界各地了呢！(1/2)
-description : 既然是社群匿名發文平台，那主要核心當然是發廢文、講幹話啦！可是這要怎麼做呢？文章管理三步驟：繪圖、發表文章、刪除文章 ...
-date : 2019-03-03
-tags :
-  - 開發日誌
-  - 純靠北工程師 
-  - Laravel
-category :
+cover: /img/banners/P3HowDoYouRelyOnTheKaobeiEngineer.png
+title: P3. 純靠北工程師怎麼做的？一顆按鈕就把你的文章發到世界各地了呢！(1/2)
+description: 既然是社群匿名發文平台，那主要核心當然是發廢文、講幹話啦！可是這要怎麼做呢？文章管理三步驟：繪圖、發表文章、刪除文章 ...
+tags:
   - 開發日誌
   - 純靠北工程師
+  - Laravel
+category:
+  - 開發日誌
+  - 純靠北工程師
+abbrlink: 3110837b
+date: 2019-03-03 00:00:00
 ---
 
 既然是社群匿名發文平台，那主要核心當然是發廢文、講幹話啦！可是這要怎麼做呢？文章管理三步驟：繪圖、發表文章、刪除文章。

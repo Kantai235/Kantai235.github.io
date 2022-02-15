@@ -1,12 +1,13 @@
 ---
-cover : /img/banners/FackPHPTeaching1.png
-title : (偽教學)乾太教我之（好讀版）如何使用 PHP 在網頁上顯示文字
-description : 這個方法是我以前還在讀書時，看到一位前輩的做法，由於太過於印象深刻了，所以拿來當作第一次「乾太教我」的教材。
-date : 2021-08-29
-tags :
+cover: /img/banners/FackPHPTeaching1.png
+title: (偽教學)乾太教我之（好讀版）如何使用 PHP 在網頁上顯示文字
+description: 這個方法是我以前還在讀書時，看到一位前輩的做法，由於太過於印象深刻了，所以拿來當作第一次「乾太教我」的教材。
+tags:
   - php
-category :
+category:
   - 技術文件
+abbrlink: c6898839
+date: 2021-08-29 00:00:00
 ---
 
 【乾太教我之（好讀版）

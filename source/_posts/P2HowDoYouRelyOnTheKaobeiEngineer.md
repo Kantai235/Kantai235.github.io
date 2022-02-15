@@ -1,15 +1,16 @@
 ---
-cover : /img/banners/P2HowDoYouRelyOnTheKaobeiEngineer.png
-title : P2. 純靠北工程師怎麼做的？就只是個簡單的資料庫模型而已。
-description : 既然是工程師，那網站當然要自幹啊！在開始介紹如何寫功能以前，要先通過兩項前置任務（如果已經有點軟體架構概念、資料庫基本知識，則可以直接跳過） ...
-date : 2019-02-24
-tags :
+cover: /img/banners/P2HowDoYouRelyOnTheKaobeiEngineer.png
+title: P2. 純靠北工程師怎麼做的？就只是個簡單的資料庫模型而已。
+description: 既然是工程師，那網站當然要自幹啊！在開始介紹如何寫功能以前，要先通過兩項前置任務（如果已經有點軟體架構概念、資料庫基本知識，則可以直接跳過） ...
+tags:
   - 開發日誌
   - 純靠北工程師
   - Laravel
-category :
+category:
   - 開發日誌
   - 純靠北工程師
+abbrlink: f42ec0e1
+date: 2019-02-24 00:00:00
 ---
 
 既然是工程師，那網站當然要自幹啊！在開始介紹如何寫功能以前，要先通過兩項前置任務（如果已經有點軟體架構概念、資料庫基本知識，則可以直接跳過）：

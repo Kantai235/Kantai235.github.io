@@ -1,13 +1,14 @@
 ---
-cover :
-title : iOS Swift 第三方套件介紹 - NVActivityIndicatorView
-description : NVActivityIndicatorView 是一系列令人驚艷的 Loading 動畫，它採用了向量繪圖的方式來呈現動畫 ...
-date : 2017-05-15
-tags :
+title: iOS Swift 第三方套件介紹 - NVActivityIndicatorView
+description: NVActivityIndicatorView 是一系列令人驚艷的 Loading 動畫，它採用了向量繪圖的方式來呈現動畫 ...
+tags:
   - Swift
-category :
+category:
   - 技術文件
   - iOS 實務
+abbrlink: e7f1758b
+date: 2017-05-15 00:00:00
+cover:
 ---
 
 ## 簡介
