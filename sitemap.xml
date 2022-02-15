@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://kantai235.github.io/link/index.html</loc>
+    
+    <lastmod>2022-02-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/index.html</loc>
+    
+    <lastmod>2022-02-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/index.html</loc>
+    
+    <lastmod>2022-02-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/UsingPythonOpenCvAdb/</loc>
+    
+    <lastmod>2021-11-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/TestingPythonOpenCvAdb/</loc>
+    
+    <lastmod>2021-11-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/InstallPythonOpenCvAdb/</loc>
+    
+    <lastmod>2021-11-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/LaravelLivewireImportVue/</loc>
+    
+    <lastmod>2021-09-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/FackPHPTeaching1/</loc>
+    
+    <lastmod>2021-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/HowToWriteAGoodJobVacancy/</loc>
+    
+    <lastmod>2021-06-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/InitEngineer2020Top/</loc>
+    
+    <lastmod>2021-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/InitEngineerDevelopment20201111/</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/InitEngineerDevelopment20201107/</loc>
+    
+    <lastmod>2020-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/PhpIntvalWTF/</loc>
+    
+    <lastmod>2020-10-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/TemplateMethod/</loc>
+    
+    <lastmod>2020-10-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/StrategyPattern/</loc>
+    
+    <lastmod>2020-10-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/StatePattern/</loc>
+    
+    <lastmod>2020-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/SpecificationPattern/</loc>
+    
+    <lastmod>2020-10-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/ObserverPattern/</loc>
+    
+    <lastmod>2020-10-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/NullObjectPattern/</loc>
+    
+    <lastmod>2020-10-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/MementoPattern/</loc>
+    
+    <lastmod>2020-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/MediatorPattern/</loc>
+    
+    <lastmod>2020-10-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/IteratorPattern/</loc>
+    
+    <lastmod>2020-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/CommandPattern/</loc>
+    
+    <lastmod>2020-10-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/ChainOfResponsibilities/</loc>
+    
+    <lastmod>2020-10-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/RegistryPattern/</loc>
+    
+    <lastmod>2020-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/ProxyPattern/</loc>
+    
+    <lastmod>2020-09-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/FlyweightPattern/</loc>
+    
+    <lastmod>2020-09-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/FluentInterface/</loc>
+    
+    <lastmod>2020-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/FacadePattern/</loc>
+    
+    <lastmod>2020-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/DependencyInjection/</loc>
+    
+    <lastmod>2020-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/DecoratorPattern/</loc>
+    
+    <lastmod>2020-09-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/DataMapper/</loc>
+    
+    <lastmod>2020-09-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/CompositePattern/</loc>
+    
+    <lastmod>2020-09-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/BridgePattern/</loc>
+    
+    <lastmod>2020-09-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/AdapterPattern/</loc>
+    
+    <lastmod>2020-09-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/PoolPattern/</loc>
+    
+    <lastmod>2020-09-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/BuilderPattern/</loc>
+    
+    <lastmod>2020-09-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/PrototypePattern/</loc>
+    
+    <lastmod>2020-09-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/FactoryMethod/</loc>
+    
+    <lastmod>2020-09-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/AbstractFactory/</loc>
+    
+    <lastmod>2020-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/StaticFactory/</loc>
+    
+    <lastmod>2020-09-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/SimpleFactory/</loc>
+    
+    <lastmod>2020-09-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/SingletonPattern/</loc>
+    
+    <lastmod>2020-09-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/TForceXtreemArgbDDR4/</loc>
+    
+    <lastmod>2020-05-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/PhpClosureFunction/</loc>
+    
+    <lastmod>2020-02-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/SwiftStringFormatTutorial/</loc>
+    
+    <lastmod>2019-08-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/StringRandomGenerator/</loc>
+    
+    <lastmod>2019-07-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/ToolsUnicode/</loc>
+    
+    <lastmod>2019-07-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/ToolsURL/</loc>
+    
+    <lastmod>2019-07-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/ToolsBase64/</loc>
+    
+    <lastmod>2019-07-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/FrontendWorkWithBackend/</loc>
+    
+    <lastmod>2019-07-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/WhyMyLaravel419OnHeroku/</loc>
+    
+    <lastmod>2019-06-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/HowToBulidLaravelToHeroKu/</loc>
+    
+    <lastmod>2019-05-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/</loc>
+    
+    <lastmod>2019-03-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/P5HowDoYouRelyOnTheKaobeiEngineer/</loc>
+    
+    <lastmod>2019-03-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/P4HowDoYouRelyOnTheKaobeiEngineer/</loc>
+    
+    <lastmod>2019-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/P3HowDoYouRelyOnTheKaobeiEngineer/</loc>
+    
+    <lastmod>2019-03-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/P2HowDoYouRelyOnTheKaobeiEngineer/</loc>
+    
+    <lastmod>2019-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/P1HowDoYouRelyOnTheKaobeiEngineer/</loc>
+    
+    <lastmod>2019-02-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/TrainGoPrivacyPolicy/</loc>
+    
+    <lastmod>2018-10-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/HowToRunMultipleWebsitesOnXAMPP/</loc>
+    
+    <lastmod>2018-10-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/ExcludingRoutesFromTheCSRFMiddleware/</loc>
+    
+    <lastmod>2018-09-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/HowToCreateGoogleNoCaptcha/</loc>
+    
+    <lastmod>2018-09-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/WowGithubNotSupportRedcarpet/</loc>
+    
+    <lastmod>2018-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/CreateYourGiteaServer/</loc>
+    
+    <lastmod>2017-07-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/HTML5CanvasBasic/</loc>
+    
+    <lastmod>2017-06-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/AndroidSafetyNetReCAPTCHAAPI/</loc>
+    
+    <lastmod>2017-06-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/VisualStudioForMacOS/</loc>
+    
+    <lastmod>2017-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/TextFieldEffectsOfSwift/</loc>
+    
+    <lastmod>2017-05-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/NVActivityIndicatorViewOfSwift/</loc>
+    
+    <lastmod>2017-05-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/AndroidCode39/</loc>
+    
+    <lastmod>2017-04-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/PlurkAPISpecification/</loc>
+    
+    <lastmod>2017-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/PlurkAPIResources/</loc>
+    
+    <lastmod>2017-04-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/AndroidRunOnUiThreadBasic/</loc>
+    
+    <lastmod>2017-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/CocoaPodsBasic/</loc>
+    
+    <lastmod>2017-04-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/OAuthForSwiftBasic/</loc>
+    
+    <lastmod>2017-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/AndroidThreadBasic/</loc>
+    
+    <lastmod>2017-03-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/ChatterBotTeaching/</loc>
+    
+    <lastmod>2017-03-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/LineMessageAPI/</loc>
+    
+    <lastmod>2017-03-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/FacebookChatBot/</loc>
+    
+    <lastmod>2017-02-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/HowToPlayYourASP.NETWebAPI/</loc>
+    
+    <lastmod>2017-01-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/BasicUsingJsonOnJavaOrAndroid/</loc>
+    
+    <lastmod>2017-01-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/posts/HowToCreateBlogOnGithub/</loc>
+    
+    <lastmod>2017-01-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>https://kantai235.github.io/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Swift/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/CocoaPods/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Android/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/runOnUiThread/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Plurk-API/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Code39/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Visual-Studio-for-Mac/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/reCAPTCHA/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Gitea/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/GitHub-Pages/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/NoCaptcha/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Laravel/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/CSRF/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/VirtualHost/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%87%BA%E7%81%A3%E9%90%B5%E8%B7%AFGO/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Facebook-API/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/HeroKu/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Page-Expired/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Vue/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Tools/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Base64/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/URL/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Unicode/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/String/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Random/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Generator/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/PHP/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E6%A5%AD%E9%85%8D%E9%96%8B%E7%AE%B1/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E5%BB%BA%E7%AB%8B%E5%9E%8B/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E5%96%AE%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E7%B0%A1%E5%96%AE%E5%B7%A5%E5%BB%A0/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E9%9D%9C%E6%85%8B%E5%B7%A5%E5%BB%A0/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%BB%A0/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E5%B7%A5%E5%BB%A0%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E7%89%A9%E4%BB%B6%E6%B1%A0%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E7%B5%90%E6%A7%8B%E5%9E%8B/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%BD%89%E6%8E%A5%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E6%A9%8B%E6%8E%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E7%B5%84%E5%90%88%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%B3%87%E6%96%99%E5%B0%8D%E6%87%89/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E4%BF%AE%E9%A3%BE%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E4%BE%9D%E8%B3%B4%E6%B3%A8%E5%85%A5/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E5%A4%96%E8%A7%80%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E6%B5%81%E6%9A%A2%E4%BB%8B%E9%9D%A2/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%A8%BB%E5%86%8A%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%A1%8C%E7%82%BA%E5%9E%8B/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%B2%AC%E4%BB%BB%E9%8F%88%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E7%96%8A%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E5%82%99%E5%BF%98%E9%8C%84%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E7%A9%BA%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%A7%80%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%A6%8F%E6%A0%BC%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E7%8B%80%E6%85%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Intval/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E7%B4%94%E9%9D%A0%E5%8C%97%E5%B7%A5%E7%A8%8B%E5%B8%AB/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/%E8%81%B7%E7%BC%BA/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/HandlerThread/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/JSON/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Python/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/ChatterBot/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Chatfuel/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/php/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Jekyll/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Hyde/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/ASP-NET-Web-APIv2/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/python/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/opencv/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/adb/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/android/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/install/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/laravel/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/livewire/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/vue/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Line-Message-API/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/testing/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/using/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/tags/Canvas/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/%E7%B4%94%E9%9D%A0%E5%8C%97%E5%B7%A5%E7%A8%8B%E5%B8%AB/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E7%B7%9A%E4%B8%8A%E5%B0%8F%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E9%96%8B%E7%AE%B1%E7%B4%80%E9%8C%84/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E9%9A%B1%E7%A7%81%E6%AC%8A%E6%A2%9D%E6%AC%BE/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Android-%E5%AF%A6%E5%8B%99/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/iOS-%E5%AF%A6%E5%8B%99/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Laravel-%E5%AF%A6%E5%8B%99/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/ASP-NET-%E5%AF%A6%E5%8B%99/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/JavaScript-%E5%AF%A6%E5%8B%99/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Python-%E5%AF%A6%E5%8B%99/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E5%AF%A6%E5%8B%99/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%96%87%E4%BB%B6%E7%BF%BB%E8%AD%AF/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kantai235.github.io/categories/%E6%96%87%E4%BB%B6%E7%BF%BB%E8%AD%AF/Plurk-API-Docs/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+</urlset>
