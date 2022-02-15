@@ -115,14 +115,14 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jekyll-theme-cayman
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
   repo: git@github.com:Kantai235/Kantai235.github.io
-  branch: master
+  branch: github-pages
 
 search:
   path: search.xml
