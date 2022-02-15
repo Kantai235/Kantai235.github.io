@@ -655,7 +655,7 @@ aside:
   card_announcement:
     enable: true
     content:
-      如果您對於文章內容有誤勘的問題，可以到 <a href="https://github.com/Kantai235/Kantai235.github.io/issues" style="color:#49b1f5">GitHub Issues</a> 反應給我，也可以到 <a href="https://discord.gg/tPhnrs2" style="color:#49b1f5">Discord</a> 當中直街跟我說。
+      如果您對於文章內容有誤勘的問題，可以到 <a href="https://github.com/Kantai235/Kantai235.github.io/issues" style="color:#49b1f5">GitHub Issues</a> 反應給我，也可以到 <a href="https://discord.gg/tPhnrs2" style="color:#49b1f5">Discord</a> 當中直接跟我說。
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
