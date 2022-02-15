@@ -217,7 +217,7 @@ post_edit:
   enable: true
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url: https://github.com/Kantai235/Kantai235.github.io/edit/main/source/
+  url: https://github.com/Kantai235/Kantai235.github.io/edit/master/source/
 
 # Related Articles
 related_post:
@@ -309,7 +309,7 @@ livere:
 gitalk:
   client_id: 2db9995c9189668742d5
   client_secret: e3ed83993d436401b67d840d625a6edadcf72417
-  repo: https://github.com/Kantai235/Kantai235.github.io
+  repo: Kantai235.github.io
   owner: Kantai235
   admin: Kantai235
   option:
