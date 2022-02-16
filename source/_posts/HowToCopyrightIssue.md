@@ -143,8 +143,8 @@ GitHub Trust & Safety
    請提供涉嫌侵權的原始著作權作品的詳細說明，如果可以，請包含一個其線上發佈位置的 URL。
 
     ```text
-    從發佈日期就可以得知 kantai235.github.io 的時間比 tomyhhc.github.io 更早期，而內容以及呈現方式幾乎是一模一樣，翻開原始碼更是一模一樣。
-    From the release date, it can be known that kantai235.github.io is earlier than tomyhhc.github.io, and the content and presentation method are almost the same, and opening the source code is the same. 
+    從發佈日期就可以得知 ______.github.io 的時間比 ______.github.io 更早期，而內容以及呈現方式幾乎是一模一樣，翻開原始碼更是一模一樣。
+    From the release date, it can be known that ______.github.io is earlier than ______.github.io, and the content and presentation method are almost the same, and opening the source code is the same. 
     
     Original Author
     GitHub Page => https://______.github.io/______
