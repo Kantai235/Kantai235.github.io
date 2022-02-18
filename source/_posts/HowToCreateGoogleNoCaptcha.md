@@ -46,7 +46,7 @@ cover:
 
 3. reCAPTCHA Android
 - 這是 Android 原生裝置專用的 reCAPTCHA，這在我之前的文章有寫過詳細介紹、教學。
-- [如何在 Android 當中引用 reCAPTCHA 來做防堵機器人的驗證。](https://kantai235.github.io/2017/06/13/AndroidSafetyNetReCAPTCHAAPI/)
+- [如何在 Android 當中引用 reCAPTCHA 來做防堵機器人的驗證。](https://kantai235.github.io/posts/AndroidSafetyNetReCAPTCHAAPI/)
 ![reCAPTCHA Android](https://cdn-images-1.medium.com/max/2000/1*R_zMnMYcK7jeOAvDKyw--A.png)
 
 <br />

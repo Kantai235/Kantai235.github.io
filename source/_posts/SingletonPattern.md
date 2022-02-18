@@ -140,7 +140,7 @@ OK (24 tests, 68 assertions)
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 單例模式](https://kantai235.github.io/SingletonPattern)
+- [技術部落格文章 - 單例模式](https://kantai235.github.io/posts/SingletonPattern)
 - [單例模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Creational/SingletonPattern)
 - [單例模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Creational/SingletonPatternTest.php)
 

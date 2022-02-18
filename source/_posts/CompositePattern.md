@@ -240,7 +240,7 @@ OK (34 tests, 81 assertions)
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 組合模式](https://kantai235.github.io/CompositePattern)
+- [技術部落格文章 - 組合模式](https://kantai235.github.io/posts/CompositePattern)
 - [組合模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/CompositePattern)
 - [組合模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/CompositePatternTest.php)
 

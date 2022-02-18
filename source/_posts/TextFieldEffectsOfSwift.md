@@ -58,7 +58,7 @@ cover:
 
 首先你必須利用 Cocoapod 於你專案裡頭的 `Podfile` 引入 [TextFieldEffects](https://github.com/raulriera/TextFieldEffects)，並且 `pod install` 去安裝。
 
-你可以參考 [CocoaPods iOS 第三方套件管理工具](https://kantai235.github.io/2017/04/08/CocoaPodsBasic/) 這篇文章。
+你可以參考 [CocoaPods iOS 第三方套件管理工具](https://kantai235.github.io/posts/CocoaPodsBasic/) 這篇文章。
 
 ```pod
 use_frameworks!

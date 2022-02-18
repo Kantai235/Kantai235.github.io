@@ -77,7 +77,7 @@ end
 # 提供更簡潔的 JSON 使用方法。
 ```
 
-另外如果對於 [OAuthSwift](https://github.com/OAuthSwift/OAuthSwift) 有興趣的話，教學可見 ＝> [iOS Swift 第三方套件 - OAuthSwift](https://kantai235.github.io/2017/04/11/OAuthForSwiftBasic/)
+另外如果對於 [OAuthSwift](https://github.com/OAuthSwift/OAuthSwift) 有興趣的話，教學可見 ＝> [iOS Swift 第三方套件 - OAuthSwift](https://kantai235.github.io/posts/OAuthForSwiftBasic/)
 
 3. 輸入完以後，我們要開始執行安裝第三方套件，必須執行以下指令：
 

@@ -18,9 +18,9 @@ date: 2021-11-26 00:00:00
 ---
 
 # 系列文章
-- [安裝篇(目前這篇)](https://kantai235.github.io/InstallPythonOpenCvAdb/)
-- [測試篇](https://kantai235.github.io/TestingPythonOpenCvAdb/)
-- [操作篇](https://kantai235.github.io/UsingPythonOpenCvAdb/)
+- [安裝篇(目前這篇)](https://kantai235.github.io/posts/InstallPythonOpenCvAdb/)
+- [測試篇](https://kantai235.github.io/posts/TestingPythonOpenCvAdb/)
+- [操作篇](https://kantai235.github.io/posts/UsingPythonOpenCvAdb/)
 
 最近在研究如何透過 `OpenCV` 來偵測畫面物件，並透過 `ADB` 來對 Android 模擬器做控制的動作，不過在此之前需要先做一個聲明，以下研究皆以學習、研究為目的。
 
@@ -105,4 +105,4 @@ opencv-python
 
 到這邊為止，安裝篇的內容就進行得差不多了，接下來我們會進入測試的環節，測試 ADB 是否能夠抓取模擬器的螢幕截圖、測試 OpenCV 是否能夠抓取我們所想要的圖片，並且計算其位置、其準確率。
 
-下一篇文章：[測試篇](https://kantai235.github.io/TestingPythonOpenCvAdb/)
+下一篇文章：[測試篇](https://kantai235.github.io/posts/TestingPythonOpenCvAdb/)

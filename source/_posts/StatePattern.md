@@ -256,7 +256,7 @@ OK (73 tests, 145 assertions)
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 狀態模式](https://kantai235.github.io/StatePattern)
+- [技術部落格文章 - 狀態模式](https://kantai235.github.io/posts/StatePattern)
 - [狀態模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/StatePattern)
 - [狀態模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/StatePatternTest.php)
 

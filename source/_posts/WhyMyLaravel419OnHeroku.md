@@ -21,7 +21,7 @@ date: 2019-06-14 00:00:00
 
 最近在部署專案到 HeroKu 上的時候，發生這樣莫名其妙的案例，於是將整個案例寫成文檔紀錄，之前介紹過把 Laravel 專案部署到 HeroKu 上的方法，這次要來分享在 HeroKu 上維護專案時，所發生的離奇案件。
 
-> 將 Laravel 部署到 HeroKu 上的教學: [如何將你的 Laravel boilerplate 專案成功部署到 HeroKu · 乾太 Kantai](https://kantai235.github.io/2019/05/07/HowToBulidLaravelToHeroKu/)
+> 將 Laravel 部署到 HeroKu 上的教學: [如何將你的 Laravel boilerplate 專案成功部署到 HeroKu · 乾太 Kantai](https://kantai235.github.io/posts/HowToBulidLaravelToHeroKu/)
 
 ---
 
@@ -44,7 +44,7 @@ date: 2019-06-14 00:00:00
 ...
 ```
 
-> 在 Laravel 當中如何取消 CSRF 的認證: [在 Laravel 當中，如何移除特定 Router 的 CSRF？ · 乾太 Kantai](https://kantai235.github.io/2018/09/26/ExcludingRoutesFromTheCSRFMiddleware/)
+> 在 Laravel 當中如何取消 CSRF 的認證: [在 Laravel 當中，如何移除特定 Router 的 CSRF？ · 乾太 Kantai](https://kantai235.github.io/posts/ExcludingRoutesFromTheCSRFMiddleware/)
 
 取消 CSRF 驗證後，表單成功送出去了，伺服器也沒有出現 419 Page Expired，但結果是伺服器並沒有做任何與資料新增有關的動作，這就奇怪了呀，所以使用者端沒問題，伺服器也是沒問題的，最有可能有問題的地方可能在於資料庫這個部分，這時候我們打開 HeroKu JawsDB Maria 的 Plans 定價頁面(這邊我們以 JawsDB Maria 為例)。
 

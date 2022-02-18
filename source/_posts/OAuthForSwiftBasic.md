@@ -21,7 +21,7 @@ cover:
 2. [Carthage](https://github.com/Carthage/Carthage)
 
 這裡我們使用 [CocoaPods](https://cocoapods.org/) 做完教學使用，另外如果對於 [CocoaPods](https://cocoapods.org/)<br />
-有興趣的話，教學可見 ＝> [CocoaPods iOS 第三方套件管理工具](https://kantai235.github.io/2017/04/08/CocoaPodsBasic/)<br />
+有興趣的話，教學可見 ＝> [CocoaPods iOS 第三方套件管理工具](https://kantai235.github.io/posts/CocoaPodsBasic/)<br />
 <br />
 
 引入 [CocoaPods](https://cocoapods.org/) 之後，我們接下來以介接「[Plurk API 2.0](https://www.plurk.com/API)」做完介接範例，我們必須先到 Plurk 註冊一個第三方手機或桌面應用程式的應用服務。<br />

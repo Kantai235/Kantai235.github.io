@@ -427,7 +427,7 @@ OK (42 tests, 93 assertions)
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 外觀模式](https://kantai235.github.io/FacadePattern)
+- [技術部落格文章 - 外觀模式](https://kantai235.github.io/posts/FacadePattern)
 - [外觀模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/FacadePattern)
 - [外觀模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/FacadePatternTest.php)
 

@@ -18,9 +18,9 @@ date: 2021-11-28 00:00:00
 ---
 
 # 系列文章
-- [安裝篇](https://kantai235.github.io/InstallPythonOpenCvAdb/)
-- [測試篇](https://kantai235.github.io/TestingPythonOpenCvAdb/)
-- [操作篇(目前這篇)](https://kantai235.github.io/UsingPythonOpenCvAdb/)
+- [安裝篇](https://kantai235.github.io/posts/InstallPythonOpenCvAdb/)
+- [測試篇](https://kantai235.github.io/posts/TestingPythonOpenCvAdb/)
+- [操作篇(目前這篇)](https://kantai235.github.io/posts/UsingPythonOpenCvAdb/)
 
 透過前面兩篇(安裝篇、測試篇)文章，我們建立了 Python 的環境、使用了 adb 控制模擬器，以及透過 OpenCV 來抓出需要點擊的物件，接下來我們需要直接實際操作模擬器，並且做出一個可模組化的程式。
 

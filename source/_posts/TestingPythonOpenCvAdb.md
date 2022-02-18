@@ -18,9 +18,9 @@ date: 2021-11-27 00:00:00
 ---
 
 # 系列文章
-- [安裝篇](https://kantai235.github.io/InstallPythonOpenCvAdb/)
-- [測試篇(目前這篇)](https://kantai235.github.io/TestingPythonOpenCvAdb/)
-- [操作篇](https://kantai235.github.io/UsingPythonOpenCvAdb/)
+- [安裝篇](https://kantai235.github.io/posts/InstallPythonOpenCvAdb/)
+- [測試篇(目前這篇)](https://kantai235.github.io/posts/TestingPythonOpenCvAdb/)
+- [操作篇](https://kantai235.github.io/posts/UsingPythonOpenCvAdb/)
 
 透過安裝篇的文章，我們已經將 Python、OpenCV、ADB 這些環境處理完畢了，接下來我們需要進行測試，測試 ADB 是否能夠抓取模擬器的螢幕截圖、測試 OpenCV 是否能夠抓取我們所想要的圖片，並且計算其位置、其準確率。
 
@@ -157,4 +157,4 @@ if __name__ == '__main__':
 
 到這邊為止，測試篇的內容就差不多了，我們測試了 adb 對模擬器的控制，以及 OpenCV 去判斷截圖的偵測，下一篇將講述如何結合 OpenCV 並透過 adb 去控制模擬器，做出相對應的動作。
 
-下一篇文章：[操作篇](https://kantai235.github.io/UsingPythonOpenCvAdb/)
+下一篇文章：[操作篇](https://kantai235.github.io/posts/UsingPythonOpenCvAdb/)

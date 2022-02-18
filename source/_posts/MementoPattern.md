@@ -242,7 +242,7 @@ OK (63 tests, 132 assertions)
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 備忘錄模式](https://kantai235.github.io/MementoPattern)
+- [技術部落格文章 - 備忘錄模式](https://kantai235.github.io/posts/MementoPattern)
 - [備忘錄模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/MementoPattern)
 - [備忘錄模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/MementoPatternTest.php)
 

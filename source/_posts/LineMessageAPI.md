@@ -12,7 +12,7 @@ date: 2017-03-06 00:00:00
 cover:
 ---
 
-在台灣或日本當中，Line 一直是這些國家民眾愛用的通訊軟體之一，隨著資訊的發展，越來越多開發者重視各種機器人的開發，從上次的 [Facebook Chat Bot 教學](https://kantai235.github.io/2017/02/25/FacebookChatBot/)，我們教大家使用 [Chatfuel](https://chatfuel.com/) 來開發 Facebook 的聊天機器人，而這次乾太將要帶給大家 Line 的聊天機器人。
+在台灣或日本當中，Line 一直是這些國家民眾愛用的通訊軟體之一，隨著資訊的發展，越來越多開發者重視各種機器人的開發，從上次的 [Facebook Chat Bot 教學](https://kantai235.github.io/posts/FacebookChatBot/)，我們教大家使用 [Chatfuel](https://chatfuel.com/) 來開發 Facebook 的聊天機器人，而這次乾太將要帶給大家 Line 的聊天機器人。
 
 > LINE 官方：Messaging API 將透過 LINE 伺服器，在您的伺服器與 LINE 應用程式間互相收發資訊。並且將活用 JSON 形式的 API 進行通訊請求。
 
@@ -20,7 +20,7 @@ cover:
 
 
 
-如果對於 JSON 形式不了解的，那我們就來回顧回顧以往的 [Java 或 Android 上的 Json 基本教學](https://kantai235.github.io/2017/01/09/BasicUsingJsonOnJavaOrAndroid/) 吧！
+如果對於 JSON 形式不了解的，那我們就來回顧回顧以往的 [Java 或 Android 上的 Json 基本教學](https://kantai235.github.io/posts/BasicUsingJsonOnJavaOrAndroid/) 吧！
 
 我們先進入 [Line Message API](https://business.line.me/zh-hant/services/bot) 的官方看看吧！沒錯，就是[點我](https://business.line.me/zh-hant/services/bot)。
 
