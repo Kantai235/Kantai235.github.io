@@ -150,7 +150,7 @@ error_img:
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: 找不到請求的資源 404
+  subtitle: 我們最近有更新網址，您可以透過右上角的「搜尋」功能來找找看文章是不是更新網址了。
   background: /img/404.gif
 
 post_meta:
