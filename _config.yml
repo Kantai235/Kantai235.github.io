@@ -137,8 +137,8 @@ encrypt: # hexo-blog-encrypt
   abstract: 這是加密的東西，需要密碼才能繼續閱讀。
   message: 嘿，這裡需要輸入密碼。
   template: <div id="hexo-blog-encrypt" data-wpm="{{hbeWrongPassMessage}}" data-whm="{{hbeWrongHashMessage}}"><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="{{hbeMessage}}" /><label>{{hbeMessage}}</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="{{hbeHmacDigest}}">{{hbeEncryptedData}}</script></div>
-  wrong_pass_message: 哦，這是一個無效的密碼，請檢查並重試。 
-  wrong_hash_message: 哦，這些解密後的內容是無法驗證的，不過你還是可以看看的。 
+  wrong_pass_message: 哦，這是一個無效的密碼，請檢查並重試。
+  wrong_hash_message: 哦，這些解密後的內容是無法驗證的，不過你還是可以看看的。
 
 # kramed:
 #   gfm: true
