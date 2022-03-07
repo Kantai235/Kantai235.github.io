@@ -34,7 +34,7 @@ cover:
 
 ## 安裝
 
-你必須採用 Cocoapods 來進行安裝，你可以參考 [CocoaPods iOS 第三方套件管理工具](https://kantai235.github.io/posts/CocoaPodsBasic/) 這篇文章。
+你必須採用 Cocoapods 來進行安裝，你可以參考 [CocoaPods iOS 第三方套件管理工具](https://blog.init.engineer/posts/CocoaPodsBasic/) 這篇文章。
 
 然後將 `NVActivityIndicatorView` 加入你的 `Podfile` 當中。
 

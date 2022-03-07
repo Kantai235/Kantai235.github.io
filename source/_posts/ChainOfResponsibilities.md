@@ -342,7 +342,7 @@ OK (54 tests, 120 assertions)
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 責任鏈模式](https://kantai235.github.io/posts/ChainOfResponsibilities)
+- [技術部落格文章 - 責任鏈模式](https://blog.init.engineer/posts/ChainOfResponsibilities)
 - [責任鏈模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/ChainOfResponsibilities)
 - [責任鏈模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/ChainOfResponsibilitiesTest.php)
 

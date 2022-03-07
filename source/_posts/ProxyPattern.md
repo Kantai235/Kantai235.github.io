@@ -209,7 +209,7 @@ OK (46 tests, 110 assertions)
 
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
-- [技術部落格文章 - 代理模式](https://kantai235.github.io/posts/ProxyPattern)
+- [技術部落格文章 - 代理模式](https://blog.init.engineer/posts/ProxyPattern)
 - [代理模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/ProxyPattern)
 - [代理模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/ProxyPatternTest.php)
 

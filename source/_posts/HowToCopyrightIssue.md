@@ -13,7 +13,7 @@ abbrlink: 90841e1c
 date: 2022-02-16 00:00:00
 ---
 
-前陣子[技術部落格](https://Kantai235.github.io)遇到了文章抄襲事件，有部分的文章直接被完美的複製貼上到了其他人自己的網站當中，為了解決這樣的事情，於是開始查詢 GitHub Pages 對於抄襲這件事有甚麼處置，如何提交 Copyright Issue 訊息出去、如何提交 [DMCA Takedown Policy](https://docs.github.com/en/github/site-policy/dmca-takedown-policy) 去嚇嚇人家，最後便把這些過程記錄下來。
+前陣子[技術部落格](https://blog.init.engineer)遇到了文章抄襲事件，有部分的文章直接被完美的複製貼上到了其他人自己的網站當中，為了解決這樣的事情，於是開始查詢 GitHub Pages 對於抄襲這件事有甚麼處置，如何提交 Copyright Issue 訊息出去、如何提交 [DMCA Takedown Policy](https://docs.github.com/en/github/site-policy/dmca-takedown-policy) 去嚇嚇人家，最後便把這些過程記錄下來。
 
 # 提交 Copyright Issue
 
