@@ -205,3 +205,8 @@ artitalk:
     title: '自言自語'
     comments: false
     top_img: 'https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-demo-talking-top-img.jpg'
+
+# hexo-generator-indexed
+# see https://github.com/next-theme/hexo-generator-indexed
+hide_categories:
+  - 社群恩仇錄
