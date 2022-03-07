@@ -1,16 +1,15 @@
 ---
 cover: /img/banners/BlockedPan93412.png
-title: 【社群恩仇錄】byStarTW / instanceof / pan93412
+title: 【社群恩仇錄】byStarTW/instanceof/pan93412
 tags:
   - byStarTW
   - instanceof
   - pan93412
 abbrlink: b1733d00
 date: 2022-03-07 00:00:00
-description:
+description: 這個社群當中，願意無私奉獻精力去貢獻的人，我都會懷抱感恩的心情去面對每位貢獻者，我喜歡稱這些人是參與者、貢獻者、我們的夥伴，除了一些例外 ...
 category:
   - 社群恩仇錄
-password: pan93412
 hide: true
 ---
 
