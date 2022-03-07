@@ -18,13 +18,13 @@ cover:
 
 # 目錄
 
-+ [Python 範例](https://kantai235.github.io/posts/PlurkAPISpecification/#python-範例)
-+ [Plurk 資料規範](https://kantai235.github.io/posts/PlurkAPISpecification/#plurk-資料規範)
-    + [拿一個噗文資料來當範例](https://kantai235.github.io/posts/PlurkAPISpecification/#拿一個噗文資料來當範例)
-+ [使用者資料](https://kantai235.github.io/posts/PlurkAPISpecification/#使用者資料)
-    + [拿一個使用者資料來當範例](https://kantai235.github.io/posts/PlurkAPISpecification/#拿一個使用者來當範例)
-    + [關於出生及年齡的隱私](https://kantai235.github.io/posts/PlurkAPISpecification/#關於出生及年齡的隱私)
-    + [如何顯示大頭貼](https://kantai235.github.io/posts/PlurkAPISpecification/#如何顯示大頭貼)
++ [Python 範例](https://blog.init.engineer/posts/PlurkAPISpecification/#python-範例)
++ [Plurk 資料規範](https://blog.init.engineer/posts/PlurkAPISpecification/#plurk-資料規範)
+    + [拿一個噗文資料來當範例](https://blog.init.engineer/posts/PlurkAPISpecification/#拿一個噗文資料來當範例)
++ [使用者資料](https://blog.init.engineer/posts/PlurkAPISpecification/#使用者資料)
+    + [拿一個使用者資料來當範例](https://blog.init.engineer/posts/PlurkAPISpecification/#拿一個使用者來當範例)
+    + [關於出生及年齡的隱私](https://blog.init.engineer/posts/PlurkAPISpecification/#關於出生及年齡的隱私)
+    + [如何顯示大頭貼](https://blog.init.engineer/posts/PlurkAPISpecification/#如何顯示大頭貼)
 + Users
     + /APP/Users/me
     + /APP/Users/update

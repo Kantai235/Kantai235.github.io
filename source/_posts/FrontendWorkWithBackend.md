@@ -40,7 +40,7 @@ date: 2019-07-04 00:00:00
 
 到這邊為止，基本上是作為一位前端工程師，如果要在共同維護同一專案的前提下，與 Laravel 後端工程師合作所需要了解的知識，乍看之下好像都是前端工程師要做什麼做什麼，而不是後端工程師該做什麼做什麼？但老實說我並不清楚你們後端工程師的程度到哪邊，但基本上後端工程師應該負責後端與資料庫，從 `Route` 定義基本的路由、`Middleware` 去做好權限、安全機制的管控，限定 `Request` 所該傳入的內容與格式，傳入資訊後透過 `Validation` 做內容審查，制定好 `Controller` 並且將商業邏輯寫在 `Service`，以及商業邏輯的觸發與監控 `Event&Listener`，並且將資料庫邏輯的 `Repository` 寫清楚，到這邊會牽涉到 `Eloquent ORM`，也就是要把 `Model` 物件、關聯給寫好，以及很多軟體工程、資訊安全 ... 等等，基本該注意的。
 
-> - 後端基本上該注意的: [P1. 純靠北工程師怎麼做的？就只是個簡單的後端架構而已。 · 乾太 Kantai](https://kantai235.github.io/posts/P1HowDoYouRelyOnTheKaobeiEngineer/)
+> - 後端基本上該注意的: [P1. 純靠北工程師怎麼做的？就只是個簡單的後端架構而已。 · 乾太 Kantai](https://blog.init.engineer/posts/P1HowDoYouRelyOnTheKaobeiEngineer/)
 
 至於建議一些內容，如果你是說你想更了解如何更清楚的定義前端與後端的權責範圍，那你可以參考這兩本書，前者是在講 Laravel 的基本知識，後者是在講軟體開發架構。
 

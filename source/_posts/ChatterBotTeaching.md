@@ -32,7 +32,7 @@ cover:
 
 
 
-如果對於 LineMessageAPI 有興趣的話，可以詳情： [Line Message API 初戰！](https://kantai235.github.io/posts/LineMessageAPI/)
+如果對於 LineMessageAPI 有興趣的話，可以詳情： [Line Message API 初戰！](https://blog.init.engineer/posts/LineMessageAPI/)
 
 接下來我們開始來講解該如何使用這套 [ChatterBot](https://github.com/gunthercox/ChatterBot) 吧！首先我們必須要擁有 Python，這邊可能需要小小的注意一下說：
 

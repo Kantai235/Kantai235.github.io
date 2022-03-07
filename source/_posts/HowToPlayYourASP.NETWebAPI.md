@@ -56,7 +56,7 @@ cover:
 
 
 
-(5.) 定義完之後，我們要開始思考，我們想拿到甚麼資料？資料的格式長甚麼樣子？我們就用之前寫過的 [Java 或 Android 上的 Json 基本教學](https://kantai235.github.io/posts/BasicUsingJsonOnJavaOrAndroid/) 當中的格式作為範例，我們必須先在 Models 新增我們的 Model：
+(5.) 定義完之後，我們要開始思考，我們想拿到甚麼資料？資料的格式長甚麼樣子？我們就用之前寫過的 [Java 或 Android 上的 Json 基本教學](https://blog.init.engineer/posts/BasicUsingJsonOnJavaOrAndroid/) 當中的格式作為範例，我們必須先在 Models 新增我們的 Model：
 
 ![新增 Model 用來定義資料格式](/img/posts/lIVKCYX.png)
 

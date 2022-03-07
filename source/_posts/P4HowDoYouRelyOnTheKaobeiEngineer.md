@@ -167,7 +167,7 @@ public function releaseTwitter(SocialCards $social_cards) : SocialCards {
 
 老實說我覺得 Plurk 的 API Docs 非常難以閱讀，整個篇幅太過於陽春了，所以我將整份文件使用 lord/slate 來稍微美化一下，你在瀏覽上會更加方便。
 
-> Kantai版 Plurk API Docs：[Plurk API 2.0](https://kantai235.github.io/Plurk-API-Docs/build/#plurk-api-2-0)
+> Kantai版 Plurk API Docs：[Plurk API 2.0](https://blog.init.engineer/Plurk-API-Docs/build/#plurk-api-2-0)
 > lord/slate：[GitHub - lord/slate: Beautiful static documentation for your API](https://github.com/lord/slate)
 
 我們會看到 `/APP/Timeline/plurkAdd` 這項 API，顯然這項功能就是發表一則噗文，另外還會找到 `/APP/Timeline/uploadPicture` 這項 API，功能顯然也就是將圖片上傳至噗浪，並取得圖片網址，既然我們已經找到我們需要的 API 了，那接下來我們要做的事情就是撰寫功能了。
@@ -285,7 +285,7 @@ Controller 只負責把這件事情委派給 Service 去處理，無論處理得
 > - [Graph API - 文件 - Facebook for Developers](https://developers.facebook.com/docs/graph-api?locale=zh_TW)
 > - [Twitter Developer Platform — Twitter      Developers](https://developer.twitter.com)
 > - [Plurk API 2.0](https://www.plurk.com/API)
-> - [Plurk API 2.0](https://kantai235.github.io/Plurk-API-Docs/build/#plurk-api-2-0)
+> - [Plurk API 2.0](https://blog.init.engineer/Plurk-API-Docs/build/#plurk-api-2-0)
 > - [GitHub - SammyK/LaravelFacebookSdk: Fully unit tested Facebook SDK v5 integration for Laravel & Lumen](https://github.com/SammyK/LaravelFacebookSdk)
 > - [GitHub - thujohn/twitter: Twitter API for Laravel 4/5](https://github.com/thujohn/twitter)
 > - [GitHub - CQD/qlurk: A Plurk API library in PHP](https://github.com/CQD/qlurk)
