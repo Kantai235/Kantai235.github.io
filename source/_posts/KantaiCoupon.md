@@ -34,6 +34,20 @@ date: 2022-03-23 00:00:00
 `我會獲得`：LINE POINTS 100點(NT$ 100)
 - 推薦連結 [https://www.linebank.com.tw/R/mgm-event/invitation?mgm=101000116634](https://www.linebank.com.tw/R/mgm-event/invitation?mgm=101000116634)
 
+## 將來銀行 NEXT Bank
+透過我的推薦連結申辦將來銀行 NEXT Bank，你我會獲得：
+`你會獲得`：200 將來 N 點(NT$ 200) + 6.66% N 倍券 1 張(加息利率 6.66 %，加息期間 10 天，加息存款限額 25,000 元)
+`我會獲得`：100 將來 N 點(NT$ 100)
+- 我的邀請碼：`W57TX`
+- 推薦連結 [https://www.linebank.com.tw/R/mgm-event/invitation?mgm=101000116634](https://www.linebank.com.tw/R/mgm-event/invitation?mgm=101000116634)
+
+## 遠東商銀 Bankee
+透過我的推薦連結申辦遠東商銀 Bankee，你我會獲得：
+`你會獲得`：加息利率 2.6 %，加息期間 180 天，加息存款限額 50,000 元
+`我會獲得`：加息利率 2.6 %，加息期間 180 天，加息存款限額 50,000 元
+- 我的邀請碼：`WLX55`
+- 推薦連結 [https://www.appbankee.com.tw/bankee/rest/re/WLX55](https://www.appbankee.com.tw/bankee/rest/re/WLX55)
+
 ## 國泰世華
 透過我的推薦連結申辦國泰世華，你我會獲得：
 `你會獲得`：我也不知道，他沒跟我說 QQ
@@ -41,6 +55,19 @@ date: 2022-03-23 00:00:00
 - 推薦連結 [https://www.cathaybk.com.tw/cathaybk/promo/event/ebanking/product/APP-WEB/index.html?invite=L35BB](https://www.cathaybk.com.tw/cathaybk/promo/event/ebanking/product/APP-WEB/index.html?invite=L35BB)
 
 # 虛擬貨幣
+## 幣安 Binance
+`【推薦點這個】`透過我的「邀請返券」推薦連結申辦幣安 Binance，你我會獲得：
+`你會獲得`：100 USDT 交易手續
+`我會獲得`：100 USDT 交易手續
+- 邀請返券 ID：`CPA_00L9WSN4W0`
+- 邀請返券鏈結 [https://www.binance.com/zh-TW/activity/referral/offers/claim?ref=CPA_00L9WSN4W0](https://www.binance.com/zh-TW/activity/referral/offers/claim?ref=CPA_00L9WSN4W0)
+
+透過我的「標準推薦」推薦連結申辦幣安 Binance，你我會獲得：
+`你會獲得`：20% 交易手續費折抵
+`我會獲得`：20% 交易手續費返佣
+- 推薦 ID：`435272848`
+- 推薦鏈結 [https://accounts.binance.com/zh-TW/register?ref=435272848](https://accounts.binance.com/zh-TW/register?ref=435272848)
+
 ## MaiCoin MAX
 透過我的推薦連結申辦 MaiCoin MAX，你我會獲得：
 `你會獲得`：20% 交易手續費折抵
