@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Android 執行緒使用經驗談 - HandlerThread | 我不會寫程式</title><meta name="author" content="乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"><meta name="copyright" content="乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="單執行緒應用程式，就像單向車道般的常常塞車，但多執行緒的應用程式，就會像高速公路般的順暢流利 ..."><link rel="shortcut icon" href="/img/icons/largetile.png"><link rel="canonical" href="https://blog.init.engineer/posts/AndroidThreadBasic/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="XxMuIjmJ-Zsl538XPcEz_PT0qzbtv7gW7DPROnIEiU8"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-89952948-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-89952948-1');
+</script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;162ed30a043748a3a6ae92ec1bd92ef5&quot;}"></script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":128,"languages":{"author":"作者: 乾太 ₍₍ ◝(･◡･)◟ ⁾⁾","link":"連結: ","source":"來源: 我不會寫程式","info":"著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Android 執行緒使用經驗談 - HandlerThread',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2017-03-28 00:00:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="alternate" href="/atom.xml" title="我不會寫程式" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">92</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">119</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">21</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目錄</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 技術主題</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/"><span> 💖 PHP 設計模式</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-hammer"></i><span> 線上小工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/posts/StringRandomGenerator/"><span> 線上 String 字串亂數產生器</span></a></li><li><a class="site-page child" href="/posts/ToolsUnicode/"><span> 線上編碼、解碼器 for Unicode</span></a></li><li><a class="site-page child" href="/posts/ToolsURL/"><span> 線上編碼、解碼器 for URL</span></a></li><li><a class="site-page child" href="/posts/ToolsBase64/"><span> 線上編碼、解碼器 for Base64</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="我不會寫程式"><span class="site-name">我不會寫程式</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目錄</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 技術主題</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/"><span> 💖 PHP 設計模式</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-hammer"></i><span> 線上小工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/posts/StringRandomGenerator/"><span> 線上 String 字串亂數產生器</span></a></li><li><a class="site-page child" href="/posts/ToolsUnicode/"><span> 線上編碼、解碼器 for Unicode</span></a></li><li><a class="site-page child" href="/posts/ToolsURL/"><span> 線上編碼、解碼器 for URL</span></a></li><li><a class="site-page child" href="/posts/ToolsBase64/"><span> 線上編碼、解碼器 for Base64</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Android 執行緒使用經驗談 - HandlerThread</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">發表於</span><time datetime="2017-03-27T16:00:00.000Z" title="發表於 2017-03-28 00:00:00">2017-03-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/">技術文件</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Android-%E5%AF%A6%E5%8B%99/">Android 實務</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">662</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>2分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Android 執行緒使用經驗談 - HandlerThread"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>單執行緒的應用程式，就像一條單向車道般，有時候剛好碰到對向車道可能會塞車，可是雙執行緒的應用程式，他就像高速公路般，可以使得你的應用程式非常順暢。</p>
+<p>你可以把整個作業系統理解成一家公司，而「執行緒」就是你的員工，你底下有許多位員工，你今天可以派發一件或多件工作給你的員工。</p>
+<p>我們以 Android 作為範例(當然也適用於 Java)，先從做一件工作開始：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainActivity</span> <span class="keyword">extends</span> <span class="title class_">Activity</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 指定一件工作(Thread)</span></span><br><span class="line">    <span class="keyword">private</span> Thread __ThreadStudy;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 指定 __ThreadStudy 這工作的工作內容為 __Study</span></span><br><span class="line">        <span class="built_in">this</span>.__ThreadStudy = <span class="keyword">new</span> <span class="title class_">Thread</span>(__Study);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 開始執行 __ThreadStudy 這件工作</span></span><br><span class="line">        <span class="built_in">this</span>.__ThreadStudy.start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 數數字的工作內容</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Runnable</span> <span class="variable">__Study</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>不過這樣會面臨一個問題，當這個 Activity 結束時，在執行緒的地方上會發生錯誤，原因是因為 Study 這項工作並沒有結束，我們必須搭配 interrupt，告訴我們的 Study 該休息了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>.onDestroy();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果 __ThreadStudy 這項工作並不是 null</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.__ThreadStudy != <span class="literal">null</span>)</span><br><span class="line">        <span class="comment">// 哈囉，這項工作該結束了。</span></span><br><span class="line">        <span class="built_in">this</span>.__ThreadStudy.interrupt();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣有了工作內容的概念以後，我們接下來要開始思考，如何僱請一位員工，並且開始請這位員工做些事情呢？這時候我們就要動用到 Handler 以及 HandlerThread，你可以把 Handler 想像成你自己，然後 HandlerThread 想像成是你的員工，你必須指派 Thread 工作內容給你的員工：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainActivity</span> <span class="keyword">extends</span> <span class="title class_">Activity</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 我們有一位老闆 _Handler</span></span><br><span class="line">    <span class="keyword">private</span> Handler __Handler;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 我們有一位員工 __HandlerThread</span></span><br><span class="line">    <span class="keyword">private</span> HandlerThread __HandlerThread;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// __HandlerThread 這位員工的名字叫做 HandlerThread</span></span><br><span class="line">        <span class="built_in">this</span>.__HandlerThread = <span class="keyword">new</span> <span class="title class_">HandlerThread</span>(<span class="string">&quot;HandlerThread&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 讓員工動起來，準備開始工作了！</span></span><br><span class="line">        <span class="built_in">this</span>.__HandlerThread.start();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 告訴 HandlerThread 這位工人，你的老闆是 _Handler</span></span><br><span class="line">        <span class="built_in">this</span>.__Handler = <span class="keyword">new</span> <span class="title class_">Handler</span>(__HandlerThread.getLooper());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 請老闆指派工作(數數字的工作)給員工</span></span><br><span class="line">        <span class="built_in">this</span>.__Handler.post(__Study);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 數數字的工作內容</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Runnable</span> <span class="variable">__Study</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDestroy();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果 __HandlerThread 這員工並不是 null</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.__HandlerThread != <span class="literal">null</span>)</span><br><span class="line">            <span class="comment">// 哈囉，你的工作結束囉！</span></span><br><span class="line">            <span class="built_in">this</span>.__HandlerThread.removeCallbacks(__Study);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果 __Handler 這老闆並不是 null</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.__Handler != <span class="literal">null</span>)</span><br><span class="line">            <span class="comment">// 哈囉，該讓員工下班囉！</span></span><br><span class="line">            <span class="built_in">this</span>.__Handler.quit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>HandlerThread 的基本教學大概就這樣，之後還有 runOnUiThread、Service、Broadcast ... 之類的可以寫 XD</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.init.engineer">乾太 ₍₍ ◝(･◡･)◟ ⁾⁾</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="https://blog.init.engineer/posts/AndroidThreadBasic/">https://blog.init.engineer/posts/AndroidThreadBasic/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-ND 4.0</a> 許可協議。轉載請註明來自 <a href="https://blog.init.engineer" target="_blank">我不會寫程式</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Android/">Android</a><a class="post-meta__tags" href="/tags/HandlerThread/">HandlerThread</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/OAuthForSwiftBasic/" title="iOS Swift 第三方套件 - OAuthSwift"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">iOS Swift 第三方套件 - OAuthSwift</div></div></a></div><div class="next-post pull-right"><a href="/posts/ChatterBotTeaching/" title="擁有自動學習的 Python 機器人 - ChatterBot"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">擁有自動學習的 Python 機器人 - ChatterBot</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/posts/AndroidCode39/" title="Android 實作 Code39 條碼產生 - 超商繳費帳單"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-04-18</div><div class="title">Android 實作 Code39 條碼產生 - 超商繳費帳單</div></div></a></div><div><a href="/posts/AndroidRunOnUiThreadBasic/" title="Android 執行緒使用經驗談 - runOnUiThread"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-04-11</div><div class="title">Android 執行緒使用經驗談 - runOnUiThread</div></div></a></div><div><a href="/posts/AndroidSafetyNetReCAPTCHAAPI/" title="如何在 Android 當中引用 reCAPTCHA 來做防堵機器人的驗證。"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-06-13</div><div class="title">如何在 Android 當中引用 reCAPTCHA 來做防堵機器人的驗證。</div></div></a></div><div><a href="/posts/BasicUsingJsonOnJavaOrAndroid/" title="Java 或 Android 上的 Json 基本教學"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-01-09</div><div class="title">Java 或 Android 上的 Json 基本教學</div></div></a></div><div><a href="/posts/HowToCreateGoogleNoCaptcha/" title="如何建立 NoCaptcha(我不是機器人) 的 Key、Secret？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-09-09</div><div class="title">如何建立 NoCaptcha(我不是機器人) 的 Key、Secret？</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="disqusjs"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">乾太 ₍₍ ◝(･◡･)◟ ⁾⁾</div><div class="author-info__description">我覺得我原本如果不是大師級的開發者，我至少也是一位大神級的開發者，直到我端火鍋摔倒撞到頭以後，我就變成了一個只會 Hello World 的菜鳥。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">92</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">119</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">21</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Kantai235"><i class="fab fa-github"></i><span>GitHub</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:kantai.developer@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">如果您對於文章內容有誤勘的問題，可以到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Kantai235/Kantai235.github.io/issues" style="color:#49b1f5">GitHub Issues</a> 反應給我，也可以到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://discord.gg/tPhnrs2" style="color:#49b1f5">Discord</a> 當中直接跟我說。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/HowToUseGitHubProjectForArtist/" title="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）"><img src= "/img/loading.gif" data-lazy-src="/img/posts/HowToUseGitHubProjectsForArtist/banner.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）"/></a><div class="content"><a class="title" href="/posts/HowToUseGitHubProjectForArtist/" title="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）">如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）</a><time datetime="2023-02-16T04:00:00.000Z" title="發表於 2023-02-16 12:00:00">2023-02-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/KantaiCoupon/" title="乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ..."><img src= "/img/loading.gif" data-lazy-src="/img/banners/KantaiCoupon.jpeg" onerror="this.onerror=null;this.src='/img/404.gif'" alt="乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ..."/></a><div class="content"><a class="title" href="/posts/KantaiCoupon/" title="乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ...">乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ...</a><time datetime="2022-03-22T16:00:00.000Z" title="發表於 2022-03-23 00:00:00">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/BlockedPan93412/" title="【社群恩仇錄】byStarTW/instanceof/pan93412"><img src= "/img/loading.gif" data-lazy-src="/img/banners/BlockedPan93412.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="【社群恩仇錄】byStarTW/instanceof/pan93412"/></a><div class="content"><a class="title" href="/posts/BlockedPan93412/" title="【社群恩仇錄】byStarTW/instanceof/pan93412">【社群恩仇錄】byStarTW/instanceof/pan93412</a><time datetime="2022-03-06T16:00:00.000Z" title="發表於 2022-03-07 00:00:00">2022-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/MovingAverageConvergenceDivergence/" title="【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence"><img src= "/img/loading.gif" data-lazy-src="/img/banners/MovingAverageConvergenceDivergence.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence"/></a><div class="content"><a class="title" href="/posts/MovingAverageConvergenceDivergence/" title="【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence">【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence</a><time datetime="2022-02-22T16:00:00.000Z" title="發表於 2022-02-23 00:00:00">2022-02-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/RelativeStrengthIndex/" title="【學習筆記】相對強弱指數 Relative Strength Index"><img src= "/img/loading.gif" data-lazy-src="/img/banners/RelativeStrengthIndex.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="【學習筆記】相對強弱指數 Relative Strength Index"/></a><div class="content"><a class="title" href="/posts/RelativeStrengthIndex/" title="【學習筆記】相對強弱指數 Relative Strength Index">【學習筆記】相對強弱指數 Relative Strength Index</a><time datetime="2022-02-21T16:00:00.000Z" title="發表於 2022-02-22 00:00:00">2022-02-22</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/banner.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2023 By 乾太 ₍₍ ◝(･◡･)◟ ⁾⁾</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">繁</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqusjs () {
+  function initDisqusjs () {
+    window.disqusjs = null
+    disqusjs = new DisqusJS(Object.assign({
+      shortname: 'kantai-developer-blog',
+      identifier: '/posts/AndroidThreadBasic/',
+      url: 'https://blog.init.engineer/posts/AndroidThreadBasic/',
+      title: 'Android 執行緒使用經驗談 - HandlerThread',
+      apikey: '',
+    },null))
+
+    disqusjs.render(document.getElementById('disqusjs'))
+  }
+
+  const themeChange = () => {
+    const ele = document.getElementById('disqus_thread')
+    if(!ele) return
+    disqusjs.destroy()
+    initDisqusjs()
+  }
+
+
+  document.getElementById('darkmode').addEventListener('click', themeChange)
+
+  if (window.disqusJsLoad) initDisqusjs()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/disqusjs/dist/browser/styles/disqusjs.min.css')
+    getScript('https://cdn.jsdelivr.net/npm/disqusjs/dist/browser/disqusjs.es2015.umd.min.js').then(initDisqusjs)
+    window.disqusJsLoad = true
+  }
+}
+
+if ('Disqusjs' === 'Disqusjs' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqusjs'), loadDisqusjs)
+  else loadDisqusjs()
+}
+else {
+  function loadOtherComment () {
+    loadDisqusjs()
+  }
+}
+
+</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[圖片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[連結]') // replace url
+    content = content.replace(/<code>.*?<\/code>/gi, '[程式碼]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    fetch('https://disqus.com/api/3.0/forums/listPosts.json?forum=kantai-developer-blog&related=thread&limit=6&api_key=')
+      .then(response => response.json())
+      .then(data => {
+        const disqusArray = data.response.map(item => {
+          return {
+            'avatar': item.author.avatar.cache,
+            'content': changeContent(item.message),
+            'nick': item.author.name,
+            'url': item.url,
+            'date': item.createdAt
+          }
+        })
+
+        saveToLocal.set('disqus-newest-comments', JSON.stringify(disqusArray), 5/(60*24))
+        generateHtml(disqusArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "無法獲取評論，請確認相關配置是否正確"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick}</span><time> / ${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '沒有評論'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('disqus-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="🤣,🤔,🥴,😭,😪,🥺,😡" data-fontsize="24px" data-random="true" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"]):not([href="/talking/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'UA-89952948-1', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></body></html>

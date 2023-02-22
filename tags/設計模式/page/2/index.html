@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>標籤: 設計模式 | 我不會寫程式</title><meta name="author" content="乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"><meta name="copyright" content="乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="我覺得我原本如果不是大師級的開發者，我至少也是一位大神級的開發者，直到我端火鍋摔倒撞到頭以後，我就變成了一個只會 Hello World 的菜鳥。"><link rel="shortcut icon" href="/img/icons/largetile.png"><link rel="canonical" href="https://blog.init.engineer/tags/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="XxMuIjmJ-Zsl538XPcEz_PT0qzbtv7gW7DPROnIEiU8"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-89952948-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-89952948-1');
+</script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;162ed30a043748a3a6ae92ec1bd92ef5&quot;}"></script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":128,"languages":{"author":"作者: 乾太 ₍₍ ◝(･◡･)◟ ⁾⁾","link":"連結: ","source":"來源: 我不會寫程式","info":"著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '標籤: 設計模式',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-02-22 13:28:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="alternate" href="/atom.xml" title="我不會寫程式" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">92</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">119</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">21</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目錄</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 技術主題</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/"><span> 💖 PHP 設計模式</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-hammer"></i><span> 線上小工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/posts/StringRandomGenerator/"><span> 線上 String 字串亂數產生器</span></a></li><li><a class="site-page child" href="/posts/ToolsUnicode/"><span> 線上編碼、解碼器 for Unicode</span></a></li><li><a class="site-page child" href="/posts/ToolsURL/"><span> 線上編碼、解碼器 for URL</span></a></li><li><a class="site-page child" href="/posts/ToolsBase64/"><span> 線上編碼、解碼器 for Base64</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="我不會寫程式"><span class="site-name">我不會寫程式</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目錄</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 技術主題</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/"><span> 💖 PHP 設計模式</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-hammer"></i><span> 線上小工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/posts/StringRandomGenerator/"><span> 線上 String 字串亂數產生器</span></a></li><li><a class="site-page child" href="/posts/ToolsUnicode/"><span> 線上編碼、解碼器 for Unicode</span></a></li><li><a class="site-page child" href="/posts/ToolsURL/"><span> 線上編碼、解碼器 for URL</span></a></li><li><a class="site-page child" href="/posts/ToolsBase64/"><span> 線上編碼、解碼器 for Base64</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">設計模式</h1></div></header><main class="layout" id="content-inner"><div id="tag"><div class="article-sort-title">標籤 - 設計模式</div><div class="article-sort"><div class="article-sort-item year">2020</div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/ChainOfResponsibilities/" title="【PHP、設計模式、大頭菜】責任鏈模式 Chain of Responsibilities"><img src= "/img/loading.gif" data-lazy-src="/img/banners/ChainOfResponsibilities.png" alt="【PHP、設計模式、大頭菜】責任鏈模式 Chain of Responsibilities" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-10-02T16:00:00.000Z" title="發表於 2020-10-03 00:00:00">2020-10-03</time></div><a class="article-sort-item-title" href="/posts/ChainOfResponsibilities/" title="【PHP、設計模式、大頭菜】責任鏈模式 Chain of Responsibilities">【PHP、設計模式、大頭菜】責任鏈模式 Chain of Responsibilities</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/RegistryPattern/" title="【PHP、設計模式、大頭菜】註冊模式 Registry Pattern"><img src= "/img/loading.gif" data-lazy-src="/img/banners/RegistryPattern.png" alt="【PHP、設計模式、大頭菜】註冊模式 Registry Pattern" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-10-01T16:00:00.000Z" title="發表於 2020-10-02 00:00:00">2020-10-02</time></div><a class="article-sort-item-title" href="/posts/RegistryPattern/" title="【PHP、設計模式、大頭菜】註冊模式 Registry Pattern">【PHP、設計模式、大頭菜】註冊模式 Registry Pattern</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/ProxyPattern/" title="【PHP、設計模式、大頭菜】代理模式 Proxy Pattern"><img src= "/img/loading.gif" data-lazy-src="/img/banners/ProxyPattern.png" alt="【PHP、設計模式、大頭菜】代理模式 Proxy Pattern" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-30T16:00:00.000Z" title="發表於 2020-10-01 00:00:00">2020-10-01</time></div><a class="article-sort-item-title" href="/posts/ProxyPattern/" title="【PHP、設計模式、大頭菜】代理模式 Proxy Pattern">【PHP、設計模式、大頭菜】代理模式 Proxy Pattern</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/FlyweightPattern/" title="【PHP、設計模式、大頭菜】享元模式 Flyweight Pattern"><img src= "/img/loading.gif" data-lazy-src="/img/banners/FlyweightPattern.png" alt="【PHP、設計模式、大頭菜】享元模式 Flyweight Pattern" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-29T16:00:00.000Z" title="發表於 2020-09-30 00:00:00">2020-09-30</time></div><a class="article-sort-item-title" href="/posts/FlyweightPattern/" title="【PHP、設計模式、大頭菜】享元模式 Flyweight Pattern">【PHP、設計模式、大頭菜】享元模式 Flyweight Pattern</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/FluentInterface/" title="【PHP、設計模式、大頭菜】流暢介面 Fluent Interface"><img src= "/img/loading.gif" data-lazy-src="/img/banners/FluentInterface.png" alt="【PHP、設計模式、大頭菜】流暢介面 Fluent Interface" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-28T16:00:00.000Z" title="發表於 2020-09-29 00:00:00">2020-09-29</time></div><a class="article-sort-item-title" href="/posts/FluentInterface/" title="【PHP、設計模式、大頭菜】流暢介面 Fluent Interface">【PHP、設計模式、大頭菜】流暢介面 Fluent Interface</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/FacadePattern/" title="【PHP、設計模式、大頭菜】外觀模式 Facade Pattern"><img src= "/img/loading.gif" data-lazy-src="/img/banners/FacadePattern.png" alt="【PHP、設計模式、大頭菜】外觀模式 Facade Pattern" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-27T16:00:00.000Z" title="發表於 2020-09-28 00:00:00">2020-09-28</time></div><a class="article-sort-item-title" href="/posts/FacadePattern/" title="【PHP、設計模式、大頭菜】外觀模式 Facade Pattern">【PHP、設計模式、大頭菜】外觀模式 Facade Pattern</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/DependencyInjection/" title="【PHP、設計模式、大頭菜】依賴注入 Dependency Injection"><img src= "/img/loading.gif" data-lazy-src="/img/banners/DependencyInjection.png" alt="【PHP、設計模式、大頭菜】依賴注入 Dependency Injection" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-26T16:00:00.000Z" title="發表於 2020-09-27 00:00:00">2020-09-27</time></div><a class="article-sort-item-title" href="/posts/DependencyInjection/" title="【PHP、設計模式、大頭菜】依賴注入 Dependency Injection">【PHP、設計模式、大頭菜】依賴注入 Dependency Injection</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/DecoratorPattern/" title="【PHP、設計模式、大頭菜】修飾模式 Decorator Pattern"><img src= "/img/loading.gif" data-lazy-src="/img/banners/DecoratorPattern.png" alt="【PHP、設計模式、大頭菜】修飾模式 Decorator Pattern" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-25T16:00:00.000Z" title="發表於 2020-09-26 00:00:00">2020-09-26</time></div><a class="article-sort-item-title" href="/posts/DecoratorPattern/" title="【PHP、設計模式、大頭菜】修飾模式 Decorator Pattern">【PHP、設計模式、大頭菜】修飾模式 Decorator Pattern</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/DataMapper/" title="【PHP、設計模式、大頭菜】資料對應 Data Mapper"><img src= "/img/loading.gif" data-lazy-src="/img/banners/DataMapper.png" alt="【PHP、設計模式、大頭菜】資料對應 Data Mapper" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-24T16:00:00.000Z" title="發表於 2020-09-25 00:00:00">2020-09-25</time></div><a class="article-sort-item-title" href="/posts/DataMapper/" title="【PHP、設計模式、大頭菜】資料對應 Data Mapper">【PHP、設計模式、大頭菜】資料對應 Data Mapper</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/posts/CompositePattern/" title="【PHP、設計模式、大頭菜】組合模式 Composite Pattern"><img src= "/img/loading.gif" data-lazy-src="/img/banners/CompositePattern.png" alt="【PHP、設計模式、大頭菜】組合模式 Composite Pattern" onerror="this.onerror=null;this.src='/img/404.gif'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-09-23T16:00:00.000Z" title="發表於 2020-09-24 00:00:00">2020-09-24</time></div><a class="article-sort-item-title" href="/posts/CompositePattern/" title="【PHP、設計模式、大頭菜】組合模式 Composite Pattern">【PHP、設計模式、大頭菜】組合模式 Composite Pattern</a></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/tags/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/tags/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/page/3/">3</a><a class="extend next" rel="next" href="/tags/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/page/3/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">乾太 ₍₍ ◝(･◡･)◟ ⁾⁾</div><div class="author-info__description">我覺得我原本如果不是大師級的開發者，我至少也是一位大神級的開發者，直到我端火鍋摔倒撞到頭以後，我就變成了一個只會 Hello World 的菜鳥。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">92</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">119</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">21</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Kantai235"><i class="fab fa-github"></i><span>GitHub</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:kantai.developer@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">如果您對於文章內容有誤勘的問題，可以到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Kantai235/Kantai235.github.io/issues" style="color:#49b1f5">GitHub Issues</a> 反應給我，也可以到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://discord.gg/tPhnrs2" style="color:#49b1f5">Discord</a> 當中直接跟我說。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/HowToUseGitHubProjectForArtist/" title="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）"><img src= "/img/loading.gif" data-lazy-src="/img/posts/HowToUseGitHubProjectsForArtist/banner.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）"/></a><div class="content"><a class="title" href="/posts/HowToUseGitHubProjectForArtist/" title="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）">如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）</a><time datetime="2023-02-16T04:00:00.000Z" title="發表於 2023-02-16 12:00:00">2023-02-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/KantaiCoupon/" title="乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ..."><img src= "/img/loading.gif" data-lazy-src="/img/banners/KantaiCoupon.jpeg" onerror="this.onerror=null;this.src='/img/404.gif'" alt="乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ..."/></a><div class="content"><a class="title" href="/posts/KantaiCoupon/" title="乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ...">乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ...</a><time datetime="2022-03-22T16:00:00.000Z" title="發表於 2022-03-23 00:00:00">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/BlockedPan93412/" title="【社群恩仇錄】byStarTW/instanceof/pan93412"><img src= "/img/loading.gif" data-lazy-src="/img/banners/BlockedPan93412.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="【社群恩仇錄】byStarTW/instanceof/pan93412"/></a><div class="content"><a class="title" href="/posts/BlockedPan93412/" title="【社群恩仇錄】byStarTW/instanceof/pan93412">【社群恩仇錄】byStarTW/instanceof/pan93412</a><time datetime="2022-03-06T16:00:00.000Z" title="發表於 2022-03-07 00:00:00">2022-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/MovingAverageConvergenceDivergence/" title="【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence"><img src= "/img/loading.gif" data-lazy-src="/img/banners/MovingAverageConvergenceDivergence.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence"/></a><div class="content"><a class="title" href="/posts/MovingAverageConvergenceDivergence/" title="【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence">【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence</a><time datetime="2022-02-22T16:00:00.000Z" title="發表於 2022-02-23 00:00:00">2022-02-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/RelativeStrengthIndex/" title="【學習筆記】相對強弱指數 Relative Strength Index"><img src= "/img/loading.gif" data-lazy-src="/img/banners/RelativeStrengthIndex.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="【學習筆記】相對強弱指數 Relative Strength Index"/></a><div class="content"><a class="title" href="/posts/RelativeStrengthIndex/" title="【學習筆記】相對強弱指數 Relative Strength Index">【學習筆記】相對強弱指數 Relative Strength Index</a><time datetime="2022-02-21T16:00:00.000Z" title="發表於 2022-02-22 00:00:00">2022-02-22</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新評論</span></div><div class="aside-list"><span>正在載入中...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分類</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86/"><span class="card-category-list-name">專案管理</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/"><span class="card-category-list-name">技術文件</span><span class="card-category-list-count">60</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/ASP-NET-%E5%AF%A6%E5%8B%99/"><span class="card-category-list-name">ASP.NET 實務</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Android-%E5%AF%A6%E5%8B%99/"><span class="card-category-list-name">Android 實務</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/JavaScript-%E5%AF%A6%E5%8B%99/"><span class="card-category-list-name">JavaScript 實務</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Laravel-%E5%AF%A6%E5%8B%99/"><span class="card-category-list-name">Laravel 實務</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E5%AF%A6%E5%8B%99/"><span class="card-category-list-name">PHP 實務</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/"><span class="card-category-list-name">PHP 設計模式</span><span class="card-category-list-count">30</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Python-%E5%AF%A6%E5%8B%99/"><span class="card-category-list-name">Python 實務</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/iOS-%E5%AF%A6%E5%8B%99/"><span class="card-category-list-name">iOS 實務</span><span class="card-category-list-count">5</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1/"><span class="card-category-list-name">投資理財</span><span class="card-category-list-count">7</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1/%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99/"><span class="card-category-list-name">技術指標</span><span class="card-category-list-count">7</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%96%87%E4%BB%B6%E7%BF%BB%E8%AD%AF/"><span class="card-category-list-name">文件翻譯</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%96%87%E4%BB%B6%E7%BF%BB%E8%AD%AF/Plurk-API-Docs/"><span class="card-category-list-name">Plurk API Docs</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%A4%BE%E7%BE%A4%E6%81%A9%E4%BB%87%E9%8C%84/"><span class="card-category-list-name">社群恩仇錄</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB/"><span class="card-category-list-name">經驗分享</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%B7%9A%E4%B8%8A%E5%B0%8F%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">線上小工具</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/"><span class="card-category-list-name">開發日誌</span><span class="card-category-list-count">9</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/%E7%B4%94%E9%9D%A0%E5%8C%97%E5%B7%A5%E7%A8%8B%E5%B8%AB/"><span class="card-category-list-name">純靠北工程師</span><span class="card-category-list-count">9</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%96%8B%E7%AE%B1%E7%B4%80%E9%8C%84/"><span class="card-category-list-name">開箱紀錄</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9A%B1%E7%A7%81%E6%AC%8A%E6%A2%9D%E6%AC%BE/"><span class="card-category-list-name">隱私權條款</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>標籤</span></div><div class="card-tag-cloud"><a href="/tags/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/" style="font-size: 1.45em; color: rgb(71, 199, 75)">設計模式</a><a href="/tags/%E5%BB%BA%E7%AB%8B%E5%9E%8B/" style="font-size: 1.35em; color: rgb(82, 120, 108)">建立型</a><a href="/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%BB%A0/" style="font-size: 1.15em; color: rgb(8, 109, 200)">抽象工廠</a><a href="/tags/%E7%B5%90%E6%A7%8B%E5%9E%8B/" style="font-size: 1.42em; color: rgb(100, 160, 124)">結構型</a><a href="/tags/%E8%BD%89%E6%8E%A5%E5%99%A8%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(109, 85, 132)">轉接器模式</a><a href="/tags/Android/" style="font-size: 1.28em; color: rgb(80, 112, 61)">Android</a><a href="/tags/Code39/" style="font-size: 1.15em; color: rgb(177, 22, 109)">Code39</a><a href="/tags/runOnUiThread/" style="font-size: 1.15em; color: rgb(132, 76, 172)">runOnUiThread</a><a href="/tags/reCAPTCHA/" style="font-size: 1.15em; color: rgb(66, 148, 117)">reCAPTCHA</a><a href="/tags/HandlerThread/" style="font-size: 1.15em; color: rgb(195, 95, 148)">HandlerThread</a><a href="/tags/JSON/" style="font-size: 1.15em; color: rgb(64, 184, 169)">JSON</a><a href="/tags/byStarTW/" style="font-size: 1.15em; color: rgb(103, 143, 197)">byStarTW</a><a href="/tags/instanceof/" style="font-size: 1.15em; color: rgb(91, 35, 99)">instanceof</a><a href="/tags/pan93412/" style="font-size: 1.15em; color: rgb(174, 67, 67)">pan93412</a><a href="/tags/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" style="font-size: 1.32em; color: rgb(148, 89, 171)">學習筆記</a><a href="/tags/%E5%B8%83%E6%9E%97%E9%80%9A%E9%81%93/" style="font-size: 1.15em; color: rgb(188, 104, 168)">布林通道</a><a href="/tags/BBands/" style="font-size: 1.15em; color: rgb(11, 11, 83)">BBands</a><a href="/tags/Bollinger-Bands/" style="font-size: 1.15em; color: rgb(35, 107, 132)">Bollinger Bands</a><a href="/tags/%E6%A9%8B%E6%8E%A5%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(199, 9, 182)">橋接模式</a><a href="/tags/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(174, 127, 129)">建造者模式</a><a href="/tags/%E8%A1%8C%E7%82%BA%E5%9E%8B/" style="font-size: 1.42em; color: rgb(91, 191, 134)">行為型</a><a href="/tags/%E8%B2%AC%E4%BB%BB%E9%8F%88%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(165, 127, 35)">責任鏈模式</a><a href="/tags/Python/" style="font-size: 1.15em; color: rgb(36, 127, 105)">Python</a><a href="/tags/ChatterBot/" style="font-size: 1.15em; color: rgb(179, 105, 126)">ChatterBot</a><a href="/tags/CocoaPods/" style="font-size: 1.15em; color: rgb(168, 177, 106)">CocoaPods</a><a href="/tags/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(143, 70, 81)">命令模式</a><a href="/tags/%E7%B5%84%E5%90%88%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(66, 150, 110)">組合模式</a><a href="/tags/Gitea/" style="font-size: 1.15em; color: rgb(84, 167, 175)">Gitea</a><a href="/tags/%E8%B3%87%E6%96%99%E5%B0%8D%E6%87%89/" style="font-size: 1.15em; color: rgb(63, 114, 113)">資料對應</a><a href="/tags/%E4%BF%AE%E9%A3%BE%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(137, 51, 12)">修飾模式</a><a href="/tags/%E4%BE%9D%E8%B3%B4%E6%B3%A8%E5%85%A5/" style="font-size: 1.15em; color: rgb(112, 144, 166)">依賴注入</a><a href="/tags/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/" style="font-size: 1.38em; color: rgb(67, 192, 7)">開發日誌</a><a href="/tags/%E7%B4%94%E9%9D%A0%E5%8C%97%E5%B7%A5%E7%A8%8B%E5%B8%AB/" style="font-size: 1.38em; color: rgb(76, 39, 119)">純靠北工程師</a><a href="/tags/Facebook-API/" style="font-size: 1.15em; color: rgb(30, 16, 56)">Facebook API</a><a href="/tags/Laravel/" style="font-size: 1.38em; color: rgb(65, 122, 57)">Laravel</a><a href="/tags/CSRF/" style="font-size: 1.15em; color: rgb(139, 152, 117)">CSRF</a><a href="/tags/%E6%8C%87%E6%95%B8%E7%A7%BB%E5%8B%95%E5%B9%B3%E5%9D%87%E7%B7%9A/" style="font-size: 1.15em; color: rgb(143, 126, 188)">指數移動平均線</a><a href="/tags/EMA/" style="font-size: 1.15em; color: rgb(158, 39, 72)">EMA</a><a href="/tags/Exponential-Moving-Average/" style="font-size: 1.15em; color: rgb(195, 195, 32)">Exponential Moving Average</a><a href="/tags/%E5%A4%96%E8%A7%80%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(131, 1, 126)">外觀模式</a><a href="/tags/Chatfuel/" style="font-size: 1.15em; color: rgb(150, 31, 23)">Chatfuel</a><a href="/tags/php/" style="font-size: 1.15em; color: rgb(29, 73, 65)">php</a><a href="/tags/%E5%B7%A5%E5%BB%A0%E6%96%B9%E6%B3%95/" style="font-size: 1.15em; color: rgb(97, 181, 23)">工廠方法</a><a href="/tags/%E6%B5%81%E6%9A%A2%E4%BB%8B%E9%9D%A2/" style="font-size: 1.15em; color: rgb(110, 136, 106)">流暢介面</a><a href="/tags/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(10, 168, 61)">享元模式</a><a href="/tags/Vue/" style="font-size: 1.15em; color: rgb(129, 49, 128)">Vue</a><a href="/tags/Canvas/" style="font-size: 1.15em; color: rgb(110, 115, 23)">Canvas</a><a href="/tags/Hexo/" style="font-size: 1.15em; color: rgb(157, 78, 23)">Hexo</a><a href="/tags/GitHub/" style="font-size: 1.22em; color: rgb(107, 29, 44)">GitHub</a><a href="/tags/Butterfly/" style="font-size: 1.15em; color: rgb(153, 141, 65)">Butterfly</a><a href="/tags/HeroKu/" style="font-size: 1.15em; color: rgb(101, 38, 142)">HeroKu</a><a href="/tags/Copyright/" style="font-size: 1.15em; color: rgb(112, 57, 113)">Copyright</a><a href="/tags/Jekyll/" style="font-size: 1.15em; color: rgb(126, 179, 72)">Jekyll</a><a href="/tags/Hyde/" style="font-size: 1.15em; color: rgb(69, 62, 42)">Hyde</a><a href="/tags/NoCaptcha/" style="font-size: 1.15em; color: rgb(101, 93, 109)">NoCaptcha</a><a href="/tags/ASP-NET-Web-APIv2/" style="font-size: 1.15em; color: rgb(166, 45, 27)">ASP.NET Web APIv2</a><a href="/tags/VirtualHost/" style="font-size: 1.15em; color: rgb(8, 23, 22)">VirtualHost</a><a href="/tags/Projects/" style="font-size: 1.15em; color: rgb(145, 20, 67)">Projects</a><a href="/tags/%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86/" style="font-size: 1.15em; color: rgb(22, 151, 155)">專案管理</a><a href="/tags/%E8%81%B7%E7%BC%BA/" style="font-size: 1.15em; color: rgb(20, 124, 123)">職缺</a><a href="/tags/python/" style="font-size: 1.22em; color: rgb(0, 28, 39)">python</a><a href="/tags/opencv/" style="font-size: 1.22em; color: rgb(154, 74, 39)">opencv</a><a href="/tags/adb/" style="font-size: 1.22em; color: rgb(43, 186, 81)">adb</a><a href="/tags/android/" style="font-size: 1.22em; color: rgb(52, 45, 67)">android</a><a href="/tags/install/" style="font-size: 1.15em; color: rgb(95, 37, 145)">install</a><a href="/tags/%E7%96%8A%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(11, 109, 138)">疊代器模式</a><a href="/tags/%E6%8E%A8%E8%96%A6%E7%A2%BC/" style="font-size: 1.15em; color: rgb(142, 46, 1)">推薦碼</a><a href="/tags/laravel/" style="font-size: 1.15em; color: rgb(31, 39, 42)">laravel</a><a href="/tags/livewire/" style="font-size: 1.15em; color: rgb(44, 124, 116)">livewire</a><a href="/tags/vue/" style="font-size: 1.15em; color: rgb(45, 71, 85)">vue</a><a href="/tags/Line-Message-API/" style="font-size: 1.15em; color: rgb(62, 24, 77)">Line Message API</a><a href="/tags/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(42, 94, 55)">中介者模式</a><a href="/tags/%E5%82%99%E5%BF%98%E9%8C%84%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(95, 105, 120)">備忘錄模式</a><a href="/tags/%E6%8C%87%E6%95%B8%E5%B9%B3%E6%BB%91%E7%95%B0%E5%90%8C%E7%A7%BB%E5%8B%95%E5%B9%B3%E5%9D%87%E7%B7%9A/" style="font-size: 1.15em; color: rgb(153, 134, 125)">指數平滑異同移動平均線</a><a href="/tags/MACD/" style="font-size: 1.15em; color: rgb(75, 112, 163)">MACD</a><a href="/tags/Moving-Average-Convergence-Divergence/" style="font-size: 1.15em; color: rgb(21, 150, 114)">Moving Average Convergence / Divergence</a><a href="/tags/Swift/" style="font-size: 1.25em; color: rgb(56, 192, 80)">Swift</a><a href="/tags/%E7%A9%BA%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(13, 194, 112)">空物件模式</a><a href="/tags/%E8%A7%80%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(196, 119, 100)">觀察者模式</a><a href="/tags/PHP/" style="font-size: 1.18em; color: rgb(93, 173, 51)">PHP</a><a href="/tags/Intval/" style="font-size: 1.15em; color: rgb(102, 110, 66)">Intval</a><a href="/tags/Plurk-API/" style="font-size: 1.18em; color: rgb(18, 4, 170)">Plurk API</a><a href="/tags/%E7%89%A9%E4%BB%B6%E6%B1%A0%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(93, 38, 20)">物件池模式</a><a href="/tags/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(29, 18, 51)">原型模式</a><a href="/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(101, 2, 85)">代理模式</a><a href="/tags/%E7%9B%B8%E5%B0%8D%E5%BC%B7%E5%BC%B1%E6%8C%87%E6%95%B8/" style="font-size: 1.15em; color: rgb(120, 38, 176)">相對強弱指數</a><a href="/tags/RSI/" style="font-size: 1.15em; color: rgb(179, 161, 167)">RSI</a><a href="/tags/Relative-Strength-Index/" style="font-size: 1.15em; color: rgb(77, 181, 85)">Relative Strength Index</a><a href="/tags/%E7%B0%A1%E5%96%AE%E7%A7%BB%E5%8B%95%E5%B9%B3%E5%9D%87%E7%B7%9A/" style="font-size: 1.15em; color: rgb(30, 43, 51)">簡單移動平均線</a><a href="/tags/SMA/" style="font-size: 1.15em; color: rgb(158, 57, 8)">SMA</a><a href="/tags/Simple-Moving-Average/" style="font-size: 1.15em; color: rgb(34, 38, 135)">Simple Moving Average</a><a href="/tags/%E7%B0%A1%E5%96%AE%E5%B7%A5%E5%BB%A0/" style="font-size: 1.15em; color: rgb(23, 53, 34)">簡單工廠</a><a href="/tags/%E5%96%AE%E4%BE%8B%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(71, 57, 44)">單例模式</a><a href="/tags/%E8%A6%8F%E6%A0%BC%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(128, 103, 186)">規格模式</a><a href="/tags/%E7%8B%80%E6%85%8B%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(70, 130, 197)">狀態模式</a><a href="/tags/%E9%9D%9C%E6%85%8B%E5%B7%A5%E5%BB%A0/" style="font-size: 1.15em; color: rgb(3, 23, 13)">靜態工廠</a><a href="/tags/%E9%9A%A8%E6%A9%9F%E6%8C%87%E6%A8%99/" style="font-size: 1.15em; color: rgb(5, 145, 20)">隨機指標</a><a href="/tags/KD/" style="font-size: 1.15em; color: rgb(110, 117, 199)">KD</a><a href="/tags/Stochastic-Oscillator/" style="font-size: 1.15em; color: rgb(195, 125, 128)">Stochastic Oscillator</a><a href="/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(111, 60, 6)">策略模式</a><a href="/tags/String/" style="font-size: 1.15em; color: rgb(26, 172, 186)">String</a><a href="/tags/Random/" style="font-size: 1.15em; color: rgb(178, 22, 192)">Random</a><a href="/tags/Generator/" style="font-size: 1.15em; color: rgb(176, 94, 91)">Generator</a><a href="/tags/%E6%A5%AD%E9%85%8D%E9%96%8B%E7%AE%B1/" style="font-size: 1.15em; color: rgb(165, 19, 77)">業配開箱</a><a href="/tags/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95/" style="font-size: 1.15em; color: rgb(3, 37, 86)">模板方法</a><a href="/tags/testing/" style="font-size: 1.15em; color: rgb(134, 146, 156)">testing</a><a href="/tags/Tools/" style="font-size: 1.22em; color: rgb(113, 97, 123)">Tools</a><a href="/tags/URL/" style="font-size: 1.15em; color: rgb(25, 11, 94)">URL</a><a href="/tags/Base64/" style="font-size: 1.15em; color: rgb(135, 37, 124)">Base64</a><a href="/tags/Unicode/" style="font-size: 1.15em; color: rgb(45, 199, 199)">Unicode</a><a href="/tags/%E8%87%BA%E7%81%A3%E9%90%B5%E8%B7%AFGO/" style="font-size: 1.15em; color: rgb(152, 69, 6)">臺灣鐵路GO</a><a href="/tags/Visual-Studio-for-Mac/" style="font-size: 1.15em; color: rgb(186, 192, 135)">Visual Studio for Mac</a><a href="/tags/using/" style="font-size: 1.15em; color: rgb(189, 183, 50)">using</a><a href="/tags/%E5%8A%A0%E6%AC%8A%E7%A7%BB%E5%8B%95%E5%B9%B3%E5%9D%87%E7%B7%9A/" style="font-size: 1.15em; color: rgb(3, 34, 139)">加權移動平均線</a><a href="/tags/WMA/" style="font-size: 1.15em; color: rgb(197, 2, 142)">WMA</a><a href="/tags/Weighted-Moving-Average/" style="font-size: 1.15em; color: rgb(165, 65, 69)">Weighted Moving Average</a><a href="/tags/Page-Expired/" style="font-size: 1.15em; color: rgb(44, 86, 30)">Page Expired</a><a href="/tags/GitHub-Pages/" style="font-size: 1.15em; color: rgb(145, 16, 10)">GitHub Pages</a><a href="/tags/%E8%A8%BB%E5%86%8A%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(168, 30, 78)">註冊模式</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>歸檔</span><a class="card-more-btn" href="/archives/" title="檢視更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">2023 年 02 月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">2022 年 03 月</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">2022 年 02 月</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">2021 年 11 月</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">2021 年 09 月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">2021 年 08 月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">2021 年 06 月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">2021 年 03 月</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>網站資訊</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章數目 :</div><div class="item-count">92</div></div><div class="webinfo-item"><div class="item-name">已執行時間 :</div><div class="item-count" id="runtimeshow" data-publishDate="2016-12-09T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站總字數 :</div><div class="item-count">110.7k</div></div><div class="webinfo-item"><div class="item-name">本站訪客數 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站總訪問量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最後更新時間 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-02-22T05:28:15.752Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/banner.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2023 By 乾太 ₍₍ ◝(･◡･)◟ ⁾⁾</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="簡繁轉換">繁</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[圖片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[連結]') // replace url
+    content = content.replace(/<code>.*?<\/code>/gi, '[程式碼]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    fetch('https://disqus.com/api/3.0/forums/listPosts.json?forum=kantai-developer-blog&related=thread&limit=6&api_key=')
+      .then(response => response.json())
+      .then(data => {
+        const disqusArray = data.response.map(item => {
+          return {
+            'avatar': item.author.avatar.cache,
+            'content': changeContent(item.message),
+            'nick': item.author.name,
+            'url': item.url,
+            'date': item.createdAt
+          }
+        })
+
+        saveToLocal.set('disqus-newest-comments', JSON.stringify(disqusArray), 5/(60*24))
+        generateHtml(disqusArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "無法獲取評論，請確認相關配置是否正確"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick}</span><time> / ${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '沒有評論'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('disqus-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="🤣,🤔,🥴,😭,😪,🥺,😡" data-fontsize="24px" data-random="true" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"]):not([href="/talking/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'UA-89952948-1', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></body></html>
