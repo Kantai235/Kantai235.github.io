@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/IteratorPattern.png
+cover: /img/posts/IteratorPattern/banner.png
 title: 【PHP、設計模式、大頭菜】疊代器模式 Iterator Pattern
 description: >-
   疊代器模式，提供一種方法來簡單控制一個集合物件，這段過程並不會暴露該物件的來源或修改它，就有點像是你的背包(Bag)一樣，疊代器(Iterator)可以簡單控制你背包中的大頭菜(Turnips)以及鈴錢(Bells)。
@@ -18,7 +18,7 @@ date: 2020-10-05 00:00:00
 疊代器模式，提供一種方法來簡單控制一個集合物件，這段過程並不會暴露該物件的來源或修改它，就有點像是你的背包(Bag)一樣，疊代器(Iterator)可以簡單控制你背包中的大頭菜(Turnips)以及鈴錢(Bells)。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/IteratorPattern/UML.png)
+![UML](/img/posts/IteratorPattern/UML.png)
 
 ## 實作
 首先我們一樣要先建立大頭菜物件(Turnips)，並且賦予一些簡單方法，像是島嶼(Island)、鈴錢價格(Price)及數量(Count)，並且提供簡單的取得(get)及賦予(set)方法。
