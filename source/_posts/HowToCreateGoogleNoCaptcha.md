@@ -18,7 +18,7 @@ cover:
 >
 > - 取自於 WIKI
 
-![reCAPTCHA 官方](/img/posts/QBUvYAP.jpg)
+![reCAPTCHA 官方](/img/posts/HowToCreateGoogleNoCaptcha/1.jpg)
 
 <br />
 <hr />
@@ -26,7 +26,7 @@ cover:
 
 申請的方式很簡單，你只要進入官方後，點擊右上角的「My reCAPTCHA」按鈕，或者點擊[這裡](https://www.google.com/recaptcha/admin)直接進入，你就可以看到詳細的列表、申請表單了。
 
-![reCAPTCHA 列表、申請表單](/img/posts/Wbj8YBc.png)
+![reCAPTCHA 列表、申請表單](/img/posts/HowToCreateGoogleNoCaptcha/2.png)
 
 <br />
 <hr />
@@ -38,16 +38,16 @@ cover:
 
 1. reCAPTCHA v2
 - 這個就是典型的「我不是機器人」方塊，如果使用者短時間內點太多次的話，會跳出一個類似「請點選下面有包含汽車的圖」的功能，作為防堵機器人的機制。
-![reCAPTCHA v2](http://www.suratkabar.id/wp-content/uploads/2017/03/captcha-register.png)
+![reCAPTCHA v2](/img/posts/HowToCreateGoogleNoCaptcha/3.png)
 
 2. Invisible reCAPTCHA
 - 這是 reCAPTCHA 提供的新功能，這個防堵機器人的機制會隱藏在後台（螢幕的右下角），當有需要時才跳出來防堵。
-![Invisible reCAPTCHA](https://camo.githubusercontent.com/85a08c4bec4457be5c41e55f6ce92c6a5fb6efba/687474703a2f2f692e696d6775722e636f6d2f31645a39584b6e2e706e67)
+![Invisible reCAPTCHA](/img/posts/HowToCreateGoogleNoCaptcha/4.png)
 
 3. reCAPTCHA Android
 - 這是 Android 原生裝置專用的 reCAPTCHA，這在我之前的文章有寫過詳細介紹、教學。
 - [如何在 Android 當中引用 reCAPTCHA 來做防堵機器人的驗證。](https://blog.init.engineer/posts/AndroidSafetyNetReCAPTCHAAPI/)
-![reCAPTCHA Android](https://cdn-images-1.medium.com/max/2000/1*R_zMnMYcK7jeOAvDKyw--A.png)
+![reCAPTCHA Android](/img/posts/HowToCreateGoogleNoCaptcha/5.png)
 
 <br />
 <hr />
@@ -59,7 +59,7 @@ cover:
 
 最後同意 reCAPTCHA 團隊的服務守則，基本上同意就對了。
 
-![reCAPTCHA From](https://imgur.com/Wbj8YBc.png)
+![reCAPTCHA From](/img/posts/HowToCreateGoogleNoCaptcha/6.png)
 
 <br />
 <hr />
@@ -67,4 +67,4 @@ cover:
 
 最後你就可以獲得最重要的 Key、Secret 了，以及 reCAPTCHA 提供的簡易教學步驟，
 
-![reCAPTCHA](https://imgur.com/loSWJZi.png)
+![reCAPTCHA](/img/posts/HowToCreateGoogleNoCaptcha/7.png)
