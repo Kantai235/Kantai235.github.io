@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/InstallPythonOpenCvAdb.png
+cover: /img/posts/InstallPythonOpenCvAdb/banner.png
 title: 利用 Python + OpenCV + ADB 實現 Android 模擬器控制，以彈射世界 World Flipper 為例，安裝篇
 description: >-
   最近在研究如何透過 OpenCV 來偵測畫面物件，並透過 ADB 來對 Android
@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
 理論上我們直接運行後，可以獲得 `Hello World` 的輸出，到這邊為止 `Python` 的準備就已經進行得差不多了，接下來只要準備最後一個項目，也就是 `OpenCV` 以後，就可以開始嘗試撰寫控制 Android 模擬器的程式。
 
-![測試 Python](/img/posts/jnDtPGoj.png)
+![測試 Python](/img/posts/InstallPythonOpenCvAdb/1.png)
 
 # OpenCV
 `OpenCV(Open Source Computer Vision Library)` 是一個跨平台的電腦視覺套件，也是我們這次練習主要的套件，我們需要透過 `OpenCV` 來將目標物件與螢幕截圖做比對，並計算出相似區塊、相似度等重要數值。
