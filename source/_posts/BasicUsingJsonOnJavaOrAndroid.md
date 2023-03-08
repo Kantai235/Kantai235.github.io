@@ -238,4 +238,4 @@ JSONObject.keys();
 
 如果你真的對 org.json 很有興趣，那也當然歡迎多看看 [org.json](https://developer.android.com/reference/org/json/package-summary.html) 的相關資料 ...
 
-另外 乾太先生 很喜歡用一套線上 JSON 編輯器，也一起分享給大家：[JSON Editor Online](http://www.jsoneditoronline.org)
+另外我很喜歡用一套線上 JSON 編輯器，也一起分享給大家：[JSON Editor Online](http://www.jsoneditoronline.org)
