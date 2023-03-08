@@ -24,13 +24,9 @@ cover:
 - user: You're welcome.
 - bot: Do you like hats?
 
-
-
 又或者說，曾經我有將 [ChatterBot](https://github.com/gunthercox/ChatterBot) 結合到 LineMessageAPI 的範例當中：
 
-![範例](/img/posts/ZAllFkw.png)
-
-
+![範例](/img/posts/ChatterBotTeaching/1.png)
 
 如果對於 LineMessageAPI 有興趣的話，可以詳情： [Line Message API 初戰！](https://blog.init.engineer/posts/LineMessageAPI/)
 
@@ -44,8 +40,6 @@ Python 2.x -> 可能沒辦法支援中文，會有編碼上的問題。
 ```sh
 pip install chatterbot
 ```
-
-
 
 安裝完成之後，我們就可以開始透過 Python 來使用 [ChatterBot](https://github.com/gunthercox/ChatterBot) 了！
 
@@ -68,15 +62,11 @@ chatbot.train("chatterbot.corpus.english")
 chatbot.get_response("Hello, how are you today?")
 ```
 
-
-
 當然除了英文語言庫外，還擁有中文語言庫(簡體中文)。
 
 ```python
 chatbot.train("chatterbot.corpus.chinese")
 ```
-
-
 
 當然也不止這些，我們可以透過載入基本語言庫、問候語言庫、對話語言庫，來讓我們的機器人更加的智慧：
 
@@ -91,8 +81,6 @@ chatbot.train("chatterbot.corpus.chinese.greetings")
 chatbot.train("chatterbot.corpus.chinese.conversations")
 ```
 
-
-
 當然我們能夠載入一些庫，是不是代表說，在 [ChatterBot](https://github.com/gunthercox/ChatterBot) 當中，有某個地方存放著這些庫呢？我們打開 ChatterBot 專案底下的 Corpus -> data 資料夾，我們會發現有幾些檔案夾很熟悉呢！其中有一個檔案夾叫做 chinese，我們打開他後會發現：
 
 - 基本對話的庫
@@ -104,9 +92,7 @@ chatbot.train("chatterbot.corpus.chinese.conversations")
 - 詳細問題的庫
 - trivia.corpus.json
 
-
-
-這三個檔案表面上不曉得這是什麼意思，我們就來實際打開來看看吧！首先是 conversations.corpus.json：
+這三個檔案表面上不曉得這是什麼意思，我們就來實際打開來看看吧！首先是 `conversations.corpus.json`：
 
 ```json
 {
@@ -147,11 +133,9 @@ chatbot.train("chatterbot.corpus.chinese.conversations")
 }
 ```
 
-
-
 看起來就像是普通的對話語句，不過設計經驗上，會建議如果要自己建立語言庫的話，conversations 的語句當中，最好是連續的對話。
 
-接下來我們看看 greetings.corpus.json 檔案的內容吧：
+接下來我們看看 `greetings.corpus.json` 檔案的內容吧：
 
 ```json
 {
@@ -188,8 +172,6 @@ chatbot.train("chatterbot.corpus.chinese.conversations")
 }
 ```
 
-
-
 看起來就是簡單的一問一答，不過這種狀況只在聊天剛開始的時候才會發生，就是簡單的問候句。
 
 最後我們看看 trivia.corpus.json 檔案的內容吧！
@@ -204,8 +186,6 @@ chatbot.train("chatterbot.corpus.chinese.conversations")
     ]
 }
 ```
-
-
 
 很典型的問答，所以如果你想設計的是一個客服機器人的話，那你 trivia 當中的內容就會比較多哦！
 
@@ -237,8 +217,6 @@ if __name__ == "__main__":
     bot = KantaiBOT()
     print(bot.getResponse(sys.argv[1]))
 ```
-
-
 
 使用時只要在終端機中下指令：
 
