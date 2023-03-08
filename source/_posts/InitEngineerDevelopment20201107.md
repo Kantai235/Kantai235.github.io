@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/InitEngineerDevelopment20201107.png
+cover: /img/posts/InitEngineerDevelopment20201107/banner.png
 title: 《純靠北開發日誌》將專案砍掉重練有甚麼意義？
 tags:
   - 開發日誌
@@ -33,7 +33,7 @@ description:
 ## 砍掉重練的風險與防範
 那麼這樣的決定，會不會有甚麼風險呢？事實上是有的，歷經數次的砍掉重練，有不少需要注意的點，像是資料庫有沒有要重新規劃？你網頁服務的路由會不會變更？
 
-![g0nP4zq5VNN9lhPVqO4P5SiAWOmRN3K3FTwP7S69q3n6kTDN9P4m8fvUamqtx4RI](/img/posts/g0nP4zq5VNN9lhPVqO4P5SiAWOmRN3K3FTwP7S69q3n6kTDN9P4m8fvUamqtx4RI.png)
+![1.png](/img/posts/InitEngineerDevelopment20201107/1.png)
 ### 修改資料庫架構，而發生新舊資料轉移的問題
 通常砍掉重練的過程中，除了程式以外，還會考慮到資料流的問題，你可能會為了解決營運所產生出來的問題，像是原本設計在理論上每筆資料都很重要，但實際營運後發現某項資料是多餘的，甚至某些資料應該被刪除或它被放到不該放的地方，為了解決這些經營運後才發現的問題，因此而重新設計資料表的結構，這時你將面臨舊有資料如何保留，並且轉換為新結構格式的問題。
 
@@ -51,7 +51,7 @@ description:
 1. 完整備份你舊的資料庫，無論如何就是求個可以回頭的安心。
 2. 千萬不要直接把新資料庫覆蓋舊資料庫，你應該另起一個資料庫去存放轉移後的結果，當新服務運行一段時間之後，再回頭來考慮是否該刪除。
 
-![gNta8FErJrEthD2mypDXng4O2uilwFQ7OIQzPTQ4GNX4qmdvHL145e1JnfjGBZzU](/img/posts/gNta8FErJrEthD2mypDXng4O2uilwFQ7OIQzPTQ4GNX4qmdvHL145e1JnfjGBZzU.png)
+![2.png](/img/posts/InitEngineerDevelopment20201107/2.png)
 ### 更新網頁的路由，而導致流量暴跌
 有時候你會發現你以前設計的路由，在新的結構下似乎可以更為簡短，甚至路徑可以寫得更有意義，但如果你想要更新路由，那麼你可能會面臨流量會不會因此而暴跌的問題，這是個很有趣的問題，目前這個部落格在以前每篇文章的路徑如下：
 
