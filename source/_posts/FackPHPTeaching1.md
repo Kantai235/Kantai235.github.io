@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/FackPHPTeaching1.png
+cover: /img/posts/FackPHPTeaching1/banner.png
 title: (偽教學)乾太教我之（好讀版）如何使用 PHP 在網頁上顯示文字
 description: 這個方法是我以前還在讀書時，看到一位前輩的做法，由於太過於印象深刻了，所以拿來當作第一次「乾太教我」的教材。
 tags:
