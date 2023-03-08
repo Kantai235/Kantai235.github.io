@@ -16,7 +16,7 @@ cover:
 
 [Gitea](https://gitea.io/zh-TW/) => https://gitea.io/zh-TW/
 
-![Gitea](https://yami.io/content/images/2017/02/Screen-Shot-2017-02-14-at-4.49.35-AM.png)
+![Gitea](/img/posts/CreateYourGiteaServer/1.png)
 
 以下教學的作業系統為 macOS High Sierra 10.13
 
@@ -25,7 +25,7 @@ cover:
 > Homebrew是一款自由及開放原始碼的軟體套件管理系統，用以簡化Mac OS X系統上的軟體安裝過程，最初由馬克斯·霍威爾（Max Howell）寫成。該包管理器在Ruby on Rails社群廣為人知，因其可延伸性得到了一致好評。
 > 內容參考 https://zh.wikipedia.org/wiki/Homebrew
 
-![Homebrew](https://img.wonderhowto.com/img/09/53/63613273648659/0/mac-for-hackers-set-up-homebrew-install-update-open-source-tools.1280x600.jpg)
+![Homebrew](/img/posts/CreateYourGiteaServer/2.jpg)
 
 請開啟你的終端機，並輸入以下指令來安裝 Homebrew
 
