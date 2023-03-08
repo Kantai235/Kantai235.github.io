@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/AbstractFactory.png
+cover: /img/posts/AbstractFactory/banner.png
 title: 【PHP、設計模式、大頭菜】靜態工廠 Abstract Factory
 description: >-
   抽象工廠，跟靜態工廠有點像，只是它沒那麼靜態，你需要先把工廠建立出來，才能開始生產大頭菜，就有點像是星期日的早上時，你打開 Switch
@@ -24,7 +24,7 @@ date: 2020-09-17 00:00:00
 > 舉個例子來講，今天你在開發一個串接社群網站的應用程式，你有個功能是希望將文章一次發佈到多個社群網站，那麼當你在把文章發表到社群網站時，你可能會需要有個 Facebook 套件、Plurk 套件、Twitter 套件之類的，建立他們的方式可能不太一樣，有的吃 token，有的則是要 oauth 流程，但目標都是獲得特定社群的 client 物件，而且他們都有相同的一個主要方法，那就是發表文章，只是實作的方式不同，有的只要帶入文章內容就可以了，有的需要將文章 hash 起來，或者有的要帶入文章分類，因此「發表文章」這個 function 就可以直接寫在抽象工廠(BaseFactory)當中，而實作的方式則是寫在繼承的工廠當中。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/AbstractFactory/UML.png)
+![UML](/img/posts/AbstractFactory/UML.png)
 
 ## 實作
 首先我們一樣要先建立大頭菜介面，並且定義大頭菜需要有哪些功能，再來建立健康的大頭菜、壞掉的大頭菜，先有大頭菜才有大頭菜工廠。
