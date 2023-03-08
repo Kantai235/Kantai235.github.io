@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/BlockedPan93412.png
+cover: /img/posts/BlockedPan93412/banner.png
 title: 【社群恩仇錄】byStarTW/instanceof/pan93412
 tags:
   - byStarTW
@@ -10,7 +10,6 @@ date: 2022-03-07 00:00:00
 description: 這個社群當中，願意無私奉獻精力去貢獻的人，我都會懷抱感恩的心情去面對每位貢獻者，我喜歡稱這些人是參與者、貢獻者、我們的夥伴，除了一些例外 ...
 category:
   - 社群恩仇錄
-hide: true
 ---
 
 我覺得在這個社群當中，願意無私奉獻精力去經營「[純靠北工程師](https://init.enginner)」的人，我都會懷抱感恩的心情去面對每位貢獻者，我喜歡稱這些人是參與者、貢獻者、我們的夥伴，大家會在自己有限的時間當中，抽出一部分的時間，對這個社群持續付出心力，或許有人擅長 `Android` 開發，於是協助製作 `Android APP` 應用程式，或許有人擅長 `Discord Bot` 的撰寫，在協助管理社群的這段歲月，創作了可以造福社群的機器人。
