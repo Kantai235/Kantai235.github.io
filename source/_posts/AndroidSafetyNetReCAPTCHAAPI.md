@@ -63,14 +63,12 @@ cover:
     + Label: 指鑰匙的唯一標籤，通常是您使用公司或組織的名稱。
     + Package Names: 應用程式的 Package 名稱，為了讓應用程式使用 API，您輸入的 Package 名稱必須與該應用的 Package 名稱完全匹配。
 
-![註冊應用程式](/img/posts/YkNVZi1.png)
-
+![註冊應用程式](/img/posts/AndroidSafetyNetReCAPTCHAAPI/1.png)
 
 
 * 2. 註冊完畢後，您會獲得 `Site key` 與 `Secret key`，請把他們記下來，待會會使用到。
 
-![獲取key](/img/posts/BQE7kD2.png)
-
+![獲取key](/img/posts/AndroidSafetyNetReCAPTCHAAPI/2.png)
 
 
 * 3. 接著我們回到 Android Studio 專案當中，畢竟這是 Android 以外的服務，所以我們必須在 `build.gradle` 當中依賴我們需要的套件包到專案當中：
@@ -86,7 +84,6 @@ dependencies {
 }
 ```
 PS: 如果出現錯誤訊息，那很正常的！因為你的 IDE 應該還沒有 Install 這些套件包，只需要 Install 就可以囉，這些動作 Android Studio 都會很智慧的幫你做完。
-
 
 
 * 4. SafetyNet API 是 Google Play 所提供的服務之一，所以如果要連接到 API，您需要創建一個 GoogleApiClient 類的實例，創建與Google Play 服務的連接後，您可以使用 Google API Client 連接到 SafetyNet API。
@@ -116,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-
 
 
 * 5. 因為 SafetyNet 會連線至 Google API，所以我們必須實作 `GoogleApiClient.ConnectionCallbacks` 與 `GoogleApiClient.OnConnectionFailedListener` 介面，這邊參考了 [這篇文章](http://www.codedata.com.tw/mobile/android-tutorial-the-4th-class-3-google-services-location/) 的做法：
@@ -168,7 +164,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 ```
 
 
-
 * 6. 為了更好 Debug，我們在實作的實例當中加入一些 Toast 與 Log 來方便我們除錯：
 
 ```java
@@ -198,7 +193,6 @@ public void onConnectionFailed(ConnectionResult connectionResult) {
     Log.w("onConnectionFailed", "Google Services 連線失敗，" + connectionResult.getErrorMessage());
 }
 ```
-
 
 
 * 7. 再來我們希望說，點了某顆按鈕之後，reCAPTCHA 來幫我們驗證是不是機器人，所以請在 View 上拉一個 Button，並且賦予 onClick 事件：
@@ -239,20 +233,19 @@ public void ButtonOnClikc(View view) {
 ```
 
 
-
 * 8. 成果大概像這樣：
 
 ## 成功連線到 Google Services
-![成功連線到 Google Services](http://imgur.com/FVMPL6Y.png)
+![成功連線到 Google Services](/img/posts/AndroidSafetyNetReCAPTCHAAPI/3.png)
 
 ## 啟用 reCAPTCHA 的樣子
-![啟用 reCAPTCHA 的樣子](http://imgur.com/juVmYXv.png)
+![啟用 reCAPTCHA 的樣子](/img/posts/AndroidSafetyNetReCAPTCHAAPI/4.png)
 
 ## 驗證成功狀態
-![驗證成功狀態](http://imgur.com/pzCHjm1.png)
+![驗證成功狀態](/img/posts/AndroidSafetyNetReCAPTCHAAPI/5.png)
 
 ## 防堵機器人驗證
-![防堵機器人驗證](http://imgur.com/sgKTM0n.png)
+![防堵機器人驗證](/img/posts/AndroidSafetyNetReCAPTCHAAPI/6.png)
 
 ## 驗證失敗狀態
-![驗證失敗狀態](http://imgur.com/C7vyS3s.png)
+![驗證失敗狀態](/img/posts/AndroidSafetyNetReCAPTCHAAPI/7.png)
