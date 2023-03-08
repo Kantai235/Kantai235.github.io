@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/InitEngineerDevelopment20201111.png
+cover: /img/posts/InitEngineerDevelopment20201111/banner.png
 title: 《純靠北開發日誌》改善文章內容的彙整
 tags:
   - 開發日誌
