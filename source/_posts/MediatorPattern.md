@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/MediatorPattern.png
+cover: /img/posts/MediatorPattern/banner.png
 title: 【PHP、設計模式、大頭菜】中介者模式 Mediator Pattern
 description: >-
   中介者模式，在兩個不同的封裝物件之間，作為中間進行交互的模式，可以減少物件之間的依賴關係，並且降低耦合性問題，舉例來說有背包(Bag)與商店(Store)這兩個物件，你會從背包(Bag)當中拿出鈴錢(Bells)去商店(Store)購買大頭菜(Turnips)，但它們應該要各自其職，不要太過於互相依賴，因此你會需要有個中間控制這些物件的中介者(Mediator)。
@@ -18,7 +18,7 @@ date: 2020-10-06 00:00:00
 中介者模式，在兩個不同的封裝物件之間，作為中間進行交互的模式，可以減少物件之間的依賴關係，並且降低耦合性問題，舉例來說有背包(Bag)與商店(Store)這兩個物件，你會從背包(Bag)當中拿出鈴錢(Bells)去商店(Store)購買大頭菜(Turnips)，但它們應該要各自其職，不要太過於互相依賴，因此你會需要有個中間控制這些物件的中介者(Mediator)。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/MediatorPattern/UML.png)
+![UML](/img/posts/MediatorPattern/UML.png)
 
 ## 實作
 首先我們不外乎先製作出大頭菜(Turnips)物件，只需要賦予簡單計算數量的功能即可。
