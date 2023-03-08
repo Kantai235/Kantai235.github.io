@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/ExponentialMovingAverage.png
+cover: /img/posts/ExponentialMovingAverage/banner.png
 title: 【學習筆記】指數移動平均線 Exponential Moving Average
 tags:
   - 學習筆記
