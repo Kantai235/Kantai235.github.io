@@ -19,7 +19,7 @@ cover:
 
 ## 範例
 
-![DEMO IMAGE](https://raw.githubusercontent.com/ninjaprox/NVActivityIndicatorView/master/Demo.gif)
+![DEMO IMAGE](/img/posts/NVActivityIndicatorViewOfSwift/1.gif)
 
 | Type                   | Type                        | Type                   | Type                       |
 |------------------------|-----------------------------|------------------------|----------------------------|
@@ -247,7 +247,7 @@ end
 
 執行完了以後，我們稍微設計一下畫面，在畫面中我們只需要一個 Button：
 
-![storybora](/img/posts/yWwwcrE.png)
+![storybora](/img/posts/NVActivityIndicatorViewOfSwift/2.png)
 
 再來，我們希望說，按下這顆按鈕後，我們就顯示 Loading 的圖示，長達三秒，這時候我們就可以參考官方的範例：
 
