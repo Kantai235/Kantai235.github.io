@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/HowToCopyrightIssue.png
+cover: /img/posts/HowToCopyrightIssue/banner.png
 title: 部落格遇到抄襲，如何提交 Copyright issue 以及提交 DMCA Takedown Policy
 description: >-
   前陣子技術部落格遇到了文章抄襲事件，有部分的文章直接被完美的複製貼上到了其他人自己的網站當中，為了解決這樣的事情，於是開始查詢 GitHub Pages
@@ -101,7 +101,7 @@ GitHub Trust & Safety
 
 我們根據 GitHub 的回信當中得知，我們除了寄送 Copyright Issue 以外，我們還可以採取[提交 DMCA 刪除通知](https://docs.github.com/en/github/site-policy/guide-to-submitting-a-dmca-takedown-notice)的動作，這個部分我們需要先到[Copyright claims (DMCA)](https://github.com/contact/dmca)這個網頁，選擇裡面有個「[Submit a DMCA takedown notice](https://github.com/contact/dmca-notice)」的選項，去提交你的 DMCA 刪除通知。
 
-![Submit a DMCA takedown notice](/img/posts/bcqSNve9qdndkEkv.png)
+![Submit a DMCA takedown notice](/img/posts/HowToCopyrightIssue/1.png)
 
 接下來是一系列的表單填寫，
 
