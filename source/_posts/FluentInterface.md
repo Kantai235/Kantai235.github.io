@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/FluentInterface.png
+cover: /img/posts/FluentInterface/banner.png
 title: 【PHP、設計模式、大頭菜】流暢介面 Fluent Interface
 description: 流暢介面，常用於撰寫如同文章般容易閱讀的程式碼，如果以大頭菜來講，那麼在建立大頭菜的同時，希望可以順便賦予其鈴錢價格、數量，並且最終獲得的依舊是大頭菜物件。
 tags:
@@ -17,7 +17,7 @@ date: 2020-09-29 00:00:00
 流暢介面，常用於撰寫如同文章般容易閱讀的程式碼，如果以大頭菜來講，那麼在建立大頭菜的同時，希望可以順便賦予其鈴錢價格、數量，並且最終獲得的依舊是大頭菜物件。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/FluentInterface/UML.png)
+![UML](/img/posts/FluentInterface/UML.png)
 
 ## 實作
 這次只需要實作一個大頭菜物件，其精隨在於賦予鈴錢價格、數量時，最後會將整個物件再回傳出來，透過被呼叫的方法來回傳當前物件。
