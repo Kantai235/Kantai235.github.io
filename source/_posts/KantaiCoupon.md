@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/KantaiCoupon.jpeg
+cover: /img/posts/KantaiCoupon/banner.jpeg
 title: >-
   乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE
   Bank、Shopee、Uber Eats、Foodpanda ...
