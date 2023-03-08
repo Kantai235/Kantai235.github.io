@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/ObserverPattern.png
+cover: /img/posts/ObserverPattern/banner.png
 title: 【PHP、設計模式、大頭菜】觀察者模式 Observer Pattern
 description: >-
   觀察者模式，一種現在全中國都知道你來了的模式，就有點像是收音機，打開收音機就開始自動接收廣播，關掉收音機就停止接收，就有點像是動森的連線模式，你跟朋友在同一座島遊玩時，如果有其他朋友來玩，那你們通通都會收到這個通知，然後開始看渡渡鳥航空飛起來的動畫。
@@ -20,7 +20,7 @@ date: 2020-10-09 00:00:00
 ![現在全中國都知道你來了](https://memes.tw/user-template/7a3ef7817e20b4329ca542fb154db593.png)
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/ObserverPattern/UML.png)
+![UML](/img/posts/ObserverPattern/UML.png)
 
 ## 實作
 這次我們要實作有一座島嶼(Island)讓玩家(Player)加入，當有玩家加入島嶼時，島嶼上其他的玩家會收到系統通知，所以會需要讓島嶼(Island)去繼承 `SplSubject` 這個類別，讓島嶼可以把玩家加入島嶼當中、讓玩家離開島嶼，實作這些時也順便通知其他玩家事件的產生，最後提供一個 `sendMessages` 的方法來通知當前所有加入觀察者名單的玩家。
