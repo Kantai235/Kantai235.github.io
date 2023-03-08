@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/DataMapper.png
+cover: /img/posts/DataMapper/banner.png
 title: 【PHP、設計模式、大頭菜】資料對應 Data Mapper
 description: >-
   資料對應，這是一種常用於處理物件導向與資料庫資料的模式，與 `Repository` 不同，`Data Mapper` 主要處理的事單個物件本身，而
@@ -19,7 +19,7 @@ date: 2020-09-25 00:00:00
 資料對應，這是一種常用於處理物件導向與資料庫資料的模式，與 `Repository` 不同，`Data Mapper` 主要處理的事單個物件本身，而 `Repository` 處理的是物件的集合。這次實作舉個例子，你在買大頭菜之前，需要有一個草圖去評估你要前往哪些島上買大頭菜，決定好之後再開始行動。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/DataMapper/UML.png)
+![UML](/img/posts/DataMapper/UML.png)
 
 ## 實作
 首先我們要先把大頭菜給實作出來，這次因為大頭菜可以來自不同的島嶼，因此多了島嶼名稱，以及透過 `new self(...)` 的方式來回傳新的大頭菜物件。
