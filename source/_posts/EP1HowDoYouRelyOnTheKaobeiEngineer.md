@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/EP1HowDoYouRelyOnTheKaobeiEngineer.png
+cover: /img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/banner.png
 title: EP1. 我要怎麼申請 Facebook API？好像很難又好像很簡單欸！
 description: >-
   在先前我們討論了如何透過 API 來將文章發表到社群平台當中、如何透過 API 來將社群平台的文章刪除，但我們中間略過了申請 API
@@ -39,17 +39,17 @@ date: 2019-03-24 00:00:00
 
 > - 網站連結：[所有應用程式 - Facebook for Developers](https://developers.facebook.com/apps/)
 
-![https://imgur.com/NdcQIJh.png](https://imgur.com/NdcQIJh.png)
+![1.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/1.png)
 所有應用程式 - Facebook for Developers
 
 然後直接點選「新增應用程式」，Facebook 會要求你輸入兩個簡單的資訊，在這邊的顯示名稱、聯絡電子郵件事後都可以更改，顯示名稱顧名思義就是顯示的名稱，而聯絡電子信箱的用途在於如果應用程式審核通過/未通過之類的情況時，會同步寄信到連絡信箱當中。
 
-![https://imgur.com/6tXacN7.png](https://imgur.com/6tXacN7.png)
+![2.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/2.png)
 建立新的應用程式
 
 接下來我們就建立了一個 Facebook 應用程式了，你已經成功向前跨出一步，不過接下來我們還要填寫許多資料，我們點選「設定 > 基本設定」，去填寫其他詳細的資訊。
 
-![https://imgur.com/I9FR6Fz.png](https://imgur.com/I9FR6Fz.png)
+![3.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/3.png)
 Facebook 應用程式 主控板
 
 這邊你可以獲得幾些重要的參數，例如應用程式編號、應用程式密鑰，順便也可以把其他資訊也填寫一下，例如應用程式網域、隱私政策網址、類別，資訊填寫得越完整的話，對於後續審核也會比較有所幫助(或許啦)。
@@ -57,7 +57,7 @@ Facebook 應用程式 主控板
 - 應用程式編號 = `FACEBOOK_APP_ID`
 - 應用程式密鑰 = `FACEBOOK_APP_SECRET`
 
-![https://imgur.com/S8ZvECI.png](https://imgur.com/S8ZvECI.png)
+![4.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/4.png)
 Facebook 應用程式 設定 基本資料
 
 往下拉還有聯絡資料，是針對歐盟所需要填寫的，根據 Facebook 的說法是這樣：
@@ -67,12 +67,12 @@ Facebook 應用程式 設定 基本資料
 
 你可以如實填寫，也可以像我一樣不填寫，不過接下來的平台就真的必須填寫了，我們是以網站後端 Call API 的方式來使用這應用程式，所以理所當然我們要新增「網站」做為我們的平台。
 
-![https://imgur.com/Ms7YsAl.png](https://imgur.com/Ms7YsAl.png)
+![5.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/5.png)
 Facebook 應用程式 設定 基本資料
 
 在進階設定的地方也有其他的詳細資訊可以設定，如果你對於安全上比較吹毛求疵，你也可以把這些資訊給設定一下。
 
-![https://imgur.com/UOIMZtl.png](https://imgur.com/UOIMZtl.png)
+![6.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/6.png)
 Facebook 應用程式 設定 進階
 
 ---
@@ -88,12 +88,12 @@ Facebook 應用程式 設定 進階
 
 > - [Facebook 開發人員文件 | Facebook API、SDK、指南](https://developers.facebook.com/docs?locale=zh_TW)
 
-![https://imgur.com/unPZ3Pr.png](https://imgur.com/unPZ3Pr.png)
+![7.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/7.png)
 Facebook 圖形 API
 
 我們先來測試看看圖形 API 測試工具，會有「Facebook 應用程式」、「用戶或粉絲專頁」這兩個下拉式選單，你需要選擇你的應用程式，以及你的操控目標，接下來才能使用 API 測試。
 
-![https://imgur.com/UCjq9xL.png](https://imgur.com/UCjq9xL.png)
+![8.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/8.png)
 圖型 API 測試工具
 
 在選擇完畢之後，他會告知你目前有哪些權限，基本上只會有「`public_profile`」這個獲得基本資訊的權限，如果你的應用程式是用來發表、刪除粉絲專頁文章的話，你會需要「`manage_pages`」這項權限，然而根據 Facebook 所只是，如果你需要 `manage_pages` 這項權限的話，你還另外需要「`publish_pages`」這項權限，才能以粉絲專頁的身分發佈文章。
@@ -113,22 +113,22 @@ Facebook 圖形 API
 > 
 > - [publish_pages - 文件 - Facebook for Developers](https://developers.facebook.com/docs/facebook-login/permissions/#reference-publish_pages)
 
-![https://imgur.com/u4UXFoz.png](https://imgur.com/u4UXFoz.png)
+![9.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/9.png)
 存取權杖設置
 
 當你測試完 API，並且獲得你呼叫 API 時需要的 ACCESS TOKEN 時候，我們可以先去「`存取權杖偵錯工具`」檢查一下這個 TOKEN 的詳細資訊，你會發現他的有效期限非常短，不過我們可以透過「延伸存取權杖」來將有效期限延長。
 
-![https://imgur.com/phVUcZu.png](https://imgur.com/phVUcZu.png)
+![10.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/10.png)
 存取權杖偵錯工具
 
 透過「延長存取權杖」可以將有效期限延長至兩個月。
 
-![https://imgur.com/E2BrzC8.png](https://imgur.com/E2BrzC8.png)
+![11.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/11.png)
 延伸存取權杖
 
 不過 Facebook 有個很惱人的地方，以社群平台發表文章這件事為例子，如果你的應用程式發佈狀態是「關閉」的話，你所有透過該應用程式所發表的文章都無法被其他人看到，只有你自己看得到，因此我們需要將應用程式的狀態改為「開啟」。
 
-![https://imgur.com/yA5bTef.png](https://imgur.com/yA5bTef.png)
+![12.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/12.png)
 Facebook 應用程式 狀態
 
 不過這麼做會遇到一個問題，我們分成幾個層面來講解，任何透過應用程式所發佈的文章，會在公開、不公開之間切換，會變成下面這兩種情況：
@@ -167,7 +167,7 @@ Facebook 應用程式 狀態
 > 
 > [publish_pages - 文件 - Facebook for Developers](https://developers.facebook.com/docs/facebook-login/permissions/#reference-publish_pages)
 
-![https://imgur.com/5uB61e9.png](https://imgur.com/5uB61e9.png)
+![13.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/13.png)
 Facebook 應用程式審查 - 權限和功能
 
 如果你要求權限的話，你會需要提供一些資料給 Facebook 審查團隊，像是使用情境說明、步驟說明、畫面錄影甚至是提供測試帳號給 Facebook 審查團隊來測試使用，舉例來說，我申請 `manage_pages` 以及 `publish_pages` 這兩項權限的時候，我提交了以下內容給 Facebook：
@@ -188,17 +188,17 @@ Facebook 應用程式審查 - 權限和功能
 
 除此之外還有整個發文流程的影片錄影、每個流程的詳細說明。
 
-![https://imgur.com/uuSs01b.png](https://imgur.com/uuSs01b.png)
+![14.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/14.png)
 Facebook 應用程式審查 - 目前的要求
 
 不過儘管如此，Facebook 審查團隊有時候還是會打槍拒絕，這時候你可以修正你的流程，或者提出異議給審查團隊，提交問題時可以使用中文來撰寫問題描述，會有委外翻譯團隊負責將你的問題翻譯成英文，而審查團隊處理完畢後，雖然也是用英文來回覆，但委外翻譯團隊也會將回覆翻譯成中文，我自己個人覺得 Facebook 在這部分做得很好。
 
-![https://imgur.com/BLCngBO.png](https://imgur.com/BLCngBO.png)
+![15.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/15.png)
 Facebook 應用程式審查 - 被拒絕惹 QQ
 
 不過 Facebook 審查團隊有時候會跳針，例如像下面這問題描述，Facebook 團隊是覺得可以批准應用程式，但希望提供測試帳號給 Facebook 團隊使用，當我補上測試帳號之後，Facebook 的審查者換別人了，審查者卻又以「`您的螢幕錄影檔案並未說明使用此權限如何能直接改善您應用程式的用戶體驗。此外，我們也無法藉由手動測試應用程式來判斷。`」來拒絕，這時候就會覺得很莫名其妙。
 
-![https://imgur.com/OmAzTYX.png](https://imgur.com/OmAzTYX.png)
+![16.png](/img/posts/EP1HowDoYouRelyOnTheKaobeiEngineer/16.png)
 Facebook 應用程式審查
 
 ---
