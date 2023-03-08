@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/BollingerBands.png
+cover: /img/posts/BollingerBands/banner.png
 title: 【學習筆記】布林通道 Bollinger Bands
 tags:
   - 學習筆記
