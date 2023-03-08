@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/MementoPattern.png
+cover: /img/posts/MementoPattern/banner.png
 title: 【PHP、設計模式、大頭菜】備忘錄模式 Memento Pattern
 description: >-
   備忘錄模式，在不破壞封裝物件的前提之下，提供物件一個「皇后殺手
@@ -19,7 +19,7 @@ date: 2020-10-07 00:00:00
 備忘錄模式，在不破壞封裝物件的前提之下，提供物件一個「皇后殺手 第三爆彈：敗者成塵」的能力，物件在極度絕望的狀態下，把當前物件炸光光，並令時間往前倒退至上一個時空紀錄點的設計模式，跟吉良吉影的不同點在於命運會跟著被改變，被破壞的東西會恢復原狀。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/MementoPattern/UML.png)
+![UML](/img/posts/MementoPattern/UML.png)
 
 ## 實作
 為了讓大頭菜有爆掉並往前倒退至上一個時空紀錄點的功能，這次我們要先實作備忘錄模式，用來儲存大頭菜的時空狀態，好讓大頭菜可以回到過去。
