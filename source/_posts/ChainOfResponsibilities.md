@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/ChainOfResponsibilities.png
+cover: /img/posts/ChainOfResponsibilities/banner.png
 title: 【PHP、設計模式、大頭菜】責任鏈模式 Chain of Responsibilities
 description: >-
   責任鏈模式，有一系列的命令物件及處理物件，常見於需要被連續處理的地方上，舉例來說，假設今天收購箱、商店收購大頭菜時，多了一些條件，你必須先把大頭菜拿去收購箱收購，並且收購箱子會有鈴錢價格打
@@ -18,7 +18,7 @@ date: 2020-10-03 00:00:00
 責任鏈模式，有一系列的命令物件及處理物件，常見於需要被連續處理的地方上，舉例來說，假設今天收購箱、商店收購大頭菜時，多了一些條件，你必須先把大頭菜拿去收購箱收購，並且收購箱子會有鈴錢價格打 8 折的情形，剩下有多餘的大頭菜才能拿去給商店收購。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/ChainOfResponsibilities/UML.png)
+![UML](/img/posts/ChainOfResponsibilities/UML.png)
 
 ## 實作
 首先我們要先把背包(Bag)、大頭菜(Turnips)這兩個東西給實作出來，先從大頭菜開始，一樣建立簡單的鈴錢、數量以及獲取賦予方法。
