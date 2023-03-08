@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/HowToWriteAGoodJobVacancy.png
+cover: /img/posts/HowToWriteAGoodJobVacancy/banner.png
 title: 如何開出一份好的職缺？
 description: 身為一個後端開發者，看過不少相關的職缺，也做過幾份工作，或許我可以分享一下我自己在找工作時，喜歡看到甚麼樣的職缺。
 tags:
@@ -10,7 +10,7 @@ abbrlink: 9705ef25
 date: 2021-06-09 00:00:00
 ---
 
-![版友私訊](/img/posts/94dVVvVB8kIpcPus.png)
+![版友私訊](/img/posts/HowToWriteAGoodJobVacancy/1.png)
 
 前幾天收到了版友私訊請教徵才相關問題，不過我沒有 HR 這方面的經驗，也沒有開過職缺這件事，所以在這方面可能沒辦法提供甚麼好的建言 QQ 但身為一個後端開發者，看過不少相關的職缺，也做過幾份工作，或許我可以分享一下我自己在找工作時，喜歡看到甚麼樣的職缺。
 
