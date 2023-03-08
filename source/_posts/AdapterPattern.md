@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/AdapterPattern.png
+cover: /img/posts/AdapterPattern/banner.png
 title: 【PHP、設計模式、大頭菜】轉接器模式 Adapter Pattern
 description: >-
   轉接器模式，顧名思義會在兩個同功能但不同的規格的東西中，當作中間溝通的橋樑，就有點像是健康的大頭菜因為放超過一個禮拜，直接變成壞掉的大頭菜，兩個東西都是大頭菜，但規格上可能不太一樣，這時候我們就需要一個大頭菜轉接器，直接把健康的大頭菜給轉到壞掉。
@@ -18,7 +18,7 @@ date: 2020-09-22 00:00:00
 轉接器模式，顧名思義會在兩個同功能但不同的規格的東西中，當作中間溝通的橋樑，就有點像是健康的大頭菜因為放超過一個禮拜，直接變成壞掉的大頭菜，兩個東西都是大頭菜，但規格上可能不太一樣，這時候我們就需要一個大頭菜轉接器，直接把健康的大頭菜給轉到壞掉。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/AdapterPattern/UML.png)
+![UML](/img/posts/AdapterPattern/UML.png)
 
 ## 實作
 首先我們需要先建立健康的大頭菜、以及壞掉的大頭菜，別忘記要建立介面(Interface)來定義大頭菜的規格。
