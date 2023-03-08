@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/InitEngineer2020Top.png
+cover: /img/posts/InitEngineer2020Top/banner.png
 title: 純靠北工程師 2020 發燒排行榜
 description: 又到了一年一度，回顧去年發燒文章的時間了，究竟 2020 年的「純靠北工程師」有哪些令人噴飯，抑或者是讓人非常有感觸的文章呢？
 tags:
@@ -24,13 +24,13 @@ Internet Explorer 也就是俗稱的 IE 瀏覽器，在 1995 年的時候發布�
 
 - [維基百科: Internet Explorer](https://zh.wikipedia.org/zh-tw/Internet_Explorer)
 
-![https://init.engineer/storage/cards/custom/bRMH7J3S1P6YhEWePFDORmO4j6JNRbF7lHNX5tuHtssnRgoVw9wGQbKsA1Xv8kLgVh52jy2MQVMBzfGWiQaVvAhouY9s9xb7YkHHjgI9ytLGaw3uFf4mWay122OxaTBz.jpg](https://init.engineer/storage/cards/custom/bRMH7J3S1P6YhEWePFDORmO4j6JNRbF7lHNX5tuHtssnRgoVw9wGQbKsA1Xv8kLgVh52jy2MQVMBzfGWiQaVvAhouY9s9xb7YkHHjgI9ytLGaw3uFf4mWay122OxaTBz.jpg)
+![1.jpg](/img/posts/InitEngineer2020Top/1.jpg)
 
 # 第 2 名 下地獄之後，還要再當一次工程師
 文章連結: [#純靠北工程師3wx](https://init.engineer/cards/show/5073)
 如果在地獄也有一個世界，那麼近年下地獄的工程師，是不是要幫閻羅王寫後台管理系統？讓地獄跟上 e 化時代。
 [作者: 灰色的斑馬](https://www.facebook.com/grayzerba)
-![https://init.engineer/storage/cards/custom/vC7NL2HOYtgKxRtFyIrMIAv2pbp1k8HyMlqgv2TiMEytIy6XggrV6YGmrwvxHEKxn6jsX6lWovICt12sISP2f9hw0SseiwMhs99XpMuDJYkDUfxKC9kWVEOlHyovojTo.jpeg](https://init.engineer/storage/cards/custom/vC7NL2HOYtgKxRtFyIrMIAv2pbp1k8HyMlqgv2TiMEytIy6XggrV6YGmrwvxHEKxn6jsX6lWovICt12sISP2f9hw0SseiwMhs99XpMuDJYkDUfxKC9kWVEOlHyovojTo.jpeg)
+![2.jpeg](/img/posts/InitEngineer2020Top/2.jpeg)
 
 # 第 3 名 這案子已經完成了 90%，接下來就交給你收尾了
 文章連結: [#純靠北工程師412](https://init.engineer/cards/show/5222)
@@ -38,7 +38,7 @@ Internet Explorer 也就是俗稱的 IE 瀏覽器，在 1995 年的時候發布�
 
 - [今月から、スタジオジブリ作品の場面写真の提供を開始します](https://www.ghibli.jp/info/013344)
 
-![https://init.engineer/storage/cards/custom/8uppO7bybMfrhKxoPFLhrCNbdXCAhFeWTAnv9tx5D6BpLjv1Jr2uaXLU7iuDNhsaqNnptiFQ0jROXpXCOVweoCbncD2kVld20LxKzTjkhFSYBV0WufWXa1LXA1uQ93ws.jpg](https://init.engineer/storage/cards/custom/8uppO7bybMfrhKxoPFLhrCNbdXCAhFeWTAnv9tx5D6BpLjv1Jr2uaXLU7iuDNhsaqNnptiFQ0jROXpXCOVweoCbncD2kVld20LxKzTjkhFSYBV0WufWXa1LXA1uQ93ws.jpg)
+![3.jpg](/img/posts/InitEngineer2020Top/3.jpg)
 
 ## 第 4 名 下地獄之後，除了當工程師，指定瀏覽器居然還是 Internet Explorer！
 文章連結: [#純靠北工程師3xd](https://init.engineer/cards/show/5089)
@@ -47,11 +47,11 @@ Internet Explorer 也就是俗稱的 IE 瀏覽器，在 1995 年的時候發布�
 - [作者: DOG COM](https://www.facebook.com/itdogcom)
 - [政府網站服務應優先採用新版 HTML 標準(如 HTML5)，並具備跨瀏覽器相容性](https://www.webguide.nat.gov.tw/News_Content.aspx?n=6&sms=8456&s=3046)
 
-![https://init.engineer/storage/cards/custom/xkelj5XxyjVuZYkAIRu85bjRsPDHS1iBOvnzor32KklIGPeFs2xeJeWUyXZsU5sHhzOnoX55JslEbhiNzewsEz1r76tcw5YFQXFY8v5vNDD7xmJyrUM8ZGZororSamh0.jpeg](https://init.engineer/storage/cards/custom/xkelj5XxyjVuZYkAIRu85bjRsPDHS1iBOvnzor32KklIGPeFs2xeJeWUyXZsU5sHhzOnoX55JslEbhiNzewsEz1r76tcw5YFQXFY8v5vNDD7xmJyrUM8ZGZororSamh0.jpeg)
+![4.jpeg](/img/posts/InitEngineer2020Top/4.jpeg)
 
 ## 第 5 名 下班後的 Side Project
 文章連結: [#純靠北工程師4c3](https://init.engineer/cards/show/5619)
-![https://init.engineer/storage/cards/images/oWvhLAcSkZM7hE6ksnXtDRPN7mLw6eaCHXuAAzAV1XhYS2uWSusAjK704O9QBxclAF7WBMik5IbL3svRdYKarS1yazJZsUT9SgU2QOwl4mMZBFpbWxEEKXs4so3YwYq3.jpeg](https://init.engineer/storage/cards/images/oWvhLAcSkZM7hE6ksnXtDRPN7mLw6eaCHXuAAzAV1XhYS2uWSusAjK704O9QBxclAF7WBMik5IbL3svRdYKarS1yazJZsUT9SgU2QOwl4mMZBFpbWxEEKXs4so3YwYq3.jpeg)
+![5.jpeg](/img/posts/InitEngineer2020Top/5.jpeg)
 
 ## 第 6 名 唐鳳小時候的故事
 文章連結: [#純靠北工程師2yg](https://init.engineer/cards/show/3832)
@@ -60,12 +60,12 @@ Internet Explorer 也就是俗稱的 IE 瀏覽器，在 1995 年的時候發布�
 - [維基百科: 唐鳳](https://zh.wikipedia.org/zh-tw/%E5%94%90%E9%B3%B3)
 - [維基百科: 二進位](https://zh.wikipedia.org/wiki/%E4%BA%8C%E8%BF%9B%E5%88%B6)
 
-![https://init.engineer/storage/cards/images/Ffv8uEs0ztsmV4rZR1R3WXBTc6c2Vh1VLcaBgDeK4JIXcV5NiyTuSjH4AAb4h7KZr2pyXhzV8STECTMlxlzk7CO7FrKIcNiCxQkefT22cKTCccfnJcYfAeC5hvSdT9g7.jpeg](https://init.engineer/storage/cards/images/Ffv8uEs0ztsmV4rZR1R3WXBTc6c2Vh1VLcaBgDeK4JIXcV5NiyTuSjH4AAb4h7KZr2pyXhzV8STECTMlxlzk7CO7FrKIcNiCxQkefT22cKTCccfnJcYfAeC5hvSdT9g7.jpeg)
+![6.jpeg](/img/posts/InitEngineer2020Top/6.jpeg)
 
 ## 第 7 名 Side Project 之道，老婆為你撐腰
 文章連結: [#純靠北工程師2n1](https://init.engineer/cards/show/3421)
 [#純靠北工程師2md 誰再說工程師一定要跑社群寫 Side Project，我一定打他！](https://init.engineer/cards/show/3397)
-![https://init.engineer/storage/cards/images/dLVUpe6RW1opzeVcjcy0tjvrInNpuLKaf9ZM5IFNx3z088oZEPfmsOEZ90vL9JWyivWNyVNjsEDf3cgSzfTegOrziZiqMVVX5UBtNShBpVlsDby9hl7eDoOpx4173Fak.jpeg](https://init.engineer/storage/cards/images/dLVUpe6RW1opzeVcjcy0tjvrInNpuLKaf9ZM5IFNx3z088oZEPfmsOEZ90vL9JWyivWNyVNjsEDf3cgSzfTegOrziZiqMVVX5UBtNShBpVlsDby9hl7eDoOpx4173Fak.jpeg)
+![7.jpeg](/img/posts/InitEngineer2020Top/7.jpeg)
 
 ## 第 8 名 流言終結者工程師 格蘭·今原 享受 49 歲
 文章連結: [#純靠北工程師3qx](https://init.engineer/cards/show/4857)
@@ -73,15 +73,15 @@ Internet Explorer 也就是俗稱的 IE 瀏覽器，在 1995 年的時候發布�
 
 - [維基百科: 格蘭·今原](https://zh.wikipedia.org/wiki/%E6%A0%BC%E8%98%AD%C2%B7%E4%BB%8A%E5%8E%9F)
 
-![https://init.engineer/storage/cards/custom/OQiDzNUJSOLmV3EwJatYsQO7SXxPHtk373V6iRVsjsElpAx7MDZWEfRpcilywAzU391Bg2UIn0ZzYRpOomo3C1n5FZWhlceNvitYSbCRsIkT6Yw3b5i7Mt8JsvCGbwO5.png](https://init.engineer/storage/cards/custom/OQiDzNUJSOLmV3EwJatYsQO7SXxPHtk373V6iRVsjsElpAx7MDZWEfRpcilywAzU391Bg2UIn0ZzYRpOomo3C1n5FZWhlceNvitYSbCRsIkT6Yw3b5i7Mt8JsvCGbwO5.png)
+![8.png](/img/posts/InitEngineer2020Top/8.png)
 
 ## 第 9 名 當你寫出來的程式一團糟但他還可以運作
 文章連結: [#純靠北工程師2tx](https://init.engineer/cards/show/3669)
-![https://init.engineer/storage/cards/custom/KwSKs7q0moZWgoviZUI1hbxmqdk9b0wSFJnoAaLcDaG083QgGiOq7DlgZfeDIQisQeZYGn6rVHMHS9jbcVbXLBrioJyqD3wWtTPxFObIVjFP0szXcx76THSg5YyDO7lZ.jfif](https://init.engineer/storage/cards/custom/KwSKs7q0moZWgoviZUI1hbxmqdk9b0wSFJnoAaLcDaG083QgGiOq7DlgZfeDIQisQeZYGn6rVHMHS9jbcVbXLBrioJyqD3wWtTPxFObIVjFP0szXcx76THSg5YyDO7lZ.jfif)
+![9.png](/img/posts/InitEngineer2020Top/9.png)
 
 ## 第 10 名 使用者的完美體驗
 文章連結: [#純靠北工程師42l](https://init.engineer/cards/show/5277)
-![https://init.engineer/storage/cards/custom/RA1cJ6eOEv4lTMfpT3Jq2N2t1z1kCmWL8wTW01SuEmfKpU1B7VG2LKEvgxvROeUr5vix3QhaefVLddxmpKbUwAHoHJQDLLMaYadgdoQCS7dE1YZbNfBjt2EzczBSVOJE.jpeg](https://init.engineer/storage/cards/custom/RA1cJ6eOEv4lTMfpT3Jq2N2t1z1kCmWL8wTW01SuEmfKpU1B7VG2LKEvgxvROeUr5vix3QhaefVLddxmpKbUwAHoHJQDLLMaYadgdoQCS7dE1YZbNfBjt2EzczBSVOJE.jpeg)
+![10.jpeg](/img/posts/InitEngineer2020Top/10.jpeg)
 
 ---
 
