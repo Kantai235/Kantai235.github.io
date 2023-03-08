@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/LaravelLivewireImportVue.png
+cover: /img/posts/LaravelLivewireImportVue/banner.png
 title: 如何在 Laravel 上的 Livewire 當中使用 VueJS
 description: 在 Laravel 當中有個讓前後端無痛溝通的技術叫做 Livewire，它可以讓你輕鬆建立起單頁應用程式，但它也有個小問題 ...
 tags:
@@ -15,10 +15,10 @@ date: 2021-09-03 00:00:00
 
 在 Laravel 當中有個讓前後端無痛溝通的技術叫做 [Livewire](https://laravel-livewire.com)，它可以讓你輕鬆建立起單頁應用程式(Single Page Application, SPA)，但它也有個小問題，就是如果你在 Livewire 當中使用 Vue Component 元件的話，那在 Livewire 第一次渲染時，Livewire 可以正常渲染你的 Vue 元件，但在你執行 Livewire 的搜尋、排序或分頁 Pagination 功能後，Vue 元件將會失效。
 
-![渲染畫面](/img/posts/240984347_1132740450591658_7034226595789490304_n.jpg)
+![渲染畫面](/img/posts/LaravelLivewireImportVue/1.jpg)
 Livewire 頁面載入後，第一次渲染畫面
 
-![搜尋結果](/img/posts/240662413_1132740637258306_3274662513731489093_n.jpg)
+![搜尋結果](/img/posts/LaravelLivewireImportVue/2.jpg)
 Livewire 執行排序後，原本的 Vue 元件將失效
 
 這是因為 Livewire 的運作模式會改變 DOM 的結構，造成 JavaScript 的失效，而 Vue 是使用 Virtual DOM 結構，是以 JavaScript 物件模擬特定 DOM 結構而產生的樹狀結構，因此當 Livewire 運作時，Vue 的 Virtual DOM 並不會因此跟著變更，才會導致 Livewire 的元件是正常顯示的，而 Vue 元件則停止運作。
