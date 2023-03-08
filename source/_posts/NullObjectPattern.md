@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/NullObjectPattern.png
+cover: /img/posts/NullObjectPattern/banner.png
 title: 【PHP、設計模式、大頭菜】空物件模式 Null Object Pattern
 description: >-
   空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為
@@ -20,7 +20,7 @@ date: 2020-10-08 00:00:00
 空物件模式，一種以非 Null 的空白物件去取代 Null 的模式，其空白物件並不是拿來比對資料是否為 Null，而是讓原本應該做些事情的物件，因為空白物件而不做任何事，或是去執行預設的動作，打個比喻來說，遊戲裡面購買、販賣大頭菜是要找不同 NPC 的，如果要購買大頭菜，那就必須找曹賣(Daisy Mae)來購買，如果要販賣大頭菜則是找豆狸粒狸(Mamekichi and Tsubukichi)來販賣。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/NullObjectPattern/UML.png)
+![UML](/img/posts/NullObjectPattern/UML.png)
 
 ## 實作
 玩家要購買、販賣大頭菜會跟 NPC 進行這些動作，所以我們要先定義 NPC 所能提供的功能有哪些，因此會有購買大頭菜、販賣大頭菜這兩個方法被定義出來，如果繼承了 NPC 這個介面就要去實作這兩個方法。
