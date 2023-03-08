@@ -98,7 +98,7 @@ function canvasGameStart_canvas_2() {
 
 這邊要稍微特別解釋一下 `arc()` 這方法，可以參考下圖：
 
-![W3C arc() image](http://www.w3school.com.cn/i/arc.gif)
+![W3C arc() image](/img/posts/HTML5CanvasBasic/1.gif)
 
 ```javascript
 // x                = 圓中心的 X 座標。
