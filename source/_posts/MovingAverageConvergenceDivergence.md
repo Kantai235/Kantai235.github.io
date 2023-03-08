@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/MovingAverageConvergenceDivergence.png
+cover: /img/posts/MovingAverageConvergenceDivergence/banner.png
 title: 【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence
 tags:
   - 學習筆記
@@ -11,7 +11,7 @@ category:
   - 技術指標
 abbrlink: ee3f4029
 date: 2022-02-23 00:00:00
-description: '指數平滑異同移動平均線(Moving Average Convergence / Divergence, MACD)'
+description: 指數平滑異同移動平均線(Moving Average Convergence / Divergence, MACD)
 ---
 
 指數平滑異同移動平均線(Moving Average Convergence / Divergence, MACD)
