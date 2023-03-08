@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/HowToBulidLaravelToHeroKu.png
+cover: /img/posts/HowToBulidLaravelToHeroKu/banner.png
 title: 如何將你的 Laravel boilerplate 專案成功部署到 HeroKu
 description: >-
   事情是這樣的，最近在研究 HeroKu 這家雲端平台，想要嘗試將一些服務部署到 HeroKu 上頭，但卻遇到一些問題，因此將一系列的問題解決過程記錄下來
@@ -36,45 +36,45 @@ date: 2019-05-07 00:00:00
 
 > HeroKu 註冊網址：[Heroku | Sign up](https://signup.heroku.com/login)
 
-![/assets/img/posts/9Aeooh9.png](/img/posts/9Aeooh9.png)
+![1.png](/img/posts/HowToBulidLaravelToHeroKu/1.png)
 HeroKu 註冊新會員
 
 接下來我們會需要建立一個新的應用程式，然後把 Laravel、MariaDB、Redis 放到應用程式當中，將整個服務建置起來。
 
-![/assets/img/posts/MOJLAZs.png](/img/posts/MOJLAZs.png)
+![2.png](/img/posts/HowToBulidLaravelToHeroKu/2.png)
 選擇「Create new app」
 
 輸入你這應用程式的名稱，以及選擇伺服器所架設的地區。
 
-![/assets/img/posts/DiSJbtt.png](/img/posts/DiSJbtt.png)
+![3.png](/img/posts/HowToBulidLaravelToHeroKu/3.png)
 設定 App 的名稱、位置
 
 建立應用程式成功之後，你會看到你應用程式的儀表板，這裡記錄著所有的歷史紀錄，無論是錯誤訊息、設定更改或者建立新部署，現在假設我們需要部署新的 Laravel 環境上去 HeroKu 的話，我們先進入「Deploy」的地方。
 
-![/assets/img/posts/xDf1vZw.png](/img/posts/xDf1vZw.png)
+![4.png](/img/posts/HowToBulidLaravelToHeroKu/4.png)
 應用程式的儀表板
 
 你會看到 HeroKu 提供了多種部署方式，有 Heroku Git、GitHub、Container Registry 這三種方式，這次我們使用 GitHub 的方式來將專案部署上去。
 
-![/assets/img/posts/lE0C0nZ.png](/img/posts/lE0C0nZ.png)
+![5.png](/img/posts/HowToBulidLaravelToHeroKu/5.png)
 HeroKu 提供多種部署方式
 
 透過 GitHub 部署的方式很簡單，你只需要連接你的 GitHub，然後搜尋你要部署的專案，舉例來說我想部署 kantai235.github.io 這個部落格，我就直接搜尋「kantai235」然後 Search(搜尋)，就能找到我的部落格專案，接下來直接按下「Connect(連接)」就能將專案部署到平台當中了。
 
-![/assets/img/posts/X8xoLkb.png](/img/posts/X8xoLkb.png)
+![6.png](/img/posts/HowToBulidLaravelToHeroKu/6.png)
 透過 GitHub 部署到 HeroKu 平台當中。
 
 不過這時候如果你的 Laravel 專案是以 rrappasoft/laravel-5-boilerplate 為基礎的話，那你會碰到一個問題，HeroKu 會告訴你「There are no commands defined in the “ide-helper” namespace.」，你部署到自己的電腦(localhost)當中是沒有問題的，但是你部署到 HeroKu 的時候卻發生了問題。
 
 > [GitHub - rappasoft/laravel-5-boilerplate: A Laravel 5 Boilerplate Project - http://laravel-boilerplate.com](https://github.com/rappasoft/laravel-5-boilerplate)
 
-![/assets/img/posts/w2nHA5i.png](/img/posts/w2nHA5i.png)
+![7.png](/img/posts/HowToBulidLaravelToHeroKu/7.png)
 There are no commands defined in the “ide-helper” namespace.
 
 ## 什麼是 ide-helper？他害我沒辦法部署！
 基本上 Error Log 是在告訴你說專案可能在 composer 的 post-autoload-dump 這個階段出問題了，稍微查了一下 composer 文件，這個 function 的功能是「發生在自動載入器倒出之後，不管是在 install/update 期間，或經由 dump-autoload 命令。」，簡單來說 HeroKu 在一開始運行時會運行 `composer install` 這項指令，然後開始下載整個專案所有會用到的套件，下載完了以後，將會依序執行 post-autoload-dump 的所有指令，而 HeroKu 就是在這些指令當中出錯了，疑似是 `@php artisan ide-helper:generate` 這項指令出錯了。
 
-![/assets/img/posts/0xTKKg0.png](/img/posts/0xTKKg0.png)
+![8.png](/img/posts/HowToBulidLaravelToHeroKu/8.png)
 composer.json
 
 Ide-helper 是一種會自動產生 IDE 文件的套件，簡單來說如果 composer 運行這些指令的話，ide-helper 會自動產生出一些魔術方法的文件給 IDE 讀取，讓你在開發的時候更為方便，語法提示跳得更多、提供更多的自動補完功能，但對於伺服器而言，這些文件是不必要的，因此你在部屬專案的時候，可以**將 ide-helper 給拿掉（但沒辦法註解，因為 json 沒有註解)，你就可以正常將專案部署到 HeroKu 當中了**。
