@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/StatePattern.png
+cover: /img/posts/StatePattern/banner.png
 title: 【PHP、設計模式、大頭菜】狀態模式 State Pattern
 description: >-
   狀態模式，讓物件的狀態改變時，一同改變物件的行為模式，就像是大頭菜(Turnips)這個物件，有沒有壞掉只是一個狀態(State)來辨別，但如果壞掉了，那麼會因為狀態改變的關係，而讓大頭菜計算鈴錢價格的方式也跟著改變。
@@ -18,7 +18,7 @@ date: 2020-10-11 00:00:00
 狀態模式，讓物件的狀態改變時，一同改變物件的行為模式，就像是大頭菜(Turnips)這個物件，有沒有壞掉只是一個狀態(State)來辨別，但如果壞掉了，那麼會因為狀態改變的關係，而讓大頭菜計算鈴錢價格的方式也跟著改變。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/StatePattern/UML.png)
+![UML](/img/posts/StatePattern/UML.png)
 
 ## 實作
 因為要讓大頭菜(Turnips)掛載狀態物件，所以我們要先來定義狀態，會需要提供進入到下個狀態的方法，以及 `toString` 來查看當前的狀態是什麼。
