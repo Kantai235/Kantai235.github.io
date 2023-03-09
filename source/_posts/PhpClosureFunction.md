@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/PhpClosureFunction.png
+cover: /img/posts/PhpClosureFunction/banner.png
 title: 淺入淺出 PHP 閉包 Closure
 description: >-
   匿名函數(在 PHP 5.3 中被引入)會產生這個類型的對象。在過去，這個類別被認為是一個實現細節，但現在可以依賴它做一些事情。自 PHP 5.4
