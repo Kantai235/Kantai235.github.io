@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/PhpIntvalWTF.png
+cover: /img/posts/PhpIntvalWTF/banner.png
 title: PHP Intval 的 8、7 運算 8、7 問題
 description: >-
   欸欸、乾太，你 php 小數計算會使用套件嗎？還是使用原生的方法進行運算？因為我遇到一個問題，我有 $a = 0.1 與 $b = 0.7
@@ -98,7 +98,7 @@ $c = $c * 10;
 echo intval($c); // 7
 ```
 
-![UML](/img/posts/PhpIntvalWTFmeme.png)
+![1.png](/img/posts/PhpIntvalWTFmeme/1.png)
 
 反正無論如何，我只要確信我給 `intval` 的是 8，無論這個 8 是整數是浮點數是字串，只要它看起來像 8，只要你看得懂我給你的是 8 的話，你就會跟我說 8 對不對？
 
