@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/WeightedMovingAverage.png
+cover: /img/posts/WeightedMovingAverage/banner.png
 title: 【學習筆記】加權移動平均線 Weighted Moving Average
 tags:
   - 學習筆記
