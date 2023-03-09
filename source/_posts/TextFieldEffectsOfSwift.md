@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/TextFieldEffectsOfSwift/banner.png
 title: iOS Swift 第三方套件介紹 - TextFieldEffects
 description: 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...
 tags:
@@ -8,7 +9,6 @@ category:
   - iOS 實務
 abbrlink: 45eb9165
 date: 2017-05-16 00:00:00
-cover:
 ---
 
 有時候，在應用程式當中的小小細節，也能深得使用者的喜好，程式不只要好用才行，還必須搭配美觀的介面，才能深得人心，然而在 iOS 專案當中，原生的 Field 輸入框太過於古板，不是那麼的好看，所以有人寫了 [TextFieldEffects](https://github.com/raulriera/TextFieldEffects) 這款好用的第三方套件，來使 Field 更加的美觀。
@@ -28,31 +28,31 @@ cover:
 ## 實際效果
 
 ### Kaede
-![Kaede Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Kaede.gif)
+![Kaede Demo](/img/posts/TextFieldEffectsOfSwift/Kaede.gif)
 
 ### Hoshi
-![Hoshi Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Hoshi.gif)
+![Hoshi Demo](/img/posts/TextFieldEffectsOfSwift/Hoshi.gif)
 
 ### Jiro
-![Jiro Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Jiro.gif)
+![Jiro Demo](/img/posts/TextFieldEffectsOfSwift/Jiro.gif)
 
 ### Isao
-![Isao Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Isao.gif)
+![Isao Demo](/img/posts/TextFieldEffectsOfSwift/Isao.gif)
 
 ### Minoru
-![Minoru Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Minoru.gif)
+![Minoru Demo](/img/posts/TextFieldEffectsOfSwift/Minoru.gif)
 
 ### Yoko
-![Yoko Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Yoko.gif)
+![Yoko Demo](/img/posts/TextFieldEffectsOfSwift/Yoko.gif)
 
 ### Madoka
-![Madoka Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Madoka.gif)
+![Madoka Demo](/img/posts/TextFieldEffectsOfSwift/Madoka.gif)
 
 ### Akira
-![Akira Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Akira.gif)
+![Akira Demo](/img/posts/TextFieldEffectsOfSwift/Akira.gif)
 
 ### Yoshiko
-![Yoshiko Demo](https://github.com/raulriera/TextFieldEffects/raw/master/Screenshots/Yoshiko.gif)
+![Yoshiko Demo](/img/posts/TextFieldEffectsOfSwift/Yoshiko.gif)
 
 ## 開始使用
 
@@ -67,24 +67,23 @@ pod "TextFieldEffects"
 
 安裝完畢以後，我們可以在 `storyboard` 加入一些系統預設的 Field(文字輸入框)：
 
-![hi](http://imgur.com/LtqvVGp.png)
+![1.png](/img/posts/TextFieldEffectsOfSwift/1.png)
 
 然後對剛剛新增的這項 `Field` 做些變更，我們以 `Akiar` 為例子，將 `Custom Class` 當中的 `Class` 設定為 `AkiraTextField`，然而 `Module` 是來自於 `TextFieldEffects`：
 
-![hi](http://imgur.com/m2N7jyX.png)
+![2.png](/img/posts/TextFieldEffectsOfSwift/2.png)
 
 完畢了以後，這個 `Field` 的外表會有些許的改變，但這還不夠像參考範例的那樣，因為我們還必須把 `Border Style` (外框樣式) 設定為無邊框：
 
-![hi](http://imgur.com/vIfU3ea.png)
+![3.png](/img/posts/TextFieldEffectsOfSwift/3.png)
 
 再來賦予他一些高度：
 
-![hi](http://imgur.com/h2b6fha.png)
+![4.png](/img/posts/TextFieldEffectsOfSwift/4.png)
 
 最後在 `Akiar Text Field` 當中給予自定義的顏色，就大功告成囉！
 
-![hi](http://imgur.com/9thF0ys.png)
-
+![5.png](/img/posts/TextFieldEffectsOfSwift/5.png)
 
 ## 或者你喜歡硬派寫程式
 
