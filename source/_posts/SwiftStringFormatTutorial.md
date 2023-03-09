@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/SwiftStringFormatTutorial.png
+cover: /img/posts/SwiftStringFormatTutorial/banner.png
 title: 如何在 Swift 當中透過 String Format 格式來簡單處理數值內容？
 description: >-
   在開發應用程式時，我們經常會需要做數值轉換成特定格式，例如將小數點數值取兩位就好，或者整數補 0 到十位數，諸如此類的功能，接下來我們就直接進入實際應用
