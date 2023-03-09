@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/PlurkAPIResources/banner.png
 title: Plurk API 官方說明文件 - 簡介
 description: Plurk API 2.0 遵循 OAuth 1.0a 開放標準來保護使用者的隱私 ...
 tags:
@@ -8,7 +9,6 @@ category:
   - Plurk API Docs
 abbrlink: ad97da81
 date: 2017-04-14 00:00:00
-cover:
 ---
 
 #### ***＊ 本文章為個人翻譯，故正式內容以 Plurk 官方為主 ＊***
@@ -16,7 +16,7 @@ cover:
 
 <br />
 
-![Plurk API 2.0](https://s.plurk.com/23a9a0002c021cb9169293e4347c05e3.png)
+![Plurk API 2.0](/img/posts/PlurkAPIResources/1.png)
 
 # Plurk API 2.0
 
@@ -36,10 +36,10 @@ cover:
 在使用 API 之前，[Plurk API 2.0](https://www.plurk.com/API#toc) 應用程式必須遵循 [OAuth](https://zh.wikipedia.org/wiki/OAuth) 的開放標準來獲得使用者的 Token。大多數的 API 使用 Three-Legged OAuth，它需要透過使用者金鑰/密鑰和 Token 金鑰/密鑰來簽證請求。然而有一些 API 還支持 Two-Legged OAuth，該請求可以使用應用程式金鑰/密鑰進行簽證。
 
 > 附註說明：Three-Legged OAuth，意指用戶授權過程當中涉及三種角色，分別為 應用程式(Application)、服務提供者(Service Provider)、使用者(User)
-> ![Three-Legged OAuth](http://puu.sh/2pJ4y.png)
+> ![Three-Legged OAuth](/img/posts/PlurkAPIResources/2.png)
 
 > 附註說明：Two-Legged OAuth，則是授權過程只涉及兩種角色，分別為 應用程式(Application)、服務提供者(Service Provider)
-> ![Two-Legged OAuth](http://puu.sh/2peUI.png)
+> ![Two-Legged OAuth](/img/posts/PlurkAPIResources/3.png)
 
 如果您是機器人的開發人員或單獨只是給自己玩的使用者，則可以使用我們的 [測試控制台](https://www.plurk.com/OAuth/test) 獲取您自己的永久 Token，您不需要撰寫程式碼來獲取 Token。
 
@@ -106,7 +106,7 @@ https://www.plurk.com/OAuth/authorize?oauth_token=ReqKMrVIjOLI&deviceid=efa9183a
 
 > 附註說明：[通用唯一識別碼(英語：Universally Unique Identifier，簡稱 UUID)](https://zh.wikipedia.org/wiki/通用唯一识别码)
 
-![我授權的 Plurk 應用服務 Demo](https://images.plurk.com/4c31662a172aad703ef9d5535458b77f.jpg)
+![我授權的 Plurk 應用服務 Demo](/img/posts/PlurkAPIResources/4.jpg)
 
 # Plurk OAuth 規範
 
@@ -118,4 +118,4 @@ https://www.plurk.com/OAuth/authorize?oauth_token=ReqKMrVIjOLI&deviceid=efa9183a
 
 # Plurk OAuth 資料流
 
-![資料流](https://s.plurk.com/dfff32d09f129743ec7dc4d72a37b802.png)
+![資料流](/img/posts/PlurkAPIResources/5.png)
