@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/StrategyPattern.png
+cover: /img/posts/StrategyPattern/banner.png
 title: 【PHP、設計模式、大頭菜】策略模式 Strategy Pattern
 description: >-
   策略模式，可以讓物件在運作時更改其行為或算法，你可以透過切換策略物件來改變計有的功能，你需要實作一個介面來代表這個策略物件，然後在主要類別當中去引入這個策略物件，在需要變更時來切換策略物件，來達成不同狀況下所需要的功能，就像是大頭菜的鈴錢有兩種模式，一種是原本的鈴錢，另一種則是過期後歸零，這個鈴錢運算的模式就可以抽離出來作為策略物件。
@@ -18,7 +18,7 @@ date: 2020-10-12 00:00:00
 策略模式，可以讓物件在運作時更改其行為或算法，你可以透過切換策略物件來改變計有的功能，你需要實作一個介面來代表這個策略物件，然後在主要類別當中去引入這個策略物件，在需要變更時來切換策略物件，來達成不同狀況下所需要的功能，就像是大頭菜的鈴錢有兩種模式，一種是原本的鈴錢，另一種則是過期後歸零，這個鈴錢運算的模式就可以抽離出來作為策略物件。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/StrategyPattern/UML.png)
+![UML](/img/posts/StrategyPattern/UML.png)
 
 ## 實作
 首先我們要定義策略的介面，這個介面我們會希望策略物件必須要實作鈴錢運算(calculatePrice)的方法。
