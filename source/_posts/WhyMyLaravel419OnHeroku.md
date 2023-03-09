@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/WhyMyLaravel419OnHeroku.png
+cover: /img/posts/WhyMyLaravel419OnHeroku/banner.png
 title: 在 HeroKu 上的 Laravel 專案突然爆掉 419 page expired 的解決方案
 description: >-
   大大救命啊啊啊啊啊啊！我的網站剛剛明明是好的，現在卻壞了，但我都沒有做任何事情，他就突然壞了！我把 Session 清掉，把 Cache
@@ -27,7 +27,7 @@ date: 2019-06-14 00:00:00
 
 # 419 Page Expired
 
-![/assets/img/posts/bEZn7DD.png](/img/posts/bEZn7DD.png)
+![1.png](/img/posts/WhyMyLaravel419OnHeroku/1.png)
 
 基本上有學過 Laravel 的大家們，都知道 419 這個錯誤跟 CSRF 有關，我們正常會認為這可能是前台的 CSRF 過期了，導致使用者運行時把 TOKEN 丟到後端，中介層認為這 TOKEN 過期或無法驗證通過，而 Response HTTP CODE 419，所以在此我有一個大膽的想法，那就是去 `VerifyCsrfToken.php` 把所有的路由都取消 CSRF 認證，大概是這個樣子:
 
@@ -50,7 +50,7 @@ date: 2019-06-14 00:00:00
 
 HeroKu JawsDB Maria: [JawsDB Maria - Add-ons - Heroku Elements](https://elements.heroku.com/addons/jawsdb-maria)
 
-![/assets/img/posts/JJ88v86.png](/img/posts/JJ88v86.png)
+![2.png](/img/posts/WhyMyLaravel419OnHeroku/2.png)
 
 HeroKu 會告訴你 Storage Capacity 5 MB，表面上意思是整個資料庫的容量給你 5 MB 的大小，但實際上可能是寫入的量，所以才會導致刪除可以運行，但要寫入新的資料就無法，而網站運行一段時間後，因為寫入的量過多了，所以 CSRF 的 Token 無法繼續寫入資料庫的 Sesstion 當中，而 Laravel 在驗證 CSRF 的時候找不到相對應的資料，才會回覆你 419 Page Expired。
 
