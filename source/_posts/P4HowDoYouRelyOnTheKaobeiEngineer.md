@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/P4HowDoYouRelyOnTheKaobeiEngineer.png
+cover: /img/posts/P4HowDoYouRelyOnTheKaobeiEngineer/banner.png
 title: P4. 純靠北工程師怎麼做的？一顆按鈕就把你的文章發到世界各地了呢！(2/2)
 description: 既然是社群匿名發文平台，那主要核心當然是發廢文、講幹話啦！可是這要怎麼做呢？文章管理三步驟：繪圖、發表文章、刪除文章 ...
 tags:
