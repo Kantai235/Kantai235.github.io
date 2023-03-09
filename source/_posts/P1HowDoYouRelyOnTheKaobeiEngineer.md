@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/P1HowDoYouRelyOnTheKaobeiEngineer.png
+cover: /img/posts/P1HowDoYouRelyOnTheKaobeiEngineer/banner.png
 title: P1. 純靠北工程師怎麼做的？就只是個簡單的後端架構而已。
 description: 既然是工程師，那網站當然要自幹啊！在開始介紹如何寫功能以前，要先通過兩項前置任務（如果已經有點軟體架構概念、資料庫基本知識，則可以直接跳過） ...
 tags:
@@ -98,7 +98,7 @@ class PostsController extends Controller {
 
 綜合以上的壞例子，接下來我們要做的就是逐一改善，推演成現在純靠北工程師網站的架構，下圖是壞例子的架構圖：
 
-![/assets/img/posts/WxH4X7M.png](/img/posts/WxH4X7M.png)
+![1.png](/img/posts/P1HowDoYouRelyOnTheKaobeiEngineer/1.png)
 如果以壞例子為基礎，那麼其架構會是這樣
 
 ---
@@ -111,7 +111,7 @@ class PostsController extends Controller {
 - `Service` 處理商業邏輯，例如在社群平台發表文章。
 - `Presenter` 處理顯示邏輯，例如社群平台的文章連結。
 
-![/assets/img/posts/YZQPO5o.png](/img/posts/YZQPO5o.png)
+![2.png](/img/posts/P1HowDoYouRelyOnTheKaobeiEngineer/2.png)
 把商業邏輯、資料庫邏輯與顯示邏輯抽離出來後的架構
 
 ---
@@ -126,7 +126,7 @@ class PostsController extends Controller {
 
 > [!] MVVM 科普一下 -> [MVVM - 維基百科，自由的百科全書](https://zh.wikipedia.org/wiki/MVVM)
 
-![/assets/img/posts/o0GgaFi.png](/img/posts/o0GgaFi.png)
+![3.png](/img/posts/P1HowDoYouRelyOnTheKaobeiEngineer/3.png)
 再加入些 Middleware、Request
 
 ---
@@ -137,7 +137,7 @@ class PostsController extends Controller {
 
 > [!] 事件與監聽器 科普一下 -> [事件 - Laravel - 為網頁藝術家創造的 PHP 框架](https://laravel.tw/docs/5.2/events)
 
-![/assets/img/posts/OAwrC4d.png](/img/posts/OAwrC4d.png)
+![4.png](/img/posts/P1HowDoYouRelyOnTheKaobeiEngineer/4.png)
 加入事件與監聽器後
 
 ---
@@ -147,7 +147,7 @@ class PostsController extends Controller {
 
 > [!] 觀察者 科普一下 -> [Eloquent: Getting Started - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/5.7/eloquent#observers)
 
-![/assets/img/posts/veoUKFi.png](/img/posts/veoUKFi.png)
+![5.png](/img/posts/P1HowDoYouRelyOnTheKaobeiEngineer/5.png)
 再加入觀察者模式
 
 ---
@@ -158,7 +158,7 @@ Presenter 主要目的是在於處理一些顯示邏輯，而不是把顯示邏�
 
 但有些顯示邏輯是到處都會用到的，甚至每個 Presenter 都會有的，就會寫到 `Helpers ` 當中，例如時間 format、Form 表單的送出與取消按鈕。
 
-![/assets/img/posts/IW5Nf3R.png](/img/posts/IW5Nf3R.png)
+![6.png](/img/posts/P1HowDoYouRelyOnTheKaobeiEngineer/6.png)
 放上 Helpers
 
 ---
@@ -167,7 +167,7 @@ Presenter 主要目的是在於處理一些顯示邏輯，而不是把顯示邏�
 
 接下來要考慮到之後如果要做前後端分離或 APP 化，會需要開發 API 時候的需求，因此除了 View 視圖以外，我們還會多出一個 Response，這部分就不會有 Presenter 與 Helpers 的使用了，因為沒有畫面，只有資料上的傳遞。
 
-![/assets/img/posts/gUPnMQ9.png](/img/posts/gUPnMQ9.png)
+![7.png](/img/posts/P1HowDoYouRelyOnTheKaobeiEngineer/7.png)
 除了 View 視圖，我們還要考慮到 RESTful 的開發
 
 ---
@@ -183,7 +183,7 @@ Presenter 主要目的是在於處理一些顯示邏輯，而不是把顯示邏�
 
 > [!] Hypermedia 科普一下 [ASP.NET - Building Hypermedia Web APIs with ASP.NET Web API](https://msdn.microsoft.com/en-us/magazine/jj883957.aspx)
 
-![/assets/img/posts/6IMh2hW.png](/img/posts/6IMh2hW.png)
+![8.png](/img/posts/P1HowDoYouRelyOnTheKaobeiEngineer/8.png)
 為 RESTful 加上 Transformer 與 Formatter
 
 ---
@@ -203,4 +203,4 @@ Presenter 主要目的是在於處理一些顯示邏輯，而不是把顯示邏�
 
 如果你也想嘗試自己寫個靠北 XXX 網站的話，專案的使用你可以參考這個專案，這項專案已經幫你完成很多事情了，例如權限與角色、信箱認證、以社群平台登入串接 ... 等等功能，純靠北工程師也是以這個專案下去修改而成的，這部分在資料庫模型篇會再次提到，一天自幹出自己的靠北網站不是夢！
 
-- [GitHub - rappasoft/laravel-5-boilerplate: A Laravel 5 Boilerplate Project - http://laravel-boilerplate.com](https://github.com/rappasoft/laravel-5-boilerplate)
+- [GitHub - rappasoft/laravel-boilerplate: The Laravel Boilerplate Project.](https://github.com/rappasoft/laravel-boilerplate)
