@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/UsingPythonOpenCvAdb.png
+cover: /img/posts/UsingPythonOpenCvAdb/banner.png
 title: 利用 Python + OpenCV + ADB 實現 Android 模擬器控制，以彈射世界 World Flipper 為例，操作篇
 description: >-
   最近在研究如何透過 OpenCV 來偵測畫面物件，並透過 ADB 來對 Android
@@ -24,7 +24,7 @@ date: 2021-11-28 00:00:00
 
 透過前面兩篇(安裝篇、測試篇)文章，我們建立了 Python 的環境、使用了 adb 控制模擬器，以及透過 OpenCV 來抓出需要點擊的物件，接下來我們需要直接實際操作模擬器，並且做出一個可模組化的程式。
 
-![展示頁面](/img/posts/yNBwqXy.png)
+![展示頁面](/img/posts/UsingPythonOpenCvAdb/1.png)
 
 首先我們可以先讓透過 adb 自動擷取模擬器截圖的動作抽離出來，做成一個 `screenshot()` 的方法，只要執行這個方法，就會自動執行 adb 指令將模擬器截圖並輸出:
 
@@ -46,7 +46,7 @@ def scan_screenshot(prepared):
 
 最後我們只需要再寫一個自動計算目標物件方位的方法，把 OpenCV 的計算結果丟進去，然後自動算出 x, y 座標:
 
-![物件與截圖範例](/img/posts/CWouOMG.png)
+![物件與截圖範例](/img/posts/UsingPythonOpenCvAdb/2.png)
 
 ```python
 def calculated(result, shape):
