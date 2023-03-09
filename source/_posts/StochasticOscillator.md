@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/StochasticOscillator.png
+cover: /img/posts/StochasticOscillator/banner.png
 title: 【學習筆記】隨機指標 Stochastic Oscillator
 tags:
   - 學習筆記
