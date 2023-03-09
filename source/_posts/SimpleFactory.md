@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/SimpleFactory.png
+cover: /img/posts/SimpleFactory/banner.png
 title: 【PHP、設計模式、大頭菜】簡單工廠 Simple Factory
 description: >-
   簡單工廠，這是一種我們真的要買大頭菜的模式，你需要建立一個工廠，這個工廠負責生產特定物件，你只需要把材料丟給工廠，工廠就會把商品生產出來給你，你不需要理會工廠都在做些什麼，就有點像是你跟曹賣買大頭菜，你只需要付鈴錢就好，你不需要去理解曹賣到底是怎麼種大頭菜的。
@@ -18,7 +18,7 @@ date: 2020-09-15 00:00:00
 簡單工廠，這是一種我們真的要買大頭菜的模式，你需要建立一個工廠，這個工廠負責生產特定物件，你只需要把材料丟給工廠，工廠就會把商品生產出來給你，你不需要理會工廠都在做些什麼，就有點像是你跟曹賣買大頭菜，你只需要付鈴錢就好，你不需要去理解曹賣到底是怎麼種大頭菜的。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/SimpleFactory/UML.png)
+![UML](/img/posts/SimpleFactory/UML.png)
 
 ## 實作
 在建立大頭菜工廠之前，我們要先定義大頭菜出來，順便寫上一些功能，像是購買大頭菜、計算大頭菜的價格，這樣工廠才會知道自己要生產什麼。
