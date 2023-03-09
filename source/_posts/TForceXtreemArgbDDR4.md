@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/TForceXtreemArgbDDR4.png
+cover: /img/posts/TForceXtreemArgbDDR4/banner.png
 title: 【業配開箱】十銓 T-Force Xtreem ARGB DDR4
 description: 十銓 T-Force Xtreem ARGB DDR4 電競記憶體，全鏡面、冷透光、ＲＧＢ，總之一句話，就是潮！
 tags:
@@ -23,13 +23,13 @@ date: 2020-05-24 00:00:00
                     </div>
                     <div class="outgoing_msg">
                         <div class="sent_msg">
-                            <p><img src="/img/posts/v68b7ym.jpg" /></p>
+                            <p><img src="/img/posts/TForceXtreemArgbDDR4/1.jpg" /></p>
                             <span class="time_date"> 乾太₍₍ ◝(･◡･)◟ ⁾⁾</span>
                         </div>
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="/img/icons/largetile.png" alt="sunil">
+                            <img src="/img/avatar.jpg" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">
@@ -46,13 +46,13 @@ date: 2020-05-24 00:00:00
                     </div>
                     <div class="outgoing_msg">
                         <div class="sent_msg">
-                            <p><img src="/img/posts/DQuvfIh.jpg" /></p>
+                            <p><img src="/img/posts/TForceXtreemArgbDDR4/2.jpg" /></p>
                             <span class="time_date"> 乾太₍₍ ◝(･◡･)◟ ⁾⁾</span>
                         </div>
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="/img/icons/largetile.png" alt="sunil">
+                            <img src="/img/avatar.jpg" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">
@@ -63,7 +63,7 @@ date: 2020-05-24 00:00:00
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="/img/icons/largetile.png" alt="sunil">
+                            <img src="/img/avatar.jpg" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">
@@ -80,7 +80,7 @@ date: 2020-05-24 00:00:00
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="/img/icons/largetile.png" alt="sunil">
+                            <img src="/img/avatar.jpg" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">
@@ -91,7 +91,7 @@ date: 2020-05-24 00:00:00
                     </div>
                     <div class="incoming_msg">
                         <div class="incoming_msg_img">
-                            <img src="/img/icons/largetile.png" alt="sunil">
+                            <img src="/img/avatar.jpg" alt="sunil">
                         </div>
                         <div class="received_msg">
                             <div class="received_withd_msg">
@@ -281,31 +281,31 @@ img {
 ## 外觀介紹
 
 ▼ 十銓 T-Force Xtreem ARGB DDR4 外盒包裝
-![外盒](/img/posts/HwHLzq0.jpg)
+![外盒](/img/posts/TForceXtreemArgbDDR4/3.jpg)
 
 ▼ 從旁邊推出內盒，內盒有點高質感
-![拆開外盒](/img/posts/tFUcSrS.jpg)
+![拆開外盒](/img/posts/TForceXtreemArgbDDR4/4.jpg)
 
 ▼ 打開內盒後，就看到記憶體本體了
-![開箱](/img/posts/TSdM7GO.jpg)
+![開箱](/img/posts/TForceXtreemArgbDDR4/5.jpg)
 
 ▼ 記憶體底下放著一條眼鏡布，用來擦記憶體很適合
-![眼鏡布](/img/posts/eEWfAIj.png)
+![眼鏡布](/img/posts/TForceXtreemArgbDDR4/6.png)
 
 ▼ 記憶體外面包著一層膠膜，撕下的那個聲音有夠悅耳
-![記憶體 獨立攝影](/img/posts/7leOALt.jpg)
+![記憶體 獨立攝影](/img/posts/TForceXtreemArgbDDR4/7.jpg)
 
 ▼ 把它交叉立起來
-![記憶體 站立](/img/posts/6LKBtOx.jpg)
+![記憶體 站立](/img/posts/TForceXtreemArgbDDR4/8.jpg)
 
 ▼ 插上主機板
-![記憶體 未點燈](/img/posts/v68b7ym.jpg)
+![記憶體 未點燈](/img/posts/TForceXtreemArgbDDR4/1.jpg)
 
 ▼ 實際開機後的效果
-![記憶體 點燈](/img/posts/DQuvfIh.jpg)
+![記憶體 點燈](/img/posts/TForceXtreemArgbDDR4/2.jpg)
 
 ▼ 從另一個角度來看記憶體，這大概就是純靠北工程師需求幹話當中所謂黑色的光吧
-![記憶體 點燈](/img/posts/CRQHEpw.jpg)
+![記憶體 點燈](/img/posts/TForceXtreemArgbDDR4/9.jpg)
 
 ▼ 實際點燈的效果
 <iframe width="800" height="600" src="https://www.youtube.com/embed/Kb-GfCd_Bes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -323,20 +323,20 @@ OS  作業系統  ： Windows 10 Pro (1909) 64Bit
 ```
 
 ▼ 在預設 DDR4-2400MHz 下，使用 AIDA64 跑記憶體測試得到以下結果
-![2400](/img/posts/Nodf7KB.png)
+![2400](/img/posts/TForceXtreemArgbDDR4/10.png)
 
 ▼ 開啟 D.O.C.P. 調整頻率到 3600MHz 後，使用 AIDA64 跑記憶體測試得到以下結果，讀寫明顯上升了 1.4 快要 1.5 倍。
-![3600](/img/posts/QRZB1sx.png)
+![3600](/img/posts/TForceXtreemArgbDDR4/11.png)
 
 ▼ 在記憶體顆粒的部分，使用 Thaiphoon Burner 可以看到 Xtreem 所採用的是 Hynix 的 C-Die 顆粒
-![Thaiphoon Burner](/img/posts/3dRT4IX.png)
+![Thaiphoon Burner](/img/posts/TForceXtreemArgbDDR4/12.png)
 
 ---
 ## 使用心得
 
 因為我本身是使用 ASUS 的 X570 主機板，所以這裡就安裝 `ARMOURY CRATE`，使用裡面的 `AURA SYNC` 來控制 DRAM 的 ARGB 燈光效果，安裝完畢就可以直接使用了，相當方便。
 
-![AURA SYNC](/img/posts/ufYv5j6.png)
+![AURA SYNC](/img/posts/TForceXtreemArgbDDR4/13.png)
 
 不過廠商的[產品說明頁面](https://www.teamgroupinc.com/tw/product/xtreem-argb-ddr4)也有特別標示它們這記憶體能支援多家燈效控制軟體，其中包含了 ASUS Aura Sync / GIGABYTE RGB Fusion 2.0 / MSI Mystic Light Sync / ASROCK-Polychrome Sync。
 
