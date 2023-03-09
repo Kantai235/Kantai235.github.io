@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/TemplateMethod.png
+cover: /img/posts/TemplateMethod/banner.png
 title: 【PHP、設計模式、大頭菜】模板方法 Template Method
 description: >-
   模板方法，是一種如果這包水泥我有、你也有，就連喬瑟夫都有，那我們就應該把這八百包水泥抽離出來的設計模式，是設計模式中很簡單的模式，在模板(Template)裡頭會定義需要實作的方法，並且由繼承物件去實作或複寫，這個設計模式適用於不同物件有多處相似功能的時候，可以減少物件的耦合性過高問題。
@@ -18,7 +18,7 @@ date: 2020-10-13 00:00:00
 模板方法，是一種如果這包水泥我有、你也有，就連喬瑟夫都有，那我們就應該把這八百包水泥抽離出來的設計模式，是設計模式中很簡單的模式，在模板(Template)裡頭會定義需要實作的方法，並且由繼承物件去實作或複寫，這個設計模式適用於不同物件有多處相似功能的時候，可以減少物件的耦合性過高問題。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/TemplateMethod/UML.png)
+![UML](/img/posts/TemplateMethod/UML.png)
 
 ## 實作
 首先我們會需要建立一個抽象的模板，並且提供大頭菜無論健康的、壞掉的都擁有的方法，像是獲得鈴錢價格(getPrice)、獲得數量(getCount)以及計算總計鈴錢價格(calculatePrice)，而有些方法需要繼承物件去實作的，例如設定鈴錢價格(setPrice)，我們就需要以抽象方法的方式去定義，讓繼承物件必須去實作。
