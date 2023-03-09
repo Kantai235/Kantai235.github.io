@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/RelativeStrengthIndex.png
+cover: /img/posts/RelativeStrengthIndex/banner.png
 title: 【學習筆記】相對強弱指數 Relative Strength Index
 tags:
   - 學習筆記
