@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/ToolsBase64.png
+cover: /img/posts/ToolsBase64/banner.png
 title: 線上編碼、解碼器 for Base64
 description: 一款簡單的線上編碼、解碼器，Base64 是一種基於 64 個可列印字元來表示二進位資料的表示方法。
 tags:
@@ -89,7 +89,7 @@ date: 2019-07-09 00:00:00
     }
 </style>
 
-![線上編碼、解碼器 for Base64 Banner](/img/banners/ToolsBase64.png)
+![線上編碼、解碼器 for Base64 Banner](/img/posts/ToolsBase64/banner.png)
 
 <div class="container" style="padding-top: 16px; padding-bottom: 16px;">
     <h3 style="margin-top: 1.625rem;margin-bottom: .125rem;">選擇編碼格式</h3>
