@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/SpecificationPattern.png
+cover: /img/posts/SpecificationPattern/banner.png
 title: 【PHP、設計模式、大頭菜】規格模式 Specification Pattern
 description: >-
   規格模式，將邏輯條件給抽離出來，獨立成一個模組，而不是在物件內透過邏輯判斷來撰寫複雜的程式碼，簡化物件所需要實踐的邏輯，物件可以套用一個規則，也可以套用多種規則，就像大頭菜本身的價格運算是一種規格，過期後的價格運算又是另一種規格，可以把這個價格運算的邏輯抽離出來獨立成模組。
@@ -18,7 +18,7 @@ date: 2020-10-10 00:00:00
 規格模式，將邏輯條件給抽離出來，獨立成一個模組，而不是在物件內透過邏輯判斷來撰寫複雜的程式碼，簡化物件所需要實踐的邏輯，物件可以套用一個規則，也可以套用多種規則，就像大頭菜本身的價格運算是一種規格，過期後的價格運算又是另一種規格，可以把這個價格運算的邏輯抽離出來獨立成模組。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/SpecificationPattern/UML.png)
+![UML](/img/posts/SpecificationPattern/UML.png)
 
 ## 實作
 首當其中我們需要把大頭菜物件給建立出來，具有價格(price)以及數量(count)的記錄、讀取功能，原本會提供計算鈴錢總計(calculatePrice)的功能，但這部分是運算邏輯，所以我們需要把這個功能抽離出來放到規格模組(Specification)當中。
