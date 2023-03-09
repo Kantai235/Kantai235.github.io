@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/ToolsURL.png
+cover: /img/posts/ToolsURL/banner.png
 title: 線上編碼、解碼器 for URL
 description: 一款簡單的線上編碼、解碼器，URL 是一種網際網路上標準的資源的位址（Address），如同在網路上的門牌。
 tags:
@@ -89,7 +89,7 @@ date: 2019-07-14 00:00:00
     }
 </style>
 
-![線上編碼、解碼器 for URL Banner](/img/banners/ToolsURL.png)
+![線上編碼、解碼器 for URL Banner](/img/posts/ToolsURL/banner.png)
 
 <div class="container" style="padding-top: 16px; padding-bottom: 16px;">
     <div id="form" class="contact-form">
