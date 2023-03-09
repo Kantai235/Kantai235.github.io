@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/P3HowDoYouRelyOnTheKaobeiEngineer.png
+cover: /img/posts/P3HowDoYouRelyOnTheKaobeiEngineer/banner.png
 title: P3. 純靠北工程師怎麼做的？一顆按鈕就把你的文章發到世界各地了呢！(1/2)
 description: 既然是社群匿名發文平台，那主要核心當然是發廢文、講幹話啦！可是這要怎麼做呢？文章管理三步驟：繪圖、發表文章、刪除文章 ...
 tags:
@@ -38,10 +38,10 @@ date: 2019-03-03 00:00:00
 
 > [!] 流程圖(Flowchart) 科普一下 -> [流程圖 - 維基百科，自由的百科全書](https://zh.wikipedia.org/zh-tw/%E6%B5%81%E7%A8%8B%E5%9B%BE)
 
-![https://imgur.com/QwAEyG5.png](https://imgur.com/QwAEyG5.png)
+![1.png](/img/posts/P3HowDoYouRelyOnTheKaobeiEngineer/1.png)
 圖一、發表文章範例介面
 
-![https://imgur.com/nGmcmQj.png](https://imgur.com/nGmcmQj.png)
+![2.png](/img/posts/P3HowDoYouRelyOnTheKaobeiEngineer/2.png)
 圖二、顯示畫面結果
 
 ---
@@ -54,7 +54,7 @@ date: 2019-03-03 00:00:00
 
 表單資訊、圖片資訊都處理好了，接下來該逐一發表至社群平台當中了，有可能碰上程式沒問題，但社群平台卻掛掉了，規避的方法有很多種，這邊舉個例子，可以正常發表到社群平台，就把該社群平台的文章資訊儲存起來，如果遇到意外，那直接進行下一個社群平台的發表，最終顯示發表文章後的頁面。
 
-![https://imgur.com/xZVT26W.png](https://imgur.com/xZVT26W.png)
+![3.png](/img/posts/P3HowDoYouRelyOnTheKaobeiEngineer/3.png)
 發表文章的流程圖
 
 不過這部分我們要注意到文章資料表的設計，發文者編號、圖片、文章資訊 ... 這些資料基本上沒什麼問題，如果照著上面的邏輯，正常狀況下會是整列資料列都有資料，但眼尖的你一定會發現 編號3 編號4 這兩筆資料居然包含 Null，以及 編號2 的文章狀態是 false，這邊針對這些資料來做解說：
@@ -77,7 +77,7 @@ date: 2019-03-03 00:00:00
 > [!] P1.純靠北工程師怎麼做的？就只是個簡單的後端架構而已。 科普一下 -> [純靠北工程師怎麼做的？就只是個簡單的後端架構而已！](https://pressplay.cc/project/vippPage/P1%2B純靠北工程師怎麼做的？就只是個簡單的後端架構而已/49F0EDD097A8C7CF9791F4987A3990E0)
 
 
-![https://imgur.com/LeYWtCC.png](https://imgur.com/LeYWtCC.png)
+![4.png](/img/posts/P3HowDoYouRelyOnTheKaobeiEngineer/4.png)
 為每個流程都上對應的顏色，紅色 Presenter、綠色 Service、藍色 Repostory
 
 這樣應該知道哪些功能應該寫在哪些地方，整個程式的流程應該怎麼走，至於詳細應該怎麼寫，就留給讀者們去嘗試了，要不然在這邊把每個都詳細解釋的話，篇幅會太～過～冗～長，所以我們接下來將會把重點聚焦在如何透過 API 來發表文章至社群平台當中。
