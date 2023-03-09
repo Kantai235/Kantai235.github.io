@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/PoolPattern.png
+cover: /img/posts/PoolPattern/banner.png
 title: 【PHP、設計模式、大頭菜】物件池模式 Pool Pattern
 description: >-
   物件池模式，每次的買賣都是致富的關鍵，致富不能只靠 40
@@ -19,7 +19,7 @@ date: 2020-09-21 00:00:00
 物件池模式，每次的買賣都是致富的關鍵，致富不能只靠 40 顆大頭菜，靠的是放滿整座島的大頭菜，因此你需要有個島專門放大頭菜，放得滿滿的，到了關鍵時刻再把大頭菜拿出來賣。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/PoolPattern/UML.png)
+![UML](/img/posts/PoolPattern/UML.png)
 
 ## 實作
 首先我們會需要把大頭菜定義出來，並且賦予幾些簡單的功能。
