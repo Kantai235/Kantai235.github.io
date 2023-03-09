@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/RegistryPattern.png
+cover: /img/posts/RegistryPattern/banner.png
 title: 【PHP、設計模式、大頭菜】註冊模式 Registry Pattern
 description: >-
   註冊模式，如果應用程式內有非常多同樣的物件需要高度重複讀寫，就會去建立一個儲存器來負責管理這些同樣的物件，就有點像是你的大頭菜，會來自不同的島，每座的島菜價不同，這會導致你很難算出所賺到的鈴錢，所以如果每個大頭菜都需要登記註冊，然後有個集中管理的名冊，在管理大頭菜這件事上就能比較輕鬆。
@@ -18,7 +18,7 @@ date: 2020-10-02 00:00:00
 註冊模式，如果應用程式內有非常多同樣的物件需要高度重複讀寫，就會去建立一個儲存器來負責管理這些同樣的物件，就有點像是你的大頭菜，會來自不同的島，每座的島菜價不同，這會導致你很難算出所賺到的鈴錢，所以如果每個大頭菜都需要登記註冊，然後有個集中管理的名冊，在管理大頭菜這件事上就能比較輕鬆。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/RegistryPattern/UML.png)
+![UML](/img/posts/RegistryPattern/UML.png)
 
 ## 實作
 首先我們會先建立需要被集中管理的大頭菜物件，裡面提供了簡單的幾些方法，例如賦予獲得島嶼名稱、鈴錢以及數量。
