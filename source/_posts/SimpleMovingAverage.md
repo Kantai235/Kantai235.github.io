@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/SimpleMovingAverage.png
+cover: /img/posts/SimpleMovingAverage/banner.png
 title: 【學習筆記】簡單移動平均線 Simple Moving Average
 tags:
   - 學習筆記
