@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/StringRandomGenerator.png
+cover: /img/posts/StringRandomGenerator/banner.png
 title: 線上 String 字串亂數產生器
 description: 一款簡單的 String 字串線上產生器，可用來產生自定義的長度、大寫小寫英文、數字、字元符號 ... 通通自定義。
 tags:
@@ -160,7 +160,7 @@ date: 2019-07-21 00:00:00
     }
 </style>
 
-![線上 String 字串亂數產生器 Banner](/img/banners/StringRandomGenerator.png)
+![線上 String 字串亂數產生器 Banner](/img/posts/StringRandomGenerator/banner.png)
 
 <!-- Rectangular switch -->
 <div style="white-space: nowrap; padding-top: 16px; padding-bottom: 16px;">
