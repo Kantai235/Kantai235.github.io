@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/PrototypePattern.png
+cover: /img/posts/PrototypePattern/banner.png
 title: 【PHP、設計模式、大頭菜】原型模式 Prototype Pattern
 description: >-
   原型模式，你有些物件可能會需要建立很多一樣的物件，只是某些資料不太一樣而已，就有點像是每顆大頭菜都是一模一樣的物件，但可能因為來自不同的島，所以每顆大頭菜的差別只在於那起始購買的鈴錢不同。
@@ -18,7 +18,7 @@ date: 2020-09-19 00:00:00
 原型模式，你有些物件可能會需要建立很多一樣的物件，只是某些資料不太一樣而已，就有點像是每顆大頭菜都是一模一樣的物件，但可能因為來自不同的島，所以每顆大頭菜的差別只在於那起始購買的鈴錢不同。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/PrototypePattern/UML.png)
+![UML](/img/posts/PrototypePattern/UML.png)
 
 ## 實作
 首先我們需要以抽象類別的方式，來製作大頭菜的原型，並且定義好大頭菜的基本功能。
