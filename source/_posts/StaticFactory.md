@@ -1,5 +1,5 @@
 ---
-cover: /img/banners/StaticFactory.png
+cover: /img/posts/StaticFactory/banner.png
 title: 【PHP、設計模式、大頭菜】靜態工廠 Static Factory
 description: >-
   靜態工廠，顧名思義就是希望這整個工廠都是屬於靜態屬性的，無論到哪裡都以靜態方法來使用這個工廠，就像是在星期日的早上時，會有個曹賣在你的島上走來走去，但無論曹賣走到哪裡，你都可以跟曹賣買大頭菜。
@@ -18,7 +18,7 @@ date: 2020-09-16 00:00:00
 靜態工廠，顧名思義就是希望這整個工廠都是屬於靜態屬性的，無論到哪裡都以靜態方法來使用這個工廠，就像是在星期日的早上時，會有個曹賣在你的島上走來走去，但無論曹賣走到哪裡，你都可以跟曹賣買大頭菜。
 
 ## UML
-![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/StaticFactory/UML.png)
+![UML](/img/posts/StaticFactory/UML.png)
 
 ## 實作
 首先我們這次會有兩種大頭菜，一種是新鮮的大頭菜(Turnips)，另一種是壞掉的大頭菜(Spoiled Trunips)，但因為它們都是大頭菜，所以我們要先寫個大頭菜介面，並解定義大頭菜應該具備哪些條件。
