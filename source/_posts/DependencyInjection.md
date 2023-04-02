@@ -1,6 +1,6 @@
 ---
 cover: /img/posts/DependencyInjection/banner.png
-title: 【PHP、設計模式、大頭菜】依賴注入 Dependency Injection
+title: 【PHP 設計模式】依賴注入 Dependency Injection
 description: >-
   依賴注入模式，是控制反轉（Inversion of
   Control，縮寫為IoC）的一種實作方式，主要是將依賴物件丟給接收物件中，就像是你想要用大頭菜發財致富，但大頭菜有那麼多顆，你不可能每顆都記住鈴錢單價、數量，所以你寫了一張便條紙，紀錄著大頭菜的類別、鈴錢單價、數量，然後貼在大頭菜上。

@@ -66,7 +66,7 @@ public function buildContent($content = '', array $options = [])
 之前的 `buildContent` 方法可以完成我所希望達到的效果，但是它會存在於每個平台 Service 當中，而每個 Service 的 `buildContent` 皆大同小異，只有字數的功能上不太一樣，如果未來我希望安插其他內容、移除多餘的內容，那我就必須在每個 Service 都修改，這段方法耦合性太高了，因此在 `v4.0` 決定將它抽離出來，並以流暢介面(Fluent Interface)的方式去實踐。
 
 ### 延伸閱讀
-- [【PHP、設計模式、大頭菜】流暢介面 Fluent Interface](/FluentInterface)
+- [【PHP 設計模式】流暢介面 Fluent Interface](/FluentInterface)
 
 ```php
 /**

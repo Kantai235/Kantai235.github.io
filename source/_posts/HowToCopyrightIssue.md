@@ -1,6 +1,6 @@
 ---
 cover: /img/posts/HowToCopyrightIssue/banner.png
-title: 部落格遇到抄襲，如何提交 Copyright issue 以及提交 DMCA Takedown Policy
+title: 部落格遇到抄襲，如何提交 Copyright issue，以及提交 DMCA Takedown Policy
 description: >-
   前陣子技術部落格遇到了文章抄襲事件，有部分的文章直接被完美的複製貼上到了其他人自己的網站當中，為了解決這樣的事情，於是開始查詢 GitHub Pages
   對於抄襲這件事有甚麼處置，如何提交 Copyright Issue 訊息出去 ...

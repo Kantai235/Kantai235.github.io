@@ -1,6 +1,6 @@
 ---
 cover: /img/posts/FlyweightPattern/banner.png
-title: 【PHP、設計模式、大頭菜】享元模式 Flyweight Pattern
+title: 【PHP 設計模式】享元模式 Flyweight Pattern
 description: >-
   享元模式，在定義上來說是共享物件，將相似的物件集中整理，減少記憶體上的使用，舉例來說每座島的大頭菜鈴錢價格都不同，有些朋友會送你大頭菜，但因為朋友太多了，所以需要有個地方集中放這些大頭菜，並且記錄起來，每個朋友都送你一組大頭彩，但你不能重複紀錄，不然你只收到一組大頭菜，帳上卻紀錄兩組，這樣就不好了。
 tags:

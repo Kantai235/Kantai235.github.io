@@ -1,6 +1,6 @@
 ---
 cover: /img/posts/TemplateMethod/banner.png
-title: 【PHP、設計模式、大頭菜】模板方法 Template Method
+title: 【PHP 設計模式】模板方法 Template Method
 description: >-
   模板方法，是一種如果這包水泥我有、你也有，就連喬瑟夫都有，那我們就應該把這八百包水泥抽離出來的設計模式，是設計模式中很簡單的模式，在模板(Template)裡頭會定義需要實作的方法，並且由繼承物件去實作或複寫，這個設計模式適用於不同物件有多處相似功能的時候，可以減少物件的耦合性過高問題。
 tags:

@@ -1,6 +1,6 @@
 ---
 cover: /img/posts/StaticFactory/banner.png
-title: 【PHP、設計模式、大頭菜】靜態工廠 Static Factory
+title: 【PHP 設計模式】靜態工廠 Static Factory
 description: >-
   靜態工廠，顧名思義就是希望這整個工廠都是屬於靜態屬性的，無論到哪裡都以靜態方法來使用這個工廠，就像是在星期日的早上時，會有個曹賣在你的島上走來走去，但無論曹賣走到哪裡，你都可以跟曹賣買大頭菜。
 tags:

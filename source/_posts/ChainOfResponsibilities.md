@@ -1,6 +1,6 @@
 ---
 cover: /img/posts/ChainOfResponsibilities/banner.png
-title: 【PHP、設計模式、大頭菜】責任鏈模式 Chain of Responsibilities
+title: 【PHP 設計模式】責任鏈模式 Chain of Responsibilities
 description: >-
   責任鏈模式，有一系列的命令物件及處理物件，常見於需要被連續處理的地方上，舉例來說，假設今天收購箱、商店收購大頭菜時，多了一些條件，你必須先把大頭菜拿去收購箱收購，並且收購箱子會有鈴錢價格打
 tags:

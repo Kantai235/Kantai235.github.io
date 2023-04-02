@@ -1,5 +1,5 @@
 ---
-title: 如何建立 NoCaptcha(我不是機器人) 的 Key、Secret？
+title: 如何建立 NoCaptcha（我不是機器人）的 Key、Secret？
 description: 無論在手機應用程式或者網頁應用程式，你時常會看到「我不是機器人」或「請點選下面有包含汽車的圖」的功能，這功能其實來自於 Google 提供的 ...
 tags:
   - Android

@@ -1,6 +1,6 @@
 ---
 cover: /img/posts/IteratorPattern/banner.png
-title: 【PHP、設計模式、大頭菜】疊代器模式 Iterator Pattern
+title: 【PHP 設計模式】疊代器模式 Iterator Pattern
 description: >-
   疊代器模式，提供一種方法來簡單控制一個集合物件，這段過程並不會暴露該物件的來源或修改它，就有點像是你的背包(Bag)一樣，疊代器(Iterator)可以簡單控制你背包中的大頭菜(Turnips)以及鈴錢(Bells)。
 tags:
