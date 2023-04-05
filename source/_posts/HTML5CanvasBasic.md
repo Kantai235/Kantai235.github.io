@@ -9,7 +9,6 @@ category:
   - JavaScript 實務
 abbrlink: 8496f3c4
 date: 2017-06-14 00:00:00
-cover:
 ---
 
 <style>

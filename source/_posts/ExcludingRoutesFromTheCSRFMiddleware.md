@@ -10,7 +10,6 @@ category:
   - Laravel 實務
 abbrlink: 467cfb94
 date: 2018-09-26 00:00:00
-cover:
 ---
 
 `Laravel` 在默認的情況之下，所有的路由(Route)它會自動啟用 `CSRF` 保護，這在開發的過程當中，是一個非常方便的功能。

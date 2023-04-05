@@ -9,7 +9,6 @@ category:
   - iOS 實務
 abbrlink: e7f1758b
 date: 2017-05-15 00:00:00
-cover:
 ---
 
 ## 簡介

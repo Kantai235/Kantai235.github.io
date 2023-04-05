@@ -9,7 +9,6 @@ category:
   - 技術文件
 abbrlink: fc8eb6b2
 date: 2017-01-07 00:00:00
-cover:
 ---
 
 # 序言

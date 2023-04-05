@@ -10,7 +10,6 @@ category:
   - Android 實務
 abbrlink: 2634a687
 date: 2018-09-09 00:00:00
-cover:
 ---
 
 無論在手機應用程式或者網頁應用程式，你時常會看到「我不是機器人」或「請點選下面有包含汽車的圖」的功能，這功能其實來自於 Google 提供的 [reCAPTCHA](https://www.google.com/recaptcha/intro/v3beta.html) 服務。

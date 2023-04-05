@@ -10,7 +10,6 @@ category:
   - 技術文件
 abbrlink: f893069e
 date: 2017-03-06 00:00:00
-cover:
 ---
 
 在台灣或日本當中，Line 一直是這些國家民眾愛用的通訊軟體之一，隨著資訊的發展，越來越多開發者重視各種機器人的開發，從上次的 [Facebook Chat Bot 教學](https://blog.init.engineer/posts/FacebookChatBot/)，我們教大家使用 [Chatfuel](https://chatfuel.com/) 來開發 Facebook 的聊天機器人，而這次乾太將要帶給大家 Line 的聊天機器人。

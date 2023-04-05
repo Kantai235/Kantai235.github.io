@@ -10,7 +10,6 @@ category:
   - Android 實務
 abbrlink: db6b7078
 date: 2017-01-09 00:00:00
-cover:
 ---
 
 很多應用程式開發時，傳遞都會使用 Json 作為規範格式，像是 Plurk API、Facebook API ... 等等，都是採用 Json 作為傳遞格式，因為它具備輕量化、易於閱讀的優點，其他詳細內容就不多做介紹了，詳細說明請見 [JSON (JavaScript Object Notation)](https://zh.wikipedia.org/wiki/JSON) 維基百科吧！
