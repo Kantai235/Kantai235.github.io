@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/LineMessageAPI/banner.png
 title: Line Message API 初戰！
 description: >-
   本篇教學教你如何基本使用 Line Message API，在台灣或日本當中，Line

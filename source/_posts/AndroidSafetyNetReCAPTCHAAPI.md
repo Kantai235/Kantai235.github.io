@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/AndroidSafetyNetReCAPTCHAAPI/banner.png
 title: 如何在 Android 當中，引用 reCAPTCHA 來做防堵機器人的驗證。
 description: >-
   Google上周五（6/9）釋出了支援Android平台的reCAPTCHA

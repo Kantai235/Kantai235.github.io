@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/AndroidRunOnUiThreadBasic/banner.png
 title: Android 執行緒使用經驗談 - runOnUiThread
 description: 在 Android 執行緒的世界當中，我們可以指派工作給員工去執行，例如今天我指派了很多事情給員工 ...
 tags:

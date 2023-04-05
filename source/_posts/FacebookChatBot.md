@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/FacebookChatBot/banner.png
 title: Facebook Messenger 第三方聊天機器人 - Chatfuel
 description: 在粉絲團或個人 Facebook 當中，如何建立一個自動聊天的機器人 ...
 tags:

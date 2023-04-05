@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/AndroidCode39/banner.png
 title: Android 實作 Code39 條碼產生 - 超商繳費帳單
 description: 超商服務愈來愈方便，現在到超商繳費不用帳單只要用專屬APP，就能下載條碼直接繳費 ...
 tags:

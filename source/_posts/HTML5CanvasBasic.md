@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/HTML5CanvasBasic/banner.png
 title: 如何利用 JavaScript 在 HTML5 的 Canvas 標籤中繪圖 - 基礎教學
 description: HTML5 的 canvas 元素使用 JavaScript 在網頁上繪製圖像。畫布是一個矩形區域，您可以控制其每個 Pixel ...
 tags:

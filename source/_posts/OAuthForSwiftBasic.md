@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/OAuthForSwiftBasic/banner.png
 title: iOS Swift 第三方套件 - OAuthSwift
 description: 在 iOS 開發介接第三方 API 相關的應用程式時，我們時常會需要遵循 OAuth 開放標準規範 ...
 tags:

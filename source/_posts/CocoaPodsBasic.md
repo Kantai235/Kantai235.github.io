@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/CocoaPodsBasic/banner.png
 title: CocoaPods iOS 第三方套件管理工具
 description: 當我們在開發 iOS 應用程式的時候，時常會為了完成某些功能，而開始尋找有沒有人已經寫了相關套件來解決問題 ...
 tags:

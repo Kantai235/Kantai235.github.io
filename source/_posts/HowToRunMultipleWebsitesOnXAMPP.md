@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/HowToRunMultipleWebsitesOnXAMPP/banner.png
 title: 如何在 Linux/macOS 當中，利用 XAMPP 一次運行多個網站
 description: >-
   身為一位自由工作者，時常會接到不同廠商的網站案子，但同一時間下可能不會只有開發一個網站，但同一個通訊埠(Port)又只能連結一個網站，這時候就需要

@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/TrainGoPrivacyPolicy/banner.png
 title: 【臺灣鐵路GO】隱私權條款
 description: >-
   非常歡迎您光臨「臺灣鐵路GO」（以下簡稱本應用程式），為了讓您能夠安心的使用本應用程式的各項服務與資訊，特此向您說明本應用程式的隱私權保護政策，以保障您的權益，請您詳閱下列內容

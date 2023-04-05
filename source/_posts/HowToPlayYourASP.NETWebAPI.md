@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/HowToPlayYourASP.NETWebAPI/banner.png
 title: ASP.NET Web API 2 基本建置與教學
 description: 在開發網頁應用程式，有時候會遇到一種情境，我們為了這個網頁做了很大量的開發 ...
 tags:

@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/BasicUsingJsonOnJavaOrAndroid/banner.png
 title: Java 或 Android 上的 Json 基本教學
 description: 很多應用程式開發時，傳遞都會使用 Json 作為規範格式，像是 Plurk API、Facebook API ...
 tags:

@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/HowToCreateBlogOnGithub/banner.png
 title: 如何在 GitHub 中建造一個屬於自己的部落格。
 description: 這是一份採用 Jekyll 為基底，使用 Hyde 作為樣板的部落格，詳細可以去參考來源地，而以下內容是我在維護這份部落格時，所撰寫給自己的常用筆記 ...
 tags:

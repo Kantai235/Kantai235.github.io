@@ -1,4 +1,5 @@
 ---
+cover: /img/posts/WowGithubNotSupportRedcarpet/banner.png
 title: 我的 GitHub 部落格收到了 warning 信件，這是怎麼回事？
 description: >-
   今天在整理 Blog 的時候收到一封信，內容大致上是這樣：[Kantai235/Kantai235.github.io] Page build
