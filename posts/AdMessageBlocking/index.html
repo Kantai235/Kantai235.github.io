@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討 | 我不會寫程式</title><meta name="author" content="乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"><meta name="copyright" content="乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="本文旨在探討社群平台經營者在面對廣告留言困擾時的解決方案。分享了封鎖留言的關鍵字列表的制定方法，並提及手動檢查是否有遭到誤刪的群眾的重要性。透過觀察和研究，文章揭示了關鍵字選擇的注意事項以及可能遭遇的問題，並提供實用的建議和策略，以解決留言困擾帶來的挑戰。"><link rel="shortcut icon" href="/img/icons/largetile.png"><link rel="canonical" href="https://blog.init.engineer/posts/AdMessageBlocking/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="XxMuIjmJ-Zsl538XPcEz_PT0qzbtv7gW7DPROnIEiU8"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-89952948-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-89952948-1');
+</script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;162ed30a043748a3a6ae92ec1bd92ef5&quot;}"></script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":128,"languages":{"author":"作者: 乾太 ₍₍ ◝(･◡･)◟ ⁾⁾","link":"連結: ","source":"來源: 我不會寫程式","info":"著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-14 00:00:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="alternate" href="/atom.xml" title="我不會寫程式" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">93</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">121</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">21</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目錄</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 技術主題</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/"><span> 💖 PHP 設計模式</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-hammer"></i><span> 線上小工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/posts/StringRandomGenerator/"><span> 線上 String 字串亂數產生器</span></a></li><li><a class="site-page child" href="/posts/ToolsUnicode/"><span> 線上編碼、解碼器 for Unicode</span></a></li><li><a class="site-page child" href="/posts/ToolsURL/"><span> 線上編碼、解碼器 for URL</span></a></li><li><a class="site-page child" href="/posts/ToolsBase64/"><span> 線上編碼、解碼器 for Base64</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/posts/AdMessageBlocking/banner.png')"><nav id="nav"><span id="blog-info"><a href="/" title="我不會寫程式"><span class="site-name">我不會寫程式</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-compass"></i><span> 目錄</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 技術主題</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/PHP-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/"><span> 💖 PHP 設計模式</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-hammer"></i><span> 線上小工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/posts/StringRandomGenerator/"><span> 線上 String 字串亂數產生器</span></a></li><li><a class="site-page child" href="/posts/ToolsUnicode/"><span> 線上編碼、解碼器 for Unicode</span></a></li><li><a class="site-page child" href="/posts/ToolsURL/"><span> 線上編碼、解碼器 for URL</span></a></li><li><a class="site-page child" href="/posts/ToolsBase64/"><span> 線上編碼、解碼器 for Base64</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">發表於</span><time datetime="2023-06-13T16:00:00.000Z" title="發表於 2023-06-14 00:00:00">2023-06-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB/">經驗分享</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數總計:</span><span class="word-count">5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時長:</span><span>15分鐘</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="解決廣告留言困擾的關鍵字封鎖挑戰"><a href="#解決廣告留言困擾的關鍵字封鎖挑戰" class="headerlink" title="解決廣告留言困擾的關鍵字封鎖挑戰"></a>解決廣告留言困擾的關鍵字封鎖挑戰</h1><p>當你經營一個社群平台時，廣告留言可能是你最常面對的困擾之一。這些留言不僅干擾了你的社群環境，也對使用者的體驗產生了負面影響。作為經營者，你開始意識到制定一些封鎖留言的關鍵字列表是解決這個問題的重要一環。然而，這並不是一件簡單的事情。當你開始封鎖某些關鍵字時，你可能會面臨到一個問題，那就是可能過度封鎖，而意外刪除了一些無辜的留言，甚至在社群中引起了一些不滿和抱怨。</p>
+<p>在我自己經營社群平台的經驗中，我也曾遇到類似的問題。當我嘗試解決廣告留言問題時，我意識到需要一個細緻且精確的關鍵字列表，以達到封鎖干擾留言的目的，同時又不誤刪重要的群眾留言。這需要投入大量的時間和努力，仔細觀察和研究留言內容，以確定哪些關鍵字與廣告留言最相關。</p>
+<p>然而，即使你已經投入了努力來建立關鍵字列表，問題還是可能發生。在某些情況下，你可能意外封鎖了一些真實使用者的留言，這可能導致使用者的流失和不滿情緒的增加。因此，除了關鍵字的封鎖，手動檢查留言也變得至關重要，以確保沒有遭到誤刪的群眾留言。</p>
+<p>在接下來的文章中，我將分享我所觀察到的關鍵字問題以及面臨的挑戰。我將討論如何制定關鍵字列表、避免誤刪留言的方法，以及如何有效管理廣告留言困擾。無論你是一位社群平台經營者還是對這個議題感興趣的讀者，這些實用的建議和策略都將幫助你解決留言困擾所帶來的挑戰。</p>
+<h1 id="分享觀察到的關鍵字"><a href="#分享觀察到的關鍵字" class="headerlink" title="分享觀察到的關鍵字"></a>分享觀察到的關鍵字</h1><p>首先，我們一起來看一個關鍵字封鎖的實例，這段實例是我在過去數年中積累的關鍵字封鎖的成果。每當我遇到廣告留言時，我會篩選出相關的關鍵字並將其新增至封鎖列表中。這樣的努力積累下來，我已經累計了多達300項關鍵字，然而，這些關鍵字的整理卻變得相當混亂。許多關鍵字的來源已經難以考究，我甚至發現了一些重複的內容片段。這些問題都需要被改善和解決。</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">每個月增加,全自動行銷軟體,逛逛,新平台,試賣,購買過程,推廣產,安全性及品,購買產品,使用產品,旅館約正妹l i n e,微信wechat id,主頁看本人照,台灣出差,旅館外約,純本土兼職,高挑氣質空姐,凱渥小模,火辣夜店辣妹,舞姬女郎,各行業兼職正妹,等你來哦,外約,叫小姐,全套,睡美人,茶莊,+賴,妹資,阿彌,創世破曉,王國紀元,紀元,破曉,每天接單無上限,找打字人員,雙人韓國來回機票,雙人韓國,來回機票,按讚粉絲專頁,崩潰男友,留言越多機會越高,抽獎送,參加方式,徵打字員,想賺錢的把握機會,現在入職還送手機喔,想買的東西買不了？,找我諮詢詳情吧,肯定要你一星期內就買得到,在家用手機就可以做,还有专人教你打字秘诀,有興趣了解加,雙人日本來回機票,雙人日本,眾多片分享,line.me,老司機群組,ivendor,網賺操作員,日賺1-3000元,親自教你怎麼賺錢,想了解趕快加我,非本人回覆請慎防詐騙,拍拖,paktor,運彩分析,臉書只有你和,臉書只有您和,在臉書我,在 fb 我,在fb我,股往金來,臉書只有,fb只有,fb 只有,值得信任,我最佩服,臉書我只看您,我只看你和,我只看您,看臉書這麽久,看fb這麽久,最讓人敬佩,只有您和,只有你和,讓人敬佩,在facebook,盤倉日記,最敬佩,大漲鴻圖,看facebook,我佩服,我信任,只有您,宏觀理念,利財隨筆,謝駿揚,錢線勘查,在fb只,倉盤日記,看臉書這,只有版主,追蹤版主,宏觀論市,受益頗多,感謝版主,分析透徹,講股論壇,臉書遇到,fb遇到,facebook遇到,透徹到位,觀點分析,關注老師,分析明了,fb現在,facebook現在,臉書現在,現在最值得,值得看版主,讓人信任,视频被删除,視頻被刪除,视频删除,視頻刪除,is.gd,在推薦,意外在,奪冠密碼,這位版主,平時簡單,獲益匪淺,平時善意,yep.pt,bit.ly,借錢免煩惱,飞机,100-500,海外抖音,海外斗音,批量广告,上千个号,趨勢觀察,不敗教主,陳重銘,值得佩服,只有板主,感謝板主,值得看板主,趨勢縱橫,推广引流,手动操作,日进粉,自动日,适用于,亚马逊,国际物流,护肤品,酒店用品,海外引流,一键群发,百万私信,国家地区,精准粉,加v,加w,稳定开单,专注推广,博主账号,个人工作,详询+,七天打造,任意行业,外部链接,当天即出效果,导流上号,精准上粉,一人可操作,霸屏发帖,必备神器,海外客户,详情联系,霸屏系统,网页后台,引流神器,t.me,+86,私信软件,海外钭音,日私信,精准采集,涨粉快,群发私信,顶尖软件,全网顶尖,操作便捷,变现快,纯网页端,跨境流量,流量黑马,wa.me,gift cards,出海神器,引流推广,推广工具,斜议引流,斜议私信,私信营销,无需注册,无需关注,强制私信,引到粉丝,粉丝添加,电子烟,电子产品,远程测试,上门考察,一键截取,国家粉丝,私域流量池,私信广告,直接私信,批量跨过,跨过关注,输送广告,一键批量,批量输送,获客,外贸行业,超级福音,超级私信,私信模式,精准定位,定位采集,每天稳定,客户主动,主动询盘,售后有保障,用心服务,跨境电商,独立站,独家技术,商品买卖,真实商品,链接自由,自由搭配,日爬取,爬取精准,精准粉丝,日强制,私信发送,发送不受限,大額小額,小額借款,支票借款,分享的觀點,臉書發現,fb發現,觀點確實,一位達人,投資筆記,股海浪子,值得追蹤,以股作樂,一心存股,伯樂相股,.vn,.is,.me,.to,.gg,.app,.link,.ly,.su,土伯股評,股海明燈,股評,股海,.la,發現值得追蹤,霸道股評,股票達人,股市達人,大家可以看看,朋友給我推薦,他的觀點,股市達,老股董,逍遙股海,.ng,港股,李筆記,輕松收益,公開實盤,關注博主,強勢股,股市風清揚,蝕扭為盈</span><br></pre></td></tr></table></figure>
+
+<h1 id="Facebook「隱藏的字詞、短語或表情符號」遊戲規則"><a href="#Facebook「隱藏的字詞、短語或表情符號」遊戲規則" class="headerlink" title="Facebook「隱藏的字詞、短語或表情符號」遊戲規則"></a>Facebook「隱藏的字詞、短語或表情符號」遊戲規則</h1><p>接下來我們需要先了解 Facebook「隱藏的字詞、短語或表情符號」的遊戲規則，只要包含關鍵字在其中的留言就會將其隱藏，並且詳細規則如下：</p>
+<blockquote>
+<p>使用數字、符號或不同拼法的關鍵字變化版本會自動被隱藏。例如：tree、TREE、tr33、treee、t.r.e.e、#tree。</p>
+</blockquote>
+<p>瞭解了遊戲規則以後，我們就可以把內容整理一下，先將單純只有英文的內容抽離出來，我們得出了以下內容，很明顯 <code>.me</code> 這個關鍵字與許多其他關鍵字重複了，例如 <code>line.me</code>、<code>t.me</code>、<code>wa.me</code>，並且其他網址類的都有重複的現象，我們將這些重複的項目移除，並且稍加整理尾端網域。</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">line.me,</span><br><span class="line">ivendor,</span><br><span class="line">paktor,</span><br><span class="line">is.gd,</span><br><span class="line">yep.pt,</span><br><span class="line">bit.ly,</span><br><span class="line">t.me,</span><br><span class="line">+86,</span><br><span class="line">wa.me,</span><br><span class="line">gift cards,</span><br><span class="line">.vn,</span><br><span class="line">.is,</span><br><span class="line">.me,</span><br><span class="line">.to,</span><br><span class="line">.gg,</span><br><span class="line">.app,</span><br><span class="line">.link,</span><br><span class="line">.ly,</span><br><span class="line">.su,</span><br><span class="line">.la,</span><br><span class="line">.ng,</span><br></pre></td></tr></table></figure>
+
+<p>我們最後會得到以下的關鍵字，從原本 21 項關鍵字減少到 17 項關鍵字，分別是高風險網域、廣告商名稱、電話國碼以及其它。</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 高風險網域</span></span><br><span class="line">.gd,</span><br><span class="line">.pt,</span><br><span class="line">.vn,</span><br><span class="line">.is,</span><br><span class="line">.me,</span><br><span class="line">.to,</span><br><span class="line">.gg,</span><br><span class="line">.app,</span><br><span class="line">.link,</span><br><span class="line">.ly,</span><br><span class="line">.su,</span><br><span class="line">.la,</span><br><span class="line">.ng,</span><br><span class="line"></span><br><span class="line"><span class="section"># 廣告商名稱</span></span><br><span class="line">ivendor,</span><br><span class="line">paktor,</span><br><span class="line"></span><br><span class="line"><span class="section"># 電話國碼</span></span><br><span class="line">+86,</span><br><span class="line"></span><br><span class="line"><span class="section"># 其它</span></span><br><span class="line">gift cards,</span><br></pre></td></tr></table></figure>
+
+<h1 id="遊戲規則對關鍵字封鎖的影響"><a href="#遊戲規則對關鍵字封鎖的影響" class="headerlink" title="遊戲規則對關鍵字封鎖的影響"></a>遊戲規則對關鍵字封鎖的影響</h1><p>但是整理到這邊，我們遇到了一個問題，就是如果使用者名稱或粉絲專頁屬於關鍵字封鎖的話，那麼這個封鎖效果是否仍舊有用呢？所以我們就建立了一個新的粉絲專頁，並且將「純靠北工程師」以及我的 Facebook 帳號本名加入到關鍵字封鎖當中，並且建立一個新的帳號到新的粉絲專頁當中留言。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/img/posts/AdMessageBlocking/1.png" alt="1.png"></p>
+<p>結論很出乎意料，如果這個帳號是以 Tag 的形式來留言，那麼關鍵字封鎖將不起任何作用，必須是純文字的方式，我們後續還有將網域、粉絲專頁 ID、帳號都加入關鍵字封鎖，都仍然不起作用，也就是說我們沒辦法用關鍵字封鎖來封鎖粉絲專頁，總而言之我們整理了以下規則：</p>
+<ol>
+<li>留言 Tag 的粉絲專頁名稱如果包含關鍵字，那麼關鍵字封鎖將不起作用。</li>
+<li>留言 Tag 的粉絲專頁如果已遭粉絲專頁封鎖，使用者仍然可以留言，而粉絲專頁只是不會顯示超連結，關鍵字封鎖也仍舊不起作用。</li>
+<li>留言的如果不是 Tag，而是文字的話，關鍵字封鎖將起作用。</li>
+<li>留言的如果是網址，那麼關鍵字仍然會起作用。</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="/img/posts/AdMessageBlocking/2.png" alt="2.png"></p>
+<p>所以如果我們遇到了「臉書我只看您和 @xxx」之類的留言，我們將「@xxx」加入關鍵字封鎖是徒勞無功的，因為根據以上規則，關鍵字封鎖將會睡覺，睡著的系統是永遠叫不醒的，但是如果我們將「我只看您」加入關鍵字封鎖，那這樣的留言將會被系統屏蔽。</p>
+<p>這就產生了一個很大的問題，那便是我們如果要封鎖廣告留言的話，我們不能直接封鎖目標，我們需要封鎖除了它以外的內容，變成需要仰賴龐大的留言數量來搜尋特定關鍵字有多少人在使用，因此長時間以來，我一直在對自己粉絲專頁的留言做蒐集的動作，就是為了拿來做後續處理用的，舉例來說，我想封鎖「股市」這種一聽就覺得很不妙的關鍵字，在純靠北工程師當中提到股市，八九不離十應該是廣告對吧？</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/img/posts/AdMessageBlocking/3.png" alt="3.png"></p>
+<p>但事實上從資料庫下去檢查後，會發現有不少真實留言卻會提到「股市」這個再常見不過的關鍵字了，反而廣告留言只有最後一條，因此換個思維下去思考，如果我改成封鎖「行情走勢」這個關鍵字呢？這次就正中目標了，這是個沒有人在用的詞彙，封鎖下去就對了。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/img/posts/AdMessageBlocking/4.png" alt="4.png"></p>
+<h1 id="整理不同類別的關鍵字"><a href="#整理不同類別的關鍵字" class="headerlink" title="整理不同類別的關鍵字"></a>整理不同類別的關鍵字</h1><p>接下來就可以根據留言資料庫，來好好的比對一下每項關鍵字真實留言、廣告的使用率，稍作整理以後，我們分了幾個類別，分別是 <code>性交易相關</code>、<code>股市相關</code>、<code>誘導用詞</code>、<code>投資相關</code>、<code>打字員</code>、<code>運彩分析</code>、<code>跨境廣告</code>、<code>高風險網域</code>、<code>廣告商名稱</code> 以及 <code>電話國碼</code>，我們將其稍作整理後，就有了以下初步的關鍵字名單：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 性交易相關</span></span><br><span class="line">找小姐,</span><br><span class="line">叫小姐,</span><br><span class="line">學生妹,</span><br><span class="line">清涼妹,</span><br><span class="line">外約,</span><br><span class="line">全套,</span><br><span class="line">半套,</span><br><span class="line">茶莊,</span><br><span class="line">+賴,</span><br><span class="line">加賴,</span><br><span class="line">賴客服,</span><br><span class="line">+LINE,</span><br><span class="line">加LINE,</span><br><span class="line">LINE客服,</span><br><span class="line"></span><br><span class="line"><span class="section"># 股市相關</span></span><br><span class="line">股評,</span><br><span class="line">股海,</span><br><span class="line">股董,</span><br><span class="line">強勢股,</span><br><span class="line">注意股,</span><br><span class="line">處置股,</span><br><span class="line"></span><br><span class="line"><span class="section"># 誘導用詞 - 提及使用者</span></span><br><span class="line">只有您和,</span><br><span class="line">只有你和,</span><br><span class="line">只看你和,</span><br><span class="line">只看您和,</span><br><span class="line"></span><br><span class="line"><span class="section"># 誘導用詞 - 提及板主、版主</span></span><br><span class="line">只有板主,</span><br><span class="line">只有版主,</span><br><span class="line">追蹤板主,</span><br><span class="line">追蹤版主,</span><br><span class="line">感謝板主,</span><br><span class="line">感謝版主,</span><br><span class="line">這位板主,</span><br><span class="line">這位版主,</span><br><span class="line">值得看板主,</span><br><span class="line">值得看版主,</span><br><span class="line"></span><br><span class="line"><span class="section"># 誘導用詞 - 提及 Facebook</span></span><br><span class="line">fb遇到,</span><br><span class="line">fb發現,</span><br><span class="line">fb只有,</span><br><span class="line">fb現在,</span><br><span class="line">facebook遇到,</span><br><span class="line">facebook發現,</span><br><span class="line">facebook只有,</span><br><span class="line">facebook現在,</span><br><span class="line"></span><br><span class="line">在fb只,</span><br><span class="line">在fb我,</span><br><span class="line">在fb這,</span><br><span class="line">看fb只,</span><br><span class="line">看fb我,</span><br><span class="line">看fb這,</span><br><span class="line">在facebook,</span><br><span class="line">看facebook,</span><br><span class="line"></span><br><span class="line">在臉書,</span><br><span class="line">看臉書,</span><br><span class="line">臉書只,</span><br><span class="line">臉書發,</span><br><span class="line">臉書我,</span><br><span class="line">臉書遇到,</span><br><span class="line">臉書現在,</span><br><span class="line"></span><br><span class="line"><span class="section"># 誘導用詞 - 四字箴言</span></span><br><span class="line">受益頗多,</span><br><span class="line">分析透徹,</span><br><span class="line">透徹到位,</span><br><span class="line">觀點分析,</span><br><span class="line">關注老師,</span><br><span class="line">分析明了,</span><br><span class="line">平時簡單,</span><br><span class="line">平時善意,</span><br><span class="line">獲益匪淺,</span><br><span class="line">值得佩服,</span><br><span class="line">他的觀點,</span><br><span class="line">輕松收益,</span><br><span class="line">公開實盤,</span><br><span class="line">關注博主,</span><br><span class="line">蝕扭為盈,</span><br><span class="line">觀點確實,</span><br><span class="line">一位達人,</span><br><span class="line">值得追蹤,</span><br><span class="line"></span><br><span class="line"><span class="section"># 誘導用詞 - 其它</span></span><br><span class="line">分享的觀點,</span><br><span class="line">我佩服,</span><br><span class="line">我信任,</span><br><span class="line">我最佩服,</span><br><span class="line">我最信任,</span><br><span class="line">我最敬佩,</span><br><span class="line">我敬佩,</span><br><span class="line">值得佩服,</span><br><span class="line">值得信任,</span><br><span class="line">值得敬佩,</span><br><span class="line">意外在,</span><br><span class="line">讓人佩服,</span><br><span class="line">讓人信任,</span><br><span class="line">讓人敬佩,</span><br><span class="line"></span><br><span class="line"><span class="section"># 投資相關粉絲專頁</span></span><br><span class="line">李筆記,</span><br><span class="line">陳重銘,</span><br><span class="line">謝駿揚,</span><br><span class="line">一心存股,</span><br><span class="line">土伯股評,</span><br><span class="line">大漲鴻圖,</span><br><span class="line">不敗教主,</span><br><span class="line">以股作樂,</span><br><span class="line">伯樂相股,</span><br><span class="line">利財隨筆,</span><br><span class="line">宏觀理念,</span><br><span class="line">宏觀論市,</span><br><span class="line">投資筆記,</span><br><span class="line">股往金來,</span><br><span class="line">倉盤日記,</span><br><span class="line">奪冠密碼,</span><br><span class="line">盤倉日記,</span><br><span class="line">錢線勘查,</span><br><span class="line">講股論壇,</span><br><span class="line">趨勢縱橫,</span><br><span class="line">趨勢觀察,</span><br><span class="line">股市風清揚,</span><br><span class="line"></span><br><span class="line"><span class="section"># 打字員</span></span><br><span class="line">日賺,</span><br><span class="line">打字人員,</span><br><span class="line">打字員,</span><br><span class="line">打字秘诀,</span><br><span class="line">本土兼職,</span><br><span class="line">在家用手,</span><br><span class="line">有興趣了解加,</span><br><span class="line">老司,</span><br><span class="line">每天接單,</span><br><span class="line">來回機票,</span><br><span class="line">抽獎送,</span><br><span class="line">留言越多,</span><br><span class="line">參加方式,</span><br><span class="line">崩潰男友,</span><br><span class="line">現在入職,</span><br><span class="line">眾多片分享,</span><br><span class="line">想了解,</span><br><span class="line">慎防詐騙,</span><br><span class="line">網賺操作員,</span><br><span class="line">趕快加我,</span><br><span class="line">機會越高,</span><br><span class="line">機群組,</span><br><span class="line">親自教你怎麼賺錢,</span><br><span class="line"></span><br><span class="line"><span class="section"># 運彩分析</span></span><br><span class="line">運彩,</span><br><span class="line">都會贏,</span><br><span class="line">不作假,</span><br><span class="line">免費分析,</span><br><span class="line"></span><br><span class="line"><span class="section"># 跨境廣告</span></span><br><span class="line">一人可操作,</span><br><span class="line">一键,</span><br><span class="line">七天打造,</span><br><span class="line">上千个号,</span><br><span class="line">上门考察,</span><br><span class="line">个人工作,</span><br><span class="line">大額小額,</span><br><span class="line">小額借款,</span><br><span class="line">广告,</span><br><span class="line">飞机,</span><br><span class="line">引流,</span><br><span class="line">手动操作,</span><br><span class="line">支票借款,</span><br><span class="line">斗音,</span><br><span class="line">无需,</span><br><span class="line">日私信,</span><br><span class="line">日爬取,</span><br><span class="line">日进粉,</span><br><span class="line">日强制,</span><br><span class="line">主动询盘,</span><br><span class="line">出海神器,</span><br><span class="line">加v,</span><br><span class="line">加w,</span><br><span class="line">发送不受限,</span><br><span class="line">外贸行业,</span><br><span class="line">外部链接,</span><br><span class="line">必备神器,</span><br><span class="line">用心服务,</span><br><span class="line">电子,</span><br><span class="line">亚马逊,</span><br><span class="line">任意行业,</span><br><span class="line">全网顶尖,</span><br><span class="line">导流上号,</span><br><span class="line">百万私信,</span><br><span class="line">网页后台,</span><br><span class="line">自由搭配,</span><br><span class="line">自动日,</span><br><span class="line">批量跨过,</span><br><span class="line">批量输送,</span><br><span class="line">抖音,</span><br><span class="line">护肤品,</span><br><span class="line">每天稳定,</span><br><span class="line">私信发送,</span><br><span class="line">私信软件,</span><br><span class="line">私信营销,</span><br><span class="line">私信模式,</span><br><span class="line">私域流量池,</span><br><span class="line">纯网页端,</span><br><span class="line">变现快,</span><br><span class="line">国际物流,</span><br><span class="line">国家地区,</span><br><span class="line">定位采集,</span><br><span class="line">爬取精准,</span><br><span class="line">直接私信,</span><br><span class="line">详询+,</span><br><span class="line">详情联系,</span><br><span class="line">远程测试,</span><br><span class="line">顶尖软件,</span><br><span class="line">客户主动,</span><br><span class="line">流量黑马,</span><br><span class="line">独立站,</span><br><span class="line">独家技术,</span><br><span class="line">海外客户,</span><br><span class="line">海外钭音,</span><br><span class="line">涨粉快,</span><br><span class="line">真实商品,</span><br><span class="line">粉丝,</span><br><span class="line">适用于,</span><br><span class="line">酒店用品,</span><br><span class="line">售后有保障,</span><br><span class="line">商品买卖,</span><br><span class="line">推广,</span><br><span class="line">斜议私信,</span><br><span class="line">获客,</span><br><span class="line">博主账号,</span><br><span class="line">强制私信,</span><br><span class="line">超级私信,</span><br><span class="line">超级福音,</span><br><span class="line">链接自由,</span><br><span class="line">群发私信,</span><br><span class="line">跨过关注,</span><br><span class="line">跨境电商,</span><br><span class="line">跨境流量,</span><br><span class="line">稳定开单,</span><br><span class="line">精准上粉,</span><br><span class="line">精准定位,</span><br><span class="line">精准采集,</span><br><span class="line">精准粉,</span><br><span class="line">操作便捷,</span><br><span class="line">霸屏发帖,</span><br><span class="line">霸屏系统,</span><br><span class="line"></span><br><span class="line"><span class="section"># 高風險網域</span></span><br><span class="line">.app,</span><br><span class="line">.cc,</span><br><span class="line">.gd,</span><br><span class="line">.gg,</span><br><span class="line">.is,</span><br><span class="line">.la,</span><br><span class="line">.link,</span><br><span class="line">.ly,</span><br><span class="line">.me,</span><br><span class="line">.ng,</span><br><span class="line">.pt,</span><br><span class="line">.su,</span><br><span class="line">.to,</span><br><span class="line">.vn,</span><br><span class="line"></span><br><span class="line"><span class="section"># 廣告商名稱</span></span><br><span class="line">ivendor,</span><br><span class="line">paktor,</span><br><span class="line"></span><br><span class="line"><span class="section"># 電話國碼</span></span><br><span class="line">+60,</span><br><span class="line">+63,</span><br><span class="line">+66,</span><br><span class="line">+84,</span><br><span class="line">+86,</span><br><span class="line">+886,</span><br></pre></td></tr></table></figure>
+
+<h1 id="濃縮的關鍵字封鎖列表"><a href="#濃縮的關鍵字封鎖列表" class="headerlink" title="濃縮的關鍵字封鎖列表"></a>濃縮的關鍵字封鎖列表</h1><p>如果你想要直接複製貼上到自己粉絲專頁的關鍵字封鎖的話，以下我也幫你整理好了濃縮起來的版本：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">找小姐,叫小姐,學生妹,清涼妹,外約,全套,半套,茶莊,+賴,加賴,賴客服,+LINE,加LINE,LINE客服,股評,股海,股董,強勢股,注意股,處置股,只有您和,只有你和,只看你和,只看您和,只有板主,只有版主,追蹤板主,追蹤版主,感謝板主,感謝版主,這位板主,這位版主,值得看板主,值得看版主,fb遇到,fb發現,fb只有,fb現在,facebook遇到,facebook發現,facebook只有,facebook現在,在fb只,在fb我,在fb這,看fb只,看fb我,看fb這,在facebook,看facebook,在臉書,看臉書,臉書只,臉書發,臉書我,臉書遇到,臉書現在,受益頗多,分析透徹,透徹到位,觀點分析,關注老師,分析明了,平時簡單,平時善意,獲益匪淺,值得佩服,他的觀點,輕松收益,公開實盤,關注博主,蝕扭為盈,觀點確實,一位達人,值得追蹤,分享的觀點,我佩服,我信任,我最佩服,我最信任,我最敬佩,我敬佩,值得佩服,值得信任,值得敬佩,意外在,讓人佩服,讓人信任,讓人敬佩,李筆記,陳重銘,謝駿揚,一心存股,土伯股評,大漲鴻圖,不敗教主,以股作樂,伯樂相股,利財隨筆,宏觀理念,宏觀論市,投資筆記,股往金來,倉盤日記,奪冠密碼,盤倉日記,錢線勘查,講股論壇,趨勢縱橫,趨勢觀察,股市風清揚,日賺,打字人員,打字員,打字秘诀,本土兼職,在家用手,有興趣了解加,老司,每天接單,來回機票,抽獎送,留言越多,參加方式,崩潰男友,現在入職,眾多片分享,想了解,慎防詐騙,網賺操作員,趕快加我,機會越高,機群組,親自教你怎麼賺錢,運彩,都會贏,不作假,免費分析,一人可操作,一键,七天打造,上千个号,上门考察,个人工作,大額小額,小額借款,广告,飞机,引流,手动操作,支票借款,斗音,无需,日私信,日爬取,日进粉,日强制,主动询盘,出海神器,加v,加w,发送不受限,外贸行业,外部链接,必备神器,用心服务,电子,亚马逊,任意行业,全网顶尖,导流上号,百万私信,网页后台,自由搭配,自动日,批量跨过,批量输送,抖音,护肤品,每天稳定,私信发送,私信软件,私信营销,私信模式,私域流量池,纯网页端,变现快,国际物流,国家地区,定位采集,爬取精准,直接私信,详询+,详情联系,远程测试,顶尖软件,客户主动,流量黑马,独立站,独家技术,海外客户,海外钭音,涨粉快,真实商品,粉丝,适用于,酒店用品,售后有保障,商品买卖,推广,斜议私信,获客,博主账号,强制私信,超级私信,超级福音,链接自由,群发私信,跨过关注,跨境电商,跨境流量,稳定开单,精准上粉,精准定位,精准采集,精准粉,操作便捷,霸屏发帖,霸屏系统,.app,.cc,.gd,.gg,.is,.la,.link,.ly,.me,.ng,.pt,.su,.to,.vn,ivendor,paktor,+60,+63,+66,+84,+86,+886,</span><br></pre></td></tr></table></figure>
+
+<p>截至目前為止，總共有 251 個關鍵字，目前在思考之後可能會建立一套廣告回報系統，盡可能減少篩選關鍵字的這個人工成本，不過這需要一點時間去想該怎麼實作，如果你對於關鍵字封鎖也有興趣，或者想參與這些過程的話，可以來我們的 Discord 找乾太 talk talk ㄛ 🥺</p>
+<p>我是你們厝邊隔壁陪你寫程式的好鄰居乾太，我們下次見。</p>
+<p>👉 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://discord.com/invite/tPhnrs2">純靠北工程師 Discord</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.init.engineer">乾太 ₍₍ ◝(･◡･)◟ ⁾⁾</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="https://blog.init.engineer/posts/AdMessageBlocking/">https://blog.init.engineer/posts/AdMessageBlocking/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-ND 4.0</a> 許可協議。轉載請註明來自 <a href="https://blog.init.engineer" target="_blank">我不會寫程式</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BB%A3%E5%91%8A%E7%95%99%E8%A8%80/">廣告留言</a><a class="post-meta__tags" href="/tags/%E7%A4%BE%E7%BE%A4%E7%B6%93%E7%87%9F/">社群經營</a></div><div class="post_share"><div class="social-share" data-image="/img/posts/AdMessageBlocking/banner.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/HowToUseGitHubProjectForArtist/" title="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/posts/HowToUseGitHubProjectsForArtist/banner.png" onerror="onerror=null;src='/img/404.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="disqusjs"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">乾太 ₍₍ ◝(･◡･)◟ ⁾⁾</div><div class="author-info__description">我覺得我原本如果不是大師級的開發者，我至少也是一位大神級的開發者，直到我端火鍋摔倒撞到頭以後，我就變成了一個只會 Hello World 的菜鳥。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">93</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">121</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">21</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Kantai235"><i class="fab fa-github"></i><span>GitHub</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:kantai.developer@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">如果您對於文章內容有誤勘的問題，可以到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Kantai235/Kantai235.github.io/issues" style="color:#49b1f5">GitHub Issues</a> 反應給我，也可以到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://discord.gg/tPhnrs2" style="color:#49b1f5">Discord</a> 當中直接跟我說。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E6%B1%BA%E5%BB%A3%E5%91%8A%E7%95%99%E8%A8%80%E5%9B%B0%E6%93%BE%E7%9A%84%E9%97%9C%E9%8D%B5%E5%AD%97%E5%B0%81%E9%8E%96%E6%8C%91%E6%88%B0"><span class="toc-number">1.</span> <span class="toc-text">解決廣告留言困擾的關鍵字封鎖挑戰</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E4%BA%AB%E8%A7%80%E5%AF%9F%E5%88%B0%E7%9A%84%E9%97%9C%E9%8D%B5%E5%AD%97"><span class="toc-number">2.</span> <span class="toc-text">分享觀察到的關鍵字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Facebook%E3%80%8C%E9%9A%B1%E8%97%8F%E7%9A%84%E5%AD%97%E8%A9%9E%E3%80%81%E7%9F%AD%E8%AA%9E%E6%88%96%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E3%80%8D%E9%81%8A%E6%88%B2%E8%A6%8F%E5%89%87"><span class="toc-number">3.</span> <span class="toc-text">Facebook「隱藏的字詞、短語或表情符號」遊戲規則</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%8A%E6%88%B2%E8%A6%8F%E5%89%87%E5%B0%8D%E9%97%9C%E9%8D%B5%E5%AD%97%E5%B0%81%E9%8E%96%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="toc-number">4.</span> <span class="toc-text">遊戲規則對關鍵字封鎖的影響</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B4%E7%90%86%E4%B8%8D%E5%90%8C%E9%A1%9E%E5%88%A5%E7%9A%84%E9%97%9C%E9%8D%B5%E5%AD%97"><span class="toc-number">5.</span> <span class="toc-text">整理不同類別的關鍵字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BF%83%E7%B8%AE%E7%9A%84%E9%97%9C%E9%8D%B5%E5%AD%97%E5%B0%81%E9%8E%96%E5%88%97%E8%A1%A8"><span class="toc-number">6.</span> <span class="toc-text">濃縮的關鍵字封鎖列表</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/AdMessageBlocking/" title="廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討"><img src= "/img/loading.gif" data-lazy-src="/img/posts/AdMessageBlocking/banner.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討"/></a><div class="content"><a class="title" href="/posts/AdMessageBlocking/" title="廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討">廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討</a><time datetime="2023-06-13T16:00:00.000Z" title="發表於 2023-06-14 00:00:00">2023-06-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/HowToUseGitHubProjectForArtist/" title="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）"><img src= "/img/loading.gif" data-lazy-src="/img/posts/HowToUseGitHubProjectsForArtist/banner.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）"/></a><div class="content"><a class="title" href="/posts/HowToUseGitHubProjectForArtist/" title="如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）">如何透過 GitHub 的 Projects 功能，來協助專案管理的執行（以委託繪師為例）</a><time datetime="2023-02-16T04:00:00.000Z" title="發表於 2023-02-16 12:00:00">2023-02-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/KantaiCoupon/" title="乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ..."><img src= "/img/loading.gif" data-lazy-src="/img/posts/KantaiCoupon/banner.jpeg" onerror="this.onerror=null;this.src='/img/404.gif'" alt="乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ..."/></a><div class="content"><a class="title" href="/posts/KantaiCoupon/" title="乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ...">乾太推薦碼，信用卡、銀行、外送、購物、交通，Richart、e.Fingo、MaiCoin Max、Pionex、KOKO、LINE Bank、Shopee、Uber Eats、Foodpanda ...</a><time datetime="2022-03-22T16:00:00.000Z" title="發表於 2022-03-23 00:00:00">2022-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/BlockedPan93412/" title="【社群恩仇錄】byStarTW/instanceof/pan93412"><img src= "/img/loading.gif" data-lazy-src="/img/posts/BlockedPan93412/banner.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="【社群恩仇錄】byStarTW/instanceof/pan93412"/></a><div class="content"><a class="title" href="/posts/BlockedPan93412/" title="【社群恩仇錄】byStarTW/instanceof/pan93412">【社群恩仇錄】byStarTW/instanceof/pan93412</a><time datetime="2022-03-06T16:00:00.000Z" title="發表於 2022-03-07 00:00:00">2022-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/MovingAverageConvergenceDivergence/" title="【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence"><img src= "/img/loading.gif" data-lazy-src="/img/posts/MovingAverageConvergenceDivergence/banner.png" onerror="this.onerror=null;this.src='/img/404.gif'" alt="【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence"/></a><div class="content"><a class="title" href="/posts/MovingAverageConvergenceDivergence/" title="【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence">【學習筆記】指數平滑異同移動平均線 Moving Average Convergence / Divergence</a><time datetime="2022-02-22T16:00:00.000Z" title="發表於 2022-02-23 00:00:00">2022-02-23</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/posts/AdMessageBlocking/banner.png')"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2023 By 乾太 ₍₍ ◝(･◡･)◟ ⁾⁾</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">繁</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqusjs () {
+  function initDisqusjs () {
+    window.disqusjs = null
+    disqusjs = new DisqusJS(Object.assign({
+      shortname: 'kantai-developer-blog',
+      identifier: '/posts/AdMessageBlocking/',
+      url: 'https://blog.init.engineer/posts/AdMessageBlocking/',
+      title: '廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討',
+      apikey: '',
+    },null))
+
+    disqusjs.render(document.getElementById('disqusjs'))
+  }
+
+  const themeChange = () => {
+    const ele = document.getElementById('disqus_thread')
+    if(!ele) return
+    disqusjs.destroy()
+    initDisqusjs()
+  }
+
+
+  document.getElementById('darkmode').addEventListener('click', themeChange)
+
+  if (window.disqusJsLoad) initDisqusjs()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/disqusjs/dist/browser/styles/disqusjs.min.css')
+    getScript('https://cdn.jsdelivr.net/npm/disqusjs/dist/browser/disqusjs.es2015.umd.min.js').then(initDisqusjs)
+    window.disqusJsLoad = true
+  }
+}
+
+if ('Disqusjs' === 'Disqusjs' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqusjs'), loadDisqusjs)
+  else loadDisqusjs()
+}
+else {
+  function loadOtherComment () {
+    loadDisqusjs()
+  }
+}
+
+</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[圖片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[連結]') // replace url
+    content = content.replace(/<code>.*?<\/code>/gi, '[程式碼]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    fetch('https://disqus.com/api/3.0/forums/listPosts.json?forum=kantai-developer-blog&related=thread&limit=6&api_key=')
+      .then(response => response.json())
+      .then(data => {
+        const disqusArray = data.response.map(item => {
+          return {
+            'avatar': item.author.avatar.cache,
+            'content': changeContent(item.message),
+            'nick': item.author.name,
+            'url': item.url,
+            'date': item.createdAt
+          }
+        })
+
+        saveToLocal.set('disqus-newest-comments', JSON.stringify(disqusArray), 5/(60*24))
+        generateHtml(disqusArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "無法獲取評論，請確認相關配置是否正確"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick}</span><time> / ${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '沒有評論'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('disqus-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="🤣,🤔,🥴,😭,😪,🥺,😡" data-fontsize="24px" data-random="true" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"]):not([href="/talking/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'UA-89952948-1', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></body></html>
