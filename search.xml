@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>透過 ChatGPT 應用於商業信件心得</title>
+      <link href="/posts/WriteALetterUsingGPT/"/>
+      <url>/posts/WriteALetterUsingGPT/</url>
+      
+        <content type="html"><![CDATA[<p>其實乾太不太會撰寫信件、文章甚至講話，但透過 GPT 可以將這個缺點彌補到堪用，而最近有大量商業信件往來的需求，因此在工具的輔助下，有了一些心得可以分享。</p><p>舉個最近的例子，我最近需要替組織尋求贊助、合作機會，這時候如果直接去請 GPT 生出一個信件草稿給你參考，那麼它所產生的內容不只多半無法使用，內容還缺乏可參考性。為了避免這樣的問題產生，我會先整理背景資訊，簡單整理成幾個重要資訊：</p><ul><li>自己是誰？<ul><li>你所代表的組織、公司或你個人，你需要介紹你所代表的是什麼、在做什麼的、有什麼豐功偉業。</li></ul></li><li>對方是誰？<ul><li>你的目標是誰，可以很明確的指定，也可以提供一個抽象的概念，它可能是科技業、傳統產業、基金會或政府部門。</li></ul></li><li>自己要什麼？<ul><li>你這封信的目標是什麼，想要從對方身上獲得什麼。</li></ul></li><li>對方要什麼？<ul><li>你能夠提供對方什麼，你有多少可以談的空間。</li></ul></li></ul><p>如果我們有詳細的向 GPT 介紹這幾項重點的話，基本上它都有辦法給你一份能夠參考的草稿，但這份草稿基本上會因為你前面提供的內容多寡，而決定了它產給你的範本有多長。這不是壞事，只是我們需要稍微修飾一下。</p><p>首先我會自己思考一個信件的結構，每個段落的重點是什麼，舉例來說，最近在寫的合作邀請信件，我會要求 GPT 將段落修改成「介紹組織、現在情況、合作邀請」三個段落。到這邊基本上已經完成了信件的最初草稿了，但味道仍舊不太對，很容易就會被發現是透過工具來產生出來的信件內容，原因是：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我們寫信件的時候，需要注重禮貌，而 GPT 會把禮貌過於注重。</span><br></pre></td></tr></table></figure><p>舉例來說，GPT 幫我撰寫了信件結尾的部分，有兩個範本給各位參考，可以猜猜看哪個選項是工具所產生的，而哪個選項又是潤飾過的。</p><p>🅰️ 詳情請見贊助徵求書，我們期待您的回音，共同開創合作新篇章。<br>🅱️ 請參閱附上的贊助徵求書，以了解如何成為我們的支持者和合作夥伴。我們期待您的積極回應，共同為台灣的資訊教育及科技創新貢獻一份力量。</p><p>前者是經過潤飾的，而後者是工具產生出來的，你會發現工具產生出來的會有一種過頭了的感覺，具體來說就是把內容簡化、多餘的刪掉。最後我們會獲得一份接近人工打造的信件草稿，只需要再稍微修改部分用詞就好。</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPT 懂得如何產生內容，但 GPT 並不懂得如何創造內容。</span><br></pre></td></tr></table></figure><p>🅰️ 通過品牌曝光和互動，與這群未來的科技人才建立聯繫。<br>🅱️ 通過品牌曝光和互動，與這群未來的科技新星建立聯繫。</p><p>前後者的差別僅有最後的「科技人才」改為「科技新星」，透過創造一些字詞、用語，來讓信件內容看起來更有趣些，也更有一點手工的味道。目前的 GPT 食用心得大致上是這樣，可以分成幾個階段，建立背景、定義需求、細部修正，整個工具現階段對我來說是這樣：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用 GPT 幫我寫信件，我一篇都沒辦法用；</span><br><span class="line">沒有 GPT 幫我寫信件，我一篇都寫不出來。</span><br></pre></td></tr></table></figure><p>最後，以上內容皆為乾太純手工打造，充滿乾太的溫度，請安心使用 🦊❤️</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 經驗分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ChatGPT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>廣告留言困擾的解決方案，關鍵字封鎖與群眾誤刪問題探討</title>
       <link href="/posts/AdMessageBlocking/"/>
       <url>/posts/AdMessageBlocking/</url>
