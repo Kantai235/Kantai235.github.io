@@ -1,0 +1,39 @@
+[[main]]
+  name = "首頁"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "工程師"
+  pageRef = "/engineer"
+  weight = 20
+
+[[main]]
+  name = "獸控"
+  pageRef = "/kemono"
+  weight = 30
+
+[[main]]
+  name = "文章"
+  pageRef = "/posts"
+  weight = 40
+
+[[main]]
+  name = "分類"
+  pageRef = "/categories"
+  weight = 50
+
+[[main]]
+  name = "標籤"
+  pageRef = "/tags"
+  weight = 60
+
+[[footer]]
+  name = "關於我"
+  pageRef = "/about"
+  weight = 10
+
+[[footer]]
+  name = "聯絡我"
+  pageRef = "/contact"
+  weight = 20

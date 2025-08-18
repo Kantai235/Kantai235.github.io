@@ -1,11 +1,39 @@
+# Operating System
 .DS_Store
 Thumbs.db
-db.json
-*.log
-node_modules/
+
+# Hugo
 public/
-.deploy*/
-.history/
-source/_backup/
+.hugo_build.lock
+hugo_stats.json
+
+# Development Tools
 .vscode/
+.claude/
+
+# Node.js (if using)
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+
+# Hexo (legacy - can be removed after migration)
+db.json
+.deploy*/
 .deploy_git/
+
+# Backup files
+*backup*/
+source/_backup/
+.history/
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local
+.env.production

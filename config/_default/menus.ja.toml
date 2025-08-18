@@ -1,0 +1,39 @@
+[[main]]
+  name = "ホーム"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "エンジニア"
+  pageRef = "/engineer"
+  weight = 20
+
+[[main]]
+  name = "ケモナー"
+  pageRef = "/kemono"
+  weight = 30
+
+[[main]]
+  name = "記事"
+  pageRef = "/posts"
+  weight = 40
+
+[[main]]
+  name = "カテゴリ"
+  pageRef = "/categories"
+  weight = 50
+
+[[main]]
+  name = "タグ"
+  pageRef = "/tags"
+  weight = 60
+
+[[footer]]
+  name = "私について"
+  pageRef = "/about"
+  weight = 10
+
+[[footer]]
+  name = "お問い合わせ"
+  pageRef = "/contact"
+  weight = 20
