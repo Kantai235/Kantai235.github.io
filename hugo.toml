@@ -13,6 +13,14 @@ defaultContentLanguage = 'zh-tw'
 
 [params]
   description = '軟體工程師與獸控的雙重身份'
+  # 圖片優化設定
+  backgroundImageWidth = 1200  # 文章內頁使用的背景圖片寬度
+
+# 圖片處理設定
+[imaging]
+  resampleFilter = "lanczos"
+  quality = 75  # 預設圖片品質
+  anchor = "smart"  # 智慧裁切
 
 [markup]
   [markup.goldmark]
