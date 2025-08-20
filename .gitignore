@@ -4,29 +4,21 @@ Thumbs.db
 
 # Hugo
 public/
+resources/
 .hugo_build.lock
 hugo_stats.json
 
 # Development Tools
 .vscode/
 .claude/
+CLAUDE.md
 
-# Node.js (if using)
+# Node.js
 node_modules/
 package-lock.json
 
 # Logs
 *.log
-
-# Hexo (legacy - can be removed after migration)
-db.json
-.deploy*/
-.deploy_git/
-
-# Backup files
-*backup*/
-source/_backup/
-.history/
 
 # IDE
 .idea/
@@ -38,4 +30,12 @@ source/_backup/
 .env.local
 .env.production
 
-resources
+# Backup files
+*backup*/
+.history/
+
+# Legacy (Hexo migration - 可在確認遷移完成後移除)
+db.json
+.deploy*/
+.deploy_git/
+source/_backup/
