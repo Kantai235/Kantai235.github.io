@@ -1,14 +1,14 @@
-disabled = false
 languageCode = "en"
 languageName = "English"
-weight = 1
-title = "Blowfish"
+weight = 2
+title = "I Can't Write Code"
 
 [params]
   displayName = "EN"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
+  description = "The dual identity of a software engineer and furry"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   # description = "My awesome website"

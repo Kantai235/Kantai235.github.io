@@ -1,10 +1,6 @@
 ---
 title: "Kantai - Software Engineer & Furry"
 description: "Welcome to my blog! I'm Kantai, a passionate software engineer and also a furry. Here you can learn about my technical sharing and my furry world."
-cascade:
-  showEdit: false
-  showSummary: false
-  hideFeatureImage: false
 ---
 
 👋 **Welcome to my world!**

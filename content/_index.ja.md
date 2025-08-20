@@ -1,10 +1,6 @@
 ---
 title: "乾太 - ソフトウェアエンジニア & ケモナー"
 description: "私のブログへようこそ！私は乾太、技術を愛するソフトウェアエンジニアであり、ケモナーでもあります。ここでは私の技術的な共有とケモノの世界について知ることができます。"
-cascade:
-  showEdit: false
-  showSummary: false
-  hideFeatureImage: false
 ---
 
 👋 **私の世界へようこそ！**
