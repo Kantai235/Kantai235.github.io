@@ -37,3 +37,5 @@ source/_backup/
 .env
 .env.local
 .env.production
+
+resources
