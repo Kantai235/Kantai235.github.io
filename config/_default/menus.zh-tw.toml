@@ -16,26 +16,60 @@
   weight = 10
 
 [[main]]
-  name = "工程師"
-  pageRef = "/engineer"
+  name = "關於我"
   weight = 20
 
 [[main]]
   name = "獸控"
+  parent = "關於我"
   pageRef = "/kemono"
+  weight = 21
+
+[[main]]
+  name = "工程師"
+  parent = "關於我"
+  pageRef = "/engineer"
+  weight = 22
+  
+[[main]]
+  name = "技術主題"
   weight = 30
+
+[[main]]
+  name = "PHP 設計模式"
+  parent = "技術主題"
+  pageRef = "/categories/php-設計模式/"
+  weight = 31
+
+[[main]]
+  name = "小工具"
+  weight = 40
+
+[[main]]
+  name = "String 字串亂數產生器"
+  parent = "小工具"
+  pageRef = "/posts/string-random-generator/"
+  weight = 41
+  
+[[main]]
+  name = "Unicode 編碼、解碼"
+  parent = "小工具"
+  pageRef = "/posts/tools-unicode/"
+  weight = 42
+  
+[[main]]
+  name = "URL 編碼、解碼"
+  parent = "小工具"
+  pageRef = "/posts/tools-url/"
+  weight = 43
+  
+[[main]]
+  name = "Base64 編碼、解碼"
+  parent = "小工具"
+  pageRef = "/posts/tools-base64/"
+  weight = 44
 
 [[main]]
   name = "文章"
   pageRef = "/posts"
-  weight = 40
-
-[[main]]
-  name = "分類"
-  pageRef = "/categories"
   weight = 50
-
-[[main]]
-  name = "標籤"
-  pageRef = "/tags"
-  weight = 60

@@ -29,23 +29,3 @@
   name = "Posts"
   pageRef = "/posts"
   weight = 40
-
-[[main]]
-  name = "Categories"
-  pageRef = "/categories"
-  weight = 50
-
-[[main]]
-  name = "Tags"
-  pageRef = "/tags"
-  weight = 60
-
-[[footer]]
-  name = "About"
-  pageRef = "/about"
-  weight = 10
-
-[[footer]]
-  name = "Contact"
-  pageRef = "/contact"
-  weight = 20

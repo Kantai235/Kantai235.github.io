@@ -1,11 +1,23 @@
 languageCode = "zh-tw"
 languageName = "繁體中文"
 weight = 1
-title = "我不會寫程式"
+title = "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
 
 [params]
-  displayName = "繁中"
+  displayName = "繁體中文"
   isoCode = "zh-TW"
   rtl = false
   dateFormat = "2006年1月2日"
-  description = "軟體工程師與獸控的雙重身份"
+  description = "一起寫程式的好朋友。"
+
+[params.author]
+  name = "乾太"
+  image = "img/avatar.jpg"
+  headline = "一起寫程式的好朋友。"
+  bio = "一起寫程式的好朋友。"
+  links = [
+    { facebook = "https://www.facebook.com/kantai.zeng" },
+    { telegram = "https://t.me/KantaiDeveloper" },
+    { github = "https://github.com/Kantai235" },
+    { x-twitter = "https://x.com/KantaiDeveloper" },
+  ]

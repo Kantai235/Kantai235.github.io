@@ -16,36 +16,22 @@
   weight = 10
 
 [[main]]
-  name = "エンジニア"
-  pageRef = "/engineer"
+  name = "自己紹介"
   weight = 20
 
 [[main]]
-  name = "ケモナー"
+  name = "ケモノ"
+  parent = "自己紹介"
   pageRef = "/kemono"
-  weight = 30
+  weight = 21
+
+[[main]]
+  name = "エンジニア"
+  parent = "自己紹介"
+  pageRef = "/engineer"
+  weight = 22
 
 [[main]]
   name = "記事"
   pageRef = "/posts"
-  weight = 40
-
-[[main]]
-  name = "カテゴリ"
-  pageRef = "/categories"
   weight = 50
-
-[[main]]
-  name = "タグ"
-  pageRef = "/tags"
-  weight = 60
-
-[[footer]]
-  name = "私について"
-  pageRef = "/about"
-  weight = 10
-
-[[footer]]
-  name = "お問い合わせ"
-  pageRef = "/contact"
-  weight = 20

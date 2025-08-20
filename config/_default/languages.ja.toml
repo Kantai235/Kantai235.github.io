@@ -1,11 +1,23 @@
 languageCode = "ja"
 languageName = "日本語"
 weight = 3
-title = "プログラミングできません"
+title = "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
 
 [params]
   displayName = "日本語"
   isoCode = "ja"
   rtl = false
   dateFormat = "2006年1月2日"
-  description = "ソフトウェアエンジニアとケモナーの二重身分"
+  description = "一緒にプログラミングする相棒です。"
+
+[params.author]
+  name = "乾太"
+  image = "img/avatar.jpg"
+  headline = "一緒にプログラミングする相棒です。"
+  bio = "一緒にプログラミングする相棒です。"
+  links = [
+    { facebook = "https://www.facebook.com/kantai.zeng" },
+    { telegram = "https://t.me/KantaiDeveloper" },
+    { github = "https://github.com/Kantai235" },
+    { x-twitter = "https://x.com/KantaiDeveloper" },
+  ]
