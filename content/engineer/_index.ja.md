@@ -4,6 +4,10 @@ showTableOfContents: true
 
 # 🛠️ カンタ、バックエンドエンジニアです。
 
+{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+日本語は少ししか分からないので、会話がスムーズにいかないかもしれませんが、ご容赦ください。基本的には翻訳機を頼りにしています。
+{{< /alert >}}
+
 ## 経歴
 
 {{< lead >}}

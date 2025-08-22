@@ -4,6 +4,10 @@ showTableOfContents: true
 
 # 🛠️ Hi, I'm Kantai, a Backend Engineer.
 
+{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+Pardon my English, I rely on a translator. 🥺
+{{< /alert >}}
+
 ## Summary
 
 {{< lead >}}
