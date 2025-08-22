@@ -383,6 +383,8 @@ layout: "simple"
 
 気軽に乾太に絡んでくれると嬉しいです ฅ^•ﻌ•^ฅ
 
+Email: kantai.developer@gmail.com
+
 <div class="social-buttons">
   <a href="mailto:kantai.developer@gmail.com" class="btn btn-email">
     {{< icon "email" >}} Email

@@ -383,6 +383,8 @@ At work, I'm basically a grunt who occasionally writes a little bit of code.
 
 Feel free to say hi or hit me up! ฅ^•ﻌ•^ฅ
 
+Email: kantai.developer@gmail.com
+
 <div class="social-buttons">
   <a href="mailto:kantai.developer@gmail.com" class="btn btn-email">
     {{< icon "email" >}} Email

@@ -379,6 +379,8 @@ layout: "simple"
 
 歡迎來敲敲乾太哦 ฅ^•ﻌ•^ฅ
 
+Email: kantai.developer@gmail.com
+
 <div class="social-buttons">
   <a href="mailto:kantai.developer@gmail.com" class="btn btn-email">
     {{< icon "email" >}} Email
