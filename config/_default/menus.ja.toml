@@ -34,4 +34,4 @@
 [[main]]
   name = "記事"
   pageRef = "/posts"
-  weight = 50
+  weight = 30

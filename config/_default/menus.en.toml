@@ -20,15 +20,15 @@
   weight = 20
 
 [[main]]
-  name = "Engineer"
-  parent = "About"
-  pageRef = "/engineer"
-  weight = 21
-
-[[main]]
   name = "Furry"
   parent = "About"
   pageRef = "/kemono"
+  weight = 21
+
+[[main]]
+  name = "Engineer"
+  parent = "About"
+  pageRef = "/engineer"
   weight = 22
 
 [[main]]
