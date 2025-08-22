@@ -4,7 +4,6 @@ slug: write-a-letter-using-gpt
 description: "其實乾太不太會撰寫信件、文章甚至講話，但透過 GPT 可以將這個缺點彌補到堪用，而最近有大量商業信件往來的需求，因此在工具的輔助下，有了一些心得可以分享。"
 date: 2023-11-30T00:00:00+08:00
 lastmod: 2023-11-30T00:00:00+08:00
-authors: ["kantai235"]
 categories: ["經驗分享"]
 tags: ["ChatGPT", "AI工具", "商業信件", "寫作技巧", "生產力", "人工智慧"]
 keywords: ["ChatGPT", "商業信件", "GPT", "寫作技巧", "AI輔助寫作"]

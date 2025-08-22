@@ -1,0 +1,37 @@
+/* 自訂字體定義 */
+@font-face {
+    font-family: 'LINESeedTW';
+    src: url('/fonts/LINESeedTW_TTF_Rg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 覆蓋 Blowfish 主題的 CSS 變數 */
+:root {
+    --font-header: 'LINESeedTW', 'Noto Sans TC', 'Source Han Sans', sans-serif;
+    --font-body: 'LINESeedTW', 'Noto Sans TC', 'Source Han Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+}
+
+/* 確保所有文字元素使用自訂字體 */
+html {
+    font-family: var(--font-body);
+}
+
+/* 標題使用自訂字體 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+}
+
+/* 針對中文內容優化 */
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+}
+
+/* 確保 navigation 和其他 UI 元素也使用自訂字體 */
+.navigation, .footer, .btn, .badge {
+    font-family: var(--font-body);
+}
