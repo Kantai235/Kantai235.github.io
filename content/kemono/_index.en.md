@@ -232,6 +232,84 @@ At work, I'm basically a grunt who occasionally writes a little bit of code.
   background-color: #0088CC !important;
   color: white !important;
 }
+
+/* 創作者資訊提示 */
+.creator-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 10000;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+}
+
+.dark .creator-toast {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+}
+
+.creator-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.creator-toast .creator-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.creator-toast .creator-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.creator-toast .creator-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.creator-toast a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dark .creator-toast a {
+  color: #3b82f6;
+}
+
+.creator-toast a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.dark .creator-toast a:hover {
+  color: #2563eb;
+}
+
+
+/* 讓 gallery 圖片可以點擊 */
+.gallery img {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+}
 </style>
 
 <div class="kemono-container">
@@ -335,6 +413,14 @@ Feel free to say hi or hit me up! ฅ^•ﻌ•^ฅ
   </a>
 </div>
 
+<!-- 創作者資訊提示 -->
+<div id="creator-toast" class="creator-toast">
+  <div class="creator-info">
+    {{< icon "pencil" >}}
+    <div class="creator-text" id="creator-text"></div>
+  </div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // 獲取所有相關元素
@@ -346,6 +432,50 @@ document.addEventListener('DOMContentLoaded', function() {
     const backgroundImgBefore = document.getElementById('background-img-before');
     const avatarAfter = document.getElementById('avatar-after');
     const avatarBefore = document.getElementById('avatar-before');
+    
+    // 創作者資訊映射（包含名稱和連結）
+    const creatorInfo = {
+        'avatar-after': {
+            name: 'Pika Owo（皮卡）',
+            link: 'https://www.facebook.com/pika.owo.2025'
+        },
+        'artwork-after-1': {
+            name: 'ぐるみん',
+            link: 'https://x.com/9uruminn'
+        },
+        'artwork-after-2': {
+            name: 'Pika Owo（皮卡）',
+            link: 'https://www.facebook.com/pika.owo.2025'
+        },
+        'avatar-before': {
+            name: '氣球↑↑↑',
+            link: 'https://www.facebook.com/zelip0balloon'
+        },
+        'artwork-before-1': {
+            name: '羊瑋（羊羊）',
+            link: 'https://www.facebook.com/cs637894'
+        },
+        'artwork-before-2': {
+            name: '羊瑋（羊羊）',
+            link: 'https://www.facebook.com/cs637894'
+        },
+        'artwork-before-3': {
+            name: '波吉叔叔',
+            link: 'https://www.plurk.com/ctf020308100'
+        },
+        'artwork-before-4': {
+            name: '典藏大耳毛',
+            link: 'https://www.facebook.com/hau.dai.2025'
+        },
+        'artwork-before-5': {
+            name: 'DOG COM',
+            link: 'https://www.facebook.com/itdogcom'
+        },
+        'artwork-before-6': {
+            name: '氣球↑↑↑',
+            link: 'https://www.facebook.com/zelip0balloon'
+        }
+    };
     
     // 等待 pageImages 定義
     if (window.pageImages) {
@@ -476,5 +606,125 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // 創作者資訊提示功能
+    const toast = document.getElementById('creator-toast');
+    const toastText = document.getElementById('creator-text');
+    let currentImageId = null;
+    let lightboxWasOpen = false;
+    
+    function showCreatorToast(creatorData, isLightbox = true) {
+        if (!creatorData) return;
+        
+        // 建立顯示內容
+        let content = 'Illustrator: ';
+        if (creatorData.link) {
+            content += `<a href="${creatorData.link}" target="_blank" rel="noopener noreferrer">${creatorData.name}</a>`;
+        } else {
+            content += creatorData.name;
+        }
+        
+        toastText.innerHTML = content;
+        toast.classList.add('show');
+        lightboxWasOpen = isLightbox;
+    }
+    
+    function hideCreatorToast() {
+        toast.classList.remove('show');
+        currentImageId = null;
+        lightboxWasOpen = false;
+    }
+    
+    // 使用 MutationObserver 監聽 body class 變化（針對 lightbox）
+    const bodyObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                const bodyClasses = document.body.classList;
+                
+                // 如果之前 lightbox 是開啟的，現在沒有 glightbox-open class，說明關閉了
+                if (lightboxWasOpen && !bodyClasses.contains('glightbox-open')) {
+                    hideCreatorToast();
+                }
+            }
+        });
+    });
+    
+    // 開始監聽 body 的 class 變化
+    bodyObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+    
+    // 監聽頁面點擊，當點擊其他地方時關閉創作者提示（針對沒有 lightbox 的情況）
+    document.addEventListener('click', function(e) {
+        if (currentImageId && toast.classList.contains('show') && !lightboxWasOpen) {
+            // 檢查點擊的是否是創作者提示本身或其內部元素
+            if (!toast.contains(e.target) && !e.target.closest('#' + currentImageId)) {
+                hideCreatorToast();
+            }
+        }
+    }, true);
+    
+    // 監聽 ESC 鍵
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && currentImageId) {
+            hideCreatorToast();
+        }
+    });
+    
+    // 為所有圖片加入點擊事件
+    function setupImageListeners() {
+        // 頭像圖片 - 需要特別處理，因為頭像可能不在 gallery 中
+        const avatarImages = [avatarAfter, avatarBefore];
+        avatarImages.forEach(img => {
+            if (img) {
+                // 檢查圖片是否有 glightbox class，如果有就是在 lightbox 中
+                const hasLightbox = img.classList.contains('glightbox');
+                
+                img.addEventListener('click', function(e) {
+                    const creator = creatorInfo[this.id];
+                    if (creator) {
+                        currentImageId = this.id;
+                        
+                        if (hasLightbox) {
+                            // 如果有 lightbox，延遲顯示讓 lightbox 先開啟
+                            setTimeout(() => {
+                                showCreatorToast(creator, true);
+                            }, 100);
+                        } else {
+                            // 如果沒有 lightbox，阻止預設行為並直接顯示
+                            e.preventDefault();
+                            showCreatorToast(creator, false);
+                        }
+                    }
+                });
+            }
+        });
+        
+        // Gallery 圖片
+        const galleryImages = document.querySelectorAll('.gallery img');
+        galleryImages.forEach(img => {
+            img.addEventListener('click', function(e) {
+                const creator = creatorInfo[this.id];
+                if (creator) {
+                    currentImageId = this.id;
+                    // 延遲顯示，讓 lightbox 先開啟
+                    setTimeout(() => {
+                        showCreatorToast(creator);
+                    }, 100);
+                }
+            });
+        });
+    }
+    
+    // 圖片載入完成後設置監聽器
+    if (window.pageImages) {
+        const allImageKeys = Object.keys(window.pageImages).filter(k => typeof window.pageImages[k] === 'string');
+        window.pageImages.preload(allImageKeys).then(() => {
+            setTimeout(setupImageListeners, 500);
+        });
+    } else {
+        setTimeout(setupImageListeners, 1000);
+    }
 });
 </script>
