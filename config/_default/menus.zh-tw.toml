@@ -48,25 +48,25 @@
 [[main]]
   name = "String 字串亂數產生器"
   parent = "小工具"
-  pageRef = "/posts/string-random-generator/"
+  pageRef = "/posts/2019/07-21_string-random-generator/"
   weight = 41
   
 [[main]]
   name = "Unicode 編碼、解碼"
   parent = "小工具"
-  pageRef = "/posts/tools-unicode/"
+  pageRef = "/posts/2019/07-17_tools-unicode/"
   weight = 42
   
 [[main]]
   name = "URL 編碼、解碼"
   parent = "小工具"
-  pageRef = "/posts/tools-url/"
+  pageRef = "/posts/2019/07-14_tools-url/"
   weight = 43
   
 [[main]]
   name = "Base64 編碼、解碼"
   parent = "小工具"
-  pageRef = "/posts/tools-base64/"
+  pageRef = "/posts/2019/07-09_tools-base64/"
   weight = 44
 
 [[main]]
