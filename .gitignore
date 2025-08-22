@@ -12,6 +12,7 @@ hugo_stats.json
 .vscode/
 .claude/
 CLAUDE.md
+GEMINI.md
 
 # Node.js
 node_modules/

@@ -1,0 +1,73 @@
+{{/* 
+  通用圖片載入 shortcode
+  
+  使用方式：
+  {{< load-images 
+    bgAfter="img/kemono/after/background.jpg"
+    bgBefore="img/kemono/before/background.jpg"
+    avatarAfter="img/kemono/after/avatar.jpg"
+    avatarBefore="img/kemono/before/avatar.jpg"
+  >}}
+  
+  所有參數都會被載入到 window.pageImages 物件中
+*/}}
+
+<script>
+(function() {
+    'use strict';
+    
+    window.pageImages = window.pageImages || {};
+    
+    /* {{ range $key, $value := .Params }} */
+    /* {{ $resource := resources.Get $value }} */
+    /* {{ if $resource }} */
+    window.pageImages['{{ $key }}'] = '{{ $resource.RelPermalink }}';
+    /* {{ end }} */
+    /* {{ end }} */
+    
+    window.pageImages.preload = function(keys) {
+        var promises = [];
+        var keysToLoad = keys || Object.keys(window.pageImages).filter(function(k) {
+            return typeof window.pageImages[k] === 'string';
+        });
+        
+        keysToLoad.forEach(function(key) {
+            if (typeof window.pageImages[key] === 'string') {
+                promises.push(new Promise(function(resolve, reject) {
+                    var img = new Image();
+                    img.onload = function() { resolve({key: key, img: img}); };
+                    img.onerror = function() { reject({key: key, error: 'Failed to load'}); };
+                    img.src = window.pageImages[key];
+                }));
+            }
+        });
+        
+        return Promise.all(promises);
+    };
+    
+    window.pageImages.get = function(key) {
+        return window.pageImages[key] || null;
+    };
+    
+    window.pageImages.setImage = function(elementId, imageKey) {
+        var element = document.getElementById(elementId);
+        var imageUrl = window.pageImages[imageKey];
+        
+        if (element && imageUrl) {
+            element.src = imageUrl;
+            return true;
+        }
+        return false;
+    };
+    
+    window.pageImages.setImages = function(mapping) {
+        Object.keys(mapping).forEach(function(elementId) {
+            window.pageImages.setImage(elementId, mapping[elementId]);
+        });
+    };
+    
+    console.log('Loaded pageImages:', Object.keys(window.pageImages).filter(function(k) {
+        return typeof window.pageImages[k] === 'string';
+    }));
+})();
+</script>

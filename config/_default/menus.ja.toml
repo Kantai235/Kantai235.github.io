@@ -20,7 +20,7 @@
   weight = 20
 
 [[main]]
-  name = "ケモノ"
+  name = "ケモナー"
   parent = "自己紹介"
   pageRef = "/kemono"
   weight = 21
