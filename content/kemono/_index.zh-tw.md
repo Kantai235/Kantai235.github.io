@@ -224,8 +224,28 @@ layout: "simple"
   color: white !important;
 }
 
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  color: white !important;
+}
+
 .btn-telegram {
   background-color: #0088CC !important;
+  color: white !important;
+}
+
+.btn-twitch {
+  background-color: #9146FF !important;
+  color: white !important;
+}
+
+.btn-discord {
+  background-color: #5865F2 !important;
+  color: white !important;
+}
+
+.btn-steam {
+  background-color: #2a475e !important;
   color: white !important;
 }
 
@@ -295,7 +315,6 @@ layout: "simple"
 .dark .creator-toast a:hover {
   color: #2563eb;
 }
-
 
 /* 讓 gallery 圖片可以點擊 */
 .gallery img {
@@ -381,33 +400,55 @@ layout: "simple"
 
 Email: kantai.developer@gmail.com
 
+### 較常使用
+
 <div class="social-buttons">
-  <a href="mailto:kantai.developer@gmail.com" class="btn btn-email">
-    {{< icon "email" >}} Email
+  <a href="https://t.me/KantaiDeveloper" target="_blank" class="btn btn-telegram">
+    {{< icon "telegram" >}} Telegram
   </a>
   
   <a href="https://www.facebook.com/kantai.zeng" target="_blank" class="btn btn-facebook">
     {{< icon "facebook" >}} Facebook
   </a>
+</div>
+
+### 其他
+
+<div class="social-buttons">
+  <a href="mailto:kantai.developer@gmail.com" class="btn btn-email">
+    {{< icon "email" >}} Email
+  </a>
   
+  <a href="https://www.instagram.com/init.engineer" target="_blank" class="btn btn-instagram">
+    {{< icon "instagram" >}} Instagram
+  </a>
+
   <a href="https://www.plurk.com/huevo235" target="_blank" class="btn btn-plurk">
     {{< icon "star" >}} Plurk
   </a>
   
-  <a href="https://www.threads.com/@init.engineer" target="_blank" class="btn btn-threads">
-    {{< icon "threads" >}} Threads
+  <a href="https://discordapp.com/users/452734375227031562" target="_blank" class="btn btn-discord">
+    {{< icon "discord" >}} Discord
   </a>
   
-  <a href="https://x.com/KantaiDeveloper" target="_blank" class="btn btn-x">
-    {{< icon "x-twitter" >}} X / Twitter
+  <a href="https://twitch.tv/kantai235" target="_blank" class="btn btn-twitch">
+    {{< icon "twitch" >}} Twitch
+  </a>
+  
+  <a href="https://steamcommunity.com/id/kantai235" target="_blank" class="btn btn-steam">
+    {{< icon "steam" >}} Steam
   </a>
   
   <a href="https://github.com/Kantai235" target="_blank" class="btn btn-github">
     {{< icon "github" >}} GitHub
   </a>
   
-  <a href="https://t.me/KantaiDeveloper" target="_blank" class="btn btn-telegram">
-    {{< icon "telegram" >}} Telegram
+  <a href="https://www.threads.net/@init.engineer" target="_blank" class="btn btn-threads">
+    {{< icon "threads" >}} Threads
+  </a>
+  
+  <a href="https://x.com/KantaiDeveloper" target="_blank" class="btn btn-x">
+    {{< icon "x-twitter" >}} X / Twitter
   </a>
 </div>
 
