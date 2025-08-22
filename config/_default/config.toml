@@ -26,6 +26,9 @@ enableEmoji = true
 
 googleAnalytics = "G-SJ3TX4G2LB"
 
+# Increase timeout for rendering
+timeout = "300s"
+
 [permalinks]
   posts = "/posts/:slug/"
 
