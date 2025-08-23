@@ -9,6 +9,7 @@ title = "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
   rtl = false
   dateFormat = "2006年1月2日"
   description = "一起寫程式的好朋友。"
+  copyright = "Copyright © KantaiDeveloper"
 
 [params.author]
   name = "乾太"
