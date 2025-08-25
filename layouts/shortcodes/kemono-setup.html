@@ -1,0 +1,489 @@
+<!-- @eslint-disable -->
+<!-- prettier-ignore -->
+{{/* 
+  Kemono 頁面設定 shortcode
+  統一管理圖片載入和創作者資訊
+  
+  使用方式：
+  {{< kemono-setup >}}
+*/}}
+
+{{ $kemonoData := site.Data.kemono }}
+
+<!-- 載入圖片資源和創作者資訊 -->
+<script>
+// eslint-disable-file
+(function () {
+    'use strict';
+    
+    window.pageImages = window.pageImages || {};
+    window.creatorInfo = window.creatorInfo || {};
+    
+    // 載入背景圖片
+    {{ range $elementId, $element := $kemonoData.elements }}
+      {{ $resource := resources.Get $element.src }}
+      {{ if $resource }}
+      window.pageImages['{{ $elementId }}'] = '{{ $resource.RelPermalink }}';
+      {{ end }}
+    {{ end }}
+    
+    // 載入 gallery 圖片和創作者資訊
+    {{ range $period, $periodData := $kemonoData.gallery }}
+      {{ with $periodData.avatar }}
+        {{ $resource := resources.Get .src }}
+        {{ if $resource }}
+        window.pageImages['{{ .id }}'] = '{{ $resource.RelPermalink }}';
+        {{ end }}
+        {{ if .creator }}
+        window.creatorInfo['{{ .id }}'] = {{ .creator | jsonify | safeJS }};
+        {{ end }}
+      {{ end }}
+      
+      {{ range $periodData.artworks }}
+        {{ $resource := resources.Get .src }}
+        {{ if $resource }}
+        window.pageImages['{{ .id }}'] = '{{ $resource.RelPermalink }}';
+        {{ end }}
+        {{ if .creator }}
+        window.creatorInfo['{{ .id }}'] = {{ .creator | jsonify | safeJS }};
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    
+    // 漸進式圖片載入功能
+    window.pageImages.loadProgressively = function (keys, onProgress) {
+        const keysToLoad = keys || Object.keys(window.pageImages).filter(function (k) {
+            return typeof window.pageImages[k] === 'string';
+        });
+        
+        let loadedCount = 0;
+        const totalCount = keysToLoad.length;
+        
+        keysToLoad.forEach(function (key) {
+            if (typeof window.pageImages[key] === 'string') {
+                const img = new Image();
+                
+                img.onload = function () {
+                    loadedCount += 1;
+                    if (onProgress) {
+                        onProgress({
+                            key,
+                            img,
+                            loaded: loadedCount,
+                            total: totalCount,
+                            progress: (loadedCount / totalCount) * 100
+                        });
+                    }
+                };
+                
+                img.onerror = function () {
+                    loadedCount += 1;
+                    if (onProgress) {
+                        onProgress({
+                            key,
+                            error: 'Failed to load',
+                            loaded: loadedCount,
+                            total: totalCount,
+                            progress: (loadedCount / totalCount) * 100
+                        });
+                    }
+                };
+                
+                img.src = window.pageImages[key];
+            }
+        });
+    };
+    
+    // 保留原有的批量預載入功能（向後兼容）
+    window.pageImages.preload = function (keys) {
+        return new Promise(function (resolve, reject) {
+            const results = [];
+            const keysToLoad = keys || Object.keys(window.pageImages).filter(function (k) {
+                return typeof window.pageImages[k] === 'string';
+            });
+            
+            if (keysToLoad.length === 0) {
+                resolve([]);
+                return;
+            }
+            
+            window.pageImages.loadProgressively(keysToLoad, function (result) {
+                results.push(result);
+                if (results.length === keysToLoad.length) {
+                    const errors = results.filter(function (r) { 
+                        return r.error; 
+                    });
+                    if (errors.length > 0) {
+                        reject(errors);
+                    } else {
+                        resolve(results);
+                    }
+                }
+            });
+        });
+    };
+    
+    // 設定圖片功能 (直接使用元素 ID)
+    window.pageImages.setImages = function (elementIds) {
+        const idsToProcess = elementIds || Object.keys(window.pageImages).filter(function (k) {
+            return typeof window.pageImages[k] === 'string';
+        });
+        
+        idsToProcess.forEach(function (elementId) {
+            const element = document.getElementById(elementId);
+            const imageUrl = window.pageImages[elementId];
+            
+            if (element && imageUrl) {
+                element.src = imageUrl;
+            }
+        });
+    };
+    
+    console.log('Loaded kemono pageImages:', Object.keys(window.pageImages).filter(function (k) {
+        return typeof window.pageImages[k] === 'string';
+    }));
+}());
+</script>
+
+<!-- Kemono 專用樣式 -->
+<style>
+.kemono-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid rgb(229 229 229 / var(--tw-border-opacity));
+}
+
+.dark .kemono-tabs {
+  border-bottom-color: rgb(64 64 64 / var(--tw-border-opacity));
+}
+
+.kemono-tab {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(115 115 115 / var(--tw-text-opacity));
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dark .kemono-tab {
+  color: rgb(163 163 163 / var(--tw-text-opacity));
+}
+
+.kemono-tab:hover {
+  color: rgb(64 64 64 / var(--tw-text-opacity));
+}
+
+.dark .kemono-tab:hover {
+  color: rgb(229 229 229 / var(--tw-text-opacity));
+}
+
+.kemono-tab.active {
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.dark .kemono-tab.active {
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.kemono-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgb(59 130 246 / var(--tw-background-opacity));
+}
+
+.kemono-tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.kemono-tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kemono-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+.kemono-background.active {
+  opacity: 0.2;
+}
+
+.dark .kemono-background.active {
+  opacity: 0.1;
+}
+
+.kemono-background img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 移除 Tab 內容中的底線 */
+.kemono-tab-content {
+  text-decoration: none;
+}
+
+.kemono-tab-content * {
+  text-decoration: none !important;
+}
+
+.kemono-tab-content a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.kemono-tab-content h1,
+.kemono-tab-content h2,
+.kemono-tab-content h3,
+.kemono-tab-content h4,
+.kemono-tab-content h5,
+.kemono-tab-content h6 {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* 創作者資訊提示 */
+.creator-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 10000;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+}
+
+.dark .creator-toast {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+}
+
+.creator-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.creator-toast .creator-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.creator-toast .creator-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.creator-toast .creator-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.creator-toast a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dark .creator-toast a {
+  color: #3b82f6;
+}
+
+.creator-toast a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.dark .creator-toast a:hover {
+  color: #2563eb;
+}
+
+/* Gallery 容器樣式 */
+.gallery {
+  position: relative;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  clear: both;
+}
+
+/* 頭像 gallery 專用樣式 */
+.gallery-avatar {
+  position: relative !important;
+  z-index: 10;
+  margin: 0 !important; /* 完全移除所有 margin */
+  padding: 0 !important; /* 移除可能的 padding */
+  display: block;
+  clear: both;
+  height: auto !important; /* 強制高度自動 */
+  min-height: auto !important;
+  max-height: none !important;
+}
+
+.gallery-avatar img {
+  position: relative !important;
+  z-index: 10 !important;
+  display: block !important;
+  float: none !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important; /* 完全移除所有 margin */
+  padding: 0 !important; /* 移除可能的 padding */
+  opacity: 1 !important;
+}
+
+/* 作品 gallery 專用樣式 */
+.gallery-artworks {
+  position: relative;
+  z-index: 1;
+  clear: both;
+  margin-top: 1rem;
+}
+
+.gallery-artworks img {
+  z-index: 1 !important;
+  position: relative;
+}
+
+/* 保留舊的選擇器作為備用 */
+.gallery img[id*="avatar"] {
+  position: relative !important;
+  z-index: 10 !important;
+  display: block !important;
+  float: none !important;
+  margin-bottom: 1.5rem;
+  opacity: 1 !important;
+}
+
+.gallery:has(img[id*="avatar"]) {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 2rem;
+}
+
+.gallery:has(img[id*="artwork"]) {
+  clear: both;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery img[id*="artwork"] {
+  z-index: 1 !important;
+  position: relative;
+}
+
+/* 圖片容器佔位符 */
+.image-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, transparent 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 0.875rem;
+}
+
+.dark .image-placeholder {
+  background: linear-gradient(90deg, #2a2a2a 25%, transparent 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  color: #666;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 確保 gallery 圖片在動畫過程中不會溢出容器 */
+.gallery img {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.gallery img.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery img.loaded:hover {
+  transform: scale(1.02);
+}
+
+.gallery img.loading {
+  opacity: 0.3;
+}
+
+.gallery img.error {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  border: 2px dashed #ccc;
+}
+
+/* 防止 Tab 切換時的布局跳動 */
+.kemono-tab-content {
+  min-height: 200px; /* 減少最小高度限制 */
+  overflow: visible; /* 允許內容正常顯示 */
+  height: auto !important; /* 強制自適應高度 */
+}
+
+.kemono-tab-content.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+</style>

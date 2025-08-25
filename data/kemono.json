@@ -1,0 +1,122 @@
+{
+  "elements": {
+    "background-img-after": {
+      "src": "img/kemono/after/background.jpg"
+    },
+    "background-img-before": {
+      "src": "img/kemono/before/background.jpg"
+    }
+  },
+  "gallery": {
+    "after": {
+      "title": "現在的設定",
+      "avatar": {
+        "id": "avatar-after",
+        "class": "mt-0 mb-0 rounded-lg shadow-lg",
+        "alt": "Pika Owo(皮卡)的作品",
+        "src": "img/kemono/after/artworks/magicpika1_1.jpg",
+        "creator": {
+          "name": "Pika Owo(皮卡)",
+          "link": "https://www.facebook.com/pika.owo.2025"
+        }
+      },
+      "artworks": [
+        {
+          "id": "artwork-after-1",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "ぐるみん的作品",
+          "src": "img/kemono/after/artworks/guruminn_1.jpg",
+          "creator": {
+            "name": "ぐるみん",
+            "link": "https://x.com/9uruminn"
+          }
+        },
+        {
+          "id": "artwork-after-2",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "ゆっち的作品",
+          "src": "img/kemono/after/artworks/yutch_kmn_1.jpg",
+          "creator": {
+            "name": "ゆっち",
+            "link": "https://x.com/yutch_kmn"
+          }
+        }
+      ]
+    },
+    "before": {
+      "title": "以前的設定",
+      "avatar": {
+        "id": "avatar-before",
+        "class": "mt-0 mb-0 rounded-lg shadow-lg",
+        "alt": "氣球的作品",
+        "src": "img/kemono/before/background.jpg",
+        "creator": {
+          "name": "氣球↑↑↑",
+          "link": "https://www.facebook.com/zelip0balloon"
+        }
+      },
+      "artworks": [
+        {
+          "id": "artwork-before-1",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "氣球的作品",
+          "src": "img/kemono/before/artworks/zelip_balloon_1.jpg",
+          "creator": {
+            "name": "氣球↑↑↑",
+            "link": "https://www.facebook.com/zelip0balloon"
+          }
+        },
+        {
+          "id": "artwork-before-2",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "羊羊的作品",
+          "src": "img/kemono/before/artworks/cs637894_1.jpg",
+          "creator": {
+            "name": "羊瑋（羊羊）",
+            "link": "https://www.facebook.com/cs637894"
+          }
+        },
+        {
+          "id": "artwork-before-3",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "羊羊的作品",
+          "src": "img/kemono/before/artworks/cs637894_2.jpg",
+          "creator": {
+            "name": "羊瑋（羊羊）",
+            "link": "https://www.facebook.com/cs637894"
+          }
+        },
+        {
+          "id": "artwork-before-4",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "波吉叔叔的作品",
+          "src": "img/kemono/before/artworks/ctf020308100_1.jpg",
+          "creator": {
+            "name": "波吉叔叔",
+            "link": "https://www.plurk.com/ctf020308100"
+          }
+        },
+        {
+          "id": "artwork-before-5",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "典藏大耳毛的作品",
+          "src": "img/kemono/before/artworks/hauhau_mg_1.jpg",
+          "creator": {
+            "name": "典藏大耳毛",
+            "link": "https://www.facebook.com/hau.dai.2025"
+          }
+        },
+        {
+          "id": "artwork-before-6",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "DOG COM 的作品",
+          "src": "img/kemono/before/artworks/itdogcom_1.jpg",
+          "creator": {
+            "name": "DOG COM",
+            "link": "https://www.facebook.com/itdogcom"
+          }
+        }
+      ]
+    }
+  }
+}

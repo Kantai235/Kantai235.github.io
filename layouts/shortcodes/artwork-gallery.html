@@ -1,0 +1,97 @@
+{{/* Artwork Gallery Shortcode - Enhanced with Blowfish Gallery Features */}}
+{{/* 使用方式: 
+  {{< artwork-gallery collection="kemono.after.gallery" class="mt-0 mb-0 rounded-lg shadow-lg" >}}
+  {{< artwork-gallery collection="kemono.after.artworks" class="grid-w50 md:grid-w33 xl:grid-w25" >}}
+*/}}
+
+{{ $collection := .Get "collection" }}
+{{ $customClass := .Get "class" }}
+{{ $kemonoData := site.Data.kemono }}
+
+{{/* 解析 collection 路徑 (例如 "kemono.after.gallery" 或 "kemono.after.artworks") */}}
+{{ $parts := split $collection "." }}
+{{ $category := index $parts 0 }}
+{{ $subcategory := index $parts 1 }}
+{{ $type := index $parts 2 }}
+
+{{/* 取得對應的圖片資料 */}}
+{{ $images := "" }}
+{{ if eq $category "kemono" }}
+  {{ if eq $subcategory "after" }}
+    {{ if eq $type "gallery" }}
+      {{/* 單一圖片：從 gallery.after.avatar 取得資料 */}}
+      {{ $avatar := $kemonoData.gallery.after.avatar }}
+      {{ $images = slice $avatar }}
+    {{ else if eq $type "artworks" }}
+      {{/* 多張圖片：從 gallery.after.artworks 取得資料 */}}
+      {{ $images = $kemonoData.gallery.after.artworks }}
+    {{ end }}
+  {{ else if eq $subcategory "before" }}
+    {{ if eq $type "gallery" }}
+      {{/* 單一圖片：從 gallery.before.avatar 取得資料 */}}
+      {{ $avatar := $kemonoData.gallery.before.avatar }}
+      {{ $images = slice $avatar }}
+    {{ else if eq $type "artworks" }}
+      {{/* 多張圖片：從 gallery.before.artworks 取得資料 */}}
+      {{ $images = $kemonoData.gallery.before.artworks }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* 產生動態 Gallery ID */}}
+{{ $id := delimit (slice "gallery" (partial "functions/uid.html" .)) "-" }}
+
+{{/* 建立圖片內容 */}}
+{{ $content := "" }}
+{{ if $images }}
+  {{ range $images }}
+    {{/* 使用自定義 class 或預設 class */}}
+    {{ $finalClass := $customClass | default .class }}
+    {{/* 直接從 gallery 結構中取得 src */}}
+    {{ $imgTag := printf `<img id="%s" src="%s" class="%s" alt="%s" />` .id .src $finalClass .alt }}
+    {{ $content = printf "%s%s" $content $imgTag }}
+  {{ end }}
+{{ end }}
+
+{{/* 圖片處理 - 參考 Blowfish Gallery 的圖片處理邏輯 */}}
+{{ range findRE `<img\s+[^>]*>` $content }}
+  {{ $imgTag := . }}
+  {{/* 提取 src 屬性 */}}
+  {{ with findRESubmatch `src=['"]([^'"]+)['"]` $imgTag }}
+    {{ $srcAttr := index (index . 0) 0 }}
+    {{ $srcValue := index (index . 0) 1 }}
+    {{ $srcValueFinal := $srcValue }}
+
+    {{ if or (hasPrefix $srcValue "http://") (hasPrefix $srcValue "https://") }}
+      {{ with resources.GetRemote $srcValue }}{{ $srcValueFinal = .RelPermalink }}{{ end }}
+    {{ else }}
+      {{ with $.Page.Resources.GetMatch $srcValue }}
+        {{ $srcValueFinal = .RelPermalink }}
+      {{ else }}
+        {{ with resources.GetMatch $srcValue }}{{ $srcValueFinal = .RelPermalink }}{{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ $newTag := replace $imgTag $srcAttr (printf `src="%s"` $srcValueFinal) }}
+    {{ $content = replace $content $imgTag $newTag }}
+  {{ end }}
+{{ end }}
+
+{{/* 輸出 Gallery HTML */}}
+{{ if $images }}
+{{/* 根據類型添加不同的 CSS 類別 */}}
+{{ $galleryClass := "gallery" }}
+{{ if eq $type "gallery" }}
+  {{/* 頭像 gallery：不使用 Packery，正常布局 */}}
+  {{ $galleryClass = "gallery gallery-avatar" }}
+{{ else if eq $type "artworks" }}
+  {{/* 作品 gallery：使用 Packery 布局 */}}
+  {{ $galleryClass = "gallery gallery-artworks" }}
+{{ end }}
+
+<div id="{{ $id }}" class="{{ $galleryClass }}">
+  {{ $content | safeHTML }}
+</div>
+{{ else }}
+  <p>找不到指定的圖片集：{{ $collection }}</p>
+{{ end }}

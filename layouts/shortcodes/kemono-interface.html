@@ -1,0 +1,519 @@
+{{/* 
+  Kemono 互動介面 shortcode
+  統一管理 Tab 切換和創作者資訊功能
+  
+  使用方式：
+  {{< kemono-interface >}}
+*/}}
+
+<!-- 創作者資訊提示 -->
+<div id="creator-toast" class="creator-toast">
+  <div class="creator-info">
+    {{ partial "icon.html" (dict "icon" "pencil") }}
+    <div class="creator-text" id="creator-text"></div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 延遲執行以確保數據載入完成
+    setTimeout(function() {
+        console.log('Initializing kemono interface...');
+        
+        // 檢查數據載入狀況
+        const hasPageImages = !!window.pageImages;
+        const hasCreatorInfo = !!window.creatorInfo;
+        
+        console.log('Data status:', {
+            pageImages: hasPageImages,
+            creatorInfo: hasCreatorInfo
+        });
+    
+    // 獲取所有相關元素
+    const tabs = document.querySelectorAll('.kemono-tab');
+    const tabContents = document.querySelectorAll('.kemono-tab-content');
+    const backgroundAfter = document.getElementById('background-after');
+    const backgroundBefore = document.getElementById('background-before');
+    const avatarAfter = document.getElementById('avatar-after');
+    const avatarBefore = document.getElementById('avatar-before');
+    
+    console.log('Found elements:', {
+        tabs: tabs.length,
+        tabContents: tabContents.length,
+        backgroundAfter: !!backgroundAfter,
+        backgroundBefore: !!backgroundBefore
+    });
+    
+    // 立即顯示頁面結構和佔位符
+    if (backgroundAfter) {
+        backgroundAfter.classList.add('active');
+    }
+    
+    // 立即設定佔位符圖片
+    function setPlaceholderImages() {
+        const imageElements = document.querySelectorAll('#avatar-after, #avatar-before, .gallery img');
+        imageElements.forEach(img => {
+            if (img.id) {
+                img.classList.add('image-placeholder');
+                img.alt = '載入中...';
+                // 設定一個透明的 1x1 pixel 圖片作為佔位符
+                img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PC9zdmc+';
+            }
+        });
+    }
+    
+    // 立即設定佔位符
+    setPlaceholderImages();
+    
+    // 處理圖片載入（如果數據可用）
+    if (hasPageImages && window.pageImages) {
+        try {
+            // 手動設定備用背景圖片
+            if (!window.pageImages['background-img-after']) {
+                window.pageImages['background-img-after'] = '/img/kemono/after/background.jpg';
+            }
+            if (!window.pageImages['background-img-before']) {
+                window.pageImages['background-img-before'] = '/img/kemono/before/background.jpg';
+            }
+            
+            // 使用漸進式載入
+            const allImageKeys = Object.keys(window.pageImages).filter(k => typeof window.pageImages[k] === 'string');
+            
+            // 先載入背景圖片（優先級最高）
+            const backgroundKeys = allImageKeys.filter(k => k.includes('background-img'));
+            const otherKeys = allImageKeys.filter(k => !k.includes('background-img'));
+            
+            // 追蹤載入狀態
+            let loadedImages = new Set();
+            let totalImages = 0;
+            
+            // 分批載入：先背景圖，再其他圖片
+            function loadImagesProgressively(keys, delay = 0) {
+                totalImages += keys.length;
+                
+                setTimeout(() => {
+                    window.pageImages.loadProgressively(keys, function(result) {
+                        if (result.error) {
+                            console.error('圖片載入失敗:', result.key, result.error);
+                            loadedImages.add(result.key); // 錯誤也算作完成
+                        } else {
+                            // 找到對應的元素並更新
+                            const element = document.getElementById(result.key);
+                            if (element) {
+                                element.classList.add('loading');
+                                element.src = window.pageImages[result.key];
+                                element.alt = element.alt.replace('載入中...', '');
+                                
+                                // 圖片載入完成後的處理
+                                element.onload = function() {
+                                    this.classList.remove('image-placeholder', 'loading');
+                                    this.classList.add('loaded');
+                                    
+                                    // 記錄載入完成
+                                    loadedImages.add(this.id);
+                                    
+                                    // 如果是頭像圖片，確保其布局正確
+                                    if (this.id.includes('avatar')) {
+                                        this.style.position = 'relative';
+                                        this.style.zIndex = '10';
+                                        this.style.display = 'block';
+                                        this.style.width = '100%';
+                                        this.style.height = 'auto';
+                                    }
+                                    
+                                    // 檢查當前 tab 的所有圖片是否都載入完成
+                                    checkAndTriggerPackery();
+                                };
+                                
+                                // 圖片載入失敗也要處理
+                                element.onerror = function() {
+                                    this.classList.remove('loading');
+                                    this.classList.add('error');
+                                    
+                                    // 記錄為已處理
+                                    loadedImages.add(this.id);
+                                    
+                                    // 檢查是否可以觸發 Packery
+                                    checkAndTriggerPackery();
+                                };
+                            } else {
+                                loadedImages.add(result.key);
+                            }
+                        }
+                        
+                        console.log(`圖片載入進度: ${result.progress.toFixed(1)}% (${result.loaded}/${result.total})`);
+                    });
+                }, delay);
+            }
+            
+            // 檢查並觸發 Packery 重新計算
+            function checkAndTriggerPackery() {
+                // 獲取當前活動的 tab
+                const activeTab = document.querySelector('.kemono-tab-content.active');
+                if (!activeTab) return;
+                
+                // 獲取該 tab 中的所有圖片
+                const tabImages = activeTab.querySelectorAll('img[id]');
+                const tabImageIds = Array.from(tabImages).map(img => img.id);
+                
+                // 檢查該 tab 的所有圖片是否都已載入
+                const allTabImagesLoaded = tabImageIds.every(id => loadedImages.has(id));
+                
+                if (allTabImagesLoaded) {
+                    console.log('當前 tab 所有圖片載入完成，觸發 Packery 重新計算');
+                    
+                    // 使用更強制的方法來確保 Packery 正確初始化
+                    setTimeout(() => {
+                        forcePackeryRecalculation(activeTab);
+                    }, 300);
+                }
+            }
+            
+            // 強制 Packery 重新計算的函數
+            function forcePackeryRecalculation(targetTab) {
+                if (!targetTab) {
+                    targetTab = document.querySelector('.kemono-tab-content.active');
+                }
+                
+                if (!targetTab) return;
+                
+                console.log('強制執行 Packery 重新計算');
+                
+                // 找到所有的 gallery 容器，但只處理作品 gallery
+                const galleries = targetTab.querySelectorAll('.gallery-artworks');
+                
+                galleries.forEach((gallery, index) => {
+                    const artworkImages = gallery.querySelectorAll('img[id*="artwork"]');
+                    
+                    if (artworkImages.length > 0) {
+                        console.log(`處理 gallery ${index + 1}，包含 ${artworkImages.length} 張作品圖片`);
+                        
+                        // 確保所有圖片都正常顯示
+                        artworkImages.forEach((img, imgIndex) => {
+                            if (img.complete && img.naturalHeight > 0) {
+                                console.log(`圖片 ${imgIndex + 1}: ${img.id}, 自然尺寸: ${img.naturalWidth}x${img.naturalHeight}, 顯示尺寸: ${img.offsetWidth}x${img.offsetHeight}`);
+                            }
+                        });
+                        
+                        // 直接重新初始化 Packery
+                        try {
+                            // 檢查 Packery 是否可用
+                            if (typeof Packery !== 'undefined') {
+                                console.log(`重新初始化 Gallery ${index + 1} 的 Packery`);
+                                
+                                // 銷毀現有的 Packery 實例 (如果存在)
+                                if (gallery.packeryInstance) {
+                                    gallery.packeryInstance.destroy();
+                                }
+                                
+                                // 創建新的 Packery 實例
+                                const packeryOptions = {
+                                    percentPosition: true,
+                                    gutter: 5,
+                                    resize: true
+                                };
+                                
+                                gallery.packeryInstance = new Packery(gallery, packeryOptions);
+                                
+                                console.log(`Gallery ${index + 1} Packery 重新初始化完成`);
+                                
+                                // Packery 初始化後立即顯示 gallery
+                                setTimeout(() => {
+                                    gallery.style.opacity = '1';
+                                    console.log(`Gallery ${index + 1} 重新計算後尺寸: ${gallery.offsetWidth}x${gallery.offsetHeight}px`);
+                                    console.log(`Gallery ${index + 1} 顯示狀態已恢復`);
+                                }, 200);
+                            } else {
+                                console.warn('Packery 函式庫未載入，使用備用方法');
+                                
+                                // 備用方法：強制觸發 resize 並顯示 gallery
+                                for (let i = 0; i < 3; i++) {
+                                    setTimeout(() => {
+                                        window.dispatchEvent(new Event('resize'));
+                                        console.log(`觸發第 ${i + 1} 次 resize 事件，Gallery 高度: ${gallery.offsetHeight}px`);
+                                    }, i * 200);
+                                }
+                                
+                                // 確保 gallery 可見
+                                setTimeout(() => {
+                                    gallery.style.opacity = '1';
+                                }, 600);
+                            }
+                        } catch (error) {
+                            console.error(`Gallery ${index + 1} Packery 初始化失敗:`, error);
+                            // 即使失敗也要顯示 gallery
+                            gallery.style.opacity = '1';
+                        }
+                    }
+                });
+                
+                // 最後測量並報告最終尺寸
+                setTimeout(() => {
+                    console.log(`Tab 容器最終尺寸: ${targetTab.offsetWidth}x${targetTab.offsetHeight}px`);
+                    
+                    galleries.forEach((gallery, index) => {
+                        console.log(`Gallery ${index + 1} 最終尺寸: ${gallery.offsetWidth}x${gallery.offsetHeight}px`);
+                        
+                        const artworkImages = gallery.querySelectorAll('img[id*="artwork"]');
+                        let totalImagesHeight = 0;
+                        artworkImages.forEach((img, imgIndex) => {
+                            totalImagesHeight += img.offsetHeight;
+                            console.log(`  - 圖片 ${imgIndex + 1}: ${img.offsetHeight}px`);
+                        });
+                        console.log(`  - 圖片總高度: ${totalImagesHeight}px`);
+                    });
+                }, 1000);
+            }
+            
+            // 添加一個全局函數，方便調試
+            window.forcePackeryReset = function() {
+                console.log('手動觸發 Packery 重置');
+                const activeTab = document.querySelector('.kemono-tab-content.active');
+                forcePackeryRecalculation(activeTab);
+            }
+            
+            // 立即載入背景圖片
+            loadImagesProgressively(backgroundKeys, 0);
+            
+            // 延遲載入其他圖片，避免阻塞
+            loadImagesProgressively(otherKeys, 300);
+            
+        } catch (error) {
+            console.error('Image loading initialization failed:', error);
+        }
+    } else {
+        console.warn('PageImages not available, keeping placeholder images');
+    }
+    
+    // 切換背景的函數
+    function switchBackground(targetTab) {
+        if (targetTab === 'after') {
+            if (backgroundBefore) backgroundBefore.classList.remove('active');
+            if (backgroundAfter) backgroundAfter.classList.add('active');
+        } else if (targetTab === 'before') {
+            if (backgroundAfter) backgroundAfter.classList.remove('active');
+            if (backgroundBefore) backgroundBefore.classList.add('active');
+        }
+    }
+    
+    // Tab 點擊事件
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // 更新 tab 按鈕的 active 狀態
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // 更新 tab 內容的 active 狀態
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            const targetContent = document.getElementById(`tab-${targetTab}`);
+            if (targetContent) {
+                // 先隱藏所有 gallery 避免布局跳動
+                const galleries = targetContent.querySelectorAll('.gallery');
+                galleries.forEach(gallery => {
+                    gallery.style.opacity = '0';
+                    gallery.style.transition = 'opacity 0.3s ease';
+                });
+                
+                // 顯示 tab 內容
+                targetContent.classList.add('active');
+                
+                // 延遲重新計算 gallery 布局
+                setTimeout(() => {
+                    // 分別處理頭像和作品 gallery
+                    const avatarGalleries = targetContent.querySelectorAll('.gallery-avatar');
+                    const artworkGalleries = targetContent.querySelectorAll('.gallery-artworks');
+                    
+                    console.log(`找到 ${avatarGalleries.length} 個頭像 gallery，${artworkGalleries.length} 個作品 gallery`);
+                    
+                    // 處理頭像 gallery：直接顯示，不需要 Packery
+                    avatarGalleries.forEach((gallery, index) => {
+                        gallery.style.opacity = '1';
+                        // 重置 gallery 容器樣式，移除可能被 JavaScript 設定的尺寸
+                        gallery.style.height = 'auto';
+                        gallery.style.minHeight = 'auto';
+                        gallery.style.maxHeight = 'none';
+                        
+                        const avatarImages = gallery.querySelectorAll('img');
+                        avatarImages.forEach(img => {
+                            img.style.display = 'block';
+                            img.style.opacity = '1';
+                            img.style.visibility = 'visible';
+                            // 確保圖片不被 Packery 影響
+                            img.style.position = 'relative';
+                            img.style.left = 'auto';
+                            img.style.top = 'auto';
+                            img.style.transform = 'none';
+                            console.log(`頭像圖片 ${img.id} 重置完成`);
+                        });
+                        console.log(`頭像 Gallery ${index + 1} 直接顯示完成，容器高度重置為 auto`);
+                    });
+                    
+                    // 處理作品 gallery：重置樣式，準備 Packery 處理
+                    artworkGalleries.forEach((gallery, index) => {
+                        const artworkImages = gallery.querySelectorAll('img');
+                        artworkImages.forEach(img => {
+                            img.style.display = 'block';
+                            img.style.opacity = '1';
+                            img.style.visibility = 'visible';
+                            // 清除可能的 Packery 舊樣式
+                            img.style.position = '';
+                            img.style.left = '';
+                            img.style.top = '';
+                            img.style.transform = '';
+                            console.log(`作品圖片 ${img.id} 重置完成`);
+                        });
+                        // 準備顯示作品 gallery，等待 Packery 處理
+                        gallery.style.opacity = '0';
+                        gallery.style.transition = 'opacity 0.3s ease';
+                        console.log(`作品 Gallery ${index + 1} 準備 Packery 處理`);
+                    });
+                    
+                    // 使用強制重新計算來處理 artwork galleries
+                    setTimeout(() => {
+                        forcePackeryRecalculation(targetContent);
+                    }, 100);
+                }, 50);
+            }
+            
+            // 切換背景圖片
+            switchBackground(targetTab);
+        });
+    });
+    
+    // 處理鍵盤導航
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            const activeTab = document.querySelector('.kemono-tab.active');
+            if (activeTab) {
+                const currentIndex = Array.from(tabs).indexOf(activeTab);
+                let nextIndex;
+                
+                if (e.key === 'ArrowLeft') {
+                    nextIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
+                } else {
+                    nextIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
+                }
+                
+                if (tabs[nextIndex]) {
+                    tabs[nextIndex].click();
+                }
+            }
+        }
+    });
+    
+    // 創作者資訊提示功能
+    const toast = document.getElementById('creator-toast');
+    const toastText = document.getElementById('creator-text');
+    let currentImageId = null;
+    let lightboxWasOpen = false;
+    
+    function showCreatorToast(creatorData, isLightbox = true) {
+        if (!creatorData) return;
+        
+        let content = '繪師：';
+        if (creatorData.link) {
+            content += `<a href="${creatorData.link}" target="_blank" rel="noopener noreferrer">${creatorData.name}</a>`;
+        } else {
+            content += creatorData.name;
+        }
+        
+        toastText.innerHTML = content;
+        toast.classList.add('show');
+        lightboxWasOpen = isLightbox;
+    }
+    
+    function hideCreatorToast() {
+        toast.classList.remove('show');
+        currentImageId = null;
+        lightboxWasOpen = false;
+    }
+    
+    // 監聽 lightbox 狀態變化
+    const bodyObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                const bodyClasses = document.body.classList;
+                
+                if (lightboxWasOpen && !bodyClasses.contains('glightbox-open')) {
+                    hideCreatorToast();
+                }
+            }
+        });
+    });
+    
+    bodyObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+    
+    // 監聽頁面點擊
+    document.addEventListener('click', function(e) {
+        if (currentImageId && toast.classList.contains('show') && !lightboxWasOpen) {
+            if (!toast.contains(e.target) && !e.target.closest('#' + currentImageId)) {
+                hideCreatorToast();
+            }
+        }
+    }, true);
+    
+    // 監聽 ESC 鍵
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && currentImageId) {
+            hideCreatorToast();
+        }
+    });
+    
+    // 為所有圖片加入點擊事件
+    function setupImageListeners() {
+        // 頭像圖片
+        const avatarImages = [avatarAfter, avatarBefore];
+        avatarImages.forEach(img => {
+            if (img) {
+                const hasLightbox = img.classList.contains('glightbox');
+                
+                img.addEventListener('click', function(e) {
+                    const creator = window.creatorInfo[this.id];
+                    if (creator) {
+                        currentImageId = this.id;
+                        
+                        if (hasLightbox) {
+                            setTimeout(() => {
+                                showCreatorToast(creator, true);
+                            }, 100);
+                        } else {
+                            e.preventDefault();
+                            showCreatorToast(creator, false);
+                        }
+                    }
+                });
+            }
+        });
+        
+        // Gallery 圖片
+        const galleryImages = document.querySelectorAll('.gallery img');
+        galleryImages.forEach(img => {
+            img.addEventListener('click', function(e) {
+                const creator = window.creatorInfo[this.id];
+                if (creator) {
+                    currentImageId = this.id;
+                    setTimeout(() => {
+                        showCreatorToast(creator);
+                    }, 100);
+                }
+            });
+        });
+    }
+    
+    // 設置圖片監聽器
+    const allImageKeys = Object.keys(window.pageImages).filter(k => typeof window.pageImages[k] === 'string');
+    window.pageImages.preload(allImageKeys).then(() => {
+        setTimeout(setupImageListeners, 500);
+    }).catch(() => {
+        setTimeout(setupImageListeners, 1000);
+    });
+    }, 100); // 延遲 100ms 執行
+});
+</script>
