@@ -27,10 +27,16 @@
           <div class="thumbnail_card nozoom w-full" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ else }}
-        {{/* 使用更小的縮圖尺寸來減少流量 */}}
-        {{ with .Resize "300x200" }}
-          <div class="thumbnail_card nozoom w-full" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
+        {{/* 優先使用 WebP 格式，並實作 lazy loading */}}
+        {{ $webp := .Resize "300x200 webp" }}
+        {{ $fallback := .Resize "300x200" }}
+        <div class="thumbnail_card nozoom w-full lazy-bg" 
+             data-bg-webp="{{ $webp.RelPermalink }}"
+             data-bg-fallback="{{ $fallback.RelPermalink }}">
+          <noscript>
+            <div class="thumbnail_card nozoom w-full" style="background-image:url({{ $fallback.RelPermalink }});"></div>
+          </noscript>
+        </div>
       {{ end }}
     {{- else -}}
       {{- with $.Site.Params.images }}
