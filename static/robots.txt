@@ -1,0 +1,16 @@
+# Robots.txt for blog.init.engineer
+# Allow all web crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://blog.init.engineer/sitemap.xml
+
+# Crawl-delay for less aggressive crawling
+Crawl-delay: 1
+
+# Disallow admin or temporary paths if any
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /.git/
