@@ -1,0 +1,125 @@
+{{/* Social Links Shortcode */}}
+{{ $mainTitle := .Get "mainTitle" | default "" }}
+{{ $othersTitle := .Get "othersTitle" | default "" }}
+
+{{/* 載入社群連結資料 */}}
+{{ $social := site.Data.social }}
+
+{{/* 社群連結樣式 - 只輸出一次 */}}
+{{ if not (.Page.Scratch.Get "social-links-style") }}
+  {{ .Page.Scratch.Set "social-links-style" true }}
+<style>
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.social-buttons .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.5rem !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+}
+
+.social-buttons .btn svg {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  flex-shrink: 0 !important;
+}
+
+.social-buttons .btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+/* 各社群平台顏色 */
+.btn-email {
+  background-color: #EA4335 !important;
+  color: white !important;
+}
+
+.btn-facebook {
+  background-color: #1877F2 !important;
+  color: white !important;
+}
+
+.btn-plurk {
+  background-color: #FF7900 !important;
+  color: white !important;
+}
+
+.btn-threads {
+  background-color: #000000 !important;
+  color: white !important;
+}
+
+.btn-x {
+  background-color: #000000 !important;
+  color: white !important;
+}
+
+.btn-github {
+  background-color: #333333 !important;
+  color: white !important;
+}
+
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  color: white !important;
+}
+
+.btn-telegram {
+  background-color: #0088CC !important;
+  color: white !important;
+}
+
+.btn-twitch {
+  background-color: #9146FF !important;
+  color: white !important;
+}
+
+.btn-discord {
+  background-color: #5865F2 !important;
+  color: white !important;
+}
+
+.btn-steam {
+  background-color: #2a475e !important;
+  color: white !important;
+}
+</style>
+{{ end }}
+
+{{/* 主要社群連結 */}}
+{{ if $social.main }}
+  {{ if $mainTitle }}
+    <h3>{{ $mainTitle }}</h3>
+  {{ end }}
+  <div class="social-buttons">
+    {{ range $social.main }}
+      <a href="{{ .url }}" target="_blank" class="btn btn-{{ .id }}">
+        {{ partial "icon.html" .icon }} {{ .name }}
+      </a>
+    {{ end }}
+  </div>
+{{ end }}
+
+{{/* 其他社群連結 */}}
+{{ if $social.others }}
+  {{ if $othersTitle }}
+    <h3>{{ $othersTitle }}</h3>
+  {{ end }}
+  <div class="social-buttons">
+    {{ range $social.others }}
+      <a href="{{ .url }}" target="_blank" class="btn btn-{{ .id }}">
+        {{ partial "icon.html" .icon }} {{ .name }}
+      </a>
+    {{ end }}
+  </div>
+{{ end }}

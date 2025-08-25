@@ -1,0 +1,83 @@
+{
+  "main": [
+    {
+      "id": "telegram",
+      "name": "Telegram",
+      "url": "https://t.me/KantaiDeveloper",
+      "icon": "telegram",
+      "color": "#0088CC"
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "url": "https://www.facebook.com/kantai.zeng",
+      "icon": "facebook",
+      "color": "#1877F2"
+    }
+  ],
+  "others": [
+    {
+      "id": "email",
+      "name": "Email",
+      "url": "mailto:kantai.developer@gmail.com",
+      "icon": "email",
+      "color": "#EA4335"
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "url": "https://www.instagram.com/init.engineer",
+      "icon": "instagram",
+      "gradient": "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)"
+    },
+    {
+      "id": "plurk",
+      "name": "Plurk",
+      "url": "https://www.plurk.com/huevo235",
+      "icon": "star",
+      "color": "#FF7900"
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "url": "https://discordapp.com/users/452734375227031562",
+      "icon": "discord",
+      "color": "#5865F2"
+    },
+    {
+      "id": "twitch",
+      "name": "Twitch",
+      "url": "https://twitch.tv/kantai235",
+      "icon": "twitch",
+      "color": "#9146FF"
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "url": "https://steamcommunity.com/id/kantai235",
+      "icon": "steam",
+      "color": "#2a475e"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "url": "https://github.com/Kantai235",
+      "icon": "github",
+      "color": "#333333"
+    },
+    {
+      "id": "threads",
+      "name": "Threads",
+      "url": "https://www.threads.net/@init.engineer",
+      "icon": "threads",
+      "color": "#000000"
+    },
+    {
+      "id": "x",
+      "name": "X / Twitter",
+      "url": "https://x.com/KantaiDeveloper",
+      "icon": "x-twitter",
+      "color": "#000000"
+    }
+  ]
+}
