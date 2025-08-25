@@ -20,7 +20,7 @@ layout: "simple"
   avatarAfter="img/kemono/after/artworks/magicpika1_1.jpg"
   avatarBefore="img/kemono/before/background.jpg"
   artworkAfter1="img/kemono/after/artworks/guruminn_1.jpg"
-  artworkAfter2="img/kemono/after/artworks/magicpika1_1.jpg"
+  artworkAfter2="img/kemono/after/artworks/yutch_kmn_1.jpg"
   artworkBefore1="img/kemono/before/artworks/cs637894_1.jpg"
   artworkBefore2="img/kemono/before/artworks/cs637894_2.jpg"
   artworkBefore3="img/kemono/before/artworks/ctf020308100_1.jpg"
@@ -350,6 +350,7 @@ layout: "simple"
       </div>
       {{< gallery >}}
         <img id="artwork-after-1" class="grid-w50 md:grid-w33 xl:grid-w25" />
+        <img id="artwork-after-2" class="grid-w50 md:grid-w33 xl:grid-w25" />
       {{< /gallery >}}
     </div>
   </div>
@@ -483,8 +484,8 @@ document.addEventListener('DOMContentLoaded', function() {
             link: 'https://x.com/9uruminn'
         },
         'artwork-after-2': {
-            name: 'Pika Owo（皮卡）',
-            link: 'https://www.facebook.com/pika.owo.2025'
+            name: 'ゆっち',
+            link: 'https://x.com/yutch_kmn'
         },
         'avatar-before': {
             name: '氣球↑↑↑',
