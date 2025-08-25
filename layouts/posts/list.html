@@ -29,15 +29,55 @@
     {{ $allPages = where .Site.RegularPages "Type" "in" site.Params.mainSections }}
   {{ end }}
 
+  {{/* 年度分組導航 */}}
+  {{ if gt (len $allPages) 0 }}
+    <nav class="year-navigation mb-8 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+      <h2 class="text-lg font-bold mb-3">按年份瀏覽</h2>
+      <div class="flex flex-wrap gap-2">
+        {{ $years := slice }}
+        {{ range $allPages.GroupByDate "2006" }}
+          {{ $years = $years | append .Key }}
+        {{ end }}
+        {{ range $years }}
+          <a href="#year-{{ . }}" class="m-1 px-3 py-1 bg-primary-100 dark:bg-primary-900 rounded hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors scroll-smooth">
+            {{ . }}
+          </a>
+        {{ end }}
+      </div>
+    </nav>
+
+    {{/* 系列文章導航 */}}
+    {{ $series := .Site.Taxonomies.series }}
+    {{ if $series }}
+    <nav class="series-navigation mb-8 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+      <h2 class="text-lg font-bold mb-3">系列文章</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {{ range $name, $items := $series }}
+          {{ $count := len $items }}
+          {{ if gt $count 2 }}
+          <div class="series-item">
+            <a href="/series/{{ $name | urlize }}/" class="flex items-center justify-between p-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded transition-colors">
+              <span class="font-medium">{{ $name }}</span>
+              <span class="text-sm text-neutral-500 dark:text-neutral-400">{{ $count }} 篇</span>
+            </a>
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </nav>
+    {{ end }}
+  {{ end }}
+
   {{/* Article List */}}
   {{ if gt (len $allPages) 0 }}
-    {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default false) }}
+    {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default true) }}
     
     <section class="space-y-10 w-full">
       {{ range ($allPages.GroupByDate "2006") }}
         {{ if $groupByYear }}
-          <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+          <h2 id="year-{{ .Key }}" class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
             {{ .Key }}
+            <span class="text-sm text-neutral-500 dark:text-neutral-400 ml-2">({{ len .Pages }} 篇)</span>
           </h2>
         {{ end }}
         {{ range .Pages }}

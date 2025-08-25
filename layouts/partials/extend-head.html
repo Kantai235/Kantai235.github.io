@@ -8,3 +8,14 @@
 {{/* Preconnect for performance */}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+{{/* JavaScript 文件 */}}
+{{ $smoothScroll := resources.Get "js/smooth-scroll.js" }}
+{{ if $smoothScroll }}
+<script defer src="{{ $smoothScroll.RelPermalink }}"></script>
+{{ end }}
+
+{{ $lazyLoading := resources.Get "js/lazy-loading.js" }}
+{{ if $lazyLoading }}
+<script defer src="{{ $lazyLoading.RelPermalink }}"></script>
+{{ end }}
