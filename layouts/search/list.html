@@ -1,0 +1,314 @@
+{{ define "main" }}
+<header class="max-w-prose">
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+    {{ i18n "search.title" | default "搜尋" }}
+  </h1>
+  <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400">
+    {{ i18n "search.subtitle" | default "搜尋部落格文章" }}
+  </div>
+</header>
+
+{{/* 搜尋介面 */}}
+<div class="search-container mb-8">
+  <div class="relative">
+    <input type="text" 
+           id="search-input" 
+           class="w-full px-4 py-3 pr-12 text-lg border-2 border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:border-primary-500"
+           placeholder="{{ i18n "search.placeholder" | default "輸入關鍵字搜尋..." }}"
+           autocomplete="off">
+    <div class="absolute inset-y-0 right-0 flex items-center pr-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+  </div>
+  
+  {{/* 搜尋篩選器 */}}
+  <div class="mt-4 flex flex-wrap gap-4">
+    <div class="flex items-center">
+      <label class="text-sm font-medium text-neutral-700 dark:text-neutral-300 mr-2">分類:</label>
+      <select id="category-filter" class="px-3 py-1 border border-neutral-300 dark:border-neutral-600 rounded bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100">
+        <option value="">所有分類</option>
+        {{ range .Site.Taxonomies.categories }}
+          <option value="{{ .Page.Title }}">{{ .Page.Title }}</option>
+        {{ end }}
+      </select>
+    </div>
+    <div class="flex items-center">
+      <label class="text-sm font-medium text-neutral-700 dark:text-neutral-300 mr-2">年份:</label>
+      <select id="year-filter" class="px-3 py-1 border border-neutral-300 dark:border-neutral-600 rounded bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100">
+        <option value="">所有年份</option>
+        {{ $years := slice }}
+        {{ range .Site.RegularPages }}
+          {{ $year := .Date.Format "2006" }}
+          {{ if not (in $years $year) }}
+            {{ $years = $years | append $year }}
+          {{ end }}
+        {{ end }}
+        {{ range sort $years "value" "desc" }}
+          <option value="{{ . }}">{{ . }}</option>
+        {{ end }}
+      </select>
+    </div>
+  </div>
+</div>
+
+{{/* 搜尋結果統計 */}}
+<div id="search-stats" class="mb-4 text-sm text-neutral-500 dark:text-neutral-400" style="display: none;">
+  <span id="search-count">0</span> 個搜尋結果
+</div>
+
+{{/* 搜尋結果容器 */}}
+<div id="search-results" class="space-y-6"></div>
+
+{{/* 無結果提示 */}}
+<div id="no-results" class="text-center py-12" style="display: none;">
+  <div class="text-6xl mb-4">🔍</div>
+  <h3 class="text-xl font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
+    沒有找到相關結果
+  </h3>
+  <p class="text-neutral-500 dark:text-neutral-400">
+    請嘗試使用不同的關鍵字或調整篩選條件
+  </p>
+</div>
+
+{{/* 快捷鍵提示 */}}
+<div class="mt-8 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+  <h3 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">搜尋技巧:</h3>
+  <ul class="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
+    <li>• 使用空格分隔多個關鍵字</li>
+    <li>• 搜尋會匹配文章標題、內容和標籤</li>
+    <li>• 使用篩選器快速縮小搜尋範圍</li>
+    <li>• 支援中英文搜尋</li>
+  </ul>
+</div>
+
+<script>
+// 搜尋功能實作
+document.addEventListener('DOMContentLoaded', function() {
+  let searchIndex = [];
+  let fuse;
+  
+  const searchInput = document.getElementById('search-input');
+  const categoryFilter = document.getElementById('category-filter');
+  const yearFilter = document.getElementById('year-filter');
+  const searchResults = document.getElementById('search-results');
+  const searchStats = document.getElementById('search-stats');
+  const searchCount = document.getElementById('search-count');
+  const noResults = document.getElementById('no-results');
+  
+  // 載入搜尋索引
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      searchIndex = data;
+      
+      // 初始化 Fuse.js
+      fuse = new Fuse(searchIndex, {
+        keys: [
+          { name: 'title', weight: 3 },
+          { name: 'content', weight: 1 },
+          { name: 'tags', weight: 2 },
+          { name: 'categories', weight: 2 }
+        ],
+        threshold: 0.3,
+        includeScore: true,
+        includeMatches: true,
+        minMatchCharLength: 2
+      });
+      
+      // 檢查 URL 參數
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('q');
+      if (query) {
+        searchInput.value = query;
+        performSearch();
+      }
+    })
+    .catch(error => {
+      console.error('Failed to load search index:', error);
+    });
+  
+  // 搜尋事件監聽
+  let searchTimeout;
+  searchInput.addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(performSearch, 300);
+  });
+  
+  categoryFilter.addEventListener('change', performSearch);
+  yearFilter.addEventListener('change', performSearch);
+  
+  // 按 Enter 鍵搜尋
+  searchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      performSearch();
+    }
+  });
+  
+  // 執行搜尋
+  function performSearch() {
+    const query = searchInput.value.trim();
+    const selectedCategory = categoryFilter.value;
+    const selectedYear = yearFilter.value;
+    
+    if (!fuse || (!query && !selectedCategory && !selectedYear)) {
+      searchResults.innerHTML = '';
+      searchStats.style.display = 'none';
+      noResults.style.display = 'none';
+      return;
+    }
+    
+    let results = [];
+    
+    if (query) {
+      results = fuse.search(query);
+    } else {
+      // 如果沒有搜尋詞，顯示所有文章
+      results = searchIndex.map((item, index) => ({ item, refIndex: index }));
+    }
+    
+    // 應用篩選器
+    if (selectedCategory) {
+      results = results.filter(result => 
+        result.item.categories && result.item.categories.includes(selectedCategory)
+      );
+    }
+    
+    if (selectedYear) {
+      results = results.filter(result => 
+        new Date(result.item.date).getFullYear().toString() === selectedYear
+      );
+    }
+    
+    displayResults(results, query);
+    updateSearchStats(results.length, query);
+    updateURL(query);
+  }
+  
+  // 顯示搜尋結果
+  function displayResults(results, query) {
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      noResults.style.display = 'block';
+      return;
+    }
+    
+    noResults.style.display = 'none';
+    
+    results.forEach(result => {
+      const item = result.item;
+      const resultElement = createResultElement(item, query, result.matches);
+      searchResults.appendChild(resultElement);
+    });
+  }
+  
+  // 建立結果元素
+  function createResultElement(item, query, matches) {
+    const div = document.createElement('div');
+    div.className = 'search-result p-4 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors';
+    
+    let content = item.content || '';
+    let title = item.title || '';
+    
+    // 如果有匹配結果，高亮顯示
+    if (matches && query) {
+      matches.forEach(match => {
+        if (match.key === 'title') {
+          title = highlightMatches(title, match.indices);
+        } else if (match.key === 'content') {
+          content = getSnippet(content, match.indices, query);
+        }
+      });
+    }
+    
+    div.innerHTML = `
+      <h3 class="text-lg font-semibold mb-2">
+        <a href="${item.permalink}" class="text-primary-600 dark:text-primary-400 hover:underline">
+          ${title}
+        </a>
+      </h3>
+      <div class="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
+        ${formatDate(item.date)}
+        ${item.categories ? ` • ${item.categories.join(', ')}` : ''}
+      </div>
+      <p class="text-neutral-700 dark:text-neutral-300">
+        ${content.substring(0, 200)}${content.length > 200 ? '...' : ''}
+      </p>
+      ${item.tags ? `<div class="mt-2 flex flex-wrap gap-1">${item.tags.map(tag => `<span class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-xs">${tag}</span>`).join('')}</div>` : ''}
+    `;
+    
+    return div;
+  }
+  
+  // 高亮匹配文字
+  function highlightMatches(text, indices) {
+    if (!indices || indices.length === 0) return text;
+    
+    let result = '';
+    let lastIndex = 0;
+    
+    indices.forEach(([start, end]) => {
+      result += text.slice(lastIndex, start);
+      result += `<mark class="bg-yellow-200 dark:bg-yellow-800">${text.slice(start, end + 1)}</mark>`;
+      lastIndex = end + 1;
+    });
+    
+    result += text.slice(lastIndex);
+    return result;
+  }
+  
+  // 取得內容片段
+  function getSnippet(content, indices, query) {
+    if (!indices || indices.length === 0) {
+      return content.substring(0, 200);
+    }
+    
+    const firstMatch = indices[0];
+    const start = Math.max(0, firstMatch[0] - 50);
+    const end = Math.min(content.length, firstMatch[1] + 100);
+    
+    let snippet = content.substring(start, end);
+    if (start > 0) snippet = '...' + snippet;
+    if (end < content.length) snippet = snippet + '...';
+    
+    return highlightMatches(snippet, indices.map(([s, e]) => [s - start, e - start]).filter(([s, e]) => s >= 0 && e < snippet.length));
+  }
+  
+  // 更新搜尋統計
+  function updateSearchStats(count, query) {
+    searchCount.textContent = count;
+    searchStats.style.display = query || count > 0 ? 'block' : 'none';
+  }
+  
+  // 更新 URL
+  function updateURL(query) {
+    const url = new URL(window.location);
+    if (query) {
+      url.searchParams.set('q', query);
+    } else {
+      url.searchParams.delete('q');
+    }
+    window.history.replaceState({}, '', url);
+  }
+  
+  // 格式化日期
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('zh-TW');
+  }
+  
+  // 自動 focus 搜尋框
+  searchInput.focus();
+  
+  // 鍵盤快捷鍵
+  document.addEventListener('keydown', function(e) {
+    if (e.key === '/' && e.target !== searchInput) {
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
+});
+</script>
+{{ end }}

@@ -29,19 +29,22 @@
     {{ $allPages = where .Site.RegularPages "Type" "in" site.Params.mainSections }}
   {{ end }}
 
-  {{/* 年度分組導航 */}}
+  {{/* 年度篩選導航 */}}
   {{ if gt (len $allPages) 0 }}
-    <nav class="year-navigation mb-8 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
-      <h2 class="text-lg font-bold mb-3">按年份瀏覽</h2>
+    <nav class="year-filter mb-8 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+      <h2 class="text-lg font-bold mb-3">按年份篩選</h2>
       <div class="flex flex-wrap gap-2">
+        <button data-year="all" class="year-filter-btn active m-1 px-3 py-1 bg-primary-500 text-white dark:bg-primary-600 rounded hover:bg-primary-600 dark:hover:bg-primary-700 transition-colors">
+          全部 ({{ len $allPages }})
+        </button>
         {{ $years := slice }}
         {{ range $allPages.GroupByDate "2006" }}
-          {{ $years = $years | append .Key }}
+          {{ $years = $years | append (dict "year" .Key "count" (len .Pages)) }}
         {{ end }}
         {{ range $years }}
-          <a href="#year-{{ . }}" class="m-1 px-3 py-1 bg-primary-100 dark:bg-primary-900 rounded hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors scroll-smooth">
-            {{ . }}
-          </a>
+          <button data-year="{{ .year }}" class="year-filter-btn m-1 px-3 py-1 bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors">
+            {{ .year }} ({{ .count }})
+          </button>
         {{ end }}
       </div>
     </nav>
@@ -72,77 +75,63 @@
   {{ if gt (len $allPages) 0 }}
     {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default true) }}
     
-    <section class="space-y-10 w-full">
-      {{ range ($allPages.GroupByDate "2006") }}
+    {{/* 預設分頁模式的文章容器 */}}
+    <section id="articles-container" class="space-y-10 w-full">
+      {{/* 使用 Hugo 的分頁功能 */}}
+      {{ range (.Paginate ($allPages.GroupByDate "2006")).PageGroups }}
         {{ if $groupByYear }}
-          <h2 id="year-{{ .Key }}" class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+          <h2 id="year-{{ .Key }}" class="year-header mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300" data-year="{{ .Key }}">
             {{ .Key }}
             <span class="text-sm text-neutral-500 dark:text-neutral-400 ml-2">({{ len .Pages }} 篇)</span>
           </h2>
         {{ end }}
         {{ range .Pages }}
-          {{/* Create a modified page context with language-appropriate URL */}}
-          {{ $currentLang := $.Site.Language.Lang }}
-          {{ $currentPage := . }}
-          {{ if eq $currentLang "zh-tw" }}
-            {{ partial "article-link/simple.html" . }}
-          {{ else }}
-            {{/* Generate URL for current language */}}
-            {{ $langPrefix := "" }}
-            {{ if ne $currentLang "zh-tw" }}
-              {{ $langPrefix = printf "/%s" $currentLang }}
+          {{ $year := .Date.Format "2006" }}
+          <article class="article-item" data-year="{{ $year }}" data-date="{{ .Date.Format "2006-01-02" }}">
+            {{ $currentLang := $.Site.Language.Lang }}
+            {{ if eq $currentLang "zh-tw" }}
+              {{ partial "article-link/simple.html" . }}
+            {{ else }}
+              {{ partial "article-link/simple.html" . }}
             {{ end }}
-            {{ $newURL := printf "%s%s" $langPrefix .RelPermalink }}
-            {{/* Override the RelPermalink temporarily */}}
-            {{ .Scratch.Set "originalRelPermalink" .RelPermalink }}
-            {{ .Scratch.Set "modifiedRelPermalink" $newURL }}
-            <div class="group-hover-card group flex flex-wrap md:flex-nowrap article relative">
-              <a href="{{ $newURL }}" class="absolute inset-0" aria-label="{{ .Title }}"></a>
-              {{/* Feature image handling */}}
-              {{- $images := .Resources.ByType "image" -}}
-              {{- $featured := $images.GetMatch "*feature*" -}}
-              {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-              {{ if and .Params.featureimage (not $featured) }}
-                {{- $url:= .Params.featureimage -}}
-                {{ $featured = resources.GetRemote $url }}
-              {{ end }}
-              {{- if not $featured }}
-                {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
-              {{ end -}}
-              {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
-              {{- with $featured -}}
-                {{ $disableImageOptimization := $.Site.Params.disableImageOptimization | default false }}
-                {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-                  <div class="w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7" style="background-image:url({{ .RelPermalink }});"></div>
-                {{ else }}
-                  {{ with .Resize "600x" }}
-                    <div class="w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7" style="background-image:url({{ .RelPermalink }});"></div>
-                  {{ end }}
-                {{ end }}
-              {{- end -}}
-              
-              <div class="mt-3 md:mt-0">
-                <div class="items-center text-left text-xl font-semibold">
-                  <div class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-                    {{ .Title | emojify }}
-                  </div>
-                  {{ if and .Draft .Site.Params.article.showDraftLabel }}
-                    <div class="ltr:ml-2 rtl:mr-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</div>
-                  {{ end }}
-                </div>
-                <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
-                  {{ partial "article-meta/basic.html" . }}
-                </div>
-                {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-                  <div class="prose dark:prose-invert max-w-fit py-1">{{ .Summary | plainify }}</div>
-                {{ end }}
-              </div>
-            </div>
-          {{ end }}
+          </article>
         {{ end }}
       {{ end }}
     </section>
-  {{/* else: no articles */}}
+    
+    {{/* 篩選模式的隱藏文章容器（包含所有文章） */}}
+    <section id="all-articles-container" class="space-y-10 w-full hidden">
+      {{ range ($allPages.GroupByDate "2006") }}
+        <h2 class="year-header-all mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300" data-year="{{ .Key }}">
+          {{ .Key }}
+          <span class="text-sm text-neutral-500 dark:text-neutral-400 ml-2">({{ len .Pages }} 篇)</span>
+        </h2>
+        {{ range .Pages }}
+          {{ $year := .Date.Format "2006" }}
+          <article class="article-item-all" data-year="{{ $year }}" data-date="{{ .Date.Format "2006-01-02" }}">
+            {{ $currentLang := $.Site.Language.Lang }}
+            {{ if eq $currentLang "zh-tw" }}
+              {{ partial "article-link/simple.html" . }}
+            {{ else }}
+              {{ partial "article-link/simple.html" . }}
+            {{ end }}
+          </article>
+        {{ end }}
+      {{ end }}
+    </section>
+    
+    {{/* 分頁器 */}}
+    <div id="pagination-container" class="mt-8">
+      {{ partial "pagination.html" . }}
+    </div>
+    
+    {{/* 年份篩選訊息 */}}
+    <div id="filter-message" class="mt-8 text-center text-neutral-500 dark:text-neutral-400 hidden">
+      <p id="filter-text"></p>
+      <p class="text-sm mt-2">
+        <button id="clear-filter" class="text-primary-500 hover:text-primary-600 underline">清除篩選，回到分頁模式</button>
+      </p>
+    </div>
   {{ else }}
     <section class="mt-10 prose dark:prose-invert">
       <p class="py-8 border-t">

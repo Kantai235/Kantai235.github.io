@@ -10,9 +10,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 {{/* JavaScript 文件 */}}
-{{ $smoothScroll := resources.Get "js/smooth-scroll.js" }}
-{{ if $smoothScroll }}
-<script defer src="{{ $smoothScroll.RelPermalink }}"></script>
+{{ $yearFilter := resources.Get "js/year-filter.js" }}
+{{ if $yearFilter }}
+<script defer src="{{ $yearFilter.RelPermalink }}"></script>
 {{ end }}
 
 {{ $lazyLoading := resources.Get "js/lazy-loading.js" }}

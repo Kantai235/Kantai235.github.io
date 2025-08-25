@@ -33,7 +33,7 @@ timeout = "300s"
   posts = "/posts/:slug/"
 
 [pagination]
-  pagerSize = 100
+  pagerSize = 10
 
 [imaging]
   resampleFilter = "lanczos"
