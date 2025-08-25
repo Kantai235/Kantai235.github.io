@@ -32,8 +32,8 @@ At work, I'm basically a grunt who occasionally writes a little bit of code.
 
   <!-- Tab 切換按鈕 -->
   <div class="kemono-tabs">
-    <button class="kemono-tab active" data-tab="after">現在的設定</button>
-    <button class="kemono-tab" data-tab="before">以前的設定</button>
+    <button class="kemono-tab active" data-tab="after">Current Fursona</button>
+    <button class="kemono-tab" data-tab="before">Previous Fursona</button>
   </div>
 
   <!-- Tab 內容 -->
@@ -42,7 +42,7 @@ At work, I'm basically a grunt who occasionally writes a little bit of code.
       <div class="flex flex-col md:flex-row gap-8 mb-6">
         {{< artwork-gallery collection="kemono.after.gallery" class="mt-0 mb-0 rounded-lg shadow-lg" >}}
       </div>
-      {{< artwork-gallery collection="kemono.after.artworks" class="grid-w50 md:grid-w33 xl:grid-w25" >}}
+      {{< artwork-gallery collection="kemono.after.artworks" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
     </div>
   </div>
 
@@ -51,7 +51,7 @@ At work, I'm basically a grunt who occasionally writes a little bit of code.
       <div class="flex flex-col md:flex-row gap-8 mb-6">
         {{< artwork-gallery collection="kemono.before.gallery" class="mt-0 mb-0 rounded-lg shadow-lg" >}}
       </div>
-      {{< artwork-gallery collection="kemono.before.artworks" class="grid-w50 md:grid-w33 xl:grid-w25" >}}
+      {{< artwork-gallery collection="kemono.before.artworks" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
     </div>
   </div>
 </div>
