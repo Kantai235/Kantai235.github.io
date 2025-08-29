@@ -1,4 +1,5 @@
 ---
+title: "うちの子"
 layout: "simple"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Fursona"
 layout: "simple"
 ---
 

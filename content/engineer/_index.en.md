@@ -1,4 +1,5 @@
 ---
+title: "About me"
 showTableOfContents: true
 ---
 
