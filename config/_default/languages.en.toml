@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 2
-title = "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
+title = "乾太"
 
 [params]
   displayName = "English"
@@ -12,20 +12,13 @@ title = "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
   copyright = "Copyright © KantaiDeveloper"
 
 [params.author]
-  name = "乾太"
+  name = "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
   image = "img/kemono/after/avatar.jpg"
   headline = "I’m your coding buddy."
   bio = "I’m your coding buddy."
   links = [
     { email = "mailto:kantai.developer@gmail.com" },
     { facebook = "https://www.facebook.com/kantai.zeng" },
-    { link = "https://www.plurk.com/huevo235" },
-    { instagram = "https://www.instagram.com/init.engineer" },
-    { threads = "https://www.threads.net/@username" },
-    { x-twitter = "https://x.com/KantaiDeveloper" },
     { github = "https://github.com/Kantai235" },
-    { twitch = "https://twitch.tv/kantai235" },
-    { discord = "https://discordapp.com/users/452734375227031562" },
     { telegram = "https://t.me/KantaiDeveloper" },
-    { steam = "https://steamcommunity.com/id/kantai235" },
   ]
