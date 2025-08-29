@@ -19,3 +19,8 @@
 {{ if $lazyLoading }}
 <script defer src="{{ $lazyLoading.RelPermalink }}"></script>
 {{ end }}
+
+{{ $languagePrompt := resources.Get "js/language-prompt.js" }}
+{{ if $languagePrompt }}
+<script defer src="{{ $languagePrompt.RelPermalink }}"></script>
+{{ end }}
