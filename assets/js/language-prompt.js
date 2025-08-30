@@ -6,7 +6,7 @@
     'zh': 'zh-tw',
     'zh-tw': 'zh-tw',
     'zh-hk': 'zh-tw',
-    'zh-cn': 'zh-tw',
+    'zh-cn': 'zh-cn',
     'en': 'en',
     'en-us': 'en',
     'en-gb': 'en',
@@ -16,6 +16,7 @@
   
   const languageNames = {
     'zh-tw': '繁體中文',
+    'zh-cn': '简体中文',
     'en': 'English',
     'ja': '日本語'
   };
@@ -37,6 +38,7 @@
     
     if (path.startsWith('/en/')) return 'en';
     if (path.startsWith('/ja/')) return 'ja';
+    if (path.startsWith('/zh-cn/')) return 'zh-cn';
     
     return 'zh-tw';
   }
@@ -198,6 +200,11 @@
         'ja': '切換到日文版？',
         'zh-tw': '切換到繁體中文版？'
       },
+      'zh-cn': {
+        'en': '切换到英文版？',
+        'ja': '切换到日文版？',
+        'zh-cn': '切换到简体中文版？'
+      },
       'ja': {
         'en': '英語版に切り替えますか？',
         'ja': '日本語版に切り替えますか？',
@@ -220,6 +227,7 @@
     
     const texts = {
       'zh-tw': '不用了',
+      'zh-cn': '不用了',
       'ja': 'いいえ',
       'en': 'No thanks'
     };

@@ -1,0 +1,37 @@
+# -- Main Menu --
+# The main menu is displayed in the header at the top of the page.
+# Acceptable parameters are name, pageRef, page, url, title, weight.
+# 
+# The simplest menu configuration is to provide:
+#   name = The name to be displayed for this menu link
+#   pageRef = The identifier of the page or section to link to
+#
+# By default the menu is ordered alphabetically. This can be
+# overridden by providing a weight value. The menu will then be
+# ordered by weight from lowest to highest.
+
+[[main]]
+  name = "首页"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "关于我"
+  weight = 20
+
+[[main]]
+  name = "福瑞控"
+  parent = "关于我"
+  pageRef = "/kemono"
+  weight = 21
+
+[[main]]
+  name = "程序员"
+  parent = "关于我"
+  pageRef = "/engineer"
+  weight = 22
+
+[[main]]
+  name = "文章"
+  pageRef = "/posts"
+  weight = 30

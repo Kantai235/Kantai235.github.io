@@ -1,0 +1,22 @@
+languageCode = "zh-cn"
+languageName = "简体中文"
+weight = 1
+title = "乾太"
+
+[params]
+  displayName = "简体中文"
+  isoCode = "zh-TW"
+  rtl = false
+  dateFormat = "2006年1月2日"
+  description = "一起写程序的好朋友。"
+  copyright = "Copyright © KantaiDeveloper"
+
+[params.author]
+  name = "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
+  image = "img/kemono/after/avatar.jpg"
+  headline = "一起写程序的好朋友。"
+  bio = "一起写程序的好朋友。"
+  links = [
+    { email = "mailto:kantai.developer@gmail.com" },
+    { telegram = "https://t.me/KantaiDeveloper" },
+  ]
