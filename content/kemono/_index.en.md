@@ -1,22 +1,38 @@
 ---
-title: "Fursona"
+title: "Heyo! I'm Kantai 🦊"
 layout: "simple"
 ---
-
-# Heyo! I'm Kantai 🦊
 
 {{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
 Pardon my English, I rely on a translator. 🥺
 {{< /alert >}}
 
 {{< lead >}}
-Furry from Tainan, Taiwan | Chubby | Otaku | Denpa!
+Taiwan furry, Tainan furry, chonky, homebody, a bit denpa!
 
-My fursona is a brown and yellow fox. I'm a furry through and through, with a total weak spot for anything fluffy, cute, and chubby.
+Born in Tainan, living in Tainan, thriving in Tainan, loving Tainan — proud **Tainaner**!
 
-I'm super shy and tend to be pretty passive. Hiding in a box makes me feel safe, but don't worry, I don't bite.
+I’m a software engineer who jokingly calls himself the team’s janitor. I occasionally write a little code.
 
-At work, I'm basically a grunt who occasionally writes a little bit of code.
+Furries are great, beast-boys are awesome, and **chonky beast-boys** absolutely melt my heart!
+
+I’m naturally shy with a small social battery; once it’s empty I go quiet and passive.
+
+Still, please keep talking to me—I’ll be happy the whole time (⁎˃ᴗ˂)و
+
+Sometimes I reply slowly: I might be cooking, sleeping, riding my scooter, or running simulations in my head to find “the most fitting reply.”
+
+Interaction logic: the closer we are, the more blunt I get; the less I like someone, the more politely I act. I try not to show dislike.
+
+I love **coffee, matcha, and ramen**, and I’m a fan of single-player, story-driven games.
+
+I like going out but not leaving home—door-to-door pickup instantly adds +100 points.
+
+I don’t think I’m good at coding, so my professional advice is usually just: “I don’t know.”
+
+**Feel free to poke and follow**, or just [ping me on Telegram](https://t.me/KantaiDeveloper).
+
+If you want to be friends, let’s warm up slowly 👉👈
 {{< /lead >}}
 
 {{< kemono-setup >}}
@@ -25,10 +41,10 @@ At work, I'm basically a grunt who occasionally writes a little bit of code.
 <div class="kemono-container">
   <!-- 背景圖片容器 -->
   <div id="background-after" class="kemono-background active">
-    <img id="background-img-after" alt="現在的設定背景">
+    <img id="background-img-after" alt="Current Fursona">
   </div>
   <div id="background-before" class="kemono-background">
-    <img id="background-img-before" alt="以前的設定背景">
+    <img id="background-img-before" alt="Previous Fursona">
   </div>
 
   <!-- Tab 切換按鈕 -->
@@ -57,28 +73,35 @@ At work, I'm basically a grunt who occasionally writes a little bit of code.
   </div>
 </div>
 
-## Likes & Interests
+## Favorites ☕🍵🍜🎮
 
-### Drinks
+### Drinks ☕🍵
 - **Coffee**: Black coffee or a latte. No creamer, no sugar.
 - **Matcha**: I'm a big fan of the "Isuzu" blend from Marukyu Koyamaen in Uji.
 
-### Ramen
-- **Tainan - Horai-ken**: Super Rich "Mega Ton" Ramen, Tonkotsu Gyokai Tsukemen (pork & fish dipping noodles).
-- **Tainan - Ore-ni Ramen**: Special Rich Pork, Chicken & Fish Tsukemen.
-- **Kaohsiung - Menya Sho**: Special SP Rich Soup Ramen, Chashu Rice Bowl.
-- **Kyoto - Kaidashi-men Kitada**: Hamaguri Ramen (clam broth ramen).
+### Ramen Shortlist 🍜
+- **Tainan | Horai-ken**: Super Rich "Mega Ton" Ramen, Tonkotsu Gyokai Tsukemen (pork & fish dipping noodles).
+- **Tainan | Ore-ni Ramen**: Special Rich Pork, Chicken & Fish Tsukemen.
+- **Kaohsiung | Menya Sho**: Special SP Rich Soup Ramen, Chashu Rice Bowl.
+- **Kyoto | Kaidashi-men Kitada**: Hamaguri Ramen (clam broth ramen).
 
-### Games
+### Games 🎮
 - **PS5 Pro**: Death Stranding, Ghost of Tsushima, Astro's Playroom, Elden Ring, Sekiro: Shadows Die Twice.
 - **NS2**: The Legend of Zelda series, Hollow Knight, Pokémon series.
 - **PC**: Final Fantasy XIV
 - **Mobile Games**: Pokémon TCG Pocket, Project XXL, Persona 5: The Phantom X.
 
-## Likes & Dislikes
-- In chats, I like to use Zhuyin (Taiwanese phonetic symbols), kaomoji (emoticons), emojis, and stickers.
-- The closer we get, the less formal and more direct I become. Conversely, I tend to act more polite around people I'm not a fan of.
-- I dislike noisy places, so I almost always use noise-canceling headphones to stay in my own quiet bubble.
+## Going-Out Threshold 🚶‍♂️➡️🏠
+- If fare > 100 or ride > 30 min, I’m likely to stay home
+- But love beats all! I’ll still hop the HSR to Taipei for the 2025 Cultural Expo (zoom)
+
+## How I Interact 💬
+- I love when people start the conversation; if you keep coming, I keep smiling ✧
+- Want to be friends? Let’s follow each other first and get close step by step 👉👈
+- I sometimes chat with Zhuyin, kaomoji, emoji, and stickers
+- The closer we get, the blunter I am; the more I dislike someone, the more polite I act
+- I dislike noise—ANC headphones are my default for peace and quiet
+- For “pro” questions, it’s often just “I don’t know,” but I’ll cheer you on!
 
 ## Contact & Hangout
 
