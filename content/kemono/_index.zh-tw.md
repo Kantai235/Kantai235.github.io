@@ -83,7 +83,7 @@ layout: "simple"
 - **PS5 Pro**: 死亡擱淺、對馬戰鬼、宇宙機器人、艾爾登法環、隻狼
 - **NS2**: 薩爾達傳說、空洞騎士、寶可夢
 - **PC**: Final Fantasy XIV
-- **手機遊戲**: Pokémon TCG Pocket、Project XXL、女神異聞錄：夜幕魅影
+- **手機遊戲**: Pokémon TCG Pocket、XXL Woofia、女神異聞錄：夜幕魅影
 > 偏好單人敘事向，很容易被劇情戳中淚腺。
 
 ## 出門門檻 🚶‍♂️➡️🏠

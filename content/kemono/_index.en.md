@@ -1,5 +1,5 @@
 ---
-title: "Heyo! I'm Kantai 🦊"
+title: "Heyo! I'm 乾太(Kantai) 🦊"
 layout: "simple"
 ---
 
@@ -89,7 +89,7 @@ If you want to be friends, let’s warm up slowly 👉👈
 - **PS5 Pro**: Death Stranding, Ghost of Tsushima, Astro's Playroom, Elden Ring, Sekiro: Shadows Die Twice.
 - **NS2**: The Legend of Zelda series, Hollow Knight, Pokémon series.
 - **PC**: Final Fantasy XIV
-- **Mobile Games**: Pokémon TCG Pocket, Project XXL, Persona 5: The Phantom X.
+- **Mobile Games**: Pokémon TCG Pocket, XXL Woofia, Persona 5: The Phantom X.
 
 ## Going-Out Threshold 🚶‍♂️➡️🏠
 - If fare > 100 or ride > 30 min, I’m likely to stay home

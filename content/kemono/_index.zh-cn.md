@@ -83,7 +83,7 @@ layout: "simple"
 - **PS5 Pro**: 死亡搁浅、对马岛之魂、ASTRO BOT（宇宙机器人）、艾尔登法环、只狼：影逝二度
 - **NS2**: 塞尔达传说、空洞骑士、宝可梦
 - **PC**: 最终幻想 XIV（Final Fantasy XIV）
-- **手机游戏**: Pokémon TCG Pocket、Project XXL、女神异闻录：夜幕魅影
+- **手机游戏**: Pokémon TCG Pocket、XXL Woofia、女神异闻录：夜幕魅影
 > 偏好单人叙事向，很容易被剧情戳中泪腺。
 
 ## 出门门槛 🚶‍♂️➡️🏠

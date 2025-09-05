@@ -1,5 +1,5 @@
 ---
-title: "やっほー！乾太（かんた）だよ🦊"
+title: "やっほー！乾太だよ🦊"
 layout: "simple"
 ---
 
@@ -8,7 +8,7 @@ layout: "simple"
 {{< /alert >}}
 
 {{< lead >}}
-台湾フーリー、台南フーリー、**ぽっちゃり**、おうち派、電波系！
+台湾でケモノ、台南でケモノ、**ぽっちゃり**、おうち派、電波系！
 
 台南で生まれ、台南で暮らし、台南で生きて、台南を愛してる。**台南人**であることが誇り！
 
@@ -89,7 +89,7 @@ layout: "simple"
 - **PS5 Pro**: 『DEATH STRANDING』、『Ghost of Tsushima』、『ASTRO's PLAYROOM』、『ELDEN RING』、『SEKIRO』など
 - **NS2**: 「ゼルダの伝説」シリーズ、『Hollow Knight』、「ポケモン」シリーズ
 - **PC**: 『FINAL FANTASY XIV』
-- **手機遊戲**: 『Pokémon TCG Pocket』、『Project XXL』、『ペルソナ5：The Phantom X』
+- **手機遊戲**: 『Pokémon TCG Pocket』、『XXL Woofia』、『ペルソナ5：The Phantom X』
 > 物語重視のソロプレイ派。すぐに涙腺をやられます。
 
 ## 外出ハードル 🚶‍♂️➡️🏠
