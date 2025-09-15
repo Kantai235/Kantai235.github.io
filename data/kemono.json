@@ -40,6 +40,16 @@
             "name": "ゆっち",
             "link": "https://x.com/yutch_kmn"
           }
+        },
+        {
+          "id": "artwork-after-3",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "さとたろ的作品",
+          "src": "img/kemono/after/artworks/satotaro_1.jpg",
+          "creator": {
+            "name": "さとたろ",
+            "link": "https://x.com/Satotaro_0505"
+          }
         }
       ]
     },
