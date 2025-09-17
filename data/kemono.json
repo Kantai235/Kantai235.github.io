@@ -50,6 +50,16 @@
             "name": "さとたろ",
             "link": "https://x.com/Satotaro_0505"
           }
+        },
+        {
+          "id": "artwork-after-4",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "ㄏㄓ的作品",
+          "src": "img/kemono/after/artworks/edgehzstw_1.jpg",
+          "creator": {
+            "name": "ㄏㄓ",
+            "link": "https://x.com/edgehzstw"
+          }
         }
       ]
     },
