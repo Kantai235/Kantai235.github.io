@@ -1,0 +1,174 @@
+{
+  "series": [
+    {
+      "id": "haudai-glasses",
+      "title": "暈船乾太",
+      "description": "乾太今天暈船了。",
+      "creator": {
+        "name": "典藏大耳毛",
+        "link": "https://www.facebook.com/hau.dai.2025"
+      },
+      "thumbnail": "/img/kemono/before/stickers/haudai_seasickness_glasses/1.jpg",
+      "platforms": [
+        {
+          "name": "Telegram",
+          "icon": "telegram",
+          "url": "https://t.me/addstickers/Seasickness_Kantai",
+          "available": true
+        }
+      ],
+      "stickers": [
+        {
+          "id": "glasses-sticker-1",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/1.jpg",
+          "alt": "貼圖 1"
+        },
+        {
+          "id": "glasses-sticker-2",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/2.jpg",
+          "alt": "貼圖 2"
+        },
+        {
+          "id": "glasses-sticker-3",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/3.jpg",
+          "alt": "貼圖 3"
+        },
+        {
+          "id": "glasses-sticker-4",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/4.jpg",
+          "alt": "貼圖 4"
+        },
+        {
+          "id": "glasses-sticker-5",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/5.jpg",
+          "alt": "貼圖 5"
+        },
+        {
+          "id": "glasses-sticker-6",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/6.jpg",
+          "alt": "貼圖 6"
+        },
+        {
+          "id": "glasses-sticker-7",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/7.jpg",
+          "alt": "貼圖 7"
+        },
+        {
+          "id": "glasses-sticker-8",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/8.jpg",
+          "alt": "貼圖 8"
+        },
+        {
+          "id": "glasses-sticker-9",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/9.jpg",
+          "alt": "貼圖 9"
+        },
+        {
+          "id": "glasses-sticker-10",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/10.jpg",
+          "alt": "貼圖 10"
+        },
+        {
+          "id": "glasses-sticker-11",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/11.jpg",
+          "alt": "貼圖 11"
+        },
+        {
+          "id": "glasses-sticker-12",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/12.jpg",
+          "alt": "貼圖 12"
+        },
+        {
+          "id": "glasses-sticker-13",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/13.jpg",
+          "alt": "貼圖 13"
+        }
+      ]
+    },
+    {
+      "id": "haudai-no-glasses",
+      "title": "暈船乾太",
+      "description": "乾太今天暈船了，而且還不戴眼鏡。",
+      "creator": {
+        "name": "典藏大耳毛",
+        "link": "https://www.facebook.com/hau.dai.2025"
+      },
+      "thumbnail": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/1.jpg",
+      "platforms": [
+        {
+          "name": "Telegram",
+          "icon": "telegram",
+          "url": "https://t.me/addstickers/Seasickness_Kantai_No_Glasses",
+          "available": true
+        }
+      ],
+      "stickers": [
+        {
+          "id": "no-glasses-sticker-1",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/1.jpg",
+          "alt": "貼圖 1"
+        },
+        {
+          "id": "no-glasses-sticker-2",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/2.jpg",
+          "alt": "貼圖 2"
+        },
+        {
+          "id": "no-glasses-sticker-3",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/3.jpg",
+          "alt": "貼圖 3"
+        },
+        {
+          "id": "no-glasses-sticker-4",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/4.jpg",
+          "alt": "貼圖 4"
+        },
+        {
+          "id": "no-glasses-sticker-5",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/5.jpg",
+          "alt": "貼圖 5"
+        },
+        {
+          "id": "no-glasses-sticker-6",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/6.jpg",
+          "alt": "貼圖 6"
+        },
+        {
+          "id": "no-glasses-sticker-7",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/7.jpg",
+          "alt": "貼圖 7"
+        },
+        {
+          "id": "no-glasses-sticker-8",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/8.jpg",
+          "alt": "貼圖 8"
+        },
+        {
+          "id": "no-glasses-sticker-9",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/9.jpg",
+          "alt": "貼圖 9"
+        },
+        {
+          "id": "no-glasses-sticker-10",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/10.jpg",
+          "alt": "貼圖 10"
+        },
+        {
+          "id": "no-glasses-sticker-11",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/11.jpg",
+          "alt": "貼圖 11"
+        },
+        {
+          "id": "no-glasses-sticker-12",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/12.jpg",
+          "alt": "貼圖 12"
+        },
+        {
+          "id": "no-glasses-sticker-13",
+          "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/13.jpg",
+          "alt": "貼圖 13"
+        }
+      ]
+    }
+  ]
+}
