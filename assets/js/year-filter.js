@@ -20,6 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 切換容器顯示模式
     function switchContainer(showPaginated) {
+        // 檢查元素是否存在，避免在非文章列表頁面出錯
+        if (!paginatedContainer || !allArticlesContainer || !paginationContainer) {
+            return;
+        }
+
         if (showPaginated) {
             // 顯示分頁模式
             paginatedContainer.style.display = 'block';
@@ -197,6 +202,8 @@ document.addEventListener('DOMContentLoaded', function() {
         switchContainer: switchContainer
     };
     
-    // 初始化：確保預設顯示分頁模式
-    switchContainer(true);
+    // 初始化：確保預設顯示分頁模式（只有在元素存在時才執行）
+    if (paginatedContainer && allArticlesContainer && paginationContainer) {
+        switchContainer(true);
+    }
 });
