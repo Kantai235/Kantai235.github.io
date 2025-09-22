@@ -60,6 +60,16 @@
             "name": "ㄏㄓ",
             "link": "https://x.com/edgehzstw"
           }
+        },
+        {
+          "id": "artwork-after-5",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "七柚的作品",
+          "src": "img/kemono/after/artworks/qiyou_1.jpg",
+          "creator": {
+            "name": "七柚",
+            "link": "https://www.facebook.com/qi.you.565397"
+          }
         }
       ]
     },
