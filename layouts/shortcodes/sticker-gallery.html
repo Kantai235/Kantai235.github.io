@@ -1,0 +1,1065 @@
+{{/* Sticker Gallery Shortcode - 貼圖展示功能 */}}
+{{/* 使用方式: {{< sticker-gallery >}} */}}
+
+{{ $stickersData := site.Data.stickers }}
+
+<div class="sticker-gallery-container">
+  {{ range $stickersData.series }}
+  <div class="sticker-series" data-series-id="{{ .id }}">
+    <div class="series-header" onclick="openStickerModal('{{ .id }}')">
+      {{ $firstSticker := index .stickers 0 }}
+      <div class="series-preview">
+        <img src="{{ $firstSticker.preview | default $firstSticker.src }}" alt="{{ .title }}" />
+      </div>
+      <div class="series-info">
+        <h3 class="series-title">{{ .title }}</h3>
+        <p class="series-description">{{ .description }}</p>
+        {{ if .creator }}
+        <div class="series-creator">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {{ if .creator.link }}
+            <a href="{{ .creator.link }}" target="_blank" rel="noopener noreferrer" class="creator-link" onclick="event.stopPropagation();">{{ .creator.name }}</a>
+          {{ else }}
+            <span class="creator-name">{{ .creator.name }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+        <div class="platform-badges">
+          {{ range .platforms }}
+            {{ if .available }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="platform-badge available" onclick="event.stopPropagation();">
+              {{ partial "icon.html" (dict "icon" .icon) }}
+              <span>{{ .name }} 貼圖</span>
+            </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>
+
+<!-- Modal -->
+<div id="sticker-modal" class="sticker-modal">
+  <div class="modal-overlay" onclick="closeStickerModal()"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-header-top">
+        <h3 id="modal-title"></h3>
+        <button class="modal-close" onclick="closeStickerModal()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-creator" id="modal-creator"></div>
+      <div class="modal-platforms" id="modal-platforms"></div>
+    </div>
+    <div class="modal-body">
+      <div class="stickers-grid" id="modal-stickers-grid">
+        <!-- 動態載入貼圖 -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 將貼圖資料存到 JavaScript 中 -->
+<script>
+window.stickerData = {{ $stickersData | jsonify | safeJS }};
+</script>
+
+<style>
+.sticker-gallery-container {
+  margin: 2rem 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+/* 平板模式：一列顯示一個 */
+@media (min-width: 768px) {
+  .sticker-gallery-container {
+    gap: 1.75rem;
+  }
+}
+
+/* 桌面模式：一列顯示兩個 */
+@media (min-width: 1024px) {
+  .sticker-gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* 大螢幕：增加間距 */
+@media (min-width: 1280px) {
+  .sticker-gallery-container {
+    gap: 2.5rem;
+  }
+}
+
+.sticker-series {
+  border: 2px solid var(--neutral-200);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--neutral-50);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
+  width: 100%;
+  max-width: none;
+}
+
+.sticker-series::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.sticker-series:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary-300);
+}
+
+.sticker-series:hover::before {
+  opacity: 0.05;
+}
+
+.dark .sticker-series {
+  border-color: var(--neutral-700);
+  background: var(--neutral-800);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark .sticker-series:hover {
+  border-color: var(--primary-600);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.series-header {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  position: relative;
+  background: transparent;
+  min-height: 140px;
+}
+
+/* 平板模式下增加 header 高度 */
+@media (min-width: 768px) {
+  .series-header {
+    min-height: 150px;
+    padding: 1.75rem;
+  }
+}
+
+/* 桌面模式下調整 header 高度以適應較大縮圖 */
+@media (min-width: 1024px) {
+  .series-header {
+    min-height: 130px;
+    padding: 1.5rem;
+  }
+}
+
+/* 大螢幕下使用更大的 header */
+@media (min-width: 1280px) {
+  .series-header {
+    padding: 1.75rem;
+    min-height: 150px;
+  }
+}
+
+/* 超大螢幕下進一步增大 */
+@media (min-width: 1536px) {
+  .series-header {
+    padding: 2rem;
+    min-height: 160px;
+  }
+}
+
+.series-header::after {
+  content: '查看貼圖';
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: var(--primary-100);
+  color: var(--primary-700);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.series-header:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dark .series-header::after {
+  background: var(--primary-900);
+  color: var(--primary-300);
+}
+
+/* 桌面模式下調整提示按鈕 */
+@media (min-width: 1024px) {
+  .series-header::after {
+    top: 0.875rem;
+    right: 1.25rem;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.6875rem;
+  }
+}
+
+/* 大螢幕下恢復較大尺寸 */
+@media (min-width: 1280px) {
+  .series-header::after {
+    top: 1rem;
+    right: 1.5rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+.series-preview {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--neutral-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+/* 平板模式下保持較大尺寸 */
+@media (min-width: 768px) {
+  .series-preview {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* 桌面模式下適中尺寸以適應雙欄 */
+@media (min-width: 1024px) {
+  .series-preview {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* 大螢幕下使用最大尺寸 */
+@media (min-width: 1280px) {
+  .series-preview {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* 超大螢幕下進一步增大 */
+@media (min-width: 1536px) {
+  .series-preview {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.series-header:hover .series-preview {
+  transform: scale(1.05);
+}
+
+.dark .series-preview {
+  background: var(--neutral-700);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.series-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.series-preview::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 60%, rgba(255, 255, 255, 0.2));
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.series-header:hover .series-preview::after {
+  opacity: 1;
+}
+
+.series-info {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.series-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+  line-height: 1.3;
+}
+
+/* 桌面模式下稍微縮小標題 */
+@media (min-width: 1024px) {
+  .series-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* 大螢幕下恢復較大字體 */
+@media (min-width: 1280px) {
+  .series-title {
+    font-size: 1.25rem;
+  }
+}
+
+.dark .series-title {
+  color: var(--neutral-100);
+}
+
+.series-description {
+  margin: 0 0 0.5rem 0;
+  color: var(--neutral-600);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 桌面模式下限制描述行數 */
+@media (min-width: 1024px) {
+  .series-description {
+    font-size: 0.875rem;
+    -webkit-line-clamp: 1;
+  }
+}
+
+/* 大螢幕下允許更多行數 */
+@media (min-width: 1280px) {
+  .series-description {
+    font-size: 0.95rem;
+    -webkit-line-clamp: 2;
+  }
+}
+
+.dark .series-description {
+  color: var(--neutral-400);
+}
+
+.series-creator {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--neutral-500);
+}
+
+.dark .series-creator {
+  color: var(--neutral-400);
+}
+
+.series-creator svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.creator-link {
+  color: var(--primary-600);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.creator-link:hover {
+  color: var(--primary-700);
+  text-decoration: underline;
+}
+
+.dark .creator-link {
+  color: var(--primary-400);
+}
+
+.dark .creator-link:hover {
+  color: var(--primary-300);
+}
+
+.creator-name {
+  font-weight: 500;
+}
+
+.platform-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* 桌面模式下調整 badge 間距 */
+@media (min-width: 1024px) {
+  .platform-badges {
+    gap: 0.375rem;
+  }
+
+  .platform-badge {
+    padding: 0.375rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* 大螢幕下恢復較大間距 */
+@media (min-width: 1280px) {
+  .platform-badges {
+    gap: 0.5rem;
+  }
+
+  .platform-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.platform-badge:hover::before {
+  left: 100%;
+}
+
+/* Telegram 官方色票 */
+.platform-badge.available[href*="t.me"],
+.platform-badge.available[href*="telegram"] {
+  background: linear-gradient(135deg, #0088CC, #229ED9);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+}
+
+.platform-badge.available[href*="t.me"]:hover,
+.platform-badge.available[href*="telegram"]:hover {
+  background: linear-gradient(135deg, #006699, #0088CC);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 136, 204, 0.4);
+}
+
+/* LINE 官方色票 */
+.platform-badge.available[href*="line.me"] {
+  background: linear-gradient(135deg, #00C300, #00B900);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 195, 0, 0.3);
+}
+
+.platform-badge.available[href*="line.me"]:hover {
+  background: linear-gradient(135deg, #00A000, #00C300);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 195, 0, 0.4);
+}
+
+/* 其他平台使用通用樣式 */
+.platform-badge.available {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: white;
+  box-shadow: 0 4px 12px rgba(var(--primary-500), 0.3);
+}
+
+.platform-badge.available:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(var(--primary-500), 0.4);
+}
+
+.platform-badge.available:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.dark .platform-badge.available {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  box-shadow: 0 4px 12px rgba(var(--primary-600), 0.3);
+}
+
+/* Dark mode 下的平台特定顏色保持不變 */
+.dark .platform-badge.available[href*="t.me"],
+.dark .platform-badge.available[href*="telegram"] {
+  background: linear-gradient(135deg, #0088CC, #229ED9);
+}
+
+.dark .platform-badge.available[href*="line.me"] {
+  background: linear-gradient(135deg, #00C300, #00B900);
+}
+
+.platform-badge.unavailable {
+  background: var(--neutral-200);
+  color: var(--neutral-600);
+  cursor: not-allowed;
+  position: relative;
+}
+
+.platform-badge.unavailable::after {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background: var(--amber-500);
+  color: white;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.dark .platform-badge.unavailable {
+  background: var(--neutral-700);
+  color: var(--neutral-400);
+}
+
+.dark .platform-badge.unavailable::after {
+  background: var(--amber-600);
+}
+
+.platform-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* series-arrow 已移除，簡化設計 */
+
+/* Modal Styles */
+.sticker-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: none;
+  overflow: hidden;
+}
+
+.sticker-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+  backdrop-filter: blur(8px);
+  animation: overlayFadeIn 0.4s ease;
+}
+
+.modal-content {
+  position: relative;
+  background: var(--neutral-50);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: min(900px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.dark .modal-content {
+  background: var(--neutral-800);
+  border: 1px solid var(--neutral-600);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.modal-header {
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  position: relative;
+  flex-shrink: 0;
+  border: none;
+  border-bottom: none;
+}
+
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-400), var(--primary-500), var(--primary-400));
+}
+
+.dark .modal-header {
+  background: linear-gradient(135deg, var(--primary-700), var(--primary-800));
+  border: none;
+  border-bottom: none;
+}
+
+.modal-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark .modal-header h3 {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.modal-creator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.dark .modal-creator {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.modal-creator svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.modal-creator-link {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+}
+
+.modal-creator-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+.dark .modal-creator-link {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.dark .modal-creator-link:hover {
+  color: white;
+}
+
+.modal-platforms {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.modal-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  transform: scale(1.05);
+}
+
+.modal-close:active {
+  transform: scale(0.95);
+}
+
+.dark .modal-close {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark .modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.modal-body {
+  padding: 1.5rem 2rem 2rem 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0;
+}
+
+.stickers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .stickers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stickers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.75rem;
+  }
+}
+
+.sticker-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--neutral-100);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--neutral-200);
+  cursor: pointer;
+}
+
+.dark .sticker-item {
+  background: var(--neutral-700);
+  border-color: var(--neutral-600);
+}
+
+.sticker-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-300);
+}
+
+.dark .sticker-item:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-600);
+}
+
+.sticker-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 60%, rgba(255, 255, 255, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.sticker-item:hover::before {
+  opacity: 1;
+}
+
+.sticker-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.sticker-item:hover .sticker-thumbnail {
+  transform: scale(1.05);
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .sticker-modal.active {
+    padding: 0.5rem;
+  }
+
+  .modal-content {
+    max-width: calc(100vw - 1rem);
+    max-height: calc(100vh - 1rem);
+    border-radius: 1rem;
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1.375rem;
+  }
+
+  .modal-close {
+    padding: 0.5rem;
+  }
+
+  .modal-body {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .stickers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+}
+</style>
+
+<script>
+let modalLightbox = null;
+
+function openStickerModal(seriesId) {
+  console.log('Opening modal for series:', seriesId);
+
+  const modal = document.getElementById('sticker-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalPlatforms = document.getElementById('modal-platforms');
+  const modalGrid = document.getElementById('modal-stickers-grid');
+
+  if (!modal || !modalTitle || !modalPlatforms || !modalGrid) {
+    console.error('Modal elements not found');
+    return;
+  }
+
+  // 找到對應的系列資料
+  if (!window.stickerData || !window.stickerData.series) {
+    console.error('Sticker data not available');
+    return;
+  }
+
+  const series = window.stickerData.series.find(s => s.id === seriesId);
+  if (!series) {
+    console.error('Series not found:', seriesId);
+    return;
+  }
+
+  console.log('Found series:', series);
+
+  // 設定標題
+  modalTitle.textContent = series.title;
+
+  // 設定繪師資訊
+  const modalCreator = document.getElementById('modal-creator');
+  if (modalCreator && series.creator) {
+    const creatorHtml = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>繪師：</span>';
+
+    let creatorLink = '';
+    if (series.creator.link) {
+      creatorLink = '<a href="' + series.creator.link + '" target="_blank" rel="noopener noreferrer" class="modal-creator-link">' + series.creator.name + '</a>';
+    } else {
+      creatorLink = '<span>' + series.creator.name + '</span>';
+    }
+
+    modalCreator.innerHTML = creatorHtml + creatorLink;
+    modalCreator.style.display = 'flex';
+  } else if (modalCreator) {
+    modalCreator.style.display = 'none';
+  }
+
+  // 設定平台徽章
+  modalPlatforms.innerHTML = '';
+  series.platforms.forEach(platform => {
+    const badge = document.createElement(platform.available ? 'a' : 'span');
+    badge.className = `platform-badge ${platform.available ? 'available' : 'unavailable'}`;
+
+    if (platform.available) {
+      badge.href = platform.url;
+      badge.target = '_blank';
+      badge.rel = 'noopener noreferrer';
+      badge.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
+      // 為 Telegram 和 LINE 按鈕添加特定樣式
+      if (platform.url.includes('t.me') || platform.url.includes('telegram')) {
+        badge.style.background = 'linear-gradient(135deg, #0088CC, #229ED9)';
+        badge.style.boxShadow = '0 4px 12px rgba(0, 136, 204, 0.3)';
+      } else if (platform.url.includes('line.me')) {
+        badge.style.background = 'linear-gradient(135deg, #00C300, #00B900)';
+        badge.style.boxShadow = '0 4px 12px rgba(0, 195, 0, 0.3)';
+      }
+    }
+
+    badge.innerHTML = `
+      <svg class="platform-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        ${getPlatformIcon(platform.icon)}
+      </svg>
+      <span>${platform.name} 貼圖</span>
+    `;
+
+    modalPlatforms.appendChild(badge);
+  });
+
+  // 清空並重新載入貼圖
+  modalGrid.innerHTML = '';
+  series.stickers.forEach((sticker, index) => {
+    const stickerItem = document.createElement('div');
+    stickerItem.className = 'sticker-item';
+
+    const img = document.createElement('img');
+    img.className = 'sticker-thumbnail glightbox';
+    img.src = sticker.preview || sticker.src;
+    img.alt = sticker.alt;
+    img.loading = 'lazy';
+    img.setAttribute('data-gallery', `modal-sticker-series-${seriesId}`);
+    img.setAttribute('data-glightbox', `title: ${sticker.alt}`);
+
+    stickerItem.appendChild(img);
+    modalGrid.appendChild(stickerItem);
+  });
+
+  // 顯示模態框
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  // 重新初始化 GLightbox
+  setTimeout(() => {
+    if (modalLightbox) {
+      modalLightbox.destroy();
+    }
+
+    if (typeof GLightbox !== 'undefined') {
+      modalLightbox = GLightbox({
+        selector: `[data-gallery="modal-sticker-series-${seriesId}"]`,
+        touchNavigation: true,
+        loop: true,
+        closeOnOutsideClick: true,
+        zoomable: true
+      });
+    }
+  }, 100);
+}
+
+function closeStickerModal() {
+  const modal = document.getElementById('sticker-modal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+
+  // 銷毀 lightbox
+  if (modalLightbox) {
+    modalLightbox.destroy();
+    modalLightbox = null;
+  }
+}
+
+function getPlatformIcon(iconName) {
+  const icons = {
+    telegram: '<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>',
+    line: '<path d="M12 0C5.373 0 0 4.975 0 11.111c0 5.497 4.486 9.998 10.124 10.999.481-.06.837-.382.837-.898v-3.12c0-.467-.335-.85-.748-.85-.414 0-.748.382-.748.85v2.121c-4.564-.845-8.017-4.764-8.017-9.547 0-5.298 4.478-9.592 10.004-9.592s10.004 4.294 10.004 9.592c0 4.783-3.453 8.702-8.017 9.547v-2.121c0-.467-.335-.85-.748-.85-.414 0-.748.382-.748.85v3.12c0 .516.356.838.837.898C19.514 21.109 24 16.608 24 11.111 24 4.975 18.627 0 12 0z"/>'
+  };
+  return icons[iconName] || '';
+}
+
+// ESC 鍵關閉模態框
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('sticker-modal');
+    if (modal.classList.contains('active')) {
+      closeStickerModal();
+    }
+  }
+});
+
+// 初始化
+document.addEventListener('DOMContentLoaded', function() {
+  // 確保模態框在 DOM 載入後可用
+  console.log('Sticker gallery initialized');
+
+  // 檢查貼圖資料是否載入
+  if (window.stickerData) {
+    console.log('Sticker data loaded:', window.stickerData);
+  } else {
+    console.error('Sticker data not found');
+  }
+});
+</script>

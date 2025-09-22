@@ -73,6 +73,10 @@ layout: "simple"
   </div>
 </div>
 
+## シリーズスタンプ 🎨
+
+{{< sticker-gallery >}}
+
 ## 好きなものリスト ☕🍵🍜🎮
 
 ### 飲み物 ☕🍵

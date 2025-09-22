@@ -67,6 +67,10 @@ layout: "simple"
   </div>
 </div>
 
+## 系列表情 🎨
+
+{{< sticker-gallery >}}
+
 ## 喜好清单 ☕🍵🍜🎮
 
 ### 饮料 ☕🍵

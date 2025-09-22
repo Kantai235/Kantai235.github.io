@@ -73,6 +73,10 @@ If you want to be friends, let’s warm up slowly 👉👈
   </div>
 </div>
 
+## Sticker Collection 🎨
+
+{{< sticker-gallery >}}
+
 ## Favorites ☕🍵🍜🎮
 
 ### Drinks ☕🍵
