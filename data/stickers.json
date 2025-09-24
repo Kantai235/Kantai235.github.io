@@ -1,6 +1,526 @@
 {
   "series": [
     {
+      "id": "bipu-glasses",
+      "title": "逼餔化的乾太",
+      "description": "乾太變成逼餔了 óωò",
+      "creator": {
+        "name": "英文好爛悠無君",
+        "link": "https://www.facebook.com/ying.wen.hao.lan.you.wu.jun"
+      },
+      "thumbnail": "/img/kemono/after/stickers/bipu_kantai_glasses/0000.jpg",
+      "platforms": [
+        {
+          "name": "Telegram",
+          "icon": "telegram",
+          "url": "https://t.me/addstickers/Bipu_Kantai",
+          "available": true
+        }
+      ],
+      "stickers": [
+        {
+          "id": "bipu-glasses-sticker-1",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0000.jpg",
+          "alt": "貼圖 1"
+        },
+        {
+          "id": "bipu-glasses-sticker-2",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0001.jpg",
+          "alt": "貼圖 2"
+        },
+        {
+          "id": "bipu-glasses-sticker-3",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0002.jpg",
+          "alt": "貼圖 3"
+        },
+        {
+          "id": "bipu-glasses-sticker-4",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0003.jpg",
+          "alt": "貼圖 4"
+        },
+        {
+          "id": "bipu-glasses-sticker-5",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0004.jpg",
+          "alt": "貼圖 5"
+        },
+        {
+          "id": "bipu-glasses-sticker-6",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0005.jpg",
+          "alt": "貼圖 6"
+        },
+        {
+          "id": "bipu-glasses-sticker-7",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0006.jpg",
+          "alt": "貼圖 7"
+        },
+        {
+          "id": "bipu-glasses-sticker-8",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0007.jpg",
+          "alt": "貼圖 8"
+        },
+        {
+          "id": "bipu-glasses-sticker-9",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0008.jpg",
+          "alt": "貼圖 9"
+        },
+        {
+          "id": "bipu-glasses-sticker-10",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0009.jpg",
+          "alt": "貼圖 10"
+        },
+        {
+          "id": "bipu-glasses-sticker-11",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0010.jpg",
+          "alt": "貼圖 11"
+        },
+        {
+          "id": "bipu-glasses-sticker-12",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0011.jpg",
+          "alt": "貼圖 12"
+        },
+        {
+          "id": "bipu-glasses-sticker-13",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0012.jpg",
+          "alt": "貼圖 13"
+        },
+        {
+          "id": "bipu-glasses-sticker-14",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0013.jpg",
+          "alt": "貼圖 14"
+        },
+        {
+          "id": "bipu-glasses-sticker-15",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0014.jpg",
+          "alt": "貼圖 15"
+        },
+        {
+          "id": "bipu-glasses-sticker-16",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0015.jpg",
+          "alt": "貼圖 16"
+        },
+        {
+          "id": "bipu-glasses-sticker-17",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0016.jpg",
+          "alt": "貼圖 17"
+        },
+        {
+          "id": "bipu-glasses-sticker-18",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0017.jpg",
+          "alt": "貼圖 18"
+        },
+        {
+          "id": "bipu-glasses-sticker-19",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0018.jpg",
+          "alt": "貼圖 19"
+        },
+        {
+          "id": "bipu-glasses-sticker-20",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0019.jpg",
+          "alt": "貼圖 20"
+        },
+        {
+          "id": "bipu-glasses-sticker-21",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0020.jpg",
+          "alt": "貼圖 21"
+        },
+        {
+          "id": "bipu-glasses-sticker-22",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0021.jpg",
+          "alt": "貼圖 22"
+        },
+        {
+          "id": "bipu-glasses-sticker-23",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0022.jpg",
+          "alt": "貼圖 23"
+        },
+        {
+          "id": "bipu-glasses-sticker-24",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0023.jpg",
+          "alt": "貼圖 24"
+        },
+        {
+          "id": "bipu-glasses-sticker-25",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0024.jpg",
+          "alt": "貼圖 25"
+        },
+        {
+          "id": "bipu-glasses-sticker-26",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0025.jpg",
+          "alt": "貼圖 26"
+        },
+        {
+          "id": "bipu-glasses-sticker-27",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0026.jpg",
+          "alt": "貼圖 27"
+        },
+        {
+          "id": "bipu-glasses-sticker-28",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0027.jpg",
+          "alt": "貼圖 28"
+        },
+        {
+          "id": "bipu-glasses-sticker-29",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0028.jpg",
+          "alt": "貼圖 29"
+        },
+        {
+          "id": "bipu-glasses-sticker-30",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0029.jpg",
+          "alt": "貼圖 30"
+        },
+        {
+          "id": "bipu-glasses-sticker-31",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0030.jpg",
+          "alt": "貼圖 31"
+        },
+        {
+          "id": "bipu-glasses-sticker-32",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0031.jpg",
+          "alt": "貼圖 32"
+        },
+        {
+          "id": "bipu-glasses-sticker-33",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0032.jpg",
+          "alt": "貼圖 33"
+        },
+        {
+          "id": "bipu-glasses-sticker-34",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0033.jpg",
+          "alt": "貼圖 34"
+        },
+        {
+          "id": "bipu-glasses-sticker-35",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0034.jpg",
+          "alt": "貼圖 35"
+        },
+        {
+          "id": "bipu-glasses-sticker-36",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0035.jpg",
+          "alt": "貼圖 36"
+        },
+        {
+          "id": "bipu-glasses-sticker-37",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0036.jpg",
+          "alt": "貼圖 37"
+        },
+        {
+          "id": "bipu-glasses-sticker-38",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0037.jpg",
+          "alt": "貼圖 38"
+        },
+        {
+          "id": "bipu-glasses-sticker-39",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0038.jpg",
+          "alt": "貼圖 39"
+        },
+        {
+          "id": "bipu-glasses-sticker-40",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0039.jpg",
+          "alt": "貼圖 40"
+        },
+        {
+          "id": "bipu-glasses-sticker-41",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0040.jpg",
+          "alt": "貼圖 41"
+        },
+        {
+          "id": "bipu-glasses-sticker-42",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0041.jpg",
+          "alt": "貼圖 42"
+        },
+        {
+          "id": "bipu-glasses-sticker-43",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0042.jpg",
+          "alt": "貼圖 43"
+        },
+        {
+          "id": "bipu-glasses-sticker-44",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0043.jpg",
+          "alt": "貼圖 44"
+        },
+        {
+          "id": "bipu-glasses-sticker-45",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0044.jpg",
+          "alt": "貼圖 45"
+        },
+        {
+          "id": "bipu-glasses-sticker-46",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0045.jpg",
+          "alt": "貼圖 46"
+        },
+        {
+          "id": "bipu-glasses-sticker-47",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0046.jpg",
+          "alt": "貼圖 47"
+        },
+        {
+          "id": "bipu-glasses-sticker-48",
+          "src": "/img/kemono/after/stickers/bipu_kantai_glasses/0047.jpg",
+          "alt": "貼圖 48"
+        }
+      ]
+    },
+    {
+      "id": "bipu-no-glasses",
+      "title": "逼餔化的乾太",
+      "description": "乾太變成逼餔了 óωò 而且還沒戴眼鏡",
+      "creator": {
+        "name": "英文好爛悠無君",
+        "link": "https://www.facebook.com/ying.wen.hao.lan.you.wu.jun"
+      },
+      "thumbnail": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0000.jpg",
+      "platforms": [
+        {
+          "name": "Telegram",
+          "icon": "telegram",
+          "url": "https://t.me/addstickers/Bipu_Kantai_No_Glasses",
+          "available": true
+        }
+      ],
+      "stickers": [
+        {
+          "id": "bipu-no-glasses-sticker-1",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0000.jpg",
+          "alt": "貼圖 1"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-2",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0001.jpg",
+          "alt": "貼圖 2"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-3",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0002.jpg",
+          "alt": "貼圖 3"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-4",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0003.jpg",
+          "alt": "貼圖 4"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-5",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0004.jpg",
+          "alt": "貼圖 5"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-6",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0005.jpg",
+          "alt": "貼圖 6"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-7",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0006.jpg",
+          "alt": "貼圖 7"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-8",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0007.jpg",
+          "alt": "貼圖 8"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-9",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0008.jpg",
+          "alt": "貼圖 9"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-10",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0009.jpg",
+          "alt": "貼圖 10"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-11",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0010.jpg",
+          "alt": "貼圖 11"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-12",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0011.jpg",
+          "alt": "貼圖 12"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-13",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0012.jpg",
+          "alt": "貼圖 13"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-14",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0013.jpg",
+          "alt": "貼圖 14"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-15",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0014.jpg",
+          "alt": "貼圖 15"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-16",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0015.jpg",
+          "alt": "貼圖 16"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-17",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0016.jpg",
+          "alt": "貼圖 17"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-18",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0017.jpg",
+          "alt": "貼圖 18"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-19",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0018.jpg",
+          "alt": "貼圖 19"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-20",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0019.jpg",
+          "alt": "貼圖 20"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-21",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0020.jpg",
+          "alt": "貼圖 21"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-22",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0021.jpg",
+          "alt": "貼圖 22"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-23",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0022.jpg",
+          "alt": "貼圖 23"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-24",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0023.jpg",
+          "alt": "貼圖 24"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-25",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0024.jpg",
+          "alt": "貼圖 25"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-26",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0025.jpg",
+          "alt": "貼圖 26"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-27",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0026.jpg",
+          "alt": "貼圖 27"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-28",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0027.jpg",
+          "alt": "貼圖 28"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-29",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0028.jpg",
+          "alt": "貼圖 29"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-30",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0029.jpg",
+          "alt": "貼圖 30"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-31",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0030.jpg",
+          "alt": "貼圖 31"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-32",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0031.jpg",
+          "alt": "貼圖 32"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-33",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0032.jpg",
+          "alt": "貼圖 33"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-34",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0033.jpg",
+          "alt": "貼圖 34"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-35",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0034.jpg",
+          "alt": "貼圖 35"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-36",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0035.jpg",
+          "alt": "貼圖 36"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-37",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0036.jpg",
+          "alt": "貼圖 37"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-38",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0037.jpg",
+          "alt": "貼圖 38"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-39",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0038.jpg",
+          "alt": "貼圖 39"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-40",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0039.jpg",
+          "alt": "貼圖 40"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-41",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0040.jpg",
+          "alt": "貼圖 41"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-42",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0041.jpg",
+          "alt": "貼圖 42"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-43",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0042.jpg",
+          "alt": "貼圖 43"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-44",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0043.jpg",
+          "alt": "貼圖 44"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-45",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0044.jpg",
+          "alt": "貼圖 45"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-46",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0045.jpg",
+          "alt": "貼圖 46"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-47",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0046.jpg",
+          "alt": "貼圖 47"
+        },
+        {
+          "id": "bipu-no-glasses-sticker-48",
+          "src": "/img/kemono/after/stickers/bipu_kantai_no_glasses/0047.jpg",
+          "alt": "貼圖 48"
+        }
+      ]
+    },
+    {
       "id": "haudai-glasses",
       "title": "暈船乾太",
       "description": "乾太今天暈船了。",
@@ -19,67 +539,67 @@
       ],
       "stickers": [
         {
-          "id": "glasses-sticker-1",
+          "id": "haudai-glasses-sticker-1",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/1.jpg",
           "alt": "貼圖 1"
         },
         {
-          "id": "glasses-sticker-2",
+          "id": "haudai-glasses-sticker-2",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/2.jpg",
           "alt": "貼圖 2"
         },
         {
-          "id": "glasses-sticker-3",
+          "id": "haudai-glasses-sticker-3",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/3.jpg",
           "alt": "貼圖 3"
         },
         {
-          "id": "glasses-sticker-4",
+          "id": "haudai-glasses-sticker-4",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/4.jpg",
           "alt": "貼圖 4"
         },
         {
-          "id": "glasses-sticker-5",
+          "id": "haudai-glasses-sticker-5",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/5.jpg",
           "alt": "貼圖 5"
         },
         {
-          "id": "glasses-sticker-6",
+          "id": "haudai-glasses-sticker-6",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/6.jpg",
           "alt": "貼圖 6"
         },
         {
-          "id": "glasses-sticker-7",
+          "id": "haudai-glasses-sticker-7",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/7.jpg",
           "alt": "貼圖 7"
         },
         {
-          "id": "glasses-sticker-8",
+          "id": "haudai-glasses-sticker-8",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/8.jpg",
           "alt": "貼圖 8"
         },
         {
-          "id": "glasses-sticker-9",
+          "id": "haudai-glasses-sticker-9",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/9.jpg",
           "alt": "貼圖 9"
         },
         {
-          "id": "glasses-sticker-10",
+          "id": "haudai-glasses-sticker-10",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/10.jpg",
           "alt": "貼圖 10"
         },
         {
-          "id": "glasses-sticker-11",
+          "id": "haudai-glasses-sticker-11",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/11.jpg",
           "alt": "貼圖 11"
         },
         {
-          "id": "glasses-sticker-12",
+          "id": "haudai-glasses-sticker-12",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/12.jpg",
           "alt": "貼圖 12"
         },
         {
-          "id": "glasses-sticker-13",
+          "id": "haudai-glasses-sticker-13",
           "src": "/img/kemono/before/stickers/haudai_seasickness_glasses/13.jpg",
           "alt": "貼圖 13"
         }
@@ -104,67 +624,67 @@
       ],
       "stickers": [
         {
-          "id": "no-glasses-sticker-1",
+          "id": "haudai-no-glasses-sticker-1",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/1.jpg",
           "alt": "貼圖 1"
         },
         {
-          "id": "no-glasses-sticker-2",
+          "id": "haudai-no-glasses-sticker-2",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/2.jpg",
           "alt": "貼圖 2"
         },
         {
-          "id": "no-glasses-sticker-3",
+          "id": "haudai-no-glasses-sticker-3",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/3.jpg",
           "alt": "貼圖 3"
         },
         {
-          "id": "no-glasses-sticker-4",
+          "id": "haudai-no-glasses-sticker-4",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/4.jpg",
           "alt": "貼圖 4"
         },
         {
-          "id": "no-glasses-sticker-5",
+          "id": "haudai-no-glasses-sticker-5",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/5.jpg",
           "alt": "貼圖 5"
         },
         {
-          "id": "no-glasses-sticker-6",
+          "id": "haudai-no-glasses-sticker-6",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/6.jpg",
           "alt": "貼圖 6"
         },
         {
-          "id": "no-glasses-sticker-7",
+          "id": "haudai-no-glasses-sticker-7",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/7.jpg",
           "alt": "貼圖 7"
         },
         {
-          "id": "no-glasses-sticker-8",
+          "id": "haudai-no-glasses-sticker-8",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/8.jpg",
           "alt": "貼圖 8"
         },
         {
-          "id": "no-glasses-sticker-9",
+          "id": "haudai-no-glasses-sticker-9",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/9.jpg",
           "alt": "貼圖 9"
         },
         {
-          "id": "no-glasses-sticker-10",
+          "id": "haudai-no-glasses-sticker-10",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/10.jpg",
           "alt": "貼圖 10"
         },
         {
-          "id": "no-glasses-sticker-11",
+          "id": "haudai-no-glasses-sticker-11",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/11.jpg",
           "alt": "貼圖 11"
         },
         {
-          "id": "no-glasses-sticker-12",
+          "id": "haudai-no-glasses-sticker-12",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/12.jpg",
           "alt": "貼圖 12"
         },
         {
-          "id": "no-glasses-sticker-13",
+          "id": "haudai-no-glasses-sticker-13",
           "src": "/img/kemono/before/stickers/haudai_seasickness_no_glasses/13.jpg",
           "alt": "貼圖 13"
         }

@@ -13,7 +13,7 @@ title = "乾太"
 
 [params.author]
   name = "乾太 ₍₍ ◝(･◡･)◟ ⁾⁾"
-  image = "img/kemono/after/avatar.jpg"
+  image = "/img/kemono/after/avatar.jpg"
   headline = "I’m your coding buddy."
   bio = "I’m your coding buddy."
   links = [
