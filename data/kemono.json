@@ -70,6 +70,16 @@
             "name": "七柚",
             "link": "https://www.facebook.com/qi.you.565397"
           }
+        },
+        {
+          "id": "artwork-after-6",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "あおいの的作品",
+          "src": "img/kemono/after/artworks/shir0kur0_bw_1.jpg",
+          "creator": {
+            "name": "あおいの",
+            "link": "https://x.com/shir0kur0_bw"
+          }
         }
       ]
     },
