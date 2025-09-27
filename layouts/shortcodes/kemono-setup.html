@@ -19,11 +19,16 @@
     window.pageImages = window.pageImages || {};
     window.creatorInfo = window.creatorInfo || {};
     
-    // 載入背景圖片
+    // 載入背景圖片（優化尺寸）
     {{ range $elementId, $element := $kemonoData.elements }}
       {{ $resource := resources.Get $element.src }}
       {{ if $resource }}
-      window.pageImages['{{ $elementId }}'] = '{{ $resource.RelPermalink }}';
+        {{ if eq $resource.MediaType.MainType "image" }}
+          {{ $optimized := $resource.Resize "1920x q75" }}
+          window.pageImages['{{ $elementId }}'] = '{{ $optimized.RelPermalink }}';
+        {{ else }}
+          window.pageImages['{{ $elementId }}'] = '{{ $resource.RelPermalink }}';
+        {{ end }}
       {{ end }}
     {{ end }}
     
@@ -32,7 +37,12 @@
       {{ with $periodData.avatar }}
         {{ $resource := resources.Get .src }}
         {{ if $resource }}
-        window.pageImages['{{ .id }}'] = '{{ $resource.RelPermalink }}';
+          {{ if eq $resource.MediaType.MainType "image" }}
+            {{ $optimized := $resource.Resize "800x q75" }}
+            window.pageImages['{{ .id }}'] = '{{ $optimized.RelPermalink }}';
+          {{ else }}
+            window.pageImages['{{ .id }}'] = '{{ $resource.RelPermalink }}';
+          {{ end }}
         {{ end }}
         {{ if .creator }}
         window.creatorInfo['{{ .id }}'] = {{ .creator | jsonify | safeJS }};
@@ -42,7 +52,12 @@
       {{ range $periodData.artworks }}
         {{ $resource := resources.Get .src }}
         {{ if $resource }}
-        window.pageImages['{{ .id }}'] = '{{ $resource.RelPermalink }}';
+          {{ if eq $resource.MediaType.MainType "image" }}
+            {{ $optimized := $resource.Resize "600x q75" }}
+            window.pageImages['{{ .id }}'] = '{{ $optimized.RelPermalink }}';
+          {{ else }}
+            window.pageImages['{{ .id }}'] = '{{ $resource.RelPermalink }}';
+          {{ end }}
         {{ end }}
         {{ if .creator }}
         window.creatorInfo['{{ .id }}'] = {{ .creator | jsonify | safeJS }};

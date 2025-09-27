@@ -75,14 +75,17 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!window.pageImages['background-img-before']) {
                 window.pageImages['background-img-before'] = '/img/kemono/before/background.jpg';
             }
-            
+
             // 使用漸進式載入
             const allImageKeys = Object.keys(window.pageImages).filter(k => typeof window.pageImages[k] === 'string');
-            
-            // 先載入背景圖片（優先級最高）
+
+            // 分類圖片：背景、當前tab頭像、其他
             const backgroundKeys = allImageKeys.filter(k => k.includes('background-img'));
-            const otherKeys = allImageKeys.filter(k => !k.includes('background-img'));
-            
+            const currentTabAvatar = ['avatar-after']; // 預設顯示after tab
+            const otherKeys = allImageKeys.filter(k =>
+                !k.includes('background-img') && !currentTabAvatar.includes(k)
+            );
+
             // 追蹤載入狀態
             let loadedImages = new Set();
             let totalImages = 0;
@@ -272,11 +275,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 forcePackeryRecalculation(activeTab);
             }
             
-            // 立即載入背景圖片
+            // 優先載入：背景和當前tab的頭像
             loadImagesProgressively(backgroundKeys, 0);
-            
-            // 延遲載入其他圖片，避免阻塞
-            loadImagesProgressively(otherKeys, 300);
+            loadImagesProgressively(currentTabAvatar, 100);
+
+            // 延遲載入其他圖片，使用更長的延遲
+            // 只在使用者互動或需要時才載入
+            let otherImagesLoaded = false;
+            function loadRemainingImages() {
+                if (!otherImagesLoaded) {
+                    otherImagesLoaded = true;
+                    loadImagesProgressively(otherKeys, 500);
+                }
+            }
+
+            // 監聽 tab 切換或滾動事件來載入剩餘圖片
+            tabs.forEach(tab => {
+                tab.addEventListener('click', loadRemainingImages, { once: true });
+            });
+            window.addEventListener('scroll', loadRemainingImages, { once: true });
+
+            // 如果 5 秒後還沒互動，自動載入剩餘圖片
+            setTimeout(loadRemainingImages, 5000);
             
         } catch (error) {
             // console.error('Image loading initialization failed:', error);

@@ -48,7 +48,7 @@
     {{/* 使用自定義 class 或預設 class */}}
     {{ $finalClass := $customClass | default .class }}
     {{/* 直接從 gallery 結構中取得 src */}}
-    {{ $imgTag := printf `<img id="%s" src="%s" class="%s" alt="%s" />` .id .src $finalClass .alt }}
+    {{ $imgTag := printf `<img id="%s" src="%s" class="%s" alt="%s" loading="lazy" />` .id .src $finalClass .alt }}
     {{ $content = printf "%s%s" $content $imgTag }}
   {{ end }}
 {{ end }}
