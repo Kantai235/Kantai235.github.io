@@ -110,6 +110,16 @@
             "name": "なむはら",
             "link": "https://x.com/namuhara3326"
           }
+        },
+        {
+          "id": "artwork-after-10",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "むっちゃ〜的作品",
+          "src": "img/kemono/after/artworks/mutamaru_tanuki_1.jpg",
+          "creator": {
+            "name": "むっちゃ〜",
+            "link": "https://x.com/mutamaru_tanuki"
+          }
         }
       ]
     },
