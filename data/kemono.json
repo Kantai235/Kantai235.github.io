@@ -90,6 +90,26 @@
             "name": "SINI(シニ)",
             "link": "https://x.com/SINI_2525"
           }
+        },
+        {
+          "id": "artwork-after-8",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "なむはら的作品",
+          "src": "img/kemono/after/artworks/namuhara3326_1.jpg",
+          "creator": {
+            "name": "なむはら",
+            "link": "https://x.com/namuhara3326"
+          }
+        },
+        {
+          "id": "artwork-after-9",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "なむはら的作品",
+          "src": "img/kemono/after/artworks/namuhara3326_2.jpg",
+          "creator": {
+            "name": "なむはら",
+            "link": "https://x.com/namuhara3326"
+          }
         }
       ]
     },
