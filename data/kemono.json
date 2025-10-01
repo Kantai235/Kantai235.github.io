@@ -80,6 +80,16 @@
             "name": "あおいの",
             "link": "https://x.com/shir0kur0_bw"
           }
+        },
+        {
+          "id": "artwork-after-7",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "SINI(シニ)的作品",
+          "src": "img/kemono/after/artworks/sini_2525_1.jpg",
+          "creator": {
+            "name": "SINI(シニ)",
+            "link": "https://x.com/SINI_2525"
+          }
         }
       ]
     },
