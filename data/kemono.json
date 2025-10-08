@@ -120,6 +120,16 @@
             "name": "むっちゃ〜",
             "link": "https://x.com/mutamaru_tanuki"
           }
+        },
+        {
+          "id": "artwork-after-11",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "capella 的作品",
+          "src": "img/kemono/after/artworks/capella_pera_1.jpg",
+          "creator": {
+            "name": "capella",
+            "link": "https://x.com/capella_pera"
+          }
         }
       ]
     },
