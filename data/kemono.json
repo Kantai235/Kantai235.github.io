@@ -130,6 +130,16 @@
             "name": "capella",
             "link": "https://x.com/capella_pera"
           }
+        },
+        {
+          "id": "artwork-after-12",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "マコトウ的作品",
+          "src": "img/kemono/after/artworks/mako_makotoo_1.jpg",
+          "creator": {
+            "name": "マコトウ",
+            "link": "https://x.com/mako_makotoo"
+          }
         }
       ]
     },
