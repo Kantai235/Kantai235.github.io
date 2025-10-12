@@ -150,6 +150,16 @@
             "name": "マコトウ",
             "link": "https://x.com/mako_makotoo"
           }
+        },
+        {
+          "id": "artwork-after-14",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "RSN 的作品",
+          "src": "img/kemono/after/artworks/p_rsn07_1.jpg",
+          "creator": {
+            "name": "RSN",
+            "link": "https://x.com/P_rsn07"
+          }
         }
       ]
     },
