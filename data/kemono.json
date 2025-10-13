@@ -160,6 +160,16 @@
             "name": "RSN",
             "link": "https://x.com/P_rsn07"
           }
+        },
+        {
+          "id": "artwork-after-15",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "灰月的作品",
+          "src": "img/kemono/after/artworks/graytsuki0614_1.jpg",
+          "creator": {
+            "name": "灰月",
+            "link": "https://www.threads.com/@graytsuki0614"
+          }
         }
       ]
     },
