@@ -170,6 +170,16 @@
             "name": "灰月",
             "link": "https://www.threads.com/@graytsuki0614"
           }
+        },
+        {
+          "id": "artwork-after-16",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "こがねぱん的作品",
+          "src": "img/kemono/after/artworks/water_mi1k_1.jpg",
+          "creator": {
+            "name": "こがねぱん",
+            "link": "https://x.com/Komepan_pan"
+          }
         }
       ]
     },
