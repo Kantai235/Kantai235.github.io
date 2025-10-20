@@ -180,6 +180,16 @@
             "name": "こがねぱん",
             "link": "https://x.com/Komepan_pan"
           }
+        },
+        {
+          "id": "artwork-after-17",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "勾勾的作品",
+          "src": "img/kemono/after/artworks/goukogouko_1.jpg",
+          "creator": {
+            "name": "勾勾",
+            "link": "https://www.facebook.com/koukou.zeng.75"
+          }
         }
       ]
     },
