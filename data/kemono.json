@@ -190,6 +190,26 @@
             "name": "勾勾",
             "link": "https://www.facebook.com/koukou.zeng.75"
           }
+        },
+        {
+          "id": "artwork-after-18",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "HEBARODA 的作品",
+          "src": "img/kemono/after/artworks/hebaroda03_1.jpg",
+          "creator": {
+            "name": "HEBARODA",
+            "link": "https://x.com/hebaroda03"
+          }
+        },
+        {
+          "id": "artwork-after-19",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "HEBARODA 的作品",
+          "src": "img/kemono/after/artworks/hebaroda03_2.jpg",
+          "creator": {
+            "name": "HEBARODA",
+            "link": "https://x.com/hebaroda03"
+          }
         }
       ]
     },
