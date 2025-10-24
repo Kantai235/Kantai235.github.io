@@ -220,6 +220,26 @@
             "name": "rwaaa_00",
             "link": "https://www.threads.com/@rwaaa_00"
           }
+        },
+        {
+          "id": "artwork-after-21",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "てらこった的作品",
+          "src": "img/kemono/after/artworks/teracotta1213_1.jpg",
+          "creator": {
+            "name": "てらこった",
+            "link": "https://x.com/teracotta_s"
+          }
+        },
+        {
+          "id": "artwork-after-22",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "てらこった的作品",
+          "src": "img/kemono/after/artworks/teracotta1213_2.jpg",
+          "creator": {
+            "name": "てらこった",
+            "link": "https://x.com/teracotta_s"
+          }
         }
       ]
     },
