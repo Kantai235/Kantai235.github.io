@@ -240,6 +240,16 @@
             "name": "てらこった",
             "link": "https://x.com/teracotta_s"
           }
+        },
+        {
+          "id": "artwork-after-24",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "豚骨的作品",
+          "src": "img/kemono/after/artworks/20251026-tonkothuuu-01.jpg",
+          "creator": {
+            "name": "豚骨",
+            "link": "https://x.com/tonkothuuu"
+          }
         }
       ]
     },
