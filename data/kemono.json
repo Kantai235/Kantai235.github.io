@@ -270,6 +270,16 @@
             "name": "nullma",
             "link": "https://x.com/chocomint_null"
           }
+        },
+        {
+          "id": "artwork-after-27",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "yumemino🍡ibeyu 的作品",
+          "src": "img/kemono/after/artworks/20251027-yumeminoideyu-01.jpg",
+          "creator": {
+            "name": "yumemino🍡ibeyu",
+            "link": "https://x.com/yumeminoideyu"
+          }
         }
       ]
     },
