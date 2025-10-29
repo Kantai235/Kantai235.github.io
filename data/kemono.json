@@ -250,6 +250,16 @@
             "name": "豚骨",
             "link": "https://x.com/tonkothuuu"
           }
+        },
+        {
+          "id": "artwork-after-25",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "ゆっち的作品",
+          "src": "img/kemono/after/artworks/20251026-yutch_kmn-01.jpg",
+          "creator": {
+            "name": "ゆっち",
+            "link": "https://x.com/yutch_kmn"
+          }
         }
       ]
     },
