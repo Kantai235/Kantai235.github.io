@@ -19,13 +19,15 @@
     window.pageImages = window.pageImages || {};
     window.creatorInfo = window.creatorInfo || {};
     
-    // 載入背景圖片（優化尺寸）
+    // 載入背景資源（圖片優化尺寸，影片保持原樣）
     {{ range $elementId, $element := $kemonoData.elements }}
       {{ $resource := resources.Get $element.src }}
       {{ if $resource }}
         {{ if eq $resource.MediaType.MainType "image" }}
           {{ $optimized := $resource.Resize "1920x q75" }}
           window.pageImages['{{ $elementId }}'] = '{{ $optimized.RelPermalink }}';
+        {{ else if eq $resource.MediaType.MainType "video" }}
+          window.pageImages['{{ $elementId }}'] = '{{ $resource.RelPermalink }}';
         {{ else }}
           window.pageImages['{{ $elementId }}'] = '{{ $resource.RelPermalink }}';
         {{ end }}
@@ -146,18 +148,28 @@
         });
     };
     
-    // 設定圖片功能 (直接使用元素 ID)
+    // 設定圖片和影片功能 (直接使用元素 ID)
     window.pageImages.setImages = function (elementIds) {
         const idsToProcess = elementIds || Object.keys(window.pageImages).filter(function (k) {
             return typeof window.pageImages[k] === 'string';
         });
-        
+
         idsToProcess.forEach(function (elementId) {
             const element = document.getElementById(elementId);
-            const imageUrl = window.pageImages[elementId];
-            
-            if (element && imageUrl) {
-                element.src = imageUrl;
+            const mediaUrl = window.pageImages[elementId];
+
+            if (element && mediaUrl) {
+                if (element.tagName === 'VIDEO') {
+                    // 處理影片元素
+                    const source = element.querySelector('source');
+                    if (source) {
+                        source.src = mediaUrl;
+                        element.load();
+                    }
+                } else {
+                    // 處理圖片元素
+                    element.src = mediaUrl;
+                }
             }
         });
     };
@@ -263,7 +275,8 @@
   opacity: 0.1;
 }
 
-.kemono-background img {
+.kemono-background img,
+.kemono-background video {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -277,6 +290,23 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+/* 影片遮罩層 */
+.kemono-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark .kemono-background::after {
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* 移除 Tab 內容中的底線 */

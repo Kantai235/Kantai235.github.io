@@ -39,12 +39,18 @@ If you want to be friends, let’s warm up slowly 👉👈
 {{< kemono-interface >}}
 
 <div class="kemono-container">
-  <!-- 背景圖片容器 -->
+  <!-- Background container (supports video and image) -->
   <div id="background-after" class="kemono-background active">
-    <img id="background-img-after" alt="Current Fursona">
+    <video id="background-video-after" autoplay muted loop playsinline class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
+      <source type="video/mp4">
+    </video>
+    <img id="background-img-after" alt="Current Fursona" class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
   </div>
   <div id="background-before" class="kemono-background">
-    <img id="background-img-before" alt="Previous Fursona">
+    <video id="background-video-before" autoplay muted loop playsinline class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
+      <source type="video/mp4">
+    </video>
+    <img id="background-img-before" alt="Previous Fursona" class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
   </div>
 
   <!-- Tab 切換按鈕 -->

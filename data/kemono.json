@@ -1,7 +1,13 @@
 {
   "elements": {
+    "background-video-after": {
+      "src": "img/kemono/after/background.mp4"
+    },
     "background-img-after": {
       "src": "img/kemono/after/background.jpg"
+    },
+    "background-video-before": {
+      "src": "img/kemono/before/background.mp4"
     },
     "background-img-before": {
       "src": "img/kemono/before/background.jpg"
@@ -275,7 +281,7 @@
           "id": "artwork-after-27",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "yumemino🍡ibeyu 的作品",
-          "src": "img/kemono/after/artworks/20251027-yumeminoideyu-01.jpg",
+          "src": "img/kemono/after/artworks/20251028-yumeminoideyu-01.jpg",
           "creator": {
             "name": "yumemino🍡ibeyu",
             "link": "https://x.com/yumeminoideyu"
@@ -285,7 +291,7 @@
           "id": "artwork-after-28",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "🦊 的作品",
-          "src": "img/kemono/after/artworks/20251027-_NITAMAGO-01.jpg",
+          "src": "img/kemono/after/artworks/20251028-_NITAMAGO-01.jpg",
           "creator": {
             "name": "🦊",
             "link": "https://x.com/_NITAMAGO"

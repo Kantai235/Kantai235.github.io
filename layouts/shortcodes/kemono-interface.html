@@ -68,13 +68,57 @@ document.addEventListener('DOMContentLoaded', function() {
     // 處理圖片載入（如果數據可用）
     if (hasPageImages && window.pageImages) {
         try {
-            // 手動設定備用背景圖片
-            if (!window.pageImages['background-img-after']) {
+            // 手動設定備用背景資源
+            if (!window.pageImages['background-video-after'] && !window.pageImages['background-img-after']) {
                 window.pageImages['background-img-after'] = '/img/kemono/after/background.jpg';
             }
-            if (!window.pageImages['background-img-before']) {
+            if (!window.pageImages['background-video-before'] && !window.pageImages['background-img-before']) {
                 window.pageImages['background-img-before'] = '/img/kemono/before/background.jpg';
             }
+
+            // 設定背景媒體（優先使用影片）
+            function setBackgroundMedia(period) {
+                const videoId = 'background-video-' + period;
+                const imgId = 'background-img-' + period;
+                const videoElement = document.getElementById(videoId);
+                const imgElement = document.getElementById(imgId);
+
+                const videoUrl = window.pageImages[videoId];
+                const imgUrl = window.pageImages[imgId];
+
+                if (videoUrl && videoElement) {
+                    // 有影片就使用影片
+                    const source = videoElement.querySelector('source');
+                    if (source) {
+                        source.src = videoUrl;
+                        videoElement.load();
+                        videoElement.style.display = 'block';
+                        videoElement.play().catch(function(e) {
+                            // console.warn('影片自動播放失敗，嘗試使用備用圖片', e);
+                            // 影片播放失敗時改用圖片
+                            videoElement.style.display = 'none';
+                            if (imgUrl && imgElement) {
+                                imgElement.src = imgUrl;
+                                imgElement.style.display = 'block';
+                            }
+                        });
+                    }
+                    if (imgElement) {
+                        imgElement.style.display = 'none';
+                    }
+                } else if (imgUrl && imgElement) {
+                    // 沒有影片就使用圖片
+                    imgElement.src = imgUrl;
+                    imgElement.style.display = 'block';
+                    if (videoElement) {
+                        videoElement.style.display = 'none';
+                    }
+                }
+            }
+
+            // 設定初始背景
+            setBackgroundMedia('after');
+            setBackgroundMedia('before');
 
             // 使用漸進式載入
             const allImageKeys = Object.keys(window.pageImages).filter(k => typeof window.pageImages[k] === 'string');

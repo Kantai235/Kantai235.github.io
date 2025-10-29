@@ -33,12 +33,18 @@ layout: "simple"
 {{< kemono-interface >}}
 
 <div class="kemono-container">
-  <!-- 背景圖片容器 -->
+  <!-- 背景容器（支援影片和圖片） -->
   <div id="background-after" class="kemono-background active">
-    <img id="background-img-after" alt="現在的設定背景">
+    <video id="background-video-after" autoplay muted loop playsinline class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
+      <source type="video/mp4">
+    </video>
+    <img id="background-img-after" alt="現在的設定背景" class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
   </div>
   <div id="background-before" class="kemono-background">
-    <img id="background-img-before" alt="以前的設定背景">
+    <video id="background-video-before" autoplay muted loop playsinline class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
+      <source type="video/mp4">
+    </video>
+    <img id="background-img-before" alt="以前的設定背景" class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
   </div>
 
   <!-- Tab 切換按鈕 -->
