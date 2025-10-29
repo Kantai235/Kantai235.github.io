@@ -210,6 +210,36 @@
             "name": "HEBARODA",
             "link": "https://x.com/hebaroda03"
           }
+        },
+        {
+          "id": "artwork-after-20",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "羊太郎的作品",
+          "src": "img/kemono/after/artworks/20251022-hitsuzi_taro11-01.jpg",
+          "creator": {
+            "name": "羊太郎",
+            "link": "https://x.com/hitsuzi_taro11"
+          }
+        },
+        {
+          "id": "artwork-after-22",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "てらこった的作品",
+          "src": "img/kemono/after/artworks/20251024-teracotta_s-01.jpg",
+          "creator": {
+            "name": "てらこった",
+            "link": "https://x.com/teracotta_s"
+          }
+        },
+        {
+          "id": "artwork-after-23",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "てらこった的作品",
+          "src": "img/kemono/after/artworks/20251024-teracotta_s-02.jpg",
+          "creator": {
+            "name": "てらこった",
+            "link": "https://x.com/teracotta_s"
+          }
         }
       ]
     },
