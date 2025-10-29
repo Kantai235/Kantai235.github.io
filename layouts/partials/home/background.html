@@ -21,11 +21,23 @@
             {{ end }}
           {{ end }}
           {{ if $homepageImage }}
-            <img
-              id="homepage-background-image"
-              class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover"
-              src="{{ $homepageImage.RelPermalink }}"
-              role="presentation">
+            {{ if strings.HasSuffix $homepageImage.RelPermalink ".mp4" }}
+              <video
+                id="homepage-background-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover">
+                <source src="{{ $homepageImage.RelPermalink }}" type="video/mp4">
+              </video>
+            {{ else }}
+              <img
+                id="homepage-background-image"
+                class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover"
+                src="{{ $homepageImage.RelPermalink }}"
+                role="presentation">
+            {{ end }}
             <div
               class="from-neutral absolute inset-0 h-[1000px] bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>
             <div
