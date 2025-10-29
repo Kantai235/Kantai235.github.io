@@ -14,7 +14,7 @@
         "id": "avatar-after",
         "class": "mt-0 mb-0 rounded-lg shadow-lg",
         "alt": "Pika Owo(皮卡)的作品",
-        "src": "img/kemono/after/artworks/magicpika1_1.jpg",
+        "src": "img/kemono/after/artworks/20250710-pika.owo.2025-01.jpg",
         "creator": {
           "name": "Pika Owo(皮卡)",
           "link": "https://www.facebook.com/pika.owo.2025"
@@ -25,7 +25,7 @@
           "id": "artwork-after-1",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "ぐるみん的作品",
-          "src": "img/kemono/after/artworks/guruminn_1.jpg",
+          "src": "img/kemono/after/artworks/20250813-9uruminn-01.jpg",
           "creator": {
             "name": "ぐるみん",
             "link": "https://x.com/9uruminn"
@@ -35,7 +35,7 @@
           "id": "artwork-after-2",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "ゆっち的作品",
-          "src": "img/kemono/after/artworks/yutch_kmn_1.jpg",
+          "src": "img/kemono/after/artworks/20250825-yutch_kmn-01.jpg",
           "creator": {
             "name": "ゆっち",
             "link": "https://x.com/yutch_kmn"
@@ -45,7 +45,7 @@
           "id": "artwork-after-3",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "のこ的作品",
-          "src": "img/kemono/after/artworks/nnnnkkkksk_1.jpg",
+          "src": "img/kemono/after/artworks/20250910-nokoskb-01.jpg",
           "creator": {
             "name": "のこ",
             "link": "https://x.com/nokoskb"
@@ -55,7 +55,7 @@
           "id": "artwork-after-4",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "さとたろ的作品",
-          "src": "img/kemono/after/artworks/satotaro_1.jpg",
+          "src": "img/kemono/after/artworks/20250915-Satotaro_0505-01.jpg",
           "creator": {
             "name": "さとたろ",
             "link": "https://x.com/Satotaro_0505"
@@ -65,7 +65,7 @@
           "id": "artwork-after-5",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "ㄏㄓ的作品",
-          "src": "img/kemono/after/artworks/edgehzstw_1.jpg",
+          "src": "img/kemono/after/artworks/20250918-edgehzstw-01.jpg",
           "creator": {
             "name": "ㄏㄓ",
             "link": "https://x.com/edgehzstw"
@@ -75,7 +75,7 @@
           "id": "artwork-after-6",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "七柚的作品",
-          "src": "img/kemono/after/artworks/qiyou_1.jpg",
+          "src": "img/kemono/after/artworks/20250922-qi.you.565397-01.jpg",
           "creator": {
             "name": "七柚",
             "link": "https://www.facebook.com/qi.you.565397"
@@ -85,27 +85,17 @@
           "id": "artwork-after-7",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "あおいの的作品",
-          "src": "img/kemono/after/artworks/shir0kur0_bw_1.jpg",
+          "src": "img/kemono/after/artworks/20250927-shir0kur0_bw-01.jpg",
           "creator": {
             "name": "あおいの",
             "link": "https://x.com/shir0kur0_bw"
           }
         },
         {
-          "id": "artwork-after-8",
-          "class": "grid-w50 md:grid-w33 xl:grid-w25",
-          "alt": "SINI(シニ)的作品",
-          "src": "img/kemono/after/artworks/sini_2525_1.jpg",
-          "creator": {
-            "name": "SINI(シニ)",
-            "link": "https://x.com/SINI_2525"
-          }
-        },
-        {
           "id": "artwork-after-9",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "なむはら的作品",
-          "src": "img/kemono/after/artworks/namuhara3326_1.jpg",
+          "src": "img/kemono/after/artworks/20251001-namuhara3326-01.jpg",
           "creator": {
             "name": "なむはら",
             "link": "https://x.com/namuhara3326"
@@ -115,17 +105,27 @@
           "id": "artwork-after-10",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "なむはら的作品",
-          "src": "img/kemono/after/artworks/namuhara3326_2.jpg",
+          "src": "img/kemono/after/artworks/20251001-namuhara3326-02.jpg",
           "creator": {
             "name": "なむはら",
             "link": "https://x.com/namuhara3326"
           }
         },
         {
+          "id": "artwork-after-8",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "SINI(シニ)的作品",
+          "src": "img/kemono/after/artworks/20251001-SINI_2525-01.jpg",
+          "creator": {
+            "name": "SINI(シニ)",
+            "link": "https://x.com/SINI_2525"
+          }
+        },
+        {
           "id": "artwork-after-11",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "むっちゃ〜的作品",
-          "src": "img/kemono/after/artworks/mutamaru_tanuki_1.jpg",
+          "src": "img/kemono/after/artworks/20251002-mutamaru_tanuki-01.jpg",
           "creator": {
             "name": "むっちゃ〜",
             "link": "https://x.com/mutamaru_tanuki"
@@ -135,7 +135,7 @@
           "id": "artwork-after-12",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "capella 的作品",
-          "src": "img/kemono/after/artworks/capella_pera_1.jpg",
+          "src": "img/kemono/after/artworks/20251008-capella_pera-01.jpg",
           "creator": {
             "name": "capella",
             "link": "https://x.com/capella_pera"
@@ -145,7 +145,7 @@
           "id": "artwork-after-13",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "マコトウ的作品",
-          "src": "img/kemono/after/artworks/mako_makotoo_1.jpg",
+          "src": "img/kemono/after/artworks/20251010-mako_makotoo-01.jpg",
           "creator": {
             "name": "マコトウ",
             "link": "https://x.com/mako_makotoo"
@@ -155,7 +155,7 @@
           "id": "artwork-after-14",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "RSN 的作品",
-          "src": "img/kemono/after/artworks/p_rsn07_1.jpg",
+          "src": "img/kemono/after/artworks/20251012-P_rsn07-01.jpg",
           "creator": {
             "name": "RSN",
             "link": "https://x.com/P_rsn07"
@@ -165,7 +165,7 @@
           "id": "artwork-after-15",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "灰月的作品",
-          "src": "img/kemono/after/artworks/graytsuki0614_1.jpg",
+          "src": "img/kemono/after/artworks/20251013-graytsuki0614-01.jpg",
           "creator": {
             "name": "灰月",
             "link": "https://www.threads.com/@graytsuki0614"
@@ -175,7 +175,7 @@
           "id": "artwork-after-16",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "こがねぱん的作品",
-          "src": "img/kemono/after/artworks/water_mi1k_1.jpg",
+          "src": "img/kemono/after/artworks/20251014-Komepan_pan-01.jpg",
           "creator": {
             "name": "こがねぱん",
             "link": "https://x.com/Komepan_pan"
@@ -185,7 +185,7 @@
           "id": "artwork-after-17",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "勾勾的作品",
-          "src": "img/kemono/after/artworks/goukogouko_1.jpg",
+          "src": "img/kemono/after/artworks/20251020-koukou.zeng.75-01.jpg",
           "creator": {
             "name": "勾勾",
             "link": "https://www.facebook.com/koukou.zeng.75"
@@ -195,7 +195,7 @@
           "id": "artwork-after-18",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "HEBARODA 的作品",
-          "src": "img/kemono/after/artworks/hebaroda03_1.jpg",
+          "src": "img/kemono/after/artworks/20251021-hebaroda03-01.jpg",
           "creator": {
             "name": "HEBARODA",
             "link": "https://x.com/hebaroda03"
@@ -205,7 +205,7 @@
           "id": "artwork-after-19",
           "class": "grid-w50 md:grid-w33 xl:grid-w25",
           "alt": "HEBARODA 的作品",
-          "src": "img/kemono/after/artworks/hebaroda03_2.jpg",
+          "src": "img/kemono/after/artworks/20251021-hebaroda03-02.jpg",
           "creator": {
             "name": "HEBARODA",
             "link": "https://x.com/hebaroda03"
