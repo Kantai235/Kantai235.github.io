@@ -1,4 +1,13 @@
-// 年份篩選功能 - 雙容器模式解決分頁衝突
+/**
+ * @file year-filter.js
+ * @description 文章列表的年份篩選功能（雙容器模式）。
+ *   為了解決「篩選」與「分頁」的衝突，頁面同時存在兩個文章容器：
+ *   - `#articles-container`（分頁模式）：Hugo 產生的分頁文章清單，預設顯示。
+ *   - `#all-articles-container`（篩選模式）：包含所有文章的隱藏容器，篩選時切換顯示。
+ *
+ *   全域暴露：window.yearFilter 物件，提供 filterByYear / clearFilter / isFiltering / switchContainer
+ *   鍵盤快捷鍵：數字鍵 1-9 對應篩選按鈕、0 顯示全部、Esc 清除篩選。
+ */
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.year-filter-btn');
     const paginatedContainer = document.getElementById('articles-container');
@@ -18,7 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         allYearHeaders = Array.from(allArticlesContainer.querySelectorAll('.year-header-all'));
     }
     
-    // 切換容器顯示模式
+    /**
+     * 切換分頁模式與篩選模式的容器顯示狀態。
+     * @param {boolean} showPaginated - true 顯示分頁容器，false 顯示全文章篩選容器
+     */
     function switchContainer(showPaginated) {
         // 檢查元素是否存在，避免在非文章列表頁面出錯
         if (!paginatedContainer || !allArticlesContainer || !paginationContainer) {
@@ -38,7 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 年份篩選功能
+    /**
+     * 依年份篩選文章。傳入 'all' 則回到分頁模式；
+     * 傳入特定年份字串則切換至篩選模式，僅顯示該年份的文章與標題。
+     * @param {string} year - 年份字串（如 '2023'）或 'all'
+     */
     function filterArticlesByYear(year) {
         if (!allArticlesContainer || allArticles.length === 0) return;
         
@@ -83,7 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
         activeContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     
-    // 更新篩選訊息
+    /**
+     * 更新篩選結果的提示訊息（例如「顯示 2023 年的文章：共 5 篇」）。
+     * @param {string} year - 當前篩選的年份或 'all'
+     * @param {number} visibleCount - 符合篩選條件的文章數量
+     */
     function updateFilterMessage(year, visibleCount) {
         if (!filterMessage || !filterText) return;
         
@@ -95,7 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 清除篩選功能
+    /**
+     * 清除篩選狀態，模擬點擊「全部��按鈕以回到分頁模式。
+     */
     function clearFilter() {
         const allButton = document.querySelector('[data-year="all"]');
         if (allButton) {
@@ -103,7 +125,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 更新按鈕狀態
+    /**
+     * 更新篩選按鈕的 active/inactive 樣式，使當前選中的按鈕呈現高亮狀態。
+     * @param {HTMLElement} activeButton - 被點擊的按鈕元素
+     */
     function updateButtonStates(activeButton) {
         filterButtons.forEach(btn => {
             btn.classList.remove('active', 'bg-primary-500', 'text-white', 'dark:bg-primary-600');
@@ -139,7 +164,10 @@ document.addEventListener('DOMContentLoaded', function() {
         clearFilterBtn.addEventListener('click', clearFilter);
     }
     
-    // 處理頁面加載時的 URL hash
+    /**
+     * 頁面載入時解析 URL hash（如 `#year-2023`），自動觸發對應年份的篩選。
+     * 使用 setTimeout 延遲 100ms 確保 DOM 已完成渲染。
+     */
     function handleInitialHash() {
         const hash = window.location.hash;
         if (hash && hash.startsWith('#year-')) {
@@ -194,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 提供全域函數供其他腳本使用
+    /** 暴露至全域的公開 API，供其他腳本（如 smooth-scroll.js）呼叫 */
     window.yearFilter = {
         filterByYear: filterArticlesByYear,
         clearFilter: clearFilter,

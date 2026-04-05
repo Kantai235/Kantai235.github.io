@@ -1,4 +1,19 @@
-/* 自訂字體定義 */
+/* ============================================================
+   custom.css — Blowfish 主題的全站自訂樣式覆寫
+   ============================================================
+   目錄 (Table of Contents)
+   1. 自訂字體定義
+   2. 全域 CSS 變數覆寫
+   3. 全域字體套用
+   4. 中文排版最佳化
+   5. UI 元件字體覆寫
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. 自訂字體定義
+   載入 LINE Seed 繁體中文字體（TTF 格式），搭配 font-display: swap
+   確保字體載入期間仍以系統字��顯示，避免 FOIT（Flash of Invisible Text）。
+   ------------------------------------------------------------ */
 @font-face {
     font-family: 'LINESeedTW';
     src: url('/fonts/LINESeedTW_TTF_Rg.ttf') format('truetype');
@@ -7,31 +22,46 @@
     font-display: swap;
 }
 
-/* 覆蓋 Blowfish 主題的 CSS 變數 */
+/* ------------------------------------------------------------
+   2. 全域 CSS 變數覆寫
+   覆寫 Blowfish 主題定義的字體變數，統一使用 LINESeedTW 為主要字體，
+   並以 Noto Sans TC、Source Han Sans 作為後備字體。
+   ------------------------------------------------------------ */
 :root {
     --font-header: 'LINESeedTW', 'Noto Sans TC', 'Source Han Sans', sans-serif;
     --font-body: 'LINESeedTW', 'Noto Sans TC', 'Source Han Sans', sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
 }
 
-/* 確保所有文字元素使用自訂字體 */
+/* ------------------------------------------------------------
+   3. 全域字體套用
+   確保 html 根元素使用自訂 body 字體變數，標題另外指定 header 字體變數。
+   ------------------------------------------------------------ */
 html {
     font-family: var(--font-body);
 }
 
-/* 標題使用自訂字體 */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-header);
 }
 
-/* 針對中文內容優化 */
+/* ------------------------------------------------------------
+   4. 中文排版最佳化
+   調整行高與字距以適應中文內容的閱讀體驗：
+   - line-height: 1.7 提供中文段落舒適的行距
+   - letter-spacing: 0.02em 微調字元間距
+   ------------------------------------------------------------ */
 body {
     font-family: var(--font-body);
     line-height: 1.7;
     letter-spacing: 0.02em;
 }
 
-/* 確保 navigation 和其他 UI 元素也使用自訂字體 */
+/* ------------------------------------------------------------
+   5. UI 元件字體覆��
+   確保導覽列、頁尾、按鈕與標籤等 UI 元件也套用自訂字體，
+   避免被 Blowfish 主題的預設字體覆蓋。
+   ------------------------------------------------------------ */
 .navigation, .footer, .btn, .badge {
     font-family: var(--font-body);
 }

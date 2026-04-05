@@ -1,3 +1,8 @@
+<!--
+  覆寫來源：themes/blowfish/layouts/partials/schema.html
+  修改說明：自訂 Schema.org 結構化資料（JSON-LD）輸出，
+  針對首頁、文章頁等不同頁面類型產生對應的結構化標記，提升 SEO。
+-->
 {{/* Schema.org 結構化資料 */}}
 {{ if eq .Kind "home" }}
 <script type="application/ld+json">

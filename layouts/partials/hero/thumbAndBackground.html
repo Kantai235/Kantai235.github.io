@@ -1,3 +1,7 @@
+<!--
+  覆寫來源：themes/blowfish/layouts/partials/hero/thumbAndBackground.html
+  修改說明：覆寫縮圖與背景英雄區塊，新增 .mp4 動態背景影片的支援。
+-->
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
 {{- $images := .Resources.ByType "image" -}}

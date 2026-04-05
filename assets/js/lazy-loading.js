@@ -1,6 +1,16 @@
-// Lazy loading for images with WebP support
+/**
+ * @file lazy-loading.js
+ * @description 圖片懶載入腳本，提供兩大功能：
+ *   1. 背景圖片懶載入 — 針對 `.lazy-bg` 元素，透過 IntersectionObserver 偵測進入視窗後載入。
+ *   2. 一般圖片懶載入 — 針對 `img[loading="lazy"]` 元素，將 `data-src` 替換為 `src`。
+ *   兩者皆支援 WebP 格式自動偵測，並為不支援 IntersectionObserver 的瀏覽器提供降級方案。
+ */
 document.addEventListener('DOMContentLoaded', function() {
-    // Check WebP support
+    /**
+     * 偵測瀏覽器是否支援 WebP 圖片格式。
+     * 透過嘗試解碼一張 base64 編碼的 WebP 圖片來判斷���
+     * @param {function(boolean): void} callback - 回呼函式，參數為是否支援 WebP
+     */
     function checkWebPSupport(callback) {
         const webP = new Image();
         webP.onload = webP.onerror = function() {
@@ -9,7 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
         webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
     }
 
-    // Lazy load background images
+    /**
+     * 懶載入背景圖片。
+     * 為所有 `.lazy-bg` 元素註冊 IntersectionObserver，當元素進入視窗 50px 範圍時，
+     * 根據 WebP 支援度從 `data-bg-webp` 或 `data-bg-fallback` 讀取圖片 URL 並設為背景。
+     * 若瀏覽器不支援 IntersectionObserver，則立即載入所有背景圖。
+     */
     function lazyLoadBackgrounds() {
         const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
         
@@ -59,7 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Lazy load regular images
+    /**
+     * 懶載入一般圖片。
+     * 為所有 `img[loading="lazy"]` 元素註冊 IntersectionObserver，
+     * 當圖片進入視窗 50px 範圍時，將 `data-src` 屬性的值設為 `src` 以觸發載入。
+     */
     function lazyLoadImages() {
         const lazyImages = document.querySelectorAll('img[loading="lazy"]');
         

@@ -1,3 +1,8 @@
+<!--
+  覆寫來源：themes/blowfish/layouts/partials/recent-articles/list.html
+  修改說明：強制從繁體中文（預設語言）站台抓取最新文章清單，
+  確保所有語言版本的首頁都顯示一致的文章列表。
+-->
 {{ $recentArticles := 5 }}
 {{ $recentArticles = .Site.Params.homepage.showRecentItems }}
 

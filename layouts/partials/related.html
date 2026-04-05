@@ -1,3 +1,7 @@
+<!--
+  覆寫來源：themes/blowfish/layouts/partials/related.html
+  修改說明：自訂相關文章區塊的顯示邏輯與版面配置。
+-->
 {{ if .Params.showRelatedContent | default (.Site.Params.article.showRelatedContent | default false) }}
   {{ $relatedLimit := .Site.Params.article.relatedContentLimit | default 3 }}
   {{ $related := .Site.RegularPages.Related . }}

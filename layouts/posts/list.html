@@ -1,3 +1,8 @@
+<!--
+  覆寫來源：themes/blowfish/layouts/posts/list.html
+  修改說明：自訂文章列表頁面，加入年份篩選按鈕介面與雙容器架構
+  （分頁容器 + 全文章容器），搭配 year-filter.js 實現不衝突的篩選功能。
+-->
 {{ define "main" }}
   {{ .Scratch.Set "scope" "list" }}
 

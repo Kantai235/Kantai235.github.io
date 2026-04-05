@@ -1,3 +1,7 @@
+<!--
+  覆寫來源：themes/blowfish/layouts/partials/hero/basic.html
+  修改說明：調整基本英雄區塊的特色圖片匹配與顯示邏輯。
+-->
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
 {{- $images := .Resources.ByType "image" -}}

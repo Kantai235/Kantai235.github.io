@@ -1,3 +1,17 @@
+/**
+ * @file language-prompt.js
+ * @description 多語言切換提示元件。
+ *   當使用者的瀏覽器語言與當前頁面語言不一致時，在畫面右下角彈出提示，
+ *   建議切換至瀏覽器偏好語言的頁面版本。
+ *
+ *   運作流程：
+ *   1. 偵測瀏覽器語言（navigator.language）並對映至本站支援的四種語言。
+ *   2. 比對當前頁面語言（從 URL 路徑解析）。
+ *   3. 若語言不同且使用者尚未關閉提示（localStorage 記錄 30 天），延遲 500ms 後顯示。
+ *   4. 使用者可點擊切換按鈕跳轉，或點擊關閉按鈕將偏好記錄至 localStorage。
+ *
+ *   全域暴露：window.languagePromptDismiss（供 inline onclick 呼叫）
+ */
 (function() {
   const STORAGE_KEY = 'language-preference-dismissed';
   const DISMISS_DURATION = 30 * 24 * 60 * 60 * 1000; // 30 days
@@ -21,6 +35,11 @@
     'ja': '日本語'
   };
   
+  /**
+   * 取得瀏覽器的偏好語言，並對映至本站支援的語言代碼。
+   * 依序比對 languageMapping 中的前綴，若無匹配則預設回傳 'en'。
+   * @returns {string} 對映後的語言代碼（'zh-tw' | 'zh-cn' | 'en' | 'ja'）
+   */
   function getBrowserLanguage() {
     const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
     
@@ -33,6 +52,11 @@
     return 'en';
   }
   
+  /**
+   * 從目前頁面的 URL 路徑解析當前語言。
+   * 繁體中文（預設語言）不帶路徑前綴，其他語言以 `/en/`、`/ja/`、`/zh-cn/` 開頭。
+   * @returns {string} 當前頁面的語言代碼
+   */
   function getCurrentLanguage() {
     const path = window.location.pathname;
     
@@ -43,6 +67,13 @@
     return 'zh-tw';
   }
   
+  /**
+   * 根據目標語言產生對應的切換 URL。
+   * 處理三種情境：首頁、繁體中文目標（移除前綴）、其他語言目標（新增或替換前綴）。
+   * 保留原始的 query string 與 hash。
+   * @param {string} targetLang - 目標語言代碼
+   * @returns {string} 組合後的完整路徑
+   */
   function getTargetURL(targetLang) {
     const path = window.location.pathname;
     const search = window.location.search;
@@ -74,6 +105,13 @@
     return newPath + search + hash;
   }
   
+  /**
+   * 檢查使用者是否已關閉過語言切換提示。
+   * 從 localStorage 讀取記錄，並驗證：
+   *   - 記錄是否已超過 30 天（DISMISS_DURATION）
+   *   - 記錄的語言組合是否與當前情境一致
+   * @returns {boolean} 若已關閉且尚未過期則回傳 true
+   */
   function isDismissed() {
     const dismissedData = localStorage.getItem(STORAGE_KEY);
     if (!dismissedData) return false;
@@ -97,6 +135,10 @@
     }
   }
   
+  /**
+   * 將「已關閉提示」的狀態寫入 localStorage。
+   * 記錄當前的瀏覽器語言與頁面語言組合，以及時間戳。
+   */
   function dismissPrompt() {
     const browserLang = getBrowserLanguage();
     const currentLang = getCurrentLanguage();
@@ -107,6 +149,13 @@
     }));
   }
   
+  /**
+   * 動態建立語言切換提示的 DOM 元素並插入頁面。
+   * 包含：提示訊息、切換按鈕、關閉按鈕，以及滑入動畫與深色模式的內嵌樣式。
+   * 樣式僅在首次呼叫時注入（透過 `#language-prompt-styles` 避免重複）。
+   * @param {string} targetLang - 建議切換的目標語言代碼
+   * @param {string} targetURL - 點擊切換按鈕後跳轉的 URL
+   */
   function createPrompt(targetLang, targetURL) {
     const browserLang = getBrowserLanguage();
     
@@ -190,6 +239,13 @@
     document.body.appendChild(promptContainer);
   }
   
+  /**
+   * 根據瀏覽器語言與目標語言，回傳對應的提示訊息文字。
+   * 訊息以瀏覽器語言顯示（而非當前頁面語言），確保使用者能理解。
+   * @param {string} targetLang - 目標語言代碼
+   * @param {string} browserLang - 瀏覽器偏好語言代碼
+   * @returns {string} 在地化的提示訊息
+   */
   function getPromptMessage(targetLang, browserLang) {
     // Display language based on browser language, not current page language
     const displayLang = browserLang || getBrowserLanguage();
@@ -221,6 +277,11 @@
     return messages[displayLang]?.[targetLang] || messages['en'][targetLang];
   }
   
+  /**
+   * 根據瀏覽器語言回傳關閉按鈕的文字（例如「不用了」、「No thanks」）。
+   * @param {string} browserLang - 瀏覽器偏好語言代碼
+   * @returns {string} 在地化的關閉按鈕文字
+   */
   function getDismissText(browserLang) {
     // Display language based on browser language, not current page language
     const displayLang = browserLang || getBrowserLanguage();
@@ -235,6 +296,10 @@
     return texts[displayLang] || texts['en'];
   }
   
+  /**
+   * 語言切換提示的進入點。
+   * 依序檢查：是否已被關閉 → 瀏覽器語言是否與頁面語言不同 → 延遲 500ms 後顯示提示。
+   */
   function init() {
     // Check if already dismissed
     if (isDismissed()) {

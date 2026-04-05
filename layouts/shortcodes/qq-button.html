@@ -1,3 +1,8 @@
+<!--
+  自訂短代碼：qq-button
+  功能說明：在頁面中產生一個 QQ 聯絡按鈕，支援自訂 QQ 號碼、連結 URL 與按鈕文字。
+  預設值定義於參數中，可在呼叫時覆寫。
+-->
 {{/* QQ Button Shortcode */}}
 {{ $qqNumber := .Get "qqNumber" | default "3023115954" }}
 {{ $qqUrl := .Get "qqUrl" | default "https://qm.qq.com/q/iGQiWSo1j2" }}
