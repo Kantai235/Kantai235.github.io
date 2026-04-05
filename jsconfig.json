@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "checkJs": true,
+    "allowJs": true,
+    "baseUrl": "."
+  },
+  "include": [
+    "assets/js/**/*.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "themes",
+    "public",
+    "resources"
+  ]
+}

@@ -6,7 +6,11 @@
   "description": "乾太 (Kantai) 的個人網站與部落格",
   "scripts": {
     "lint": "eslint assets/js/",
-    "lint:fix": "eslint assets/js/ --fix"
+    "lint:fix": "eslint assets/js/ --fix",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix"
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,8 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.2.0",
-    "globals": "^17.4.0"
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0"
   }
 }

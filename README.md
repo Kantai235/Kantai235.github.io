@@ -50,6 +50,10 @@ npm run lint          # 執行 ESLint 檢查
 npm run lint:fix      # 自動修復可修正的問題
 ```
 
+專案已整合 [Husky](https://typicode.github.io/husky/) + [lint-staged](https://github.com/lint-staged/lint-staged)，
+在每次 `git commit` 時會自動對暫存區的 `*.js` 檔案執行 ESLint 檢查與自動修復。
+執行 `npm install` 後即自動啟用，無需額外設定。
+
 ## 多語言架構
 
 本站支援四種語言，繁體中文為預設語言：
