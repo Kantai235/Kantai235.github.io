@@ -235,11 +235,6 @@
     return texts[displayLang] || texts['en'];
   }
   
-  function removePrompt() {
-    const prompt = document.getElementById('language-prompt');
-    if (prompt) prompt.remove();
-  }
-  
   function init() {
     // Check if already dismissed
     if (isDismissed()) {

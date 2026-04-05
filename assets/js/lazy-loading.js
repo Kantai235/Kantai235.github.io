@@ -14,23 +14,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
         
         if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver(function(entries, observer) {
+            const imageObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         const element = entry.target;
-                        
+
                         checkWebPSupport(function(supportsWebP) {
-                            const imageUrl = supportsWebP 
-                                ? element.dataset.bgWebp 
+                            const imageUrl = supportsWebP
+                                ? element.dataset.bgWebp
                                 : element.dataset.bgFallback;
-                            
+
                             if (imageUrl) {
                                 element.style.backgroundImage = `url(${imageUrl})`;
                                 element.classList.remove('lazy-bg');
                                 element.classList.add('loaded');
                             }
                         });
-                        
+
                         imageObserver.unobserve(element);
                     }
                 });
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const lazyImages = document.querySelectorAll('img[loading="lazy"]');
         
         if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver(function(entries, observer) {
+            const imageObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         const img = entry.target;
