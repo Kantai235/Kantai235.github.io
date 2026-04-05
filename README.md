@@ -26,12 +26,13 @@ brew install hugo dart-sass
 
 ### 初次 Clone
 
-Clone 專案後，務必拉取 Blowfish 佈景主題的 Submodule：
+Clone 專案後，拉取 Blowfish 佈景主題的 Submodule 並安裝 npm 開發套件：
 
 ```bash
 git clone https://github.com/Kantai235/Kantai235.github.io.git
 cd Kantai235.github.io
 git submodule update --init --recursive
+npm install
 ```
 
 ### 啟動本地伺服器
@@ -41,6 +42,13 @@ hugo server -D
 ```
 
 加上 `-D` 參數會同時渲染草稿文章。預設會在 `http://localhost:1313/` 啟動即時預覽。
+
+### 程式碼檢查
+
+```bash
+npm run lint          # 執行 ESLint 檢查
+npm run lint:fix      # 自動修復可修正的問題
+```
 
 ## 多語言架構
 

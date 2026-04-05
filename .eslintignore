@@ -1,6 +1,0 @@
-# Hugo template files
-layouts/**/*.html
-content/**/*.md
-static/**/*
-public/**/*
-themes/**/*

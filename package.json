@@ -1,0 +1,22 @@
+{
+  "name": "kantai235.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "乾太 (Kantai) 的個人網站與部落格",
+  "scripts": {
+    "lint": "eslint assets/js/",
+    "lint:fix": "eslint assets/js/ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kantai235/Kantai235.github.io.git"
+  },
+  "author": "KantaiDeveloper",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.0",
+    "globals": "^17.4.0"
+  }
+}
