@@ -10,8 +10,6 @@ hugo_stats.json
 
 # Development Tools
 .vscode/
-.claude/
-GEMINI.md
 
 # Node.js
 node_modules/
