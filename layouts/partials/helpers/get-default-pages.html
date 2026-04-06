@@ -1,0 +1,18 @@
+{{/*
+  共用 partial：取得預設語言（zh-tw）站台的正式頁面。
+  避免在多個模板中重複撰寫 zh-tw 站台偵測邏輯。
+
+  使用方式：
+    {{ $pages := partial "helpers/get-default-pages.html" . }}
+
+  回傳值：預設語言站台中，Type 屬於 mainSections 的所有 RegularPages。
+*/}}
+{{ $zhtwSites := where site.Sites ".Language.Lang" "zh-tw" }}
+{{ $pages := slice }}
+{{ if $zhtwSites }}
+  {{ $zhtwSite := index $zhtwSites 0 }}
+  {{ $pages = where $zhtwSite.RegularPages "Type" "in" site.Params.mainSections }}
+{{ else }}
+  {{ $pages = where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ end }}
+{{ return $pages }}

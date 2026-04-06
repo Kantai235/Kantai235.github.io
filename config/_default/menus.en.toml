@@ -32,6 +32,44 @@
   weight = 22
 
 [[main]]
+  name = "Tech Topics"
+  weight = 30
+
+[[main]]
+  name = "PHP Design Patterns"
+  parent = "Tech Topics"
+  pageRef = "/categories/php-設計模式/"
+  weight = 31
+
+[[main]]
+  name = "Utilities"
+  weight = 40
+
+[[main]]
+  name = "String Random Generator"
+  parent = "Utilities"
+  pageRef = "/posts/2019/07-21_string-random-generator/"
+  weight = 41
+
+[[main]]
+  name = "Unicode Encoder/Decoder"
+  parent = "Utilities"
+  pageRef = "/posts/2019/07-17_tools-unicode/"
+  weight = 42
+
+[[main]]
+  name = "URL Encoder/Decoder"
+  parent = "Utilities"
+  pageRef = "/posts/2019/07-14_tools-url/"
+  weight = 43
+
+[[main]]
+  name = "Base64 Encoder/Decoder"
+  parent = "Utilities"
+  pageRef = "/posts/2019/07-09_tools-base64/"
+  weight = 44
+
+[[main]]
   name = "Posts"
   pageRef = "/posts"
-  weight = 30
+  weight = 50

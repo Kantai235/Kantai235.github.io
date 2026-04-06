@@ -6,16 +6,9 @@
 {{ $recentArticles := 5 }}
 {{ $recentArticles = .Site.Params.homepage.showRecentItems }}
 
-{{/* Get pages from the default language (zh-tw) site */}}
-{{ $zhtwSites := where site.Sites ".Language.Lang" "zh-tw" }}
-{{ $pages := slice }}
-
-{{ if $zhtwSites }}
-  {{ $zhtwSite := index $zhtwSites 0 }}
-  {{ $pages = first $recentArticles (where $zhtwSite.RegularPages "Type" "in" site.Params.mainSections) }}
-{{ else }}
-  {{ $pages = first $recentArticles (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-{{ end }}
+{{/* 透過共用 partial 取得預設語言站台的文章 */}}
+{{ $allDefaultPages := partial "helpers/get-default-pages.html" . }}
+{{ $pages := first $recentArticles $allDefaultPages }}
 
 <section class="space-y-10 w-full">
   {{ range $pages }}

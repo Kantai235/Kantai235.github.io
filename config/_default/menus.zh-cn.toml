@@ -32,6 +32,44 @@
   weight = 22
 
 [[main]]
+  name = "技术主题"
+  weight = 30
+
+[[main]]
+  name = "PHP 设计模式"
+  parent = "技术主题"
+  pageRef = "/categories/php-設計模式/"
+  weight = 31
+
+[[main]]
+  name = "小工具"
+  weight = 40
+
+[[main]]
+  name = "String 字符串随机生成器"
+  parent = "小工具"
+  pageRef = "/posts/2019/07-21_string-random-generator/"
+  weight = 41
+
+[[main]]
+  name = "Unicode 编码、解码"
+  parent = "小工具"
+  pageRef = "/posts/2019/07-17_tools-unicode/"
+  weight = 42
+
+[[main]]
+  name = "URL 编码、解码"
+  parent = "小工具"
+  pageRef = "/posts/2019/07-14_tools-url/"
+  weight = 43
+
+[[main]]
+  name = "Base64 编码、解码"
+  parent = "小工具"
+  pageRef = "/posts/2019/07-09_tools-base64/"
+  weight = 44
+
+[[main]]
   name = "文章"
   pageRef = "/posts"
-  weight = 30
+  weight = 50

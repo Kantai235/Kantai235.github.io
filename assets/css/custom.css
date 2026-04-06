@@ -16,7 +16,8 @@
    ------------------------------------------------------------ */
 @font-face {
     font-family: 'LINESeedTW';
-    src: url('/fonts/LINESeedTW_TTF_Rg.ttf') format('truetype');
+    src: url('/fonts/LINESeedTW.woff2') format('woff2'),
+         url('/fonts/LINESeedTW_TTF_Rg.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -65,3 +66,49 @@ body {
 .navigation, .footer, .btn, .badge {
     font-family: var(--font-body);
 }
+
+/* ============================================================
+   6. 社群連結元件樣式
+   用於 social-links shortcode 的按鈕排版與各平台品牌色。
+   ============================================================ */
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.social-buttons .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.5rem !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+}
+
+.social-buttons .btn svg {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    flex-shrink: 0 !important;
+}
+
+.social-buttons .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 各社群平台品牌色 */
+.btn-email { background-color: #EA4335 !important; color: white !important; }
+.btn-facebook { background-color: #1877F2 !important; color: white !important; }
+.btn-plurk { background-color: #FF7900 !important; color: white !important; }
+.btn-threads { background-color: #000000 !important; color: white !important; }
+.btn-x { background-color: #000000 !important; color: white !important; }
+.btn-github { background-color: #333333 !important; color: white !important; }
+.btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; color: white !important; }
+.btn-telegram { background-color: #0088CC !important; color: white !important; }
+.btn-twitch { background-color: #9146FF !important; color: white !important; }
+.btn-discord { background-color: #5865F2 !important; color: white !important; }
+.btn-steam { background-color: #2a475e !important; color: white !important; }

@@ -24,15 +24,8 @@
     </div>
   </section>
 
-  {{/* Get all posts from zh-tw site specifically */}}
-  {{ $zhtwSites := where site.Sites ".Language.Lang" "zh-tw" }}
-  {{ $allPages := slice }}
-  {{ if $zhtwSites }}
-    {{ $zhtwSite := index $zhtwSites 0 }}
-    {{ $allPages = where $zhtwSite.RegularPages "Type" "in" site.Params.mainSections }}
-  {{ else }}
-    {{ $allPages = where .Site.RegularPages "Type" "in" site.Params.mainSections }}
-  {{ end }}
+  {{/* 透過共用 partial 取得預設語言站台的文章 */}}
+  {{ $allPages := partial "helpers/get-default-pages.html" . }}
 
   {{/* 年度篩選導航 */}}
   {{ if gt (len $allPages) 0 }}

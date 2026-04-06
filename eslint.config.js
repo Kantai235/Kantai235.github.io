@@ -12,6 +12,7 @@ export default [
         ...globals.node,
         ...globals.jquery,
         Packery: 'readonly',
+        Fuse: 'readonly',
       },
     },
   },

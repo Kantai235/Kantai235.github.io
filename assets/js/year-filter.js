@@ -201,9 +201,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 鍵盤支援
     document.addEventListener('keydown', function(e) {
         // 只在沒有焦點在輸入框時才啟用快捷鍵
-        if (document.activeElement.tagName === 'INPUT' || 
-            document.activeElement.tagName === 'TEXTAREA' ||
-            document.activeElement.isContentEditable) {
+        const isFormInput = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)
+            || document.activeElement.isContentEditable;
+        if (isFormInput) {
             return;
         }
         

@@ -1,20 +1,24 @@
-# -- Markup --
-# These settings are required for the theme to function.
+# ==============================================================================
+# Markdown 渲染設定 (Markup Configuration)
+# ==============================================================================
 
 [goldmark]
   [goldmark.renderer]
+    # unsafe = true 允許在 Markdown 中嵌入原始 HTML（自訂 shortcodes 需要）
     unsafe = true
 
   [goldmark.extensions]
+    # 數學公式支援：透過 passthrough 擴展，讓 LaTeX 語法直接傳遞給前端渲染
     [goldmark.extensions.passthrough]
       enable = true
       [goldmark.extensions.passthrough.delimiters]
-        block = [['\[', '\]'], ['$$', '$$']]
-        inline = [['\(', '\)']]
+        block = [['\[', '\]'], ['$$', '$$']]    # 區塊數學公式
+        inline = [['\(', '\)']]                  # 行內數學公式
 
 [highlight]
+  # 使用 CSS class 而非行內樣式，以便自訂程式碼高亮主題
   noClasses = false
 
 [tableOfContents]
-  startLevel = 2
-  endLevel = 4
+  startLevel = 2  # TOC 從 h2 開始（h1 通常是頁面標題）
+  endLevel = 4    # TOC 最深到 h4

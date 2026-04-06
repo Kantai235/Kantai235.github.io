@@ -3,18 +3,24 @@
  * @description 圖片懶載入腳本，提供兩大功能：
  *   1. 背景圖片懶載入 — 針對 `.lazy-bg` 元素，透過 IntersectionObserver 偵測進入視窗後載入。
  *   2. 一般圖片懶載入 — 針對 `img[loading="lazy"]` 元素，將 `data-src` 替換為 `src`。
- *   兩者皆支援 WebP 格式自動偵測，並為不支援 IntersectionObserver 的瀏覽器提供降級方案。
+ *   兩者皆支援 WebP 格式自動偵測（含快取），並為不支援 IntersectionObserver 的瀏覽器提供降級方案。
  */
 document.addEventListener('DOMContentLoaded', function() {
     /**
-     * 偵測瀏覽器是否支援 WebP 圖片格式。
-     * 透過嘗試解碼一張 base64 編碼的 WebP 圖片來判斷���
+     * 偵測瀏覽器是否支援 WebP 圖片格式（含快取）。
+     * 首次呼叫時透過解碼 base64 WebP 圖片判斷，後續呼叫直接回傳快取結果。
      * @param {function(boolean): void} callback - 回呼函式，參數為是否支援 WebP
      */
+    let _webPSupported = null;
     function checkWebPSupport(callback) {
+        if (_webPSupported !== null) {
+            callback(_webPSupported);
+            return;
+        }
         const webP = new Image();
         webP.onload = webP.onerror = function() {
-            callback(webP.height === 2);
+            _webPSupported = webP.height === 2;
+            callback(_webPSupported);
         };
         webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
     }
@@ -27,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     function lazyLoadBackgrounds() {
         const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
-        
+
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
@@ -60,10 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Fallback for browsers without IntersectionObserver
             lazyBackgrounds.forEach(function(element) {
                 checkWebPSupport(function(supportsWebP) {
-                    const imageUrl = supportsWebP 
-                        ? element.dataset.bgWebp 
+                    const imageUrl = supportsWebP
+                        ? element.dataset.bgWebp
                         : element.dataset.bgFallback;
-                    
+
                     if (imageUrl) {
                         element.style.backgroundImage = `url(${imageUrl})`;
                         element.classList.remove('lazy-bg');
@@ -81,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     function lazyLoadImages() {
         const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-        
+
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
@@ -105,13 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initialize lazy loading
+    // 初始化懶載入
     lazyLoadBackgrounds();
     lazyLoadImages();
-    
-    // Re-run on dynamic content load
-    document.addEventListener('DOMContentLoaded', function() {
-        lazyLoadBackgrounds();
-        lazyLoadImages();
-    });
 });

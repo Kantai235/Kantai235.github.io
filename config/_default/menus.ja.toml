@@ -32,6 +32,44 @@
   weight = 22
 
 [[main]]
+  name = "技術トピック"
+  weight = 30
+
+[[main]]
+  name = "PHP デザインパターン"
+  parent = "技術トピック"
+  pageRef = "/categories/php-設計模式/"
+  weight = 31
+
+[[main]]
+  name = "ユーティリティ"
+  weight = 40
+
+[[main]]
+  name = "文字列ランダム生成器"
+  parent = "ユーティリティ"
+  pageRef = "/posts/2019/07-21_string-random-generator/"
+  weight = 41
+
+[[main]]
+  name = "Unicode エンコーダ/デコーダ"
+  parent = "ユーティリティ"
+  pageRef = "/posts/2019/07-17_tools-unicode/"
+  weight = 42
+
+[[main]]
+  name = "URL エンコーダ/デコーダ"
+  parent = "ユーティリティ"
+  pageRef = "/posts/2019/07-14_tools-url/"
+  weight = 43
+
+[[main]]
+  name = "Base64 エンコーダ/デコーダ"
+  parent = "ユーティリティ"
+  pageRef = "/posts/2019/07-09_tools-base64/"
+  weight = 44
+
+[[main]]
   name = "記事"
   pageRef = "/posts"
-  weight = 30
+  weight = 50

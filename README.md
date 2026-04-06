@@ -11,7 +11,7 @@
 | 靜態網站產生器 | [Hugo](https://gohugo.io/) v0.148.2 (extended) |
 | 佈景主題 | [Blowfish](https://blowfish.page/)（Git Submodule） |
 | CSS 預處理 | [Dart Sass](https://sass-lang.com/dart-sass/) v1.90.0 |
-| 自訂字型 | LINE Seed TW（繁體中文） |
+| 自訂字型 | LINE Seed TW（WOFF2 + TTF fallback） |
 | 程式碼檢查 | [ESLint](https://eslint.org/) v10 + [Husky](https://typicode.github.io/husky/) + [lint-staged](https://github.com/lint-staged/lint-staged) |
 | 部署 | GitHub Actions → GitHub Pages |
 | 自訂域名 | `blog.init.engineer` |
@@ -56,6 +56,14 @@ npm run lint:fix      # 自動修復可修正的問題
 在每次 `git commit` 時會自動對暫存區的 `*.js` 檔案執行 ESLint 檢查與自動修復。
 執行 `npm install` 後即自動啟用，無需額外設定。
 
+### 新增文章
+
+```bash
+hugo new posts/2024/01-15_my-article/index.zh-tw.md
+```
+
+Front Matter 格式規範請參閱 `docs/content-guide.md`。
+
 ## 多語言架構
 
 本站支援四種語言，繁體中文為預設語言：
@@ -73,7 +81,8 @@ npm run lint:fix      # 自動修復可修正的問題
 
 - **年份篩選器** — 文章列表頁支援依年份篩選，並提供鍵盤快捷鍵（`1`-`9` 選擇年份、`0` 全部、`Esc` 清除）
 - **語言偵測提示** — 根據瀏覽器語系自動偵測，並顯示語言切換提示視窗
-- **圖片延遲載入** — 使用 Intersection Observer 實作，提升頁面載入效能
+- **圖片延遲載入** — 使用 Intersection Observer 實作，支援 WebP 自動偵測與快取
+- **站內搜尋** — 使用 Fuse.js 模糊搜尋，支援分類與年份篩選
 - **平滑捲動** — 錨點連結支援平滑捲動動畫
 - **深色模式** — 支援自動切換與手動切換
 - **影片背景** — 首頁與獸設頁面使用 MP4 動態背景
@@ -82,38 +91,55 @@ npm run lint:fix      # 自動修復可修正的問題
 
 | Shortcode | 用途 |
 |-----------|------|
-| `artwork-gallery` | 藝術創作圖庫展示 |
-| `kemono-setup` | 獸設角色資料卡 |
-| `kemono-interface` | 獸設互動介面元件 |
-| `sticker-gallery` | 貼圖圖庫（Packery 排版） |
-| `load-images` | 圖片延遲載入處理 |
-| `social-links` | 社群媒體連結展示 |
-| `qq-button` | QQ 按鈕元件 |
+| `artwork-gallery` | 藝術創作圖庫展示（Packery 瀑布流） |
+| `kemono-setup` | 獸設角色資料初始化 |
+| `kemono-interface` | 獸設互動介面（Tab 切換、漸進式載入） |
+| `sticker-gallery` | 貼圖圖庫展示 |
+| `social-links` | 社群媒體連結按鈕 |
+| `load-images` | 圖片漸進式載入器 |
+| `qq-button` | QQ 聯絡按鈕 |
+
+完整參數說明請參閱 `docs/components.md`。
 
 ## 目錄結構
 
 ```
 ├── .claude/                 ← Claude Code AI 工具設定
-├── .github/workflows/       ← GitHub Actions 建置與部署
-├── .husky/                  ← Git Hooks（pre-commit 自動檢查）
-├── archetypes/              ← Hugo 內容範本
+├── .github/workflows/       ← GitHub Actions 建置與部署（含 ESLint 檢查）
+├── .husky/                  ← Git Hooks（pre-commit 自動 lint）
+├── archetypes/              ← Hugo 內容範本（含標準 Front Matter 模板）
 ├── assets/
-│   ├── css/custom.css       ← 自訂樣式（字型、排版覆寫）
+│   ├── css/custom.css       ← 自訂樣式（字型、排版、社群按鈕）
 │   ├── img/                 ← 圖片與影片素材
-│   └── js/                  ← 自訂 JavaScript（篩選器、語言偵測等）
-├── config/_default/         ← Hugo 設定（網站參數、多語言、選單）
+│   └── js/                  ← 自訂 JavaScript 模組
+│       ├── year-filter.js   ← 年份篩選（雙容器架構）
+│       ├── language-prompt.js ← 語言偵測提示
+│       ├── lazy-loading.js  ← 圖片懶載入（含 WebP 快取）
+│       ├── search.js        ← 站內搜尋（Fuse.js）
+│       ├── smooth-scroll.js ← 平滑捲動
+│       └── shortcodes/      ← Shortcode 專用腳本
+├── config/_default/         ← Hugo 設定（含行內註解說明設計決策）
 ├── content/                 ← 網站內容（文章、頁面）
-│   ├── posts/               ← 部落格文章
+│   ├── posts/               ← 部落格文章（94 篇）
 │   ├── kemono/              ← 獸設角色介紹
 │   └── engineer/            ← 工程師簡介
-├── data/                    ← 結構化資料（作者、社群連結、貼圖等）
+├── data/                    ← 結構化資料
+│   ├── kemono.json          ← 藝術作品集與創作者資訊
+│   ├── social.json          ← 社群媒體連結
+│   └── stickers.json        ← 貼圖系列（4 套共 122 張）
+├── docs/                    ← 開發文件
+│   ├── components.md        ← Shortcodes 與 Partials 參數參考
+│   ├── data-schema.md       ← JSON 資料 TypeScript 型別定義
+│   ├── content-guide.md     ← 文章 Front Matter 規範
+│   └── architecture.md      ← 核心功能設計決策
 ├── layouts/                 ← 自訂版面覆寫（優先於主題）
 │   ├── partials/            ← 覆寫主題的區塊模板
+│   │   └── helpers/         ← 共用工具 partial
 │   ├── shortcodes/          ← 自訂 Shortcodes
 │   └── posts/               ← 文章列表自訂版面
 ├── static/                  ← 靜態資源（favicon、字型、CNAME）
 ├── themes/blowfish/         ← Blowfish 佈景主題（Submodule，勿直接修改）
-├── CLAUDE.md                ← Claude Code 運作準則
+├── CLAUDE.md                ← Claude Code 運作準則與專案脈絡
 ├── GEMINI.md                ← Gemini AI 工具設定
 ├── eslint.config.js         ← ESLint 設定（Flat Config 格式）
 └── package.json             ← npm 套件管理
@@ -123,7 +149,7 @@ npm run lint:fix      # 自動修復可修正的問題
 
 本專案將 AI 輔助開發的設定檔納入版本控制，確保協作一致性：
 
-- **CLAUDE.md** — Claude Code 的運作準則與專案脈絡，定義語言規範、安全原則與 Hugo 協作守則
+- **CLAUDE.md** — Claude Code 的運作準則、Hugo 協作守則與專案脈絡（JS 模組、Shortcodes、資料結構、常見操作指引）
 - **.claude/** — Claude Code 的專案層級設定
 - **GEMINI.md** — Google Gemini 的專案指引
 

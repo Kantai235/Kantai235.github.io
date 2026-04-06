@@ -90,14 +90,14 @@
       
       if (targetLang === 'zh-tw') {
         // Remove language prefix
-        newPath = path.replace(/^\/(en|ja)\//, '/');
+        newPath = path.replace(/^\/(en|ja|zh-cn)\//, '/');
       } else {
         if (currentLang === 'zh-tw') {
           // Add language prefix
           newPath = `/${targetLang}${path}`;
         } else {
           // Replace language prefix
-          newPath = path.replace(/^\/(en|ja)\//, `/${targetLang}/`);
+          newPath = path.replace(/^\/(en|ja|zh-cn)\//, `/${targetLang}/`);
         }
       }
     }

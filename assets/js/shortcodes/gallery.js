@@ -53,14 +53,11 @@ function _getPackeryOptions(nodeGallery) {
  */
 (function init() {
   $(window).on("load", function () {
-    let packeries = [];
     // 只選擇 .gallery-artworks，不處理 .gallery-avatar
     let nodeGalleries = document.querySelectorAll(".gallery-artworks");
 
     nodeGalleries.forEach((nodeGallery) => {
-      let packery = new Packery(nodeGallery, _getPackeryOptions(nodeGallery));
-      packeries.push(packery);
+      new Packery(nodeGallery, _getPackeryOptions(nodeGallery));
     });
-    console.groupEnd();
   });
 })();

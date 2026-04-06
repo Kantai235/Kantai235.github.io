@@ -66,6 +66,8 @@ jobs:
       - name: Install Node.js dependencies
         run: |
           [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
+      - name: Lint JavaScript
+        run: npm run lint
       - name: Configure Git
         run: |
           git config core.quotepath false
@@ -74,7 +76,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ${{ runner.temp }}/hugo_cache
-          key: hugo-${{ github.run_id }}
+          key: hugo-${{ hashFiles('content/**', 'config/**', 'assets/**', 'layouts/**') }}
           restore-keys:
             hugo-
       - name: Build the site
