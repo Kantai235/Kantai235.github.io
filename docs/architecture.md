@@ -82,7 +82,7 @@ window.yearFilter.isFiltering()          // 是否正在篩選中
 ### 資料流
 
 ```
-data/kemono.json → artwork-gallery shortcode → Packery 初始化
+assets/img/kemono/{period}/artworks/*/data.json → artwork-gallery shortcode → Packery 初始化
                                               ↓
                                    gallery.js（window.load 事件後執行）
 ```

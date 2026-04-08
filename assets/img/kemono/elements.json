@@ -1,0 +1,17 @@
+{
+  "background-video-after": {
+    "src": "img/kemono/after/background.mp4"
+  },
+  "background-img-after": {
+    "src": "img/kemono/after/background.jpg"
+  },
+  "background-video-before": {
+    "src": "img/kemono/before/background.mp4"
+  },
+  "background-img-before": {
+    "src": "img/kemono/before/background.jpg"
+  },
+  "background-img-fursuit": {
+    "src": "img/kemono/fursuit/artworks/20260401_001/01.jpg"
+  }
+}

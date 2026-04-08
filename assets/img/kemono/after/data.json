@@ -1,0 +1,13 @@
+{
+  "title": "現在的設定",
+  "avatar": {
+    "id": "avatar-after",
+    "class": "mt-0 mb-0 rounded-lg shadow-lg",
+    "alt": "Pika Owo(皮卡)的作品",
+    "src": "img/kemono/after/artworks/20250710-pika.owo.2025/01.jpg",
+    "creator": {
+      "name": "Pika Owo(皮卡)",
+      "link": "https://www.facebook.com/pika.owo.2025"
+    }
+  }
+}

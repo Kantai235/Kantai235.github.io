@@ -1,31 +1,33 @@
 <!--
   自訂短代碼：kemono-setup
   功能說明：Kemono（獸設）頁面的資料初始化與圖片載入設定，
-  從 data/kemono.json 讀取獸設資料並傳遞給前端模板渲染。
+  從 assets/img/kemono/ 讀取獸設資料並傳遞給前端模板渲染。
 -->
 <!-- @eslint-disable -->
 <!-- prettier-ignore -->
 {{/*
   Kemono 頁面設定 shortcode
   統一管理圖片載入和創作者資訊
-  
+
+  資料來源：assets/img/kemono/elements.json、assets/img/kemono/{period}/data.json
+
   使用方式：
   {{< kemono-setup >}}
 */}}
 
-{{ $kemonoData := site.Data.kemono }}
+{{ $elements := (resources.Get "img/kemono/elements.json" | transform.Unmarshal) }}
 
 <!-- 載入圖片資源和創作者資訊 -->
 <script>
 // eslint-disable-file
 (function () {
     'use strict';
-    
+
     window.pageImages = window.pageImages || {};
     window.creatorInfo = window.creatorInfo || {};
-    
+
     // 載入背景資源（圖片優化尺寸，影片保持原樣）
-    {{ range $elementId, $element := $kemonoData.elements }}
+    {{ range $elementId, $element := $elements }}
       {{ $resource := resources.Get $element.src }}
       {{ if $resource }}
         {{ if eq $resource.MediaType.MainType "image" }}
@@ -38,9 +40,11 @@
         {{ end }}
       {{ end }}
     {{ end }}
-    
+
     // 載入 gallery 圖片和創作者資訊
-    {{ range $period, $periodData := $kemonoData.gallery }}
+    {{ $galleryFiles := resources.Match "img/kemono/*/data.json" }}
+    {{ range $galleryFiles }}
+      {{ $periodData := . | transform.Unmarshal }}
       {{ with $periodData.avatar }}
         {{ $resource := resources.Get .src }}
         {{ if $resource }}
@@ -55,44 +59,50 @@
         window.creatorInfo['{{ .id }}'] = {{ .creator | jsonify | safeJS }};
         {{ end }}
       {{ end }}
-      
-      {{ range $periodData.artworks }}
-        {{ $resource := resources.Get .src }}
-        {{ if $resource }}
-          {{ if eq $resource.MediaType.MainType "image" }}
-            {{ $aspectRatio := div (float $resource.Width) (float $resource.Height) }}
+
+      {{/* 自動探索 artworks 子目錄中的圖片和 data.json */}}
+      {{ $periodDir := path.Dir .Name }}
+      {{ $artworkDataFiles := resources.Match (printf "%s/artworks/*/data.json" $periodDir) }}
+      {{ $artworkIndex := 0 }}
+      {{ range $artworkDataFiles }}
+        {{ $artworkMeta := . | transform.Unmarshal }}
+        {{ $artworkDir := path.Dir .Name }}
+        {{ $artworkImages := resources.Match (printf "%s/*" $artworkDir) }}
+        {{ range $artworkImages }}
+          {{ if eq .MediaType.MainType "image" }}
+            {{ $artworkIndex = add $artworkIndex 1 }}
+            {{ $artworkId := printf "artwork-%s-%d" (path.Base $periodDir) $artworkIndex }}
+            {{ $aspectRatio := div (float .Width) (float .Height) }}
             {{ $optimized := "" }}
             {{ if gt $aspectRatio 1.3 }}
               {{/* 橫向圖片使用更大的尺寸 (寬度 1200px) */}}
-              {{ $optimized = $resource.Resize "1200x q75" }}
+              {{ $optimized = .Resize "1200x q75" }}
             {{ else }}
               {{/* 直向/正方形圖片保持原尺寸 (寬度 600px) */}}
-              {{ $optimized = $resource.Resize "600x q75" }}
+              {{ $optimized = .Resize "600x q75" }}
             {{ end }}
-            window.pageImages['{{ .id }}'] = '{{ $optimized.RelPermalink }}';
-          {{ else }}
-            window.pageImages['{{ .id }}'] = '{{ $resource.RelPermalink }}';
+            window.pageImages['{{ $artworkId }}'] = '{{ $optimized.RelPermalink }}';
+            {{ if $artworkMeta.creator }}
+            window.creatorInfo['{{ $artworkId }}'] = {{ $artworkMeta.creator | jsonify | safeJS }};
+            {{ end }}
           {{ end }}
-        {{ end }}
-        {{ if .creator }}
-        window.creatorInfo['{{ .id }}'] = {{ .creator | jsonify | safeJS }};
         {{ end }}
       {{ end }}
     {{ end }}
-    
+
     // 漸進式圖片載入功能
     window.pageImages.loadProgressively = function (keys, onProgress) {
         const keysToLoad = keys || Object.keys(window.pageImages).filter(function (k) {
             return typeof window.pageImages[k] === 'string';
         });
-        
+
         let loadedCount = 0;
         const totalCount = keysToLoad.length;
-        
+
         keysToLoad.forEach(function (key) {
             if (typeof window.pageImages[key] === 'string') {
                 const img = new Image();
-                
+
                 img.onload = function () {
                     loadedCount += 1;
                     if (onProgress) {
@@ -105,7 +115,7 @@
                         });
                     }
                 };
-                
+
                 img.onerror = function () {
                     loadedCount += 1;
                     if (onProgress) {
@@ -118,12 +128,12 @@
                         });
                     }
                 };
-                
+
                 img.src = window.pageImages[key];
             }
         });
     };
-    
+
     // 保留原有的批量預載入功能（向後兼容）
     window.pageImages.preload = function (keys) {
         return new Promise(function (resolve, reject) {
@@ -131,17 +141,17 @@
             const keysToLoad = keys || Object.keys(window.pageImages).filter(function (k) {
                 return typeof window.pageImages[k] === 'string';
             });
-            
+
             if (keysToLoad.length === 0) {
                 resolve([]);
                 return;
             }
-            
+
             window.pageImages.loadProgressively(keysToLoad, function (result) {
                 results.push(result);
                 if (results.length === keysToLoad.length) {
-                    const errors = results.filter(function (r) { 
-                        return r.error; 
+                    const errors = results.filter(function (r) {
+                        return r.error;
                     });
                     if (errors.length > 0) {
                         reject(errors);
@@ -152,7 +162,7 @@
             });
         });
     };
-    
+
     // 設定圖片和影片功能 (直接使用元素 ID)
     window.pageImages.setImages = function (elementIds) {
         const idsToProcess = elementIds || Object.keys(window.pageImages).filter(function (k) {
@@ -178,10 +188,6 @@
             }
         });
     };
-    
-    // console.log('Loaded kemono pageImages:', Object.keys(window.pageImages).filter(function (k) {
-    //     return typeof window.pageImages[k] === 'string';
-    // }));
 }());
 </script>
 

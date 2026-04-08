@@ -9,7 +9,7 @@
 
 ### artwork-gallery
 
-藝術作品瀑布流圖庫。從 `data/kemono.json` 讀取作品集合，以 Packery 瀑布流佈局呈現。
+藝術作品瀑布流圖庫。自動探索 `assets/img/kemono/{period}/` 下的作品資料，以 Packery 瀑布流佈局呈現。
 
 | 參數 | 型別 | 必填 | 說明 |
 |------|------|------|------|
@@ -21,6 +21,7 @@
 - `kemono.after.artworks` — 現在的設定：所有委託作品（瀑布流）
 - `kemono.before.gallery` — 以前的設定：頭像
 - `kemono.before.artworks` — 以前的設定：所有委託作品
+- `kemono.fursuit.artworks` — 半套獸裝：所有照片
 
 ```markdown
 {{</* artwork-gallery collection="kemono.after.artworks" class="grid-w50 md:grid-w33 xl:grid-w25" */>}}
@@ -31,8 +32,8 @@
 
 ### kemono-setup
 
-Kemono 頁面的資料初始化。將 `data/kemono.json` 中的圖片路徑與創作者資訊注入至
-`window.pageImages` 與 `window.creatorInfo` 全域物件，供前端腳本使用。
+Kemono 頁面的資料初始化。從 `assets/img/kemono/elements.json` 與各期間 `data.json` 讀取圖片路徑與創作者資訊，
+注入至 `window.pageImages` 與 `window.creatorInfo` 全域物件，供前端腳本使用。
 
 | 參數 | 型別 | 必填 | 說明 |
 |------|------|------|------|
@@ -115,7 +116,7 @@ QQ ���絡按鈕。產生一個帶有 QQ 圖示的連結按鈕。
 
 ### sticker-gallery
 
-貼圖展示圖庫。從 `data/stickers.json` 讀取貼圖系列資料，
+貼圖展示圖庫。自動探索 `assets/img/kemono/*/stickers/*/data.json`，
 以卡片式介面展示各系列縮圖、說明與下載連結，並支援點擊展開瀏覽所有貼圖。
 
 | 參數 | 型別 | 必填 | 說明 |

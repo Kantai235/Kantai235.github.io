@@ -1,0 +1,13 @@
+{
+  "title": "以前的設定",
+  "avatar": {
+    "id": "avatar-before",
+    "class": "mt-0 mb-0 rounded-lg shadow-lg",
+    "alt": "氣球的作品",
+    "src": "img/kemono/before/background.jpg",
+    "creator": {
+      "name": "氣球↑↑↑",
+      "link": "https://www.facebook.com/zelip0balloon"
+    }
+  }
+}

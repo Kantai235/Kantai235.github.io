@@ -1,0 +1,16 @@
+{
+  "title": "暈船乾太",
+  "description": "乾太今天暈船了。",
+  "creator": {
+    "name": "典藏大耳毛",
+    "link": "https://www.facebook.com/hau.dai.2025"
+  },
+  "platforms": [
+    {
+      "name": "Telegram",
+      "icon": "telegram",
+      "url": "https://t.me/addstickers/Seasickness_Kantai",
+      "available": true
+    }
+  ]
+}

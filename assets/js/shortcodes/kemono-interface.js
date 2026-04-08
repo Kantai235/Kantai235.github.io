@@ -7,7 +7,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 延遲執行以確保數據載入完成
     setTimeout(function() {
-    var i18n = window.kemonoI18n || { loading: '載入中...', creatorLabel: '繪師：' };
+    var i18n = window.kemonoI18n || { loading: '載入中...', creatorLabel: '繪師：', photographerLabel: '攝影師：', makerLabel: '製作者：' };
 
     // 獲取所有相關元素
     var tabs = document.querySelectorAll('.kemono-tab');
@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 立即設定佔位符圖片
     function setPlaceholderImages() {
-        var imageElements = document.querySelectorAll('#avatar-after, #avatar-before, .gallery img');
+        /** @type {NodeListOf<HTMLImageElement>} */
+        var imageElements = document.querySelectorAll('#avatar-after, #avatar-before, #avatar-fursuit, .gallery img');
         imageElements.forEach(function(img) {
             if (img.id) {
                 img.classList.add('image-placeholder');
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setPlaceholderImages();
 
     // 強制 Packery 重新計算
+    /** @param {Element | null} [targetTab] */
     function forcePackeryRecalculation(targetTab) {
         if (!targetTab) {
             targetTab = document.querySelector('.kemono-tab-content.active');
@@ -53,19 +55,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (artworkImages.length > 0) {
                 try {
+                    /** @type {HTMLElement} */
+                    var galleryEl = /** @type {HTMLElement} */ (gallery);
                     if (typeof Packery !== 'undefined') {
-                        if (gallery.packeryInstance) {
-                            gallery.packeryInstance.destroy();
+                        if (galleryEl.packeryInstance) {
+                            galleryEl.packeryInstance.destroy();
                         }
 
-                        gallery.packeryInstance = new Packery(gallery, {
+                        galleryEl.packeryInstance = new Packery(galleryEl, {
                             percentPosition: true,
                             gutter: 5,
                             resize: true
                         });
 
                         setTimeout(function() {
-                            gallery.style.opacity = '1';
+                            galleryEl.style.opacity = '1';
                         }, 200);
                     } else {
                         for (var j = 0; j < 3; j++) {
@@ -77,11 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
 
                         setTimeout(function() {
-                            gallery.style.opacity = '1';
+                            galleryEl.style.opacity = '1';
                         }, 600);
                     }
                 } catch (e) { // eslint-disable-line no-unused-vars
-                    gallery.style.opacity = '1';
+                    /** @type {HTMLElement} */ (gallery).style.opacity = '1';
                 }
             }
         });
@@ -98,25 +102,29 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // 設定背景媒體（優先使用影片）
+            /** @param {string} period */
             function setBackgroundMedia(period) {
                 var videoId = 'background-video-' + period;
                 var imgId = 'background-img-' + period;
-                var videoElement = document.getElementById(videoId);
-                var imgElement = document.getElementById(imgId);
+                /** @type {HTMLVideoElement | null} */
+                var videoElement = /** @type {HTMLVideoElement | null} */ (document.getElementById(videoId));
+                /** @type {HTMLImageElement | null} */
+                var imgElement = /** @type {HTMLImageElement | null} */ (document.getElementById(imgId));
 
                 var videoUrl = window.pageImages[videoId];
                 var imgUrl = window.pageImages[imgId];
 
                 if (videoUrl && videoElement) {
+                    /** @type {HTMLSourceElement | null} */
                     var source = videoElement.querySelector('source');
                     if (source) {
-                        source.src = videoUrl;
+                        source.src = /** @type {string} */ (videoUrl);
                         videoElement.load();
                         videoElement.style.display = 'block';
                         videoElement.play().catch(function() {
                             videoElement.style.display = 'none';
                             if (imgUrl && imgElement) {
-                                imgElement.src = imgUrl;
+                                imgElement.src = /** @type {string} */ (imgUrl);
                                 imgElement.style.display = 'block';
                             }
                         });
@@ -125,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         imgElement.style.display = 'none';
                     }
                 } else if (imgUrl && imgElement) {
-                    imgElement.src = imgUrl;
+                    imgElement.src = /** @type {string} */ (imgUrl);
                     imgElement.style.display = 'block';
                     if (videoElement) {
                         videoElement.style.display = 'none';
@@ -154,6 +162,10 @@ document.addEventListener('DOMContentLoaded', function() {
             var loadedImages = new Set();
 
             // 分批載入
+            /**
+             * @param {string[]} keys
+             * @param {number} [delay]
+             */
             function loadImagesProgressively(keys, delay) {
                 delay = delay || 0;
 
@@ -162,32 +174,33 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (result.error) {
                             loadedImages.add(result.key);
                         } else {
-                            var element = document.getElementById(result.key);
+                            /** @type {HTMLImageElement | null} */
+                            var element = /** @type {HTMLImageElement | null} */ (document.getElementById(result.key));
                             if (element) {
                                 element.classList.add('loading');
-                                element.src = window.pageImages[result.key];
+                                element.src = /** @type {string} */ (window.pageImages[result.key]);
                                 element.alt = element.alt.replace(i18n.loading, '');
 
                                 element.onload = function() {
-                                    this.classList.remove('image-placeholder', 'loading');
-                                    this.classList.add('loaded');
-                                    loadedImages.add(this.id);
+                                    element.classList.remove('image-placeholder', 'loading');
+                                    element.classList.add('loaded');
+                                    loadedImages.add(element.id);
 
-                                    if (this.id.includes('avatar')) {
-                                        this.style.position = 'relative';
-                                        this.style.zIndex = '10';
-                                        this.style.display = 'block';
-                                        this.style.width = '100%';
-                                        this.style.height = 'auto';
+                                    if (element.id.includes('avatar')) {
+                                        element.style.position = 'relative';
+                                        element.style.zIndex = '10';
+                                        element.style.display = 'block';
+                                        element.style.width = '100%';
+                                        element.style.height = 'auto';
                                     }
 
                                     checkAndTriggerPackery();
                                 };
 
                                 element.onerror = function() {
-                                    this.classList.remove('loading');
-                                    this.classList.add('error');
-                                    loadedImages.add(this.id);
+                                    element.classList.remove('loading');
+                                    element.classList.add('error');
+                                    loadedImages.add(element.id);
                                     checkAndTriggerPackery();
                                 };
                             } else {
@@ -245,6 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 切換背景
+    /** @param {string} targetTab */
     function switchBackground(targetTab) {
         backgrounds.forEach(function(bg) {
             bg.classList.remove('active');
@@ -258,16 +272,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Tab 點擊事件
     tabs.forEach(function(tab) {
         tab.addEventListener('click', function() {
-            var targetTab = this.dataset.tab;
+            var clickedTab = /** @type {HTMLElement} */ (tab);
+            var targetTab = clickedTab.dataset.tab;
 
             tabs.forEach(function(t) { t.classList.remove('active'); });
-            this.classList.add('active');
+            clickedTab.classList.add('active');
 
             tabContents.forEach(function(content) {
                 content.classList.remove('active');
             });
             var targetContent = document.getElementById('tab-' + targetTab);
             if (targetContent) {
+                /** @type {NodeListOf<HTMLElement>} */
                 var galleries = targetContent.querySelectorAll('.gallery');
                 galleries.forEach(function(gallery) {
                     gallery.style.opacity = '0';
@@ -277,7 +293,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetContent.classList.add('active');
 
                 setTimeout(function() {
+                    /** @type {NodeListOf<HTMLElement>} */
                     var avatarGalleries = targetContent.querySelectorAll('.gallery-avatar');
+                    /** @type {NodeListOf<HTMLElement>} */
                     var artworkGalleries = targetContent.querySelectorAll('.gallery-artworks');
 
                     avatarGalleries.forEach(function(gallery) {
@@ -286,6 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         gallery.style.minHeight = 'auto';
                         gallery.style.maxHeight = 'none';
 
+                        /** @type {NodeListOf<HTMLImageElement>} */
                         var avatarImages = gallery.querySelectorAll('img');
                         avatarImages.forEach(function(img) {
                             img.style.display = 'block';
@@ -299,6 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
 
                     artworkGalleries.forEach(function(gallery) {
+                        /** @type {NodeListOf<HTMLImageElement>} */
                         var artworkImages = gallery.querySelectorAll('img');
                         artworkImages.forEach(function(img) {
                             img.style.display = 'block';
@@ -338,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 if (tabs[nextIndex]) {
-                    tabs[nextIndex].click();
+                    /** @type {HTMLElement} */ (tabs[nextIndex]).click();
                 }
             }
         }
@@ -350,6 +370,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var currentImageId = null;
     var lightboxWasOpen = false;
 
+    /**
+     * @param {HTMLElement} container
+     * @param {string} label
+     * @param {string} name
+     * @param {string} [link]
+     */
     function appendCreatorEntry(container, label, name, link) {
         var labelNode = document.createTextNode(label);
         container.appendChild(labelNode);
@@ -366,6 +392,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    /**
+     * @param {CreatorData} creatorData
+     * @param {boolean} [isLightbox]
+     */
     function showCreatorToast(creatorData, isLightbox) {
         if (typeof isLightbox === 'undefined') isLightbox = true;
         if (!creatorData) return;
@@ -424,8 +454,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 監聽頁面點擊
     document.addEventListener('click', function(e) {
+        var target = /** @type {HTMLElement} */ (e.target);
         if (currentImageId && toast.classList.contains('show') && !lightboxWasOpen) {
-            if (!toast.contains(e.target) && !e.target.closest('#' + currentImageId)) {
+            if (!toast.contains(target) && !target.closest('#' + currentImageId)) {
                 hideCreatorToast();
             }
         }
@@ -446,9 +477,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 var hasLightbox = img.classList.contains('glightbox');
 
                 img.addEventListener('click', function(e) {
-                    var creator = window.creatorInfo[this.id];
+                    var creator = window.creatorInfo[img.id];
                     if (creator) {
-                        currentImageId = this.id;
+                        currentImageId = img.id;
 
                         if (hasLightbox) {
                             setTimeout(function() {
@@ -463,12 +494,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        /** @type {NodeListOf<HTMLImageElement>} */
         var galleryImages = document.querySelectorAll('.gallery img');
         galleryImages.forEach(function(img) {
             img.addEventListener('click', function() {
-                var creator = window.creatorInfo[this.id];
+                var creator = window.creatorInfo[img.id];
                 if (creator) {
-                    currentImageId = this.id;
+                    currentImageId = img.id;
                     setTimeout(function() {
                         showCreatorToast(creator);
                     }, 100);

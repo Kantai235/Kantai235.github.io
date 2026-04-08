@@ -53,10 +53,10 @@
 
 | Shortcode | 用途 | 資料來源 |
 |-----------|------|----------|
-| `artwork-gallery` | 藝術作品瀑布流展示 | `data/kemono.json` |
-| `kemono-setup` | 獸設頁面資料初始化 | `data/kemono.json` |
+| `artwork-gallery` | 藝術作品瀑布流展示 | `assets/img/kemono/{period}/artworks/*/data.json`（自動探索） |
+| `kemono-setup` | 獸設頁面資料初始化 | `assets/img/kemono/elements.json`、`assets/img/kemono/*/data.json` |
 | `kemono-interface` | 獸設頁面 Tab 切換與互動 | 依賴 `kemono-setup` |
-| `sticker-gallery` | 貼圖集展示 | `data/stickers.json` |
+| `sticker-gallery` | 貼圖集展示 | `assets/img/kemono/*/stickers/*/data.json`（自動探索） |
 | `social-links` | 社群媒體連結按鈕 | `data/social.json` |
 | `load-images` | 圖片漸進式載入器 | 參數傳入 |
 | `qq-button` | QQ 聯絡按鈕 | 參數傳入 |
@@ -65,9 +65,11 @@
 
 | 檔案 | 用途 |
 |------|------|
-| `data/kemono.json` | 獸設作品集（圖片路徑、創作者資訊） |
+| `assets/img/kemono/elements.json` | 獸設背景媒體對應 |
+| `assets/img/kemono/{period}/data.json` | 各期間獸設 metadata（title、avatar） |
+| `assets/img/kemono/{period}/artworks/*/data.json` | 每件委託作品的 alt 與 creator 資訊 |
+| `assets/img/kemono/*/stickers/*/data.json` | 貼圖系列 metadata（title、creator、platforms） |
 | `data/social.json` | 社群媒體連結（平台名稱、URL、圖示） |
-| `data/stickers.json` | 貼圖系列（4 套共 122 張，含 Telegram 連結） |
 
 ### 自訂 Partials
 
@@ -94,9 +96,9 @@ hugo new posts/{年份}/{月-日}_{slug}/index.zh-tw.md
 3. 更新 `assets/js/language-prompt.js` 的 `languageMapping` 對映表
 
 #### 新增藝術委託作品
-1. 將圖片放入 `assets/img/kemono/{period}/` 目錄
-2. 在 `data/kemono.json` 的對應 `artworks` 陣列新增項目
-3. 確保包含 `id`、`class`、`alt`、`src`、`creator` 欄位
+1. 在 `assets/img/kemono/{period}/artworks/` 下建立新目錄（如 `YYYYMMDD-creator/`）
+2. 將圖片放入該目錄（如 `01.jpg`）
+3. 建立 `data.json`，包含 `alt` 和 `creator`（含 `name`、`link`）欄位
 
 ### 詳細文件索引
 

@@ -1,40 +1,64 @@
 <!--
   自訂短代碼：sticker-gallery
-  功能說明：從 data/stickers.json 讀取貼圖集合資料，以圖庫形式展示貼圖系列。
+  功能說明：自動探索 assets/img/kemono/*/stickers/*/data.json，以圖庫形式展示貼圖系列。
   CSS 已提取至 assets/css/sticker-gallery.css
   JS 已提取至 assets/js/shortcodes/sticker-gallery.js
 -->
 {{/* Sticker Gallery Shortcode - 貼圖展示功能 */}}
 {{/* 使用方式: {{< sticker-gallery >}} */}}
 
-{{ $stickersData := site.Data.stickers }}
+{{/* 自動探索所有貼圖系列 */}}
+{{ $seriesDataFiles := resources.Match "img/kemono/*/stickers/*/data.json" }}
+
+{{/* 建構貼圖資料供 JS 使用 */}}
+{{ $seriesList := slice }}
 
 <div class="sticker-gallery-container">
-  {{ range $stickersData.series }}
-  <div class="sticker-series" data-series-id="{{ .id }}">
-    <div class="series-header" data-open-modal="{{ .id }}" data-view-label="{{ i18n "sticker.view" }}" role="button" tabindex="0" aria-label="{{ .title }}">
-      {{ $firstSticker := index .stickers 0 }}
+  {{ range $seriesDataFiles }}
+    {{ $meta := . | transform.Unmarshal }}
+    {{ $seriesDir := path.Dir .Name }}
+    {{ $seriesId := path.Base $seriesDir }}
+
+    {{/* 探索該系列的所有圖片 */}}
+    {{ $stickerImages := resources.Match (printf "%s/*" $seriesDir) }}
+    {{ $stickers := slice }}
+    {{ $stickerIndex := 0 }}
+    {{ $firstSrc := "" }}
+    {{ range $stickerImages }}
+      {{ if eq .MediaType.MainType "image" }}
+        {{ $stickerIndex = add $stickerIndex 1 }}
+        {{ if eq $firstSrc "" }}{{ $firstSrc = .RelPermalink }}{{ end }}
+        {{ $stickers = $stickers | append (dict "id" (printf "%s-sticker-%d" $seriesId $stickerIndex) "src" .RelPermalink "alt" (printf "貼圖 %d" $stickerIndex)) }}
+      {{ end }}
+    {{ end }}
+
+    {{/* 組合單一系列資料 */}}
+    {{ $seriesEntry := dict "id" $seriesId "title" $meta.title "description" $meta.description "creator" $meta.creator "platforms" $meta.platforms "stickers" $stickers }}
+    {{ $seriesList = $seriesList | append $seriesEntry }}
+
+  <div class="sticker-series" data-series-id="{{ $seriesId }}">
+    <div class="series-header" data-open-modal="{{ $seriesId }}" data-view-label="{{ i18n "sticker.view" }}" role="button" tabindex="0" aria-label="{{ $meta.title }}">
       <div class="series-preview">
-        <img src="{{ $firstSticker.preview | default $firstSticker.src }}" alt="{{ .title }}" />
+        <img src="{{ $firstSrc }}" alt="{{ $meta.title }}" />
       </div>
       <div class="series-info">
-        <h3 class="series-title">{{ .title }}</h3>
-        <p class="series-description">{{ .description }}</p>
-        {{ if .creator }}
+        <h3 class="series-title">{{ $meta.title }}</h3>
+        <p class="series-description">{{ $meta.description }}</p>
+        {{ with $meta.creator }}
         <div class="series-creator">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          {{ if .creator.link }}
-            <a href="{{ .creator.link }}" target="_blank" rel="noopener noreferrer" class="creator-link" onclick="event.stopPropagation();">{{ .creator.name }}</a>
+          {{ if .link }}
+            <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="creator-link" onclick="event.stopPropagation();">{{ .name }}</a>
           {{ else }}
-            <span class="creator-name">{{ .creator.name }}</span>
+            <span class="creator-name">{{ .name }}</span>
           {{ end }}
         </div>
         {{ end }}
         <div class="platform-badges">
-          {{ range .platforms }}
+          {{ range $meta.platforms }}
             {{ if .available }}
             <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="platform-badge available" onclick="event.stopPropagation();">
               {{ partial "icon.html" (dict "icon" .icon) }}
@@ -75,7 +99,7 @@
 
 <!-- i18n 字串與貼圖資料注入（供外部 JS 使用） -->
 <script>
-window.stickerData = {{ $stickersData | jsonify | safeJS }};
+window.stickerData = { series: {{ $seriesList | jsonify | safeJS }} };
 window.stickerI18n = {
     creatorLabel: {{ i18n "kemono.creator_label" | jsonify | safeJS }},
     stickerSuffix: {{ i18n "sticker.sticker_suffix" | jsonify | safeJS }}
