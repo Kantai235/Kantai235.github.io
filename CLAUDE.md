@@ -4,14 +4,14 @@
    最高優先級：本運作準則必須被嚴格執行。在每一個開發、修改網頁結構或撰寫內容的步驟中，請反覆確認是否符合所有規範。
 
 2. **語言與用語規範 (Language Standards)**
-   本專案的所有產出——包含網頁內容、文件、Git Commit Message、程式碼註解 (Code Comments) 必須統一使用**繁體���文 (台灣用語)**。
+   本專案的所有產出——包含網頁內容、文件、Git Commit Message、程式碼註解 (Code Comments) 必須統一使用**繁體中文 (台灣用語)**。
    **用語強制規範**：必須使用「專案、介面、快取、資料庫、變數、記憶體、伺服器、字串、陣列、執行緒、程式碼」，嚴禁使用「項目、接口、緩存、數據庫、變量、內存、服務器、字符串、數組、線程、代碼」等中國用語。
 
 3. **安全與非破壞性原則 (Safety & Non-Destructive)**
    絕對避免破壞性變更。嚴禁隨意刪除既有的靜態資源 (圖片、CSS、JS)、內容檔案 (如 Markdown) 或覆寫 `.github/workflows/` 中的部署設定檔。若需進行大規模樣式重構或刪除舊有內容，必須先列出 Step-by-step 計畫並向使用者確認。
 
 4. **靜態網站邊界嚴守 (Static Site Boundaries)**
-   本專案為 GitHub Pages ���態網站，無後端伺服器運行。所有邏輯必須能在瀏覽器端執行（純 HTML、CSS、JavaScript，或依賴靜態網站產生器的編譯結果）。請優先考量網頁載入速度、行動裝置適應性 (RWD) 與 SEO 語意化標籤。
+   本專案為 GitHub Pages 靜態網站，無後端伺服器運行。所有邏輯必須能在瀏覽器端執行（純 HTML、CSS、JavaScript，或依賴靜態網站產生器的編譯結果）。請優先考量網頁載入速度、行動裝置適應性 (RWD) 與 SEO 語意化標籤。
 
 5. **小規模驗證與模組化 (Small-scale Verification)**
    在修改全域樣式 (Global CSS) 或核心版面 (Layout) 時，應先在單一頁面或元件進行小規模驗證。確認顯示正常且無跑版後，再套用至全站。盡可能保持 CSS/JS 的模組化與簡潔。
@@ -96,9 +96,9 @@ hugo new posts/{年份}/{月-日}_{slug}/index.zh-tw.md
 3. 更新 `assets/js/language-prompt.js` 的 `languageMapping` 對映表
 
 #### 新增藝術委託作品
-1. 在 `assets/img/kemono/{period}/artworks/` 下建立新目錄（如 `YYYYMMDD-creator/`）
-2. 將圖片放入該目錄（如 `01.jpg`）
-3. 建立 `data.json`，包含 `alt` 和 `creator`（含 `name`、`link`）欄位
+1. 將圖片放入 `assets/img/kemono/{period}/` 目錄
+2. 在 `data/kemono.json` 的對應 `artworks` 陣列新增項目
+3. 確保包含 `id`、`class`、`alt`、`src`、`creator` 欄位
 
 ### 詳細文件索引
 

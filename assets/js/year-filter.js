@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     /**
-     * 清除篩選狀態，模擬點擊「全部��按鈕以回到分頁模式。
+     * 清除篩選狀態，模擬點擊「全部」按鈕以回到分頁模式。
      */
     function clearFilter() {
         const allButton = document.querySelector('[data-year="all"]');

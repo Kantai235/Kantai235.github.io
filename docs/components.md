@@ -1,7 +1,7 @@
 # 元件型錄 (Component Reference)
 
 本文件列出專案中所有自訂 Hugo 短代碼（Shortcodes）與常用的自訂 Partials，
-供開發者與 AI 代理快速查閱元件用途���參數與使用語法。
+供開發者與 AI 代理快速查閱元件用途、參數與使用語法。
 
 ---
 
@@ -37,7 +37,7 @@ Kemono 頁面的資料初始化。從 `assets/img/kemono/elements.json` 與各�
 
 | 參數 | 型別 | 必填 | 說明 |
 |------|------|------|------|
-| （無參數） | — | — | 此短���碼不接受任何參數 |
+| （無參數） | — | — | 此短代碼不接受任何參數 |
 
 ```markdown
 {{</* kemono-setup */>}}
@@ -49,7 +49,7 @@ Kemono 頁面的資料初始化。從 `assets/img/kemono/elements.json` 與各�
 
 ### kemono-interface
 
-Kemono 頁面的��動介面。管理標籤頁（Tab）切換、背景影片切換、
+Kemono 頁面的互動介面。管理標籤頁（Tab）切換、背景影片切換、
 圖片漸進式載入、Packery 瀑布流初始化，以及創作者資訊提示（Toast）。
 
 | 參數 | 型別 | 必填 | 說明 |
@@ -85,7 +85,7 @@ Kemono 頁面的��動介面。管理標籤頁（Tab）切換、背景影片�
 
 ### social-links
 
-社群媒體連結集合。從 `data/social.json` 讀取資料��以按鈕形式呈現各平台連結。
+社群媒體連結集合。從 `data/social.json` 讀取資料，以按鈕形式呈現各平台連結。
 
 | 參數 | 型別 | 必填 | 說明 |
 |------|------|------|------|
@@ -100,7 +100,7 @@ Kemono 頁面的��動介面。管理標籤頁（Tab）切換、背景影片�
 
 ### qq-button
 
-QQ ���絡按鈕。產生一個帶有 QQ 圖示的連結按鈕。
+QQ 聯絡按鈕。產生一個帶有 QQ 圖示的連結按鈕。
 
 | 參數 | 型別 | 必填 | 預設值 | 說明 |
 |------|------|------|--------|------|
@@ -145,11 +145,11 @@ gallery.js 等自訂腳本依賴此 partial 提供的 jQuery 全域變數。
 
 ### partials/translations.html
 
-多語言切換器 UI。偵測當前頁面的可用翻譯版本，��以下拉選單呈現切換選項。
+多語言切換器 UI。偵測當前頁面的可用翻譯版本，以下拉選單呈現切換選項。
 
 ### partials/home/background.html
 
-首頁背景版面。支援 `.mp4` 動態背景影片��靜態圖片，含深色模式適配。
+首頁背景版面。支援 `.mp4` 動態背景影片或靜態圖片，含深色模式適配。
 
 ### partials/recent-articles/list.html 與 main.html
 
@@ -158,4 +158,4 @@ gallery.js 等自訂腳本依賴此 partial 提供的 jQuery 全域變數。
 
 ### partials/schema.html
 
-Schema.org 結構化資料（JSON-LD）輸出��針對首頁、文章頁等不同類型產生對應標記。
+Schema.org 結構化資料（JSON-LD）輸出。針對首頁、文章頁等不同類型產生對應標記。

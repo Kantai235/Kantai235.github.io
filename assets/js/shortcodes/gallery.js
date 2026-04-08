@@ -1,6 +1,6 @@
 /**
  * @file gallery.js
- * @description 藝術作品瀑布流圖���的初始化腳本。
+ * @description 藝術作品瀑布流圖庫的初始化腳本。
  *   使用 Packery 函式庫將 `.gallery-artworks` 容器內的圖片排列為瀑布流佈局，
  *   並透過 jQuery 監聽 `window.load` 事件確保圖片資源載入完成後才進行排列。
  *
@@ -21,9 +21,9 @@ function _getDefaultPackeryOptions() {
 }
 
 /**
- * 從 DOM 元素的 `data-*` 屬���讀取自訂設定，並與預設值合併。
+ * 從 DOM 元素的 `data-*` 屬性讀取自訂設定，並與預設值合併。
  * 支援的 dataset 屬性：`packeryGutter`、`packeryPercentPosition`、`packeryResize`。
- * @param {HTMLElement} nodeGallery - 帶有 data-* 屬性的圖��容器元素
+ * @param {HTMLElement} nodeGallery - 帶有 data-* 屬性的圖庫容器元素
  * @returns {{ percentPosition: boolean, gutter: number, resize: boolean }} 合併後的選項物件
  */
 function _getPackeryOptions(nodeGallery) {
