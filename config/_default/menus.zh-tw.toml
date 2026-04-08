@@ -30,6 +30,11 @@
   parent = "關於我"
   pageRef = "/engineer"
   weight = 22
+
+[[main]]
+  name = "相簿"
+  pageRef = "/kemono/gallery"
+  weight = 25
   
 [[main]]
   name = "技術主題"

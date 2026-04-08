@@ -33,6 +33,22 @@ kemono:
 
 gallery:
   not_found: "Image collection not found: "
+  index_title: "Gallery"
+  after_title: "Current Fursona"
+  before_title: "Previous Fursona"
+  fursuit_title: "Partial Fursuit"
+  view_full_gallery: "View Full Gallery →"
+  artworks_count_suffix: "artworks"
+  photos_count_suffix: "photos"
+  month_format: "%s/%s"
+  filter_creator: "Filter by Artist"
+  filter_all: "All"
+  filter_clear: "Clear Filter"
+  event_daily: "Daily"
+  no_artworks: "No artworks yet"
+  back_to_gallery: "← Back to Gallery"
+  lightbox_counter: "%d / %d"
+  lightbox_close: "Close"
 
 sticker:
   view: "View Stickers"

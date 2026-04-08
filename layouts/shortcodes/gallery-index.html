@@ -1,0 +1,71 @@
+<!--
+  自訂短代碼：gallery-index
+  功能說明：相簿入口頁，顯示三個主題卡片（現在的設定、以前的設定、半套獸裝），
+  各含封面縮圖、標題與作品數量，點擊進入對應的相簿子頁面。
+-->
+
+{{ $periods := slice "after" "before" "fursuit" }}
+{{ $i18nKeys := dict "after" "gallery.after_title" "before" "gallery.before_title" "fursuit" "gallery.fursuit_title" }}
+{{ $countSuffixKeys := dict "after" "gallery.artworks_count_suffix" "before" "gallery.artworks_count_suffix" "fursuit" "gallery.photos_count_suffix" }}
+
+<div class="gallery-index">
+{{ range $periods }}
+  {{ $period := . }}
+  {{ $dataPath := printf "img/kemono/%s/data.json" $period }}
+  {{ $periodResource := resources.Get $dataPath }}
+
+  {{ if $periodResource }}
+    {{ $periodData := $periodResource | transform.Unmarshal }}
+    {{ $title := i18n (index $i18nKeys $period) }}
+    {{ $countSuffix := i18n (index $countSuffixKeys $period) }}
+
+    {{/* 計算作品數量 */}}
+    {{ $artworkDataFiles := resources.Match (printf "img/kemono/%s/artworks/*/data.json" $period) }}
+    {{ $count := 0 }}
+    {{ range $artworkDataFiles }}
+      {{ $artworkDir := path.Dir .Name }}
+      {{ $artworkImages := resources.Match (printf "%s/*" $artworkDir) }}
+      {{ range $artworkImages }}
+        {{ if eq .MediaType.MainType "image" }}
+          {{ $count = add $count 1 }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{/* 取得封面圖片 */}}
+    {{ $coverSrc := "" }}
+    {{ with $periodData.avatar }}
+      {{ $coverResource := resources.Get .src }}
+      {{ if $coverResource }}
+        {{ $optimized := $coverResource.Resize "600x q75" }}
+        {{ $coverSrc = $optimized.RelPermalink }}
+      {{ end }}
+    {{ else }}
+      {{/* 沒有 avatar 時使用第一張作品圖片 */}}
+      {{ $firstData := index $artworkDataFiles 0 }}
+      {{ if $firstData }}
+        {{ $firstDir := path.Dir $firstData.Name }}
+        {{ $firstImages := resources.Match (printf "%s/*" $firstDir) }}
+        {{ range $firstImages }}
+          {{ if and (eq .MediaType.MainType "image") (eq $coverSrc "") }}
+            {{ $optimized := .Resize "600x q75" }}
+            {{ $coverSrc = $optimized.RelPermalink }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <a href="{{ relLangURL (printf "kemono/gallery/%s/" $period) }}" class="gallery-index-card">
+      <div class="gallery-index-card-image">
+        {{ if $coverSrc }}
+        <img src="{{ $coverSrc }}" alt="{{ $title }}" class="nozoom" loading="lazy">
+        {{ end }}
+      </div>
+      <div class="gallery-index-card-body">
+        <h3 class="gallery-index-card-title">{{ $title }}</h3>
+        <span class="gallery-index-card-count">{{ $count }} {{ $countSuffix }}</span>
+      </div>
+    </a>
+  {{ end }}
+{{ end }}
+</div>

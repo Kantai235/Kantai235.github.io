@@ -1,0 +1,130 @@
+{{/*
+  自訂短代碼：artwork-gallery-featured
+  功能說明：artwork-gallery 的精簡版，支援手動選擇或自動取最新 N 張作品。
+
+  使用方式:
+  自動模式（取最新 6 張）:
+    artwork-gallery-featured collection="kemono.after.artworks" limit="6" class="..."
+
+  手動模式（指定資料夾名稱，逗號分隔）:
+    artwork-gallery-featured collection="kemono.after.artworks" pick="20251028-yumeminoideyu,20251026-tonkothuuu,20250710-pika.owo.2025" class="..."
+*/}}
+
+{{ $collection := .Get "collection" }}
+{{ $customClass := .Get "class" }}
+{{ $limit := .Get "limit" | default "6" | int }}
+{{ $pick := .Get "pick" }}
+
+{{/* 解析 collection 路徑 */}}
+{{ $parts := split $collection "." }}
+{{ $category := index $parts 0 }}
+{{ $subcategory := index $parts 1 }}
+{{ $type := index $parts 2 }}
+
+{{ $id := delimit (slice "gallery" (partial "functions/uid.html" .)) "-" }}
+
+{{ $galleryClass := "gallery" }}
+{{ if eq $type "gallery" }}
+  {{ $galleryClass = "gallery gallery-avatar" }}
+{{ else if eq $type "artworks" }}
+  {{ $galleryClass = "gallery gallery-artworks" }}
+{{ end }}
+
+{{ $hasContent := false }}
+
+{{ if eq $category "kemono" }}
+  {{ $dataPath := printf "img/kemono/%s/data.json" $subcategory }}
+  {{ $periodResource := resources.Get $dataPath }}
+
+  {{ if $periodResource }}
+    {{ $periodData := $periodResource | transform.Unmarshal }}
+
+    {{ if eq $type "gallery" }}
+      {{/* Avatar 模式：與原版相同 */}}
+      {{ with $periodData.avatar }}
+        {{ $hasContent = true }}
+        {{ $finalClass := $customClass | default .class }}
+        {{ $resource := resources.Get .src }}
+        {{ $src := .src }}
+        {{ if $resource }}{{ $src = $resource.RelPermalink }}{{ end }}
+<div id="{{ $id }}" class="{{ $galleryClass }}">
+  <img id="{{ .id }}" src="{{ $src }}" class="{{ $finalClass }}" alt="{{ .alt }}" loading="lazy" />
+</div>
+      {{ end }}
+
+    {{ else if eq $type "artworks" }}
+
+      {{ if $pick }}
+        {{/* ── 手動模式：依 pick 指定的資料夾名稱渲染 ── */}}
+        {{ $pickList := split $pick "," }}
+        {{ $hasContent = true }}
+        {{ $artworkIndex := 0 }}
+<div id="{{ $id }}" class="{{ $galleryClass }}">
+        {{ range $pickList }}
+          {{ $dirName := trim . " " }}
+          {{ $metaPath := printf "img/kemono/%s/artworks/%s/data.json" $subcategory $dirName }}
+          {{ $metaResource := resources.Get $metaPath }}
+          {{ if $metaResource }}
+            {{ $artworkMeta := $metaResource | transform.Unmarshal }}
+            {{ $artworkDir := path.Dir $metaResource.Name }}
+            {{ $artworkImages := resources.Match (printf "%s/*" $artworkDir) }}
+            {{ range $artworkImages }}
+              {{ if eq .MediaType.MainType "image" }}
+                {{ $artworkIndex = add $artworkIndex 1 }}
+                {{ $artworkId := printf "featured-%s-%d" $subcategory $artworkIndex }}
+                {{ $aspectRatio := div (float .Width) (float .Height) }}
+                {{ $optimized := "" }}
+                {{ if gt $aspectRatio 1.3 }}
+                  {{ $optimized = .Resize "1200x q75" }}
+                {{ else }}
+                  {{ $optimized = .Resize "600x q75" }}
+                {{ end }}
+  <img id="{{ $artworkId }}" src="{{ $optimized.RelPermalink }}" class="{{ $customClass }}" alt="{{ $artworkMeta.alt }}" loading="lazy" />
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+</div>
+
+      {{ else }}
+        {{/* ── 自動模式：倒序取最新 N 張 ── */}}
+        {{ $artworkDataFiles := resources.Match (printf "img/kemono/%s/artworks/*/data.json" $subcategory) }}
+        {{ if $artworkDataFiles }}
+          {{ $hasContent = true }}
+
+          {{ $reversed := slice }}
+          {{ range $artworkDataFiles }}
+            {{ $reversed = $reversed | append . }}
+          {{ end }}
+          {{ $reversed = sort $reversed "Name" "desc" }}
+
+          {{ $artworkIndex := 0 }}
+          {{ $totalShown := 0 }}
+<div id="{{ $id }}" class="{{ $galleryClass }}">
+          {{ range $reversed }}
+            {{ if lt $totalShown $limit }}
+              {{ $artworkMeta := . | transform.Unmarshal }}
+              {{ $artworkDir := path.Dir .Name }}
+              {{ $artworkImages := resources.Match (printf "%s/*" $artworkDir) }}
+              {{ range $artworkImages }}
+                {{ if and (eq .MediaType.MainType "image") (lt $totalShown $limit) }}
+                  {{ $artworkIndex = add $artworkIndex 1 }}
+                  {{ $totalShown = add $totalShown 1 }}
+                  {{ $artworkId := printf "featured-%s-%d" $subcategory $artworkIndex }}
+                  {{ $src := .RelPermalink }}
+  <img id="{{ $artworkId }}" src="{{ $src }}" class="{{ $customClass }}" alt="{{ $artworkMeta.alt }}" loading="lazy" />
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+</div>
+        {{ end }}
+      {{ end }}
+
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if not $hasContent }}
+  <p>{{ i18n "gallery.not_found" }}{{ $collection }}</p>
+{{ end }}

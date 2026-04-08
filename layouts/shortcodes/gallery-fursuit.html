@@ -1,0 +1,223 @@
+<!--
+  自訂短代碼：gallery-fursuit
+  功能說明：「半套獸裝」完整相簿頁面。
+  依活動主題分類（日常、各場活動），預設顯示「日常」。
+  活動定義在 assets/img/kemono/fursuit/events.json。
+  各作品 data.json 可含 "event" 欄位指定歸屬活動，未指定時預設為 "daily"。
+-->
+
+{{ $backLabel := i18n "gallery.back_to_gallery" }}
+{{ $photographerLabel := i18n "kemono.photographer_label" }}
+{{ $makerLabel := i18n "kemono.maker_label" }}
+{{ $lang := .Page.Language.Lang }}
+
+<a href="{{ relLangURL "kemono/gallery/" }}" class="gallery-back-link">{{ $backLabel }}</a>
+
+{{ $eventsResource := resources.Get "img/kemono/fursuit/events.json" }}
+{{ $artworkDataFiles := resources.Match "img/kemono/fursuit/artworks/*/data.json" }}
+
+{{ if and $eventsResource $artworkDataFiles }}
+{{ $eventsData := $eventsResource | transform.Unmarshal }}
+
+<script>
+(function () {
+  'use strict';
+
+  var lang = {{ $lang | jsonify | safeJS }};
+
+  window.galleryFursuitData = {
+    events: [],
+    imagesByEvent: {},
+    i18n: {
+      close: {{ i18n "gallery.lightbox_close" | jsonify | safeJS }},
+      photographerLabel: {{ $photographerLabel | jsonify | safeJS }},
+      makerLabel: {{ $makerLabel | jsonify | safeJS }}
+    }
+  };
+
+  {{ range $eventsData.events }}
+    {{ $eventId := .id }}
+    {{ $titleMap := .title }}
+    {{ $isDefault := .default }}
+    window.galleryFursuitData.events.push({
+      id: {{ $eventId | jsonify | safeJS }},
+      title: {{ $titleMap | jsonify | safeJS }},
+      isDefault: {{ if $isDefault }}true{{ else }}false{{ end }},
+      date: {{ .date | default "" | jsonify | safeJS }},
+      location: {{ .location | default "" | jsonify | safeJS }}
+    });
+    window.galleryFursuitData.imagesByEvent[{{ $eventId | jsonify | safeJS }}] = [];
+  {{ end }}
+
+  {{ $imgIndex := 0 }}
+  {{ range $artworkDataFiles }}
+    {{ $meta := . | transform.Unmarshal }}
+    {{ $dir := path.Dir .Name }}
+    {{ $eventId := $meta.event | default "daily" }}
+    {{ $images := resources.Match (printf "%s/*" $dir) }}
+    {{ range $images }}
+      {{ if eq .MediaType.MainType "image" }}
+        {{ $imgIndex = add $imgIndex 1 }}
+        {{ $aspectRatio := div (float .Width) (float .Height) }}
+        {{ $optimized := "" }}
+        {{ if gt $aspectRatio 1.3 }}
+          {{ $optimized = .Resize "1200x q75" }}
+        {{ else }}
+          {{ $optimized = .Resize "600x q75" }}
+        {{ end }}
+
+  if (!window.galleryFursuitData.imagesByEvent[{{ $eventId | jsonify | safeJS }}]) {
+    window.galleryFursuitData.imagesByEvent[{{ $eventId | jsonify | safeJS }}] = [];
+  }
+  window.galleryFursuitData.imagesByEvent[{{ $eventId | jsonify | safeJS }}].push({
+    id: 'gallery-fursuit-{{ $imgIndex }}',
+    src: '{{ $optimized.RelPermalink }}',
+    alt: {{ $meta.alt | jsonify | safeJS }},
+    creator: {{ $meta.creator | jsonify | safeJS }},
+    aspectRatio: {{ printf "%.3f" $aspectRatio }}
+  });
+
+      {{ end }}
+    {{ end }}
+  {{ end }}
+})();
+</script>
+
+{{/* 活動選擇器 + 內容區域 */}}
+<div class="gallery-event-tabs" id="gallery-fursuit-tabs"></div>
+<div id="gallery-fursuit-event-info" class="gallery-event-info" style="display: none;"></div>
+<div id="gallery-fursuit-content"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var data = window.galleryFursuitData;
+  if (!data || !window.KemonoGallery) return;
+
+  var lang = {{ $lang | jsonify | safeJS }};
+  var tabsContainer = document.getElementById('gallery-fursuit-tabs');
+  var infoContainer = document.getElementById('gallery-fursuit-event-info');
+  var contentContainer = document.getElementById('gallery-fursuit-content');
+  var activeEventId = null;
+
+  KemonoGallery.Lightbox.init({
+    i18n: {
+      close: data.i18n.close,
+      photographerLabel: data.i18n.photographerLabel,
+      makerLabel: data.i18n.makerLabel
+    }
+  });
+
+  buildTabs();
+  var defaultEvent = data.events.find(function (e) { return e.isDefault; }) || data.events[0];
+  if (defaultEvent) switchEvent(defaultEvent.id);
+
+  function buildTabs() {
+    data.events.forEach(function (evt) {
+      var images = data.imagesByEvent[evt.id] || [];
+      var btn = document.createElement('button');
+      btn.className = 'gallery-event-tab';
+      btn.setAttribute('data-event', evt.id);
+
+      var title = (typeof evt.title === 'object') ? (evt.title[lang] || evt.title['zh-tw'] || evt.id) : evt.title;
+      btn.textContent = title;
+
+      var countBadge = document.createElement('span');
+      countBadge.className = 'gallery-event-tab-count';
+      countBadge.textContent = images.length;
+      btn.appendChild(document.createTextNode(' '));
+      btn.appendChild(countBadge);
+
+      btn.addEventListener('click', function () {
+        switchEvent(evt.id);
+      });
+
+      tabsContainer.appendChild(btn);
+    });
+  }
+
+  function switchEvent(eventId) {
+    activeEventId = eventId;
+
+    tabsContainer.querySelectorAll('.gallery-event-tab').forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-event') === eventId);
+    });
+
+    var evt = data.events.find(function (e) { return e.id === eventId; });
+    if (evt && (evt.date || evt.location)) {
+      var infoParts = [];
+      if (evt.date) infoParts.push(evt.date);
+      if (evt.location) infoParts.push(evt.location);
+      infoContainer.textContent = infoParts.join(' — ');
+      infoContainer.style.display = 'flex';
+    } else {
+      infoContainer.style.display = 'none';
+    }
+
+    renderEventGrid(eventId);
+  }
+
+  function renderEventGrid(eventId) {
+    var images = data.imagesByEvent[eventId] || [];
+    contentContainer.innerHTML = '';
+
+    if (!images.length) {
+      var empty = document.createElement('p');
+      empty.className = 'gallery-empty';
+      empty.textContent = {{ i18n "gallery.no_artworks" | jsonify | safeJS }};
+      contentContainer.appendChild(empty);
+      return;
+    }
+
+    var grid = document.createElement('div');
+    grid.className = 'gallery-grid';
+
+    images.forEach(function (img, idx) {
+      var item = document.createElement('div');
+      item.className = 'gallery-grid-item';
+      item.setAttribute('data-index', idx);
+
+      var imgEl = document.createElement('img');
+      imgEl.src = img.src;
+      imgEl.alt = img.alt;
+      imgEl.className = 'nozoom rounded-lg shadow-lg';
+      imgEl.loading = 'lazy';
+
+      item.appendChild(imgEl);
+      grid.appendChild(item);
+
+      item.addEventListener('click', function () {
+        KemonoGallery.Lightbox.open(images, idx);
+      });
+    });
+
+    contentContainer.appendChild(grid);
+
+    /* 圖片載入後初始化 Packery */
+    if (typeof Packery !== 'undefined') {
+      var allImgs = grid.querySelectorAll('img');
+      var loaded = 0;
+      var total = allImgs.length;
+      function checkReady() {
+        loaded++;
+        if (loaded >= total) {
+          new Packery(grid, { percentPosition: true, gutter: 5, resize: true });
+        }
+      }
+      allImgs.forEach(function (img) {
+        if (img.complete) { checkReady(); }
+        else {
+          img.addEventListener('load', checkReady);
+          img.addEventListener('error', checkReady);
+        }
+      });
+      if (total === 0) {
+        new Packery(grid, { percentPosition: true, gutter: 5, resize: true });
+      }
+    }
+  }
+});
+</script>
+
+{{ else }}
+<p class="gallery-empty">{{ i18n "gallery.no_artworks" }}</p>
+{{ end }}

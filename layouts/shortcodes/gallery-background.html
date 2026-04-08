@@ -1,0 +1,73 @@
+{{/*
+  自訂短代碼：gallery-background
+  功能說明：為相簿頁面渲染全螢幕背景（圖片或影片），
+  沿用介紹頁的 .kemono-background 樣式。
+  影片優先顯示，播放失敗時 fallback 到靜態圖片。
+
+  使用方式：
+  gallery-background period="after"
+
+  資料來源：assets/img/kemono/elements.json
+*/}}
+
+{{ $period := .Get "period" }}
+{{ $elements := resources.Get "img/kemono/elements.json" | transform.Unmarshal }}
+
+{{ $videoKey := printf "background-video-%s" $period }}
+{{ $imgKey := printf "background-img-%s" $period }}
+
+{{ $videoSrc := "" }}
+{{ $imgSrc := "" }}
+
+{{ with index $elements $videoKey }}
+  {{ $resource := resources.Get .src }}
+  {{ if $resource }}
+    {{ $videoSrc = $resource.RelPermalink }}
+  {{ end }}
+{{ end }}
+
+{{ with index $elements $imgKey }}
+  {{ $resource := resources.Get .src }}
+  {{ if $resource }}
+    {{ if eq $resource.MediaType.MainType "image" }}
+      {{ $optimized := $resource.Resize "1920x q75" }}
+      {{ $imgSrc = $optimized.RelPermalink }}
+    {{ else }}
+      {{ $imgSrc = $resource.RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if or $videoSrc $imgSrc }}
+<div class="kemono-background active" id="gallery-bg">
+  {{ if $videoSrc }}
+  <video id="gallery-bg-video" autoplay muted loop playsinline class="nozoom mt-0 mr-0 mb-0 ml-0 w-full h-full object-cover">
+    <source src="{{ $videoSrc }}" type="video/mp4">
+  </video>
+  {{ end }}
+  {{ if $imgSrc }}
+  <img id="gallery-bg-img" src="{{ $imgSrc }}" alt="" class="nozoom mt-0 mr-0 mb-0 ml-0 w-full h-full object-cover" {{ if $videoSrc }}style="display: none;"{{ end }}>
+  {{ end }}
+</div>
+
+{{ if and $videoSrc $imgSrc }}
+<script>
+(function () {
+  var video = document.getElementById('gallery-bg-video');
+  var img = document.getElementById('gallery-bg-img');
+  if (!video) return;
+  video.addEventListener('error', function () {
+    video.style.display = 'none';
+    if (img) img.style.display = 'block';
+  });
+  var src = video.querySelector('source');
+  if (src) {
+    src.addEventListener('error', function () {
+      video.style.display = 'none';
+      if (img) img.style.display = 'block';
+    });
+  }
+})();
+</script>
+{{ end }}
+{{ end }}

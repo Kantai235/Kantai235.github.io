@@ -1,0 +1,642 @@
+/*
+ * 相簿系統共用樣式
+ * 用於 gallery-index、gallery-after、gallery-before、gallery-fursuit 頁面
+ */
+
+/* ==========================================
+   相簿入口頁 — 主題卡片
+   ========================================== */
+
+.gallery-index {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .gallery-index {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.gallery-index-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 1rem;
+  text-decoration: none !important;
+  color: inherit;
+  background: #f5f5f5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:is(.dark) .gallery-index-card {
+  background: #1e1e1e;
+}
+
+.gallery-index-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-index-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.gallery-index-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-index-card:hover .gallery-index-card-image img {
+  transform: scale(1.05);
+}
+
+.gallery-index-card-body {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+:is(.dark) .gallery-index-card-body {
+  background: rgba(30, 30, 30, 0.95);
+}
+
+.gallery-index-card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.gallery-index-card-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(59, 130, 246, 0.1);
+  color: rgb(59, 130, 246);
+}
+
+:is(.dark) .gallery-index-card-count {
+  background: rgba(96, 165, 250, 0.15);
+  color: rgb(147, 197, 253);
+}
+
+/* ==========================================
+   返回連結
+   ========================================== */
+
+.gallery-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: rgb(59, 130, 246);
+  text-decoration: none !important;
+  transition: color 0.2s;
+}
+
+.gallery-back-link:hover {
+  color: rgb(37, 99, 235);
+}
+
+/* ==========================================
+   相簿 Grid 排版（Packery 瀑布流）
+   ========================================== */
+
+.gallery-grid {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid-item {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+  /* 預設寬度（Packery 會用 grid-w class 覆蓋） */
+  width: calc(50% - 5px);
+  margin: 0 !important;
+}
+
+@media (min-width: 853px) {
+  .gallery-grid-item {
+    width: calc(33% - 5px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .gallery-grid-item {
+    width: calc(25% - 5px);
+  }
+}
+
+.gallery-grid-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-grid-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 !important;
+  border-radius: 0.5rem;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-grid-item img.nozoom {
+  cursor: pointer;
+}
+
+/* ==========================================
+   月份區塊標題
+   ========================================== */
+
+.gallery-month-section {
+  margin-bottom: 2rem;
+}
+
+.gallery-month-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+}
+
+.gallery-month-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--tw-prose-headings, #111);
+  margin: 0;
+}
+
+:is(.dark) .gallery-month-title {
+  color: #e5e7eb;
+}
+
+.gallery-month-count {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* ==========================================
+   時間軸側邊欄（桌面版）
+   ========================================== */
+
+.gallery-layout-with-sidebar {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-sidebar {
+  display: none;
+  width: 180px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 5rem;
+  align-self: flex-start;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .gallery-sidebar {
+    display: block;
+  }
+}
+
+.gallery-sidebar-year {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tw-prose-headings, #111);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+:is(.dark) .gallery-sidebar-year {
+  color: #e5e7eb;
+}
+
+.gallery-sidebar-year:first-child {
+  margin-top: 0;
+}
+
+.gallery-sidebar-month {
+  display: block;
+  padding: 0.3rem 0.5rem 0.3rem 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-decoration: none !important;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.gallery-sidebar-month:hover {
+  color: rgb(59, 130, 246);
+  border-left-color: rgb(59, 130, 246);
+}
+
+.gallery-sidebar-month.active {
+  color: rgb(59, 130, 246);
+  font-weight: 600;
+  border-left-color: rgb(59, 130, 246);
+}
+
+.gallery-main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 行動裝置時間軸 — 水平捲動 */
+.gallery-mobile-timeline {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.75rem 0;
+  margin-bottom: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+@media (min-width: 1024px) {
+  .gallery-mobile-timeline {
+    display: none;
+  }
+}
+
+.gallery-mobile-timeline-item {
+  flex-shrink: 0;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none !important;
+  background: rgba(0, 0, 0, 0.05);
+  color: #6b7280;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+:is(.dark) .gallery-mobile-timeline-item {
+  background: rgba(255, 255, 255, 0.08);
+  color: #9ca3af;
+}
+
+.gallery-mobile-timeline-item:hover,
+.gallery-mobile-timeline-item.active {
+  background: rgba(59, 130, 246, 0.1);
+  color: rgb(59, 130, 246);
+  border-color: rgb(59, 130, 246);
+}
+
+:is(.dark) .gallery-mobile-timeline-item:hover,
+:is(.dark) .gallery-mobile-timeline-item.active {
+  background: rgba(96, 165, 250, 0.15);
+  color: rgb(147, 197, 253);
+  border-color: rgb(96, 165, 250);
+}
+
+/* ==========================================
+   繪師篩選列
+   ========================================== */
+
+.gallery-creator-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+:is(.dark) .gallery-creator-filter {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.gallery-creator-filter-label {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--tw-prose-headings, #111);
+  margin-right: 0.25rem;
+}
+
+:is(.dark) .gallery-creator-filter-label {
+  color: #e5e7eb;
+}
+
+.gallery-creator-pill {
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: transparent;
+  color: #4b5563;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+:is(.dark) .gallery-creator-pill {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #9ca3af;
+}
+
+.gallery-creator-pill:hover {
+  border-color: rgb(59, 130, 246);
+  color: rgb(59, 130, 246);
+}
+
+.gallery-creator-pill.active {
+  background: rgb(59, 130, 246);
+  border-color: rgb(59, 130, 246);
+  color: #fff;
+}
+
+:is(.dark) .gallery-creator-pill.active {
+  background: rgb(59, 130, 246);
+  border-color: rgb(59, 130, 246);
+  color: #fff;
+}
+
+/* ==========================================
+   活動主題選擇器（半套獸裝用）
+   ========================================== */
+
+.gallery-event-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-event-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  background: transparent;
+  color: #4b5563;
+  transition: all 0.25s ease;
+}
+
+:is(.dark) .gallery-event-tab {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+}
+
+.gallery-event-tab:hover {
+  border-color: rgb(59, 130, 246);
+  color: rgb(59, 130, 246);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.gallery-event-tab.active {
+  border-color: rgb(59, 130, 246);
+  background: rgb(59, 130, 246);
+  color: #fff;
+}
+
+.gallery-event-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.08);
+  color: inherit;
+}
+
+.gallery-event-tab.active .gallery-event-tab-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* 活動資訊（日期、地點） */
+.gallery-event-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(59, 130, 246, 0.05);
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+:is(.dark) .gallery-event-info {
+  background: rgba(96, 165, 250, 0.08);
+  color: #9ca3af;
+}
+
+/* 活動內容區 */
+.gallery-event-content {
+  display: none;
+}
+
+.gallery-event-content.active {
+  display: block;
+  animation: galleryFadeIn 0.4s ease;
+}
+
+/* ==========================================
+   Lightbox
+   ========================================== */
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.gallery-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-lightbox-image {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.gallery-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.gallery-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  z-index: 10;
+}
+
+.gallery-lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.gallery-lightbox-nav.prev {
+  left: 1rem;
+}
+
+.gallery-lightbox-nav.next {
+  right: 1rem;
+}
+
+.gallery-lightbox-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.gallery-lightbox-counter {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/* Lightbox 繪師資訊 */
+.gallery-lightbox-creator {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.85rem;
+  z-index: 10;
+}
+
+.gallery-lightbox-creator a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.gallery-lightbox-creator a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   共用動畫
+   ========================================== */
+
+@keyframes galleryFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   空狀態
+   ========================================== */
+
+.gallery-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+/* ==========================================
+   篩選時隱藏的項目
+   ========================================== */
+
+.gallery-grid-item.filtered-out {
+  display: none;
+}
+
+.gallery-month-section.filtered-out {
+  display: none;
+}

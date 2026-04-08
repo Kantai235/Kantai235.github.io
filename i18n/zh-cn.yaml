@@ -33,6 +33,22 @@ kemono:
 
 gallery:
   not_found: "找不到指定的图片集："
+  index_title: "相册"
+  after_title: "现在的设定"
+  before_title: "以前的设定"
+  fursuit_title: "半套兽装"
+  view_full_gallery: "查看完整相册 →"
+  artworks_count_suffix: "件作品"
+  photos_count_suffix: "张照片"
+  month_format: "%s 年 %s 月"
+  filter_creator: "绘师筛选"
+  filter_all: "全部"
+  filter_clear: "清除筛选"
+  event_daily: "日常"
+  no_artworks: "暂无作品"
+  back_to_gallery: "← 返回相册"
+  lightbox_counter: "%d / %d"
+  lightbox_close: "关闭"
 
 sticker:
   view: "查看贴图"

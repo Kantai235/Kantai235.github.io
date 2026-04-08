@@ -1,0 +1,145 @@
+<!--
+  自訂短代碼：gallery-after
+  功能說明：「現在的設定」完整相簿頁面。
+  特色：按月份分組（最新在上）、側邊時間軸導航、繪師篩選、URL hash 狀態。
+  日期與繪師 ID 從資料夾名稱 YYYYMMDD-creator_id 自動解析。
+-->
+
+{{ $backLabel := i18n "gallery.back_to_gallery" }}
+{{ $filterLabel := i18n "gallery.filter_creator" }}
+{{ $filterAll := i18n "gallery.filter_all" }}
+{{ $creatorLabel := i18n "kemono.creator_label" }}
+{{ $monthFormat := i18n "gallery.month_format" }}
+{{ $countSuffix := i18n "gallery.artworks_count_suffix" }}
+
+<a href="{{ relLangURL "kemono/gallery/" }}" class="gallery-back-link">{{ $backLabel }}</a>
+
+{{ $artworkDataFiles := resources.Match "img/kemono/after/artworks/*/data.json" }}
+
+{{ if $artworkDataFiles }}
+
+{{/* 建構完整的圖片資料：從資料夾名稱解析日期與繪師 */}}
+<script>
+(function () {
+  'use strict';
+  window.galleryAfterData = {
+    images: [],
+    months: [],
+    creators: [],
+    i18n: {
+      monthFormat: {{ $monthFormat | jsonify | safeJS }},
+      countSuffix: {{ $countSuffix | jsonify | safeJS }},
+      filterLabel: {{ $filterLabel | jsonify | safeJS }},
+      filterAll: {{ $filterAll | jsonify | safeJS }},
+      creatorLabel: {{ $creatorLabel | jsonify | safeJS }},
+      close: {{ i18n "gallery.lightbox_close" | jsonify | safeJS }},
+      photographerLabel: {{ i18n "kemono.photographer_label" | jsonify | safeJS }},
+      makerLabel: {{ i18n "kemono.maker_label" | jsonify | safeJS }}
+    }
+  };
+
+  var monthSet = {};
+  var creatorMap = {};
+
+  {{ $globalImgIndex := 0 }}
+  {{ range $artworkDataFiles }}
+    {{ $meta := . | transform.Unmarshal }}
+    {{ $dir := path.Dir .Name }}
+    {{ $dirBase := path.Base $dir }}
+
+    {{/* 解析日期：YYYYMMDD-creator_id */}}
+    {{ $dateStr := "" }}
+    {{ $creatorId := $dirBase }}
+    {{ if ge (len $dirBase) 9 }}
+      {{ $maybeDate := slicestr $dirBase 0 8 }}
+      {{ $maybeSep := slicestr $dirBase 8 9 }}
+      {{ if eq $maybeSep "-" }}
+        {{ $dateStr = $maybeDate }}
+        {{ $creatorId = slicestr $dirBase 9 }}
+      {{ end }}
+    {{ end }}
+
+    {{ $year := "" }}
+    {{ $month := "" }}
+    {{ $yearMonth := "" }}
+    {{ if $dateStr }}
+      {{ $year = slicestr $dateStr 0 4 }}
+      {{ $month = slicestr $dateStr 4 6 }}
+      {{ $yearMonth = printf "%s-%s" $year $month }}
+    {{ end }}
+
+    {{ $images := resources.Match (printf "%s/*" $dir) }}
+    {{ range $images }}
+      {{ if eq .MediaType.MainType "image" }}
+        {{ $globalImgIndex = add $globalImgIndex 1 }}
+        {{ $aspectRatio := div (float .Width) (float .Height) }}
+        {{ $optimized := "" }}
+        {{ if gt $aspectRatio 1.3 }}
+          {{ $optimized = .Resize "1200x q75" }}
+        {{ else }}
+          {{ $optimized = .Resize "600x q75" }}
+        {{ end }}
+
+  window.galleryAfterData.images.push({
+    id: 'gallery-after-{{ $globalImgIndex }}',
+    src: '{{ $optimized.RelPermalink }}',
+    alt: {{ $meta.alt | jsonify | safeJS }},
+    creator: {{ $meta.creator | jsonify | safeJS }},
+    creatorId: {{ $creatorId | jsonify | safeJS }},
+    creatorName: {{ (or $meta.creator.name $creatorId) | jsonify | safeJS }},
+    date: {{ $dateStr | jsonify | safeJS }},
+    yearMonth: {{ $yearMonth | jsonify | safeJS }},
+    year: {{ $year | jsonify | safeJS }},
+    month: {{ $month | jsonify | safeJS }},
+    aspectRatio: {{ printf "%.3f" $aspectRatio }}
+  });
+
+        {{ if $yearMonth }}
+  if (!monthSet[{{ $yearMonth | jsonify | safeJS }}]) {
+    monthSet[{{ $yearMonth | jsonify | safeJS }}] = true;
+    window.galleryAfterData.months.push({
+      key: {{ $yearMonth | jsonify | safeJS }},
+      year: {{ $year | jsonify | safeJS }},
+      month: {{ $month | jsonify | safeJS }}
+    });
+  }
+        {{ end }}
+
+  if (!creatorMap[{{ $creatorId | jsonify | safeJS }}]) {
+    creatorMap[{{ $creatorId | jsonify | safeJS }}] = true;
+    window.galleryAfterData.creators.push({
+      id: {{ $creatorId | jsonify | safeJS }},
+      name: {{ (or $meta.creator.name $creatorId) | jsonify | safeJS }}
+    });
+  }
+
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  window.galleryAfterData.months.sort(function (a, b) {
+    return b.key.localeCompare(a.key);
+  });
+})();
+</script>
+
+{{/* 頁面骨架：由 gallery-after.js 填入內容 */}}
+<div class="gallery-layout-with-sidebar">
+  {{/* 桌面版側邊時間軸 */}}
+  <nav class="gallery-sidebar" id="gallery-after-sidebar" aria-label="Timeline"></nav>
+
+  <div class="gallery-main-content">
+    {{/* 行動版時間軸 */}}
+    <div class="gallery-mobile-timeline" id="gallery-after-mobile-timeline"></div>
+
+    {{/* 繪師篩選列 */}}
+    <div class="gallery-creator-filter" id="gallery-after-filter"></div>
+
+    {{/* 作品區域 */}}
+    <div id="gallery-after-content"></div>
+  </div>
+</div>
+
+{{ else }}
+<p class="gallery-empty">{{ i18n "gallery.no_artworks" }}</p>
+{{ end }}

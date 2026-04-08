@@ -1,0 +1,116 @@
+<!--
+  自訂短代碼：gallery-before
+  功能說明：「以前的設定」完整相簿頁面，以 Packery 瀑布流展示所有作品。
+  作品數量少（5 件），不需要篩選或時間軸功能。
+-->
+
+{{ $backLabel := i18n "gallery.back_to_gallery" }}
+
+<a href="{{ relLangURL "kemono/gallery/" }}" class="gallery-back-link">{{ $backLabel }}</a>
+
+{{ $artworkDataFiles := resources.Match "img/kemono/before/artworks/*/data.json" }}
+
+{{ if $artworkDataFiles }}
+
+{{/* 建構圖片資料供 JS Lightbox 使用 */}}
+<script>
+(function () {
+  'use strict';
+  window.galleryBeforeData = { images: [] };
+  {{ $imgIndex := 0 }}
+  {{ range $artworkDataFiles }}
+    {{ $meta := . | transform.Unmarshal }}
+    {{ $dir := path.Dir .Name }}
+    {{ $images := resources.Match (printf "%s/*" $dir) }}
+    {{ range $images }}
+      {{ if eq .MediaType.MainType "image" }}
+        {{ $imgIndex = add $imgIndex 1 }}
+        {{ $aspectRatio := div (float .Width) (float .Height) }}
+        {{ $optimized := "" }}
+        {{ if gt $aspectRatio 1.3 }}
+          {{ $optimized = .Resize "1200x q75" }}
+        {{ else }}
+          {{ $optimized = .Resize "600x q75" }}
+        {{ end }}
+        window.galleryBeforeData.images.push({
+          id: 'gallery-before-{{ $imgIndex }}',
+          src: '{{ $optimized.RelPermalink }}',
+          alt: {{ $meta.alt | jsonify | safeJS }},
+          creator: {{ $meta.creator | jsonify | safeJS }}
+        });
+      {{ end }}
+    {{ end }}
+  {{ end }}
+})();
+</script>
+
+<div class="gallery-grid" id="gallery-before-grid">
+  {{ $imgIndex := 0 }}
+  {{ range $artworkDataFiles }}
+    {{ $meta := . | transform.Unmarshal }}
+    {{ $dir := path.Dir .Name }}
+    {{ $images := resources.Match (printf "%s/*" $dir) }}
+    {{ range $images }}
+      {{ if eq .MediaType.MainType "image" }}
+        {{ $imgIndex = add $imgIndex 1 }}
+        {{ $aspectRatio := div (float .Width) (float .Height) }}
+        {{ $optimized := "" }}
+        {{ if gt $aspectRatio 1.3 }}
+          {{ $optimized = .Resize "1200x q75" }}
+        {{ else }}
+          {{ $optimized = .Resize "600x q75" }}
+        {{ end }}
+  <div class="gallery-grid-item" data-index="{{ sub $imgIndex 1 }}">
+    <img src="{{ $optimized.RelPermalink }}" alt="{{ $meta.alt }}" class="nozoom rounded-lg shadow-lg" loading="lazy">
+  </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof Packery === 'undefined' || !window.KemonoGallery) return;
+
+  var grid = document.getElementById('gallery-before-grid');
+  if (!grid) return;
+
+  window.KemonoGallery.Lightbox.init({
+    i18n: {
+      close: {{ i18n "gallery.lightbox_close" | jsonify | safeJS }},
+      creatorLabel: {{ i18n "kemono.creator_label" | jsonify | safeJS }}
+    }
+  });
+
+  grid.addEventListener('click', function (e) {
+    var item = e.target.closest('.gallery-grid-item');
+    if (!item) return;
+    var index = parseInt(item.getAttribute('data-index'), 10);
+    window.KemonoGallery.Lightbox.open(window.galleryBeforeData.images, index);
+  });
+
+  /* 等待所有圖片載入完成再初始化 Packery */
+  var imgs = grid.querySelectorAll('img');
+  var loaded = 0;
+  var total = imgs.length;
+  function initPackery() {
+    new Packery(grid, { percentPosition: true, gutter: 5, resize: true });
+  }
+  function onImgReady() {
+    loaded++;
+    if (loaded >= total) initPackery();
+  }
+  imgs.forEach(function (img) {
+    if (img.complete) onImgReady();
+    else {
+      img.addEventListener('load', onImgReady);
+      img.addEventListener('error', onImgReady);
+    }
+  });
+  if (total === 0) initPackery();
+});
+</script>
+
+{{ else }}
+<p class="gallery-empty">{{ i18n "gallery.no_artworks" }}</p>
+{{ end }}

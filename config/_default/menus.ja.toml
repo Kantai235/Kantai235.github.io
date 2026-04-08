@@ -32,6 +32,11 @@
   weight = 22
 
 [[main]]
+  name = "ギャラリー"
+  pageRef = "/kemono/gallery"
+  weight = 25
+
+[[main]]
   name = "技術トピック"
   weight = 30
 

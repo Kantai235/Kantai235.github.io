@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "id": "daily",
+      "title": {
+        "zh-tw": "日常",
+        "en": "Daily",
+        "ja": "日常",
+        "zh-cn": "日常"
+      },
+      "default": true
+    }
+  ]
+}

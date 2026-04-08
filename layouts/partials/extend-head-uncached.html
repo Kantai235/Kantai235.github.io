@@ -5,7 +5,7 @@
 -->
 
 {{/* Kemono 頁面專用 CSS/JS */}}
-{{ if .HasShortcode "kemono-setup" }}
+{{ if or (.HasShortcode "kemono-setup") (.HasShortcode "gallery-background") }}
   {{ $kemonoCss := resources.Get "css/kemono.css" }}
   {{ if $kemonoCss }}
   <link rel="stylesheet" href="{{ $kemonoCss.RelPermalink }}">
@@ -16,6 +16,25 @@
   {{ $kemonoInterfaceJs := resources.Get "js/shortcodes/kemono-interface.js" }}
   {{ if $kemonoInterfaceJs }}
   <script defer src="{{ $kemonoInterfaceJs.RelPermalink }}"></script>
+  {{ end }}
+{{ end }}
+
+{{/* 相簿系統專用 CSS/JS */}}
+{{ if or (.HasShortcode "gallery-index") (.HasShortcode "gallery-after") (.HasShortcode "gallery-before") (.HasShortcode "gallery-fursuit") }}
+  {{ $galleryCss := resources.Get "css/kemono-gallery.css" }}
+  {{ if $galleryCss }}
+  <link rel="stylesheet" href="{{ $galleryCss.RelPermalink }}">
+  {{ end }}
+  {{ $galleryJs := resources.Get "js/shortcodes/kemono-gallery.js" }}
+  {{ if $galleryJs }}
+  <script defer src="{{ $galleryJs.RelPermalink }}"></script>
+  {{ end }}
+{{ end }}
+
+{{ if .HasShortcode "gallery-after" }}
+  {{ $galleryAfterJs := resources.Get "js/shortcodes/gallery-after.js" }}
+  {{ if $galleryAfterJs }}
+  <script defer src="{{ $galleryAfterJs.RelPermalink }}"></script>
   {{ end }}
 {{ end }}
 

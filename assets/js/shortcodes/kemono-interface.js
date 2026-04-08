@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         /** @type {NodeListOf<HTMLImageElement>} */
         var imageElements = document.querySelectorAll('#avatar-after, #avatar-before, #avatar-fursuit, .gallery img');
         imageElements.forEach(function(img) {
-            if (img.id) {
+            if (img.id && img.id.indexOf('featured-') !== 0) {
                 img.classList.add('image-placeholder');
                 img.alt = i18n.loading;
                 // 設定一個透明的 1x1 pixel 圖片作為佔位符
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var galleries = targetTab.querySelectorAll('.gallery-artworks');
 
         galleries.forEach(function(gallery) {
-            var artworkImages = gallery.querySelectorAll('img[id*="artwork"]');
+            var artworkImages = gallery.querySelectorAll('img[id*="artwork"], img[id*="featured"]');
 
             if (artworkImages.length > 0) {
                 try {
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!activeTab) return;
 
                 var tabImages = activeTab.querySelectorAll('img[id]');
-                var tabImageIds = Array.from(tabImages).map(function(img) { return img.id; });
+                var tabImageIds = Array.from(tabImages).map(function(img) { return img.id; }).filter(function(id) { return id.indexOf('featured-') !== 0; });
                 var allTabImagesLoaded = tabImageIds.every(function(id) { return loadedImages.has(id); });
 
                 if (allTabImagesLoaded) {

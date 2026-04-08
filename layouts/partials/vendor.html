@@ -64,7 +64,7 @@
 {{ end }}
 
 {{/* Packery */}}
-{{ if or (.Page.HasShortcode "gallery") (.Page.HasShortcode "artwork-gallery") }}
+{{ if or (.Page.HasShortcode "gallery") (.Page.HasShortcode "artwork-gallery") (.Page.HasShortcode "artwork-gallery-featured") (.Page.HasShortcode "gallery-after") (.Page.HasShortcode "gallery-before") (.Page.HasShortcode "gallery-fursuit") }}
   {{ $galleryCSS := resources.Get "css/components/gallery.css" }}
   {{ $galleryCSS = $galleryCSS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <link

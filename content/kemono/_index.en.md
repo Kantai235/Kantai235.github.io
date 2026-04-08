@@ -72,7 +72,10 @@ If you want to be friends, let’s warm up slowly 👉👈
       <div class="flex flex-col md:flex-row gap-8 mb-6">
         {{< artwork-gallery collection="kemono.after.gallery" class="mt-0 mb-0 rounded-lg shadow-lg" >}}
       </div>
-      {{< artwork-gallery collection="kemono.after.artworks" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
+      {{< artwork-gallery-featured collection="kemono.after.artworks" pick="20251010-mako_makotoo,20250915-Satotaro_0505,20251024-teracotta_s,20251027-chocomint_null,20251028-_NITAMAGO" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
+      <div class="mt-4 text-center">
+        <a href="/en/kemono/gallery/after/" class="inline-block px-4 py-2 rounded-lg text-sm font-medium text-blue-500 hover:text-blue-600 transition-colors">View Full Gallery →</a>
+      </div>
     </div>
   </div>
 
@@ -82,12 +85,18 @@ If you want to be friends, let’s warm up slowly 👉👈
         {{< artwork-gallery collection="kemono.before.gallery" class="mt-0 mb-0 rounded-lg shadow-lg" >}}
       </div>
       {{< artwork-gallery collection="kemono.before.artworks" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
+      <div class="mt-4 text-center">
+        <a href="/en/kemono/gallery/before/" class="inline-block px-4 py-2 rounded-lg text-sm font-medium text-blue-500 hover:text-blue-600 transition-colors">View Full Gallery →</a>
+      </div>
     </div>
   </div>
 
   <div id="tab-fursuit" class="kemono-tab-content">
     <div class="p-6 border-2 border-neutral-200 dark:border-neutral-700 rounded-lg background-white/90 dark:background-gray-800/90 backdrop-blur">
-      {{< artwork-gallery collection="kemono.fursuit.artworks" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
+      {{< artwork-gallery-featured collection="kemono.fursuit.artworks" limit="3" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
+      <div class="mt-4 text-center">
+        <a href="/en/kemono/gallery/fursuit/" class="inline-block px-4 py-2 rounded-lg text-sm font-medium text-blue-500 hover:text-blue-600 transition-colors">View Full Gallery →</a>
+      </div>
     </div>
   </div>
 </div>

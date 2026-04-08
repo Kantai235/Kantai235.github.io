@@ -32,6 +32,11 @@
   weight = 22
 
 [[main]]
+  name = "相册"
+  pageRef = "/kemono/gallery"
+  weight = 25
+
+[[main]]
   name = "技术主题"
   weight = 30
 

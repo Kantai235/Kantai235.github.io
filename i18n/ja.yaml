@@ -33,6 +33,22 @@ kemono:
 
 gallery:
   not_found: "指定された画像集が見つかりません："
+  index_title: "ギャラリー"
+  after_title: "今のうちの子"
+  before_title: "前のうちの子"
+  fursuit_title: "ハーフ着ぐるみ"
+  view_full_gallery: "すべての作品を見る →"
+  artworks_count_suffix: "作品"
+  photos_count_suffix: "枚"
+  month_format: "%s年%s月"
+  filter_creator: "絵師フィルター"
+  filter_all: "すべて"
+  filter_clear: "フィルター解除"
+  event_daily: "日常"
+  no_artworks: "作品はまだありません"
+  back_to_gallery: "← ギャラリーに戻る"
+  lightbox_counter: "%d / %d"
+  lightbox_close: "閉じる"
 
 sticker:
   view: "ステッカーを見る"
