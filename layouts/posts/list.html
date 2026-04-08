@@ -1,9 +1,9 @@
-<!--
+{{ define "main" }}
+{{/*
   覆寫來源：themes/blowfish/layouts/posts/list.html
   修改說明：自訂文章列表頁面，加入年份篩選按鈕介面與雙容器架構
   （分頁容器 + 全文章容器），搭配 year-filter.js 實現不衝突的篩選功能。
--->
-{{ define "main" }}
+*/}}
   {{ .Scratch.Set "scope" "list" }}
 
   {{/* Header */}}
@@ -30,10 +30,10 @@
   {{/* 年度篩選導航 */}}
   {{ if gt (len $allPages) 0 }}
     <nav class="year-filter mb-8 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
-      <h2 class="text-lg font-bold mb-3">按年份篩選</h2>
-      <div class="flex flex-wrap gap-2">
-        <button data-year="all" class="year-filter-btn active m-1 px-3 py-1 bg-primary-500 text-white dark:bg-primary-600 rounded hover:bg-primary-600 dark:hover:bg-primary-700 transition-colors">
-          全部 ({{ len $allPages }})
+      <h2 class="text-lg font-bold mb-3">{{ i18n "filter.by_year" }}</h2>
+      <div class="flex flex-wrap gap-2" role="group" aria-label="{{ i18n "filter.by_year" }}">
+        <button data-year="all" aria-pressed="true" class="year-filter-btn active m-1 px-3 py-1 bg-primary-500 text-white dark:bg-primary-600 rounded hover:bg-primary-600 dark:hover:bg-primary-700 transition-colors">
+          {{ i18n "filter.all" }} ({{ len $allPages }})
         </button>
         {{ $years := slice }}
         {{ range $allPages.GroupByDate "2006" }}
@@ -51,7 +51,7 @@
     {{ $series := .Site.Taxonomies.series }}
     {{ if $series }}
     <nav class="series-navigation mb-8 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
-      <h2 class="text-lg font-bold mb-3">系列文章</h2>
+      <h2 class="text-lg font-bold mb-3">{{ i18n "filter.series" }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {{ range $name, $items := $series }}
           {{ $count := len $items }}
@@ -59,7 +59,7 @@
           <div class="series-item">
             <a href="/series/{{ $name | urlize }}/" class="flex items-center justify-between p-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded transition-colors">
               <span class="font-medium">{{ $name }}</span>
-              <span class="text-sm text-neutral-500 dark:text-neutral-400">{{ $count }} 篇</span>
+              <span class="text-sm text-neutral-500 dark:text-neutral-400">{{ $count }} {{ i18n "filter.count_suffix" }}</span>
             </a>
           </div>
           {{ end }}
@@ -80,18 +80,13 @@
         {{ if $groupByYear }}
           <h2 id="year-{{ .Key }}" class="year-header mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300" data-year="{{ .Key }}">
             {{ .Key }}
-            <span class="text-sm text-neutral-500 dark:text-neutral-400 ml-2">({{ len .Pages }} 篇)</span>
+            <span class="text-sm text-neutral-500 dark:text-neutral-400 ml-2">({{ len .Pages }} {{ i18n "filter.count_suffix" }})</span>
           </h2>
         {{ end }}
         {{ range .Pages }}
           {{ $year := .Date.Format "2006" }}
           <article class="article-item" data-year="{{ $year }}" data-date="{{ .Date.Format "2006-01-02" }}">
-            {{ $currentLang := $.Site.Language.Lang }}
-            {{ if eq $currentLang "zh-tw" }}
-              {{ partial "article-link/simple.html" . }}
-            {{ else }}
-              {{ partial "article-link/simple.html" . }}
-            {{ end }}
+            {{ partial "article-link/simple.html" . }}
           </article>
         {{ end }}
       {{ end }}
@@ -124,10 +119,12 @@
     </div>
     
     {{/* 年份篩選訊息 */}}
-    <div id="filter-message" class="mt-8 text-center text-neutral-500 dark:text-neutral-400 hidden">
+    <div id="filter-message" class="mt-8 text-center text-neutral-500 dark:text-neutral-400 hidden"
+         data-template="{{ i18n "filter.showing" }}"
+         aria-live="polite">
       <p id="filter-text"></p>
       <p class="text-sm mt-2">
-        <button id="clear-filter" class="text-primary-500 hover:text-primary-600 underline">清除篩選，回到分頁模式</button>
+        <button id="clear-filter" class="text-primary-500 hover:text-primary-600 underline">{{ i18n "filter.clear" }}</button>
       </p>
     </div>
   {{ else }}

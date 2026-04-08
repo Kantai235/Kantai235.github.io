@@ -24,31 +24,21 @@
             {{ $isActive := eq $targetLang $currentPageLang }}
             {{ $targetURL := "" }}
             
-            {{/* URL construction using regex replacement */}}
+            {{/*
+              URL 建構：使用通用 regex 匹配任何語言前綴，
+              避免硬編碼語言清單，未來新增語言時無需修改此處。
+              前綴格式：/xx/ 或 /xx-yy/（如 /en/、/ja/、/zh-cn/）
+            */}}
             {{ $currentURL := $.RelPermalink }}
-            
-            {{ if eq $.Kind "home" }}
-              {{/* Home page */}}
-              {{ if eq $targetLang "zh-tw" }}
-                {{ $targetURL = "/" }}
-              {{ else }}
-                {{ $targetURL = printf "/%s/" $targetLang }}
-              {{ end }}
+            {{ $langPrefixRE := "^/[a-z]{2}(-[a-z]{2,})?/" }}
+            {{/* 先移除現有的語言前綴（如有），取得語言無關的路徑 */}}
+            {{ $cleanPath := replaceRE $langPrefixRE "/" $currentURL }}
+
+            {{ if eq $targetLang "zh-tw" }}
+              {{/* 預設語言不加前綴 */}}
+              {{ $targetURL = $cleanPath }}
             {{ else }}
-              {{/* For other pages, use pattern replacement */}}
-              {{ if eq $targetLang "zh-tw" }}
-                {{/* Remove language prefix for zh-tw */}}
-                {{ $targetURL = replaceRE "^/(en|ja)/" "/" $currentURL }}
-              {{ else }}
-                {{/* Replace or add language prefix */}}
-                {{ if or (hasPrefix $currentURL "/en/") (hasPrefix $currentURL "/ja/") }}
-                  {{/* Replace existing language prefix */}}
-                  {{ $targetURL = replaceRE "^/(en|ja)/" (printf "/%s/" $targetLang) $currentURL }}
-                {{ else }}
-                  {{/* Add language prefix to zh-tw URL */}}
-                  {{ $targetURL = printf "/%s%s" $targetLang $currentURL }}
-                {{ end }}
-              {{ end }}
+              {{ $targetURL = printf "/%s%s" $targetLang $cleanPath }}
             {{ end }}
             
             <a href="{{ $targetURL }}" class="flex items-center">

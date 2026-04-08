@@ -7,12 +7,5 @@
 
   回傳值：預設語言站台中，Type 屬於 mainSections 的所有 RegularPages。
 */}}
-{{ $zhtwSites := where site.Sites ".Language.Lang" "zh-tw" }}
-{{ $pages := slice }}
-{{ if $zhtwSites }}
-  {{ $zhtwSite := index $zhtwSites 0 }}
-  {{ $pages = where $zhtwSite.RegularPages "Type" "in" site.Params.mainSections }}
-{{ else }}
-  {{ $pages = where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-{{ end }}
+{{ $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ return $pages }}

@@ -23,10 +23,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 延遲執行以確保數據載入完成
     setTimeout(function() {
-        // 檢查數據載入狀況
-        const hasPageImages = !!window.pageImages;
-        const hasCreatorInfo = !!window.creatorInfo;
-    
     // 獲取所有相關元素
     const tabs = document.querySelectorAll('.kemono-tab');
     const tabContents = document.querySelectorAll('.kemono-tab-content');
@@ -57,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setPlaceholderImages();
     
     // 處理圖片載入（如果數據可用）
-    if (hasPageImages && window.pageImages) {
+    if (window.pageImages) {
         try {
             // 手動設定備用背景資源
             if (!window.pageImages['background-video-after'] && !window.pageImages['background-img-after']) {
@@ -416,15 +412,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function showCreatorToast(creatorData, isLightbox = true) {
         if (!creatorData) return;
-        
-        let content = '繪師：';
+
+        // 使用 DOM API 建構內容，避免 innerHTML 的 XSS 風險
+        toastText.textContent = '';
+        var label = document.createTextNode('繪師：');
+        toastText.appendChild(label);
+
         if (creatorData.link) {
-            content += `<a href="${creatorData.link}" target="_blank" rel="noopener noreferrer">${creatorData.name}</a>`;
+            var link = document.createElement('a');
+            link.href = creatorData.link;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = creatorData.name;
+            toastText.appendChild(link);
         } else {
-            content += creatorData.name;
+            toastText.appendChild(document.createTextNode(creatorData.name));
         }
-        
-        toastText.innerHTML = content;
+
         toast.classList.add('show');
         lightboxWasOpen = isLightbox;
     }

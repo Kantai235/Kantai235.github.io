@@ -1,24 +1,25 @@
-<!--
+{{ define "main" }}
+{{/*
   覆寫來源：themes/blowfish/layouts/search/list.html
   修改說明：自訂搜尋結果頁面的版面配置與多語言標題顯示。
--->
-{{ define "main" }}
+*/}}
 <header class="max-w-prose">
   <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-    {{ i18n "search.title" | default "搜尋" }}
+    {{ i18n "search.title" }}
   </h1>
   <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400">
-    {{ i18n "search.subtitle" | default "搜尋部落格文章" }}
+    {{ i18n "search.subtitle" }}
   </div>
 </header>
 
 {{/* 搜尋介面 */}}
 <div class="search-container mb-8">
   <div class="relative">
-    <input type="text" 
-           id="search-input" 
+    <input type="text"
+           id="search-input"
            class="w-full px-4 py-3 pr-12 text-lg border-2 border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:border-primary-500"
-           placeholder="{{ i18n "search.placeholder" | default "輸入關鍵字搜尋..." }}"
+           placeholder="{{ i18n "search.placeholder" }}"
+           aria-label="{{ i18n "search.title" }}"
            autocomplete="off">
     <div class="absolute inset-y-0 right-0 flex items-center pr-4">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -26,22 +27,22 @@
       </svg>
     </div>
   </div>
-  
+
   {{/* 搜尋篩選器 */}}
   <div class="mt-4 flex flex-wrap gap-4">
     <div class="flex items-center">
-      <label class="text-sm font-medium text-neutral-700 dark:text-neutral-300 mr-2">分類:</label>
+      <label for="category-filter" class="text-sm font-medium text-neutral-700 dark:text-neutral-300 mr-2">{{ i18n "search.category_label" }}</label>
       <select id="category-filter" class="px-3 py-1 border border-neutral-300 dark:border-neutral-600 rounded bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100">
-        <option value="">所有分類</option>
+        <option value="">{{ i18n "search.category_all" }}</option>
         {{ range .Site.Taxonomies.categories }}
           <option value="{{ .Page.Title }}">{{ .Page.Title }}</option>
         {{ end }}
       </select>
     </div>
     <div class="flex items-center">
-      <label class="text-sm font-medium text-neutral-700 dark:text-neutral-300 mr-2">年份:</label>
+      <label for="year-filter" class="text-sm font-medium text-neutral-700 dark:text-neutral-300 mr-2">{{ i18n "search.year_label" }}</label>
       <select id="year-filter" class="px-3 py-1 border border-neutral-300 dark:border-neutral-600 rounded bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100">
-        <option value="">所有年份</option>
+        <option value="">{{ i18n "search.year_all" }}</option>
         {{ $years := slice }}
         {{ range .Site.RegularPages }}
           {{ $year := .Date.Format "2006" }}
@@ -58,32 +59,32 @@
 </div>
 
 {{/* 搜尋結果統計 */}}
-<div id="search-stats" class="mb-4 text-sm text-neutral-500 dark:text-neutral-400" style="display: none;">
-  <span id="search-count">0</span> 個搜尋結果
+<div id="search-stats" class="mb-4 text-sm text-neutral-500 dark:text-neutral-400" aria-live="polite" hidden>
+  <span id="search-count">0</span> {{ i18n "search.result_count" }}
 </div>
 
 {{/* 搜尋結果容器 */}}
-<div id="search-results" class="space-y-6"></div>
+<div id="search-results" class="space-y-6" role="region" aria-label="{{ i18n "search.title" }}"></div>
 
 {{/* 無結果提示 */}}
-<div id="no-results" class="text-center py-12" style="display: none;">
+<div id="no-results" class="text-center py-12" hidden>
   <div class="text-6xl mb-4">🔍</div>
   <h3 class="text-xl font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
-    沒有找到相關結果
+    {{ i18n "search.no_results" }}
   </h3>
   <p class="text-neutral-500 dark:text-neutral-400">
-    請嘗試使用不同的關鍵字或調整篩選條件
+    {{ i18n "search.no_results_hint" }}
   </p>
 </div>
 
 {{/* 快捷鍵提示 */}}
 <div class="mt-8 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
-  <h3 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">搜尋技巧:</h3>
+  <h3 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">{{ i18n "search.tips_title" }}</h3>
   <ul class="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
-    <li>• 使用空格分隔多個關鍵字</li>
-    <li>• 搜尋會匹配文章標題、內容和標籤</li>
-    <li>• 使用篩選器快速縮小搜尋範圍</li>
-    <li>• 支援中英文搜尋</li>
+    <li>• {{ i18n "search.tip_keywords" }}</li>
+    <li>• {{ i18n "search.tip_match" }}</li>
+    <li>• {{ i18n "search.tip_filter" }}</li>
+    <li>• {{ i18n "search.tip_language" }}</li>
   </ul>
 </div>
 

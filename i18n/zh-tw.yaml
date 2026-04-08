@@ -1,0 +1,27 @@
+# 自訂 i18n 翻譯鍵 — 繁體中文（台灣）
+# 用於覆寫或補充 Blowfish 主題未提供的 UI 字串
+
+filter:
+  by_year: "按年份篩選"
+  all: "全部"
+  count_suffix: "篇"
+  series: "系列文章"
+  clear: "清除篩選，回到分頁模式"
+  showing: "顯示 {{ .Year }} 年的文章：共 {{ .Count }} 篇"
+
+search:
+  title: "搜尋"
+  subtitle: "搜尋部落格文章"
+  placeholder: "輸入關鍵字搜尋..."
+  category_label: "分類:"
+  category_all: "所有分類"
+  year_label: "年份:"
+  year_all: "所有年份"
+  result_count: "個搜尋結果"
+  no_results: "沒有找到相關結果"
+  no_results_hint: "請嘗試使用不同的關鍵字或調整篩選條件"
+  tips_title: "搜尋技巧:"
+  tip_keywords: "使用空格分隔多個關鍵字"
+  tip_match: "搜尋會匹配文章標題、內容和標籤"
+  tip_filter: "使用篩選器快速縮小搜尋範圍"
+  tip_language: "支援中英文搜尋"

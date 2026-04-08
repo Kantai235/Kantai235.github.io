@@ -1,0 +1,26 @@
+# カスタム i18n 翻訳キー — 日本語
+
+filter:
+  by_year: "年別フィルター"
+  all: "すべて"
+  count_suffix: "件"
+  series: "シリーズ記事"
+  clear: "フィルターを解除してページネーションに戻る"
+  showing: "{{ .Year }}年の記事：{{ .Count }}件"
+
+search:
+  title: "検索"
+  subtitle: "ブログ記事を検索"
+  placeholder: "キーワードを入力して検索..."
+  category_label: "カテゴリ:"
+  category_all: "すべてのカテゴリ"
+  year_label: "年:"
+  year_all: "すべての年"
+  result_count: "件の検索結果"
+  no_results: "結果が見つかりません"
+  no_results_hint: "別のキーワードを試すか、フィルターを調整してください"
+  tips_title: "検索のヒント:"
+  tip_keywords: "スペースで複数のキーワードを区切ります"
+  tip_match: "記事のタイトル、内容、タグに一致します"
+  tip_filter: "フィルターを使って素早く絞り込みます"
+  tip_language: "中国語と英語の検索に対応"

@@ -10,7 +10,7 @@
 <div class="sticker-gallery-container">
   {{ range $stickersData.series }}
   <div class="sticker-series" data-series-id="{{ .id }}">
-    <div class="series-header" onclick="openStickerModal('{{ .id }}')">
+    <div class="series-header" data-open-modal="{{ .id }}" role="button" tabindex="0" aria-label="{{ .title }}">
       {{ $firstSticker := index .stickers 0 }}
       <div class="series-preview">
         <img src="{{ $firstSticker.preview | default $firstSticker.src }}" alt="{{ .title }}" />
@@ -49,12 +49,12 @@
 
 <!-- Modal -->
 <div id="sticker-modal" class="sticker-modal">
-  <div class="modal-overlay" onclick="closeStickerModal()"></div>
+  <div class="modal-overlay" data-close-modal></div>
   <div class="modal-content">
     <div class="modal-header">
       <div class="modal-header-top">
         <h3 id="modal-title"></h3>
-        <button class="modal-close" onclick="closeStickerModal()">
+        <button class="modal-close" data-close-modal aria-label="關閉">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -903,48 +903,48 @@ window.stickerData = {{ $stickersData | jsonify | safeJS }};
 let modalLightbox = null;
 
 function openStickerModal(seriesId) {
-  console.log('Opening modal for series:', seriesId);
-
   const modal = document.getElementById('sticker-modal');
   const modalTitle = document.getElementById('modal-title');
   const modalPlatforms = document.getElementById('modal-platforms');
   const modalGrid = document.getElementById('modal-stickers-grid');
 
-  if (!modal || !modalTitle || !modalPlatforms || !modalGrid) {
-    console.error('Modal elements not found');
-    return;
-  }
-
-  // 找到對應的系列資料
-  if (!window.stickerData || !window.stickerData.series) {
-    console.error('Sticker data not available');
-    return;
-  }
+  if (!modal || !modalTitle || !modalPlatforms || !modalGrid) return;
+  if (!window.stickerData || !window.stickerData.series) return;
 
   const series = window.stickerData.series.find(s => s.id === seriesId);
-  if (!series) {
-    console.error('Series not found:', seriesId);
-    return;
-  }
-
-  console.log('Found series:', series);
+  if (!series) return;
 
   // 設定標題
   modalTitle.textContent = series.title;
 
-  // 設定繪師資訊
+  // 設定繪師資訊（使用 DOM API 避免 XSS）
   const modalCreator = document.getElementById('modal-creator');
   if (modalCreator && series.creator) {
-    const creatorHtml = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>繪師：</span>';
+    modalCreator.textContent = '';
 
-    let creatorLink = '';
+    // SVG 圖示（靜態內容，安全使用 innerHTML）
+    const iconSpan = document.createElement('span');
+    iconSpan.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    modalCreator.appendChild(iconSpan);
+
+    const labelSpan = document.createElement('span');
+    labelSpan.textContent = '繪師：';
+    modalCreator.appendChild(labelSpan);
+
     if (series.creator.link) {
-      creatorLink = '<a href="' + series.creator.link + '" target="_blank" rel="noopener noreferrer" class="modal-creator-link">' + series.creator.name + '</a>';
+      const creatorLink = document.createElement('a');
+      creatorLink.href = series.creator.link;
+      creatorLink.target = '_blank';
+      creatorLink.rel = 'noopener noreferrer';
+      creatorLink.className = 'modal-creator-link';
+      creatorLink.textContent = series.creator.name;
+      modalCreator.appendChild(creatorLink);
     } else {
-      creatorLink = '<span>' + series.creator.name + '</span>';
+      const nameSpan = document.createElement('span');
+      nameSpan.textContent = series.creator.name;
+      modalCreator.appendChild(nameSpan);
     }
 
-    modalCreator.innerHTML = creatorHtml + creatorLink;
     modalCreator.style.display = 'flex';
   } else if (modalCreator) {
     modalCreator.style.display = 'none';
@@ -1054,16 +1054,31 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// 初始化
+// 初始化：以事件委派取代 inline onclick，符合 CSP 最佳實踐
 document.addEventListener('DOMContentLoaded', function() {
-  // 確保模態框在 DOM 載入後可用
-  console.log('Sticker gallery initialized');
+  // 開啟 modal — 點擊或按 Enter/Space 鍵
+  document.querySelectorAll('[data-open-modal]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      openStickerModal(this.dataset.openModal);
+    });
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openStickerModal(this.dataset.openModal);
+      }
+    });
+  });
 
-  // 檢查貼圖資料是否載入
-  if (window.stickerData) {
-    console.log('Sticker data loaded:', window.stickerData);
-  } else {
-    console.error('Sticker data not found');
-  }
+  // 關閉 modal — overlay 與關閉按鈕
+  document.querySelectorAll('[data-close-modal]').forEach(function(el) {
+    el.addEventListener('click', closeStickerModal);
+  });
+
+  // ESC 鍵關閉 modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeStickerModal();
+    }
+  });
 });
 </script>

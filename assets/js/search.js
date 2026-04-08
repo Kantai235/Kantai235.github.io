@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', function() {
   let searchIndex = [];
   let fuse;
 
+  /**
+   * 將文字中的 HTML 特殊字元轉義，防止 XSS。
+   * @param {string} str - 原始字串
+   * @returns {string} 轉義後的安全字串
+   */
+  function escapeHTML(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   const searchInput = document.getElementById('search-input');
   const categoryFilter = document.getElementById('category-filter');
   const yearFilter = document.getElementById('year-filter');
@@ -26,7 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchCount = document.getElementById('search-count');
   const noResults = document.getElementById('no-results');
 
-  if (!searchInput) return;
+  if (!searchInput || !categoryFilter || !yearFilter || !searchResults) return;
+  if (typeof Fuse === 'undefined') return;
 
   // 從 <html lang="..."> 取得當前語言，用於日期格式化
   const currentLocale = document.documentElement.lang || 'zh-TW';
@@ -91,8 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!fuse || (!query && !selectedCategory && !selectedYear)) {
       searchResults.innerHTML = '';
-      searchStats.style.display = 'none';
-      noResults.style.display = 'none';
+      searchStats.hidden = true;
+      noResults.hidden = true;
       return;
     }
 
@@ -128,11 +140,11 @@ document.addEventListener('DOMContentLoaded', function() {
     searchResults.innerHTML = '';
 
     if (results.length === 0) {
-      noResults.style.display = 'block';
+      noResults.hidden = false;
       return;
     }
 
-    noResults.style.display = 'none';
+    noResults.hidden = true;
 
     results.forEach(function(result) {
       var item = result.item;
@@ -169,16 +181,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (item.tags) {
       tagsHTML = '<div class="mt-2 flex flex-wrap gap-1">' +
         item.tags.map(function(tag) {
-          return '<span class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-xs">' + tag + '</span>';
+          return '<span class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 rounded text-xs">' + escapeHTML(tag) + '</span>';
         }).join('') + '</div>';
     }
 
-    var categoriesText = item.categories ? ' &bull; ' + item.categories.join(', ') : '';
+    var categoriesText = item.categories ? ' &bull; ' + escapeHTML(item.categories.join(', ')) : '';
     var contentPreview = content.substring(0, 200) + (content.length > 200 ? '...' : '');
 
     div.innerHTML =
       '<h3 class="text-lg font-semibold mb-2">' +
-        '<a href="' + item.permalink + '" class="text-primary-600 dark:text-primary-400 hover:underline">' +
+        '<a href="' + escapeHTML(item.permalink) + '" class="text-primary-600 dark:text-primary-400 hover:underline">' +
           title +
         '</a>' +
       '</h3>' +
@@ -246,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
    */
   function updateSearchStats(count, query) {
     searchCount.textContent = count;
-    searchStats.style.display = (query || count > 0) ? 'block' : 'none';
+    searchStats.hidden = !(query || count > 0);
   }
 
   /**

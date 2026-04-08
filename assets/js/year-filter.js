@@ -110,7 +110,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (year === 'all' || !isFiltering) {
             filterMessage.classList.add('hidden');
         } else {
-            filterText.textContent = `顯示 ${year} 年的文章：共 ${visibleCount} 篇`;
+            // 從 data-template 讀取 i18n 模板，以 {{ .Year }} / {{ .Count }} 替換
+            var template = filterMessage.dataset.template || '顯示 {{ .Year }} 年的文章：共 {{ .Count }} 篇';
+            filterText.textContent = template
+                .replace('{{ .Year }}', year)
+                .replace('{{ .Count }}', visibleCount);
             filterMessage.classList.remove('hidden');
         }
     }
@@ -133,10 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
         filterButtons.forEach(btn => {
             btn.classList.remove('active', 'bg-primary-500', 'text-white', 'dark:bg-primary-600');
             btn.classList.add('bg-neutral-200', 'dark:bg-neutral-700', 'text-neutral-700', 'dark:text-neutral-300');
+            btn.setAttribute('aria-pressed', 'false');
         });
-        
+
         activeButton.classList.add('active', 'bg-primary-500', 'text-white', 'dark:bg-primary-600');
         activeButton.classList.remove('bg-neutral-200', 'dark:bg-neutral-700', 'text-neutral-700', 'dark:text-neutral-300');
+        activeButton.setAttribute('aria-pressed', 'true');
     }
     
     // 為篩選按鈕添加點擊事件

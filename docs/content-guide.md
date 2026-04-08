@@ -7,21 +7,21 @@
 
 ## Front Matter 標準模板
 
-所有文章應遵循以下 Front Matter 格式（TOML）：
+所有文章應遵循以下 Front Matter 格式（YAML，與既有文章一致）：
 
-```toml
-+++
-title = '文章標題'
-slug = 'article-slug'
-description = '文章的簡短描述，用於 SEO 與社群分享預覽'
-summary = '文章摘要，顯示在列表頁'
-date = 2024-01-15T00:00:00+08:00
-lastmod = 2024-01-15T00:00:00+08:00
-draft = false
-categories = ['分類名稱']
-tags = ['標籤1', '標籤2']
-series = ['系列名稱']
-+++
+```yaml
+---
+title: "文章標題"
+slug: "article-slug"
+description: "文章的簡短描述，用於 SEO 與社群分享預覽"
+summary: "文章摘要，顯示在列表頁"
+date: 2024-01-15T00:00:00+08:00
+lastmod: 2024-01-15T00:00:00+08:00
+draft: false
+categories: [分類名稱]
+tags: [標籤1, 標籤2]
+series: [系列名稱]
+---
 ```
 
 ### 欄位說明
@@ -47,14 +47,14 @@ series = ['系列名稱']
 
 ## 日期格式規範
 
-統一使用不帶引號的 ISO 8601 格式，明確指定台灣時區：
+統一使用 ISO 8601 格式，明確指定台灣時區：
 
-```toml
+```yaml
 # 正確
-date = 2024-01-15T00:00:00+08:00
+date: 2024-01-15T00:00:00+08:00
 
-# 不建議（帶引號）
-date = '2024-01-15T00:00:00+08:00'
+# 也可接受（帶引號）
+date: "2024-01-15T00:00:00+08:00"
 ```
 
 ---

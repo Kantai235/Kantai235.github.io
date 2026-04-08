@@ -1,0 +1,26 @@
+# 自定义 i18n 翻译键 — 简体中文
+
+filter:
+  by_year: "按年份筛选"
+  all: "全部"
+  count_suffix: "篇"
+  series: "系列文章"
+  clear: "清除筛选，回到分页模式"
+  showing: "显示 {{ .Year }} 年的文章：共 {{ .Count }} 篇"
+
+search:
+  title: "搜索"
+  subtitle: "搜索博客文章"
+  placeholder: "输入关键字搜索..."
+  category_label: "分类:"
+  category_all: "所有分类"
+  year_label: "年份:"
+  year_all: "所有年份"
+  result_count: "个搜索结果"
+  no_results: "没有找到相关结果"
+  no_results_hint: "请尝试使用不同的关键字或调整筛选条件"
+  tips_title: "搜索技巧:"
+  tip_keywords: "使用空格分隔多个关键字"
+  tip_match: "搜索会匹配文章标题、内容和标签"
+  tip_filter: "使用筛选器快速缩小搜索范围"
+  tip_language: "支持中英文搜索"

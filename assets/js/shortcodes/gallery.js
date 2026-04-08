@@ -52,6 +52,8 @@ function _getPackeryOptions(nodeGallery) {
  * 僅處理 `.gallery-artworks`，不影響 `.gallery-avatar` 等其他圖庫容器。
  */
 (function init() {
+  if (typeof $ === 'undefined' || typeof Packery === 'undefined') return;
+
   $(window).on("load", function () {
     // 只選擇 .gallery-artworks，不處理 .gallery-avatar
     let nodeGalleries = document.querySelectorAll(".gallery-artworks");

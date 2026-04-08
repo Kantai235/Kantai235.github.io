@@ -17,13 +17,8 @@
     {{ if eq $currentLang "zh-tw" }}
       {{ partial "article-link/simple.html" . }}
     {{ else }}
-      {{/* Generate URL for current language */}}
-      {{ $newURL := "" }}
-      {{ if eq $currentLang "en" }}
-        {{ $newURL = printf "/en%s" .RelPermalink }}
-      {{ else if eq $currentLang "ja" }}
-        {{ $newURL = printf "/ja%s" .RelPermalink }}
-      {{ end }}
+      {{/* 非預設語言：加上語言前綴（通用，不需逐一列舉語言） */}}
+      {{ $newURL := printf "/%s%s" $currentLang .RelPermalink }}
       
       {{/* Custom article link with correct URL */}}
       <div class="group-hover-card group flex flex-wrap md:flex-nowrap article relative">

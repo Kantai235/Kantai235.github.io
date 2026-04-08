@@ -1,0 +1,26 @@
+# Custom i18n translation keys — English
+
+filter:
+  by_year: "Filter by Year"
+  all: "All"
+  count_suffix: "posts"
+  series: "Article Series"
+  clear: "Clear filter, back to pagination"
+  showing: "Showing articles from {{ .Year }}: {{ .Count }} posts"
+
+search:
+  title: "Search"
+  subtitle: "Search blog posts"
+  placeholder: "Type keywords to search..."
+  category_label: "Category:"
+  category_all: "All categories"
+  year_label: "Year:"
+  year_all: "All years"
+  result_count: "results"
+  no_results: "No results found"
+  no_results_hint: "Try different keywords or adjust filters"
+  tips_title: "Search tips:"
+  tip_keywords: "Use spaces to separate multiple keywords"
+  tip_match: "Searches match article titles, content, and tags"
+  tip_filter: "Use filters to quickly narrow results"
+  tip_language: "Supports Chinese and English search"
