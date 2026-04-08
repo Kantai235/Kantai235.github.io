@@ -28,6 +28,8 @@ search:
 kemono:
   loading: "加载中..."
   creator_label: "绘师："
+  photographer_label: "摄影师："
+  maker_label: "制作者："
 
 gallery:
   not_found: "找不到指定的图片集："

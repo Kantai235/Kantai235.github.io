@@ -29,6 +29,8 @@ search:
 kemono:
   loading: "載入中..."
   creator_label: "繪師："
+  photographer_label: "攝影師："
+  maker_label: "製作者："
 
 gallery:
   not_found: "找不到指定的圖片集："

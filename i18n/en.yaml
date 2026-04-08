@@ -28,6 +28,8 @@ search:
 kemono:
   loading: "Loading..."
   creator_label: "Artist: "
+  photographer_label: "Photographer: "
+  maker_label: "Maker: "
 
 gallery:
   not_found: "Image collection not found: "

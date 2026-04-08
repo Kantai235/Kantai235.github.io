@@ -28,6 +28,8 @@ search:
 kemono:
   loading: "読み込み中..."
   creator_label: "絵師："
+  photographer_label: "撮影："
+  maker_label: "製作者："
 
 gallery:
   not_found: "指定された画像集が見つかりません："

@@ -46,11 +46,18 @@ layout: "simple"
     </video>
     <img id="background-img-before" alt="以前的设定背景" class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
   </div>
+  <div id="background-fursuit" class="kemono-background">
+    <video id="background-video-fursuit" autoplay muted loop playsinline class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
+      <source type="video/mp4">
+    </video>
+    <img id="background-img-fursuit" alt="半套兽装背景" class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover" style="display: none;">
+  </div>
 
   <!-- Tab 切換按鈕 -->
   <div class="kemono-tabs">
     <button class="kemono-tab active" data-tab="after">现在的设定</button>
     <button class="kemono-tab" data-tab="before">以前的设定</button>
+    <button class="kemono-tab" data-tab="fursuit">半套兽装</button>
   </div>
 
   <!-- Tab 內容 -->
@@ -69,6 +76,12 @@ layout: "simple"
         {{< artwork-gallery collection="kemono.before.gallery" class="mt-0 mb-0 rounded-lg shadow-lg" >}}
       </div>
       {{< artwork-gallery collection="kemono.before.artworks" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
+    </div>
+  </div>
+
+  <div id="tab-fursuit" class="kemono-tab-content">
+    <div class="p-6 border-2 border-neutral-200 dark:border-neutral-700 rounded-lg background-white/90 dark:background-gray-800/90 backdrop-blur">
+      {{< artwork-gallery collection="kemono.fursuit.artworks" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
     </div>
   </div>
 </div>

@@ -23,23 +23,16 @@
 {{/* 取得對應的圖片資料 */}}
 {{ $images := "" }}
 {{ if eq $category "kemono" }}
-  {{ if eq $subcategory "after" }}
+  {{ $galleryData := index $kemonoData.gallery $subcategory }}
+  {{ if $galleryData }}
     {{ if eq $type "gallery" }}
-      {{/* 單一圖片：從 gallery.after.avatar 取得資料 */}}
-      {{ $avatar := $kemonoData.gallery.after.avatar }}
-      {{ $images = slice $avatar }}
+      {{/* 單一圖片：從 gallery.{subcategory}.avatar 取得資料 */}}
+      {{ with $galleryData.avatar }}
+        {{ $images = slice . }}
+      {{ end }}
     {{ else if eq $type "artworks" }}
-      {{/* 多張圖片：從 gallery.after.artworks 取得資料 */}}
-      {{ $images = $kemonoData.gallery.after.artworks }}
-    {{ end }}
-  {{ else if eq $subcategory "before" }}
-    {{ if eq $type "gallery" }}
-      {{/* 單一圖片：從 gallery.before.avatar 取得資料 */}}
-      {{ $avatar := $kemonoData.gallery.before.avatar }}
-      {{ $images = slice $avatar }}
-    {{ else if eq $type "artworks" }}
-      {{/* 多張圖片：從 gallery.before.artworks 取得資料 */}}
-      {{ $images = $kemonoData.gallery.before.artworks }}
+      {{/* 多張圖片：從 gallery.{subcategory}.artworks 取得資料 */}}
+      {{ $images = $galleryData.artworks }}
     {{ end }}
   {{ end }}
 {{ end }}

@@ -11,6 +11,9 @@
     },
     "background-img-before": {
       "src": "img/kemono/before/background.jpg"
+    },
+    "background-img-fursuit": {
+      "src": "img/kemono/fursuit/20260401_001.jpg"
     }
   },
   "gallery": {
@@ -370,6 +373,21 @@
           "creator": {
             "name": "DOG COM",
             "link": "https://www.facebook.com/itdogcom"
+          }
+        }
+      ]
+    },
+    "fursuit": {
+      "title": "半套獸裝",
+      "artworks": [
+        {
+          "id": "artwork-fursuit-1",
+          "class": "grid-w50 md:grid-w33 xl:grid-w25",
+          "alt": "半套獸裝照片",
+          "src": "img/kemono/fursuit/20260401_001.jpg",
+          "creator": {
+            "photographer": "乾太",
+            "maker": "索狛、栗糖"
           }
         }
       ]

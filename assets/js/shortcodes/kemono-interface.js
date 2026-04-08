@@ -12,14 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // 獲取所有相關元素
     var tabs = document.querySelectorAll('.kemono-tab');
     var tabContents = document.querySelectorAll('.kemono-tab-content');
-    var backgroundAfter = document.getElementById('background-after');
-    var backgroundBefore = document.getElementById('background-before');
+    var backgrounds = document.querySelectorAll('.kemono-background');
     var avatarAfter = document.getElementById('avatar-after');
     var avatarBefore = document.getElementById('avatar-before');
+    var avatarFursuit = document.getElementById('avatar-fursuit');
 
     // 立即顯示頁面結構和佔位符
-    if (backgroundAfter) {
-        backgroundAfter.classList.add('active');
+    var firstBackground = document.getElementById('background-after');
+    if (firstBackground) {
+        firstBackground.classList.add('active');
     }
 
     // 立即設定佔位符圖片
@@ -90,12 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.pageImages) {
         try {
             // 手動設定備用背景資源
-            if (!window.pageImages['background-video-after'] && !window.pageImages['background-img-after']) {
-                window.pageImages['background-img-after'] = '/img/kemono/after/background.jpg';
-            }
-            if (!window.pageImages['background-video-before'] && !window.pageImages['background-img-before']) {
-                window.pageImages['background-img-before'] = '/img/kemono/before/background.jpg';
-            }
+            ['after', 'before', 'fursuit'].forEach(function(period) {
+                if (!window.pageImages['background-video-' + period] && !window.pageImages['background-img-' + period]) {
+                    window.pageImages['background-img-' + period] = '/img/kemono/' + period + '/background.jpg';
+                }
+            });
 
             // 設定背景媒體（優先使用影片）
             function setBackgroundMedia(period) {
@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 設定初始背景
             setBackgroundMedia('after');
             setBackgroundMedia('before');
+            setBackgroundMedia('fursuit');
 
             // 使用漸進式載入
             var allImageKeys = Object.keys(window.pageImages).filter(function(k) {
@@ -245,12 +246,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 切換背景
     function switchBackground(targetTab) {
-        if (targetTab === 'after') {
-            if (backgroundBefore) backgroundBefore.classList.remove('active');
-            if (backgroundAfter) backgroundAfter.classList.add('active');
-        } else if (targetTab === 'before') {
-            if (backgroundAfter) backgroundAfter.classList.remove('active');
-            if (backgroundBefore) backgroundBefore.classList.add('active');
+        backgrounds.forEach(function(bg) {
+            bg.classList.remove('active');
+        });
+        var targetBg = document.getElementById('background-' + targetTab);
+        if (targetBg) {
+            targetBg.classList.add('active');
         }
     }
 
@@ -349,24 +350,43 @@ document.addEventListener('DOMContentLoaded', function() {
     var currentImageId = null;
     var lightboxWasOpen = false;
 
+    function appendCreatorEntry(container, label, name, link) {
+        var labelNode = document.createTextNode(label);
+        container.appendChild(labelNode);
+
+        if (link) {
+            var a = document.createElement('a');
+            a.href = link;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = name;
+            container.appendChild(a);
+        } else {
+            container.appendChild(document.createTextNode(name));
+        }
+    }
+
     function showCreatorToast(creatorData, isLightbox) {
         if (typeof isLightbox === 'undefined') isLightbox = true;
         if (!creatorData) return;
 
         // 使用 DOM API 建構內容，避免 innerHTML 的 XSS 風險
         toastText.textContent = '';
-        var label = document.createTextNode(i18n.creatorLabel);
-        toastText.appendChild(label);
 
-        if (creatorData.link) {
-            var link = document.createElement('a');
-            link.href = creatorData.link;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            link.textContent = creatorData.name;
-            toastText.appendChild(link);
+        if (creatorData.photographer || creatorData.maker) {
+            // 獸裝照片格式：顯示攝影師和製作者
+            if (creatorData.photographer) {
+                appendCreatorEntry(toastText, i18n.photographerLabel, creatorData.photographer, creatorData.photographerLink);
+            }
+            if (creatorData.photographer && creatorData.maker) {
+                toastText.appendChild(document.createElement('br'));
+            }
+            if (creatorData.maker) {
+                appendCreatorEntry(toastText, i18n.makerLabel, creatorData.maker, creatorData.makerLink);
+            }
         } else {
-            toastText.appendChild(document.createTextNode(creatorData.name));
+            // 繪師格式：顯示繪師名稱
+            appendCreatorEntry(toastText, i18n.creatorLabel, creatorData.name, creatorData.link);
         }
 
         toast.classList.add('show');
@@ -420,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 為所有圖片加入點擊事件
     function setupImageListeners() {
-        var avatarImages = [avatarAfter, avatarBefore];
+        var avatarImages = [avatarAfter, avatarBefore, avatarFursuit];
         avatarImages.forEach(function(img) {
             if (img) {
                 var hasLightbox = img.classList.contains('glightbox');
