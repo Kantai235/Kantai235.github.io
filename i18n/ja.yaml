@@ -24,3 +24,18 @@ search:
   tip_match: "記事のタイトル、内容、タグに一致します"
   tip_filter: "フィルターを使って素早く絞り込みます"
   tip_language: "中国語と英語の検索に対応"
+
+kemono:
+  loading: "読み込み中..."
+  creator_label: "絵師："
+
+gallery:
+  not_found: "指定された画像集が見つかりません："
+
+sticker:
+  view: "ステッカーを見る"
+  sticker_suffix: "スタンプ"
+  close: "閉じる"
+
+qq:
+  aria_label: "QQ 連絡先"

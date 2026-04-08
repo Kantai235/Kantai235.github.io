@@ -1,0 +1,834 @@
+/* ============================================================
+   sticker-gallery.css — 貼圖展示元件專用樣式
+   ============================================================
+   從 sticker-gallery shortcode 提取的模組化 CSS，
+   包含系列卡片、Modal 彈窗、貼圖網格與響應式佈局。
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Gallery 容器
+   ------------------------------------------------------------ */
+.sticker-gallery-container {
+  margin: 2rem 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .sticker-gallery-container {
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sticker-gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sticker-gallery-container {
+    gap: 2.5rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   2. 系列卡片
+   ------------------------------------------------------------ */
+.sticker-series {
+  border: 2px solid var(--neutral-200);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--neutral-50);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
+  width: 100%;
+  max-width: none;
+}
+
+.sticker-series::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.sticker-series:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary-300);
+}
+
+.sticker-series:hover::before {
+  opacity: 0.05;
+}
+
+.dark .sticker-series {
+  border-color: var(--neutral-700);
+  background: var(--neutral-800);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark .sticker-series:hover {
+  border-color: var(--primary-600);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ------------------------------------------------------------
+   3. 系列 Header
+   ------------------------------------------------------------ */
+.series-header {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  position: relative;
+  background: transparent;
+  min-height: 140px;
+}
+
+@media (min-width: 768px) {
+  .series-header {
+    min-height: 150px;
+    padding: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .series-header {
+    min-height: 130px;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .series-header {
+    padding: 1.75rem;
+    min-height: 150px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .series-header {
+    padding: 2rem;
+    min-height: 160px;
+  }
+}
+
+/* 懸停提示標籤：透過 data-view-label 屬性取得 i18n 文字 */
+.series-header::after {
+  content: attr(data-view-label);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: var(--primary-100);
+  color: var(--primary-700);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.series-header:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dark .series-header::after {
+  background: var(--primary-900);
+  color: var(--primary-300);
+}
+
+@media (min-width: 1024px) {
+  .series-header::after {
+    top: 0.875rem;
+    right: 1.25rem;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.6875rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .series-header::after {
+    top: 1rem;
+    right: 1.5rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   4. 系列預覽縮圖
+   ------------------------------------------------------------ */
+.series-preview {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--neutral-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .series-preview {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .series-preview {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .series-preview {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .series-preview {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.series-header:hover .series-preview {
+  transform: scale(1.05);
+}
+
+.dark .series-preview {
+  background: var(--neutral-700);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.series-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.series-preview::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 60%, rgba(255, 255, 255, 0.2));
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.series-header:hover .series-preview::after {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------
+   5. 系列資訊
+   ------------------------------------------------------------ */
+.series-info {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.series-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+  line-height: 1.3;
+}
+
+@media (min-width: 1024px) {
+  .series-title {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .series-title {
+    font-size: 1.25rem;
+  }
+}
+
+.dark .series-title {
+  color: var(--neutral-100);
+}
+
+.series-description {
+  margin: 0 0 0.5rem 0;
+  color: var(--neutral-600);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+@media (min-width: 1024px) {
+  .series-description {
+    font-size: 0.875rem;
+    -webkit-line-clamp: 1;
+  }
+}
+
+@media (min-width: 1280px) {
+  .series-description {
+    font-size: 0.95rem;
+    -webkit-line-clamp: 2;
+  }
+}
+
+.dark .series-description {
+  color: var(--neutral-400);
+}
+
+.series-creator {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--neutral-500);
+}
+
+.dark .series-creator {
+  color: var(--neutral-400);
+}
+
+.series-creator svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.creator-link {
+  color: var(--primary-600);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.creator-link:hover {
+  color: var(--primary-700);
+  text-decoration: underline;
+}
+
+.dark .creator-link {
+  color: var(--primary-400);
+}
+
+.dark .creator-link:hover {
+  color: var(--primary-300);
+}
+
+.creator-name {
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------
+   6. 平台徽章
+   ------------------------------------------------------------ */
+.platform-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1024px) {
+  .platform-badges {
+    gap: 0.375rem;
+  }
+
+  .platform-badge {
+    padding: 0.375rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .platform-badges {
+    gap: 0.5rem;
+  }
+
+  .platform-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.platform-badge:hover::before {
+  left: 100%;
+}
+
+/* Telegram 官方色票 */
+.platform-badge.available[href*="t.me"],
+.platform-badge.available[href*="telegram"] {
+  background: linear-gradient(135deg, #0088CC, #229ED9);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+}
+
+.platform-badge.available[href*="t.me"]:hover,
+.platform-badge.available[href*="telegram"]:hover {
+  background: linear-gradient(135deg, #006699, #0088CC);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 136, 204, 0.4);
+}
+
+/* LINE 官方色票 */
+.platform-badge.available[href*="line.me"] {
+  background: linear-gradient(135deg, #00C300, #00B900);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 195, 0, 0.3);
+}
+
+.platform-badge.available[href*="line.me"]:hover {
+  background: linear-gradient(135deg, #00A000, #00C300);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 195, 0, 0.4);
+}
+
+/* 其他平台通用樣式 */
+.platform-badge.available {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: white;
+  box-shadow: 0 4px 12px rgba(var(--primary-500), 0.3);
+}
+
+.platform-badge.available:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(var(--primary-500), 0.4);
+}
+
+.platform-badge.available:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.dark .platform-badge.available {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  box-shadow: 0 4px 12px rgba(var(--primary-600), 0.3);
+}
+
+.dark .platform-badge.available[href*="t.me"],
+.dark .platform-badge.available[href*="telegram"] {
+  background: linear-gradient(135deg, #0088CC, #229ED9);
+}
+
+.dark .platform-badge.available[href*="line.me"] {
+  background: linear-gradient(135deg, #00C300, #00B900);
+}
+
+.platform-badge.unavailable {
+  background: var(--neutral-200);
+  color: var(--neutral-600);
+  cursor: not-allowed;
+  position: relative;
+}
+
+.platform-badge.unavailable::after {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background: var(--amber-500);
+  color: white;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.dark .platform-badge.unavailable {
+  background: var(--neutral-700);
+  color: var(--neutral-400);
+}
+
+.dark .platform-badge.unavailable::after {
+  background: var(--amber-600);
+}
+
+.platform-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ------------------------------------------------------------
+   7. Modal 彈窗
+   ------------------------------------------------------------ */
+.sticker-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: none;
+  overflow: hidden;
+}
+
+.sticker-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+  backdrop-filter: blur(8px);
+  animation: overlayFadeIn 0.4s ease;
+}
+
+.modal-content {
+  position: relative;
+  background: var(--neutral-50);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: min(900px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.dark .modal-content {
+  background: var(--neutral-800);
+  border: 1px solid var(--neutral-600);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.modal-header {
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  position: relative;
+  flex-shrink: 0;
+  border: none;
+  border-bottom: none;
+}
+
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-400), var(--primary-500), var(--primary-400));
+}
+
+.dark .modal-header {
+  background: linear-gradient(135deg, var(--primary-700), var(--primary-800));
+  border: none;
+  border-bottom: none;
+}
+
+.modal-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark .modal-header h3 {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.modal-creator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.dark .modal-creator {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.modal-creator svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.modal-creator-link {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+}
+
+.modal-creator-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+.dark .modal-creator-link {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.dark .modal-creator-link:hover {
+  color: white;
+}
+
+.modal-platforms {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.modal-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  transform: scale(1.05);
+}
+
+.modal-close:active {
+  transform: scale(0.95);
+}
+
+.dark .modal-close {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark .modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.modal-body {
+  padding: 1.5rem 2rem 2rem 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ------------------------------------------------------------
+   8. 貼圖網格
+   ------------------------------------------------------------ */
+.stickers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .stickers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stickers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.75rem;
+  }
+}
+
+.sticker-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--neutral-100);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--neutral-200);
+  cursor: pointer;
+}
+
+.dark .sticker-item {
+  background: var(--neutral-700);
+  border-color: var(--neutral-600);
+}
+
+.sticker-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-300);
+}
+
+.dark .sticker-item:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-600);
+}
+
+.sticker-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 60%, rgba(255, 255, 255, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.sticker-item:hover::before {
+  opacity: 1;
+}
+
+.sticker-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.sticker-item:hover .sticker-thumbnail {
+  transform: scale(1.05);
+}
+
+/* ------------------------------------------------------------
+   9. 動畫
+   ------------------------------------------------------------ */
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ------------------------------------------------------------
+   10. 響應式設計
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .sticker-modal.active {
+    padding: 0.5rem;
+  }
+
+  .modal-content {
+    max-width: calc(100vw - 1rem);
+    max-height: calc(100vh - 1rem);
+    border-radius: 1rem;
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1.375rem;
+  }
+
+  .modal-close {
+    padding: 0.5rem;
+  }
+
+  .modal-body {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .stickers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+}

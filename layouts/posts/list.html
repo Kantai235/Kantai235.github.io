@@ -97,7 +97,7 @@
       {{ range ($allPages.GroupByDate "2006") }}
         <h2 class="year-header-all mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300" data-year="{{ .Key }}">
           {{ .Key }}
-          <span class="text-sm text-neutral-500 dark:text-neutral-400 ml-2">({{ len .Pages }} 篇)</span>
+          <span class="text-sm text-neutral-500 dark:text-neutral-400 ml-2">({{ len .Pages }} {{ i18n "filter.count_suffix" }})</span>
         </h2>
         {{ range .Pages }}
           {{ $year := .Date.Format "2006" }}

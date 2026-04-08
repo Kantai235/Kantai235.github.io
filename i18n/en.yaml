@@ -24,3 +24,18 @@ search:
   tip_match: "Searches match article titles, content, and tags"
   tip_filter: "Use filters to quickly narrow results"
   tip_language: "Supports Chinese and English search"
+
+kemono:
+  loading: "Loading..."
+  creator_label: "Artist: "
+
+gallery:
+  not_found: "Image collection not found: "
+
+sticker:
+  view: "View Stickers"
+  sticker_suffix: "Stickers"
+  close: "Close"
+
+qq:
+  aria_label: "QQ Contact"

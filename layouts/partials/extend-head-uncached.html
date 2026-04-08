@@ -1,0 +1,32 @@
+<!--
+  覆寫來源：themes/blowfish/layouts/partials/extend-head-uncached.html
+  修改說明：依據頁面使用的 shortcode 條件載入對應的 CSS 與 JS 資源。
+  此 partial 接收完整的 Page context（非 .Site），因此可使用 .HasShortcode。
+-->
+
+{{/* Kemono 頁面專用 CSS/JS */}}
+{{ if .HasShortcode "kemono-setup" }}
+  {{ $kemonoCss := resources.Get "css/kemono.css" }}
+  {{ if $kemonoCss }}
+  <link rel="stylesheet" href="{{ $kemonoCss.RelPermalink }}">
+  {{ end }}
+{{ end }}
+
+{{ if .HasShortcode "kemono-interface" }}
+  {{ $kemonoInterfaceJs := resources.Get "js/shortcodes/kemono-interface.js" }}
+  {{ if $kemonoInterfaceJs }}
+  <script defer src="{{ $kemonoInterfaceJs.RelPermalink }}"></script>
+  {{ end }}
+{{ end }}
+
+{{/* 貼圖展示專用 CSS/JS */}}
+{{ if .HasShortcode "sticker-gallery" }}
+  {{ $stickerCss := resources.Get "css/sticker-gallery.css" }}
+  {{ if $stickerCss }}
+  <link rel="stylesheet" href="{{ $stickerCss.RelPermalink }}">
+  {{ end }}
+  {{ $stickerJs := resources.Get "js/shortcodes/sticker-gallery.js" }}
+  {{ if $stickerJs }}
+  <script defer src="{{ $stickerJs.RelPermalink }}"></script>
+  {{ end }}
+{{ end }}

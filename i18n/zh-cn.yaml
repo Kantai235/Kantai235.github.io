@@ -24,3 +24,18 @@ search:
   tip_match: "搜索会匹配文章标题、内容和标签"
   tip_filter: "使用筛选器快速缩小搜索范围"
   tip_language: "支持中英文搜索"
+
+kemono:
+  loading: "加载中..."
+  creator_label: "绘师："
+
+gallery:
+  not_found: "找不到指定的图片集："
+
+sticker:
+  view: "查看贴图"
+  sticker_suffix: "贴图"
+  close: "关闭"
+
+qq:
+  aria_label: "QQ 联系方式"

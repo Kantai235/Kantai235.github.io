@@ -99,5 +99,5 @@
   {{ $content | safeHTML }}
 </div>
 {{ else }}
-  <p>找不到指定的圖片集：{{ $collection }}</p>
+  <p>{{ i18n "gallery.not_found" }}{{ $collection }}</p>
 {{ end }}
