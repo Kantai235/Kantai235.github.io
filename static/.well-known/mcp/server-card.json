@@ -1,0 +1,37 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "blog-init-engineer-webmcp",
+    "title": "blog.init.engineer WebMCP 工具集",
+    "version": "1.0.0"
+  },
+  "description": "以瀏覽器端 WebMCP 暴露的唯讀搜尋與站點導覽工具。這不是獨立遠端 MCP 伺服器，而是瀏覽器內可呼叫的工具集合。",
+  "documentationUrl": "https://blog.init.engineer/docs/agent/",
+  "transport": {
+    "type": "webmcp",
+    "endpoint": "https://blog.init.engineer/"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "prompts": {},
+    "resources": {},
+    "experimental": {
+      "browserOnly": {
+        "enabled": true,
+        "description": "工具透過 WebMCP 在瀏覽器頁面內提供，不支援獨立遠端連線。"
+      }
+    }
+  },
+  "authentication": {
+    "required": false,
+    "schemes": []
+  },
+  "instructions": "請先開啟 blog.init.engineer 頁面，再由支援 WebMCP 的瀏覽器代理人呼叫工具。",
+  "tools": [
+    "dynamic"
+  ]
+}

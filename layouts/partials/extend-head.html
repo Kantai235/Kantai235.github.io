@@ -8,6 +8,7 @@
 <link rel="api-catalog" href="/.well-known/api-catalog">
 <link rel="service-doc" href="/docs/agent/">
 <link rel="describedby" type="application/json" href="/.well-known/agent-skills/index.json">
+<link rel="describedby" type="application/json" href="/.well-known/mcp/server-card.json">
 <link rel="alternate" type="text/markdown" title="首頁 Markdown" href="/.well-known/markdown/home.md">
 <link rel="alternate" type="application/json" title="網站中介資料" href="/api/site-metadata.json">
 
@@ -32,4 +33,9 @@
 {{ $languagePrompt := resources.Get "js/language-prompt.js" }}
 {{ if $languagePrompt }}
 <script defer src="{{ $languagePrompt.RelPermalink }}"></script>
+{{ end }}
+
+{{ $webMcp := resources.Get "js/webmcp.js" }}
+{{ if $webMcp }}
+<script defer src="{{ $webMcp.RelPermalink }}"></script>
 {{ end }}
