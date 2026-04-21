@@ -1,0 +1,7 @@
+{
+  "issuer": "https://blog.init.engineer",
+  "grant_types_supported": [],
+  "response_types_supported": [],
+  "scopes_supported": [],
+  "service_documentation": "https://blog.init.engineer/docs/agent/"
+}

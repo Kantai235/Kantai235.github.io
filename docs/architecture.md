@@ -147,13 +147,14 @@ assets/img/kemono/{period}/artworks/*/data.json → artwork-gallery shortcode �
 
 ## CI/CD 流程
 
-**相關檔案：** `.github/workflows/deploy.yml`
+**相關檔案：** `.github/workflows/deploy.yml`、`wrangler.toml`、`edge/agent-ready-proxy.mjs`
 
 ### 建置流程
 
 ```
 push to main → Checkout → Setup (Go, Node.js, Dart Sass, Hugo)
              → npm ci → ESLint 檢查 → Hugo 建置 (--gc --minify)
+             → 若有 Cloudflare secrets：wrangler deploy
              → 上傳 artifact → 部署至 GitHub Pages
 ```
 
@@ -161,3 +162,14 @@ push to main → Checkout → Setup (Go, Node.js, Dart Sass, Hugo)
 
 Hugo 建置快取使用內容檔案的 hash 作為 key，
 當 `content/`、`config/`、`assets/`、`layouts/` 目錄有變更時自動失效。
+
+### Agent HTTP 補強
+
+正式站需要依賴邊緣層處理的 agent readiness 能力，例如：
+
+- RFC 8288 `Link` 回應標頭
+- `Accept: text/markdown` 內容協商
+- `x-markdown-tokens`
+
+這些能力由 `edge/agent-ready-proxy.mjs` 在 Cloudflare Worker 端處理；
+GitHub Pages 繼續作為靜態站 artifact 發佈與備援來源。

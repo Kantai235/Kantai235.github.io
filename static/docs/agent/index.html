@@ -165,6 +165,11 @@
           <p><a href="/api/site-metadata.json">/api/site-metadata.json</a></p>
           <p>彙整語言、Feed、探索入口與目前支援狀態。</p>
         </article>
+        <article class="card">
+          <h3>OAuth Metadata</h3>
+          <p><a href="/.well-known/oauth-authorization-server">/.well-known/oauth-authorization-server</a></p>
+          <p>提供純 OAuth 探索中介資料，明確宣告目前尚未開放授權流程。</p>
+        </article>
       </div>
     </section>
 
@@ -184,11 +189,13 @@
     <section>
       <h2>驗證與保護資源</h2>
       <p>
-        本站目前沒有需要登入的公開 API，因此未發布
-        <code>/.well-known/openid-configuration</code>、
-        <code>/.well-known/oauth-authorization-server</code> 或
-        <code>/.well-known/oauth-protected-resource</code>。
-        若未來新增受保護 API，會再補上對應的 OAuth / OIDC 探索文件。
+        本站目前沒有需要登入的公開 API，因此沒有發布 OpenID Connect 的
+        <code>/.well-known/openid-configuration</code>。
+        不過為了讓代理人能機器可讀地確認現況，本站已發布
+        <code>/.well-known/oauth-authorization-server</code> 與
+        <code>/.well-known/oauth-protected-resource</code>，
+        並明確宣告目前尚未提供可用的 OAuth grant flow。
+        若未來新增受保護 API，會再把這兩份文件替換成實際的授權端點與 scopes。
       </p>
     </section>
 
@@ -205,9 +212,10 @@
     <section>
       <h2>GitHub Pages 限制</h2>
       <p>
-        由於本站直接部署在 GitHub Pages，HTTP <code>Link</code> 回應標頭與
-        <code>Accept: text/markdown</code> 內容協商無法僅靠靜態檔案完整啟用。
-        專案內已提供對應的邊緣層部署範本，若將自訂網域掛到支援邊緣代理的平臺，即可補齊這兩項能力。
+        純 GitHub Pages 直出無法僅靠靜態檔案完整啟用 HTTP <code>Link</code> 回應標頭與
+        <code>Accept: text/markdown</code> 內容協商。
+        因此專案內另外提供可部署的 Cloudflare Worker 設定，當正式網域綁到 Worker 後，
+        這兩項能力就會由邊緣層接手。
       </p>
     </section>
   </main>

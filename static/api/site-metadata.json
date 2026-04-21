@@ -20,16 +20,20 @@
     "api_catalog": "https://blog.init.engineer/.well-known/api-catalog",
     "agent_skills": "https://blog.init.engineer/.well-known/agent-skills/index.json",
     "markdown_home": "https://blog.init.engineer/.well-known/markdown/home.md",
-    "agent_docs": "https://blog.init.engineer/docs/agent/"
+    "agent_docs": "https://blog.init.engineer/docs/agent/",
+    "oauth_authorization_server": "https://blog.init.engineer/.well-known/oauth-authorization-server",
+    "oauth_protected_resource": "https://blog.init.engineer/.well-known/oauth-protected-resource"
   },
   "agent_access": {
     "webmcp": true,
     "oauth_protected_apis": false,
+    "oauth_discovery_mode": "metadata-present-no-grants",
     "mcp_server": false,
     "mcp_server_card": "https://blog.init.engineer/.well-known/mcp/server-card.json"
   },
   "notes": [
     "目前所有公開探索端點皆為唯讀，不需登入。",
-    "若要啟用 HTTP Link 標頭與 Accept: text/markdown 協商，需將本站掛到支援邊緣代理的平臺。"
+    "若 Cloudflare Worker 已綁定正式網域，首頁回應會帶有 Link discovery 標頭，且 Accept: text/markdown 會回傳 Markdown。",
+    "OAuth metadata 目前用來明確宣告本站尚未提供可用的授權流程；若未來新增受保護 API，應改成實際的端點與 scopes。"
   ]
 }

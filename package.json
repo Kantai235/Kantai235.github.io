@@ -5,6 +5,9 @@
   "type": "module",
   "description": "乾太 (Kantai) 的個人網站與部落格",
   "scripts": {
+    "build": "hugo --gc --minify --baseURL \"https://blog.init.engineer/\"",
+    "build:preview": "hugo --gc --minify",
+    "deploy:cloudflare:dry-run": "wrangler deploy --dry-run",
     "lint": "eslint assets/js/",
     "lint:fix": "eslint assets/js/ --fix",
     "prepare": "husky"
@@ -23,6 +26,7 @@
     "eslint": "^10.2.0",
     "globals": "^17.4.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.4.0"
+    "lint-staged": "^16.4.0",
+    "wrangler": "^4.84.1"
   }
 }

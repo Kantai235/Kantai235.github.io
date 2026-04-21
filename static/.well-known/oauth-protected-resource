@@ -1,0 +1,7 @@
+{
+  "resource": "https://blog.init.engineer/",
+  "authorization_servers": [
+    "https://blog.init.engineer"
+  ],
+  "resource_documentation": "https://blog.init.engineer/docs/agent/"
+}

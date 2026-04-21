@@ -1,6 +1,6 @@
 # Agent Readiness 補強紀錄
 
-這份文件整理 `https://isitagentready.com/blog.init.engineer` 回報項目的落地方式、目前狀態，以及在 `Hugo + GitHub Pages` 架構下的限制。
+這份文件整理 `https://isitagentready.com/blog.init.engineer` 回報項目的落地方式、目前狀態，以及在 `Hugo + GitHub Pages + Cloudflare Worker` 架構下的處理方式。
 
 ## 已完成
 
@@ -10,20 +10,22 @@
 - 已在 [layouts/partials/extend-head.html](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/layouts/partials/extend-head.html:1) 補上：
   - `rel="api-catalog"`
   - `rel="service-doc"`
-  - `rel="describedby"`（技能索引與 MCP 卡片）
+  - `rel="describedby"`（技能索引、MCP 卡片、OAuth metadata）
   - `rel="alternate"`（首頁 Markdown 備援）
-- 已提供 [static/_headers](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/static/_headers:1) 與 [edge/agent-ready-proxy.mjs](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/edge/agent-ready-proxy.mjs:1) 作為邊緣層標頭範本
+- 已在 [edge/agent-ready-proxy.mjs](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/edge/agent-ready-proxy.mjs:1) 實作實際的 Link 回應標頭注入
+- 已提供 [wrangler.toml](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/wrangler.toml:1) 與 [static/_headers](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/static/_headers:1) 對應不同部署平臺
 
 ### 2. Markdown for Agents 備援
 
 - 已新增首頁 Markdown 備援：`/.well-known/markdown/home.md`
-- 已提供邊緣層 Worker 範本，在首頁收到 `Accept: text/markdown` 時可改回傳 Markdown
-- GitHub Pages 直出模式無法自行做 `Accept` 協商，需額外掛邊緣代理才會真正生效
+- 已在 Worker 內實作 HTML → Markdown 轉換，當 HTML 頁面收到 `Accept: text/markdown` 時會回傳 `text/markdown`
+- 轉換後的回應會補上 `Vary: Accept` 與 `x-markdown-tokens`
 
 ### 3. Content Signals
 
 - 已於 [static/robots.txt](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/static/robots.txt:1) 新增：
   - `Content-Signal: ai-train=no, search=yes, ai-input=no`
+- Worker 也會在邊緣回應層補上相同的 `Content-Signal` 標頭
 
 ### 4. API Catalog
 
@@ -54,30 +56,26 @@
 - 已新增 `/.well-known/mcp/server-card.json`
 - 這份卡片明確標示本站目前提供的是「瀏覽器端 WebMCP 工具集合」，不是獨立遠端 MCP HTTP 伺服器
 
-## 暫不發布
-
 ### 8. OAuth / OIDC Discovery Metadata
 
-目前本站沒有受保護 API，也沒有登入流程，因此不適合捏造：
-
-- `/.well-known/openid-configuration`
-- `/.well-known/oauth-authorization-server`
-
-若未來新增需要登入的 API，應再依實際授權伺服器資訊發布。
+- 已新增 `/.well-known/oauth-authorization-server`
+- 目前採用「metadata present, no grants」模式，明確宣告：
+  - 尚未啟用可用的 OAuth grant flow
+  - 未提供 `authorization_endpoint`、`token_endpoint`、`jwks_uri`
+  - 若未來新增受保護 API，再替換成實際授權端點
 
 ### 9. OAuth Protected Resource Metadata
 
-目前沒有 OAuth 保護資源，因此不發布：
-
-- `/.well-known/oauth-protected-resource`
-
-若未來 API 改為需要 access token，再補上 `resource`、`authorization_servers`、`scopes_supported`。
+- 已新增 `/.well-known/oauth-protected-resource`
+- 目前主要用途是讓代理人知道本站的資源識別與對應的 OAuth metadata 位置
+- 若未來 API 改為需要 access token，再補上實際的 `scopes_supported` 與 Bearer Token 呈現方式
 
 ## 建議後續
 
-若要讓 `Link` 回應標頭與 `Accept: text/markdown` 真正在正式站生效，建議採用以下其中一種方式：
+若要讓這些 HTTP 層能力真的對正式站生效，還需要滿足以下部署條件：
 
-1. 保留 GitHub Pages 作為 origin，外層加 Cloudflare Worker / 其他反向代理。
-2. 遷移到支援 `_headers` 與邊緣規則的靜態託管平臺。
+1. 在 GitHub repository secrets 中設定 `CLOUDFLARE_API_TOKEN` 與 `CLOUDFLARE_ACCOUNT_ID`
+2. 確認 `blog.init.engineer` 所屬的 `init.engineer` zone 已由 Cloudflare 管理
+3. 讓 `.github/workflows/deploy.yml` 在 `main` branch push 後成功執行 `wrangler deploy`
 
-在維持目前 GitHub Pages 直出的前提下，專案內已盡量補齊所有可由靜態資源與前端腳本完成的項目。
+若上述條件尚未完成，GitHub Pages 版本仍會正常提供靜態站內容，但 Link 標頭與 Markdown 協商只會停留在 repo 設定層，不會出現在正式站回應裡。

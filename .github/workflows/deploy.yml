@@ -39,7 +39,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v5
       - name: Create directory for user-specific executable files
         run: |
@@ -83,8 +82,15 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
+            --baseURL "https://blog.init.engineer/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+      - name: Deploy to Cloudflare Workers
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4

@@ -13,7 +13,7 @@
 | CSS 預處理 | [Dart Sass](https://sass-lang.com/dart-sass/) v1.90.0 |
 | 自訂字型 | LINE Seed TW（WOFF2 + TTF fallback） |
 | 程式碼檢查 | [ESLint](https://eslint.org/) v10 + [Husky](https://typicode.github.io/husky/) + [lint-staged](https://github.com/lint-staged/lint-staged) |
-| 部署 | GitHub Actions → GitHub Pages |
+| 部署 | GitHub Actions → GitHub Pages（正式靜態站）+ Cloudflare Workers（Agent HTTP 補強） |
 | 自訂域名 | `blog.init.engineer` |
 
 ## Agent Readiness
@@ -24,21 +24,24 @@
 - `/.well-known/api-catalog`
 - `/.well-known/agent-skills/index.json`
 - `/.well-known/mcp/server-card.json`
+- `/.well-known/oauth-authorization-server`
+- `/.well-known/oauth-protected-resource`
 - `/api/site-metadata.json`
 - `/api/status.json`
 - `/openapi/site-discovery.yaml`
 - `/.well-known/markdown/home.md`
 - 瀏覽器端 `WebMCP` 工具註冊
 
-由於正式站目前仍是 **GitHub Pages 直出**，以下兩項需要額外的邊緣層代理才會真正以 HTTP 層生效：
+其中真正的 HTTP 層補強由 Cloudflare Worker 處理，包含：
 
 - `Link` 回應標頭
 - `Accept: text/markdown` 內容協商
 
-專案已提供以下範本與說明：
+專案內已提供以下設定與說明：
 
+- `wrangler.toml` — Cloudflare Worker 與靜態資產部署設定
 - `static/_headers` — 給支援靜態標頭規則的平臺使用
-- `edge/agent-ready-proxy.mjs` — Cloudflare Worker 風格的邊緣代理範本
+- `edge/agent-ready-proxy.mjs` — 實際處理 Link 標頭、Markdown 協商與 Content-Signal 的 Worker
 - `docs/agent-readiness.md` — 補強項目、限制與後續建議
 
 ## 本地開發指南（macOS）
@@ -75,6 +78,8 @@ hugo server -D
 ```bash
 npm run lint          # 執行 ESLint 檢查
 npm run lint:fix      # 自動修復可修正的問題
+npm run build         # 建置正式站（使用正式網域 baseURL）
+npm run deploy:cloudflare:dry-run  # 乾跑驗證 Worker / Wrangler 設定
 ```
 
 專案已整合 [Husky](https://typicode.github.io/husky/) + [lint-staged](https://github.com/lint-staged/lint-staged)，
@@ -169,7 +174,8 @@ Front Matter 格式規範請參閱 `docs/content-guide.md`。
 ├── CLAUDE.md                ← Claude Code 運作準則與專案脈絡
 ├── GEMINI.md                ← Gemini AI 工具設定
 ├── eslint.config.js         ← ESLint 設定（Flat Config 格式）
-└── package.json             ← npm 套件管理
+├── package.json             ← npm 套件管理
+└── wrangler.toml            ← Cloudflare Worker 設定
 ```
 
 ## AI 工具整合
