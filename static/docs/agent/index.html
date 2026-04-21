@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blog.init.engineer 代理人探索文件</title>
+  <meta name="description" content="說明 blog.init.engineer 提供給 AI 代理人、自動化工具與搜尋流程的探索入口。">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5efe7;
+      --text: #1c1917;
+      --muted: #57534e;
+      --panel: rgba(255, 255, 255, 0.92);
+      --line: rgba(28, 25, 23, 0.14);
+      --accent: #0f766e;
+      --accent-2: #b45309;
+      --code: #1e293b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --text: #e2e8f0;
+        --muted: #cbd5e1;
+        --panel: rgba(15, 23, 42, 0.9);
+        --line: rgba(226, 232, 240, 0.14);
+        --accent: #2dd4bf;
+        --accent-2: #fb923c;
+        --code: #fef3c7;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "LINE Seed TW", "Noto Sans TC", sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.12), transparent 36%),
+        linear-gradient(315deg, rgba(180, 83, 9, 0.12), transparent 30%),
+        var(--bg);
+    }
+
+    main {
+      width: min(960px, calc(100vw - 32px));
+      margin: 42px auto;
+      padding: 34px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 70px rgba(15, 23, 42, 0.16);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin: 0.2rem 0 1rem;
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      margin-top: 2.25rem;
+      font-size: 1.45rem;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--accent-2);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.26);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .card {
+        background: rgba(15, 23, 42, 0.38);
+      }
+    }
+
+    code {
+      padding: 0.1rem 0.35rem;
+      border-radius: 0.4rem;
+      background: rgba(15, 118, 110, 0.12);
+      color: var(--code);
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Agent Discovery</p>
+      <h1>blog.init.engineer 代理人探索文件</h1>
+      <p>
+        本頁整理本站目前已公開的機器可讀入口、技能索引、Markdown 備援與瀏覽器端工具能力。
+        本站本質上仍是內容型靜態網站，主要提供搜尋、導覽與內容探索，不提供受保護 API。
+      </p>
+    </header>
+
+    <section>
+      <h2>探索入口</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>API Catalog</h3>
+          <p><a href="/.well-known/api-catalog">/.well-known/api-catalog</a></p>
+          <p>列出公開探索 API、OpenAPI 規格、說明文件與狀態端點。</p>
+        </article>
+        <article class="card">
+          <h3>Agent Skills</h3>
+          <p><a href="/.well-known/agent-skills/index.json">/.well-known/agent-skills/index.json</a></p>
+          <p>提供站點導覽與文章探索技能，方便代理人快速理解本站結構。</p>
+        </article>
+        <article class="card">
+          <h3>Markdown 備援</h3>
+          <p><a href="/.well-known/markdown/home.md">/.well-known/markdown/home.md</a></p>
+          <p>提供首頁的靜態 Markdown 備援版本，便於尚未接上邊緣協商時使用。</p>
+        </article>
+        <article class="card">
+          <h3>網站中介資料</h3>
+          <p><a href="/api/site-metadata.json">/api/site-metadata.json</a></p>
+          <p>彙整語言、Feed、探索入口與目前支援狀態。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>內容使用偏好</h2>
+      <p>
+        本站在 <a href="/robots.txt">/robots.txt</a> 中透過 <code>Content-Signal</code>
+        宣告以下偏好：
+      </p>
+      <ul>
+        <li><code>search=yes</code>：允許一般搜尋索引與結果摘要。</li>
+        <li><code>ai-input=no</code>：不允許將內容直接用於即時 AI 回答輸入。</li>
+        <li><code>ai-train=no</code>：不允許將內容用於模型訓練或微調。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>驗證與保護資源</h2>
+      <p>
+        本站目前沒有需要登入的公開 API，因此未發布
+        <code>/.well-known/openid-configuration</code>、
+        <code>/.well-known/oauth-authorization-server</code> 或
+        <code>/.well-known/oauth-protected-resource</code>。
+        若未來新增受保護 API，會再補上對應的 OAuth / OIDC 探索文件。
+      </p>
+    </section>
+
+    <section>
+      <h2>MCP 與 WebMCP</h2>
+      <p>
+        本站目前沒有獨立的遠端 MCP 伺服器，因此沒有提供 MCP Server Card。
+        但已補上瀏覽器端的 WebMCP 工具註冊，代理人可以在支援 WebMCP 的瀏覽器環境中，
+        直接使用本站的搜尋與導覽能力。
+      </p>
+    </section>
+
+    <section>
+      <h2>GitHub Pages 限制</h2>
+      <p>
+        由於本站直接部署在 GitHub Pages，HTTP <code>Link</code> 回應標頭與
+        <code>Accept: text/markdown</code> 內容協商無法僅靠靜態檔案完整啟用。
+        專案內已提供對應的邊緣層部署範本，若將自訂網域掛到支援邊緣代理的平臺，即可補齊這兩項能力。
+      </p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "site": {
+    "name": "我不會寫程式",
+    "url": "https://blog.init.engineer/",
+    "description": "乾太（Kantai）的個人網站與技術部落格，內容包含軟體工程、工具開發與獸設相關展示。",
+    "default_language": "zh-tw",
+    "languages": [
+      "zh-tw",
+      "zh-cn",
+      "en",
+      "ja"
+    ]
+  },
+  "feeds": {
+    "rss": "https://blog.init.engineer/index.xml",
+    "json": "https://blog.init.engineer/index.json",
+    "sitemap": "https://blog.init.engineer/sitemap.xml"
+  },
+  "discovery": {
+    "api_catalog": "https://blog.init.engineer/.well-known/api-catalog",
+    "agent_skills": "https://blog.init.engineer/.well-known/agent-skills/index.json",
+    "markdown_home": "https://blog.init.engineer/.well-known/markdown/home.md",
+    "agent_docs": "https://blog.init.engineer/docs/agent/"
+  },
+  "agent_access": {
+    "webmcp": true,
+    "oauth_protected_apis": false,
+    "mcp_server": false
+  },
+  "notes": [
+    "目前所有公開探索端點皆為唯讀，不需登入。",
+    "若要啟用 HTTP Link 標頭與 Accept: text/markdown 協商，需將本站掛到支援邊緣代理的平臺。"
+  ]
+}

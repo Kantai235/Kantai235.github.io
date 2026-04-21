@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blog.init.engineer 公開探索 API</title>
+  <meta name="description" content="blog.init.engineer 對代理人與自動化工具公開的探索端點說明。">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f3ed;
+      --panel: rgba(255, 255, 255, 0.92);
+      --text: #1f2937;
+      --muted: #52606d;
+      --line: rgba(31, 41, 55, 0.16);
+      --accent: #9a3412;
+      --accent-soft: rgba(154, 52, 18, 0.08);
+      --code: #111827;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141414;
+        --panel: rgba(24, 24, 27, 0.92);
+        --text: #f5f5f4;
+        --muted: #c4c7cf;
+        --line: rgba(245, 245, 244, 0.14);
+        --accent: #fb923c;
+        --accent-soft: rgba(251, 146, 60, 0.12);
+        --code: #fef3c7;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "LINE Seed TW", "Noto Sans TC", sans-serif;
+      line-height: 1.75;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(245, 158, 11, 0.14), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.14), transparent 24%),
+        var(--bg);
+    }
+
+    main {
+      width: min(920px, calc(100vw - 32px));
+      margin: 48px auto;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 60px rgba(15, 23, 42, 0.12);
+    }
+
+    h1,
+    h2 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      margin-top: 36px;
+      font-size: 1.35rem;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    code {
+      padding: 0.1rem 0.35rem;
+      border-radius: 0.4rem;
+      background: var(--accent-soft);
+      color: var(--code);
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 0.95em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    th,
+    td {
+      padding: 12px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p>公開探索 API</p>
+      <h1>blog.init.engineer 機器可讀端點</h1>
+      <p>
+        這裡整理本站提供給代理人、搜尋工具與自動化流程使用的公開唯讀端點。
+        所有端點皆不需要登入，且目前未提供 OAuth / OIDC 保護資源。
+      </p>
+    </header>
+
+    <section>
+      <h2>主要端點</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>路徑</th>
+            <th>用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>/.well-known/api-catalog</code></td>
+            <td>API Catalog，提供公開探索入口。</td>
+          </tr>
+          <tr>
+            <td><code>/api/site-metadata.json</code></td>
+            <td>網站摘要、語言、Feed 與代理人探索連結。</td>
+          </tr>
+          <tr>
+            <td><code>/api/status.json</code></td>
+            <td>靜態站點狀態與部署說明。</td>
+          </tr>
+          <tr>
+            <td><code>/openapi/site-discovery.yaml</code></td>
+            <td>OpenAPI 3.1 規格，描述公開探索端點。</td>
+          </tr>
+          <tr>
+            <td><code>/.well-known/agent-skills/index.json</code></td>
+            <td>Agent Skills Discovery 索引。</td>
+          </tr>
+          <tr>
+            <td><code>/.well-known/markdown/home.md</code></td>
+            <td>首頁的 Markdown 備援版本。</td>
+          </tr>
+          <tr>
+            <td><code>/index.json</code></td>
+            <td>Hugo 產生的站內搜尋索引。</td>
+          </tr>
+          <tr>
+            <td><code>/sitemap.xml</code></td>
+            <td>網站地圖。</td>
+          </tr>
+          <tr>
+            <td><code>/index.xml</code></td>
+            <td>RSS Feed。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>補充說明</h2>
+      <p>
+        本站目前以 GitHub Pages 發佈，因此像是 HTTP <code>Link</code> 回應標頭與
+        <code>Accept: text/markdown</code> 的內容協商，需要額外的邊緣層代理才能真正生效。
+        專案內已提供對應的靜態探索檔與部署範本，方便後續掛到支援自訂標頭的平臺。
+      </p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "service": "blog.init.engineer-public-discovery",
+  "kind": "static-site",
+  "hosting": "GitHub Pages",
+  "updated_at": "2026-04-22",
+  "authentication": "none",
+  "notes": [
+    "本站為公開唯讀靜態網站。",
+    "HTTP 回應標頭與內容協商需透過額外邊緣層代理啟用。"
+  ]
+}

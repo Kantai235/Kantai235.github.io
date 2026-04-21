@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://blog.init.engineer/api/",
+      "service-desc": [
+        {
+          "href": "https://blog.init.engineer/openapi/site-discovery.yaml",
+          "type": "application/yaml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://blog.init.engineer/docs/agent/",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://blog.init.engineer/api/status.json",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

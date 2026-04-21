@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "site-navigation",
+      "type": "skill-md",
+      "description": "探索 blog.init.engineer 的主要區段、語言版本與機器可讀入口。",
+      "url": "/.well-known/agent-skills/site-navigation/SKILL.md",
+      "digest": "sha256:bbf3ed126c3aa7a4a01ccf003d307f1cbadad315fdad83bf291aed00675485f6"
+    },
+    {
+      "name": "post-discovery",
+      "type": "skill-md",
+      "description": "透過搜尋索引、文章列表與 sitemap 快速找到 blog.init.engineer 的技術文章。",
+      "url": "/.well-known/agent-skills/post-discovery/SKILL.md",
+      "digest": "sha256:3431b24d8304f0e3b7d7f7def679aa74957928c7d38e7e81e0ed2298e8422105"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+openapi: 3.1.0
+info:
+  title: blog.init.engineer 公開探索 API
+  version: 1.0.0
+  summary: 提供本站的公開唯讀探索端點，方便代理人與自動化工具發現內容。
+  description: |
+    這份規格描述 blog.init.engineer 對外公開的機器可讀端點。
+    目前所有端點皆不需要驗證，且主要用途為內容探索、站點導覽與代理人能力宣告。
+servers:
+  - url: https://blog.init.engineer
+    description: 正式站點
+tags:
+  - name: discovery
+    description: 代理人與自動化探索相關端點
+paths:
+  /api/status.json:
+    get:
+      tags: [discovery]
+      operationId: getSiteStatus
+      summary: 取得站點狀態
+      description: 回傳本站的靜態狀態與部署說明。
+      responses:
+        "200":
+          description: 站點狀態
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/site-metadata.json:
+    get:
+      tags: [discovery]
+      operationId: getSiteMetadata
+      summary: 取得網站中介資料
+      description: 回傳網站名稱、語言、Feed 與 discovery 入口。
+      responses:
+        "200":
+          description: 網站中介資料
+          content:
+            application/json:
+              schema:
+                type: object
+  /.well-known/api-catalog:
+    get:
+      tags: [discovery]
+      operationId: getApiCatalog
+      summary: 取得 API Catalog
+      description: 依 RFC 9727 提供的 API Catalog。
+      responses:
+        "200":
+          description: API Catalog
+          content:
+            application/linkset+json:
+              schema:
+                type: object
+  /.well-known/agent-skills/index.json:
+    get:
+      tags: [discovery]
+      operationId: getAgentSkillsIndex
+      summary: 取得 Agent Skills Discovery 索引
+      responses:
+        "200":
+          description: 技能索引
+          content:
+            application/json:
+              schema:
+                type: object
+  /.well-known/markdown/home.md:
+    get:
+      tags: [discovery]
+      operationId: getHomeMarkdown
+      summary: 取得首頁 Markdown 備援內容
+      responses:
+        "200":
+          description: 首頁 Markdown 備援內容
+          content:
+            text/markdown:
+              schema:
+                type: string

@@ -4,6 +4,12 @@
 User-agent: *
 Allow: /
 
+# Content Signals Policy
+# search=yes   => 允許一般搜尋索引與摘要連結
+# ai-input=no  => 不允許將內容直接用於即時 AI 回答輸入
+# ai-train=no  => 不允許將內容用於模型訓練或微調
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
 # Sitemap location
 Sitemap: https://blog.init.engineer/sitemap.xml
 
