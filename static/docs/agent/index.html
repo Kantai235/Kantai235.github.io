@@ -156,6 +156,11 @@
           <p>提供首頁的靜態 Markdown 備援版本，便於尚未接上邊緣協商時使用。</p>
         </article>
         <article class="card">
+          <h3>MCP Server Card</h3>
+          <p><a href="/.well-known/mcp/server-card.json">/.well-known/mcp/server-card.json</a></p>
+          <p>描述本站以 WebMCP 提供的瀏覽器端工具能力。</p>
+        </article>
+        <article class="card">
           <h3>網站中介資料</h3>
           <p><a href="/api/site-metadata.json">/api/site-metadata.json</a></p>
           <p>彙整語言、Feed、探索入口與目前支援狀態。</p>
@@ -190,9 +195,10 @@
     <section>
       <h2>MCP 與 WebMCP</h2>
       <p>
-        本站目前沒有獨立的遠端 MCP 伺服器，因此沒有提供 MCP Server Card。
-        但已補上瀏覽器端的 WebMCP 工具註冊，代理人可以在支援 WebMCP 的瀏覽器環境中，
-        直接使用本站的搜尋與導覽能力。
+        本站目前沒有獨立的遠端 MCP 伺服器，但已提供一份
+        <a href="/.well-known/mcp/server-card.json">MCP Server Card</a>，
+        用來描述目前由瀏覽器端 WebMCP 暴露的工具集合。
+        代理人可以在支援 WebMCP 的瀏覽器環境中，直接使用本站的搜尋與導覽能力。
       </p>
     </section>
 

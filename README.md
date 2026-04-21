@@ -16,6 +16,31 @@
 | 部署 | GitHub Actions → GitHub Pages |
 | 自訂域名 | `blog.init.engineer` |
 
+## Agent Readiness
+
+本站已補上基礎的代理人探索資源，包含：
+
+- `robots.txt` 的 `Content-Signal`
+- `/.well-known/api-catalog`
+- `/.well-known/agent-skills/index.json`
+- `/.well-known/mcp/server-card.json`
+- `/api/site-metadata.json`
+- `/api/status.json`
+- `/openapi/site-discovery.yaml`
+- `/.well-known/markdown/home.md`
+- 瀏覽器端 `WebMCP` 工具註冊
+
+由於正式站目前仍是 **GitHub Pages 直出**，以下兩項需要額外的邊緣層代理才會真正以 HTTP 層生效：
+
+- `Link` 回應標頭
+- `Accept: text/markdown` 內容協商
+
+專案已提供以下範本與說明：
+
+- `static/_headers` — 給支援靜態標頭規則的平臺使用
+- `edge/agent-ready-proxy.mjs` — Cloudflare Worker 風格的邊緣代理範本
+- `docs/agent-readiness.md` — 補強項目、限制與後續建議
+
 ## 本地開發指南（macOS）
 
 ### 前置安裝
@@ -131,13 +156,15 @@ Front Matter 格式規範請參閱 `docs/content-guide.md`。
 │   ├── components.md        ← Shortcodes 與 Partials 參數參考
 │   ├── data-schema.md       ← JSON 資料 TypeScript 型別定義
 │   ├── content-guide.md     ← 文章 Front Matter 規範
-│   └── architecture.md      ← 核心功能設計決策
+│   ├── architecture.md      ← 核心功能設計決策
+│   └── agent-readiness.md   ← Agent Readiness 補強紀錄與部署建議
+├── edge/                    ← 邊緣層代理範本（Link 標頭 / Markdown 協商）
 ├── layouts/                 ← 自訂版面覆寫（優先於主題）
 │   ├── partials/            ← 覆寫主題的區塊模板
 │   │   └── helpers/         ← 共用工具 partial
 │   ├── shortcodes/          ← 自訂 Shortcodes
 │   └── posts/               ← 文章列表自訂版面
-├── static/                  ← 靜態資源（favicon、字型、CNAME）
+├── static/                  ← 靜態資源（favicon、字型、CNAME、.well-known、API 探索檔）
 ├── themes/blowfish/         ← Blowfish 佈景主題（Submodule，勿直接修改）
 ├── CLAUDE.md                ← Claude Code 運作準則與專案脈絡
 ├── GEMINI.md                ← Gemini AI 工具設定

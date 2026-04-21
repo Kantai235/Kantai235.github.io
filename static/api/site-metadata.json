@@ -25,7 +25,8 @@
   "agent_access": {
     "webmcp": true,
     "oauth_protected_apis": false,
-    "mcp_server": false
+    "mcp_server": false,
+    "mcp_server_card": "https://blog.init.engineer/.well-known/mcp/server-card.json"
   },
   "notes": [
     "目前所有公開探索端點皆為唯讀，不需登入。",
