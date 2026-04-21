@@ -72,7 +72,7 @@ If you want to be friends, let’s warm up slowly 👉👈
       <div class="flex flex-col md:flex-row gap-8 mb-6">
         {{< artwork-gallery collection="kemono.after.gallery" class="mt-0 mb-0 rounded-lg shadow-lg" >}}
       </div>
-      {{< artwork-gallery-featured collection="kemono.after.artworks" pick="20251010-mako_makotoo,20250915-Satotaro_0505,20251024-teracotta_s,20251027-chocomint_null,20251028-_NITAMAGO" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
+      {{< artwork-gallery-featured collection="kemono.after.artworks" pick="20251010-mako_makotoo,20250915-Satotaro_0505,20251027-chocomint_null,20251028-_NITAMAGO,20251026-yutch_kmn,20251021-hebaroda03,20251130-long_tea_,20251112-shir0kur0_bw,20251107-shirokumaou,20251107-hebaroda03,20251105-neginekomiso,20251228-yuunaduki,20251221-am2d4x,20251227-kuchiba07,20251206-_nagi_onemu,20251203-laia_pk,20251220-koukou.zeng.75,20260123-reruponzu,20260113-riscomofu,20260105-pizzapastachan,20260102-qi.you.565397,20260226-mosamosa_oc,20260206-_nitamago,20260328-ebi_drive,20260311-zimasanda2,20260316-tiromi_nana7" class="grid-w50 md:grid-w33 xl:grid-w25 rounded-lg shadow-lg" >}}
       <div class="mt-4 text-center">
         <a href="/en/kemono/gallery/after/" class="inline-block px-4 py-2 rounded-lg text-sm font-medium text-blue-500 hover:text-blue-600 transition-colors">View Full Gallery →</a>
       </div>
