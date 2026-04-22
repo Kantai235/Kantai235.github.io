@@ -100,6 +100,11 @@ npm run verify:agent-http:retries  # 正式站帶重試驗證，失敗時自動�
 - 是否補上 `x-markdown-tokens` 與 `Vary: Accept`
 - `robots.txt` 是否包含 `Content-Signal`
 
+GitHub Actions 會依 Cloudflare deployment 能力分流：
+
+- 若已提供 `CLOUDFLARE_API_TOKEN` 與 `CLOUDFLARE_ACCOUNT_ID`，會執行正式站硬性驗證 `verify-live-agent-http`
+- 若尚未提供 Cloudflare secrets，會改為執行 `report-live-agent-http-blocked`，只產生報告與 warning，不讓 workflow 因不可能成立的前提而失敗
+
 專案已整合 [Husky](https://typicode.github.io/husky/) + [lint-staged](https://github.com/lint-staged/lint-staged)，
 在每次 `git commit` 時會自動對暫存區的 `*.js` 檔案執行 ESLint 檢查與自動修復。
 執行 `npm install` 後即自動啟用，無需額外設定。

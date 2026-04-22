@@ -118,4 +118,9 @@
   - 最新 GitHub Actions workflow 與 Cloudflare 步驟狀態
   - 根因判讀
 - `.github/workflows/deploy.yml` 已新增 `verify-live-agent-http` job
-- 這個 job 會在 GitHub Pages 部署後重試驗證正式站，並在成功或失敗時上傳 `agent-http-report` artifact
+- 若 Cloudflare deployment 已啟用：
+  - `verify-live-agent-http` 會在 GitHub Pages 部署後重試驗證正式站
+  - 成功或失敗都會上傳 `agent-http-report` artifact
+- 若 Cloudflare deployment 尚未啟用：
+  - `report-live-agent-http-blocked` 會只產生報告與 warning
+  - workflow 不會因正式站不可能滿足 Link / Markdown 條件而被誤判為失敗
