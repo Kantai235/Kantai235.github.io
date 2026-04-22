@@ -43,7 +43,7 @@
                 {{ $backgroundBlurImage = . }}
                 <img
                   id="homepage-background-image"
-                  class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover md:hidden"
+                  class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover"
                   src="{{ .RelPermalink }}"
                   alt=""
                   decoding="async"
@@ -56,11 +56,15 @@
                 muted
                 loop
                 playsinline
-                preload="metadata"
-                class="nozoom mt-0 mr-0 mb-0 ml-0 hidden h-[1000px] w-full object-cover md:block"
+                preload="none"
+                class="nozoom pointer-events-none absolute inset-0 mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover opacity-0 transition-opacity duration-500"
                 aria-hidden="true">
-                <source src="{{ $homepageImage.RelPermalink }}" type="video/mp4" media="(min-width: 768px)">
+                <source data-src="{{ $homepageImage.RelPermalink }}" type="video/mp4">
               </video>
+              {{ $homepageVideo := resources.Get "js/homepage-video.js" }}
+              {{ if $homepageVideo }}
+                <script defer src="{{ $homepageVideo.RelPermalink }}"></script>
+              {{ end }}
             {{ else }}
               {{ $backgroundBlurImage = $homepageImage }}
               <img
