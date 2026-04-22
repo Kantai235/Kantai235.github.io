@@ -10,6 +10,7 @@
     "deploy:cloudflare:dry-run": "wrangler deploy --dry-run",
     "lint": "eslint assets/js/",
     "lint:fix": "eslint assets/js/ --fix",
+    "verify:agent-http": "bash scripts/check-agent-http.sh",
     "prepare": "husky"
   },
   "lint-staged": {

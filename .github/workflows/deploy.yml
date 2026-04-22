@@ -93,6 +93,10 @@ jobs:
           apiToken: ${{ env.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy
+      - name: Verify agent HTTP responses
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' && env.CLOUDFLARE_ACCOUNT_ID != '' }}
+        run: |
+          bash scripts/check-agent-http.sh "https://blog.init.engineer"
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4

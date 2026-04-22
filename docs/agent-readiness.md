@@ -25,6 +25,8 @@
 
 - 已於 [static/robots.txt](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/static/robots.txt:1) 新增：
   - `Content-Signal: ai-train=no, search=yes, ai-input=no`
+- 已將 [config/_default/config.toml](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/config/_default/config.toml:19) 的 `enableRobotsTXT` 改為 `false`
+  以便正式建置時直接使用自訂的 `static/robots.txt`，避免被 Hugo 內建的簡化版 `robots.txt` 覆蓋
 - Worker 也會在邊緣回應層補上相同的 `Content-Signal` 標頭
 
 ### 4. API Catalog
@@ -90,3 +92,11 @@
 3. 讓 `.github/workflows/deploy.yml` 在 `main` branch push 後成功執行 `wrangler deploy`
 
 若上述條件尚未完成，GitHub Pages 版本仍會正常提供靜態站內容，但 Link 標頭與 Markdown 協商只會停留在 repo 設定層，不會出現在正式站回應裡。
+
+## 驗證方式
+
+- 可執行 `npm run verify:agent-http`
+- 這個腳本會直接檢查正式站：
+  - 首頁是否有 `Link` 回應標頭
+  - `Accept: text/markdown` 是否回傳 `text/markdown` 與 `x-markdown-tokens`
+  - `robots.txt` 是否包含 `Content-Signal`

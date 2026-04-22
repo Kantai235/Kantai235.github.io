@@ -82,6 +82,7 @@ npm run lint          # 執行 ESLint 檢查
 npm run lint:fix      # 自動修復可修正的問題
 npm run build         # 建置正式站（使用正式網域 baseURL）
 npm run deploy:cloudflare:dry-run  # 乾跑驗證 Worker / Wrangler 設定
+npm run verify:agent-http  # 直接檢查正式站的 Link / Markdown / Content-Signal
 ```
 
 專案已整合 [Husky](https://typicode.github.io/husky/) + [lint-staged](https://github.com/lint-staged/lint-staged)，

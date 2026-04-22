@@ -16,7 +16,7 @@ defaultContentLanguageInSubDir = false
 disableLanguages = []
 enableMissingTranslationPlaceholders = false
 
-enableRobotsTXT = true
+enableRobotsTXT = false
 
 # summaryLength = 0 停用自動摘要截斷，改由文章自行在 Front Matter 設定 summary
 summaryLength = 0
