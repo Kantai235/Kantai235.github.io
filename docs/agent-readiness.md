@@ -43,7 +43,18 @@
   - `site-navigation`
   - `post-discovery`
 
-### 6. WebMCP
+### 6. A2A Agent Card
+
+- 已新增 `/.well-known/agent-card.json`
+- Agent Card 會宣告：
+  - `supportedInterfaces` 指向 `https://blog.init.engineer/a2a`
+  - `protocolBinding` 為 `JSONRPC`
+  - `protocolVersion` 為 `1.0`
+- Worker 已提供 `/a2a` discovery-only JSON-RPC 入口：
+  - `GET /a2a` 會回傳 discovery 摘要
+  - `POST /a2a` 會回傳標準 JSON-RPC 錯誤，明確說明目前尚未實作完整任務流程
+
+### 7. WebMCP
 
 - 已新增 [assets/js/webmcp.js](/Users/kantai/Projects.localized/KantaiDeveloper/Kantai235.github.io/assets/js/webmcp.js:1)
 - 已提供工具：
@@ -51,12 +62,12 @@
   - `list-site-sections`
   - `navigate-section`
 
-### 7. MCP Server Card（以 WebMCP 橋接描述）
+### 8. MCP Server Card（以 WebMCP 橋接描述）
 
 - 已新增 `/.well-known/mcp/server-card.json`
 - 這份卡片明確標示本站目前提供的是「瀏覽器端 WebMCP 工具集合」，不是獨立遠端 MCP HTTP 伺服器
 
-### 8. OAuth / OIDC Discovery Metadata
+### 9. OAuth / OIDC Discovery Metadata
 
 - 已新增 `/.well-known/oauth-authorization-server`
 - 目前採用「metadata present, no grants」模式，明確宣告：
@@ -64,7 +75,7 @@
   - 未提供 `authorization_endpoint`、`token_endpoint`、`jwks_uri`
   - 若未來新增受保護 API，再替換成實際授權端點
 
-### 9. OAuth Protected Resource Metadata
+### 10. OAuth Protected Resource Metadata
 
 - 已新增 `/.well-known/oauth-protected-resource`
 - 目前主要用途是讓代理人知道本站的資源識別與對應的 OAuth metadata 位置

@@ -5,6 +5,7 @@
   Link: </.well-known/api-catalog>; rel="api-catalog"
   Link: </docs/agent/>; rel="service-doc"
   Link: </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"
+  Link: </.well-known/agent-card.json>; rel="describedby"; type="application/json"
   Link: </.well-known/mcp/server-card.json>; rel="describedby"; type="application/json"
   Link: </.well-known/oauth-authorization-server>; rel="describedby"; type="application/json"
   Link: </.well-known/oauth-protected-resource>; rel="describedby"; type="application/json"
@@ -15,6 +16,9 @@
   Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
 
 /.well-known/mcp/server-card.json
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/agent-card.json
   Content-Type: application/json; charset=utf-8
 
 /.well-known/oauth-authorization-server

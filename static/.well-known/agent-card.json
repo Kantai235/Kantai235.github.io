@@ -1,0 +1,48 @@
+{
+  "name": "Kantai Blog Discovery Agent",
+  "description": "為 blog.init.engineer 提供唯讀站點探索、文章導覽與公開資源發現能力的 A2A Agent Card。此代理人目前主要用於公開 discovery，尚未提供完整的 A2A 任務執行流程。",
+  "supportedInterfaces": [
+    {
+      "url": "https://blog.init.engineer/a2a",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "KantaiDeveloper",
+    "url": "https://blog.init.engineer/"
+  },
+  "version": "1.0.0",
+  "documentationUrl": "https://blog.init.engineer/docs/agent/",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extendedAgentCard": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "text/markdown"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "text/markdown",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "site-navigation",
+      "name": "站點導覽",
+      "description": "說明 blog.init.engineer 的主要區段、語言版本與公開探索入口。"
+    },
+    {
+      "id": "post-discovery",
+      "name": "文章探索",
+      "description": "協助代理人找到技術文章、搜尋索引與可閱讀的 permalink。"
+    },
+    {
+      "id": "agent-resource-discovery",
+      "name": "代理資源探索",
+      "description": "提供 API Catalog、Agent Skills、MCP Server Card、OAuth metadata 與 Markdown 備援的位置。"
+    }
+  ]
+}

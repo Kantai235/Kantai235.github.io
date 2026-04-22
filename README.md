@@ -23,6 +23,7 @@
 - `robots.txt` 的 `Content-Signal`
 - `/.well-known/api-catalog`
 - `/.well-known/agent-skills/index.json`
+- `/.well-known/agent-card.json`
 - `/.well-known/mcp/server-card.json`
 - `/.well-known/oauth-authorization-server`
 - `/.well-known/oauth-protected-resource`
@@ -30,6 +31,7 @@
 - `/api/status.json`
 - `/openapi/site-discovery.yaml`
 - `/.well-known/markdown/home.md`
+- `/a2a`（A2A discovery-only 入口）
 - 瀏覽器端 `WebMCP` 工具註冊
 
 其中真正的 HTTP 層補強由 Cloudflare Worker 處理，包含：

@@ -151,6 +151,11 @@
           <p>提供站點導覽與文章探索技能，方便代理人快速理解本站結構。</p>
         </article>
         <article class="card">
+          <h3>A2A Agent Card</h3>
+          <p><a href="/.well-known/agent-card.json">/.well-known/agent-card.json</a></p>
+          <p>提供 A2A 代理人探索卡片，描述本站的唯讀探索能力與介面入口。</p>
+        </article>
+        <article class="card">
           <h3>Markdown 備援</h3>
           <p><a href="/.well-known/markdown/home.md">/.well-known/markdown/home.md</a></p>
           <p>提供首頁的靜態 Markdown 備援版本，便於尚未接上邊緣協商時使用。</p>
@@ -206,6 +211,17 @@
         <a href="/.well-known/mcp/server-card.json">MCP Server Card</a>，
         用來描述目前由瀏覽器端 WebMCP 暴露的工具集合。
         代理人可以在支援 WebMCP 的瀏覽器環境中，直接使用本站的搜尋與導覽能力。
+      </p>
+    </section>
+
+    <section>
+      <h2>A2A Agent Discovery</h2>
+      <p>
+        本站已發布
+        <a href="/.well-known/agent-card.json">A2A Agent Card</a>，
+        用來描述公開唯讀的站點探索能力。
+        目前卡片會指向 <code>/a2a</code> 這個實驗性 JSON-RPC 入口；它的主要用途是明確提供 discovery 介面位置，
+        尚未實作完整的 A2A 任務處理流程。
       </p>
     </section>
 

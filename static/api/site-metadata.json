@@ -19,6 +19,7 @@
   "discovery": {
     "api_catalog": "https://blog.init.engineer/.well-known/api-catalog",
     "agent_skills": "https://blog.init.engineer/.well-known/agent-skills/index.json",
+    "agent_card": "https://blog.init.engineer/.well-known/agent-card.json",
     "markdown_home": "https://blog.init.engineer/.well-known/markdown/home.md",
     "agent_docs": "https://blog.init.engineer/docs/agent/",
     "oauth_authorization_server": "https://blog.init.engineer/.well-known/oauth-authorization-server",
@@ -26,6 +27,8 @@
   },
   "agent_access": {
     "webmcp": true,
+    "a2a_agent_card": "https://blog.init.engineer/.well-known/agent-card.json",
+    "a2a_endpoint": "https://blog.init.engineer/a2a",
     "oauth_protected_apis": false,
     "oauth_discovery_mode": "metadata-present-no-grants",
     "mcp_server": false,

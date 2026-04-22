@@ -13,6 +13,7 @@ const DISCOVERY_LINK_HEADERS = [
   '</.well-known/api-catalog>; rel="api-catalog"',
   '</docs/agent/>; rel="service-doc"',
   '</.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"',
+  '</.well-known/agent-card.json>; rel="describedby"; type="application/json"',
   '</.well-known/mcp/server-card.json>; rel="describedby"; type="application/json"',
   '</.well-known/oauth-authorization-server>; rel="describedby"; type="application/json"',
   '</.well-known/oauth-protected-resource>; rel="describedby"; type="application/json"',
@@ -28,6 +29,10 @@ const FORCED_CONTENT_TYPES = new Map([
   ],
   [
     '/.well-known/agent-skills/index.json',
+    'application/json; charset=utf-8'
+  ],
+  [
+    '/.well-known/agent-card.json',
     'application/json; charset=utf-8'
   ],
   [
@@ -267,6 +272,16 @@ function applyDiscoveryHeaders(headers, pathname) {
   headers.set('Content-Signal', CONTENT_SIGNAL_POLICY);
 }
 
+function jsonResponse(payload, init) {
+  return new Response(JSON.stringify(payload, null, 2), {
+    status: init.status,
+    statusText: init.statusText,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8'
+    }
+  });
+}
+
 function isHtmlResponse(response) {
   return String(response.headers.get('Content-Type') || '').includes('text/html');
 }
@@ -291,6 +306,107 @@ export default {
     const url = new URL(request.url);
     const acceptHeader = request.headers.get('Accept') || '';
     const wantsMarkdown = acceptHeader.includes('text/markdown');
+
+    if (url.pathname === '/a2a') {
+      if (request.method === 'GET') {
+        const response = jsonResponse({
+          endpoint: 'https://blog.init.engineer/a2a',
+          protocol: 'A2A JSON-RPC',
+          status: 'discovery-only',
+          message: '此入口目前主要用於公布 Agent Card 指向的服務位置，尚未實作完整的 A2A 任務處理流程。',
+          card: 'https://blog.init.engineer/.well-known/agent-card.json',
+          documentation: 'https://blog.init.engineer/docs/agent/'
+        }, {
+          status: 200,
+          statusText: 'OK'
+        });
+
+        const headers = new Headers(response.headers);
+        applyDiscoveryHeaders(headers, url.pathname);
+
+        return new Response(response.body, {
+          status: response.status,
+          statusText: response.statusText,
+          headers: headers
+        });
+      }
+
+      if (request.method === 'POST') {
+        let requestBody = null;
+
+        try {
+          requestBody = await request.json();
+        } catch {
+          const parseErrorResponse = jsonResponse({
+            jsonrpc: '2.0',
+            id: null,
+            error: {
+              code: -32700,
+              message: 'Parse error'
+            }
+          }, {
+            status: 400,
+            statusText: 'Bad Request'
+          });
+          const headers = new Headers(parseErrorResponse.headers);
+          applyDiscoveryHeaders(headers, url.pathname);
+
+          return new Response(parseErrorResponse.body, {
+            status: parseErrorResponse.status,
+            statusText: parseErrorResponse.statusText,
+            headers: headers
+          });
+        }
+
+        const methodName = requestBody && typeof requestBody.method === 'string'
+          ? requestBody.method
+          : '';
+        const unsupportedResponse = jsonResponse({
+          jsonrpc: '2.0',
+          id: requestBody && Object.prototype.hasOwnProperty.call(requestBody, 'id')
+            ? requestBody.id
+            : null,
+          error: {
+            code: -32601,
+            message: 'Method not found',
+            data: {
+              endpointStatus: 'discovery-only',
+              requestedMethod: methodName,
+              documentation: 'https://blog.init.engineer/docs/agent/',
+              agentCard: 'https://blog.init.engineer/.well-known/agent-card.json'
+            }
+          }
+        }, {
+          status: 501,
+          statusText: 'Not Implemented'
+        });
+        const headers = new Headers(unsupportedResponse.headers);
+        applyDiscoveryHeaders(headers, url.pathname);
+
+        return new Response(unsupportedResponse.body, {
+          status: unsupportedResponse.status,
+          statusText: unsupportedResponse.statusText,
+          headers: headers
+        });
+      }
+
+      const methodNotAllowedResponse = jsonResponse({
+        error: 'Method Not Allowed'
+      }, {
+        status: 405,
+        statusText: 'Method Not Allowed'
+      });
+      const headers = new Headers(methodNotAllowedResponse.headers);
+      applyDiscoveryHeaders(headers, url.pathname);
+      headers.set('Allow', 'GET, POST');
+
+      return new Response(methodNotAllowedResponse.body, {
+        status: methodNotAllowedResponse.status,
+        statusText: methodNotAllowedResponse.statusText,
+        headers: headers
+      });
+    }
+
     const assetResponse = await env.ASSETS.fetch(request);
 
     if (wantsMarkdown && isHtmlResponse(assetResponse)) {
