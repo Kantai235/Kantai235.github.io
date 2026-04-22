@@ -29,6 +29,11 @@ if ! grep -qi 'rel="api-catalog"' "${tmp_headers}"; then
   exit 1
 fi
 
+if ! grep -qi 'rel="service-desc"' "${tmp_headers}"; then
+  echo "失敗：首頁 Link 標頭缺少 service-desc relation。" >&2
+  exit 1
+fi
+
 echo "檢查 Markdown for Agents 回應..."
 if ! grep -qi '^content-type: text/markdown' "${tmp_markdown_headers}"; then
   echo "失敗：Accept: text/markdown 時未回傳 text/markdown。" >&2
@@ -37,6 +42,11 @@ fi
 
 if ! grep -qi '^x-markdown-tokens:' "${tmp_markdown_headers}"; then
   echo "失敗：Accept: text/markdown 時缺少 x-markdown-tokens。" >&2
+  exit 1
+fi
+
+if ! grep -qi '^vary: .*accept' "${tmp_markdown_headers}"; then
+  echo "失敗：Accept: text/markdown 時缺少 Vary: Accept。" >&2
   exit 1
 fi
 

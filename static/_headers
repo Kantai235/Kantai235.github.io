@@ -3,6 +3,7 @@
 
 /
   Link: </.well-known/api-catalog>; rel="api-catalog"
+  Link: </openapi/site-discovery.yaml>; rel="service-desc"; type="application/yaml"
   Link: </docs/agent/>; rel="service-doc"
   Link: </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"
   Link: </.well-known/agent-card.json>; rel="describedby"; type="application/json"
@@ -29,3 +30,6 @@
 
 /.well-known/markdown/home.md
   Content-Type: text/markdown; charset=utf-8
+
+/openapi/site-discovery.yaml
+  Content-Type: application/yaml; charset=utf-8

@@ -37,6 +37,7 @@
 其中真正的 HTTP 層補強由 Cloudflare Worker 處理，包含：
 
 - `Link` 回應標頭
+- `service-desc` 指向 `/openapi/site-discovery.yaml`
 - `Accept: text/markdown` 內容協商
 
 專案內已提供以下設定與說明：
@@ -88,6 +89,14 @@ npm run deploy:cloudflare:dry-run  # 乾跑驗證 Worker / Wrangler 設定
 npm run verify:agent-http:local  # 本地啟動 Worker 並驗證 Link / Markdown / Content-Signal
 npm run verify:agent-http  # 直接檢查正式站的 Link / Markdown / Content-Signal
 ```
+
+其中 `npm run verify:agent-http` 目前會檢查：
+
+- 首頁是否具有 `Link` 回應標頭
+- 是否同時包含 `rel="api-catalog"` 與 `rel="service-desc"`
+- `Accept: text/markdown` 是否回傳 `text/markdown`
+- 是否補上 `x-markdown-tokens` 與 `Vary: Accept`
+- `robots.txt` 是否包含 `Content-Signal`
 
 專案已整合 [Husky](https://typicode.github.io/husky/) + [lint-staged](https://github.com/lint-staged/lint-staged)，
 在每次 `git commit` 時會自動對暫存區的 `*.js` 檔案執行 ESLint 檢查與自動修復。

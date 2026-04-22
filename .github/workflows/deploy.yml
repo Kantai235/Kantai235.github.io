@@ -89,6 +89,16 @@ jobs:
       - name: Verify agent HTTP responses locally
         run: |
           bash scripts/check-agent-http-local.sh
+      - name: Report Cloudflare deployment status
+        run: |
+          if [[ -n "${CLOUDFLARE_API_TOKEN}" && -n "${CLOUDFLARE_ACCOUNT_ID}" ]]; then
+            echo "Cloudflare Worker 部署：已啟用" >> "${GITHUB_STEP_SUMMARY}"
+            echo "正式站在部署完成後，應可提供 Link 回應標頭與 Markdown for Agents。" >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "Cloudflare Worker 部署：已略過" >> "${GITHUB_STEP_SUMMARY}"
+            echo "原因：缺少 CLOUDFLARE_API_TOKEN 或 CLOUDFLARE_ACCOUNT_ID。" >> "${GITHUB_STEP_SUMMARY}"
+            echo "目前仍會部署 GitHub Pages 靜態站，但正式網域不會具有 Link 回應標頭或 Accept: text/markdown 協商。" >> "${GITHUB_STEP_SUMMARY}"
+          fi
       - name: Deploy to Cloudflare Workers
         if: ${{ env.CLOUDFLARE_API_TOKEN != '' && env.CLOUDFLARE_ACCOUNT_ID != '' }}
         uses: cloudflare/wrangler-action@v3

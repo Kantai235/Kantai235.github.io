@@ -11,6 +11,7 @@
 
 const DISCOVERY_LINK_HEADERS = [
   '</.well-known/api-catalog>; rel="api-catalog"',
+  '</openapi/site-discovery.yaml>; rel="service-desc"; type="application/yaml"',
   '</docs/agent/>; rel="service-doc"',
   '</.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"',
   '</.well-known/agent-card.json>; rel="describedby"; type="application/json"',
@@ -50,6 +51,10 @@ const FORCED_CONTENT_TYPES = new Map([
   [
     '/.well-known/markdown/home.md',
     'text/markdown; charset=utf-8'
+  ],
+  [
+    '/openapi/site-discovery.yaml',
+    'application/yaml; charset=utf-8'
   ]
 ]);
 
