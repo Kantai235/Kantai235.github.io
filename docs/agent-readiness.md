@@ -111,3 +111,11 @@
   - 以 `HEAD /` 搭配 `Accept: text/markdown` 檢查是否回傳 `text/markdown` 與 `x-markdown-tokens`
   - Markdown 回應是否包含 `Vary: Accept`
   - `robots.txt` 是否包含 `Content-Signal`
+- 可執行 `npm run report:agent-http`
+- 這個腳本會輸出一份 Markdown 報告，整理：
+  - 正式站 `HEAD /` 與 Markdown `HEAD /` 回應
+  - DNS CNAME / NS 狀態
+  - 最新 GitHub Actions workflow 與 Cloudflare 步驟狀態
+  - 根因判讀
+- `.github/workflows/deploy.yml` 已新增 `verify-live-agent-http` job
+- 這個 job 會在 GitHub Pages 部署後重試驗證正式站，並在成功或失敗時上傳 `agent-http-report` artifact
