@@ -89,7 +89,8 @@
 
 1. 在 GitHub repository secrets 中設定 `CLOUDFLARE_API_TOKEN` 與 `CLOUDFLARE_ACCOUNT_ID`
 2. 確認 `blog.init.engineer` 所屬的 `init.engineer` zone 已由 Cloudflare 管理
-3. 讓 `.github/workflows/deploy.yml` 在 `main` branch push 後成功執行 `wrangler deploy`
+3. 讓 `.github/workflows/deploy.yml` 在 `main` branch push 後成功執行 `wrangler deploy --env production`
+4. 確認 `wrangler.toml` 的 production custom domain 設定已成功把 `blog.init.engineer` 綁到 Worker
 
 若上述條件尚未完成，GitHub Pages 版本仍會正常提供靜態站內容，但 Link 標頭與 Markdown 協商只會停留在 repo 設定層，不會出現在正式站回應裡。
 

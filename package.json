@@ -7,7 +7,7 @@
   "scripts": {
     "build": "hugo --gc --minify --baseURL \"https://blog.init.engineer/\"",
     "build:preview": "hugo --gc --minify",
-    "deploy:cloudflare:dry-run": "wrangler deploy --dry-run",
+    "deploy:cloudflare:dry-run": "wrangler deploy --dry-run --env production",
     "lint": "eslint assets/js/",
     "lint:fix": "eslint assets/js/ --fix",
     "verify:agent-http": "bash scripts/check-agent-http.sh",

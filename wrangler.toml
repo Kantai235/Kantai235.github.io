@@ -10,7 +10,14 @@ directory = "./public"
 binding = "ASSETS"
 run_worker_first = true
 
-[[routes]]
-pattern = "blog.init.engineer/*"
-zone_name = "init.engineer"
+[env.production]
+workers_dev = false
 
+  [env.production.assets]
+  directory = "./public"
+  binding = "ASSETS"
+  run_worker_first = true
+
+  [[env.production.routes]]
+  pattern = "blog.init.engineer"
+  custom_domain = true

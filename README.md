@@ -46,6 +46,9 @@
 - `edge/agent-ready-proxy.mjs` — 實際處理 Link 標頭、Markdown 協商與 Content-Signal 的 Worker
 - `docs/agent-readiness.md` — 補強項目、限制與後續建議
 
+Cloudflare 部署採用 `wrangler --env production`，
+由 `wrangler.toml` 的 `production` 環境將 `blog.init.engineer` 綁定為 custom domain。
+
 ## 本地開發指南（macOS）
 
 ### 前置安裝
