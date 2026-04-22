@@ -19,16 +19,7 @@
 {{/* 額外的 SEO Meta Tags */}}
 <meta name="twitter:card" content="summary_large_image">
 
-{{/* Preconnect for performance */}}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 {{/* JavaScript 文件 */}}
-{{ $yearFilter := resources.Get "js/year-filter.js" }}
-{{ if $yearFilter }}
-<script defer src="{{ $yearFilter.RelPermalink }}"></script>
-{{ end }}
-
 {{ $lazyLoading := resources.Get "js/lazy-loading.js" }}
 {{ if $lazyLoading }}
 <script defer src="{{ $lazyLoading.RelPermalink }}"></script>
@@ -42,4 +33,9 @@
 {{ $webMcp := resources.Get "js/webmcp.js" }}
 {{ if $webMcp }}
 <script defer src="{{ $webMcp.RelPermalink }}"></script>
+{{ end }}
+
+{{ $menuActive := resources.Get "js/menu-active.js" }}
+{{ if $menuActive }}
+<script defer src="{{ $menuActive.RelPermalink }}"></script>
 {{ end }}

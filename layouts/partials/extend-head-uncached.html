@@ -4,6 +4,40 @@
   此 partial 接收完整的 Page context（非 .Site），因此可使用 .HasShortcode。
 -->
 
+{{/* 首頁專用：將字體變數切回系統字體，避免首頁額外下載大型自訂字體檔案 */}}
+{{ if .IsHome }}
+  <style>
+    :root {
+      --font-header: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --font-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+  </style>
+{{ end }}
+
+{{/* 文章列表專用年份篩選 */}}
+{{ if and (eq .Type "posts") (eq .Kind "section") }}
+  {{ $yearFilter := resources.Get "js/year-filter.js" }}
+  {{ if $yearFilter }}
+  <script defer src="{{ $yearFilter.RelPermalink }}"></script>
+  {{ end }}
+{{ end }}
+
+{{/* 一般內容頁才載入圖片縮放，避免首頁與列表頁承擔額外阻塞成本 */}}
+{{ if .IsPage }}
+  {{ $zoomCss := resources.Get "lib/zoom/style.css" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ $zoomCss.RelPermalink }}"
+    integrity="{{ $zoomCss.Data.Integrity }}">
+  {{ $zoomJs := resources.Get "lib/zoom/zoom.min.umd.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script
+    defer
+    type="text/javascript"
+    src="{{ $zoomJs.RelPermalink }}"
+    integrity="{{ $zoomJs.Data.Integrity }}"></script>
+{{ end }}
+
 {{/* Kemono 頁面專用 CSS/JS */}}
 {{ if or (.HasShortcode "kemono-setup") (.HasShortcode "gallery-background") }}
   {{ $kemonoCss := resources.Get "css/kemono.css" }}

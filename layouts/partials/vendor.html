@@ -1,12 +1,8 @@
 <!--
   覆寫來源：themes/blowfish/layouts/partials/vendor.html
-  修改說明：自訂第三方函式庫載入，引入 jQuery（slim）與 Mermaid 圖表支援。
-  這些函式庫會被 assets/js/ 中的自訂腳本（如 gallery.js）所依賴。
+  修改說明：自訂第三方函式庫載入，將 jQuery 改為只在圖庫頁按需載入，
+  以避免首頁與一般內容頁承擔不必要的首屏阻塞成本。
 -->
-{{/* jQuery */}}
-{{ $jqueryLib := resources.Get "lib/jquery/jquery.slim.min.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<script src="{{ $jqueryLib.RelPermalink }}" integrity="{{ $jqueryLib.Data.Integrity }}"></script>
-
 {{/* Mermaid */}}
 {{ if .Page.HasShortcode "mermaid" }}
   {{ $mermaidLib := resources.Get "lib/mermaid/mermaid.min.js" }}
@@ -65,6 +61,12 @@
 
 {{/* Packery */}}
 {{ if or (.Page.HasShortcode "gallery") (.Page.HasShortcode "artwork-gallery") (.Page.HasShortcode "artwork-gallery-featured") (.Page.HasShortcode "gallery-after") (.Page.HasShortcode "gallery-before") (.Page.HasShortcode "gallery-fursuit") }}
+  {{ $jqueryLib := resources.Get "lib/jquery/jquery.slim.min.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script
+    defer
+    type="text/javascript"
+    src="{{ $jqueryLib.RelPermalink }}"
+    integrity="{{ $jqueryLib.Data.Integrity }}"></script>
   {{ $galleryCSS := resources.Get "css/components/gallery.css" }}
   {{ $galleryCSS = $galleryCSS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <link
@@ -83,6 +85,7 @@
   {{ $jsShortcodeGallery := resources.Get "js/shortcodes/gallery.js" }}
   {{ $jsShortcodeGallery = $jsShortcodeGallery | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script
+    defer
     type="text/javascript"
     src="{{ $jsShortcodeGallery.RelPermalink }}"
     integrity="{{ $jsShortcodeGallery.Data.Integrity }}"></script>

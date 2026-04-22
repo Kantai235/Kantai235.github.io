@@ -12,6 +12,7 @@ autoSwitchAppearance = true  # 允許依系統設定自動切換深淺色
 enableA11y = false           # 停用無障礙工具列（本站已自行處理 ARIA 標籤）
 enableSearch = true          # 啟用站內搜尋（使用 Fuse.js）
 enableCodeCopy = false       # 停用程式碼複製按鈕（避免與 Blowfish 主題的功能衝突）
+disableImageZoom = true      # 停用主題全站圖片縮放，改由專案層級按頁面條件載入
 
 replyByEmail = false
 
@@ -24,7 +25,7 @@ disableImageOptimizationMD = false
 disableTextInHeader = false
 
 # 高亮當前選單項目、啟用智慧 TOC（自動收合非焦點子項）
-highlightCurrentMenuArea = true
+highlightCurrentMenuArea = false  # 改由自訂原生 JavaScript 處理，避免為選單高亮全站載入 jQuery
 smartTOC = true
 smartTOCHideUnfocusedChildren = true
 
