@@ -92,9 +92,9 @@ npm run verify:agent-http  # 直接檢查正式站的 Link / Markdown / Content-
 
 其中 `npm run verify:agent-http` 目前會檢查：
 
-- 首頁是否具有 `Link` 回應標頭
+- 以 `HEAD /` 檢查首頁是否具有 `Link` 回應標頭
 - 是否同時包含 `rel="api-catalog"` 與 `rel="service-desc"`
-- `Accept: text/markdown` 是否回傳 `text/markdown`
+- 以 `HEAD /` 搭配 `Accept: text/markdown` 檢查是否回傳 `text/markdown`
 - 是否補上 `x-markdown-tokens` 與 `Vary: Accept`
 - `robots.txt` 是否包含 `Content-Signal`
 

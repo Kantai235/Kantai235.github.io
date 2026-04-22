@@ -14,8 +14,8 @@ cleanup() {
 
 trap cleanup EXIT
 
-curl -sS -D "${tmp_headers}" -o /dev/null "${BASE_URL}/"
-curl -sS -D "${tmp_markdown_headers}" -H 'Accept: text/markdown' -o /dev/null "${BASE_URL}/"
+curl -sSI -D "${tmp_headers}" -o /dev/null "${BASE_URL}/"
+curl -sSI -D "${tmp_markdown_headers}" -H 'Accept: text/markdown' -o /dev/null "${BASE_URL}/"
 curl -sS "${BASE_URL}/robots.txt" > "${tmp_robots}"
 
 echo "檢查首頁 Link 回應標頭..."

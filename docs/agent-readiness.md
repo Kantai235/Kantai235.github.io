@@ -99,15 +99,15 @@
 
 - 可執行 `npm run verify:agent-http:local`
 - 這個腳本會先在本地啟動 Wrangler Worker，再檢查：
-  - 首頁是否有 `Link` 回應標頭
+  - 以 `HEAD /` 檢查首頁是否有 `Link` 回應標頭
   - `Link` 是否同時包含 `api-catalog` 與 `service-desc`
-  - `Accept: text/markdown` 是否回傳 `text/markdown` 與 `x-markdown-tokens`
+  - 以 `HEAD /` 搭配 `Accept: text/markdown` 檢查是否回傳 `text/markdown` 與 `x-markdown-tokens`
   - Markdown 回應是否包含 `Vary: Accept`
   - `robots.txt` 是否包含 `Content-Signal`
 - 可執行 `npm run verify:agent-http`
 - 這個腳本會直接檢查正式站：
-  - 首頁是否有 `Link` 回應標頭
+  - 以 `HEAD /` 檢查首頁是否有 `Link` 回應標頭
   - `Link` 是否同時包含 `api-catalog` 與 `service-desc`
-  - `Accept: text/markdown` 是否回傳 `text/markdown` 與 `x-markdown-tokens`
+  - 以 `HEAD /` 搭配 `Accept: text/markdown` 檢查是否回傳 `text/markdown` 與 `x-markdown-tokens`
   - Markdown 回應是否包含 `Vary: Accept`
   - `robots.txt` 是否包含 `Content-Signal`

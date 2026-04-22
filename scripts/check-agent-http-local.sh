@@ -25,7 +25,7 @@ npx wrangler dev \
 WRANGLER_PID=$!
 
 for _ in $(seq 1 30); do
-  if curl -sS -o /dev/null "${BASE_URL}/"; then
+  if curl -sS -o /dev/null "${BASE_URL}/" 2>/dev/null; then
     bash scripts/check-agent-http.sh "${BASE_URL}"
     exit 0
   fi

@@ -263,9 +263,13 @@ function mergeHeaderValue(existingValue, nextValue) {
   return parts.join(', ');
 }
 
+function appendUniqueHeaderValue(headers, name, value) {
+  headers.set(name, mergeHeaderValue(headers.get(name), value));
+}
+
 function applyDiscoveryHeaders(headers, pathname) {
   DISCOVERY_LINK_HEADERS.forEach(function(linkValue) {
-    headers.append('Link', linkValue);
+    appendUniqueHeaderValue(headers, 'Link', linkValue);
   });
 
   const forcedContentType = FORCED_CONTENT_TYPES.get(pathname);
