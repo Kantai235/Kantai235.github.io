@@ -92,9 +92,11 @@ jobs:
       - name: Report Cloudflare deployment status
         run: |
           if [[ -n "${CLOUDFLARE_API_TOKEN}" && -n "${CLOUDFLARE_ACCOUNT_ID}" ]]; then
+            echo "::notice title=Cloudflare Worker 部署已啟用::正式站在部署完成後，應可提供 Link 回應標頭與 Markdown for Agents。"
             echo "Cloudflare Worker 部署：已啟用" >> "${GITHUB_STEP_SUMMARY}"
             echo "正式站在部署完成後，應可提供 Link 回應標頭與 Markdown for Agents。" >> "${GITHUB_STEP_SUMMARY}"
           else
+            echo "::warning title=Cloudflare Worker 部署已略過::缺少 CLOUDFLARE_API_TOKEN 或 CLOUDFLARE_ACCOUNT_ID，正式網域仍會直接回 GitHub Pages，因此不會具有 Link 回應標頭或 Accept: text/markdown 協商。"
             echo "Cloudflare Worker 部署：已略過" >> "${GITHUB_STEP_SUMMARY}"
             echo "原因：缺少 CLOUDFLARE_API_TOKEN 或 CLOUDFLARE_ACCOUNT_ID。" >> "${GITHUB_STEP_SUMMARY}"
             echo "目前仍會部署 GitHub Pages 靜態站，但正式網域不會具有 Link 回應標頭或 Accept: text/markdown 協商。" >> "${GITHUB_STEP_SUMMARY}"
