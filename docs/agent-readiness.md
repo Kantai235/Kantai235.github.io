@@ -95,6 +95,11 @@
 
 ## 驗證方式
 
+- 可執行 `npm run verify:agent-http:local`
+- 這個腳本會先在本地啟動 Wrangler Worker，再檢查：
+  - 首頁是否有 `Link` 回應標頭
+  - `Accept: text/markdown` 是否回傳 `text/markdown` 與 `x-markdown-tokens`
+  - `robots.txt` 是否包含 `Content-Signal`
 - 可執行 `npm run verify:agent-http`
 - 這個腳本會直接檢查正式站：
   - 首頁是否有 `Link` 回應標頭

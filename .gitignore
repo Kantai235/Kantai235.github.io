@@ -13,6 +13,7 @@ hugo_stats.json
 
 # Node.js
 node_modules/
+.wrangler/
 
 # Logs
 *.log
@@ -30,4 +31,3 @@ node_modules/
 # Backup files
 *backup*/
 .history/
-

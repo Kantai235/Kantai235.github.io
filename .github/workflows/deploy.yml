@@ -86,6 +86,9 @@ jobs:
             --minify \
             --baseURL "https://blog.init.engineer/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+      - name: Verify agent HTTP responses locally
+        run: |
+          bash scripts/check-agent-http-local.sh
       - name: Deploy to Cloudflare Workers
         if: ${{ env.CLOUDFLARE_API_TOKEN != '' && env.CLOUDFLARE_ACCOUNT_ID != '' }}
         uses: cloudflare/wrangler-action@v3
