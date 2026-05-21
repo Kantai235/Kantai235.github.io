@@ -5,6 +5,7 @@ interface KemonoI18n {
   creatorLabel: string;
   photographerLabel: string;
   makerLabel: string;
+  lang?: string;
 }
 
 interface StickerI18n {
@@ -28,17 +29,28 @@ interface PageImages {
   setImages: (elementIds?: string[]) => void;
 }
 
+type LocalizedText = Partial<Record<'zh-tw' | 'en' | 'ja' | 'zh-cn', string>>;
+
 interface CreatorData {
-  name?: string;
+  name?: string | LocalizedText;
   link?: string;
-  photographer?: string;
+  photographer?: string | LocalizedText;
   photographerLink?: string;
-  maker?: string;
+  maker?: string | LocalizedText;
   makerLink?: string;
 }
 
 interface CreatorInfo {
   [key: string]: CreatorData;
+}
+
+interface ArtworkCredit {
+  label?: string | LocalizedText;
+  type?: string | LocalizedText;
+  name?: string | LocalizedText;
+  value?: string | LocalizedText;
+  link?: string;
+  url?: string;
 }
 
 /** 擴充 HTMLElement 以支援 Packery 動態掛載 */

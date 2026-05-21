@@ -121,6 +121,97 @@
       window.scrollTo(0, scrollY);
     }
 
+    function localize(value) {
+      var lang = i18n.lang || document.documentElement.lang || 'zh-tw';
+      if (!value) return '';
+      if (typeof value !== 'object') return value;
+      return value[lang] || value['zh-tw'] || value.en || value.ja || value['zh-cn'] || '';
+    }
+
+    function normalizeLabel(label) {
+      var text = localize(label);
+      if (!text) return '';
+      return /[:：]\s*$/.test(text) ? text : text + '：';
+    }
+
+    function appendLinkedText(parent, text, link) {
+      if (!text) return;
+      if (link) {
+        var a = document.createElement('a');
+        a.href = link;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = text;
+        parent.appendChild(a);
+      } else {
+        parent.appendChild(document.createTextNode(text));
+      }
+    }
+
+    function appendMetaEntry(parent, label, value, link) {
+      var text = localize(value);
+      if (!text) return;
+
+      var row = document.createElement('div');
+      row.className = 'gallery-lightbox-meta-row';
+
+      var labelText = normalizeLabel(label);
+      if (labelText) {
+        var labelEl = document.createElement('span');
+        labelEl.className = 'gallery-lightbox-meta-label';
+        labelEl.textContent = labelText;
+        row.appendChild(labelEl);
+      }
+
+      var valueEl = document.createElement('span');
+      valueEl.className = 'gallery-lightbox-meta-value';
+      appendLinkedText(valueEl, text, link);
+      row.appendChild(valueEl);
+      parent.appendChild(row);
+    }
+
+    function appendCreatorEntries(parent, creator) {
+      if (!creator) return;
+
+      if (creator.name) {
+        appendMetaEntry(parent, i18n.creatorLabel, creator.name, creator.link);
+      }
+
+      if (creator.photographer) {
+        appendMetaEntry(parent, i18n.photographerLabel, creator.photographer, creator.photographerLink);
+      }
+
+      if (creator.maker) {
+        appendMetaEntry(parent, i18n.makerLabel, creator.maker, creator.makerLink);
+      }
+    }
+
+    function appendCreditEntries(parent, credits) {
+      if (!Array.isArray(credits)) return;
+
+      credits.forEach(function (credit) {
+        if (!credit) return;
+        appendMetaEntry(parent, credit.label || credit.type, credit.name || credit.value, credit.link || credit.url);
+      });
+    }
+
+    function renderMetadata(item) {
+      creatorEl.textContent = '';
+
+      var title = localize(item.title);
+      if (title) {
+        var titleEl = document.createElement('div');
+        titleEl.className = 'gallery-lightbox-title';
+        titleEl.textContent = title;
+        creatorEl.appendChild(titleEl);
+      }
+
+      appendCreatorEntries(creatorEl, item.creator);
+      appendCreditEntries(creatorEl, item.credits);
+
+      creatorEl.style.display = creatorEl.childNodes.length ? 'block' : 'none';
+    }
+
     function showCurrent() {
       var item = images[currentIndex];
       if (!item) return;
@@ -133,35 +224,7 @@
       prevBtn.disabled = currentIndex === 0;
       nextBtn.disabled = currentIndex === images.length - 1;
 
-      if (item.creator) {
-        creatorEl.style.display = 'block';
-        creatorEl.textContent = '';
-
-        if (item.creator.name) {
-          var label = document.createTextNode((i18n.creatorLabel || '') + ' ');
-          creatorEl.appendChild(label);
-          if (item.creator.link) {
-            var a = document.createElement('a');
-            a.href = item.creator.link;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            a.textContent = item.creator.name;
-            creatorEl.appendChild(a);
-          } else {
-            creatorEl.appendChild(document.createTextNode(item.creator.name));
-          }
-        }
-        if (item.creator.photographer) {
-          creatorEl.textContent = '';
-          var pLabel = document.createTextNode((i18n.photographerLabel || '') + item.creator.photographer);
-          creatorEl.appendChild(pLabel);
-          if (item.creator.maker) {
-            creatorEl.appendChild(document.createTextNode(' / ' + (i18n.makerLabel || '') + item.creator.maker));
-          }
-        }
-      } else {
-        creatorEl.style.display = 'none';
-      }
+      renderMetadata(item);
     }
 
     function showPrev() {

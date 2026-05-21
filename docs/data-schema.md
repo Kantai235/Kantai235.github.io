@@ -49,26 +49,68 @@ interface PeriodData {
 ### 作品 data.json（`assets/img/kemono/{period}/artworks/{name}/data.json`）
 
 每件委託作品的 metadata，與圖片共置於同一目錄。圖片由模板自動探索，無需列舉。
+`fursuit` 相簿可額外使用 `photos` 逐張覆寫標題、替代文字、創作者與標示資訊。
 
 ```typescript
 /** 作品 data.json */
 interface ArtworkData {
+  /** 半套獸裝相簿所屬活動 ID，未填時預設為 "daily" */
+  event?: string;
   /** 圖片替代文字（無障礙用途） */
   alt: string;
+  /** Lightbox 顯示標題 */
+  title?: LocalizedText;
   /** 創作者資訊 */
   creator: ArtworkCreator;
+  /** 共用標示資訊，會套用到此資料夾內所有照片 */
+  credits?: ArtworkCredit[];
+  /** 逐張照片 metadata，僅 fursuit 相簿會讀取 */
+  photos?: ArtworkPhoto[];
 }
+
+/** 可直接使用字串，或依語言提供不同顯示文字 */
+type LocalizedText = string | Partial<Record<'zh-tw' | 'en' | 'ja' | 'zh-cn', string>>;
 
 /** 繪師格式 */
 interface ArtworkCreator {
   /** 創作者名稱 */
-  name?: string;
+  name?: LocalizedText;
   /** 創作者的社群或作品集連結 */
   link?: string;
   /** 攝影師名稱（獸裝照片用） */
-  photographer?: string;
+  photographer?: LocalizedText;
+  /** 攝影師連結 */
+  photographerLink?: string;
   /** 獸裝製作者名稱（獸裝照片用） */
-  maker?: string;
+  maker?: LocalizedText;
+  /** 獸裝製作者連結 */
+  makerLink?: string;
+}
+
+/** 單張照片覆寫格式 */
+interface ArtworkPhoto {
+  /** 檔名，例如 "01.jpg" */
+  file: string;
+  /** 單張照片所屬活動 ID，未填時沿用作品層級 event */
+  event?: string;
+  /** Lightbox 顯示標題 */
+  title?: LocalizedText;
+  /** 圖片替代文字（無障礙用途） */
+  alt?: string;
+  /** 單張照片創作者資訊，會與作品層級 creator 合併 */
+  creator?: ArtworkCreator;
+  /** 單張照片標示資訊，會附加在作品層級 credits 之後 */
+  credits?: ArtworkCredit[];
+}
+
+/** 額外標示資訊，例如配件、服裝、場地 */
+interface ArtworkCredit {
+  /** 顯示標籤，例如「娃娃製作」、「服裝工作室」、「場地」 */
+  label: LocalizedText;
+  /** 名稱 */
+  name: LocalizedText;
+  /** 連結 URL */
+  link?: string;
 }
 ```
 

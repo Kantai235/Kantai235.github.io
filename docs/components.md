@@ -129,6 +129,42 @@ QQ 聯絡按鈕。產生一個帶有 QQ 圖示的連結按鈕。
 
 ---
 
+### gallery-fursuit
+
+半套獸裝相簿頁。自動探索 `assets/img/kemono/fursuit/artworks/*/data.json`，
+依 `events.json` 的活動分類建立切換標籤，並支援單張照片標題與多筆標示資訊。
+
+| 參數 | 型別 | 必填 | 說明 |
+|------|------|------|------|
+| （無參數） | — | — | 此短代碼不接受任何參數 |
+
+單張照片可在作品資料夾的 `data.json` 使用 `photos` 覆寫：
+
+```json
+{
+  "event": "daily",
+  "alt": "半套獸裝照片",
+  "creator": {
+    "photographer": "乾太",
+    "maker": "索狛、栗糖"
+  },
+  "photos": [
+    {
+      "file": "01.jpg",
+      "title": "正裝外拍",
+      "alt": "半套獸裝正裝外拍",
+      "credits": [
+        { "label": "娃娃製作", "name": "製作師名稱", "link": "https://example.com/" },
+        { "label": "服裝工作室", "name": "工作室名稱" },
+        { "label": "場地", "name": "場地名稱" }
+      ]
+    }
+  ]
+}
+```
+
+---
+
 ## 常用自訂 Partials
 
 以下為 `layouts/partials/` 中常被其他模板引用的自訂局部模板。

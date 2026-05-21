@@ -586,7 +586,7 @@
   z-index: 10;
 }
 
-/* Lightbox 繪師資訊 */
+/* Lightbox 標示資訊 */
 .gallery-lightbox-creator {
   position: absolute;
   bottom: 1.25rem;
@@ -597,7 +597,23 @@
   backdrop-filter: blur(8px);
   color: #fff;
   font-size: 0.85rem;
+  line-height: 1.45;
+  max-width: min(24rem, calc(100vw - 2.5rem));
   z-index: 10;
+}
+
+.gallery-lightbox-title {
+  font-weight: 700;
+}
+
+.gallery-lightbox-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.gallery-lightbox-meta-label {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .gallery-lightbox-creator a {
@@ -607,6 +623,23 @@
 
 .gallery-lightbox-creator a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .gallery-lightbox-image {
+    max-height: 78vh;
+  }
+
+  .gallery-lightbox-creator {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 3.25rem;
+    max-width: none;
+  }
+
+  .gallery-lightbox-counter {
+    bottom: 0.75rem;
+  }
 }
 
 /* ==========================================

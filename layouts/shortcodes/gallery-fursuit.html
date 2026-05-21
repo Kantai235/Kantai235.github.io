@@ -4,9 +4,11 @@
   依活動主題分類（日常、各場活動），預設顯示「日常」。
   活動定義在 assets/img/kemono/fursuit/events.json。
   各作品 data.json 可含 "event" 欄位指定歸屬活動，未指定時預設為 "daily"。
+  若需要逐張照片標題或標示資訊，可在 data.json 以 "photos" 陣列覆寫單張資料。
 -->
 
 {{ $backLabel := i18n "gallery.back_to_gallery" }}
+{{ $creatorLabel := i18n "kemono.creator_label" }}
 {{ $photographerLabel := i18n "kemono.photographer_label" }}
 {{ $makerLabel := i18n "kemono.maker_label" }}
 {{ $lang := .Page.Language.Lang }}
@@ -30,6 +32,8 @@
     imagesByEvent: {},
     i18n: {
       close: {{ i18n "gallery.lightbox_close" | jsonify | safeJS }},
+      lang: {{ $lang | jsonify | safeJS }},
+      creatorLabel: {{ $creatorLabel | jsonify | safeJS }},
       photographerLabel: {{ $photographerLabel | jsonify | safeJS }},
       makerLabel: {{ $makerLabel | jsonify | safeJS }}
     }
@@ -53,11 +57,41 @@
   {{ range $artworkDataFiles }}
     {{ $meta := . | transform.Unmarshal }}
     {{ $dir := path.Dir .Name }}
-    {{ $eventId := $meta.event | default "daily" }}
     {{ $images := resources.Match (printf "%s/*" $dir) }}
     {{ range $images }}
       {{ if eq .MediaType.MainType "image" }}
         {{ $imgIndex = add $imgIndex 1 }}
+        {{ $imageFile := path.Base .Name }}
+        {{ $photoMeta := dict }}
+        {{ with $meta.photos }}
+          {{ range . }}
+            {{ $photoFile := or .file .src }}
+            {{ if eq $photoFile $imageFile }}
+              {{ $photoMeta = . }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        {{ $eventId := or $photoMeta.event $meta.event "daily" }}
+        {{ $alt := or $photoMeta.alt $meta.alt (printf "半套獸裝照片 %s" $imageFile) }}
+        {{ $title := or $photoMeta.title $meta.title "" }}
+        {{ $creator := dict }}
+        {{ with $meta.creator }}
+          {{ $creator = . }}
+        {{ end }}
+        {{ with $photoMeta.creator }}
+          {{ $creator = merge $creator . }}
+        {{ end }}
+        {{ $credits := slice }}
+        {{ with $meta.credits }}
+          {{ range . }}
+            {{ $credits = $credits | append . }}
+          {{ end }}
+        {{ end }}
+        {{ with $photoMeta.credits }}
+          {{ range . }}
+            {{ $credits = $credits | append . }}
+          {{ end }}
+        {{ end }}
         {{ $aspectRatio := div (float .Width) (float .Height) }}
         {{ $optimized := "" }}
         {{ if gt $aspectRatio 1.3 }}
@@ -72,8 +106,10 @@
   window.galleryFursuitData.imagesByEvent[{{ $eventId | jsonify | safeJS }}].push({
     id: 'gallery-fursuit-{{ $imgIndex }}',
     src: '{{ $optimized.RelPermalink }}',
-    alt: {{ $meta.alt | jsonify | safeJS }},
-    creator: {{ $meta.creator | jsonify | safeJS }},
+    title: {{ $title | jsonify | safeJS }},
+    alt: {{ $alt | jsonify | safeJS }},
+    creator: {{ $creator | jsonify | safeJS }},
+    credits: {{ $credits | jsonify | safeJS }},
     aspectRatio: {{ printf "%.3f" $aspectRatio }}
   });
 
@@ -102,6 +138,8 @@ document.addEventListener('DOMContentLoaded', function () {
   KemonoGallery.Lightbox.init({
     i18n: {
       close: data.i18n.close,
+      lang: data.i18n.lang,
+      creatorLabel: data.i18n.creatorLabel,
       photographerLabel: data.i18n.photographerLabel,
       makerLabel: data.i18n.makerLabel
     }
